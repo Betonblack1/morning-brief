@@ -14,16 +14,26 @@ if (!ANTHROPIC_KEY) throw new Error("Missing ANTHROPIC_API_KEY");
 
 const FH_BASE = "https://finnhub.io/api/v1";
 
-async function fh(endpoint, params = {}) {
-  const url = new URL(`${FH_BASE}${endpoint}`);
+async function fh(endpoint, params) {
+  params = params || {};
+  const url = new URL(FH_BASE + endpoint);
   url.searchParams.set("token", FINNHUB_KEY);
-  for (const [k, v] of Object.entries(params)) url.searchParams.set(k, v);
+  for (const k of Object.keys(params)) {
+    url.searchParams.set(k, params[k]);
+  }
   const resp = await fetch(url.toString());
-  if (!resp.ok) { console.error(`Finnhub error ${resp.status} on ${endpoint}`); return null; }
+  if (!resp.ok) {
+    console.error("Finnhub error " + resp.status + " on " + endpoint);
+    return null;
+  }
   return resp.json();
 }
 
-const delay = (ms) => new Promise((r) => setTimeout(r, ms));
+function wait(ms) {
+  return new Promise(function (resolve) {
+    setTimeout(resolve, ms);
+  });
+}
 
 async function fetchQuotes() {
   const symbols = [
@@ -41,175 +51,281 @@ async function fetchQuotes() {
     { symbol: "XLRE", name: "Real Estate" },
     { symbol: "XLU", name: "Utilities" },
     { symbol: "XLP", name: "Cons Staples" },
-    { symbol: "XLC", name: "Comm Svcs" },
+    { symbol: "XLC", name: "Comm Svcs" }
   ];
   const results = {};
-  for (const item of symbols) {
+  for (let i = 0; i < symbols.length; i++) {
+    const item = symbols[i];
     const q = await fh("/quote", { symbol: item.symbol });
     if (q) {
       results[item.symbol] = {
-        name: item.name, symbol: item.symbol,
-        current: q.c, open: q.o, high: q.h, low: q.l,
-        prevClose: q.pc, change: q.d, changePct: q.dp,
+        name: item.name,
+        symbol: item.symbol,
+        current: q.c,
+        open: q.o,
+        high: q.h,
+        low: q.l,
+        prevClose: q.pc,
+        change: q.d,
+        changePct: q.dp
       };
     }
-    await delay(200);
+    await wait(200);
   }
   return results;
 }
 
 async function fetchVIX() {
   const q = await fh("/quote", { symbol: "VXX" });
-  if (q) return { name: "VIX", symbol: "VXX", current: q.c, changePct: q.dp };
+  if (q) {
+    return { name: "VIX", symbol: "VXX", current: q.c, changePct: q.dp };
+  }
   return null;
 }
 
 async function fetchNews() {
   const news = await fh("/news", { category: "general", minId: 0 });
   if (!news || !Array.isArray(news)) return [];
-  return news.slice(0, 12).map((n) => ({
-    headline: n.headline, source: n.source,
-    summary: n.summary?.slice(0, 200), url: n.url,
-    datetime: new Date(n.datetime * 1000).toISOString(), category: n.category,
-  }));
+  var out = [];
+  for (var i = 0; i < Math.min(news.length, 12); i++) {
+    var n = news[i];
+    out.push({
+      headline: n.headline,
+      source: n.source,
+      summary: n.summary ? n.summary.slice(0, 200) : "",
+      url: n.url,
+      datetime: new Date(n.datetime * 1000).toISOString(),
+      category: n.category
+    });
+  }
+  return out;
 }
 
 async function fetchEarnings() {
   const today = new Date().toISOString().split("T")[0];
   const earnings = await fh("/calendar/earnings", { from: today, to: today });
-  if (!earnings?.earningsCalendar) return [];
-  return earnings.earningsCalendar.slice(0, 10).map((e) => ({
-    symbol: e.symbol,
-    hour: e.hour === "bmo" ? "BMO" : e.hour === "amc" ? "AMC" : e.hour,
-    epsEstimate: e.epsEstimate, revenueEstimate: e.revenueEstimate,
-  }));
+  if (!earnings || !earnings.earningsCalendar) return [];
+  var out = [];
+  var cal = earnings.earningsCalendar;
+  for (var i = 0; i < Math.min(cal.length, 10); i++) {
+    var e = cal[i];
+    out.push({
+      symbol: e.symbol,
+      hour: e.hour === "bmo" ? "BMO" : e.hour === "amc" ? "AMC" : e.hour,
+      epsEstimate: e.epsEstimate,
+      revenueEstimate: e.revenueEstimate
+    });
+  }
+  return out;
 }
 
 async function fetchEconCalendar() {
   const today = new Date().toISOString().split("T")[0];
   const cal = await fh("/calendar/economic", { from: today, to: today });
-  if (!cal?.economicCalendar) return [];
-  return cal.economicCalendar
-    .filter((e) => e.country === "US").slice(0, 8)
-    .map((e) => ({
-      time: e.time || "TBD", event: e.event,
-      impact: e.impact <= 1 ? "low" : e.impact === 2 ? "med" : "high",
-      estimate: e.estimate, prev: e.prev,
-    }));
+  if (!cal || !cal.economicCalendar) return [];
+  var out = [];
+  var items = cal.economicCalendar;
+  for (var i = 0; i < items.length; i++) {
+    var e = items[i];
+    if (e.country === "US" && out.length < 8) {
+      out.push({
+        time: e.time || "TBD",
+        event: e.event,
+        impact: e.impact <= 1 ? "low" : e.impact === 2 ? "med" : "high",
+        estimate: e.estimate,
+        prev: e.prev
+      });
+    }
+  }
+  return out;
 }
 
 async function generateBrief(marketData) {
   const client = new Anthropic({ apiKey: ANTHROPIC_KEY });
-  const { quotes, vix, news, earnings, econ } = marketData;
+  const quotes = marketData.quotes;
+  const vix = marketData.vix;
+  const news = marketData.news;
+  const earnings = marketData.earnings;
+  const econ = marketData.econ;
 
-  const indexSummary = ["SPY", "QQQ", "DIA", "IWM"]
-    .map((s) => { const q = quotes[s]; if (!q) return ""; return `${q.name} (${s}): $${q.current} (${q.changePct >= 0 ? "+" : ""}${q.changePct?.toFixed(2)}%)`; })
-    .filter(Boolean).join("\n");
+  var indexLines = [];
+  var indexSymbols = ["SPY", "QQQ", "DIA", "IWM"];
+  for (var i = 0; i < indexSymbols.length; i++) {
+    var s = indexSymbols[i];
+    var q = quotes[s];
+    if (q) {
+      var sign = q.changePct >= 0 ? "+" : "";
+      indexLines.push(q.name + " (" + s + "): $" + q.current + " (" + sign + (q.changePct ? q.changePct.toFixed(2) : "0") + "%)");
+    }
+  }
+  var indexSummary = indexLines.join("\n");
 
-  const sectorSummary = Object.values(quotes)
-    .filter((q) => !["SPY", "QQQ", "DIA", "IWM", "VXX"].includes(q.symbol))
-    .map((q) => `${q.name} (${q.symbol}): ${q.changePct >= 0 ? "+" : ""}${q.changePct?.toFixed(2)}%`)
-    .join("\n");
+  var sectorLines = [];
+  var allSymbols = Object.keys(quotes);
+  for (var i = 0; i < allSymbols.length; i++) {
+    var sym = allSymbols[i];
+    if (["SPY", "QQQ", "DIA", "IWM", "VXX"].indexOf(sym) === -1) {
+      var q = quotes[sym];
+      var sign = q.changePct >= 0 ? "+" : "";
+      sectorLines.push(q.name + " (" + q.symbol + "): " + sign + (q.changePct ? q.changePct.toFixed(2) : "0") + "%");
+    }
+  }
+  var sectorSummary = sectorLines.join("\n");
 
-  const newsSummary = news.slice(0, 8).map((n) => `- ${n.headline} (${n.source})`).join("\n");
-  const earningsSummary = earnings.map((e) => `${e.symbol} (${e.hour}) - EPS Est: ${e.epsEstimate ?? "N/A"}`).join("\n");
-  const econSummary = econ.map((e) => `${e.time}: ${e.event} (Impact: ${e.impact})`).join("\n");
+  var newsLines = [];
+  for (var i = 0; i < Math.min(news.length, 8); i++) {
+    newsLines.push("- " + news[i].headline + " (" + news[i].source + ")");
+  }
+  var newsSummary = newsLines.join("\n") || "No major headlines yet.";
 
-  const prompt = `You are a senior market analyst writing a concise morning brief for an active trader. Today is ${new Date().toLocaleDateString("en-US", { weekday: "long", year: "numeric", month: "long", day: "numeric" })}.
+  var earnLines = [];
+  for (var i = 0; i < earnings.length; i++) {
+    var e = earnings[i];
+    earnLines.push(e.symbol + " (" + e.hour + ") - EPS Est: " + (e.epsEstimate != null ? e.epsEstimate : "N/A"));
+  }
+  var earningsSummary = earnLines.join("\n") || "No major earnings today.";
 
-Here is today's pre-market data:
+  var econLines = [];
+  for (var i = 0; i < econ.length; i++) {
+    var e = econ[i];
+    econLines.push(e.time + ": " + e.event + " (Impact: " + e.impact + ")");
+  }
+  var econSummary = econLines.join("\n") || "No major economic events today.";
 
-## INDEX QUOTES
-${indexSummary}
-${vix ? `VIX: ${vix.current} (${vix.changePct >= 0 ? "+" : ""}${vix.changePct?.toFixed(2)}%)` : ""}
+  var todayStr = new Date().toLocaleDateString("en-US", {
+    weekday: "long", year: "numeric", month: "long", day: "numeric"
+  });
 
-## SECTOR PERFORMANCE (Pre-Market)
-${sectorSummary}
+  var vixLine = "";
+  if (vix) {
+    var vSign = vix.changePct >= 0 ? "+" : "";
+    vixLine = "VIX: " + vix.current + " (" + vSign + (vix.changePct ? vix.changePct.toFixed(2) : "0") + "%)";
+  }
 
-## TODAY'S NEWS HEADLINES
-${newsSummary || "No major headlines yet."}
-
-## EARNINGS TODAY
-${earningsSummary || "No major earnings today."}
-
-## ECONOMIC CALENDAR
-${econSummary || "No major economic events today."}
-
-Write a morning brief using this EXACT HTML structure. Keep it punchy, actionable, and under 600 words. No fluff. Write like a seasoned trader talks — direct, informed, no hedging.
-
-Use these exact HTML elements:
-
-<h2><span class="sec-icon">◆</span> Market Overview</h2>
-- 2-3 sentences on the overall setup. Reference specific numbers.
-
-<h2><span class="sec-icon">◆</span> What to Watch</h2>
-- Use <ul><li> for 3-4 bullet points on key events/data/earnings today
-- Bold the event name with <strong>
-
-<h2><span class="sec-icon">◆</span> Sector Rotation</h2>
-- 2-3 sentences on which sectors are leading/lagging and why
-
-Add 1-2 callout boxes using this format:
-<div class="callout callout-green"><div class="callout-label">✦ Bull Case</div>Text here</div>
-<div class="callout callout-red"><div class="callout-label">⚠ Bear Case</div>Text here</div>
-<div class="callout callout-amber"><div class="callout-label">⚡ Key Driver</div>Text here</div>
-
-<h2><span class="sec-icon">◆</span> Levels That Matter</h2>
-- Use <ul><li> for 3-4 key support/resistance/trigger levels
-
-End with:
-<hr>
-<p><em>Not a prediction. A preparation. Make your plan before the bell.</em></p>
-
-Output ONLY the HTML. No markdown. No code fences. No explanation.`;
+  var prompt = "You are a senior market analyst writing a concise morning brief for an active trader. Today is " + todayStr + ".\n\n";
+  prompt += "Here is today's pre-market data:\n\n";
+  prompt += "## INDEX QUOTES\n" + indexSummary + "\n" + vixLine + "\n\n";
+  prompt += "## SECTOR PERFORMANCE (Pre-Market)\n" + sectorSummary + "\n\n";
+  prompt += "## TODAY'S NEWS HEADLINES\n" + newsSummary + "\n\n";
+  prompt += "## EARNINGS TODAY\n" + earningsSummary + "\n\n";
+  prompt += "## ECONOMIC CALENDAR\n" + econSummary + "\n\n";
+  prompt += 'Write a morning brief using this EXACT HTML structure. Keep it punchy, actionable, and under 600 words. No fluff. Write like a seasoned trader talks — direct, informed, no hedging.\n\n';
+  prompt += 'Use these exact HTML elements:\n\n';
+  prompt += '<h2><span class="sec-icon">◆</span> Market Overview</h2>\n';
+  prompt += '- 2-3 sentences on the overall setup. Reference specific numbers.\n\n';
+  prompt += '<h2><span class="sec-icon">◆</span> What to Watch</h2>\n';
+  prompt += '- Use <ul><li> for 3-4 bullet points on key events/data/earnings today\n';
+  prompt += '- Bold the event name with <strong>\n\n';
+  prompt += '<h2><span class="sec-icon">◆</span> Sector Rotation</h2>\n';
+  prompt += '- 2-3 sentences on which sectors are leading/lagging and why\n\n';
+  prompt += 'Add 1-2 callout boxes using this format:\n';
+  prompt += '<div class="callout callout-green"><div class="callout-label">✦ Bull Case</div>Text here</div>\n';
+  prompt += '<div class="callout callout-red"><div class="callout-label">⚠ Bear Case</div>Text here</div>\n';
+  prompt += '<div class="callout callout-amber"><div class="callout-label">⚡ Key Driver</div>Text here</div>\n\n';
+  prompt += '<h2><span class="sec-icon">◆</span> Levels That Matter</h2>\n';
+  prompt += '- Use <ul><li> for 3-4 key support/resistance/trigger levels\n\n';
+  prompt += 'End with:\n<hr>\n<p><em>Not a prediction. A preparation. Make your plan before the bell.</em></p>\n\n';
+  prompt += 'Output ONLY the HTML. No markdown. No code fences. No explanation.';
 
   const response = await client.messages.create({
     model: "claude-sonnet-4-20250514",
     max_tokens: 2000,
-    messages: [{ role: "user", content: prompt }],
+    messages: [{ role: "user", content: prompt }]
   });
+
   return response.content[0].text;
 }
 
 async function main() {
   console.log("Fetching market data from Finnhub...");
-  const [quotes, vix, news, earnings, econ] = await Promise.all([
-    fetchQuotes(), fetchVIX(), fetchNews(), fetchEarnings(), fetchEconCalendar(),
+
+  var results = await Promise.all([
+    fetchQuotes(),
+    fetchVIX(),
+    fetchNews(),
+    fetchEarnings(),
+    fetchEconCalendar()
   ]);
-  console.log(`Got ${Object.keys(quotes).length} quotes, ${news.length} news, ${earnings.length} earnings, ${econ.length} econ events`);
+
+  var quotes = results[0];
+  var vix = results[1];
+  var news = results[2];
+  var earnings = results[3];
+  var econ = results[4];
+
+  console.log("Got " + Object.keys(quotes).length + " quotes, " + news.length + " news, " + earnings.length + " earnings, " + econ.length + " econ events");
 
   console.log("Generating brief via Claude...");
-  let briefHtml;
+  var briefHtml;
   try {
-    briefHtml = await generateBrief({ quotes, vix, news, earnings, econ });
+    briefHtml = await generateBrief({ quotes: quotes, vix: vix, news: news, earnings: earnings, econ: econ });
     console.log("Brief generated");
   } catch (err) {
-    console.error("Claude API error:", err.message);
-    briefHtml = `<p>Brief generation failed. Market data is still current.</p>`;
+    console.error("Claude API error: " + err.message);
+    briefHtml = "<p>Brief generation failed. Market data is still current.</p>";
   }
 
-  const indexData = ["SPY", "QQQ", "DIA", "IWM"].map((s) => {
-    const q = quotes[s];
-    return { name: q?.name ?? s, val: q?.current?.toLocaleString("en-US", { minimumFractionDigits: 2 }) ?? "—", chg: q?.changePct ?? 0, price: q?.current ?? 0 };
+  var indexSymbols = ["SPY", "QQQ", "DIA", "IWM"];
+  var indexData = [];
+  for (var i = 0; i < indexSymbols.length; i++) {
+    var s = indexSymbols[i];
+    var q = quotes[s];
+    indexData.push({
+      name: q ? q.name : s,
+      val: q ? q.current.toLocaleString("en-US", { minimumFractionDigits: 2 }) : "—",
+      chg: q ? q.changePct : 0,
+      price: q ? q.current : 0
+    });
+  }
+
+  indexData.push({
+    name: "VIX",
+    val: vix ? vix.current.toFixed(2) : "—",
+    chg: vix ? vix.changePct : 0,
+    price: vix ? vix.current : 0
   });
-  indexData.push({ name: "VIX", val: vix?.current?.toFixed(2) ?? "—", chg: vix?.changePct ?? 0, price: vix?.current ?? 0 });
+
   indexData.push({ name: "10Y", val: "—", chg: 0, price: 0 });
 
-  const sectorData = Object.values(quotes)
-    .filter((q) => !["SPY", "QQQ", "DIA", "IWM", "VXX"].includes(q.symbol))
-    .map((q) => ({ name: q.name, symbol: q.symbol, chg: q.changePct ?? 0 }));
+  var sectorData = [];
+  var allSymbols = Object.keys(quotes);
+  for (var i = 0; i < allSymbols.length; i++) {
+    var sym = allSymbols[i];
+    if (["SPY", "QQQ", "DIA", "IWM", "VXX"].indexOf(sym) === -1) {
+      var q = quotes[sym];
+      sectorData.push({ name: q.name, symbol: q.symbol, chg: q.changePct || 0 });
+    }
+  }
 
-  const newsData = news.slice(0, 6).map((n) => {
-    const d = new Date(n.datetime);
-    const timeStr = d.toLocaleTimeString("en-US", { hour: "numeric", minute: "2-digit", hour12: true, timeZone: "America/New_York" });
-    return { time: timeStr, text: n.headline, tag: n.source, url: n.url };
-  });
+  var newsData = [];
+  for (var i = 0; i < Math.min(news.length, 6); i++) {
+    var n = news[i];
+    var d = new Date(n.datetime);
+    var timeStr = d.toLocaleTimeString("en-US", {
+      hour: "numeric", minute: "2-digit", hour12: true, timeZone: "America/New_York"
+    });
+    newsData.push({ time: timeStr, text: n.headline, tag: n.source, url: n.url });
+  }
 
-  const earningsData = earnings.slice(0, 6).map((e) => ({ ticker: e.symbol, info: `EPS Est: ${e.epsEstimate ?? "N/A"}`, when: e.hour }));
-  const econData = econ.slice(0, 6).map((e) => ({ time: e.time, name: e.event, impact: e.impact }));
+  var earningsData = [];
+  for (var i = 0; i < Math.min(earnings.length, 6); i++) {
+    var e = earnings[i];
+    earningsData.push({
+      ticker: e.symbol,
+      info: "EPS Est: " + (e.epsEstimate != null ? e.epsEstimate : "N/A"),
+      when: e.hour
+    });
+  }
 
-  let fgScore = 50, fgLabel = "Neutral";
-  if (vix?.current) {
+  var econData = [];
+  for (var i = 0; i < Math.min(econ.length, 6); i++) {
+    var e = econ[i];
+    econData.push({ time: e.time, name: e.event, impact: e.impact });
+  }
+
+  var fgScore = 50;
+  var fgLabel = "Neutral";
+  if (vix && vix.current) {
     fgScore = Math.round(Math.max(0, Math.min(100, 100 - ((vix.current - 12) / 23) * 100)));
     if (fgScore <= 20) fgLabel = "Extreme Fear";
     else if (fgScore <= 40) fgLabel = "Fear";
@@ -218,18 +334,69 @@ async function main() {
     else fgLabel = "Extreme Greed";
   }
 
-  const spy = quotes["SPY"], qqq = quotes["QQQ"];
-  const keyLevelsData = [];
+  var spy = quotes["SPY"];
+  var qqq = quotes["QQQ"];
+  var keyLevelsData = [];
+
   if (spy) {
-    keyLevelsData.push({ tag: "support", label: "SPY Support", val: (spy.low || spy.current * 0.995).toFixed(2) });
-    keyLevelsData.push({ tag: "resist", label: "SPY Resist", val: (spy.high || spy.current * 1.005).toFixed(2) });
-  }
-  if (qqq) keyLevelsData.push({ tag: "pivot", label: "QQQ Pivot", val: ((qqq.high + qqq.low + qqq.current) / 3).toFixed(2) });
-  if (econ.length > 0) {
-    const topEvent = econ.find((e) => e.impact === "high") || econ[0];
-    keyLevelsData.push({ tag: "event", label: topEvent.event?.slice(0, 20) ?? "Econ Event", val: topEvent.time || "TBD" });
+    keyLevelsData.push({
+      tag: "support",
+      label: "SPY Support",
+      val: (spy.low || spy.current * 0.995).toFixed(2)
+    });
+    keyLevelsData.push({
+      tag: "resist",
+      label: "SPY Resist",
+      val: (spy.high || spy.current * 1.005).toFixed(2)
+    });
   }
 
-  const output = {
-    generated: new Date().toISOString(), date: new Date().toISOString().split("T")[0],
-    indices
+  if (qqq) {
+    keyLevelsData.push({
+      tag: "pivot",
+      label: "QQQ Pivot",
+      val: ((qqq.high + qqq.low + qqq.current) / 3).toFixed(2)
+    });
+  }
+
+  if (econ.length > 0) {
+    var topEvent = null;
+    for (var i = 0; i < econ.length; i++) {
+      if (econ[i].impact === "high") { topEvent = econ[i]; break; }
+    }
+    if (!topEvent) topEvent = econ[0];
+    keyLevelsData.push({
+      tag: "event",
+      label: topEvent.event ? topEvent.event.slice(0, 20) : "Econ Event",
+      val: topEvent.time || "TBD"
+    });
+  }
+
+  var output = {
+    generated: new Date().toISOString(),
+    date: new Date().toISOString().split("T")[0],
+    indices: indexData,
+    sectors: sectorData,
+    keyLevels: keyLevelsData,
+    fearGreed: { score: fgScore, label: fgLabel },
+    earnings: earningsData,
+    econ: econData,
+    news: newsData,
+    brief: briefHtml
+  };
+
+  if (!fs.existsSync(OUTPUT_DIR)) {
+    fs.mkdirSync(OUTPUT_DIR, { recursive: true });
+  }
+
+  var outPath = path.join(OUTPUT_DIR, "market-data.json");
+  fs.writeFileSync(outPath, JSON.stringify(output, null, 2));
+  console.log("Written to " + outPath);
+  console.log("Date: " + output.date);
+  console.log("Done!");
+}
+
+main().catch(function (err) {
+  console.error("Fatal error:", err);
+  process.exit(1);
+});

@@ -1,0 +1,1120 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Pre-Market Prep</title>
+<link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@300;400;500;600;700&family=DM+Sans:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+<style>
+:root {
+  --bg: #06090d;
+  --surface: #0b1017;
+  --surface2: #10161e;
+  --surface3: #151d27;
+  --border: #1a2332;
+  --border2: #243040;
+  --text: #d8e2ec;
+  --text2: #a0b0c0;
+  --muted: #4a5e72;
+  --dim: #263040;
+  --green: #00e0a0;
+  --green2: #00c890;
+  --green-bg: rgba(0,224,160,0.06);
+  --green-glow: rgba(0,224,160,0.25);
+  --green-dim: #00e0a020;
+  --amber: #ffb020;
+  --amber-dim: #ffb02018;
+  --red: #ff4060;
+  --red-dim: #ff406018;
+  --blue: #40a0ff;
+  --blue-dim: #40a0ff15;
+  --cyan: #00d4ff;
+  --mono: 'JetBrains Mono', monospace;
+  --sans: 'DM Sans', sans-serif;
+}
+
+* { box-sizing: border-box; margin: 0; padding: 0; }
+
+body {
+  font-family: var(--sans);
+  background: var(--bg);
+  color: var(--text);
+  min-height: 100vh;
+  padding: 0;
+  overflow-x: hidden;
+}
+
+body::after {
+  content: '';
+  position: fixed;
+  inset: 0;
+  background: repeating-linear-gradient(0deg, transparent 0px, transparent 2px, rgba(0,0,0,0.025) 2px, rgba(0,0,0,0.025) 4px);
+  pointer-events: none;
+  z-index: 9999;
+}
+
+/* ── TOPBAR (matches morning brief) ──────────────── */
+.topbar {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0 1.5rem;
+  height: 48px;
+  border-bottom: 1px solid var(--border);
+  background: var(--surface);
+  position: sticky;
+  top: 0;
+  z-index: 100;
+  backdrop-filter: blur(12px);
+}
+.topbar-left { display: flex; align-items: center; gap: 1.25rem; }
+.topbar-logo {
+  font-family: var(--mono);
+  font-size: 0.7rem;
+  font-weight: 700;
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+  color: var(--green);
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  text-decoration: none;
+}
+.topbar-logo .dot {
+  width: 6px; height: 6px;
+  border-radius: 50%;
+  background: var(--green);
+  box-shadow: 0 0 8px var(--green-glow), 0 0 16px var(--green-glow);
+  animation: pulse-dot 2s ease-in-out infinite;
+}
+@keyframes pulse-dot {
+  0%, 100% { opacity: 1; transform: scale(1); }
+  50% { opacity: 0.5; transform: scale(0.8); }
+}
+.topbar-nav { display: flex; gap: 0; }
+.topbar-nav a {
+  font-family: var(--mono);
+  font-size: 0.62rem;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  text-decoration: none;
+  color: var(--muted);
+  padding: 0.35rem 0.75rem;
+  border-radius: 4px;
+  transition: all 0.2s;
+}
+.topbar-nav a.active { color: var(--text); background: var(--surface3); }
+.topbar-nav a:hover:not(.active) { color: var(--text2); }
+.topbar-right { display: flex; align-items: center; gap: 1rem; }
+.topbar-date { font-family: var(--mono); font-size: 0.62rem; color: var(--muted); letter-spacing: 0.05em; }
+.countdown-pill {
+  font-family: var(--mono);
+  font-size: 0.68rem;
+  font-weight: 600;
+  letter-spacing: 0.04em;
+  padding: 0.2rem 0.65rem;
+  border-radius: 4px;
+  display: flex;
+  align-items: center;
+  gap: 0.4rem;
+  min-width: 110px;
+  justify-content: center;
+}
+.countdown-pill.pre { color: var(--green); background: var(--green-bg); border: 1px solid rgba(0,224,160,0.15); }
+.countdown-pill.open { color: var(--amber); background: rgba(255,176,32,0.06); border: 1px solid rgba(255,176,32,0.15); }
+.countdown-pill.closed { color: var(--muted); background: var(--surface2); border: 1px solid var(--border); }
+.countdown-pill .cdot {
+  width: 5px; height: 5px; border-radius: 50%;
+  animation: pulse-dot 1.5s ease-in-out infinite;
+}
+.countdown-pill.pre .cdot { background: var(--green); box-shadow: 0 0 6px var(--green); }
+.countdown-pill.open .cdot { background: var(--amber); box-shadow: 0 0 6px var(--amber); }
+
+/* PROGRESS BAR */
+.progress-section {
+  padding: 0.75rem 1.5rem;
+  border-bottom: 1px solid var(--border);
+  background: var(--surface);
+  display: flex;
+  align-items: center;
+  gap: 1.5rem;
+}
+
+.progress-bar-outer {
+  flex: 1;
+  height: 3px;
+  background: var(--dim);
+  border-radius: 2px;
+  overflow: hidden;
+}
+.progress-bar-fill {
+  height: 100%;
+  background: var(--green);
+  border-radius: 2px;
+  transition: width 0.4s cubic-bezier(0.4,0,0.2,1);
+  width: 0%;
+  box-shadow: 0 0 8px var(--green-glow);
+}
+.progress-stats {
+  font-family: var(--mono);
+  font-size: 0.7rem;
+  color: var(--muted);
+  white-space: nowrap;
+  display: flex;
+  gap: 1.5rem;
+}
+.progress-stats .pct {
+  color: var(--green);
+  font-weight: 600;
+}
+
+/* STATUS STRIP */
+.status-strip {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 2rem;
+  padding: 0.5rem 1.5rem;
+  background: var(--surface2);
+  border-bottom: 1px solid var(--border);
+  font-family: var(--mono);
+  font-size: 0.62rem;
+  letter-spacing: 0.08em;
+  color: var(--muted);
+  overflow-x: auto;
+}
+.status-item { display: flex; align-items: center; gap: 0.4rem; white-space: nowrap; }
+.status-dot { width: 5px; height: 5px; border-radius: 50%; background: var(--muted); }
+.status-dot.green { background: var(--green); box-shadow: 0 0 4px var(--green); animation: pulse-dot 2s infinite; }
+.status-dot.amber { background: var(--amber); }
+.status-dot.red { background: var(--red); }
+
+/* ─── MAIN LAYOUT ─────────────────────────────────────── */
+.main {
+  padding: 1.5rem;
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+  max-width: 1400px;
+  margin: 0 auto;
+}
+
+/* Row labels */
+.row-label {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+  margin-bottom: -0.25rem;
+}
+.row-label-num {
+  font-family: var(--mono);
+  font-size: 0.58rem;
+  font-weight: 600;
+  letter-spacing: 0.12em;
+  color: var(--muted);
+  background: var(--surface2);
+  border: 1px solid var(--border2);
+  border-radius: 3px;
+  padding: 0.15rem 0.5rem;
+  text-transform: uppercase;
+}
+.row-label-line {
+  flex: 1;
+  height: 1px;
+  background: var(--border);
+}
+
+/* Row containers */
+.row-full { width: 100%; }
+
+.row-pair {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 1rem;
+}
+
+/* CARDS */
+.card {
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: 6px;
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+  transition: border-color 0.2s;
+  animation: fadeUp 0.4s ease both;
+}
+.card:nth-child(1) { animation-delay: 0.05s; }
+.card:nth-child(2) { animation-delay: 0.1s; }
+.card:hover { border-color: var(--border2); }
+
+@keyframes fadeUp {
+  from { opacity: 0; transform: translateY(12px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+.card-head {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0.6rem 1rem;
+  border-bottom: 1px solid var(--border);
+  background: var(--surface2);
+}
+
+.card-time {
+  font-family: var(--mono);
+  font-size: 0.6rem;
+  font-weight: 600;
+  letter-spacing: 0.1em;
+  color: var(--green);
+  background: var(--green-bg);
+  padding: 0.15rem 0.45rem;
+  border-radius: 3px;
+  border: 1px solid rgba(0,224,160,0.12);
+}
+
+.card-title {
+  font-family: var(--mono);
+  font-size: 0.65rem;
+  font-weight: 600;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: var(--text2);
+}
+
+.card-progress-mini {
+  font-family: var(--mono);
+  font-size: 0.6rem;
+  color: var(--muted);
+}
+.card-progress-mini span { color: var(--green); }
+
+.card-body { padding: 1rem; flex: 1; display: flex; flex-direction: column; gap: 0.75rem; }
+
+/* ── Playbook card: two-column interior */
+.playbook-inner {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 1rem;
+  align-items: stretch;
+}
+.playbook-inner-left { display: flex; flex-direction: column; gap: 0.75rem; }
+.playbook-inner-right { display: flex; flex-direction: column; gap: 0.75rem; }
+.playbook-inner-right .notes-wrap { display: flex; flex-direction: column; flex: 1; }
+.playbook-inner-right .notes-wrap textarea { flex: 1; resize: none; }
+
+/* CHECKLIST */
+.checklist { list-style: none; display: flex; flex-direction: column; gap: 1px; }
+.checklist li {
+  display: flex;
+  align-items: flex-start;
+  gap: 0.6rem;
+  padding: 0.5rem 0.5rem;
+  border-radius: 4px;
+  cursor: pointer;
+  font-size: 0.82rem;
+  line-height: 1.5;
+  color: var(--text);
+  transition: background 0.1s, color 0.2s;
+  user-select: none;
+  position: relative;
+}
+.checklist li:hover { background: var(--surface2); }
+
+.check-box {
+  width: 15px;
+  height: 15px;
+  border: 1px solid var(--border2);
+  border-radius: 2px;
+  flex-shrink: 0;
+  margin-top: 2px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: background 0.15s, border-color 0.15s;
+  font-size: 10px;
+  color: transparent;
+}
+.checklist li.checked .check-box {
+  background: var(--green);
+  border-color: var(--green);
+  color: #000;
+}
+.checklist li.checked .check-text {
+  color: var(--muted);
+  text-decoration: line-through;
+  text-decoration-color: var(--dim);
+}
+
+/* TEXTAREA */
+.field-label {
+  font-family: var(--mono);
+  font-size: 0.58rem;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: var(--muted);
+  margin-bottom: 0.3rem;
+}
+.field-input {
+  width: 100%;
+  background: var(--bg);
+  border: 1px solid var(--border);
+  border-radius: 4px;
+  padding: 0.6rem 0.7rem;
+  color: var(--text);
+  font-family: var(--mono);
+  font-size: 0.78rem;
+  resize: vertical;
+  min-height: 64px;
+  transition: border-color 0.15s;
+  line-height: 1.6;
+}
+.field-input:focus { outline: none; border-color: var(--green); }
+.field-input::placeholder { color: var(--dim); }
+
+/* GRADE SECTION */
+.grade-grid {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+}
+.grade-option {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+  padding: 0.5rem 0.6rem;
+  border-radius: 4px;
+  border: 1px solid transparent;
+  cursor: pointer;
+  transition: all 0.15s;
+  font-size: 0.8rem;
+}
+.grade-option:hover { background: var(--surface2); }
+.grade-option input { display: none; }
+.grade-letter {
+  font-family: var(--mono);
+  font-size: 0.85rem;
+  font-weight: 600;
+  width: 22px;
+  text-align: center;
+  flex-shrink: 0;
+}
+.grade-desc { color: var(--muted); font-size: 0.78rem; line-height: 1.4; }
+
+.grade-option.sel-A { background: rgba(0,224,160,0.06); border-color: rgba(0,224,160,0.18); }
+.grade-option.sel-A .grade-letter { color: var(--green); }
+.grade-option.sel-A .grade-desc { color: rgba(0,224,160,0.7); }
+.grade-option.sel-B { background: rgba(64,160,255,0.06); border-color: rgba(64,160,255,0.18); }
+.grade-option.sel-B .grade-letter { color: var(--blue); }
+.grade-option.sel-B .grade-desc { color: rgba(64,160,255,0.7); }
+.grade-option.sel-C { background: rgba(255,176,32,0.06); border-color: rgba(255,176,32,0.18); }
+.grade-option.sel-C .grade-letter { color: var(--amber); }
+.grade-option.sel-C .grade-desc { color: rgba(255,176,32,0.7); }
+.grade-option.sel-D { background: rgba(255,64,96,0.06); border-color: rgba(255,64,96,0.18); }
+.grade-option.sel-D .grade-letter { color: var(--red); }
+.grade-option.sel-D .grade-desc { color: rgba(255,64,96,0.7); }
+.grade-option.sel-F { background: rgba(255,64,96,0.12); border-color: rgba(255,64,96,0.3); }
+.grade-option.sel-F .grade-letter { color: var(--red); }
+.grade-option.sel-F .grade-desc { color: var(--red); }
+
+/* PLAYBOOK */
+.playbook-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 6px;
+}
+.play-btn {
+  padding: 0.6rem 0.75rem;
+  border-radius: 4px;
+  border: 1px solid #1a3a45;
+  font-family: var(--mono);
+  cursor: pointer;
+  transition: all 0.15s;
+  text-align: left;
+  background: #0a1e28;
+  user-select: none;
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+}
+.play-btn:hover { border-color: #2a6a7a; background: #0d2a35; }
+.play-btn.active { border-color: var(--cyan); background: #0d2e3a; box-shadow: 0 0 8px rgba(0,212,255,0.12); }
+.play-btn-top { display: flex; align-items: center; gap: 6px; }
+.play-num { font-family: var(--mono); font-size: 0.58rem; font-weight: 600; color: #3a8a9a; background: #071820; border: 1px solid #1a3a45; border-radius: 2px; padding: 0 4px; line-height: 1.7; flex-shrink: 0; }
+.play-btn.active .play-num { color: var(--cyan); border-color: rgba(0,212,255,0.3); }
+.play-name { font-size: 0.72rem; font-weight: 600; color: #7ecfdf; letter-spacing: 0.03em; }
+.play-btn.active .play-name { color: #b8f0f8; }
+.play-meta { display: flex; gap: 6px; align-items: center; }
+.play-win { font-family: var(--mono); font-size: 0.6rem; color: var(--green); }
+.play-diff { font-family: var(--mono); font-size: 0.58rem; color: var(--muted); }
+.play-dots { display: flex; gap: 2px; }
+.play-dot { width: 5px; height: 5px; border-radius: 50%; background: var(--dim); }
+.play-dot.filled { background: var(--cyan); }
+
+/* PLAYBOOK DETAIL PANEL */
+.play-detail {
+  display: none;
+  background: #071820;
+  border: 1px solid #1a3a45;
+  border-radius: 4px;
+  padding: 1rem;
+  margin-top: 2px;
+  animation: fadeUp 0.2s ease;
+  grid-column: 1 / -1;
+}
+.play-detail.show { display: block; }
+.play-detail-title {
+  font-family: var(--mono);
+  font-size: 0.62rem;
+  font-weight: 600;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: var(--cyan);
+  margin-bottom: 0.75rem;
+  padding-bottom: 0.4rem;
+  border-bottom: 1px solid #1a3a45;
+}
+.play-section { margin-bottom: 0.75rem; }
+.play-section-label {
+  font-family: var(--mono);
+  font-size: 0.55rem;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: var(--muted);
+  margin-bottom: 0.3rem;
+}
+.play-steps { display: flex; flex-direction: column; gap: 4px; }
+.play-step {
+  display: flex;
+  gap: 8px;
+  font-size: 0.76rem;
+  line-height: 1.5;
+  color: var(--text);
+}
+.play-step-num {
+  font-family: var(--mono);
+  font-size: 0.6rem;
+  font-weight: 600;
+  color: var(--cyan);
+  background: #0a1e28;
+  border: 1px solid #1a3a45;
+  border-radius: 2px;
+  width: 16px;
+  height: 16px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+  margin-top: 2px;
+}
+.play-tags-row { display: flex; flex-wrap: wrap; gap: 4px; margin-top: 4px; }
+.play-pill {
+  font-family: var(--mono);
+  font-size: 0.6rem;
+  padding: 0.15rem 0.5rem;
+  border-radius: 3px;
+  border: 1px solid #1a3a45;
+  color: #7ecfdf;
+  background: #0a1e28;
+}
+
+/* CALCULATOR */
+.calc-grid { display: grid; grid-template-columns: 1fr 1fr 1fr; gap: 6px; margin-bottom: 8px; align-items: end; }
+.calc-box { display: flex; flex-direction: column; gap: 4px; }
+.calc-label { font-family: var(--mono); font-size: 0.55rem; letter-spacing: 0.1em; text-transform: uppercase; color: var(--muted); }
+.calc-input {
+  font-family: var(--mono);
+  font-size: 0.82rem;
+  font-weight: 500;
+  background: var(--bg);
+  border: 1px solid var(--border2);
+  border-radius: 4px;
+  padding: 0.45rem 0.5rem;
+  color: var(--text);
+  width: 100%;
+  transition: border-color 0.15s;
+  text-align: right;
+}
+.calc-input:focus { outline: none; border-color: var(--cyan); }
+.calc-input::placeholder { color: var(--dim); }
+.calc-results {
+  background: #071820;
+  border: 1px solid #1a3a45;
+  border-radius: 4px;
+  padding: 0.6rem 0.75rem;
+  display: flex;
+  flex-direction: column;
+  gap: 5px;
+}
+.calc-result-row { display: flex; justify-content: space-between; align-items: center; }
+.calc-result-label { font-family: var(--mono); font-size: 0.58rem; letter-spacing: 0.08em; text-transform: uppercase; color: var(--muted); }
+.calc-result-val { font-family: var(--mono); font-size: 0.8rem; font-weight: 600; color: var(--text); }
+.calc-result-val.pos { color: var(--green); }
+.calc-result-val.neg { color: var(--red); }
+.calc-result-val.neutral { color: var(--cyan); }
+
+/* RULE NOTE */
+.rule-note {
+  font-size: 0.75rem;
+  font-style: italic;
+  color: var(--muted);
+  padding: 0.5rem 0.75rem;
+  background: var(--surface2);
+  border-left: 2px solid var(--green-glow);
+  border-radius: 0 4px 4px 0;
+  line-height: 1.5;
+}
+
+/* DIVIDER */
+.divider { height: 1px; background: var(--border); margin: 0.25rem 0; }
+
+/* RESPONSIVE */
+@media (max-width: 900px) {
+  .row-pair { grid-template-columns: 1fr; }
+  .playbook-inner { grid-template-columns: 1fr; }
+  .topbar-nav { display: none; }
+}
+@media (max-width: 700px) {
+  .topbar { padding: 0 1rem; }
+  .main { padding: 1rem; }
+  .progress-section { padding: 0.75rem 1rem; }
+  .status-strip { gap: 1rem; }
+}
+</style>
+</head>
+<body>
+
+<!-- ═══ TOPBAR ═══════════════════════════════════════ -->
+<div class="topbar">
+  <div class="topbar-left">
+    <a href="index.html" class="topbar-logo"><span class="dot"></span> MORNING BRIEF</a>
+    <nav class="topbar-nav">
+      <a href="index.html">Brief</a>
+      <a href="prep.html" class="active">Pre-Market Prep</a>
+    </nav>
+  </div>
+  <div class="topbar-right">
+    <div class="topbar-date" id="currentDate"></div>
+    <div class="countdown-pill pre" id="countdown">
+      <span class="cdot"></span>
+      <span id="cdText">--:--:--</span>
+    </div>
+  </div>
+</div>
+
+<!-- STATUS STRIP -->
+<div class="status-strip">
+  <div class="status-item"><div class="status-dot" id="futures-dot"></div><span>Futures</span><span id="futures-status" style="color:var(--text)">—</span></div>
+  <div class="status-item"><div class="status-dot amber"></div><span>Pre-Market</span><span id="session-label" style="color:var(--text)">—</span></div>
+  <div class="status-item"><div class="status-dot green"></div><span>NYSE Open</span><span style="color:var(--text)">9:30 AM ET</span></div>
+  <div class="status-item"><div class="status-dot"></div><span>NYSE Close</span><span style="color:var(--text)">4:00 PM ET</span></div>
+</div>
+
+<!-- PROGRESS BAR -->
+<div class="progress-section">
+  <div class="progress-bar-outer">
+    <div class="progress-bar-fill" id="globalProgress"></div>
+  </div>
+  <div class="progress-stats">
+    <span><span class="pct" id="globalPct">0%</span> complete</span>
+    <span id="globalFraction" style="color:var(--dim)">0 / 0 tasks</span>
+  </div>
+</div>
+
+<!-- CARDS -->
+<div class="main">
+
+  <!-- ── STEP 1: PLAYBOOK ── -->
+  <div class="row-label">
+    <span class="row-label-num">Step 1</span>
+    <div class="row-label-line"></div>
+  </div>
+
+  <div class="row-full">
+    <div class="card">
+      <div class="card-head">
+        <span class="card-time">9:15 AM</span>
+        <span class="card-title">Playbook</span>
+        <span class="card-progress-mini" id="c4p" style="color:var(--muted)">tap to expand</span>
+      </div>
+      <div class="card-body">
+        <div class="playbook-inner">
+          <div class="playbook-inner-left">
+            <div>
+              <div class="field-label">Setups in play today — tap for guide</div>
+              <div class="playbook-grid" id="playbook-grid">
+
+                <div class="play-btn" data-play="Gap & Go" data-num="1" onclick="togglePlay(this)">
+                  <div class="play-btn-top">
+                    <span class="play-num">1</span>
+                    <span class="play-name">Gap &amp; Go</span>
+                  </div>
+                  <div class="play-meta">
+                    <span class="play-win">65–72%</span>
+                    <div class="play-dots"><div class="play-dot filled"></div><div class="play-dot"></div><div class="play-dot"></div></div>
+                    <span class="play-diff">Easy</span>
+                  </div>
+                </div>
+
+                <div class="play-btn" data-play="ORB 15-min" data-num="2" onclick="togglePlay(this)">
+                  <div class="play-btn-top">
+                    <span class="play-num">2</span>
+                    <span class="play-name">ORB 15-min</span>
+                  </div>
+                  <div class="play-meta">
+                    <span class="play-win">62–70%</span>
+                    <div class="play-dots"><div class="play-dot filled"></div><div class="play-dot"></div><div class="play-dot"></div></div>
+                    <span class="play-diff">Easy</span>
+                  </div>
+                </div>
+
+                <div class="play-btn" data-play="VWAP Reclaim" data-num="3" onclick="togglePlay(this)">
+                  <div class="play-btn-top">
+                    <span class="play-num">3</span>
+                    <span class="play-name">VWAP Reclaim</span>
+                  </div>
+                  <div class="play-meta">
+                    <span class="play-win">60–68%</span>
+                    <div class="play-dots"><div class="play-dot filled"></div><div class="play-dot filled"></div><div class="play-dot"></div></div>
+                    <span class="play-diff">Easy-Med</span>
+                  </div>
+                </div>
+
+                <div class="play-btn" data-play="Breakout" data-num="4" onclick="togglePlay(this)">
+                  <div class="play-btn-top">
+                    <span class="play-num">4</span>
+                    <span class="play-name">Breakout</span>
+                  </div>
+                  <div class="play-meta">
+                    <span class="play-win">58–65%</span>
+                    <div class="play-dots"><div class="play-dot filled"></div><div class="play-dot filled"></div><div class="play-dot"></div></div>
+                    <span class="play-diff">Easy-Med</span>
+                  </div>
+                </div>
+
+              </div>
+
+              <!-- DETAIL PANELS -->
+              <div id="detail-panels-grid" style="margin-top:6px; display:grid; grid-template-columns:1fr 1fr; gap:6px;">
+                <div class="play-detail" id="detail-1">
+                  <div class="play-detail-title">Gap &amp; Go — How to play it</div>
+                  <div class="play-section"><div class="play-section-label">Steps</div><div class="play-steps">
+                    <div class="play-step"><div class="play-step-num">1</div><span>Pre-market: find stocks gapping 4%+ on a news catalyst (earnings, upgrade, PR)</span></div>
+                    <div class="play-step"><div class="play-step-num">2</div><span>Mark the pre-market high. This is your key level at the open</span></div>
+                    <div class="play-step"><div class="play-step-num">3</div><span>At 9:30 watch the first 1–2 candles. Let the initial spike happen — do not chase</span></div>
+                    <div class="play-step"><div class="play-step-num">4</div><span>Buy the first pullback candle that holds above VWAP or the pre-market high</span></div>
+                    <div class="play-step"><div class="play-step-num">5</div><span>Stop below the low of the pullback candle. Target: prior resistance or high of day</span></div>
+                    <div class="play-step"><div class="play-step-num">6</div><span>If it reclaims and breaks pre-market high with volume — full send</span></div>
+                  </div></div>
+                  <div class="play-section"><div class="play-section-label">Indicators</div><div class="play-tags-row"><span class="play-pill">VWAP</span><span class="play-pill">Pre-mkt High</span><span class="play-pill">Relative Volume</span><span class="play-pill">L2 / Tape</span></div></div>
+                  <div class="play-section"><div class="play-section-label">Best time</div><div class="play-step"><div class="play-step-num" style="width:auto;padding:0 6px;">⏱</div><span>9:30–10:30 AM ET. After 10:30 the momentum fades fast</span></div></div>
+                </div>
+
+                <div class="play-detail" id="detail-2">
+                  <div class="play-detail-title">ORB 15-min — How to play it</div>
+                  <div class="play-section"><div class="play-section-label">Steps</div><div class="play-steps">
+                    <div class="play-step"><div class="play-step-num">1</div><span>Let the first 15 minutes trade. Do not enter during this window — just watch</span></div>
+                    <div class="play-step"><div class="play-step-num">2</div><span>Mark the exact high and low of the 9:30–9:45 candle. This is your range</span></div>
+                    <div class="play-step"><div class="play-step-num">3</div><span>Set alerts at both levels. At 9:44 be ready — react the instant the candle closes</span></div>
+                    <div class="play-step"><div class="play-step-num">4</div><span>If price breaks above the range high on volume: go long. Stop below range high</span></div>
+                    <div class="play-step"><div class="play-step-num">5</div><span>If price breaks below the range low on volume: go short. Stop above range low</span></div>
+                    <div class="play-step"><div class="play-step-num">6</div><span>Best when the breakout aligns with the pre-market trend direction</span></div>
+                  </div></div>
+                  <div class="play-section"><div class="play-section-label">Indicators</div><div class="play-tags-row"><span class="play-pill">15-min Chart</span><span class="play-pill">VWAP</span><span class="play-pill">Volume Surge</span><span class="play-pill">Pre-mkt Trend</span></div></div>
+                  <div class="play-section"><div class="play-section-label">Best time</div><div class="play-step"><div class="play-step-num" style="width:auto;padding:0 6px;">⏱</div><span>Entry at 9:45 AM ET. Secondary entries 10:00–11:00 on retests of the range</span></div></div>
+                </div>
+
+                <div class="play-detail" id="detail-3">
+                  <div class="play-detail-title">VWAP Reclaim — How to play it</div>
+                  <div class="play-section"><div class="play-section-label">Steps</div><div class="play-steps">
+                    <div class="play-step"><div class="play-step-num">1</div><span>Find a stock that dipped below VWAP but is showing signs of stabilizing</span></div>
+                    <div class="play-step"><div class="play-step-num">2</div><span>Watch for a candle that closes back above VWAP with increasing volume</span></div>
+                    <div class="play-step"><div class="play-step-num">3</div><span>Enter on the candle that reclaims VWAP or the first pullback to VWAP after reclaim</span></div>
+                    <div class="play-step"><div class="play-step-num">4</div><span>Stop below VWAP — if it loses VWAP again the setup is failed</span></div>
+                    <div class="play-step"><div class="play-step-num">5</div><span>Target: prior high, next resistance level, or HOD</span></div>
+                    <div class="play-step"><div class="play-step-num">6</div><span>Strongest when the broader market (SPY) is also above its VWAP</span></div>
+                  </div></div>
+                  <div class="play-section"><div class="play-section-label">Indicators</div><div class="play-tags-row"><span class="play-pill">VWAP</span><span class="play-pill">Volume</span><span class="play-pill">SPY Correlation</span><span class="play-pill">1-min / 5-min</span></div></div>
+                  <div class="play-section"><div class="play-section-label">Best time</div><div class="play-step"><div class="play-step-num" style="width:auto;padding:0 6px;">⏱</div><span>9:45–11:30 AM and 1:00–2:30 PM ET. Avoid the choppy midday 11:30–1:00 window</span></div></div>
+                </div>
+
+                <div class="play-detail" id="detail-4">
+                  <div class="play-detail-title">Breakout — How to play it</div>
+                  <div class="play-section"><div class="play-section-label">Steps</div><div class="play-steps">
+                    <div class="play-step"><div class="play-step-num">1</div><span>Identify a stock consolidating in a tight range near a key resistance level</span></div>
+                    <div class="play-step"><div class="play-step-num">2</div><span>The tighter and longer the consolidation the better — coiled spring effect</span></div>
+                    <div class="play-step"><div class="play-step-num">3</div><span>Watch for a candle that closes above resistance with a volume spike (2x average or more)</span></div>
+                    <div class="play-step"><div class="play-step-num">4</div><span>Enter on the breakout candle or the first pullback retest of the broken level</span></div>
+                    <div class="play-step"><div class="play-step-num">5</div><span>Stop below the breakout level — if it fails back below, the breakout is false</span></div>
+                    <div class="play-step"><div class="play-step-num">6</div><span>Target: measured move (height of the base added to breakout point)</span></div>
+                  </div></div>
+                  <div class="play-section"><div class="play-section-label">Indicators</div><div class="play-tags-row"><span class="play-pill">Resistance Level</span><span class="play-pill">Volume</span><span class="play-pill">5-min Chart</span><span class="play-pill">ATR</span></div></div>
+                  <div class="play-section"><div class="play-section-label">Best time</div><div class="play-step"><div class="play-step-num" style="width:auto;padding:0 6px;">⏱</div><span>9:45–11:00 AM and 2:00–3:30 PM ET. Volume must confirm — no volume = no breakout</span></div></div>
+                </div>
+              </div>
+
+              <div style="margin-top:8px; display:flex; align-items:center; gap:8px;">
+                <input class="field-input" id="play-input" type="text" inputmode="numeric" placeholder="Type numbers to activate e.g. 1 2" style="min-height:unset; padding:0.4rem 0.7rem; font-size:0.75rem; flex:1;">
+                <button onclick="applyPlayNumbers()" style="font-family:var(--mono); font-size:0.68rem; padding:0.4rem 0.8rem; background:#0a1e28; border:1px solid var(--cyan); color:var(--cyan); border-radius:4px; cursor:pointer; white-space:nowrap; letter-spacing:0.05em;">Apply</button>
+              </div>
+            </div>
+            <div id="slot-a"></div>
+          </div>
+
+          <div class="playbook-inner-right">
+            <div class="notes-wrap">
+              <div class="field-label">Playbook notes</div>
+              <textarea class="field-input" id="playbookNotes" placeholder="What setups are lining up and why..." style="min-height:80px;"></textarea>
+              <div id="slot-b" style="margin-top:6px;"></div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- ── STEP 2: MARKET AWARENESS + WATCH LIST ── -->
+  <div class="row-label">
+    <span class="row-label-num">Step 2</span>
+    <div class="row-label-line"></div>
+  </div>
+
+  <div class="row-pair">
+    <div class="card">
+      <div class="card-head">
+        <span class="card-time">8:30 AM</span>
+        <span class="card-title">Market Awareness</span>
+        <span class="card-progress-mini"><span id="c1p">0</span>/6</span>
+      </div>
+      <div class="card-body">
+        <ul class="checklist" id="awareness-list">
+          <li><div class="check-box">✓</div><span class="check-text">Check overnight futures, pre-market movers, and macro news</span></li>
+          <li><div class="check-box">✓</div><span class="check-text">Review prior day tickers — what followed through, what failed</span></li>
+          <li><div class="check-box">✓</div><span class="check-text">Scan earnings releases and surprises</span></li>
+          <li><div class="check-box">✓</div><span class="check-text">Note IPOs, secondaries, and lockup expirations</span></li>
+          <li><div class="check-box">✓</div><span class="check-text">Review analyst upgrades and downgrades</span></li>
+          <li><div class="check-box">✓</div><span class="check-text">Check macro events: Fed speakers, CPI, jobs data, etc.</span></li>
+        </ul>
+        <div class="rule-note">Not predicting — just asking: what is in play today that I should watch should it set up?</div>
+      </div>
+    </div>
+
+    <div class="card">
+      <div class="card-head">
+        <span class="card-time">8:45 AM</span>
+        <span class="card-title">Watch List Build</span>
+        <span class="card-progress-mini"><span id="c2p">0</span>/6</span>
+      </div>
+      <div class="card-body">
+        <ul class="checklist" id="watchlist-list">
+          <li><div class="check-box">✓</div><span class="check-text">Add stocks with fresh news catalysts</span></li>
+          <li><div class="check-box">✓</div><span class="check-text">Add stocks making outsized pre-market moves</span></li>
+          <li><div class="check-box">✓</div><span class="check-text">Add high relative volume movers</span></li>
+          <li><div class="check-box">✓</div><span class="check-text">Mark key technical levels — prior day high/low, prior close</span></li>
+          <li><div class="check-box">✓</div><span class="check-text">Draw trend lines and note key support/resistance</span></li>
+          <li><div class="check-box">✓</div><span class="check-text">Set price alerts for every ticker on the watch list</span></li>
+        </ul>
+        <div>
+          <div class="field-label">Today's tickers</div>
+          <textarea class="field-input" id="tickers" placeholder="NVDA (earnings gap), TSLA (upgrade), SPY (CPI)..."></textarea>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- ── STEP 3: TEMP CHECK + FINAL CHECK ── -->
+  <div class="row-label">
+    <span class="row-label-num">Step 3</span>
+    <div class="row-label-line"></div>
+  </div>
+
+  <div class="row-pair">
+    <div class="card">
+      <div class="card-head">
+        <span class="card-time">9:00 AM</span>
+        <span class="card-title">Temp Check</span>
+        <span class="card-progress-mini"><span id="c3p">—</span></span>
+      </div>
+      <div class="card-body">
+        <div>
+          <div class="field-label">Mental state check</div>
+          <ul class="checklist" id="temp-list">
+            <li><div class="check-box">✓</div><span class="check-text">Did I sleep well? Am I rested?</span></li>
+            <li><div class="check-box">✓</div><span class="check-text">Am I emotionally centered — nothing off outside trading?</span></li>
+            <li><div class="check-box">✓</div><span class="check-text">Am I mentally sharp and focused today?</span></li>
+          </ul>
+        </div>
+        <div class="divider"></div>
+        <div>
+          <div class="field-label">Today's grade</div>
+          <div class="grade-grid" id="grade-grid">
+            <label class="grade-option" data-grade="A"><input type="radio" name="grade" value="A"><span class="grade-letter">A</span><span class="grade-desc">Full sizing — press your edge</span></label>
+            <label class="grade-option" data-grade="B"><input type="radio" name="grade" value="B"><span class="grade-letter">B</span><span class="grade-desc">Standard sizing, stay disciplined</span></label>
+            <label class="grade-option" data-grade="C"><input type="radio" name="grade" value="C"><span class="grade-letter">C</span><span class="grade-desc">Size way down, trade selectively</span></label>
+            <label class="grade-option" data-grade="D"><input type="radio" name="grade" value="D"><span class="grade-letter">D</span><span class="grade-desc">Strongly consider sitting out</span></label>
+            <label class="grade-option" data-grade="F"><input type="radio" name="grade" value="F"><span class="grade-letter">F</span><span class="grade-desc">Do not trade — protect capital</span></label>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="card">
+      <div class="card-head">
+        <span class="card-time">9:25 AM</span>
+        <span class="card-title">Final Check Before Open</span>
+        <span class="card-progress-mini"><span id="c5p">0</span>/4</span>
+      </div>
+      <div class="card-body">
+        <ul class="checklist" id="final-list">
+          <li><div class="check-box">✓</div><span class="check-text">All alerts are set — no excuses to miss a move</span></li>
+          <li><div class="check-box">✓</div><span class="check-text">Risk sizing confirmed based on today's grade</span></li>
+          <li><div class="check-box">✓</div><span class="check-text">Not committed to any ticker — ready to react to what sets up</span></li>
+          <li><div class="check-box">✓</div><span class="check-text">Playbooks reviewed — I know what I'm looking for</span></li>
+        </ul>
+        <div class="divider"></div>
+        <div>
+          <div class="field-label">Calculator</div>
+          <div class="calc-grid">
+            <div class="calc-box"><div class="calc-label">Entry Price</div><input class="calc-input" id="calc-entry" type="number" step="0.01" placeholder="0.00" oninput="calcAutoStop(); calcUpdate()"></div>
+            <div class="calc-box"><div class="calc-label">Exit Price</div><input class="calc-input" id="calc-exit" type="number" step="0.01" placeholder="0.00" oninput="calcUpdate()"></div>
+            <div class="calc-box"><div class="calc-label">Shares</div><input class="calc-input" id="calc-shares-input" type="number" step="1" value="100" oninput="calcAutoStop(); calcUpdate()"></div>
+            <div class="calc-box" style="grid-column: 1 / -1;"><div class="calc-label">Stop Loss Price <span style="color:var(--muted);font-size:0.5rem;margin-left:4px;">auto: entry − ($250 ÷ shares)</span></div><input class="calc-input" id="calc-stop" type="number" step="0.01" placeholder="0.00" oninput="calcUpdate()"></div>
+          </div>
+          <div class="calc-results" id="calc-results">
+            <div class="calc-result-row"><span class="calc-result-label">Stop Loss Price</span><span class="calc-result-val neutral" id="calc-stop-display">—</span></div>
+            <div class="calc-result-row"><span class="calc-result-label">Max Loss</span><span class="calc-result-val" id="calc-maxloss">—</span></div>
+            <div class="calc-result-row"><span class="calc-result-label">P&amp;L at target</span><span class="calc-result-val" id="calc-pnl">—</span></div>
+            <div class="calc-result-row"><span class="calc-result-label">Risk / Reward</span><span class="calc-result-val" id="calc-rr">—</span></div>
+            <div class="calc-result-row"><span class="calc-result-label">Position size</span><span class="calc-result-val" id="calc-size">—</span></div>
+          </div>
+        </div>
+        <div class="divider"></div>
+        <div>
+          <div class="field-label">Open notes</div>
+          <textarea class="field-input" id="playNotes" placeholder="What looks set up today..."></textarea>
+        </div>
+        <div class="rule-note">I am not trying to predict anything. I am never committed to any specific ticker or sector.</div>
+      </div>
+    </div>
+  </div>
+
+</div>
+
+<script>
+const today = new Date().toLocaleDateString('en-US', { weekday:'long', year:'numeric', month:'long', day:'numeric' });
+document.getElementById('currentDate').textContent = new Date().toLocaleDateString('en-US', { weekday:'short', month:'short', day:'numeric', year:'numeric' });
+
+// ── CALCULATOR ─────────────────────────────────────────────
+function calcAutoStop() {
+  const entry  = parseFloat(document.getElementById('calc-entry').value);
+  const shares = parseFloat(document.getElementById('calc-shares-input').value) || 100;
+  if (!entry || entry <= 0) return;
+  const autoStop = (entry - (250 / shares)).toFixed(2);
+  document.getElementById('calc-stop').value = autoStop;
+}
+
+function calcUpdate() {
+  const entry  = parseFloat(document.getElementById('calc-entry').value);
+  const exit   = parseFloat(document.getElementById('calc-exit').value);
+  const stop   = parseFloat(document.getElementById('calc-stop').value);
+  const shares = parseFloat(document.getElementById('calc-shares-input').value) || 100;
+
+  const stopDispEl  = document.getElementById('calc-stop-display');
+  const maxLossEl   = document.getElementById('calc-maxloss');
+  const pnlEl       = document.getElementById('calc-pnl');
+  const rrEl        = document.getElementById('calc-rr');
+  const sizeEl      = document.getElementById('calc-size');
+
+  if (!entry || entry <= 0 || !stop || stop <= 0) {
+    [stopDispEl, maxLossEl, pnlEl, rrEl, sizeEl].forEach(e => { e.textContent = '—'; e.className = 'calc-result-val'; });
+    return;
+  }
+
+  const riskPerShare = Math.abs(entry - stop);
+  const maxLoss      = -(shares * riskPerShare);
+  const posSize      = shares * entry;
+  const pnl          = exit ? shares * (exit - entry) : null;
+  const rr           = exit && riskPerShare > 0 ? ((exit - entry) / riskPerShare).toFixed(2) : null;
+
+  stopDispEl.textContent = '$' + stop.toFixed(2);
+  stopDispEl.className = 'calc-result-val neutral';
+  maxLossEl.textContent = '-$' + Math.abs(maxLoss).toFixed(2);
+  maxLossEl.className = 'calc-result-val neg';
+
+  if (pnl !== null) {
+    pnlEl.textContent = (pnl >= 0 ? '+$' : '-$') + Math.abs(pnl).toFixed(2);
+    pnlEl.className = 'calc-result-val ' + (pnl > 0 ? 'pos' : 'neg');
+    rrEl.textContent = rr + ':1';
+    rrEl.className = 'calc-result-val ' + (parseFloat(rr) >= 2 ? 'pos' : parseFloat(rr) >= 1 ? 'neutral' : 'neg');
+  } else {
+    pnlEl.textContent = '—'; pnlEl.className = 'calc-result-val';
+    rrEl.textContent  = '—'; rrEl.className  = 'calc-result-val';
+  }
+  sizeEl.textContent = '$' + posSize.toLocaleString(undefined, { maximumFractionDigits: 2 });
+  sizeEl.className = 'calc-result-val neutral';
+}
+
+// ── COUNTDOWN ──────────────────────────────────────────────
+function pad(n) { return String(n).padStart(2,'0'); }
+function updateCountdown() {
+  const now = new Date();
+  const et = new Date(now.toLocaleString('en-US', { timeZone: 'America/New_York' }));
+  const open = new Date(et); open.setHours(9, 30, 0, 0);
+  const close = new Date(et); close.setHours(16, 0, 0, 0);
+  const pill = document.getElementById('countdown');
+  const txt = document.getElementById('cdText');
+  const day = et.getDay();
+
+  if (day === 0 || day === 6) { txt.textContent = 'WEEKEND'; pill.className = 'countdown-pill closed'; return; }
+  if (et >= open && et <= close) {
+    const d = close - et;
+    const h=Math.floor(d/3600000), m=Math.floor((d%3600000)/60000), s=Math.floor((d%60000)/1000);
+    txt.textContent = `OPEN  ${pad(h)}:${pad(m)}:${pad(s)}`;
+    pill.className = 'countdown-pill open';
+    return;
+  }
+  if (et > close) { txt.textContent = 'CLOSED'; pill.className = 'countdown-pill closed'; return; }
+  const d = open - et;
+  const h=Math.floor(d/3600000), m=Math.floor((d%3600000)/60000), s=Math.floor((d%60000)/1000);
+  txt.textContent = `OPENS ${pad(h)}:${pad(m)}:${pad(s)}`;
+  pill.className = 'countdown-pill pre';
+  const preOpen = new Date(et); preOpen.setHours(4,0,0,0);
+  document.getElementById('session-label').textContent = et >= preOpen ? 'ACTIVE' : 'INACTIVE';
+}
+updateCountdown(); setInterval(updateCountdown, 1000);
+
+// ── CHECKLISTS ─────────────────────────────────────────────
+const lists = { 'awareness-list':'c1p', 'watchlist-list':'c2p', 'temp-list':'c3p', 'final-list':'c5p' };
+
+document.querySelectorAll('.checklist li').forEach(li => {
+  li.addEventListener('click', () => { li.classList.toggle('checked'); updateProgress(); save(); });
+});
+
+function updateProgress() {
+  let total = 0, done = 0;
+  Object.entries(lists).forEach(([listId, counterId]) => {
+    const items = document.querySelectorAll(`#${listId} li`);
+    const checked = document.querySelectorAll(`#${listId} li.checked`);
+    document.getElementById(counterId).textContent = checked.length;
+    total += items.length; done += checked.length;
+  });
+  const pct = total ? Math.round(done/total*100) : 0;
+  document.getElementById('globalProgress').style.width = pct + '%';
+  document.getElementById('globalPct').textContent = pct + '%';
+  document.getElementById('globalFraction').textContent = `${done} / ${total} tasks`;
+}
+
+// ── GRADE ──────────────────────────────────────────────────
+document.querySelectorAll('.grade-option').forEach(opt => {
+  opt.addEventListener('click', () => {
+    const g = opt.dataset.grade;
+    opt.querySelector('input').checked = true;
+    document.querySelectorAll('.grade-option').forEach(o => o.className = 'grade-option');
+    opt.className = `grade-option sel-${g}`;
+    save();
+  });
+});
+
+// ── PLAYBOOK ───────────────────────────────────────────────
+function applyPlayNumbers() {
+  const val = document.getElementById('play-input').value;
+  const nums = [...new Set(val.replace(/[^0-9]/g, '').split(''))].slice(0, 2);
+  activeSlots = [];
+  document.querySelectorAll('.play-btn').forEach(b => b.classList.remove('active'));
+  nums.forEach(n => {
+    const btn = document.querySelector(`.play-btn[data-num="${n}"]`);
+    if (btn) { activeSlots.push(n); btn.classList.add('active'); }
+  });
+  document.getElementById('play-input').value = '';
+  renderSlots();
+  save();
+}
+document.getElementById('play-input').addEventListener('keydown', e => { if (e.key === 'Enter') applyPlayNumbers(); });
+
+let activeSlots = [];
+
+function renderSlots() {
+  const slotA = document.getElementById('slot-a');
+  const slotB = document.getElementById('slot-b');
+  slotA.innerHTML = '';
+  slotB.innerHTML = '';
+  if (activeSlots[0]) {
+    const d = document.getElementById('detail-' + activeSlots[0]);
+    if (d) { const clone = d.cloneNode(true); clone.classList.add('show'); clone.id = ''; slotA.appendChild(clone); }
+  }
+  if (activeSlots[1]) {
+    const d = document.getElementById('detail-' + activeSlots[1]);
+    if (d) { const clone = d.cloneNode(true); clone.classList.add('show'); clone.id = ''; slotB.appendChild(clone); }
+  }
+}
+
+function togglePlay(btn) {
+  const num = btn.dataset.num;
+  const idx = activeSlots.indexOf(num);
+  if (idx !== -1) {
+    activeSlots.splice(idx, 1);
+    btn.classList.remove('active');
+  } else {
+    if (activeSlots.length >= 2) {
+      const bumped = activeSlots.shift();
+      const bumpedBtn = document.querySelector(`.play-btn[data-num="${bumped}"]`);
+      if (bumpedBtn) bumpedBtn.classList.remove('active');
+    }
+    activeSlots.push(num);
+    btn.classList.add('active');
+  }
+  renderSlots();
+  save();
+}
+
+// ── SAVE / RESTORE ─────────────────────────────────────────
+function save() {
+  const state = { date: today, awareness:[], watchlist:[], temp:[], final:[], tickers:'', playNotes:'', playbookNotes:'', grade:'', plays:[] };
+  ['awareness-list','watchlist-list','temp-list','final-list'].forEach((id,i) => {
+    const key = ['awareness','watchlist','temp','final'][i];
+    document.querySelectorAll(`#${id} li`).forEach((li,j) => { if(li.classList.contains('checked')) state[key].push(j); });
+  });
+  state.tickers = document.getElementById('tickers').value;
+  state.playNotes = document.getElementById('playNotes').value;
+  state.playbookNotes = document.getElementById('playbookNotes').value;
+  const gradeEl = document.querySelector('.grade-option input:checked');
+  if (gradeEl) state.grade = gradeEl.value;
+  document.querySelectorAll('.play-btn').forEach(t => { if(t.classList.contains('active')) state.plays.push(t.dataset.play); });
+  state.activeSlots = activeSlots.slice();
+  localStorage.setItem('preMarketPrep', JSON.stringify(state));
+}
+
+function restore() {
+  const saved = JSON.parse(localStorage.getItem('preMarketPrep') || '{}');
+  if (saved.date !== today) return;
+  ['awareness-list','watchlist-list','temp-list','final-list'].forEach((id,i) => {
+    const key = ['awareness','watchlist','temp','final'][i];
+    document.querySelectorAll(`#${id} li`).forEach((li,j) => { if(saved[key]?.includes(j)) li.classList.add('checked'); });
+  });
+  if (saved.tickers) document.getElementById('tickers').value = saved.tickers;
+  if (saved.playNotes) document.getElementById('playNotes').value = saved.playNotes;
+  if (saved.playbookNotes) document.getElementById('playbookNotes').value = saved.playbookNotes;
+  if (saved.grade) {
+    const opt = document.querySelector(`.grade-option[data-grade="${saved.grade}"]`);
+    if (opt) { opt.querySelector('input').checked = true; opt.className = `grade-option sel-${saved.grade}`; }
+  }
+  if (saved.plays) {
+    document.querySelectorAll('.play-btn').forEach(t => { if(saved.plays.includes(t.dataset.play)) t.classList.add('active'); });
+  }
+  if (saved.activeSlots) {
+    activeSlots = saved.activeSlots;
+    activeSlots.forEach(n => {
+      const btn = document.querySelector(`.play-btn[data-num="${n}"]`);
+      if (btn) btn.classList.add('active');
+    });
+    renderSlots();
+  }
+  updateProgress();
+}
+
+document.querySelectorAll('textarea').forEach(el => { el.addEventListener('input', save); });
+restore();
+</script>
+</body>
+</html>

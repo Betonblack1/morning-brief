@@ -1,42 +1,12 @@
-name: Generate Morning Brief
-
-on:
-  # Runs at 5:30 AM ET (10:30 UTC) every weekday (Mon-Fri)
-  schedule:
-    - cron: '30 10 * * 1-5'
-
-  # Also allow manual trigger from GitHub UI
-  workflow_dispatch:
-
-permissions:
-  contents: write
-
-jobs:
-  generate:
-    runs-on: ubuntu-latest
-
-    steps:
-      - name: Checkout repo
-        uses: actions/checkout@v4
-
-      - name: Setup Node.js
-        uses: actions/setup-node@v4
-        with:
-          node-version: '20'
-
-      - name: Install dependencies
-        run: npm install
-
-      - name: Generate morning brief
-        env:
-          FINNHUB_API_KEY: ${{ secrets.FINNHUB_API_KEY }}
-          ANTHROPIC_API_KEY: ${{ secrets.ANTHROPIC_API_KEY }}
-        run: npm run generate
-
-      - name: Commit and push data
-        run: |
-          git config user.name "Morning Brief Bot"
-          git config user.email "bot@morning-brief.dev"
-          git add data/market-data.json
-          git diff --staged --quiet || git commit -m "📊 Brief for $(date +'%Y-%m-%d')"
-          git push
+{
+  "name": "morning-brief",
+  "version": "1.0.0",
+  "description": "Automated morning market brief powered by Finnhub + Claude",
+  "type": "module",
+  "scripts": {
+    "generate": "node scripts/generate-brief.js"
+  },
+  "dependencies": {
+    "@anthropic-ai/sdk": "^0.39.0"
+  }
+}

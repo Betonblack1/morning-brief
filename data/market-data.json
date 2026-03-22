@@ -1,0 +1,161 @@
+{
+  "generated": "2026-03-22T03:01:57.144Z",
+  "date": "2026-03-22",
+  "indices": [
+    {
+      "name": "S&P 500",
+      "val": "648.57",
+      "chg": -1.702,
+      "price": 648.57
+    },
+    {
+      "name": "NASDAQ",
+      "val": "582.06",
+      "chg": -1.8482,
+      "price": 582.06
+    },
+    {
+      "name": "DOW",
+      "val": "455.89",
+      "chg": -1.1213,
+      "price": 455.89
+    },
+    {
+      "name": "RUSSELL",
+      "val": "242.22",
+      "chg": -2.1847,
+      "price": 242.22
+    },
+    {
+      "name": "VIX",
+      "val": "35.97",
+      "chg": 6.5147,
+      "price": 35.97
+    },
+    {
+      "name": "10Y",
+      "val": "—",
+      "chg": 0,
+      "price": 0
+    }
+  ],
+  "sectors": [
+    {
+      "name": "Tech",
+      "symbol": "XLK",
+      "chg": -2.2683
+    },
+    {
+      "name": "Health",
+      "symbol": "XLV",
+      "chg": -0.8731
+    },
+    {
+      "name": "Financials",
+      "symbol": "XLF",
+      "chg": 0.1837
+    },
+    {
+      "name": "Energy",
+      "symbol": "XLE",
+      "chg": -0.0842
+    },
+    {
+      "name": "Cons Disc",
+      "symbol": "XLY",
+      "chg": -1.7867
+    },
+    {
+      "name": "Industrials",
+      "symbol": "XLI",
+      "chg": -1.4568
+    },
+    {
+      "name": "Materials",
+      "symbol": "XLB",
+      "chg": -1.592
+    },
+    {
+      "name": "Real Estate",
+      "symbol": "XLRE",
+      "chg": -3.1727
+    },
+    {
+      "name": "Utilities",
+      "symbol": "XLU",
+      "chg": -4.061
+    },
+    {
+      "name": "Cons Staples",
+      "symbol": "XLP",
+      "chg": -0.8296
+    },
+    {
+      "name": "Comm Svcs",
+      "symbol": "XLC",
+      "chg": -0.8043
+    }
+  ],
+  "keyLevels": [
+    {
+      "tag": "support",
+      "label": "SPY Support",
+      "val": "644.72"
+    },
+    {
+      "tag": "resist",
+      "label": "SPY Resist",
+      "val": "656.69"
+    },
+    {
+      "tag": "pivot",
+      "label": "QQQ Pivot",
+      "val": "583.92"
+    }
+  ],
+  "fearGreed": {
+    "score": 0,
+    "label": "Extreme Fear"
+  },
+  "earnings": [],
+  "econ": [],
+  "news": [
+    {
+      "time": "8:16 PM",
+      "text": "Trump threatens Iran with power plant strikes over Hormuz oil blockade - Reuters",
+      "tag": "Reuters",
+      "url": "https://news.google.com/rss/articles/CBMivAFBVV95cUxQdEhmLUhYN1BhUGZ3dnpBZHZRTUF4UUZueVV1NnZ4RzlRSkg2dzZiZUlPNWJFUktlbE1ZQkpQMWZ6eWVjTlg3OUgyOHJvUzZHeXZmVHZGdjYzWXE1Rzg4Q0MtVW9TREtMckZJaTJWaXF4NVZBcFh2RHdjQ3N2MV9DVHhmREtPSW1ucEUzTE9OT3pUWHBGTVpOVWV6bzNtck9NSXhHX09CbU84VjZfbVAyTHEyVzhOdFlyVVBRMw?oc=5"
+    },
+    {
+      "time": "5:09 PM",
+      "text": "Saudi Arabia orders Iranian military attache, four embassy staff to leave - Reuters",
+      "tag": "Reuters",
+      "url": "https://news.google.com/rss/articles/CBMiwAFBVV95cUxOQVBJc2d0ZnBnODBFVHlXVUhYYkZsdEpCR183amVMOUU0VDNHeXZaOHR3VkU3Umh3b29obVk0LVUydDRtZ1g4LUdoR21nVjlTMVhQa1pVUTA0SlphN0VoQUk4aXcwWG1HSjRVdG0wZjRmUTFIc1k0OGJCTWVNdmtJSkwwTXBweTlLTmpDcGpzLV9SVzZfWkNmTVd5bU15Q3l4SDVUSkxJOEF1U280MFpvUUIyREl2UkdkMFhXR2RkZTM?oc=5"
+    },
+    {
+      "time": "4:51 PM",
+      "text": "Family of Iranian butcher missing in strike on commercial complex clings to hope - Reuters",
+      "tag": "Reuters",
+      "url": "https://news.google.com/rss/articles/CBMivwFBVV95cUxPVGFaQW1pLVlsZ18yajkwMHpMOTluS0lRZjF0Z0Q4cHoxQndvc1I3R1dEczRhVV9laFlOQVljbnM2NE83VWVhWWJkdjJBbmdfejdzcWRkS1ROSWhMQWhKbTFzbFVydlJtbUtRYUp4MVRuaGxVTXZOOTYtTndsR0ZRZVQ4YlFLbWxUcUNDQnBrX2N0NFByazBfalNqTmRDTThRZzFnc2pTXzcxMkl5bVdtbldNUVA0ZlZzVlYtMnlUSQ?oc=5"
+    },
+    {
+      "time": "3:13 PM",
+      "text": "3 themes that gripped Wall Street as stocks dropped for a 4th straight week",
+      "tag": "CNBC",
+      "url": "https://www.cnbc.com/2026/03/21/3-themes-that-gripped-wall-street-as-stocks-drop-for-a-4th-straight-week.html"
+    },
+    {
+      "time": "2:25 PM",
+      "text": "Trump threatens to deploy ICE agents to airports if DHS shutdown doesn't end, while Elon Musk offers to cover TSA agents' pay",
+      "tag": "CNBC",
+      "url": "https://www.cnbc.com/2026/03/21/trump-ice-tsa-dhs.html"
+    },
+    {
+      "time": "12:47 PM",
+      "text": "Britain says Cyprus base will not be part of UK-US self-defence deal - Reuters",
+      "tag": "Reuters",
+      "url": "https://news.google.com/rss/articles/CBMitgFBVV95cUxObE4tOTFnNWtJbTFkMDZpc3pubTlYY2NMVUJJeVFQZVpYYXlUa0lIU2dzdFlZc3lmQ051MDZONXVJaXpubVVRM09UemtjckZXSEJzMlNrYUtZM2RlUEhrYU84ZTR2UHltNjV4dWhkS0M3OW5hVFdVMnRMVzBmaTJGSFVjd19TZ0xGMHFkb0pjUVc1RDJkcXE1ZzRQbjZYUkFudmRLXy12RmdtbVV6OXloS3JOMkZXUQ?oc=5"
+    }
+  ],
+  "brief": "<h2><span class=\"sec-icon\">◆</span> Market Overview</h2>\n\nFutures bleeding red across the board with SPY down 1.70% to $648.57 as geopolitical tensions spike between US-Iran over Hormuz Strait oil blockade. VIX spiking +6.51% to 35.97 signals fear is back in play, while small caps getting hammered down 2.18% shows risk-off positioning ahead of what could be a volatile week.\n\n<h2><span class=\"sec-icon\">◆</span> What to Watch</h2>\n\n<ul>\n<li><strong>Trump's Iran Threat:</strong> Power plant strike threats escalating Middle East tensions - watch oil futures and defense stocks</li>\n<li><strong>DHS Shutdown Drama:</strong> Trump threatening ICE deployment at airports while Musk offers TSA pay coverage - infrastructure chaos potential</li>\n<li><strong>Saudi-Iran Diplomacy:</strong> Saudi expelling Iranian embassy staff signals broader regional destabilization</li>\n<li><strong>Fourth Week Decline:</strong> Market already in correction mode before this geopolitical flare-up</li>\n</ul>\n\n<div class=\"callout callout-red\"><div class=\"callout-label\">⚠ Bear Case</div>Hormuz Strait blockade could spike oil prices 20-30% overnight, crushing consumer spending just as economy shows cracks. VIX above 35 suggests more downside ahead.</div>\n\n<h2><span class=\"sec-icon\">◆</span> Sector Rotation</h2>\n\nFlight to safety underway with only financials holding green (+0.18%) while defensive utilities getting crushed (-4.06%) - classic risk-off behavior. Tech leading declines at -2.27% with real estate also bleeding (-3.17%) as rate fears compound geopolitical stress. Energy barely red despite oil tensions, suggesting sector already priced for conflict.\n\n<div class=\"callout callout-amber\"><div class=\"callout-label\">⚡ Key Driver</div>Oil prices will dictate Monday's direction. Brent above $95 triggers energy rotation; below $85 suggests geopolitical premium fading fast.</div>\n\n<h2><span class=\"sec-icon\">◆</span> Levels That Matter</h2>\n\n<ul>\n<li><strong>SPY $640:</strong> Critical support from February lows - break triggers capitulation selling</li>\n<li><strong>QQQ $575:</strong> 200-day moving average test - hold or die territory for tech bulls</li>\n<li><strong>VIX $40:</strong> Panic threshold that historically marks short-term bottoms</li>\n<li><strong>IWM $238:</strong> Small cap breakdown level - signals broader recession fears taking hold</li>\n</ul>\n\n<hr>\n<p><em>Not a prediction. A preparation. Make your plan before the bell.</em></p>"
+}

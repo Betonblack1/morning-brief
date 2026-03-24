@@ -1,36 +1,36 @@
 {
-  "generated": "2026-03-23T11:14:24.238Z",
-  "date": "2026-03-23",
+  "generated": "2026-03-24T11:14:01.219Z",
+  "date": "2026-03-24",
   "indices": [
     {
       "name": "S&P 500",
-      "val": "648.57",
-      "chg": -1.702,
-      "price": 648.57
+      "val": "655.38",
+      "chg": 1.05,
+      "price": 655.38
     },
     {
       "name": "NASDAQ",
-      "val": "582.06",
-      "chg": -1.8482,
-      "price": 582.06
+      "val": "588.00",
+      "chg": 1.0205,
+      "price": 588
     },
     {
       "name": "DOW",
-      "val": "455.89",
-      "chg": -1.1213,
-      "price": 455.89
+      "val": "461.97",
+      "chg": 1.3337,
+      "price": 461.97
     },
     {
       "name": "RUSSELL",
-      "val": "242.22",
-      "chg": -2.1847,
-      "price": 242.22
+      "val": "247.45",
+      "chg": 2.1592,
+      "price": 247.45
     },
     {
       "name": "VIX",
-      "val": "35.97",
-      "chg": 6.5147,
-      "price": 35.97
+      "val": "34.33",
+      "chg": -4.5594,
+      "price": 34.33
     },
     {
       "name": "10Y",
@@ -43,150 +43,150 @@
     {
       "name": "Tech",
       "symbol": "XLK",
-      "chg": -2.2683
+      "chg": 1.227
     },
     {
       "name": "Health",
       "symbol": "XLV",
-      "chg": -0.8731
+      "chg": -0.3853
     },
     {
       "name": "Financials",
       "symbol": "XLF",
-      "chg": 0.1837
+      "chg": 0.3871
     },
     {
       "name": "Energy",
       "symbol": "XLE",
-      "chg": -0.0842
+      "chg": 0.5395
     },
     {
       "name": "Cons Disc",
       "symbol": "XLY",
-      "chg": -1.7867
+      "chg": 2.209
     },
     {
       "name": "Industrials",
       "symbol": "XLI",
-      "chg": -1.4568
+      "chg": 0.8536
     },
     {
       "name": "Materials",
       "symbol": "XLB",
-      "chg": -1.592
+      "chg": 1.2133
     },
     {
       "name": "Real Estate",
       "symbol": "XLRE",
-      "chg": -3.1727
+      "chg": 0.0739
     },
     {
       "name": "Utilities",
       "symbol": "XLU",
-      "chg": -4.061
+      "chg": 0.2912
     },
     {
       "name": "Cons Staples",
       "symbol": "XLP",
-      "chg": -0.8296
+      "chg": -0.1353
     },
     {
       "name": "Comm Svcs",
       "symbol": "XLC",
-      "chg": -0.8043
+      "chg": 0.4277
     }
   ],
   "keyLevels": [
     {
       "tag": "support",
       "label": "SPY Support",
-      "val": "644.72"
+      "val": "653.94"
     },
     {
       "tag": "resist",
       "label": "SPY Resist",
-      "val": "656.69"
+      "val": "662.62"
     },
     {
       "tag": "pivot",
       "label": "QQQ Pivot",
-      "val": "583.92"
+      "val": "589.68"
     }
   ],
   "fearGreed": {
-    "score": 0,
+    "score": 3,
     "label": "Extreme Fear"
   },
   "earnings": [
     {
-      "ticker": "ADAG",
-      "info": "EPS Est: -0.1938",
-      "when": "AMC"
-    },
-    {
-      "ticker": "ATOS",
-      "info": "EPS Est: -1.1603",
-      "when": "AMC"
-    },
-    {
-      "ticker": "PALI",
-      "info": "EPS Est: -0.0829",
-      "when": "AMC"
-    },
-    {
-      "ticker": "RVPH",
-      "info": "EPS Est: -1.19",
-      "when": "AMC"
-    },
-    {
-      "ticker": "PMDI",
+      "ticker": "MCIC",
       "info": "EPS Est: N/A",
       "when": ""
     },
     {
-      "ticker": "APRE",
-      "info": "EPS Est: -0.3978",
+      "ticker": "ABSI",
+      "info": "EPS Est: -0.1982",
       "when": "AMC"
+    },
+    {
+      "ticker": "BCDA",
+      "info": "EPS Est: -0.1734",
+      "when": "AMC"
+    },
+    {
+      "ticker": "SCS",
+      "info": "EPS Est: 0.2222",
+      "when": "AMC"
+    },
+    {
+      "ticker": "GNRV",
+      "info": "EPS Est: N/A",
+      "when": ""
+    },
+    {
+      "ticker": "CNXC",
+      "info": "EPS Est: 2.6979",
+      "when": "BMO"
     }
   ],
   "econ": [],
   "news": [
     {
-      "time": "5:05 AM",
-      "text": "US stock futures fall as escalating Iran conflict dims rate-cut hopes - Reuters",
-      "tag": "Reuters",
-      "url": "https://news.google.com/rss/articles/CBMisAFBVV95cUxPdmQ5dTl1Ni1MNnlQODduaV9wU0pNdzJ0LW9VT0U5akt5eWRkZWN4TXkzVlFjUVIyeVV3UjZuVHRmT2ZRTGZPTWgzXzRhbzcwNVp1Vi1MV0NpZ25jLUdyc1d4TGJIWFRiczdJVEotOTNKSmJyQXItMzRKOGVWMUFtU2t6RXZQQ0RMMl9Rb1NQbnRPSnJfV3d3a2RKSnRpSC1JVFp1cHZvNlc2aXVFMGlnbw?oc=5"
+      "time": "7:00 AM",
+      "text": "FedEx launches same-day delivery with OneRail as Amazon, Walmart boost their speeds",
+      "tag": "CNBC",
+      "url": "https://www.cnbc.com/2026/03/24/fedex-same-day-delivery-onerail.html"
     },
     {
-      "time": "4:14 AM",
-      "text": "Iran says coastal attack will lead to full Gulf closure and mine-laying - Reuters",
+      "time": "5:35 AM",
+      "text": "Iran arrests 466 people accused of online activity undermining national security, IRNA says - Reuters",
       "tag": "Reuters",
-      "url": "https://news.google.com/rss/articles/CBMiugFBVV95cUxQQ0RHekRXX282RGdBRFhZTkRPTGluSnpiS2hYMUVRSGlmMUo4aVhyVEowTWFwYXF2N2k4TGM2OGpWaWoydEJrbE9SUXE3aXExaVVCMEZRY1EzLXVTa3o1RGJnRzYzOU4tVXJsdXQ5c2RLQ3ZxdEszNmREZDFDa29lbXdUWDVjSjBwSlMyWVM4LU1BaUsyaEFncmJIU3RoMGFzR054YzNpbmRPNDN2YWhsYnk5UmNqTHBQSWc?oc=5"
+      "url": "https://news.google.com/rss/articles/CBMiywFBVV95cUxOYXhjYll0b2xyczh2NGhHNVV6ZFZDRVFRSWRIaTJ5c2VMQTltcFVHZXhUZlJWWkRzc1g4Snk2YXBBemdWTHFkbVlHREFqNklTMTltdnBvaTJIZ0RxeEstMGFEOXk4YlFUOGtnWG41VW5iNU9Ra2hpWFFYQm8wWV91ZVBqRTBKU3RqZHd1WEVhdkI4TEh3SjNFenU2RG54ZzVZZmFyWEI2YnJrMk4yM080TlNrS0FocWdYUzF4WDlzaTJTYUp1WGZsT2FlVQ?oc=5"
     },
     {
-      "time": "4:07 AM",
-      "text": "China's Sinopec will not buy Iranian oil, wants to tap state reserves - Reuters",
+      "time": "5:04 AM",
+      "text": "Trump wants a deal with Iran but success of talks unlikely, Israeli officials say - Reuters",
       "tag": "Reuters",
-      "url": "https://news.google.com/rss/articles/CBMiqgFBVV95cUxNQ3BvVUxad1hpTUpnRWhPTWJwWXpnel9YMzY5cWlkRDhTZDJ6OGhlaEM1SXZRTzJPQVlDMGtpeU9Ka3o1QURyNWdLLXVyelhsUzRORW5hY3MxM2V4UE8yOFBXcjlVQ2dzYXZzQUJYRHhKRnBjbnZvZE5BcTY2TUp1WjAwNnpEbXVTbGF3dGtHdjNueXFUelpGemtZVDFaZ3BnRG1aWkJCZFNSQQ?oc=5"
+      "url": "https://news.google.com/rss/articles/CBMiwwFBVV95cUxPR3FlbE50NklVN0RmVUZvMURDaC01Q2MwNWxpczNmRWpjVk53Rnh3cElIWno1d0Q2OFYxUkVBSDJxN1ZvLVh2VFNyekdmUWRTVUdZUEtWU0JLa2JLRGVsZEFQVE9ZOU9VMFp2RENFUFVoM29HMkpZazVta2RHOGJNQlNENTBfVmdEWUJCSjREQXpBX1ROak1sdnlNV3RDU3BtUmFhUDNLTGtDQU5JT3ltNFV0MUZ4VVk3VzUzM3ZXcHpMbEU?oc=5"
     },
     {
-      "time": "3:39 AM",
-      "text": "China warns of 'vicious cycle' if war escalates in Middle East - Reuters",
+      "time": "3:46 AM",
+      "text": "Foreign outflows hit Asian stocks as Iran war drives oil shock fears - Reuters",
       "tag": "Reuters",
-      "url": "https://news.google.com/rss/articles/CBMipAFBVV95cUxNZGJFU0steDY5bUNTYkRKQmVRMS1weGNzM2NBMWV0ZDZSWVVRX0NYMDFabkVOLXJHVkg0dl9Qcng4UlgzZy1ZamdXVkYxOHBNQk02eXBidk5kY0M1aHdwRER4TjdrRll6RFpsM0p1Njd1MHYwWFEtOGstMW1Zc3ZiTkhfbGNqNzFJQm1zRjFVMlQ1RnZpZktDNUhNZzRfOFFWc0lKMA?oc=5"
+      "url": "https://news.google.com/rss/articles/CBMiuAFBVV95cUxQQ0NNSG5uNFRpYXM5SDFrSlFaM1ZhaFdGU1FTbjRmaEZiVmI2NEFEWHZTXzlBX2dtY3g2RmE5WjM1eHdITERKVDEwWTJHQmNpem1sQkZFQnBKMTlFNG15Q2I1Y1E3NEJocWszaXI2b3Rsa1g4T3VSbHp0YzM2ODBrRmpjZDZpOS1NZGIxWTlGXy13bVNGYjNVWjZ2bzVMOXo5dk9OZ3lYVEtWemlKOXhYMnZEOW5waW9R?oc=5"
     },
     {
-      "time": "3:22 AM",
-      "text": "Siemens CEO says customers holding back on investments due to Iran war - Reuters",
+      "time": "2:45 AM",
+      "text": "Iran war fuel crisis gives electric cars a long-term boost - Reuters",
       "tag": "Reuters",
-      "url": "https://news.google.com/rss/articles/CBMisgFBVV95cUxOSThBYUJLR1cxZjY0N1hRWU9FS2s2ajlBdkxYVFZmVGxRSzU0b2VIbzk1R19tTEhxLWE1SFVNZVpSZnZwa3VBUGFjbGxBOHBTUFRUR1JHVWhrcDY5c2wzZnBVRk1qd0R6OFN6bHM0YmhVWGEzWEQ0VDhXSWxUeExkOUQ3MW5keDRtYUwwQXJfX1JGem8yZENQQ2tqR3lQaGY4Mm41LXpRdUlBbnRpSVhlc2RR?oc=5"
+      "url": "https://news.google.com/rss/articles/CBMisgFBVV95cUxQZ09GTmJFYThjN2paNUZHeGZUVkRFNEJmMDJyQXJWeGhPZmVYdm16UWhPdnpaSHBYLTJIWTRDR2R0RDNfbmZ3ZVdiNnV5WWRhR1hVSi0xeGszVWFPQTJFUV9vOHc5U1JCeHllaTJYNnJQanZBSmRWdE5iMjBBZFBUN1RzcmlFZTFrNWxFZjVBRmd4QThVRFRJNlJucWtHUFBfSWdtdDlXcVkxLVJEMHhIUFln?oc=5"
     },
     {
-      "time": "3:18 AM",
-      "text": "Every missile fired over Iran is burning through US tungsten stocks - Reuters",
+      "time": "2:25 AM",
+      "text": "Iran war deals harder blow to natural gas than oil - Reuters",
       "tag": "Reuters",
-      "url": "https://news.google.com/rss/articles/CBMiwAFBVV95cUxPS24tMkdIMkRtMTBxSE1FSHZreGZmVndSZDl0NnMtd3NST3VXSU5Yb3hnOXZsOHZNbnFhYTd5Rm9DMW5qRmtTcTB2dXgydVV6QjJaaTJWUHRZOGgwaDRHRXF6dHlNY2QyZGQ2SWhNRUN0QzllRnl0LU1BNllSX0tsaUx0TUVpblpIV2JSMWd0VWV1Z0VKdERXeUE4ajdkLTVZaWhHQUUxMHZGSmU1WHVJQzFNdnAtNlQ0bEh3ZnUyUDk?oc=5"
+      "url": "https://news.google.com/rss/articles/CBMipgFBVV95cUxQamw1SGZQN0liYTJ4UVBBR0hJd3FmN2dabDdjcDFmdEU4bjNCX05xRXBUNmQtMkhZZXJMME9TR2ZaNmJTRUtzbWJhdzRtbU1jNE84blNTMTB2c0FIMThNRWRrbzNGRkJvdWxWRmpQNHlRa0JUSnNEM0IzSTRqSXpURnJEdDgtcUFlWjJKQ29fbVVVZ2xaUVlERVdKRm5VaTlSX1UxbWpR?oc=5"
     }
   ],
-  "brief": "<h2><span class=\"sec-icon\">◆</span> Market Overview</h2>\n\nRisk-off dominance with SPY down 1.7% pre-market as Iran escalation fears spike VIX to 35.97. Tech leading the selloff at -2.27% while small caps getting hammered with IWM down 2.18%. Only financials showing green as rate cut expectations fade.\n\n<h2><span class=\"sec-icon\">◆</span> What to Watch</h2>\n\n<ul>\n<li><strong>Oil Supply Disruption Risk</strong> - Iran threatening Gulf closure and mine-laying operations could send energy prices parabolic</li>\n<li><strong>China's Oil Strategy</strong> - Sinopec backing away from Iranian oil, signaling potential state reserve tapping</li>\n<li><strong>Industrial Sentiment</strong> - Siemens CEO comments on investment delays due to war uncertainty</li>\n<li><strong>Tungsten Supply Shock</strong> - Military missile production burning through strategic metal reserves</li>\n</ul>\n\n<div class=\"callout callout-red\"><div class=\"callout-label\">⚠ Bear Case</div>Iran's Gulf infrastructure threats could trigger supply chain chaos. Every missile fired depletes critical tungsten stockpiles needed for defense manufacturing. Corporate investment freezes spreading globally.</div>\n\n<div class=\"callout callout-amber\"><div class=\"callout-label\">⚡ Key Driver</div>Rate cut hopes evaporating as geopolitical risk premium demands higher yields. Fed pivot narrative dead until conflict resolution.</div>\n\n<h2><span class=\"sec-icon\">◆</span> Sector Rotation</h2>\n\nClassic flight-to-quality underway with financials the only green sector as rising rate expectations boost bank margins. Utilities getting crushed at -4.06% as defensive plays lose appeal in crisis mode. Real estate down 3.17% on rate sensitivity and risk-off positioning.\n\n<h2><span class=\"sec-icon\">◆</span> Levels That Matter</h2>\n\n<ul>\n<li><strong>SPY 645</strong> - Critical support from February lows, break triggers 630 test</li>\n<li><strong>VIX 40</strong> - Panic threshold that historically marks short-term bottoms</li>\n<li><strong>XLE 95</strong> - Energy breakout level if supply fears materialize</li>\n<li><strong>TNX 4.8%</strong> - 10-year yield resistance that kills growth premium</li>\n</ul>\n\n<div class=\"callout callout-green\"><div class=\"callout-label\">✦ Bull Case</div>Oversold conditions building with small caps down over 2%. China's reserve tapping comments suggest backstop for oil prices. War premiums often overshoot, creating quick mean reversion opportunities.</div>\n\n<hr>\n<p><em>Not a prediction. A preparation. Make your plan before the bell.</em></p>"
+  "brief": "<h2><span class=\"sec-icon\">◆</span> Market Overview</h2>\n\nFutures are green across the board with small caps leading the charge (IWM +2.16%), while VIX drops 4.56% to 34.33 suggesting some risk appetite is returning. The Iran war premium is keeping volatility elevated, but US equities are holding up better than global peers as money flows home.\n\n<h2><span class=\"sec-icon\">◆</span> What to Watch</h2>\n\n<ul>\n<li><strong>Geopolitical Headlines:</strong> Iran tensions continue driving market sentiment - any escalation/de-escalation news will move markets instantly</li>\n<li><strong>Energy Complex:</strong> Oil shock fears creating winners and losers - watch XLE, renewable plays, and transportation stocks</li>\n<li><strong>FedEx News:</strong> Same-day delivery launch with OneRail could pressure Amazon's logistics dominance</li>\n<li><strong>Foreign Flows:</strong> Asian outflows accelerating into US markets - dollar strength likely to continue</li>\n</ul>\n\n<div class=\"callout callout-amber\"><div class=\"callout-label\">⚡ Key Driver</div>Iran war fears are reshaping energy markets - natural gas hit harder than oil, renewables getting a demand boost, electric vehicle adoption accelerating on fuel crisis concerns.</div>\n\n<h2><span class=\"sec-icon\">◆</span> Sector Rotation</h2>\n\nConsumer Discretionary leading pre-market (+2.21%) as investors bet on resilient US consumer despite geopolitical chaos. Healthcare lagging (-0.39%) along with defensive staples as risk-on sentiment builds. Energy modest gains (+0.54%) despite oil shock narrative - market may be pricing in peak fear.\n\n<div class=\"callout callout-green\"><div class=\"callout-label\">✦ Bull Case</div>US equity resilience vs global peers shows capital flight to safety. VIX dropping suggests fear peak may be behind us. Small caps outperforming signals domestic focus.</div>\n\n<div class=\"callout callout-red\"><div class=\"callout-label\">⚠ Bear Case</div>VIX still above 34 - one headline away from risk-off. Asian outflows accelerating could reverse quickly. Iran situation far from resolved with 466 arrests overnight.</div>\n\n<h2><span class=\"sec-icon\">◆</span> Levels That Matter</h2>\n\n<ul>\n<li><strong>SPY:</strong> $655 pre-market high is resistance - need to hold $650 on any pullback</li>\n<li><strong>VIX:</strong> Below 32 would signal real fear subsiding, above 38 means trouble</li>\n<li><strong>IWM:</strong> $250 is psychological resistance for small caps - momentum trade if it breaks</li>\n<li><strong>XLE:</strong> Energy sector needs to reclaim $95 to validate oil shock narrative</li>\n</ul>\n\n<hr>\n<p><em>Not a prediction. A preparation. Make your plan before the bell.</em></p>"
 }

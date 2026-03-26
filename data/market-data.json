@@ -1,36 +1,36 @@
 {
-  "generated": "2026-03-25T11:12:38.468Z",
-  "date": "2026-03-25",
+  "generated": "2026-03-26T11:27:26.884Z",
+  "date": "2026-03-26",
   "indices": [
     {
       "name": "S&P 500",
-      "val": "653.18",
-      "chg": -0.3357,
-      "price": 653.18
+      "val": "656.82",
+      "chg": 0.5573,
+      "price": 656.82
     },
     {
       "name": "NASDAQ",
-      "val": "583.98",
-      "chg": -0.6837,
-      "price": 583.98
+      "val": "587.82",
+      "chg": 0.6576,
+      "price": 587.82
     },
     {
       "name": "DOW",
-      "val": "461.17",
-      "chg": -0.1732,
-      "price": 461.17
+      "val": "464.14",
+      "chg": 0.644,
+      "price": 464.14
     },
     {
       "name": "RUSSELL",
-      "val": "248.78",
-      "chg": 0.5375,
-      "price": 248.78
+      "val": "251.82",
+      "chg": 1.222,
+      "price": 251.82
     },
     {
       "name": "VIX",
-      "val": "35.01",
-      "chg": 1.9808,
-      "price": 35.01
+      "val": "34.25",
+      "chg": -2.1708,
+      "price": 34.25
     },
     {
       "name": "10Y",
@@ -43,150 +43,150 @@
     {
       "name": "Tech",
       "symbol": "XLK",
-      "chg": -0.5842
+      "chg": 0.448
     },
     {
       "name": "Health",
       "symbol": "XLV",
-      "chg": 0.0138
+      "chg": 1.0015
     },
     {
       "name": "Financials",
       "symbol": "XLF",
-      "chg": 0.0203
+      "chg": 0.1218
     },
     {
       "name": "Energy",
       "symbol": "XLE",
-      "chg": 2.0292
+      "chg": -0.4438
     },
     {
       "name": "Cons Disc",
       "symbol": "XLY",
-      "chg": -0.3996
+      "chg": 0.9573
     },
     {
       "name": "Industrials",
       "symbol": "XLI",
-      "chg": 0.5826
+      "chg": 0.6707
     },
     {
       "name": "Materials",
       "symbol": "XLB",
-      "chg": 1.8927
+      "chg": 1.9814
     },
     {
       "name": "Real Estate",
       "symbol": "XLRE",
-      "chg": -0.8124
+      "chg": -0.0496
     },
     {
       "name": "Utilities",
       "symbol": "XLU",
-      "chg": 0.6923
+      "chg": 0.3548
     },
     {
       "name": "Cons Staples",
       "symbol": "XLP",
-      "chg": -0.0862
+      "chg": 0.4932
     },
     {
       "name": "Comm Svcs",
       "symbol": "XLC",
-      "chg": -1.4018
+      "chg": 0.279
     }
   ],
   "keyLevels": [
     {
       "tag": "support",
       "label": "SPY Support",
-      "val": "649.88"
+      "val": "654.24"
     },
     {
       "tag": "resist",
       "label": "SPY Resist",
-      "val": "657.03"
+      "val": "660.89"
     },
     {
       "tag": "pivot",
       "label": "QQQ Pivot",
-      "val": "584.61"
+      "val": "588.29"
     }
   ],
   "fearGreed": {
-    "score": 0,
+    "score": 3,
     "label": "Extreme Fear"
   },
   "earnings": [
     {
-      "ticker": "FAT",
-      "info": "EPS Est: -3.1916",
+      "ticker": "LOVE",
+      "info": "EPS Est: 2.0502",
+      "when": "BMO"
+    },
+    {
+      "ticker": "NAKA",
+      "info": "EPS Est: -0.0153",
+      "when": ""
+    },
+    {
+      "ticker": "ACOG",
+      "info": "EPS Est: -0.2754",
       "when": "AMC"
     },
     {
-      "ticker": "JBS",
-      "info": "EPS Est: 0.4093",
+      "ticker": "AWH",
+      "info": "EPS Est: -0.1212",
       "when": "AMC"
     },
     {
-      "ticker": "KALV",
-      "info": "EPS Est: -0.1683",
-      "when": "AMC"
-    },
-    {
-      "ticker": "CBDY",
+      "ticker": "PVCT",
       "info": "EPS Est: N/A",
       "when": ""
     },
     {
-      "ticker": "CULL",
+      "ticker": "PKTX",
       "info": "EPS Est: N/A",
       "when": ""
-    },
-    {
-      "ticker": "FUL",
-      "info": "EPS Est: 0.5607",
-      "when": "AMC"
     }
   ],
   "econ": [],
   "news": [
     {
-      "time": "3:07 AM",
-      "text": "Thai tanker safely transits Strait of Hormuz after talks with Iran - Reuters",
-      "tag": "Reuters",
-      "url": "https://news.google.com/rss/articles/CBMiugFBVV95cUxOa3p3MXpPVklaVFplUW8tSGFiYTlNU0ZsYlJHUkRqd1phcmZOY0ZZVU9lVWM0NzRVZDZBMGpySXIxVWxuOFhWbUNEcVFwSmplNUsxbEZLd19qb2liY1htZ04ydUktMFNHclRlR0JwNjNyMVhqS2dSYnlYUjVpWWl3TVJYaUV3TThOSDZVUmdPdW5zbWtKOFNLTlF6UlJnbjRLZU9BVERMbThxSjBpYWI1NlM5N1FrZnNwQVE?oc=5"
+      "time": "6:58 AM",
+      "text": "A Google AI breakthrough is pressuring memory chip stocks from Samsung to Micron",
+      "tag": "CNBC",
+      "url": "https://www.cnbc.com/2026/03/26/google-ai-turboquant-memory-chip-stocks-samsung-micron.html"
     },
     {
-      "time": "3:03 AM",
-      "text": "UK inflation holds at 3% in February ahead of likely Iran war jump - Reuters",
+      "time": "3:27 AM",
+      "text": "Israel took Iran's Araqchi, Qalibaf off hit list after Pakistan request to US, Pakistani source says - Reuters",
       "tag": "Reuters",
-      "url": "https://news.google.com/rss/articles/CBMigAFBVV95cUxNWlBvSm1zS1V6MWw0ZFJQdkJzSTZRaWVEakhNbTlQZHBCREhNQTdxbDUxYlFRcU9rdm1tZnJpYkhMSTl5ZEdQNUVoTFBFazhhZ3JKd3NIdmgyRU9JTjhSVEJ1MVJNRG81S0R0eDBTeFMyNG1VQVo2OEp2ZjVUR0hFOA?oc=5"
+      "url": "https://news.google.com/rss/articles/CBMixwFBVV95cUxONWRqbGduSHA3LXJPTjA3dmpwdzhkSFQwUzRuODRqNzIydkZPeHhnOC1oZk5Ic0VibVd5VlNuY3NqUHkxYzliZ0phWlVyZGlWR0N6Qmd3bmFacE9wRmV1Z0hFSUNMZUE4ZFV3WE5DUTd3TUlod09YVHBmREJxRlN0c2M4SkFrVjZ2TlZwQ1QzS3FFeHJQaVJfQ0t4ZWdaZ1hacG9EUVc3S0FDRkFUZ0puMW5WNndRTWZUU01BUEhRWEFYZ3l4WmpF?oc=5"
     },
     {
-      "time": "2:02 AM",
-      "text": "Western powers were unable to secure shipping in the Red Sea. Hormuz will be harder - Reuters",
+      "time": "3:20 AM",
+      "text": "Europe scales back climate goals to ease Iran war energy shock - Reuters",
       "tag": "Reuters",
-      "url": "https://news.google.com/rss/articles/CBMiwgFBVV95cUxObXYyUE82WTFKZGx3dy1aLWtwQkJHQ0xtaTdYX1U2b2Nnclp0VmdYY1kwa0lEUEk3dVJDdmdQYXNQeHJmV3hhUExNalF6UHJTLUhhTDlnM3NYZmZQOGswQWpncm9ycjJxN1NvMmc0S1pGa0pJWFBhNjFLTlZ6c1JidTU1bGdaRHRIektUaS1oZlFtZUNBOVUzelJpRTZrckdXTzhOMHBqZnp0M0Jhd1ZvMndEU0NIbEJ6ZjZXTDFXQjNyQQ?oc=5"
+      "url": "https://news.google.com/rss/articles/CBMitgFBVV95cUxQanJsYmlYX2ZmdHJpV0lYWWlHT3FkWm4tYzZSclliTTJOUVNnZE1zQV9UV29kVW5KREtFcGdsT3dSSVZRbl9sUDJRdU1kNXZCYVdRM1ZqSVhEc01wWkdVZmlsN1Z3cEVKeHlfNUF6MXBaS2t2N1M0V2VhSjhfNkM4SlROeTA1UHYzekxkVlVGbExIa2x5Rml6SUN6VXZ0SGROZGVJS0RtZUNBcTZnZUN1NHNuSHdLQQ?oc=5"
     },
     {
-      "time": "1:33 AM",
-      "text": "Morning Bid: Deal, or no deal? - Reuters",
+      "time": "2:10 AM",
+      "text": "South Korea to carry out bond buyback, expand fuel tax breaks to cushion blow from Iran conflict - Reuters",
       "tag": "Reuters",
-      "url": "https://news.google.com/rss/articles/CBMif0FVX3lxTE9CT1A5UzBqejFHSFpwNW1jMW1FRVFvVGNVUUF0R19tUUs3YXJNc2N3TjRUNUh3c3hJM3NWd2hHV1BiTGg2d202SjZNV3FmS3lNeHc2SEZxSGlqalBjOXF3SXlOY2UxSGU4TzJXT3ZtMFdKOWZLZ2ZsWXhYTFlabnM?oc=5"
+      "url": "https://news.google.com/rss/articles/CBMixwFBVV95cUxNaHlwTnJHeElyd2Z4UzBEWUlYY2V2VXcxR2RNWWhOVW5xRVQzRzgyUXh4YWhZbmdNM3F4QnlGRHdUb3VhTjFQb3VfU3o3QVI1Um9YelZ5blJUNC1CNEJyY3NfV2RnM2tIRU95dXlKME5PanBQc2UtYjFqZE5NSnEwQjNRcElNZFRYd2lYUGhJR2R5bzZjOTBuRlVBTXRIRDQ0MnlCdDhhUzRhZVhyUEh6MXB0ZENPMDRkbEZJZl9QeXJwM0w3cGlv?oc=5"
     },
     {
-      "time": "1:24 AM",
-      "text": "Iran military spokesperson says US is negotiating with itself - Reuters",
+      "time": "1:28 AM",
+      "text": "Iran war damage to Qatar hits global LNG outlook, upends Asia demand growth - Reuters",
       "tag": "Reuters",
-      "url": "https://news.google.com/rss/articles/CBMixgFBVV95cUxPUFVPSndONXhnbTZvR2g0MV9uTXI2ejB0TUx0YzVsTWthYzZlaThHZ2pPR0xPY19qNThNMlVzdWJnWUUxdElDNlh3UWJiOEVNbHZpNnZHdlhrd05iZUdiUVA3d0lRbGd1cTIyVDB2Y3FyQlhJeWxLZkRMeTFTWERuOGlpQU5uQi1KbVNicDA2UDl6ZjVHMWxLdTd4Zkk3b0dMVlVOTnFHdGlhMlRqQWdFQzJ2SlpQaHpHSW41dE5kZ3VRWk5IeEE?oc=5"
+      "url": "https://news.google.com/rss/articles/CBMiwAFBVV95cUxOdjBvWFc1RVJOWVZRRHFTV3BfaUtObWRKRzFYYUhoLTVDQzAxM2hWZFJZb0kySlFhTVhQb0Jsd1BSQU5ob3Fjc21uNjBDTmI0N2F0UTAyYmdwTndNZFV3LWM2aW5EWkE1eWRjVWdsaXpPTlFYeTU2R0YtU2lIdTFGRmZGQWtxNnFENndhMTZnVWNfSXYwNlYyVTZWN0IzRWI5VDExZWZPSnE4Zy1jY0dhUkhyZHl5dmxCcjdHaHNVT0M?oc=5"
     },
     {
-      "time": "12:26 AM",
-      "text": "China's coal chemicals sector cashes in as Iran war crushes petrochemical competitors - Reuters",
+      "time": "1:04 AM",
+      "text": "Used EV sales jump in Europe as Iran war drives up petrol prices - Reuters",
       "tag": "Reuters",
-      "url": "https://news.google.com/rss/articles/CBMiygFBVV95cUxQZHExVVJnT2JEbnlsaXBCODhkTjRkV1h0ejZPaUc5QzBfV0NQeENvV1ZFUkVUaGNXQmp5VndzaU9HVlVWNWM3RVVfUm5yQjZ5MWJCSHRobmFzWjlDN3pGRjgxOUFtWjAzb0c4X192NDdxWW1LSS1FRmo5ZUZFQ3Bhc21QWl93SUxsMUNxLW0wTTJ6allndzhXZVVtaG9CYmVYRmd6ZHlaLV9iT0FhN3hrUkdpWElpWFpwR1cxYUdwLTdVeEZ3VVF1NnRB?oc=5"
+      "url": "https://news.google.com/rss/articles/CBMirwFBVV95cUxOQWhFdkNYempSRUNrY0JuRTJ6dDE4cWN6NkFsYmtGUlRPcFJvdFFwVlVJbHRHYnJNU2dDQzFsbnpBLUxJOFdEVmhNVU4xaHFjdUJTMXg2Nl8wOXVCZWFNYzU5aFBxeTJQUFRadW5aMFJrRnhMOEFnOWcta0paRjlscnA4d0E5N0JYOF8tYXYxcmFGQnN0d1NZM3V5TkIwSmJNRDlmd1NuaUdMaU91QjIw?oc=5"
     }
   ],
-  "brief": "<h2><span class=\"sec-icon\">◆</span> Market Overview</h2>\n\nPre-market points to a risk-off open with SPY down 0.34% and QQQ leading declines at -0.68%. VIX spike to 35.01 (+1.98%) signals elevated fear as Iran tensions dominate headlines. Small caps bucking the trend with IWM up 0.54%.\n\n<h2><span class=\"sec-icon\">◆</span> What to Watch</h2>\n\n<ul>\n<li><strong>Iran Military Escalation</strong> - Rejection of Trump negotiation talks and continued airstrikes with Israel driving geopolitical premium</li>\n<li><strong>Strait of Hormuz</strong> - Thai tanker transit successful but shipping disruption fears persist after Red Sea failures</li>\n<li><strong>Energy Complex</strong> - XLE leading at +2.03% as oil supply concerns mount</li>\n<li><strong>Earnings Light</strong> - Only notable name is EQ (AMC) with -0.0618 EPS estimate</li>\n</ul>\n\n<div class=\"callout callout-red\"><div class=\"callout-label\">⚠ Bear Case</div>Hormuz closure would be catastrophic - 20% of global oil flows through the strait. Tech selling accelerates if geopolitical premium shifts capital away from growth.</div>\n\n<div class=\"callout callout-amber\"><div class=\"callout-label\">⚡ Key Driver</div>Iran military spokesperson outright rejecting negotiations suggests this isn't a typical Middle East flare-up. Market pricing in extended conflict scenario.</div>\n\n<h2><span class=\"sec-icon\">◆</span> Sector Rotation</h2>\n\nClear flight to defensive commodities with Energy (+2.03%) and Materials (+1.89%) leading while growth gets hammered. Tech (-0.58%) and Comm Services (-1.40%) bleeding as duration risk meets geopolitical uncertainty. Industrials (+0.58%) benefiting from potential defense spending surge.\n\n<div class=\"callout callout-green\"><div class=\"callout-label\">✦ Bull Case</div>Small cap outperformance (IWM +0.54%) suggests domestic focus could shield from international chaos. Energy sector setting up for multi-week run if tensions persist.</div>\n\n<h2><span class=\"sec-icon\">◆</span> Levels That Matter</h2>\n\n<ul>\n<li><strong>SPY 650</strong> - Critical support from February lows, break targets 640</li>\n<li><strong>QQQ 580</strong> - Tech's make-or-break level, held during last VIX spike</li>\n<li><strong>VIX 40</strong> - Fear gauge approaching panic levels, watch for reversal signals</li>\n<li><strong>XLE 95</strong> - Energy testing multi-month highs, breakout targets 100+</li>\n</ul>\n\n<hr>\n<p><em>Not a prediction. A preparation. Make your plan before the bell.</em></p>"
+  "brief": "<h2><span class=\"sec-icon\">◆</span> Market Overview</h2>\n\nFutures are painting green across the board with small caps leading the charge (+1.22% on IWM) as VIX drops 2.17% to 34.25. The Iran war headlines continue to dominate price action, but markets are showing resilience with SPY testing $656.82 resistance pre-market.\n\n<h2><span class=\"sec-icon\">◆</span> What to Watch</h2>\n\n<ul>\n<li><strong>Google AI breakthrough</strong> - Memory chip stocks under pressure; watch MU, Samsung ADRs for continuation</li>\n<li><strong>Iran conflict developments</strong> - Multiple ceasefire headlines creating volatility; energy and defense plays remain active</li>\n<li><strong>Earnings light</strong> - LOVE reports BMO with $2.05 EPS estimate; small earnings slate keeps focus on macro</li>\n<li><strong>Bond buybacks</strong> - South Korea expanding stimulus measures; watch currency and Asia ETFs</li>\n</ul>\n\n<h2><span class=\"sec-icon\">◆</span> Sector Rotation</h2>\n\nMaterials leading (+1.98%) as war premium persists, followed by Healthcare (+1.00%) in classic defensive rotation. Energy lagging (-0.44%) despite geopolitical tensions, suggesting supply disruption fears may be overblown. Tech holding modest gains (+0.45%) but memory chip weakness from Google AI news creating sector headwinds.\n\n<div class=\"callout callout-green\"><div class=\"callout-label\">✦ Bull Case</div>VIX dropping below 35 with small caps outperforming suggests risk appetite returning. Materials strength indicates industrial demand holding up despite geopolitical noise.</div>\n\n<div class=\"callout callout-amber\"><div class=\"callout-label\">⚡ Key Driver</div>Iran ceasefire headlines creating whipsaw action in energy and safe havens. Any concrete progress could trigger significant rotation out of defensive positions.</div>\n\n<h2><span class=\"sec-icon\">◆</span> Levels That Matter</h2>\n\n<ul>\n<li><strong>SPY 657</strong> - Pre-market high, break above could target 660</li>\n<li><strong>QQQ 590</strong> - Key resistance level; Google AI news creates tech headwinds here</li>\n<li><strong>VIX 32</strong> - Break below signals continued volatility compression</li>\n<li><strong>XLB 95</strong> - Materials ETF testing breakout levels on war premium</li>\n</ul>\n\n<hr>\n<p><em>Not a prediction. A preparation. Make your plan before the bell.</em></p>"
 }

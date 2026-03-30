@@ -1,36 +1,36 @@
 {
-  "generated": "2026-03-27T11:13:02.303Z",
-  "date": "2026-03-27",
+  "generated": "2026-03-30T11:32:56.599Z",
+  "date": "2026-03-30",
   "indices": [
     {
       "name": "S&P 500",
-      "val": "645.09",
-      "chg": -1.7859,
-      "price": 645.09
+      "val": "634.09",
+      "chg": -1.7052,
+      "price": 634.09
     },
     {
       "name": "NASDAQ",
-      "val": "573.79",
-      "chg": -2.3868,
-      "price": 573.79
+      "val": "562.58",
+      "chg": -1.9537,
+      "price": 562.58
     },
     {
       "name": "DOW",
-      "val": "459.31",
-      "chg": -1.0406,
-      "price": 459.31
+      "val": "451.39",
+      "chg": -1.7243,
+      "price": 451.39
     },
     {
       "name": "RUSSELL",
-      "val": "247.44",
-      "chg": -1.7393,
-      "price": 247.44
+      "val": "243.10",
+      "chg": -1.754,
+      "price": 243.1
     },
     {
       "name": "VIX",
-      "val": "36.62",
-      "chg": 6.9197,
-      "price": 36.62
+      "val": "39.41",
+      "chg": 7.6188,
+      "price": 39.41
     },
     {
       "name": "10Y",
@@ -43,74 +43,74 @@
     {
       "name": "Tech",
       "symbol": "XLK",
-      "chg": -3.1149
+      "chg": -1.9472
     },
     {
       "name": "Health",
       "symbol": "XLV",
-      "chg": -0.3419
+      "chg": -1.7017
     },
     {
       "name": "Financials",
       "symbol": "XLF",
-      "chg": -0.5878
+      "chg": -2.528
     },
     {
       "name": "Energy",
       "symbol": "XLE",
-      "chg": 1.5684
+      "chg": 1.6905
     },
     {
       "name": "Cons Disc",
       "symbol": "XLY",
-      "chg": -1.7159
+      "chg": -2.8944
     },
     {
       "name": "Industrials",
       "symbol": "XLI",
-      "chg": -2.3198
+      "chg": -1.2836
     },
     {
       "name": "Materials",
       "symbol": "XLB",
-      "chg": -0.6476
+      "chg": -0.3667
     },
     {
       "name": "Real Estate",
       "symbol": "XLRE",
-      "chg": 0.0497
+      "chg": -0.695
     },
     {
       "name": "Utilities",
       "symbol": "XLU",
-      "chg": 0.1768
+      "chg": 0.5736
     },
     {
       "name": "Cons Staples",
       "symbol": "XLP",
-      "chg": -0.4539
+      "chg": 0.7888
     },
     {
       "name": "Comm Svcs",
       "symbol": "XLC",
-      "chg": -2.36
+      "chg": -1.6267
     }
   ],
   "keyLevels": [
     {
       "tag": "support",
       "label": "SPY Support",
-      "val": "644.82"
+      "val": "633.11"
     },
     {
       "tag": "resist",
       "label": "SPY Resist",
-      "val": "654.85"
+      "val": "642.66"
     },
     {
       "tag": "pivot",
       "label": "QQQ Pivot",
-      "val": "577.28"
+      "val": "565.06"
     }
   ],
   "fearGreed": {
@@ -119,74 +119,74 @@
   },
   "earnings": [
     {
-      "ticker": "GIGM",
+      "ticker": "VMCAF",
       "info": "EPS Est: N/A",
       "when": ""
     },
     {
-      "ticker": "GLTK",
-      "info": "EPS Est: N/A",
-      "when": ""
-    },
-    {
-      "ticker": "HYEX",
-      "info": "EPS Est: N/A",
-      "when": ""
-    },
-    {
-      "ticker": "TOFB",
-      "info": "EPS Est: N/A",
-      "when": ""
-    },
-    {
-      "ticker": "SCWO",
-      "info": "EPS Est: -0.0102",
+      "ticker": "DARE",
+      "info": "EPS Est: -0.4412",
       "when": "AMC"
     },
     {
-      "ticker": "NSYS",
+      "ticker": "COOT",
       "info": "EPS Est: N/A",
-      "when": "BMO"
+      "when": ""
+    },
+    {
+      "ticker": "YHC",
+      "info": "EPS Est: -0.4545",
+      "when": ""
+    },
+    {
+      "ticker": "HGTXU",
+      "info": "EPS Est: N/A",
+      "when": ""
+    },
+    {
+      "ticker": "HBSI",
+      "info": "EPS Est: N/A",
+      "when": ""
     }
   ],
   "econ": [],
   "news": [
     {
-      "time": "4:01 AM",
-      "text": "Exclusive: Trump's Iran war pushes India to rekindle old friendship with Russia - Reuters",
+      "time": "6:23 AM",
+      "text": "Spain closes airspace to US planes involved in Iran war, defence minister says - Reuters",
       "tag": "Reuters",
-      "url": "https://news.google.com/rss/articles/CBMitwFBVV95cUxPWVlqMEt1bTlrZjNqTFJLTURURWdGYkxKZkdZa3lUQ2lIQ0JFS0xjUlRoYl9JZERMOGw0bmpkUVA5NktLWHBkejQxVTl1RjA3cEExWHdISjJlc1NyWlBkV0s4OF9lR0Zwc3JjaVM5eElGU2JHT0pxQ1VhUVZVQUY3bl8yVllGdlkwRXhNcml5cjlKOVZrVkRnV1lBVHpGS0VhRUVKT1MwM3lNY21fOVJRMFlaaTdtOVk?oc=5"
+      "url": "https://news.google.com/rss/articles/CBMiwwFBVV95cUxNUWFhQ05yMEhwVWxrbmRWUnlEZHBGLURTM3JIUzdDWWdEcGQyNGM1VldEazg2VW84cmZGV0JCZ1NhTGFDeVJQRjhnUUhleGRtb0thblFFSno4dWgzNUtNZEp6RmhDWjIzTVNFeTdDY2x3SGdyQktISFpPV1F3RWtnQzBySFh3QVFoaWNMSl9GRVB2QTJicDJULW14Tlk1Rk5BNjc2RnB1T0M1VDh3aTFGdDZldnRnM1lSTTNMcmZSNlNWcFE?oc=5"
     },
     {
-      "time": "3:52 AM",
-      "text": "With 'no place to hide' traders spend sleepless nights as Iran war roils markets - Reuters",
+      "time": "5:15 AM",
+      "text": "Ukraine's drone masters eye Iran war to kickstart export ambitions - Reuters",
       "tag": "Reuters",
-      "url": "https://news.google.com/rss/articles/CBMiwwFBVV95cUxNR0Qzc0tGQzJIYzFqR2lIb2d0SE5sMHoxNjBFZVJ3RGRVYndpVjg2Z2N3Z0NTX2RNMmdpVzVZb2tyRFU4ZHlNbjh3dDh4YUZBeDJrTDNKMmF2N2N1dXFxalpHTll5NTFFOHlFTTJiSmF2SXUyMXgxRFRVbVMxdE56d0ZqOUtKYmZKQUxVVEdQZGdtUmZTU1Npb1RNUmRzbG9pQkVpb2daeVBEcC1jWEFVUUVfRGtCNWhUYW1VZWtibC1OSVU?oc=5"
+      "url": "https://news.google.com/rss/articles/CBMiwwFBVV95cUxObWk0QTdJd05kZUg4VjhrSkZ4T2dvZld6TXpSdDZYalViTEJJWnZFY2YwazVlRnJna2hNM3U4bG5aOUxqWFZFM1BYU1pMbno3cVBoSHlqS3JtMXcxODFicllobnlmQ055NEs2Ulp4dUMwb1N0bHhfRGZBcVAxYzVDY2tHcjlzUnNDbW11Uks3WFhkUTdIZGVzWkJKOVVmUXpKUHJIc2x6UnV5ZnQ3TlFiWE9wRkhmV0NwMmFHNHlBWXJ5dkU?oc=5"
     },
     {
-      "time": "3:24 AM",
-      "text": "UK retail sales fall back in February ahead of Iran war impact - Reuters",
+      "time": "4:06 AM",
+      "text": "LME aluminium nears four year peak after Iran attacks on Gulf smelters - Reuters",
       "tag": "Reuters",
-      "url": "https://news.google.com/rss/articles/CBMipAFBVV95cUxNTGplcXk0UjJlX0licHZMekdMdlQxWWlJb2M2SnJ3bWxoU25lMFpyTENLT2d3cjF3blBhaS1sX1luZmpUT1Y1U21tQmhkX2ZGaWExendIRldwRFVGUkZmWjVXMVBsYklnYm5xWkZzQjRJQ1p2b2R4Y1NpZmI5Z1pWM0dWTFNJd2tvd1N4N3pSdjNkcTVqZUlsM25kV1UxeXc2NGE1Sg?oc=5"
+      "url": "https://news.google.com/rss/articles/CBMitAFBVV95cUxQcGZCYjdsZG5XUmpIbU5uY21WR3o2Q0dmcjBOQW8taHNpemwwdEZSOUJFS2luNWFaTkNvUURJVmtCVzRlZ0JaaTVwN3lYSjlaLU9HM1RheXVvRTVoTUhiS3NORl9tdGk1SWlRMkZBX0F1RE1YM0RjQ255dllMeTFpdUVHSTRUd1Foem9SS1FDTW54ckxRMEdYeDNBemJfTWYyWm9Mb0JxMWE1eGJ0NzhRUDkzYk8?oc=5"
     },
     {
-      "time": "1:59 AM",
-      "text": "UAE willing to join international force to reopen Strait of Hormuz, FT reports - Reuters",
+      "time": "3:41 AM",
+      "text": "Iran confirms death of Revolutionary Guards Navy Commander Tangsiri, statement says - Reuters",
       "tag": "Reuters",
-      "url": "https://news.google.com/rss/articles/CBMivwFBVV95cUxOZ2JvbjA3WlYtUldXcG9ybmJqeEhoYTZxZ2s2SVNnbjRsdmZZNVFvZTZwNTZzR1BrU0tKX3JsYXhxclFUdVQxWC02V1c3WGJmNWdpSlZEc3U1OXJKcUJ1ekV4YU1OanI5QTVqWjhLMkdZMG93OFhKeFFiS25OMXhmWHNfZkw1VExtNTVFay1EU0RYeVZZRXhEem1QV2ljRzhqX3duTG91ZnMxX3U2VHY4NWM5RlZYMW5ReDVNYjZMQQ?oc=5"
+      "url": "https://news.google.com/rss/articles/CBMizgFBVV95cUxPckp0aV9XNzNNNkVqWDA3cGFrRVpnZ0JUUk15dVhvUkZyUUJ6ZGtmNU0tOHJkcFFER1ZfN29haDc3RVFQNFNYVjktaHpKQ0dwcFgtLVhyc0RmQTR2UU1La3FVSjQySG9xQVlFUWdJSWFnRktnejhfOTRJVHlIQzRCcXFCZTN1Z2xUdi1CLVBwOWU3MFVnZVAwMG8zbWxDRFJWUEpFMHJuMnhFNkJwbzUtcktHTjBDdGdKVlZpSy11RkRRekNxZzBBZS14eXVNUQ?oc=5"
     },
     {
-      "time": "10:44 PM",
-      "text": "India cuts excise duties on petrol, diesel as global oil prices surge - Reuters",
+      "time": "2:09 AM",
+      "text": "Exclusive: European aviation body eyes safety risks as conflict squeezes flight corridors - Reuters",
       "tag": "Reuters",
-      "url": "https://news.google.com/rss/articles/CBMiqAFBVV95cUxPVVJFWGpfamNSRUNkckNWNHNCdHhONFgzT3VJV0NYX3FUS3ZnQVBvOGVQbFB2QUhjc2hucl9IZjNnT0xySU9BR1c0czJ0N0JiZ2tZekdrZUdYbi01S1BLTkw4MmFxTzdXLW80YnRrejR4cUUyNTVSWGVnd2pEOVpUb0JRckx1aWc1R0dZbTFZbVRpem1xOE1Vb3hVdEtnV05ubUtVRVlWaWk?oc=5"
+      "url": "https://news.google.com/rss/articles/CBMi1AFBVV95cUxNdzZFVFdxVUtteC1TQVRoQ2ZpZW9ydzAwSHA0a1lLV3p6Sl9EVmxWMkVWaldZVmJIM2ExbW5aMWlEODVpV1F1YV9mX3RRdDBTempjR09XcHlVRTlKU2VhR3RINzh0Vi1DQ2VVSVdnTmxJb183WlNpUElIbm4tM2ZuNmx3Qkh0dkItcVZmQ0JEWmF5QU53QTdIVUxnVk5KYXZrU1RjVnJNRXlyQzBFLVdpNy1vZXV0b2g0ODgwMm9tMjZlUExmQTNOejRRN180NmtmbFl0Tw?oc=5"
     },
     {
-      "time": "10:38 PM",
-      "text": "India's stock benchmarks post fifth straight weekly loss on continuing Iran war - Reuters",
+      "time": "2:03 AM",
+      "text": "Luxury carmakers' gold-leafed Gulf profits under threat from Iran war - Reuters",
       "tag": "Reuters",
-      "url": "https://news.google.com/rss/articles/CBMikgFBVV95cUxNVFpTSFA5Y3p6NDZ0TWx3M3ZzdkxoNUtRck1oR0MxY0xSc1FmcW5sZHVETkF6NkVJR2NDNG9YT0dDSjV6ZXBvZ0tBMk9GaEo5Q1FDbEU4QnZyRUNMN2dyQWJrME5YRFpHZUhub3R1MXU0NUNhRS1xRW90dUFMcGlGSWNOR0hoMVBjQVp0Y0hGeDQ1QQ?oc=5"
+      "url": "https://news.google.com/rss/articles/CBMiuAFBVV95cUxOUl93QW8wYmwzTHA3MnhVcmEzTkJ3N25VcEhoZTluT1JlX3lueUNDUTJqdmtvQ3BuM0pYYVc1bENPVHBpUklCSm9vOGRUaUg1UjJzTDMxMHdvWkZjeFBFQW9PUnIyclVDUXRuRVhBM1k0RU5TbmxFSGxEQlhLemo4RXE1d2RZOWdRQWRwWXRYSjU1TW93cHdPWFlwbEY4U1JTNDAyRnFFdzhLeDc3MzJyTG9wbEFzR2N3?oc=5"
     }
   ],
-  "brief": "<h2><span class=\"sec-icon\">◆</span> Market Overview</h2>\n\nFutures are bleeding red as the Iran war continues to shake global markets, with tech leading the carnage down 3.11% pre-market. VIX spiked 6.92% to 36.62, signaling serious fear as traders brace for another volatile session. The SPX is testing key support at $645 while oil volatility keeps risk-off sentiment front and center.\n\n<h2><span class=\"sec-icon\">◆</span> What to Watch</h2>\n\n<ul>\n<li><strong>Iran War Developments:</strong> Any escalation news will drive immediate volatility across energy and risk assets</li>\n<li><strong>Strait of Hormuz Reports:</strong> UAE joining international force could provide some relief to oil premium</li>\n<li><strong>Tech Weakness:</strong> XLK down over 3% - watch NVDA and mega-cap earnings reactions</li>\n<li><strong>Energy Rotation:</strong> XLE up 1.57% as only green sector - crudeInventories impact</li>\n</ul>\n\n<div class=\"callout callout-amber\"><div class=\"callout-label\">⚡ Key Driver</div>Geopolitical risk premium is dominating price action. Energy remains the only safe haven sector as Iran conflict disrupts global trade routes.</div>\n\n<h2><span class=\"sec-icon\">◆</span> Sector Rotation</h2>\n\nClassic risk-off rotation in full swing with energy (XLE +1.57%) and utilities (XLU +0.18%) catching bids while growth gets hammered. Tech's 3.11% pre-market drop shows institutional money fleeing duration risk amid geopolitical uncertainty. Communication services also bleeding heavily at -2.36%, suggesting broad-based risk asset liquidation.\n\n<div class=\"callout callout-red\"><div class=\"callout-label\">⚠ Bear Case</div>Iran war escalation could trigger systematic deleveraging. With VIX at 36.62, we're one headline away from a serious gap down below key support levels.</div>\n\n<div class=\"callout callout-green\"><div class=\"callout-label\">✦ Bull Case</div>UAE joining Strait of Hormuz coalition signals coordinated international response. If oil stabilizes, oversold tech names could see aggressive dip buying into quarter-end.</div>\n\n<h2><span class=\"sec-icon\">◆</span> Levels That Matter</h2>\n\n<ul>\n<li><strong>SPY $640:</strong> Critical support - break here opens door to $620 retest</li>\n<li><strong>QQQ $565:</strong> Must hold or we see accelerated tech selloff</li>\n<li><strong>VIX $40:</strong> Resistance level that signals panic buying if breached</li>\n<li><strong>XLE $95:</strong> Energy breakout level if geopolitical premium expands</li>\n</ul>\n\n<hr>\n<p><em>Not a prediction. A preparation. Make your plan before the bell.</em></p>"
+  "brief": "<h2><span class=\"sec-icon\">◆</span> Market Overview</h2>\nRisk-off sentiment dominates pre-market as escalating Iran conflict sends VIX spiking 7.6% to 39.41. All major indices down 1.7-2.0% with SPY at $634.09, signaling a potential test of key support levels as geopolitical uncertainty grips markets.\n\n<h2><span class=\"sec-icon\">◆</span> What to Watch</h2>\n<ul>\n<li><strong>Iran War Escalation:</strong> Revolutionary Guards Navy Commander confirmed dead, Spain closing airspace to US planes - momentum clearly accelerating</li>\n<li><strong>Commodity Surge:</strong> LME aluminum hitting 4-year highs after Iran attacks Gulf smelters - industrial metals in focus</li>\n<li><strong>Flight Corridor Disruption:</strong> European aviation safety concerns as conflict squeezes air routes - travel sector headwinds</li>\n<li><strong>US-Iran Talks:</strong> Pakistan hosting negotiations while border tensions with Afghanistan flare - diplomatic wildcard</li>\n</ul>\n\n<div class=\"callout callout-red\"><div class=\"callout-label\">⚠ Bear Case</div>War premium expanding rapidly with direct infrastructure attacks. If conflict spreads beyond current theater, expect sustained risk-off rotation and multiple compression across growth sectors.</div>\n\n<div class=\"callout callout-amber\"><div class=\"callout-label\">⚡ Key Driver</div>Energy sector only green space (+1.69%) while defensive plays (Utilities +0.57%, Staples +0.79%) outperforming. Classic flight-to-safety pattern emerging.</div>\n\n<h2><span class=\"sec-icon\">◆</span> Sector Rotation</h2>\nClear defensive rotation underway with Energy leading (+1.69%) and Financials lagging worst (-2.53%). Consumer Discretionary getting hammered (-2.89%) as war fears trump spending optimism. Utilities and Staples holding up as expected safe havens.\n\n<h2><span class=\"sec-icon\">◆</span> Levels That Matter</h2>\n<ul>\n<li><strong>SPY Support:</strong> $630 critical - break triggers acceleration toward $615-620 zone</li>\n<li><strong>VIX Resistance:</strong> 40 level key psychological barrier - breach opens door to 45+ spike</li>\n<li><strong>QQQ Watch:</strong> $560 must hold or next stop is $540 major support confluence</li>\n<li><strong>XLE Breakout:</strong> Energy pushing toward $95 resistance - war premium could drive continuation</li>\n</ul>\n\n<hr>\n<p><em>Not a prediction. A preparation. Make your plan before the bell.</em></p>"
 }

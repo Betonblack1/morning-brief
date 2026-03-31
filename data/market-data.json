@@ -1,36 +1,36 @@
 {
-  "generated": "2026-03-30T11:32:56.599Z",
-  "date": "2026-03-30",
+  "generated": "2026-03-31T11:27:05.632Z",
+  "date": "2026-03-31",
   "indices": [
     {
       "name": "S&P 500",
-      "val": "634.09",
-      "chg": -1.7052,
-      "price": 634.09
+      "val": "631.97",
+      "chg": -0.3343,
+      "price": 631.97
     },
     {
       "name": "NASDAQ",
-      "val": "562.58",
-      "chg": -1.9537,
-      "price": 562.58
+      "val": "558.28",
+      "chg": -0.7643,
+      "price": 558.28
     },
     {
       "name": "DOW",
-      "val": "451.39",
-      "chg": -1.7243,
-      "price": 451.39
+      "val": "452.06",
+      "chg": 0.1484,
+      "price": 452.06
     },
     {
       "name": "RUSSELL",
-      "val": "243.10",
-      "chg": -1.754,
-      "price": 243.1
+      "val": "239.61",
+      "chg": -1.4356,
+      "price": 239.61
     },
     {
       "name": "VIX",
-      "val": "39.41",
-      "chg": 7.6188,
-      "price": 39.41
+      "val": "39.16",
+      "chg": -0.6344,
+      "price": 39.16
     },
     {
       "name": "10Y",
@@ -43,74 +43,74 @@
     {
       "name": "Tech",
       "symbol": "XLK",
-      "chg": -1.9472
+      "chg": -1.8627
     },
     {
       "name": "Health",
       "symbol": "XLV",
-      "chg": -1.7017
+      "chg": 0.3909
     },
     {
       "name": "Financials",
       "symbol": "XLF",
-      "chg": -2.528
+      "chg": 1.1504
     },
     {
       "name": "Energy",
       "symbol": "XLE",
-      "chg": 1.6905
+      "chg": -0.9591
     },
     {
       "name": "Cons Disc",
       "symbol": "XLY",
-      "chg": -2.8944
+      "chg": -0.0189
     },
     {
       "name": "Industrials",
       "symbol": "XLI",
-      "chg": -1.2836
+      "chg": -1.6269
     },
     {
       "name": "Materials",
       "symbol": "XLB",
-      "chg": -0.3667
+      "chg": 0.368
     },
     {
       "name": "Real Estate",
       "symbol": "XLRE",
-      "chg": -0.695
+      "chg": 0.4999
     },
     {
       "name": "Utilities",
       "symbol": "XLU",
-      "chg": 0.5736
+      "chg": 0.7238
     },
     {
       "name": "Cons Staples",
       "symbol": "XLP",
-      "chg": 0.7888
+      "chg": 0.1223
     },
     {
       "name": "Comm Svcs",
       "symbol": "XLC",
-      "chg": -1.6267
+      "chg": 0.8595
     }
   ],
   "keyLevels": [
     {
       "tag": "support",
       "label": "SPY Support",
-      "val": "633.11"
+      "val": "629.28"
     },
     {
       "tag": "resist",
       "label": "SPY Resist",
-      "val": "642.66"
+      "val": "640.37"
     },
     {
       "tag": "pivot",
       "label": "QQQ Pivot",
-      "val": "565.06"
+      "val": "560.64"
     }
   ],
   "fearGreed": {
@@ -119,32 +119,32 @@
   },
   "earnings": [
     {
-      "ticker": "VMCAF",
+      "ticker": "JSDA",
       "info": "EPS Est: N/A",
-      "when": ""
-    },
-    {
-      "ticker": "DARE",
-      "info": "EPS Est: -0.4412",
       "when": "AMC"
     },
     {
-      "ticker": "COOT",
+      "ticker": "MIMI",
       "info": "EPS Est: N/A",
       "when": ""
     },
     {
-      "ticker": "YHC",
-      "info": "EPS Est: -0.4545",
-      "when": ""
+      "ticker": "NWTG",
+      "info": "EPS Est: -0.3468",
+      "when": "AMC"
     },
     {
-      "ticker": "HGTXU",
+      "ticker": "SNYR",
+      "info": "EPS Est: 0.0102",
+      "when": "BMO"
+    },
+    {
+      "ticker": "TWAV",
       "info": "EPS Est: N/A",
       "when": ""
     },
     {
-      "ticker": "HBSI",
+      "ticker": "PRKR",
       "info": "EPS Est: N/A",
       "when": ""
     }
@@ -152,41 +152,41 @@
   "econ": [],
   "news": [
     {
-      "time": "6:23 AM",
-      "text": "Spain closes airspace to US planes involved in Iran war, defence minister says - Reuters",
-      "tag": "Reuters",
-      "url": "https://news.google.com/rss/articles/CBMiwwFBVV95cUxNUWFhQ05yMEhwVWxrbmRWUnlEZHBGLURTM3JIUzdDWWdEcGQyNGM1VldEazg2VW84cmZGV0JCZ1NhTGFDeVJQRjhnUUhleGRtb0thblFFSno4dWgzNUtNZEp6RmhDWjIzTVNFeTdDY2x3SGdyQktISFpPV1F3RWtnQzBySFh3QVFoaWNMSl9GRVB2QTJicDJULW14Tlk1Rk5BNjc2RnB1T0M1VDh3aTFGdDZldnRnM1lSTTNMcmZSNlNWcFE?oc=5"
+      "time": "7:00 AM",
+      "text": "Delta Air Lines taps Amazon Leo for in-flight Wi-Fi as streaming wars heat up",
+      "tag": "CNBC",
+      "url": "https://www.cnbc.com/2026/03/31/delta-air-lines-amazon-leo-inflight-wi-fi.html"
     },
     {
-      "time": "5:15 AM",
-      "text": "Ukraine's drone masters eye Iran war to kickstart export ambitions - Reuters",
+      "time": "5:44 AM",
+      "text": "EU tells members to prepare for 'prolonged disruption' to energy markets from Iran war - Reuters",
       "tag": "Reuters",
-      "url": "https://news.google.com/rss/articles/CBMiwwFBVV95cUxObWk0QTdJd05kZUg4VjhrSkZ4T2dvZld6TXpSdDZYalViTEJJWnZFY2YwazVlRnJna2hNM3U4bG5aOUxqWFZFM1BYU1pMbno3cVBoSHlqS3JtMXcxODFicllobnlmQ055NEs2Ulp4dUMwb1N0bHhfRGZBcVAxYzVDY2tHcjlzUnNDbW11Uks3WFhkUTdIZGVzWkJKOVVmUXpKUHJIc2x6UnV5ZnQ3TlFiWE9wRkhmV0NwMmFHNHlBWXJ5dkU?oc=5"
+      "url": "https://news.google.com/rss/articles/CBMivgFBVV95cUxOMGhTOEJYWlltVEwzUE1wZWlCemdTcUZMVmdBMHA2bTlLdVowRkp5eUNHYzVha0dfWUlJM0JWNkk5X1pMLTJDa3MydTFLcU02ekttSUdhN2RXb3VGbEQyLUZYNWJJYVRsNzZDWFdNcnA3YlJnR29xSVYwaUtJYWg0NWJkRzFQMUR0eEc3UUZuREdaMUVWOWJVekdCYTJZRXRWMGx5Y1FOU2ZDbmJlYmQ2NTVpcDZOalhvN0hONFd3?oc=5"
     },
     {
-      "time": "4:06 AM",
-      "text": "LME aluminium nears four year peak after Iran attacks on Gulf smelters - Reuters",
+      "time": "5:28 AM",
+      "text": "Oil whipsaws as traders weigh Iran de-escalation report against prolonged Hormuz closure - Reuters",
       "tag": "Reuters",
-      "url": "https://news.google.com/rss/articles/CBMitAFBVV95cUxQcGZCYjdsZG5XUmpIbU5uY21WR3o2Q0dmcjBOQW8taHNpemwwdEZSOUJFS2luNWFaTkNvUURJVmtCVzRlZ0JaaTVwN3lYSjlaLU9HM1RheXVvRTVoTUhiS3NORl9tdGk1SWlRMkZBX0F1RE1YM0RjQ255dllMeTFpdUVHSTRUd1Foem9SS1FDTW54ckxRMEdYeDNBemJfTWYyWm9Mb0JxMWE1eGJ0NzhRUDkzYk8?oc=5"
+      "url": "https://news.google.com/rss/articles/CBMitAFBVV95cUxOQi1nS0NzRzRGWnJFTUx6ZTJGN0lPWW1ISHhvWi0wcUhZNHpmOHdrSnNrQlNwXy11UzFsYVZ1MjFpWmRrZjlJaDBhWkM2Q0hxZjB3d00yNkdjOVFuOW1DNEN6MDVrRTY1RXVzbFZDMnJJWTZkU00wemd5eUZFZWtON2J4WWwwMzRuNkIwRWVsTEpjUXl4YzN3UWxBWDJEcDVYckFidVVyVDZrdVVjMTNDbjZmcng?oc=5"
     },
     {
-      "time": "3:41 AM",
-      "text": "Iran confirms death of Revolutionary Guards Navy Commander Tangsiri, statement says - Reuters",
+      "time": "4:17 AM",
+      "text": "UK economy limped into the end of last year before Iran war - Reuters",
       "tag": "Reuters",
-      "url": "https://news.google.com/rss/articles/CBMizgFBVV95cUxPckp0aV9XNzNNNkVqWDA3cGFrRVpnZ0JUUk15dVhvUkZyUUJ6ZGtmNU0tOHJkcFFER1ZfN29haDc3RVFQNFNYVjktaHpKQ0dwcFgtLVhyc0RmQTR2UU1La3FVSjQySG9xQVlFUWdJSWFnRktnejhfOTRJVHlIQzRCcXFCZTN1Z2xUdi1CLVBwOWU3MFVnZVAwMG8zbWxDRFJWUEpFMHJuMnhFNkJwbzUtcktHTjBDdGdKVlZpSy11RkRRekNxZzBBZS14eXVNUQ?oc=5"
+      "url": "https://news.google.com/rss/articles/CBMikgFBVV95cUxPN2NaWHFwb2o2bFhPdk92Zkp3cFFUOWZkTmNDbmxGamk0S1hVekZwQk44R2RMVUFUbmkxbUV0T1F4bDZjTXdRYWszUDQ1RWVDMmwzQzQ2c0tFR254SU1XV2FFYUc2YkI3MDU0dmgtRURXcENCekJfZS1pMGFNTUVhUWtBTjViX2trNlFSVktPQkJhUQ?oc=5"
     },
     {
-      "time": "2:09 AM",
-      "text": "Exclusive: European aviation body eyes safety risks as conflict squeezes flight corridors - Reuters",
+      "time": "3:23 AM",
+      "text": "Pakistani foreign minister to discuss Iran during China visit, Chinese ministry says - Reuters",
       "tag": "Reuters",
-      "url": "https://news.google.com/rss/articles/CBMi1AFBVV95cUxNdzZFVFdxVUtteC1TQVRoQ2ZpZW9ydzAwSHA0a1lLV3p6Sl9EVmxWMkVWaldZVmJIM2ExbW5aMWlEODVpV1F1YV9mX3RRdDBTempjR09XcHlVRTlKU2VhR3RINzh0Vi1DQ2VVSVdnTmxJb183WlNpUElIbm4tM2ZuNmx3Qkh0dkItcVZmQ0JEWmF5QU53QTdIVUxnVk5KYXZrU1RjVnJNRXlyQzBFLVdpNy1vZXV0b2g0ODgwMm9tMjZlUExmQTNOejRRN180NmtmbFl0Tw?oc=5"
+      "url": "https://news.google.com/rss/articles/CBMixwFBVV95cUxPQ2hxdUVjMkcyeG15NmZPQ2ZIUUhLUjVtOWxWSnBiZ2lJV05QT2htTjBvY3JfSVAyRS13SGotWm5fS2F3MmJ2aHl3VDB5RTlyWk9pVEtlLWxmb3U4a3l6TGZ6Y2VZNFozTUxUazB3LVNNZ1YxWEFCcm9vUVRhQW9JQ3RnU1FYSzJ2cy1PYm50OGg4aGctUjJOSVNBejVvOGJXMUdqMkNxNTVNTkthMmdweDMyczBOd1ZsUDQ1ZUNCX2swUHRTaThZ?oc=5"
     },
     {
-      "time": "2:03 AM",
-      "text": "Luxury carmakers' gold-leafed Gulf profits under threat from Iran war - Reuters",
+      "time": "2:48 AM",
+      "text": "Exclusive: German institutes cut 2026, 2027 growth forecasts, raise inflation outlook, sources say - Reuters",
       "tag": "Reuters",
-      "url": "https://news.google.com/rss/articles/CBMiuAFBVV95cUxOUl93QW8wYmwzTHA3MnhVcmEzTkJ3N25VcEhoZTluT1JlX3lueUNDUTJqdmtvQ3BuM0pYYVc1bENPVHBpUklCSm9vOGRUaUg1UjJzTDMxMHdvWkZjeFBFQW9PUnIyclVDUXRuRVhBM1k0RU5TbmxFSGxEQlhLemo4RXE1d2RZOWdRQWRwWXRYSjU1TW93cHdPWFlwbEY4U1JTNDAyRnFFdzhLeDc3MzJyTG9wbEFzR2N3?oc=5"
+      "url": "https://news.google.com/rss/articles/CBMivgFBVV95cUxOZDIxZmpkczNRZFRlQXlfQ3M5b1NjeVl4QnRiM25zckplT2UtdHlqMGF3VmNOYXg1S2gwWHNObnA5SnFPY1dmNGxJT1MxWWVJT19hcDBnWDJyR18wS3psclJMdWdEaEF1R1o2NHRhaVhtcUJkUm9sc0s0UjRzM1dBSGF5eWswMnJRTEZoX3U3T1BQdy1OZTJ3aDFEMTBsS1NzdnZOUDBjWFQ3bkUyMlAtT05ERjRIcHhGRDVYUTlB?oc=5"
     }
   ],
-  "brief": "<h2><span class=\"sec-icon\">◆</span> Market Overview</h2>\nRisk-off sentiment dominates pre-market as escalating Iran conflict sends VIX spiking 7.6% to 39.41. All major indices down 1.7-2.0% with SPY at $634.09, signaling a potential test of key support levels as geopolitical uncertainty grips markets.\n\n<h2><span class=\"sec-icon\">◆</span> What to Watch</h2>\n<ul>\n<li><strong>Iran War Escalation:</strong> Revolutionary Guards Navy Commander confirmed dead, Spain closing airspace to US planes - momentum clearly accelerating</li>\n<li><strong>Commodity Surge:</strong> LME aluminum hitting 4-year highs after Iran attacks Gulf smelters - industrial metals in focus</li>\n<li><strong>Flight Corridor Disruption:</strong> European aviation safety concerns as conflict squeezes air routes - travel sector headwinds</li>\n<li><strong>US-Iran Talks:</strong> Pakistan hosting negotiations while border tensions with Afghanistan flare - diplomatic wildcard</li>\n</ul>\n\n<div class=\"callout callout-red\"><div class=\"callout-label\">⚠ Bear Case</div>War premium expanding rapidly with direct infrastructure attacks. If conflict spreads beyond current theater, expect sustained risk-off rotation and multiple compression across growth sectors.</div>\n\n<div class=\"callout callout-amber\"><div class=\"callout-label\">⚡ Key Driver</div>Energy sector only green space (+1.69%) while defensive plays (Utilities +0.57%, Staples +0.79%) outperforming. Classic flight-to-safety pattern emerging.</div>\n\n<h2><span class=\"sec-icon\">◆</span> Sector Rotation</h2>\nClear defensive rotation underway with Energy leading (+1.69%) and Financials lagging worst (-2.53%). Consumer Discretionary getting hammered (-2.89%) as war fears trump spending optimism. Utilities and Staples holding up as expected safe havens.\n\n<h2><span class=\"sec-icon\">◆</span> Levels That Matter</h2>\n<ul>\n<li><strong>SPY Support:</strong> $630 critical - break triggers acceleration toward $615-620 zone</li>\n<li><strong>VIX Resistance:</strong> 40 level key psychological barrier - breach opens door to 45+ spike</li>\n<li><strong>QQQ Watch:</strong> $560 must hold or next stop is $540 major support confluence</li>\n<li><strong>XLE Breakout:</strong> Energy pushing toward $95 resistance - war premium could drive continuation</li>\n</ul>\n\n<hr>\n<p><em>Not a prediction. A preparation. Make your plan before the bell.</em></p>"
+  "brief": "<h2><span class=\"sec-icon\">◆</span> Market Overview</h2>\n\nMixed pre-market action with DOW green (+0.15%) while tech-heavy NASDAQ lags (-0.76%). VIX at 39.16 signals elevated fear, but down 0.63% suggests some tension relief. Iran war headlines dominating flow with energy disruption concerns weighing on growth sectors.\n\n<h2><span class=\"sec-icon\">◆</span> What to Watch</h2>\n\n<ul>\n<li><strong>Oil volatility</strong> - Crude whipsawing on Iran de-escalation rumors vs. Hormuz closure reality</li>\n<li><strong>Energy sector rotation</strong> - XLE down 0.96% despite geopolitical premium, watch for reversal</li>\n<li><strong>Tech weakness</strong> - XLK bleeding -1.86%, megacap earnings season approaching</li>\n<li><strong>Delta-Amazon partnership</strong> - Streaming wars expansion into airline space</li>\n</ul>\n\n<h2><span class=\"sec-icon\">◆</span> Sector Rotation</h2>\n\nClassic risk-off rotation underway. Defensives leading with Financials (+1.15%), Utilities (+0.72%), and Comm Services (+0.86%) catching safe-haven flows. Tech and Industrials bleeding hardest at -1.86% and -1.63% respectively. Small caps getting crushed with Russell down 1.44% - growth fears hitting hardest where they always do first.\n\n<div class=\"callout callout-amber\"><div class=\"callout-label\">⚡ Key Driver</div>Iran war creating dual headwinds: energy supply disruption fears plus global growth slowdown concerns as EU and Germany cut forecasts</div>\n\n<div class=\"callout callout-red\"><div class=\"callout-label\">⚠ Bear Case</div>VIX still elevated near 39 with tech leading lower. If Iran situation escalates further, growth stocks could see another leg down</div>\n\n<div class=\"callout callout-green\"><div class=\"callout-label\">✦ Bull Case</div>De-escalation rumors already surfacing. If Iran tensions cool, this defensive rotation could reverse fast with oversold tech leading the bounce</div>\n\n<h2><span class=\"sec-icon\">◆</span> Levels That Matter</h2>\n\n<ul>\n<li><strong>SPY 630</strong> - Key support level, break targets 620</li>\n<li><strong>QQQ 555</strong> - Pre-market low, must hold or accelerates to 540</li>\n<li><strong>VIX 40</strong> - Psychological resistance, break above signals more pain</li>\n<li><strong>XLE 88</strong> - Energy sector pivot point for war premium play</li>\n</ul>\n\n<hr>\n<p><em>Not a prediction. A preparation. Make your plan before the bell.</em></p>"
 }

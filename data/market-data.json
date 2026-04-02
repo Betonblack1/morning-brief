@@ -1,36 +1,36 @@
 {
-  "generated": "2026-04-01T11:29:44.079Z",
-  "date": "2026-04-01",
+  "generated": "2026-04-02T11:24:18.529Z",
+  "date": "2026-04-02",
   "indices": [
     {
       "name": "S&P 500",
-      "val": "650.34",
-      "chg": 2.9068,
-      "price": 650.34
+      "val": "655.24",
+      "chg": 0.7535,
+      "price": 655.24
     },
     {
       "name": "NASDAQ",
-      "val": "577.18",
-      "chg": 3.3854,
-      "price": 577.18
+      "val": "584.31",
+      "chg": 1.2353,
+      "price": 584.31
     },
     {
       "name": "DOW",
-      "val": "463.19",
-      "chg": 2.4621,
-      "price": 463.19
+      "val": "465.48",
+      "chg": 0.4944,
+      "price": 465.48
     },
     {
       "name": "RUSSELL",
-      "val": "248.00",
-      "chg": 3.5015,
-      "price": 248
+      "val": "249.56",
+      "chg": 0.629,
+      "price": 249.56
     },
     {
       "name": "VIX",
-      "val": "35.70",
-      "chg": -8.8355,
-      "price": 35.7
+      "val": "34.73",
+      "chg": -2.7171,
+      "price": 34.73
     },
     {
       "name": "10Y",
@@ -43,150 +43,150 @@
     {
       "name": "Tech",
       "symbol": "XLK",
-      "chg": 4.2353
+      "chg": 1.5124
     },
     {
       "name": "Health",
       "symbol": "XLV",
-      "chg": 1.9399
+      "chg": 0.7639
     },
     {
       "name": "Financials",
       "symbol": "XLF",
-      "chg": 2.0885
+      "chg": 0.1418
     },
     {
       "name": "Energy",
       "symbol": "XLE",
-      "chg": -1.1298
+      "chg": -3.7382
     },
     {
       "name": "Cons Disc",
       "symbol": "XLY",
-      "chg": 3.1422
+      "chg": 0.7524
     },
     {
       "name": "Industrials",
       "symbol": "XLI",
-      "chg": 3.2693
+      "chg": 1.6694
     },
     {
       "name": "Materials",
       "symbol": "XLB",
-      "chg": 1.7926
+      "chg": 0.9806
     },
     {
       "name": "Real Estate",
       "symbol": "XLRE",
-      "chg": 1.5419
+      "chg": 0.2939
     },
     {
       "name": "Utilities",
       "symbol": "XLU",
-      "chg": -0.0653
+      "chg": 0.4794
     },
     {
       "name": "Cons Staples",
       "symbol": "XLP",
-      "chg": 0.1221
+      "chg": -0.6343
     },
     {
       "name": "Comm Svcs",
       "symbol": "XLC",
-      "chg": 2.6862
+      "chg": 0.3428
     }
   ],
   "keyLevels": [
     {
       "tag": "support",
       "label": "SPY Support",
-      "val": "637.98"
+      "val": "653.00"
     },
     {
       "tag": "resist",
       "label": "SPY Resist",
-      "val": "651.54"
+      "val": "658.52"
     },
     {
       "tag": "pivot",
       "label": "QQQ Pivot",
-      "val": "573.34"
+      "val": "584.16"
     }
   ],
   "fearGreed": {
-    "score": 0,
+    "score": 1,
     "label": "Extreme Fear"
   },
   "earnings": [
     {
-      "ticker": "SNYR",
-      "info": "EPS Est: 0.0102",
+      "ticker": "AIRS",
+      "info": "EPS Est: -0.0255",
       "when": "BMO"
     },
     {
-      "ticker": "BEGI",
-      "info": "EPS Est: N/A",
-      "when": ""
-    },
-    {
-      "ticker": "HPF",
-      "info": "EPS Est: N/A",
-      "when": ""
-    },
-    {
-      "ticker": "CENN",
-      "info": "EPS Est: N/A",
-      "when": ""
-    },
-    {
-      "ticker": "CIPI",
-      "info": "EPS Est: N/A",
-      "when": ""
-    },
-    {
-      "ticker": "KYTX",
-      "info": "EPS Est: -0.8755",
+      "ticker": "HIND",
+      "info": "EPS Est: -0.3468",
       "when": "AMC"
+    },
+    {
+      "ticker": "FBYD",
+      "info": "EPS Est: N/A",
+      "when": ""
+    },
+    {
+      "ticker": "CCG",
+      "info": "EPS Est: N/A",
+      "when": ""
+    },
+    {
+      "ticker": "ANGO",
+      "info": "EPS Est: -0.1122",
+      "when": "BMO"
+    },
+    {
+      "ticker": "LNN",
+      "info": "EPS Est: 1.7019",
+      "when": "BMO"
     }
   ],
   "econ": [],
   "news": [
     {
-      "time": "7:00 AM",
-      "text": "Volkswagen deal with EV maker Xpeng shows how China tech threatens Western automakers",
+      "time": "6:52 AM",
+      "text": "Stellantis-backed Leapmotor delivers more than 100,000 EVs for fourth-straight quarter as BYD sales fall",
       "tag": "CNBC",
-      "url": "https://www.cnbc.com/2026/04/01/volkswagen-xpeng-deal-threat-rivian-us-automakers.html"
+      "url": "https://www.cnbc.com/2026/04/02/stellantis-backed-leapmotor-hits-100000-sales-for-fourth-straight-quarter.html"
     },
     {
-      "time": "1:06 AM",
-      "text": "Iranian missile hit oil tanker in Qatari waters, Qatar says - reuters.com",
+      "time": "5:19 AM",
+      "text": "Russia says it's ready to help resolve Iran conflict - Reuters",
       "tag": "Reuters",
-      "url": "https://news.google.com/rss/articles/CBMiuwFBVV95cUxQREFXcmN2NUcxaFFjVEVlaWZoU1FUNDZsVmpZNTB0THRfLXpMTjdKc0RWRExBQzVkaXFTM2M4Y2h4ZXppOTVwMGQwZV9oR3dZcXlMOVRIYUE0b3RnT0NBaTFvdnJUanV3X3lzMC16azlsYTBlVHlLcnRqQ2JnUTNyc1JNaTU5alRhaXA4Tk1VYm1zMzdzeC1mOXNiVll2OWRDUVN6YXhmM3Z4ZWUzbTlfYXQ1cEw2bDRhc29R?oc=5"
+      "url": "https://news.google.com/rss/articles/CBMilAFBVV95cUxPS0Y5Wno3V051ekRublozZ1Vzd1o2allTdVhzbWdmci1CYjVOdFE4Q01WclhyNlBDeWh1M0kwZmljM1A2enJMN29ibTFDMmhMdmNlRWwtMjllRE9ja2o3SW9qUU1iZ2JtOGpWMUtrODZoVmxBTGdqZ2Z5eDU1c3U3R3lkOGVSUnE3bTdVX3lpRnhZUUg1?oc=5"
     },
     {
-      "time": "12:30 AM",
-      "text": "Airline Emirates says Iranian nationals barred from entering or transiting UAE - reuters.com",
+      "time": "5:16 AM",
+      "text": "Wall St futures slide as Trump signals more Iran strikes - Reuters",
       "tag": "Reuters",
-      "url": "https://news.google.com/rss/articles/CBMixgFBVV95cUxNd3RhLURtQXF6c2hFXzBnSUlEQXZrZkE1Ym9mU1pYZ0lNZ0hGcjJYR3pTZWF6aklzQW9fOEoydTE3RDBxNkRCbGVtb2c1dFlRaFRzeFdSbXlHRWQyWGZSaWg4TkpPUHpxZ05yODhQYUhVbGVodUJ2bG4wY2dxWVhnWjhmUGJVM1pxTHVLaTBsMjBVZDdQU2V6UU1vanBoekVYeEZVR3MtWmRlRjJWalRMNW82VzJQYjJQUXdJRkltQURFR0d0VVE?oc=5"
+      "url": "https://news.google.com/rss/articles/CBMiswFBVV95cUxORzZMOVRDU0NuWFBVVHF2MEtHZWVrMEpRRU9OTzRiRk1sYkF1YmFaelI1S2dWa0pBZ0NOZmVXS20tZ3Vrek1kUnhUNE9ObjhMbExSU1J3Z0dpdkVQLXQtZ3A0RU9Bd0ktcTNER1FCdnRRZU9LT0RDR21ELTRVLUVtdGxJOW1iNzduYk5QMG91NTNGSDVVeFhSZzJoS2ZiMVdlTmVKU2NqQml4N1VDb054eEtfNA?oc=5"
     },
     {
-      "time": "12:29 AM",
-      "text": "Australia's Albanese says war's economic shock will be felt for months; urges using public transport - reuters.com",
+      "time": "4:59 AM",
+      "text": "Iran to allow safe passage of Philippine ships, fuel supply through Strait of Hormuz, says Manila - Reuters",
       "tag": "Reuters",
-      "url": "https://news.google.com/rss/articles/CBMirAFBVV95cUxOd3ZhUi1FTUVfMHk2cGZkMzJjOEx5QWc0bmtFX0ZwTHQwalY3NG1LYTlYZDBMRXZJQU5ONmRCMk9kZ01UM2JXNGdVZnI1YVE0WWxxOGduVzB0MHROWmJoTk1za2dxMGhZbDVqbThuWlBQSzlRempuVzFtT09xdzllRU1ZTjgtMU1JZHQ5WTBBclk1cjBMSnNYOWFtY3RhdklXc0QtQ0NTblpvRm4t?oc=5"
+      "url": "https://news.google.com/rss/articles/CBMiywFBVV95cUxQRlJEekpWYUlnYXVVYWZGYUVVaFpuNFotOHExVkJXREo3djBCUXVhR1FvNXRJMS1mQkNEdFBpT3dkOEJhQlVLZEYyQVVtR2JjeUdXVmZrcllleHQwS212VzVmSWtXeW12VjNOdTVRb3pvVFFlS0hfMWVZQTF1bHFTekJhR3d6bUNpdngwUlpBQTNLOEdHRGZKX2cyS2xBMEJMeUFERW1BWHZFajJCb251STlzbk5oaHM0NjJWeHpnZVRZS2NrcDdvcUlSVQ?oc=5"
     },
     {
-      "time": "12:27 AM",
-      "text": "India raises jet fuel, commercial LPG prices as Mideast crisis drives global surge - reuters.com",
+      "time": "4:29 AM",
+      "text": "Iran army chief tells commanders to prepare for any attack, state media reports - Reuters",
       "tag": "Reuters",
-      "url": "https://news.google.com/rss/articles/CBMipwFBVV95cUxOSVlyMTdieUo0c28wZTNYMlNMNVpOOExGU19jZE9ZV3ZreHFnWVBnYktXY0ozeTZqVkRtb0pDNFN6YlEwbnJ5RWtQSFppWkJIc2NaNDdyeVRzdkZ4SnduMk5qSVQ2VnZOb055NHl3bnBEeURHZEdtbVlnV3FrdmVVNDBiemI0OEExWUhLODk3QmpCdTdjNUFiU2VVOXYwb1FITDRfTFp0cw?oc=5"
+      "url": "https://news.google.com/rss/articles/CBMiygFBVV95cUxOWDJGSXo0QldFdFB5SEJqanBxcjFoenNRM2VWQkVvWE5jcFFXUFdDaFFiOEdBZ3hVMU9DcFlvRFU3RjA2RUd2cWk3aW5Bd19kUF9oYnlMUmtvSF96NGpTaUdEdUVWbjZ0ZlB2YVlrWkNIMFBMaERtZk11RWFnbFpjWk5xRHlacmxBRW1GdmJzaUtyNGlzLWZ4a1pJT0dOWlpnenRORWdqb1Fta0JqRnR3X1YxU1Z1OTlPYjVQQzQ4QnhBbHBFSXZBQ3ZB?oc=5"
     },
     {
-      "time": "12:19 AM",
-      "text": "Iran war is both a boost and a threat to Australia's LNG - reuters.com",
+      "time": "4:18 AM",
+      "text": "From international outcast to mediator in Iran war, Pakistan's remarkable makeover - Reuters",
       "tag": "Reuters",
-      "url": "https://news.google.com/rss/articles/CBMiogFBVV95cUxPbF8zQnNWRVhvOVlwTVByNTZpTC1GaTZiVlFFck0zSjFzN3FnbDVYQWdkWVc3cVBhSFE1cmRma3pLWndVSGtGNFpWVk50VmtRRW56VFYwaWgzaDJySFcxV0FlT3FvUUZBVzFlWGV4U2RuVWRpem5KMTdPQkliVkpfU3hfYmR4NUxvVHdBRTg2eUVVSTdLTDNaWWx1dE1TeTI3T3c?oc=5"
+      "url": "https://news.google.com/rss/articles/CBMiwgFBVV95cUxNZnFMX3ZMS2RPckxnNVZlU0VMQXVXVzNoSUE5VUJwQzc2NnZHaTdNREZCYVFTbWJVNXlJRUJzdlZVZnEyMGMwalFaNEtRUnVyWGJCQlY4NGw3SWNlNFB0Sms3UlhjVTN5V3VyY0M1UHA4cWVfU1czZzc1XzVrbEg5OUVGUDlmQUhPT2FLODdVc29VT24xNTI2NGpUMVNXeDBQY1B6MkVpTmoydE1sMndvbkxjRUVKOEFtbjAwc1RHcFZrUQ?oc=5"
     }
   ],
-  "brief": "<h2><span class=\"sec-icon\">◆</span> Market Overview</h2>\n\nFutures are ripping higher with the S&P up 2.91% and tech leading the charge at +4.24% as markets price in potential de-escalation of Iran conflict. VIX getting crushed down 8.84% to 35.7 signals risk-on sentiment returning, though we're still elevated from normal levels around 20.\n\n<h2><span class=\"sec-icon\">◆</span> What to Watch</h2>\n\n<ul>\n<li><strong>Iran Conflict Development</strong> - Multiple drone/missile strikes reported but markets betting on containment rather than escalation</li>\n<li><strong>Oil Reaction</strong> - Energy sector down 1.13% despite tanker hit in Qatar, suggesting supply disruption fears overblown</li>\n<li><strong>China Tech Spillover</strong> - VW-Xpeng partnership highlighting competitive pressure on Western automakers</li>\n<li><strong>LW Earnings (BMO)</strong> - Lamb Weston reports with EPS est 0.64, watch for consumer spending insights</li>\n</ul>\n\n<h2><span class=\"sec-icon\">◆</span> Sector Rotation</h2>\n\nClassic risk-on rotation with tech (+4.24%) and industrials (+3.27%) leading while defensives lag badly. Energy getting hammered despite Middle East tensions as traders bet conflict stays regional. Small caps outperforming large caps suggests domestic growth optimism returning.\n\n<div class=\"callout callout-green\"><div class=\"callout-label\">✦ Bull Case</div>Swift market recovery from geopolitical shock shows resilient risk appetite. Tech leadership with NASDAQ +3.39% suggests growth momentum intact.</div>\n\n<div class=\"callout callout-amber\"><div class=\"callout-label\">⚡ Key Driver</div>Iran conflict resolution timeline will dictate whether this relief rally has legs or we retest yesterday's lows on any escalation headlines.</div>\n\n<div class=\"callout callout-red\"><div class=\"callout-label\">⚠ Bear Case</div>VIX still at 35.7 vs normal 20 level means volatility premium persists. One bad headline from Middle East could trigger swift reversal of these gains.</div>\n\n<h2><span class=\"sec-icon\">◆</span> Levels That Matter</h2>\n\n<ul>\n<li><strong>SPY 655</strong> - Key resistance, break above signals continuation of relief rally</li>\n<li><strong>QQQ 580</strong> - Tech needs to reclaim this level to confirm leadership</li>\n<li><strong>VIX 30</strong> - Breaking below would signal genuine risk-off unwinding</li>\n<li><strong>XLE 90</strong> - Energy support level, break below confirms sector rotation out</li>\n</ul>\n\n<hr>\n<p><em>Not a prediction. A preparation. Make your plan before the bell.</em></p>"
+  "brief": "<h2><span class=\"sec-icon\">◆</span> Market Overview</h2>\n\nMarkets are grinding higher in pre-market despite escalating Iran tensions, with SPY up 0.75% to $655.24 and QQQ leading at +1.24%. VIX down 2.72% to 34.73 suggests risk appetite returning, but energy's -3.74% plunge shows crude supply concerns persist.\n\n<h2><span class=\"sec-icon\">◆</span> What to Watch</h2>\n\n<ul>\n<li><strong>Iran War Headlines</strong> - Trump signaling more strikes while Russia offers mediation. Any escalation will crater risk assets fast</li>\n<li><strong>Energy Sector Breakdown</strong> - XLE down nearly 4% as oil prices whipsaw on Strait of Hormuz tensions</li>\n<li><strong>LNN Earnings (BMO)</strong> - EPS estimate of $1.70, one of the few meaningful reports today</li>\n<li><strong>Tech Leadership Test</strong> - XLK up 1.51% carrying the market, but needs follow-through after opening</li>\n</ul>\n\n<h2><span class=\"sec-icon\">◆</span> Sector Rotation</h2>\n\nClassic risk-on rotation with Tech (+1.51%) and Industrials (+1.67%) leading while Energy (-3.74%) gets hammered on supply disruption fears. Materials (+0.98%) holding up suggests inflation hedging demand, while Utilities (+0.48%) lagging indicates genuine risk appetite not just defensive flows.\n\n<div class=\"callout callout-amber\"><div class=\"callout-label\">⚡ Key Driver</div>Iran war escalation risk vs. market's resilience. Every headline will move futures 1-2% in either direction today.</div>\n\n<div class=\"callout callout-red\"><div class=\"callout-label\">⚠ Bear Case</div>VIX at 34.73 is still elevated. One bad Iran headline and this pre-market bounce evaporates instantly. Energy sector breakdown could spread to broader market.</div>\n\n<div class=\"callout callout-green\"><div class=\"callout-label\">✦ Bull Case</div>Market climbing walls of worry with actual geopolitical crisis. If Iran tensions de-escalate even slightly, massive short covering rally likely in energy and broader indices.</div>\n\n<h2><span class=\"sec-icon\">◆</span> Levels That Matter</h2>\n\n<ul>\n<li><strong>SPY $655</strong> - Pre-market high, break above targets $660 resistance</li>\n<li><strong>QQQ $580</strong> - Key support level, holding above keeps tech rally intact</li>\n<li><strong>XLE $85</strong> - Energy sector support, break below signals more pain</li>\n<li><strong>VIX $35</strong> - Holding below keeps risk-on trade alive, spike above kills rally</li>\n</ul>\n\n<hr>\n<p><em>Not a prediction. A preparation. Make your plan before the bell.</em></p>"
 }

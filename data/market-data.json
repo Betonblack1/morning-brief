@@ -1,6 +1,6 @@
 {
-  "generated": "2026-04-03T11:10:09.301Z",
-  "date": "2026-04-03",
+  "generated": "2026-04-06T11:27:02.251Z",
+  "date": "2026-04-06",
   "indices": [
     {
       "name": "S&P 500",
@@ -119,74 +119,74 @@
   },
   "earnings": [
     {
-      "ticker": "MTBLY",
+      "ticker": "FAT",
+      "info": "EPS Est: -3.1916",
+      "when": "AMC"
+    },
+    {
+      "ticker": "YHC",
+      "info": "EPS Est: -0.4545",
+      "when": ""
+    },
+    {
+      "ticker": "BFNH",
       "info": "EPS Est: N/A",
       "when": ""
     },
     {
-      "ticker": "BLE",
+      "ticker": "ATAO",
       "info": "EPS Est: N/A",
       "when": ""
     },
     {
-      "ticker": "BABB",
+      "ticker": "HBSI",
       "info": "EPS Est: N/A",
       "when": ""
     },
     {
-      "ticker": "MYN",
-      "info": "EPS Est: N/A",
-      "when": ""
-    },
-    {
-      "ticker": "TRIB",
-      "info": "EPS Est: -0.1734",
-      "when": "BMO"
-    },
-    {
-      "ticker": "MKDW",
-      "info": "EPS Est: N/A",
+      "ticker": "BIAF",
+      "info": "EPS Est: -2.754",
       "when": ""
     }
   ],
   "econ": [],
   "news": [
     {
-      "time": "5:58 AM",
-      "text": "World food price rise set to continue if Iran war lasts, FAO says - Reuters",
+      "time": "6:05 AM",
+      "text": "JPMorgan's Dimon warns Iran war may drive inflation and interest rates higher - Reuters",
       "tag": "Reuters",
-      "url": "https://news.google.com/rss/articles/CBMiqgFBVV95cUxQM05VYlNLd1VKSlViMnZCMXhId3F1ellMZjFKUDZIbnY4VjE3RDJFWkRNQWJKbTFTUkQ5S0lTSnI1NE9WWDdoNVYwYVdXYU56ZEpQUW9NTklwNnRZeE5QRm9BYVF2SkNRMkRoRUJXQlVCNG5sc1hHSWJRV20wTUFwNE1Xd0VXRGt2VElMVUMtVHdmVWRVeldzUDEwWHhaTjFmUW1NNjNWamhzQQ?oc=5"
+      "url": "https://news.google.com/rss/articles/CBMiwwFBVV95cUxOOFItZ1lCRWJEZ3hkWlpnaGpFR0R3cTRtTTR5Z1dtemlwSVkxMzVFc3JVRUFpY1FMYzJQakRHLWo2Rl95SDJuN0ptWkhZbHhtdVU4emRLanFFS2kyZGcyQ2x1enJXM0pqa2hnYjNrUEVIMm5OTXdDejVDNFVZa3pTd01xZTZQbGJ4NVhyeXpDR3JWNHFsQ05iNlk5MmlNR3FFZldMZU5SS0xRaGM1TlFVdTMtZW9OUWxwVGdzdTNtcU5WYzg?oc=5"
     },
     {
-      "time": "12:38 AM",
-      "text": "Drones hit Kuwait's Mina al-Ahmadi refinery, fires reported, no injuries - Reuters",
+      "time": "5:38 AM",
+      "text": "North Korea distancing itself from Iran to leave door open for US talks, Seoul says - Reuters",
       "tag": "Reuters",
-      "url": "https://news.google.com/rss/articles/CBMiwAFBVV95cUxNaFNZU29yamFLb3FxN2JwRUhoM3FOWV92Z2R5cWIxQTItSjh2MzZENTQ0SlFmQmFkY1AxSlZHRmR3YW14YjBrYWtISGlNbW5sYl9JU1FCNHl6WWVIRTV6c2tJaTM3VDZ6YUlOS0FkR2VBX1BnWmVtNlUtRjZHbVFhbV9xMmFyZm1YZEdQM1F4UDIxcHNUbWxLM1pWdXlsNG1veFQwX2xCVGxIOW9ackdmMTNReW5PRzdwZlVqT05WbXA?oc=5"
+      "url": "https://news.google.com/rss/articles/CBMiugFBVV95cUxNU1BKeHFTYk8zbjBQYzZMa09oMGs3Y1hCekx2VTNScWRxeG9NajNaNUxGUExHczN5Zm44bjduNW00SnhsTFFTQVlJRTkyemtEVHZmeExqR1FseXpBVkhoZFpKTnNSUFFISEpnalNwN2NBekpxLW5OQWY2dlliMWRfLW1IaUdxbGVKRnRvcU9KMHZSUDN5dXBpdEZqckFtWHNXRVNvMW96MkJmYjR4VnFkN0htYXBzdGZaV2c?oc=5"
     },
     {
-      "time": "12:34 AM",
-      "text": "Bangladesh cuts working hours to save energy amid Middle East crisis - Reuters",
+      "time": "5:38 AM",
+      "text": "Iran has formulated its response to ceasefire proposals, foreign ministry spokesperson says - Reuters",
       "tag": "Reuters",
-      "url": "https://news.google.com/rss/articles/CBMi2AFBVV95cUxNTXVrRmQ3bUVMNklRcE5LVmRobndfaktMVWh5bFRVN1M0YVYweUVtWEtZUmpjQjcybTFqNzdtSVpLZWxmelh3U2pqdTdzODR5UDMwWDFmQ1N0SDRSMi02ZUpGeUppbkN4TW5Ha1VMYmxMeThMSV9PUXFtUDNBdGlncFU0ekx6N3BZUjBvLVlrNjFpQmFQYTczS083NnZ5Tklfdlg3WXlIMnFzbU5ZaGRTWS1qaWlWZHdMWDhGSGo5ek02RVFQU0dLUDE4LTVZSExrM21jYzlUY1E?oc=5"
+      "url": "https://news.google.com/rss/articles/CBMixwFBVV95cUxQc0hZMkxUcVZtT3VucnhOWk8yOHA3TnNPVUN1VnBiVU9ya19ERkVfTDdjYTNtSllGTUlCQ0dwX3RUQks2aGNNVGdSSGJRdE9NeEZaWlBaVExHWXJhTU5yWV94YzVkRHIwdEVSakw3OEk5dG40NnNlVkM5TnZ0YTlwRVpuVmxZYUw2RF9pcDdVeEFlUXlMWldPejh0eTBsNmFXdElSRWdMSDF3MkxEMkhsaFlSZ0FfU29wa2dqSE9GbE14WnJuMHlj?oc=5"
     },
     {
-      "time": "12:27 AM",
-      "text": "Trump vows to hit more Iranian infrastructure as nations seek to open Hormuz - Reuters",
+      "time": "4:54 AM",
+      "text": "Iran accuses UN nuclear watchdog of inaction, warns of risk from attacks - Reuters",
       "tag": "Reuters",
-      "url": "https://news.google.com/rss/articles/CBMivgFBVV95cUxOWUQxejBWTi1ieGdGUmhOZ0ZRWHpfS0JwTng4SVFVVkVFQ3pycnYwcTU1N2JER0RrVmE1Q05nNUdNd2t6RHQwcHl5STVVMHlTR0ExVWx4Y1RNMjBxNUF5bkVSU05IenNJQTItR3VDSkVkYUlqZjJMSmtaWktzXzVzSjJHWkx0eWhOMGRsNmRRVXI2WnJyVElQbzBTdE1xLUxjOFVhNFBiS2tTbHJOVmRxUlVGRzlNdU9EWXZMTkd3?oc=5"
+      "url": "https://news.google.com/rss/articles/CBMipAFBVV95cUxPb1NxQmlyVjJONVVKTHo0anNEeFZEUUE2TWhWWGZBcmhPd043ZWZFbkRoM0FqTUFGLUszdEZpYWVFREFYTHkxdy14d1J0UGpybUZkVXl6bDlNNHhNWDV4Q2FIY1JNTnlqY1QzRHEzRVVhdjNMUFhQR0lvOTJwaFNoQUZGLUt1SUFReVlIQzc4RE1QdWllNEN0Skk1NlAyUXNfa0djRA?oc=5"
     },
     {
-      "time": "12:00 AM",
-      "text": "BOJ keeps rate‑hike door open even as Iran war squeezes firms - Reuters",
+      "time": "4:51 AM",
+      "text": "Intelligence head of Iran's Revolutionary Guards killed in strike, media say - Reuters",
       "tag": "Reuters",
-      "url": "https://news.google.com/rss/articles/CBMivgFBVV95cUxPZFAyb1FPMU1naGdONTc0WEJXM08wMC1FRFd0N2VEaUNEVGQxcE45MUlrUDlfQWU0SzVkQUZQUi1Bc3BsMVdUZTAtaDUwLVBicVdVTjBQaWNXOEZfMnBpSl8xbDZnRWhrYUszWWZndFRFYVVMMmpXZEROU29uZUFObVIxMzI5NDhqNlQzRF90bHoxb2FOU3FrdzNDTHUwcHBJT3RYamZNa2YtNVB0QTFIeEo0TzdMVncwMkpRV1Zn?oc=5"
+      "url": "https://news.google.com/rss/articles/CBMivAFBVV95cUxOZUh0Rmh5dnlRRURSd3dzR0ttZUVBSFYzVHZNQldILWJkR0lha3lZN0IzMWdocEJGM29FcVk0bXlYbFA0WGhkazlLM2tQMHgxRlNXaGFBcGFzbWluaEJYeU9tZkFrUXBuTkIwTVlHdERRSkc5MURUVEJxVEpiZ3l0YkhTT1VFQVVWSnlpUUxlU3ZKai1YRlRMQU92UERxZDFfZHhLU2MwR2QwbVZKdTI2TTJ0Z1QzNWlaTlBGNg?oc=5"
     },
     {
-      "time": "11:35 PM",
-      "text": "Trump threatens to strike Iran's bridges and electric power plants - Reuters",
+      "time": "4:50 AM",
+      "text": "How is South Asia tackling the Iran war-driven energy crisis? - Reuters",
       "tag": "Reuters",
-      "url": "https://news.google.com/rss/articles/CBMisgFBVV95cUxOUS1DNHpZcG9LNUdON3hHamVsbmU0bVZEMnpFQUc2QjN2SnZ6YVRuZ1RScWJDMUxyNVB5WUp3aUtYbTVNVHM1d0xSUFBCd2JmZjBTVUpZWW1YMmtld1lYYTMwOEliQkpIWTJxdnN5YXViWjFrazY5ZjNhTmtrOU9peGtpNzRmWkI4RDI0WHMtT19kOFgtUTdIeERNN1RMRmIwQ2NxWkkydm5nQmNWZDRoRmR3?oc=5"
+      "url": "https://news.google.com/rss/articles/CBMirAFBVV95cUxPV1RfYmM1M2IzQmMtaVVsRDh6d1NNelhxejZSOEp5TGV1eHdCMU5nQWFwMUt4U01wNXVDZm9HZmE2NUxCS2hrWS1KY3hoX0M4NzgySW5KRXh5ZjhBVjlKb194eTYyX2taZlB5dk8xWlk0ekdOVmVMYUVtdV95Ul9kRzd1YjhkYVFuZFhTaDVjVzg4TllvZC1jRkh1MXhPVEZOOThpWHk0cEZfVmFk?oc=5"
     }
   ],
-  "brief": "<h2><span class=\"sec-icon\">◆</span> Market Overview</h2>\nMarkets grinding sideways in pre-market with SPY at $655.83 (+0.09%) as geopolitical tensions dominate headlines. Small caps showing life with IWM up 0.69%, while VIX at 34.7 signals continued elevated fear despite slight decline.\n\n<h2><span class=\"sec-icon\">◆</span> What to Watch</h2>\n<ul>\n<li><strong>Iran War Escalation:</strong> Trump threatening infrastructure strikes while Kuwait refinery hit by drones - energy and defense plays in focus</li>\n<li><strong>Real Estate Strength:</strong> XLRE leading at +1.61% as defensive rotation continues amid uncertainty</li>\n<li><strong>Consumer Discretionary Weakness:</strong> XLY down -1.50% as spending concerns mount with global conflict</li>\n<li><strong>Light Earnings Calendar:</strong> Only TRIB reporting with -$0.17 estimate - attention stays on macro</li>\n</ul>\n\n<h2><span class=\"sec-icon\">◆</span> Sector Rotation</h2>\nClear flight to quality with Real Estate (+1.61%) and Utilities (+0.50%) leading while Consumer Discretionary (-1.50%) gets hammered. Tech holding up at +0.80% suggests algos still buying the dip despite geopolitical chaos.\n\n<div class=\"callout callout-amber\"><div class=\"callout-label\">⚡ Key Driver</div>Oil infrastructure attacks spreading beyond Iran - Kuwait refinery hit signals broader regional conflict that could spike energy prices further</div>\n\n<div class=\"callout callout-red\"><div class=\"callout-label\">⚠ Bear Case</div>Consumer spending cracking under inflation pressure as XLY breaks down - if discretionary fails, earnings season could disappoint hard</div>\n\n<div class=\"callout callout-green\"><div class=\"callout-label\">✦ Bull Case</div>Small caps outperforming suggests domestic focus trade gaining traction - IWM at +0.69% while international exposure names lag</div>\n\n<h2><span class=\"sec-icon\">◆</span> Levels That Matter</h2>\n<ul>\n<li><strong>SPY:</strong> Support at $650, resistance at $665 - range bound until geopolitical clarity</li>\n<li><strong>VIX:</strong> Above 35 triggers more defensive positioning - currently 34.7 and climbing</li>\n<li><strong>XLE:</strong> Energy breaking $95 targets $100 as Middle East premiums expand</li>\n<li><strong>IWM:</strong> Small caps need to hold $250 to maintain domestic rotation thesis</li>\n</ul>\n\n<hr>\n<p><em>Not a prediction. A preparation. Make your plan before the bell.</em></p>"
+  "brief": "<h2><span class=\"sec-icon\">◆</span> Market Overview</h2>\n\nMarkets opening cautiously mixed as Iran tensions dominate headlines. SPY flat at $655.83 (+0.09%) while VIX remains elevated at 34.7, signaling continued uncertainty. Small caps showing relative strength with IWM up 0.69% as traders position defensively.\n\n<h2><span class=\"sec-icon\">◆</span> What to Watch</h2>\n\n<ul>\n<li><strong>Iran Headlines:</strong> Every news wire matters today - ceasefire talks vs. escalation rhetoric driving intraday moves</li>\n<li><strong>Energy Sector:</strong> XLE up 0.47% pre-market, watch crude oil futures for continuation</li>\n<li><strong>Treasury Yields:</strong> Holding steady but Dimon's inflation warning could spark bond selling</li>\n<li><strong>Earnings Light:</strong> Only small names reporting - FAT and KALA after hours, both expected deep red</li>\n</ul>\n\n<div class=\"callout callout-red\"><div class=\"callout-label\">⚠ Bear Case</div>JPMorgan's Dimon warning on war-driven inflation could trigger rate fears and tech selling. Consumer Discretionary already down 1.50% pre-market signals spending concerns.</div>\n\n<h2><span class=\"sec-icon\">◆</span> Sector Rotation</h2>\n\nClassic risk-off rotation playing out with Real Estate (+1.61%) and Utilities (+0.50%) leading as bond proxies. Tech hanging tough at +0.80% despite rate concerns, while Consumer Discretionary getting hammered at -1.50%. Energy benefiting from war premium but gains remain modest.\n\n<div class=\"callout callout-amber\"><div class=\"callout-label\">⚡ Key Driver</div>Iran ceasefire response expected today. Any hint of de-escalation crushes energy/defense plays while boosting growth stocks. Escalation does the opposite.</div>\n\n<div class=\"callout callout-green\"><div class=\"callout-label\">✦ Bull Case</div>Small cap strength (IWM +0.69%) suggests domestic focus over international risks. VIX decline from higher levels indicates some fear premium coming out.</div>\n\n<h2><span class=\"sec-icon\">◆</span> Levels That Matter</h2>\n\n<ul>\n<li><strong>SPY 650:</strong> Critical support - break below triggers broader selling into 640s</li>\n<li><strong>QQQ 590:</strong> Resistance level - clear break above signals tech leadership return</li>\n<li><strong>VIX 30:</strong> Below this level and fear trade unwinds quickly</li>\n<li><strong>XLE 95:</strong> Energy breakout level if Iran tensions persist</li>\n</ul>\n\n<hr>\n<p><em>Not a prediction. A preparation. Make your plan before the bell.</em></p>"
 }

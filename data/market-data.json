@@ -1,36 +1,36 @@
 {
-  "generated": "2026-04-06T11:27:02.251Z",
-  "date": "2026-04-06",
+  "generated": "2026-04-07T11:29:29.085Z",
+  "date": "2026-04-07",
   "indices": [
     {
       "name": "S&P 500",
-      "val": "655.83",
-      "chg": 0.09,
-      "price": 655.83
+      "val": "658.93",
+      "chg": 0.4727,
+      "price": 658.93
     },
     {
       "name": "NASDAQ",
-      "val": "584.98",
-      "chg": 0.1147,
-      "price": 584.98
+      "val": "588.50",
+      "chg": 0.6017,
+      "price": 588.5
     },
     {
       "name": "DOW",
-      "val": "465.06",
-      "chg": -0.0902,
-      "price": 465.06
+      "val": "466.77",
+      "chg": 0.3677,
+      "price": 466.77
     },
     {
       "name": "RUSSELL",
-      "val": "251.29",
-      "chg": 0.6932,
-      "price": 251.29
+      "val": "252.36",
+      "chg": 0.4258,
+      "price": 252.36
     },
     {
       "name": "VIX",
-      "val": "34.70",
-      "chg": -0.0864,
-      "price": 34.7
+      "val": "33.88",
+      "chg": -2.3631,
+      "price": 33.88
     },
     {
       "name": "10Y",
@@ -43,150 +43,150 @@
     {
       "name": "Tech",
       "symbol": "XLK",
-      "chg": 0.8005
+      "chg": 0.5809
     },
     {
       "name": "Health",
       "symbol": "XLV",
-      "chg": -0.6228
+      "chg": -0.361
     },
     {
       "name": "Financials",
       "symbol": "XLF",
-      "chg": 0.182
+      "chg": 0.7066
     },
     {
       "name": "Energy",
       "symbol": "XLE",
-      "chg": 0.4748
+      "chg": 0.7257
     },
     {
       "name": "Cons Disc",
       "symbol": "XLY",
-      "chg": -1.5027
+      "chg": 0.8229
     },
     {
       "name": "Industrials",
       "symbol": "XLI",
-      "chg": -0.4014
+      "chg": 0.5129
     },
     {
       "name": "Materials",
       "symbol": "XLB",
-      "chg": -0.0991
+      "chg": -0.3769
     },
     {
       "name": "Real Estate",
       "symbol": "XLRE",
-      "chg": 1.6117
+      "chg": 0.3605
     },
     {
       "name": "Utilities",
       "symbol": "XLU",
-      "chg": 0.4988
+      "chg": -0.3669
     },
     {
       "name": "Cons Staples",
       "symbol": "XLP",
-      "chg": 0.5279
+      "chg": 0.9403
     },
     {
       "name": "Comm Svcs",
       "symbol": "XLC",
-      "chg": 0.4135
+      "chg": 0.0537
     }
   ],
   "keyLevels": [
     {
       "tag": "support",
       "label": "SPY Support",
-      "val": "645.11"
+      "val": "655.52"
     },
     {
       "tag": "resist",
       "label": "SPY Resist",
-      "val": "658.20"
+      "val": "659.72"
     },
     {
       "tag": "pivot",
       "label": "QQQ Pivot",
-      "val": "580.98"
+      "val": "587.93"
     }
   ],
   "fearGreed": {
-    "score": 1,
+    "score": 5,
     "label": "Extreme Fear"
   },
   "earnings": [
     {
-      "ticker": "FAT",
-      "info": "EPS Est: -3.1916",
+      "ticker": "PGOL",
+      "info": "EPS Est: N/A",
+      "when": ""
+    },
+    {
+      "ticker": "CHBH",
+      "info": "EPS Est: N/A",
+      "when": ""
+    },
+    {
+      "ticker": "XELB",
+      "info": "EPS Est: -0.4998",
       "when": "AMC"
     },
     {
-      "ticker": "YHC",
-      "info": "EPS Est: -0.4545",
-      "when": ""
-    },
-    {
-      "ticker": "BFNH",
+      "ticker": "OMEX",
       "info": "EPS Est: N/A",
       "when": ""
     },
     {
-      "ticker": "ATAO",
+      "ticker": "AMBK",
       "info": "EPS Est: N/A",
       "when": ""
     },
     {
-      "ticker": "HBSI",
-      "info": "EPS Est: N/A",
-      "when": ""
-    },
-    {
-      "ticker": "BIAF",
-      "info": "EPS Est: -2.754",
-      "when": ""
+      "ticker": "AEHR",
+      "info": "EPS Est: -0.0714",
+      "when": "AMC"
     }
   ],
   "econ": [],
   "news": [
     {
-      "time": "6:05 AM",
-      "text": "JPMorgan's Dimon warns Iran war may drive inflation and interest rates higher - Reuters",
-      "tag": "Reuters",
-      "url": "https://news.google.com/rss/articles/CBMiwwFBVV95cUxOOFItZ1lCRWJEZ3hkWlpnaGpFR0R3cTRtTTR5Z1dtemlwSVkxMzVFc3JVRUFpY1FMYzJQakRHLWo2Rl95SDJuN0ptWkhZbHhtdVU4emRLanFFS2kyZGcyQ2x1enJXM0pqa2hnYjNrUEVIMm5OTXdDejVDNFVZa3pTd01xZTZQbGJ4NVhyeXpDR3JWNHFsQ05iNlk5MmlNR3FFZldMZU5SS0xRaGM1TlFVdTMtZW9OUWxwVGdzdTNtcU5WYzg?oc=5"
+      "time": "7:00 AM",
+      "text": "Novo Nordisk's explosive Wegovy pill launch draws a new wave of patients into GLP-1 weight loss treatment",
+      "tag": "CNBC",
+      "url": "https://www.cnbc.com/2026/04/07/novo-nordisks-wegovy-pill-launch-draws-new-wave-of-patients-to-glp-1s.html"
     },
     {
-      "time": "5:38 AM",
-      "text": "North Korea distancing itself from Iran to leave door open for US talks, Seoul says - Reuters",
-      "tag": "Reuters",
-      "url": "https://news.google.com/rss/articles/CBMiugFBVV95cUxNU1BKeHFTYk8zbjBQYzZMa09oMGs3Y1hCekx2VTNScWRxeG9NajNaNUxGUExHczN5Zm44bjduNW00SnhsTFFTQVlJRTkyemtEVHZmeExqR1FseXpBVkhoZFpKTnNSUFFISEpnalNwN2NBekpxLW5OQWY2dlliMWRfLW1IaUdxbGVKRnRvcU9KMHZSUDN5dXBpdEZqckFtWHNXRVNvMW96MkJmYjR4VnFkN0htYXBzdGZaV2c?oc=5"
+      "time": "6:26 AM",
+      "text": "ASML shares fall after proposed U.S. export curbs target an already fragile China market",
+      "tag": "CNBC",
+      "url": "https://www.cnbc.com/2026/04/07/asml-shares-today-us-chip-export-curbs-china.html"
     },
     {
-      "time": "5:38 AM",
-      "text": "Iran has formulated its response to ceasefire proposals, foreign ministry spokesperson says - Reuters",
-      "tag": "Reuters",
-      "url": "https://news.google.com/rss/articles/CBMixwFBVV95cUxQc0hZMkxUcVZtT3VucnhOWk8yOHA3TnNPVUN1VnBiVU9ya19ERkVfTDdjYTNtSllGTUlCQ0dwX3RUQks2aGNNVGdSSGJRdE9NeEZaWlBaVExHWXJhTU5yWV94YzVkRHIwdEVSakw3OEk5dG40NnNlVkM5TnZ0YTlwRVpuVmxZYUw2RF9pcDdVeEFlUXlMWldPejh0eTBsNmFXdElSRWdMSDF3MkxEMkhsaFlSZ0FfU29wa2dqSE9GbE14WnJuMHlj?oc=5"
+      "time": "5:30 AM",
+      "text": "Iran war upends spring housing market. Here's what real estate agents are seeing",
+      "tag": "CNBC",
+      "url": "https://www.cnbc.com/2026/04/07/cnbc-housing-market-survey-iran-war-spring-housing.html"
     },
     {
-      "time": "4:54 AM",
-      "text": "Iran accuses UN nuclear watchdog of inaction, warns of risk from attacks - Reuters",
+      "time": "4:35 AM",
+      "text": "UK services firms report surge in costs, fading optimism as Iran war takes toll - Reuters",
       "tag": "Reuters",
-      "url": "https://news.google.com/rss/articles/CBMipAFBVV95cUxPb1NxQmlyVjJONVVKTHo0anNEeFZEUUE2TWhWWGZBcmhPd043ZWZFbkRoM0FqTUFGLUszdEZpYWVFREFYTHkxdy14d1J0UGpybUZkVXl6bDlNNHhNWDV4Q2FIY1JNTnlqY1QzRHEzRVVhdjNMUFhQR0lvOTJwaFNoQUZGLUt1SUFReVlIQzc4RE1QdWllNEN0Skk1NlAyUXNfa0djRA?oc=5"
+      "url": "https://news.google.com/rss/articles/CBMiuAFBVV95cUxPWWtuSFp0WjZfSmdKLWgtS0xRdUc0dFFRQ1c4SHNaeC14QVNsSFFFTjJBbEVIMHNMMk5rbThTTEpWb3JqdUt3WWtBT0p4bWgtU09JeW1nVXJXV0dGbWZsQkJuNTRHeWg2aVVIWmRPczVDNmN2X25tazBGOWI4UjBoMnFycjJFMXRTZU1hM19TQlV1cjlDb2tzSWowckFXRHFnYTlvdTRHVGtHaDFQaVEwYURVVXhLZ2t1?oc=5"
     },
     {
-      "time": "4:51 AM",
-      "text": "Intelligence head of Iran's Revolutionary Guards killed in strike, media say - Reuters",
+      "time": "3:48 AM",
+      "text": "Iran war jeopardizes U.S. global leadership, warns Italian minister - Reuters",
       "tag": "Reuters",
-      "url": "https://news.google.com/rss/articles/CBMivAFBVV95cUxOZUh0Rmh5dnlRRURSd3dzR0ttZUVBSFYzVHZNQldILWJkR0lha3lZN0IzMWdocEJGM29FcVk0bXlYbFA0WGhkazlLM2tQMHgxRlNXaGFBcGFzbWluaEJYeU9tZkFrUXBuTkIwTVlHdERRSkc5MURUVEJxVEpiZ3l0YkhTT1VFQVVWSnlpUUxlU3ZKai1YRlRMQU92UERxZDFfZHhLU2MwR2QwbVZKdTI2TTJ0Z1QzNWlaTlBGNg?oc=5"
+      "url": "https://news.google.com/rss/articles/CBMixgFBVV95cUxQb3JCeVZ2QXktY0Vha2FWanpwdTNMaXd2TThHWW5oVnVSY3RVVVM1Q2lEOE5zdXVBX0N4MXRLdjk0OEVxLUtSUmtwNTFuV2dhRnhxSUQycHhuLWRDNlVxVGhQOFpaQU1qdlZ5R2FSbWdEeTE4LW5JU3k2cF92N3BDc3VDdmRkdFpCYXRvNURiUnVZejlhN2p5RW9qa0JERHI5Yl9BZU9HZi1abHA5NHk1ZE12TmFZY2hWb1JTUVlzbjZFNFRqYUE?oc=5"
     },
     {
-      "time": "4:50 AM",
-      "text": "How is South Asia tackling the Iran war-driven energy crisis? - Reuters",
+      "time": "2:07 AM",
+      "text": "Exclusive: Russia supplies Iran with cyber support, spy imagery to hone attacks, Ukraine says - Reuters",
       "tag": "Reuters",
-      "url": "https://news.google.com/rss/articles/CBMirAFBVV95cUxPV1RfYmM1M2IzQmMtaVVsRDh6d1NNelhxejZSOEp5TGV1eHdCMU5nQWFwMUt4U01wNXVDZm9HZmE2NUxCS2hrWS1KY3hoX0M4NzgySW5KRXh5ZjhBVjlKb194eTYyX2taZlB5dk8xWlk0ekdOVmVMYUVtdV95Ul9kRzd1YjhkYVFuZFhTaDVjVzg4TllvZC1jRkh1MXhPVEZOOThpWHk0cEZfVmFk?oc=5"
+      "url": "https://news.google.com/rss/articles/CBMixAFBVV95cUxPbEx5cXlzMl84VU5QSkJha0FpQ0sweVh3WDVXR0R3aDVBVkZYNW9TdlhnUmQ1TFZtVTBuM29fdkcyT3NJSmxjUjgwT2F3TlNZd1pGVGhZcnp3bHlrUU1qMUxqOUdXS2gzaWwwd3lMcmJic2p5RF9VMkVOVWRxcFY5TmNQd3BOSnFjemRJMFRSOXJFdWI3c3V1TGpoNm9XYnI2OXRpSXFacWpYaTJWc3hqRjc1eGtWS1hEMFQ5V1R1VnFNdkd2?oc=5"
     }
   ],
-  "brief": "<h2><span class=\"sec-icon\">◆</span> Market Overview</h2>\n\nMarkets opening cautiously mixed as Iran tensions dominate headlines. SPY flat at $655.83 (+0.09%) while VIX remains elevated at 34.7, signaling continued uncertainty. Small caps showing relative strength with IWM up 0.69% as traders position defensively.\n\n<h2><span class=\"sec-icon\">◆</span> What to Watch</h2>\n\n<ul>\n<li><strong>Iran Headlines:</strong> Every news wire matters today - ceasefire talks vs. escalation rhetoric driving intraday moves</li>\n<li><strong>Energy Sector:</strong> XLE up 0.47% pre-market, watch crude oil futures for continuation</li>\n<li><strong>Treasury Yields:</strong> Holding steady but Dimon's inflation warning could spark bond selling</li>\n<li><strong>Earnings Light:</strong> Only small names reporting - FAT and KALA after hours, both expected deep red</li>\n</ul>\n\n<div class=\"callout callout-red\"><div class=\"callout-label\">⚠ Bear Case</div>JPMorgan's Dimon warning on war-driven inflation could trigger rate fears and tech selling. Consumer Discretionary already down 1.50% pre-market signals spending concerns.</div>\n\n<h2><span class=\"sec-icon\">◆</span> Sector Rotation</h2>\n\nClassic risk-off rotation playing out with Real Estate (+1.61%) and Utilities (+0.50%) leading as bond proxies. Tech hanging tough at +0.80% despite rate concerns, while Consumer Discretionary getting hammered at -1.50%. Energy benefiting from war premium but gains remain modest.\n\n<div class=\"callout callout-amber\"><div class=\"callout-label\">⚡ Key Driver</div>Iran ceasefire response expected today. Any hint of de-escalation crushes energy/defense plays while boosting growth stocks. Escalation does the opposite.</div>\n\n<div class=\"callout callout-green\"><div class=\"callout-label\">✦ Bull Case</div>Small cap strength (IWM +0.69%) suggests domestic focus over international risks. VIX decline from higher levels indicates some fear premium coming out.</div>\n\n<h2><span class=\"sec-icon\">◆</span> Levels That Matter</h2>\n\n<ul>\n<li><strong>SPY 650:</strong> Critical support - break below triggers broader selling into 640s</li>\n<li><strong>QQQ 590:</strong> Resistance level - clear break above signals tech leadership return</li>\n<li><strong>VIX 30:</strong> Below this level and fear trade unwinds quickly</li>\n<li><strong>XLE 95:</strong> Energy breakout level if Iran tensions persist</li>\n</ul>\n\n<hr>\n<p><em>Not a prediction. A preparation. Make your plan before the bell.</em></p>"
+  "brief": "<h2><span class=\"sec-icon\">◆</span> Market Overview</h2>\n\nFutures are catching a modest bid across the board with the SPY up 0.47% to $658.93, despite geopolitical chaos from Iran escalating tensions. VIX dropped 2.36% to 33.88, suggesting some fear premium is coming out, but we're still trading elevated volatility levels that demand respect.\n\n<h2><span class=\"sec-icon\">◆</span> What to Watch</h2>\n\n<ul>\n<li><strong>ASML weakness</strong> - Semiconductor bellwether getting hit on new U.S. export restrictions to China, watch for sector contagion</li>\n<li><strong>Novo Nordisk GLP-1 momentum</strong> - Wegovy pill launch creating fresh tailwinds in weight loss treatment space</li>\n<li><strong>Iran conflict escalation</strong> - Military advisories on Iranian transportation, housing markets getting disrupted globally</li>\n<li><strong>Light earnings slate</strong> - PACB, AEHR, XELB reporting after hours, but no major movers expected</li>\n</ul>\n\n<h2><span class=\"sec-icon\">◆</span> Sector Rotation</h2>\n\nConsumer Staples leading at +0.94% with Financials (+0.71%) and Energy (+0.73%) showing strength - classic defensive rotation with a war premium. Healthcare lagging at -0.36% despite Novo's GLP-1 news, while Materials (-0.38%) and Utilities (-0.37%) getting sold as higher-for-longer rates bite.\n\n<div class=\"callout callout-amber\"><div class=\"callout-label\">⚡ Key Driver</div>Iran conflict creating dual impact: defensive rotation into staples/energy while risk-off sentiment caps upside momentum</div>\n\n<div class=\"callout callout-red\"><div class=\"callout-label\">⚠ Bear Case</div>VIX still elevated at 33.88 signals underlying stress. ASML weakness could trigger broader tech selloff if China export fears spread</div>\n\n<div class=\"callout callout-green\"><div class=\"callout-label\">✦ Bull Case</div>Market grinding higher despite war headlines shows underlying resilience. Financials outperforming suggests confidence in economic backdrop</div>\n\n<h2><span class=\"sec-icon\">◆</span> Levels That Matter</h2>\n\n<ul>\n<li><strong>SPY $655</strong> - Key support from Friday's low, break targets $650 gap fill</li>\n<li><strong>QQQ $585</strong> - Previous resistance now support, watch for ASML contagion</li>\n<li><strong>VIX 35</strong> - Next resistance level, break higher signals fresh risk-off wave</li>\n<li><strong>XLE $95</strong> - Energy strength continuation level on Iran premium</li>\n</ul>\n\n<hr>\n<p><em>Not a prediction. A preparation. Make your plan before the bell.</em></p>"
 }

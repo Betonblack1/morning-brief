@@ -1,36 +1,36 @@
 {
-  "generated": "2026-04-08T11:29:55.633Z",
-  "date": "2026-04-08",
+  "generated": "2026-04-09T11:31:20.046Z",
+  "date": "2026-04-09",
   "indices": [
     {
       "name": "S&P 500",
-      "val": "659.22",
-      "chg": 0.044,
-      "price": 659.22
+      "val": "676.01",
+      "chg": 2.5469,
+      "price": 676.01
     },
     {
       "name": "NASDAQ",
-      "val": "588.59",
-      "chg": 0.0153,
-      "price": 588.59
+      "val": "606.09",
+      "chg": 2.9732,
+      "price": 606.09
     },
     {
       "name": "DOW",
-      "val": "465.88",
-      "chg": -0.1907,
-      "price": 465.88
+      "val": "479.16",
+      "chg": 2.8505,
+      "price": 479.16
     },
     {
       "name": "RUSSELL",
-      "val": "252.91",
-      "chg": 0.2179,
-      "price": 252.91
+      "val": "260.47",
+      "chg": 2.9892,
+      "price": 260.47
     },
     {
       "name": "VIX",
-      "val": "35.02",
-      "chg": 3.3648,
-      "price": 35.02
+      "val": "31.66",
+      "chg": -9.5945,
+      "price": 31.66
     },
     {
       "name": "10Y",
@@ -43,109 +43,109 @@
     {
       "name": "Tech",
       "symbol": "XLK",
-      "chg": 0.4752
+      "chg": 3.0998
     },
     {
       "name": "Health",
       "symbol": "XLV",
-      "chg": 0.1982
+      "chg": 2.115
     },
     {
       "name": "Financials",
       "symbol": "XLF",
-      "chg": 0
+      "chg": 2.6464
     },
     {
       "name": "Energy",
       "symbol": "XLE",
-      "chg": 0.8043
+      "chg": -3.5073
     },
     {
       "name": "Cons Disc",
       "symbol": "XLY",
-      "chg": -1.1647
+      "chg": 2.8301
     },
     {
       "name": "Industrials",
       "symbol": "XLI",
-      "chg": -0.2005
+      "chg": 3.7497
     },
     {
       "name": "Materials",
       "symbol": "XLB",
-      "chg": -0.2788
+      "chg": 3.3347
     },
     {
       "name": "Real Estate",
       "symbol": "XLRE",
-      "chg": -0.0958
+      "chg": 1.7258
     },
     {
       "name": "Utilities",
       "symbol": "XLU",
-      "chg": 0.2166
+      "chg": 1.1022
     },
     {
       "name": "Cons Staples",
       "symbol": "XLP",
-      "chg": -1.6937
+      "chg": 1.8705
     },
     {
       "name": "Comm Svcs",
       "symbol": "XLC",
-      "chg": 0.0537
+      "chg": 1.7796
     }
   ],
   "keyLevels": [
     {
       "tag": "support",
       "label": "SPY Support",
-      "val": "651.06"
+      "val": "671.46"
     },
     {
       "tag": "resist",
       "label": "SPY Resist",
-      "val": "659.61"
+      "val": "677.08"
     },
     {
       "tag": "pivot",
       "label": "QQQ Pivot",
-      "val": "585.32"
+      "val": "606.04"
     }
   ],
   "fearGreed": {
-    "score": 0,
+    "score": 15,
     "label": "Extreme Fear"
   },
   "earnings": [
     {
-      "ticker": "APLD",
-      "info": "EPS Est: -0.1071",
+      "ticker": "NTIC",
+      "info": "EPS Est: 0.0204",
+      "when": "BMO"
+    },
+    {
+      "ticker": "HIFS",
+      "info": "EPS Est: N/A",
+      "when": ""
+    },
+    {
+      "ticker": "WDFC",
+      "info": "EPS Est: 1.4535",
       "when": "AMC"
     },
     {
-      "ticker": "MIMI",
-      "info": "EPS Est: N/A",
-      "when": ""
-    },
-    {
-      "ticker": "RPM",
-      "info": "EPS Est: 0.3564",
+      "ticker": "NEOG",
+      "info": "EPS Est: 0.0587",
       "when": "BMO"
     },
     {
-      "ticker": "ARTW",
-      "info": "EPS Est: N/A",
-      "when": ""
+      "ticker": "SLP",
+      "info": "EPS Est: 0.1995",
+      "when": "AMC"
     },
     {
-      "ticker": "BBGI",
-      "info": "EPS Est: N/A",
-      "when": "BMO"
-    },
-    {
-      "ticker": "GLCP",
-      "info": "EPS Est: N/A",
+      "ticker": "WAFD",
+      "info": "EPS Est: 0.7663",
       "when": ""
     }
   ],
@@ -153,40 +153,40 @@
   "news": [
     {
       "time": "7:00 AM",
-      "text": "Why the U.S. Navy’s retail business is fighting Walmart and Amazon to fund its own future",
+      "text": "As millions lose weight on GLP-1s, they're starting to turn to retailers to refresh their wardrobes",
       "tag": "CNBC",
-      "url": "https://www.cnbc.com/2026/04/08/navy-exchange-stores-compete-walmart-amazon-to-fund-future.html"
+      "url": "https://www.cnbc.com/2026/04/09/weight-loss-pills-glp-1s-stitch-fix-apparel-retailers.html"
     },
     {
-      "time": "6:37 AM",
-      "text": "Hezbollah pauses attacks, sources say, Israel says operations in Lebanon continue - reuters.com",
-      "tag": "Reuters",
-      "url": "https://news.google.com/rss/articles/CBMixAFBVV95cUxQYnlTSjZwS0l0RGROMkRsOEx2RHMxMnRjUGw5a211NkQ1WTdoRHBTS0hHZXczcTJ4NlBHSHllYTY2Z24wdHdFRUNDSEtkUElXWHI2SE9WMUxpbTVBQXBrUko5TENjNFZ5ZEJKSFl4ZDFQTWlfMVVHM25QMDRqWVNOOHUtY3VQMWRWQU85M3pYa0R5U0VFR21NWEhmYUNJSWVCMWFGSnRVZTNaQ0NjaGdacjExWHcwUWpSVnA4bGRJcVptT2c2?oc=5"
-    },
-    {
-      "time": "6:12 AM",
-      "text": "Evangelicals amplify Trump's religious framing of Iran war - reuters.com",
-      "tag": "Reuters",
-      "url": "https://news.google.com/rss/articles/CBMirAFBVV95cUxPQ0NzcEoyYlRrbjFkSGVXV0ZpZVcyNjROZm9mdzQ5SjNIUlN1UmY5OW5mTnRPUDVQbXpuUGxqVEpYR1dBQnJHUkdiRkI0UWhleFVtTV83LWtMTGN3VzlZbUdGRm1YU3RCY0ZocW1EUGtUSUFXSTMySjhvWW1ZYXNvWVVyZDF5QWVTX3JyUzhCX25Sc2t0VXM0QTJaY3RBMUlxUjNpOGNIdUJQNzA1?oc=5"
-    },
-    {
-      "time": "6:07 AM",
-      "text": "Trump meets NATO chief as Iran war strains alliance - reuters.com",
-      "tag": "Reuters",
-      "url": "https://news.google.com/rss/articles/CBMioAFBVV95cUxPTElYZGVPMjJlcV9uMGNqaGlXUURCZFFQZnppNmFnNnAzbEM5NlQzQ3Z2MWdnclFobmhuMUUzUV90dFZpWGdmckV4TnZiTkpNUmtBZUtqMG1XYml5eGktMW1MOTVGdkJFcHo1eVh3UnQzWnJqRzdSTlZuMGpab3JBcFVSODRaclVzR0V2Nmc1Mzh3UWtNX0pJczNMU1Q5Ty1t?oc=5"
+      "time": "6:30 AM",
+      "text": "Olympic skier Lindsey Vonn doesn't rule out the 2030 games: 'I would only do it if I could be fast'",
+      "tag": "CNBC",
+      "url": "https://www.cnbc.com/2026/04/09/olympic-skier-lindsey-vonn-2030-games.html"
     },
     {
       "time": "5:49 AM",
-      "text": "India set to get first Iranian oil cargo in 7 years, tracking data shows - reuters.com",
+      "text": "Exclusive: Iran war doubles Russia's main oil revenue to $9 bln in April, Reuters calculations show - Reuters",
       "tag": "Reuters",
-      "url": "https://news.google.com/rss/articles/CBMivwFBVV95cUxQUmdaTVljc1ZIM2pIT01VdEZLVlBLa3NtTnRiUWFRcDB5QmkxOXY1YVFudW5EVUEtRzhnYmNFUGdKSUptSWVyOTRNZzZRcmFCVTV0WWFpeW5WU3drcGJtTnVrejgycng1YUg0YUV6alRNTHlvUFEySWNENHpEcUluZHBCT3A4S2pGbmFydGx6d19XeGZkZk1icjd3Q0lRaGtZNUdxMkYzUU80WDhNMTFfX2ZzRHE4SEdHWHpzV3JZYw?oc=5"
+      "url": "https://news.google.com/rss/articles/CBMiywFBVV95cUxPZnkwOWotSUd6QS0tWFNRQ3pybElMRF9IanZnVE9hU1ZoVENKSU5CUDF6clF6a3NSTjdGa2pGQUpOLTdiS3FoNTl5VF9fUlo3d3AxZ1JJTnpmWkxjQ0tPeWxCTTdpN25BQVAwSFgyam9jTXBkb2lRU3lzemtZRC1BczVscUpGaU9sU2JDWk9vRlc1NGUzM0NBeFNtWnJuRm4zSGNlcG91ck1kNzhKNG5RSDBGbUhBdmFKaURETm1tem4xc3MtX0VjSVBrNA?oc=5"
     },
     {
-      "time": "5:29 AM",
-      "text": "US and Iran agree to two-week ceasefire brokered by Pakistan - reuters.com",
+      "time": "4:23 AM",
+      "text": "Italy says EU should consider pausing budget rules if Iran crisis persists - Reuters",
       "tag": "Reuters",
-      "url": "https://news.google.com/rss/articles/CBMizgFBVV95cUxPLVZ2aXNYWERoaVZBdWlxUWpCX3BMQlVCWjd3ZEpQZ2dKN21aR3lwMGdDWkVSM0Z3T2JvVzA4ZjZMcXFRSWtrUjJ3cno0MHFwQ0phWkdGdkIzY0Z5RFhkNlBpQTRsSjNUTk10emVzaEZ3NlhxQjU5Tkxsa3NTRU5VQUVMamkwUU9GeVR2WTA3MUt4dTM0QjFVQ1hESXliT0s2ZEtPVHNkVnBKb1lrWXdqdlZBRTBEVGJLVGlRVzhvNXdscFUwanloQTVwb1VOUQ?oc=5"
+      "url": "https://news.google.com/rss/articles/CBMitwFBVV95cUxQY1puQUw0cHdsVW9rTjBXbVZHR1RIM2dXdGMtMk5NWHV1NUZ5bUJkRE1sYS04OUliLVN1bHUycFJFTEM4M0M0aXhTalhTRGlYdlZIeDFSM0szeDlZZWFGWHl1ZFNpTk9EUE8zVmRVWFhGVVJlT1FuRnpPRkZvaFpVaTRIbUlBaW83c2MxdlpUN0tnVEZTZzV3VWZaYUE2bEd2Ql9aWHFkUzVaTEhoREd2YUFEemk2SHM?oc=5"
+    },
+    {
+      "time": "4:04 AM",
+      "text": "Israeli military says it has killed nephew of Hezbollah chief Naim Qassem - Reuters",
+      "tag": "Reuters",
+      "url": "https://news.google.com/rss/articles/CBMiwgFBVV95cUxNVXcwUktpSkZsY3FaYXUxQm9IMUJJazQwQXFTZ1ZuQ0JlLVRxcXgzXzNSb0VCSGE4MjVKaFMzUWJDTXpJRGZHMEVmcTJlbW9haDlSaVJfT01vTHY2ZHNuWjNzNVNwbWhMa3laZ2dCNUZhcDFRREZfS0xIcF9YMmVfQXNDQzFEODV2dThyRXJCZm96TGx1dVJaWXNLamtvbUZDeW0tVVpBTm0zdGkxMnB5cWNIdzNFandMYmp2djUtRjcydw?oc=5"
+    },
+    {
+      "time": "3:58 AM",
+      "text": "China hopes 'relevant parties' can grasp chance at peace in Iran war - Reuters",
+      "tag": "Reuters",
+      "url": "https://news.google.com/rss/articles/CBMitgFBVV95cUxPZnBQNW5BeVZIOHdwVnFVRzFObUx4Wjk1aC1seWlZOS1Za3FuT1V6M1FjRlpRRC1VdnlMMGtXdGN5YWhQUDBVbW9IMFV2a0Z2bUFtQ1pGSEN4VmdRdmdFaW4ta1pLWF9VWElZS19CVHM3NmhhcUlvZ2I1MDNjTTBEWWlMNHRBdE56aDdmUUhOY1FVQXhyRUw1Q1RaYjJhUzAtcTlYSFV2NENSUU5QVlVXOGtEUjJKUQ?oc=5"
     }
   ],
-  "brief": "<h2><span class=\"sec-icon\">◆</span> Market Overview</h2>\n\nFutures are mixed in a tight range as markets digest the US-Iran ceasefire news. VIX spiking 3.36% to 35.02 shows underlying tension despite the diplomatic breakthrough. Small caps (IWM +0.22%) outpacing large caps signals risk-on rotation, but elevated volatility warns of fragile sentiment.\n\n<h2><span class=\"sec-icon\">◆</span> What to Watch</h2>\n\n<ul>\n<li><strong>Oil volatility</strong> - Energy complex whipsawing on ceasefire headlines, XLE still up 0.80% pre-market despite crude selloff</li>\n<li><strong>RPM earnings (BMO)</strong> - Industrial coatings play reporting with 0.36 EPS estimate amid materials sector weakness</li>\n<li><strong>Defense sector reaction</strong> - Monitor RTX, LMT, NOC as Iran war developments shift military spending outlook</li>\n<li><strong>VIX term structure</strong> - Front month volatility elevated suggests tactical hedging despite ceasefire optimism</li>\n</ul>\n\n<h2><span class=\"sec-icon\">◆</span> Sector Rotation</h2>\n\nEnergy leading (+0.80%) as traders position for supply disruption scenarios despite ceasefire. Consumer discretionary (-1.16%) and staples (-1.69%) getting hammered as inflation fears resurface with geopolitical premium. Tech (+0.48%) showing relative strength, suggesting flight to quality amid uncertainty.\n\n<div class=\"callout callout-amber\"><div class=\"callout-label\">⚡ Key Driver</div>Two-week ceasefire timeline creates short-term trading window - expect heightened volatility as deadline approaches</div>\n\n<div class=\"callout callout-red\"><div class=\"callout-label\">⚠ Bear Case</div>VIX spike alongside flat equity futures screams institutional hedging - smart money positioning for breakdown</div>\n\n<h2><span class=\"sec-icon\">◆</span> Levels That Matter</h2>\n\n<ul>\n<li><strong>SPY 655</strong> - Key support from Monday's low, break triggers 645 test</li>\n<li><strong>QQQ 590</strong> - Resistance confluence, reclaim opens 595 measured move</li>\n<li><strong>VIX 38</strong> - Prior resistance turned support, break higher signals capitulation phase</li>\n<li><strong>XLE 95</strong> - Energy sector breakout level despite oil weakness</li>\n</ul>\n\n<hr>\n<p><em>Not a prediction. A preparation. Make your plan before the bell.</em></p>"
+  "brief": "<h2><span class=\"sec-icon\">◆</span> Market Overview</h2>\n\nFutures are ripping higher with the S&P 500 up 2.55% to $676, led by industrials (+3.75%) and tech (+3.10%). VIX is collapsing 9.59% to 31.66, signaling some relief in risk appetite despite ongoing Middle East tensions. This looks like a technical bounce after recent selling pressure, but geopolitical headlines remain the wildcard.\n\n<h2><span class=\"sec-icon\">◆</span> What to Watch</h2>\n<ul>\n<li><strong>Energy Sector Divergence:</strong> XLE down 3.51% despite oil revenue headlines - watch for continued pressure on energy names</li>\n<li><strong>GLP-1 Retail Play:</strong> Consumer discretionary up 2.83% on weight-loss wardrobe refresh story - retail names could see follow-through</li>\n<li><strong>Iran War Impact:</strong> Monitor geopolitical headlines for market direction changes - any escalation could reverse this bounce quickly</li>\n<li><strong>Light Earnings Day:</strong> WDFC and WAFD the only notable reports - focus stays on macro themes</li>\n</ul>\n\n<div class=\"callout callout-green\"><div class=\"callout-label\">✦ Bull Case</div>VIX collapse below 32 suggests oversold bounce has legs. Industrials leading could signal infrastructure/defense spending optimism amid geopolitical tensions.</div>\n\n<h2><span class=\"sec-icon\">◆</span> Sector Rotation</h2>\n\nClear risk-on rotation with cyclicals leading - industrials, materials, and tech all up 3%+. Energy is the lone laggard at -3.51%, likely profit-taking after recent oil price spikes. Defensive sectors (utilities, staples) lagging but still positive suggests this is genuine risk appetite, not just short covering.\n\n<div class=\"callout callout-amber\"><div class=\"callout-label\">⚡ Key Driver</div>Market torn between Middle East war premium (bullish oil/defense) and recession fears (bearish growth). Today's bounce suggests growth concerns temporarily winning.</div>\n\n<h2><span class=\"sec-icon\">◆</span> Levels That Matter</h2>\n<ul>\n<li><strong>SPY $680:</strong> Key resistance from March highs - break above opens door to $690+</li>\n<li><strong>QQQ $610:</strong> Critical level that's held multiple times - failure here negates tech strength</li>\n<li><strong>VIX 30:</strong> Break below signals real fear subsiding, could fuel more upside</li>\n<li><strong>XLE $85:</strong> Energy support level - break below accelerates sector rotation away from oil</li>\n</ul>\n\n<div class=\"callout callout-red\"><div class=\"callout-label\">⚠ Bear Case</div>This bounce comes on light volume pre-market with no major catalysts. Any fresh Middle East headlines or European market weakness could quickly reverse gains.</div>\n\n<hr>\n<p><em>Not a prediction. A preparation. Make your plan before the bell.</em></p>"
 }

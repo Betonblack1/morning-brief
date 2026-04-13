@@ -1,36 +1,36 @@
 {
-  "generated": "2026-04-10T11:26:02.845Z",
-  "date": "2026-04-10",
+  "generated": "2026-04-13T11:49:38.715Z",
+  "date": "2026-04-13",
   "indices": [
     {
       "name": "S&P 500",
-      "val": "679.91",
-      "chg": 0.5769,
-      "price": 679.91
+      "val": "679.46",
+      "chg": -0.0662,
+      "price": 679.46
     },
     {
       "name": "NASDAQ",
-      "val": "610.19",
-      "chg": 0.6765,
-      "price": 610.19
+      "val": "611.07",
+      "chg": 0.1442,
+      "price": 611.07
     },
     {
       "name": "DOW",
-      "val": "481.90",
-      "chg": 0.5718,
-      "price": 481.9
+      "val": "479.25",
+      "chg": -0.5499,
+      "price": 479.25
     },
     {
       "name": "RUSSELL",
-      "val": "261.96",
-      "chg": 0.572,
-      "price": 261.96
+      "val": "261.30",
+      "chg": -0.2519,
+      "price": 261.3
     },
     {
       "name": "VIX",
-      "val": "30.39",
-      "chg": -4.0114,
-      "price": 30.39
+      "val": "30.77",
+      "chg": 1.2504,
+      "price": 30.77
     },
     {
       "name": "10Y",
@@ -43,150 +43,150 @@
     {
       "name": "Tech",
       "symbol": "XLK",
-      "chg": 0.2682
+      "chg": 0.3871
     },
     {
       "name": "Health",
       "symbol": "XLV",
-      "chg": -0.2272
+      "chg": -1.3527
     },
     {
       "name": "Financials",
       "symbol": "XLF",
-      "chg": 0.2539
+      "chg": -1.091
     },
     {
       "name": "Energy",
       "symbol": "XLE",
-      "chg": -1.2403
+      "chg": -0.6803
     },
     {
       "name": "Cons Disc",
       "symbol": "XLY",
-      "chg": 1.7325
+      "chg": 0.133
     },
     {
       "name": "Industrials",
       "symbol": "XLI",
-      "chg": 1.0268
+      "chg": -0.3891
     },
     {
       "name": "Materials",
       "symbol": "XLB",
-      "chg": -0.1546
+      "chg": 0.5613
     },
     {
       "name": "Real Estate",
       "symbol": "XLRE",
-      "chg": 0.6833
+      "chg": 0.2106
     },
     {
       "name": "Utilities",
       "symbol": "XLU",
-      "chg": 0.7909
+      "chg": -0.403
     },
     {
       "name": "Cons Staples",
       "symbol": "XLP",
-      "chg": 0.8094
+      "chg": -1.2942
     },
     {
       "name": "Comm Svcs",
       "symbol": "XLC",
-      "chg": 0.4042
+      "chg": -0.28
     }
   ],
   "keyLevels": [
     {
       "tag": "support",
       "label": "SPY Support",
-      "val": "673.77"
+      "val": "678.45"
     },
     {
       "tag": "resist",
       "label": "SPY Resist",
-      "val": "681.16"
+      "val": "682.03"
     },
     {
       "tag": "pivot",
       "label": "QQQ Pivot",
-      "val": "607.91"
+      "val": "611.44"
     }
   ],
   "fearGreed": {
-    "score": 20,
+    "score": 18,
     "label": "Extreme Fear"
   },
   "earnings": [
     {
-      "ticker": "MCCK",
+      "ticker": "NFTM",
       "info": "EPS Est: N/A",
       "when": ""
     },
     {
-      "ticker": "LOT",
+      "ticker": "RJDG",
       "info": "EPS Est: N/A",
       "when": ""
     },
     {
-      "ticker": "IFBD",
+      "ticker": "SPND",
       "info": "EPS Est: N/A",
       "when": ""
     },
     {
-      "ticker": "EVOH",
+      "ticker": "CPMV",
       "info": "EPS Est: N/A",
       "when": ""
     },
     {
-      "ticker": "FGFH",
+      "ticker": "NNAX",
       "info": "EPS Est: N/A",
       "when": ""
     },
     {
-      "ticker": "KISB",
+      "ticker": "ALOT",
       "info": "EPS Est: N/A",
-      "when": ""
+      "when": "AMC"
     }
   ],
   "econ": [],
   "news": [
     {
-      "time": "6:21 AM",
-      "text": "Indian shares log best week in over five years as Iran ceasefire eases investor anxiety - Reuters",
-      "tag": "Reuters",
-      "url": "https://news.google.com/rss/articles/CBMipgFBVV95cUxPNHYwSGJTRWhFM2JlZGZ1OGZYejlrVXFYMGI5ODMwMzZ6VUVuYmI5UE5IWC1kclBIUTlfTXpkeGRfR19zRFltcEtBLVUxa19LdjFOXzM0a05EczU2N09yak9SOVVlVERVS2RTV2c1OVdCN29RSzRhZjBHaFItbHF0ZkNwTUZXc19HTlRmNk4tMGY0bHJvV28wMHpVVS03Rkp3d195SEdR?oc=5"
+      "time": "7:30 AM",
+      "text": "Ineos Automotive: Startup backed by a knighted billionaire and soccer mogul wants to rekindle the rugged SUV market",
+      "tag": "CNBC",
+      "url": "https://www.cnbc.com/2026/04/13/ineos-automotive-grenadier-suv-james-ratcliffe.html"
     },
     {
-      "time": "6:19 AM",
-      "text": "Shares gain before US-Iran talks; oil edges higher - Reuters",
+      "time": "5:47 AM",
+      "text": "Wall Street futures drop after US-Iran peace talks fail - Reuters",
       "tag": "Reuters",
-      "url": "https://news.google.com/rss/articles/CBMif0FVX3lxTE9MZ1daUm9fTmVBRlFTMU9oX3BLNjhQaHFwdy1rRzhQaTVhMG56TlhVaTdzUE1EUlVGU2stVmZkVXgzZUs1TlBDdUZLTjltMGxNMjAzS240U3BuYUM4Z3M5WWlKbWY3WVh1NEJ5RzFNNTJuamgtTXZwbDV2WXFEN0U?oc=5"
+      "url": "https://news.google.com/rss/articles/CBMirwFBVV95cUxPNnlHODRfWHZBSmRTd0hYTjBoVndLOTk4dm8tS1Q5WmVlQVZ5NEtoYU9wUFZKdXdMOXlYc0d4RU5jMEFyTUthSTZaMTlGMEJEaHdtNWh1YndGQnlRWjhQMnJzVmZFNTFhZ2FQX3JESzhxc1NaMXRiclVmNHlaZkIwT3dhWTJ6eFgtZ3ZQVDBZV2FoQ3RPWlRCbm5ZSDNSX2tqV0NjWE9EM0JLaENHRTNj?oc=5"
     },
     {
-      "time": "6:08 AM",
-      "text": "Strait still shut and Lebanon fighting strains truce as US and Iran aim for first talks - Reuters",
+      "time": "5:38 AM",
+      "text": "Gold falls as renewed US-Iran tensions dampen rate cut hopes - Reuters",
       "tag": "Reuters",
-      "url": "https://news.google.com/rss/articles/CBMixAFBVV95cUxOSjVnU2MyTVRjaWpYcWNnS3pGQUNLUkxaYTlPOHVvdVBudl9DYmE0WEhBaXUyeDlQZ3RDeXFiQTUweU9oZ0NYWl8waGF4LWpCTHFPcmRyMTIwNy1VOFJMekpnVkRjeWQ5LTNhYlR6Tkd4c3EzV3E1ZG5USjViSDZjV3FPRHNFX011OGVGX1ViU0IyZ2tMVzJlOUgxckVnOTF6Rk1JS0RYUzF3MUVmSnBFVGg0aTVhSWZFRm5kUmlDX2hrcnNo?oc=5"
+      "url": "https://news.google.com/rss/articles/CBMiogFBVV95cUxNaUFTSW41Q2Y0S2IzQkhhWGppdnJGckdGZjFnVmRzbGNlRmVoc1RzWUNJblUtcTVEcFBETXpYaEl0WDNfN1Z5LTB1ZDJlT1J0TWhHeDdxNGMza3JnUThuVGlxTWVTM25MSnRPV3ZSYnJjOTF6b0RTUHc0a1ozQ3U4dVFiaW9nVWYwRHJNZTVnZ1ZYQ0FIU0FzTnByWFlhN3dNY0E?oc=5"
     },
     {
-      "time": "5:56 AM",
-      "text": "World Food Programme warns Lebanon facing food security crisis due to Iran war - Reuters",
+      "time": "5:24 AM",
+      "text": "UK will not back blockade of Strait of Hormuz, PM Starmer says - Reuters",
       "tag": "Reuters",
-      "url": "https://news.google.com/rss/articles/CBMiyAFBVV95cUxOWVF2R25NcGVFbU9pMmFmLWZEOUpCelU4QkQzUi1rbm9CTEZWcUdPSktsX2lqRW1BMlltS3E5eU9Nbm92cnFLTV9ROURfc0ozTzJnMWVkMXpSOWZtcXFnZmhqbENLRTNpNEUyVmxOZi1pNGo5R3VaLXNkUnVzR29DREN6a1VvelhlM0syR2R3RlVsejFrUC15a09nUTlhTHFsWlFZZklPWXNWXzdlQUJNeXNuWmozVkg4eG85WE1EZHFnTDgtUk04UA?oc=5"
+      "url": "https://news.google.com/rss/articles/CBMipwFBVV95cUxQUWcyTHhTNXY4dDRpZVctaVlBNm1JV1Q4SUlGTkhEelBWZU1CX2R6QWVRcUVMNE5oUFZaVU04bnhrZnd1MWg5alZPY3RpOVY0bnBWU09pSmY0RmsyZzktdlJJZkRSeVU2b014SHFTcFdHSmJ2WHdlQjdwSDExN0I0YTg1WmNVdk9XUnFpZWZBYXNmc19fUVJhdVdPczIwdWUweFVrbVRGQQ?oc=5"
     },
     {
-      "time": "5:18 AM",
-      "text": "Ceasefire sends dollar on weekly drop; US-Iran talks in focus - Reuters",
+      "time": "5:15 AM",
+      "text": "China urges restraint over US blockade of Strait of Hormuz, backs talks - Reuters",
       "tag": "Reuters",
-      "url": "https://news.google.com/rss/articles/CBMipgFBVV95cUxQcTBueU9NQ0psWHZaZnNkNGthMG9Qc1VjZjZJUWJoQmI3c25jYnZaMHFXbVRYcy0wdDA3clpTWXRrSEt3dEdqRW5uLXZual9ybGRUYUY5R0ZBbXd5ak5FVmdTN0VBQWZYVmpMdTZ5UHNsOVZOUkdGMk9rdlJJNjJoX0doanExclNPTTlfQ2ZuTC1rQ2JBNHFqYjg5VFVUYUQwNHFBRGx3?oc=5"
+      "url": "https://news.google.com/rss/articles/CBMisgFBVV95cUxPdFRfbmJ2SUZBeW1XS2YzbUxWYS0zNXg0ang5RW9rTGNrUFlnVmxEVjFLVEpFVERDcEZhUzAwaHNVSTBJd3JoQjUyckF6dmpWVkxzaEVDMkpfdjVvU0loRjRfeTdGa1M1YUhaSWplRkNUTmYxR2U5Q2pZUW5lcHR1MmhyWGxtWEEtM3M4RHVPeE9nRW1nYU9oOGE3cGNYUkh1NTY2ZTdMNU50a2pualoxTVd3?oc=5"
     },
     {
-      "time": "2:05 AM",
-      "text": "Britain's Tesco to shine light on inflation risks from Iran war - Reuters",
+      "time": "5:13 AM",
+      "text": "Pope says he will continue to speak out against war after Trump attack - Reuters",
       "tag": "Reuters",
-      "url": "https://news.google.com/rss/articles/CBMinAFBVV95cUxQSW9ZY2RUUlhaQXVlRmJ3dldLTFRNM2U1TmJVY1Vpa2xoNzdGREdPZ3FlWHdnbUMybmlsOS1SamFWdEUwV3R3bjZPVEFoOTAwR0prajloR3hlbFRPVXEwNFZueWR5SHZ3LWxGdkVselBtMDJmMWkyOXY2Y090UWlVS1FxalZtMkZlZ1RjYjhRZkxDS2xXZjNsSTZackk?oc=5"
+      "url": "https://news.google.com/rss/articles/CBMirgFBVV95cUxNd2N1ZENvMVBLeGY2QTdJWUZsZHk0aDdCQlRmUmRhVjg3UWV2NURiU3I1eGhtcFZMRWlncF9ENmlrd3VaQ3Z4Ulc2TkRUQTJtbHo2YmtoTzNaRVFRV21KT0xiM1dzNmcyNFVJX2V4VUd3TV9hbzdycWc0ajRFWnRBMlVXSDVMNWdOTnpOWGFnV2NfUEgtMFg2OFVIdDNDOTNJcjhuUXJQSGU4SWhVa1E?oc=5"
     }
   ],
-  "brief": "<h2><span class=\"sec-icon\">◆</span> Market Overview</h2>\n\nMarkets are catching a relief bid pre-market with SPY up 0.58% to $679.91 as Iran ceasefire talks calm geopolitical nerves. VIX is bleeding out 4% to 30.39, but still elevated above its 20 comfort zone, indicating fragile sentiment beneath the surface optimism.\n\n<h2><span class=\"sec-icon\">◆</span> What to Watch</h2>\n<ul>\n<li><strong>US-Iran Diplomatic Talks</strong> - First direct negotiations could either extend this relief rally or spark fresh volatility if talks break down</li>\n<li><strong>Oil Price Action</strong> - Energy sector down 1.24% despite crude edging higher; watch for disconnect resolution</li>\n<li><strong>Consumer Inflation Data</strong> - March CPI expected to surge due to Iran war impact on commodities and supply chains</li>\n<li><strong>End-of-Week Position Squaring</strong> - Light economic calendar means focus on technical levels and risk-off positioning</li>\n</ul>\n\n<h2><span class=\"sec-icon\">◆</span> Sector Rotation</h2>\n\nConsumer Discretionary leading the charge up 1.73% as ceasefire hopes fuel risk-on appetite, while Energy paradoxically sells off despite oil strength. Defensive plays like Utilities and Staples gaining ground suggests investors still want hedges despite the relief rally.\n\n<div class=\"callout callout-green\"><div class=\"callout-label\">✦ Bull Case</div>Ceasefire momentum could trigger significant short covering rally with VIX collapse toward 20 level, especially if US-Iran talks show progress</div>\n\n<div class=\"callout callout-red\"><div class=\"callout-label\">⚠ Bear Case</div>VIX still above 30 signals underlying stress; any diplomatic setback could spark violent reversal with leveraged longs trapped</div>\n\n<div class=\"callout callout-amber\"><div class=\"callout-label\">⚡ Key Driver</div>Dollar weakness from ceasefire optimism could fuel commodity and growth stock rotation if sustained through weekend</div>\n\n<h2><span class=\"sec-icon\">◆</span> Levels That Matter</h2>\n<ul>\n<li><strong>SPY 680</strong> - Round number resistance; break above targets 685 gap fill from last week's selloff</li>\n<li><strong>QQQ 615</strong> - Key resistance level that's held multiple times; breakout would signal tech leadership return</li>\n<li><strong>VIX 28</strong> - Critical support; break below accelerates volatility crush and fuels rally extension</li>\n<li><strong>XLE 85</strong> - Energy sector support; violation signals broader commodity complex weakness despite oil strength</li>\n</ul>\n\n<hr>\n<p><em>Not a prediction. A preparation. Make your plan before the bell.</em></p>"
+  "brief": "<h2><span class=\"sec-icon\">◆</span> Market Overview</h2>\n\nMixed pre-market action with NASDAQ (+0.14%) outperforming while DOW (-0.55%) leads the decline. VIX spike to 30.77 (+1.25%) signals growing anxiety as US-Iran peace talks collapse and geopolitical tensions escalate around the Strait of Hormuz.\n\n<h2><span class=\"sec-icon\">◆</span> What to Watch</h2>\n\n<ul>\n<li><strong>Geopolitical Developments:</strong> Failed US-Iran talks dominating sentiment with potential Strait of Hormuz blockade threatening global supply chains</li>\n<li><strong>Rate Cut Expectations:</strong> Growing tensions dampening Fed dovish bets as gold retreats despite safe-haven demand</li>\n<li><strong>China Export Impact:</strong> AI-driven boom under threat as Iran conflict disrupts trade routes</li>\n<li><strong>Light Earnings Day:</strong> Minor names reporting with no major catalyst from corporate results</li>\n</ul>\n\n<h2><span class=\"sec-icon\">◆</span> Sector Rotation</h2>\n\nTech (+0.39%) and Materials (+0.56%) leading while defensive plays get hammered - Health (-1.35%) and Staples (-1.29%) worst performers. Risk-on/risk-off tug of war with growth beating value as traders bet on AI resilience despite macro headwinds.\n\n<div class=\"callout callout-amber\"><div class=\"callout-label\">⚡ Key Driver</div>Strait of Hormuz tensions could spike oil prices and reignite inflation fears, killing rate cut hopes and pressuring equities</div>\n\n<div class=\"callout callout-red\"><div class=\"callout-label\">⚠ Bear Case</div>VIX above 30 with failed peace talks suggests more downside ahead. China export warnings signal global growth slowdown</div>\n\n<div class=\"callout callout-green\"><div class=\"callout-label\">✦ Bull Case</div>Tech resilience at +0.39% shows AI narrative intact. Light economic calendar means focus stays on oversold bounces</div>\n\n<h2><span class=\"sec-icon\">◆</span> Levels That Matter</h2>\n\n<ul>\n<li><strong>SPY:</strong> Key support at $675, resistance at $685. Below $670 triggers deeper selling</li>\n<li><strong>QQQ:</strong> Holding $610 crucial for tech leadership. Break above $615 targets $620</li>\n<li><strong>VIX:</strong> Above 31 signals panic mode. Below 28 calms nerves</li>\n<li><strong>XLE:</strong> Energy bounce likely if oil spikes on Hormuz fears. Watch $95 crude level</li>\n</ul>\n\n<hr>\n<p><em>Not a prediction. A preparation. Make your plan before the bell.</em></p>"
 }

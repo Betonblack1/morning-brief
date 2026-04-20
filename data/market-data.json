@@ -1,36 +1,36 @@
 {
-  "generated": "2026-04-17T11:29:51.550Z",
-  "date": "2026-04-17",
+  "generated": "2026-04-20T09:58:32.256Z",
+  "date": "2026-04-20",
   "indices": [
     {
       "name": "S&P 500",
-      "val": "701.66",
-      "chg": 0.2457,
-      "price": 701.66
+      "val": "710.14",
+      "chg": 1.2086,
+      "price": 710.14
     },
     {
       "name": "NASDAQ",
-      "val": "640.47",
-      "chg": 0.4816,
-      "price": 640.47
+      "val": "648.85",
+      "chg": 1.3084,
+      "price": 648.85
     },
     {
       "name": "DOW",
-      "val": "485.63",
-      "chg": 0.1877,
-      "price": 485.63
+      "val": "494.22",
+      "chg": 1.7688,
+      "price": 494.22
     },
     {
       "name": "RUSSELL",
-      "val": "269.95",
-      "chg": 0.2079,
-      "price": 269.95
+      "val": "275.78",
+      "chg": 2.1597,
+      "price": 275.78
     },
     {
       "name": "VIX",
-      "val": "29.30",
-      "chg": -0.1023,
-      "price": 29.3
+      "val": "28.98",
+      "chg": -1.0922,
+      "price": 28.98
     },
     {
       "name": "10Y",
@@ -43,186 +43,166 @@
     {
       "name": "Tech",
       "symbol": "XLK",
-      "chg": 1.1444
+      "chg": 1.5327
     },
     {
       "name": "Health",
       "symbol": "XLV",
-      "chg": -0.785
+      "chg": 1.4938
     },
     {
       "name": "Financials",
       "symbol": "XLF",
-      "chg": -0.2684
+      "chg": 0.7688
     },
     {
       "name": "Energy",
       "symbol": "XLE",
-      "chg": 1.4706
+      "chg": -2.7572
     },
     {
       "name": "Cons Disc",
       "symbol": "XLY",
-      "chg": -0.4654
+      "chg": 2.3633
     },
     {
       "name": "Industrials",
       "symbol": "XLI",
-      "chg": -0.4966
+      "chg": 1.867
     },
     {
       "name": "Materials",
       "symbol": "XLB",
-      "chg": 0.7201
+      "chg": 0.2512
     },
     {
       "name": "Real Estate",
       "symbol": "XLRE",
-      "chg": 0.9214
+      "chg": 1.5293
     },
     {
       "name": "Utilities",
       "symbol": "XLU",
-      "chg": 0.7171
+      "chg": -0.4099
     },
     {
       "name": "Cons Staples",
       "symbol": "XLP",
-      "chg": 0.4565
+      "chg": 1.2649
     },
     {
       "name": "Comm Svcs",
       "symbol": "XLC",
-      "chg": 1.2526
+      "chg": 0.2272
     }
   ],
   "keyLevels": [
     {
       "tag": "support",
       "label": "SPY Support",
-      "val": "698.53"
+      "val": "705.76"
     },
     {
       "tag": "resist",
       "label": "SPY Resist",
-      "val": "702.78"
+      "val": "712.39"
     },
     {
       "tag": "pivot",
       "label": "QQQ Pivot",
-      "val": "639.30"
+      "val": "647.64"
     },
     {
       "tag": "event",
-      "label": "Building Permits MoM",
-      "val": "2026-04-17 12:30:00"
+      "label": "3-Month Bill Auction",
+      "val": "2026-04-20 15:30:00"
     }
   ],
   "fearGreed": {
-    "score": 25,
+    "score": 26,
     "label": "Fear"
   },
   "earnings": [
     {
-      "ticker": "CCBC",
+      "ticker": "VTYB",
       "info": "EPS Est: N/A",
       "when": ""
     },
     {
-      "ticker": "ALLY",
-      "info": "EPS Est: 0.9531",
-      "when": "BMO"
-    },
-    {
-      "ticker": "MCBS",
-      "info": "EPS Est: 0.7344",
+      "ticker": "JYD",
+      "info": "EPS Est: N/A",
       "when": ""
     },
     {
-      "ticker": "PRK",
-      "info": "EPS Est: 2.6257",
+      "ticker": "ORPB",
+      "info": "EPS Est: N/A",
       "when": ""
     },
     {
-      "ticker": "STT",
-      "info": "EPS Est: 2.6528",
-      "when": "BMO"
+      "ticker": "PAIYY",
+      "info": "EPS Est: N/A",
+      "when": ""
     },
     {
-      "ticker": "BOTJ",
+      "ticker": "KARX",
+      "info": "EPS Est: N/A",
+      "when": ""
+    },
+    {
+      "ticker": "TETEF",
       "info": "EPS Est: N/A",
       "when": ""
     }
   ],
   "econ": [
     {
-      "time": "2026-04-17 12:30:00",
-      "name": "Building Permits MoM Prel",
+      "time": "2026-04-20 15:30:00",
+      "name": "3-Month Bill Auction",
       "impact": "high"
     },
     {
-      "time": "2026-04-17 12:30:00",
-      "name": "Building Permits Prel",
-      "impact": "high"
-    },
-    {
-      "time": "2026-04-17 16:15:00",
-      "name": "Fed Barkin Speech",
-      "impact": "high"
-    },
-    {
-      "time": "2026-04-17 17:00:00",
-      "name": "Baker Hughes Oil Rig Count",
-      "impact": "high"
-    },
-    {
-      "time": "2026-04-17 17:00:00",
-      "name": "Baker Hughes Total Rigs Count",
-      "impact": "high"
-    },
-    {
-      "time": "2026-04-17 18:00:00",
-      "name": "Fed Waller Speech",
+      "time": "2026-04-20 15:30:00",
+      "name": "6-Month Bill Auction",
       "impact": "high"
     }
   ],
   "news": [
     {
-      "time": "6:54 AM",
-      "text": "Some grocers are using AI to cut food waste and boost profit margins",
-      "tag": "CNBC",
-      "url": "https://www.cnbc.com/2026/04/17/some-grocers-are-using-ai-to-cut-food-waste-and-boost-profit-margins.html"
+      "time": "4:30 AM",
+      "text": "Iran's president stresses importance of diplomacy while noting distrust of U.S. - Reuters",
+      "tag": "Reuters",
+      "url": "https://news.google.com/rss/articles/CBMiwwFBVV95cUxNTkJOQm9kSTFjZURyVmpNcmQ3N0xOM3JScVQyQkJQNXgwX1FvblpETTE0WEZCOEhWRkRmYkk4a0ZMOVBOX1ZPNFhtT2hRcjgtemxNNjBrMFdlUmZGVkJTWDRBSEdQakJWMTBZWkE4bUNFTDdWQ3JGbWZLMTU3Q3VwekF0WTZ0VXJuUVNCazRkclJpcUZVcEp5NmViLWQ3SXdXMkFDTWhxYVFrbnRFZ2VPRXFiQ1FQTm1OWHlmbGFCWktKdjA?oc=5"
     },
     {
-      "time": "5:25 AM",
-      "text": "Exclusive: Indian refiners pay for Iran oil in yuan via ICICI Bank, sources say - Reuters",
+      "time": "3:56 AM",
+      "text": "Gold falls on stronger dollar amid renewed US-Iran tensions - Reuters",
       "tag": "Reuters",
-      "url": "https://news.google.com/rss/articles/CBMisgFBVV95cUxOY3hBTkdiTEFPc2tsTzJXb3BIckV6c2hpOFZBRm9lZ2xtMFRQTXQ2S1lsaFdrRG5XanVUSnM4UEdSLThxVGJjSnlhaGJXZDFNa0s1ZEhvbWxhWjY3SkpFdmJUb1JHRENrUE5JNlJyMVRlbktMVFBjQTF2TnJtS0ZILTNsZHVnVl9tM29IWUgzZDZyT1BxZGFvcDhSV0F3TlZyeDh6UldEa2RUOHhCcW00NGJn?oc=5"
+      "url": "https://news.google.com/rss/articles/CBMipwFBVV95cUxOZzk2N1VxOGtVVVJ0Y216QnlOcjlOX3BhUUoyRDB6OVRhWndlcmUtdUZDcHpmcUhDanRGU3h0bm1QVmZBX3hzbmJfNVJjUFRISDJBOHhTdzQ0SXRXNjE0OW5WcE41QjY5OWg1ZDdpeXlrVDlndTE1ZXhFYWZCaHVGNm56ekprdGU4TXRtV2VDc2Q4TXBsT2t0MmYtOHJpV3dGam5PS29aTQ?oc=5"
     },
     {
-      "time": "1:22 AM",
-      "text": "Trump says Iran war should end 'soon', says Hezbollah should support truce - Reuters",
+      "time": "3:55 AM",
+      "text": "World awaits fate of ceasefire after US seizes Iranian ship - Reuters",
       "tag": "Reuters",
-      "url": "https://news.google.com/rss/articles/CBMiugFBVV95cUxOU20wMW9MaXRSMS1kYzhMbHdwWGRYcjB4NHR4NFhIN0RTMnZQREE1Sl9nY3FuTHg4VkRqcnpKcTBwR3puU3NtZTlBZjd6dmktNnI0RzZHbGdPTC1icHBmUDRVREZZa0l6Uzk5dmNMWS1sdm5XcU1PYlZxVEhRQUVoeV8tdjhkczZmRTRGc0ZGM0ViSWVSeGg1blk2YWlWUnpIYUcyTVZBMzc4aDhEYmNFOWVGbFo5enFKQ0E?oc=5"
+      "url": "https://news.google.com/rss/articles/CBMiwwFBVV95cUxNYXBYREl4Q2RERUhiN1RsQ3VjME95MDhjTXNtYjFzMWo1XzFsd0puZ21EUkxVTTNvS2tKekp1ZERHQUJJeWU3S1hVRjk0YWRodlVXZW10bW9oVFA0VURUd2REQ2NGc0lMSUx1dzR2RzVRUDczazBrdXZuNUY2am9MSjIzbzZ1dDZfd0pGSUc0TDRnRlc2LXF6ZEI4VlRPTU1QeS1qd2tKb3hHcm1MSGEySXBxWktxZDJ2Mng0dDJDMUZOU0U?oc=5"
     },
     {
-      "time": "11:05 PM",
-      "text": "Iran women players thank Australian government for protection - Reuters",
+      "time": "2:18 AM",
+      "text": "Australia's NAB expects impairment charges to double from Iran war - Reuters",
       "tag": "Reuters",
-      "url": "https://news.google.com/rss/articles/CBMiqwFBVV95cUxNVTZZbjBqbU85X3g5TktYaVJfRHRQQ1NpM0hMbEVJUzYyblMtcXBzdV9rSGN1TkIwTk92ekctdmgtRXVqUXlkRVpOQVZEODZmU3NNWUNBeHdyRzAyYm5GSXpnWW4xWEdvcEJPcEpuSW5LSUZjdjhsdVQtblBQTmEtOVIzYnRsUmNkVzBfT3J4cDQ1eUI2Tk9ic3F0czBmTS1EanNJalRxVk1lQTQ?oc=5"
+      "url": "https://news.google.com/rss/articles/CBMixwFBVV95cUxOQTRSSEs3QzQ2MUlRLTdMRl9TVElvcng3dU1qWkpxSGN5bkgxVTNSMXRLNnFuaHF3VXJNUUwyMVIySE9FVVRhMUV6WjlhaGQyVFplekR5TF9jRkR2NWpjeld5QWV2TXVtbVAxcXhxWTdlVXZmOXJPaEt3SV9kQkxnVXNZLVNfLXRPd0NVMXZqNS0waFZibXhwWlJ0VTFjcXJvMUFlVmNnQ0g5VDNBOEx1cmtIbzBtWnFTOVB0cXZlQjkxLTBNZVRN?oc=5"
     },
     {
-      "time": "10:50 PM",
-      "text": "Gold holds steady, eyes fourth weekly gain on US-Iran peace deal hopes - Reuters",
+      "time": "1:00 AM",
+      "text": "Breakingviews - Iran catastrophe has some silver linings - Reuters",
       "tag": "Reuters",
-      "url": "https://news.google.com/rss/articles/CBMitAFBVV95cUxNMkVicVRIOTdQdXN3dFphY0NYd2ZaMUdseXNGVTkzMGRGUG9pYjYzMkdIRS1UckE0eTJfeTYybzViT1VLOV95Vk5abkNaY1Q5UGF5UkQzWXVNbWZoamh0VzA5czhGUUNPNjdMR0tzckV5enpuX3FtcHpHY3p5b0hSb1pDR0V5bDNwY2tSZkY2Skt5TzZveTZvOVQycUNlUEFLcU1SZDRDV21aSVBqd0lqTVZLN1o?oc=5"
+      "url": "https://news.google.com/rss/articles/CBMiowFBVV95cUxPcldybTlUM0RsX1BGTGl1U0prUldFTnZVbFJadzVadThCaXRWUENQOGhpVXBwbWZZQnkzT3Y1WXhxajdXTXJEN0MtZEljNFZpRDhxVkRsaEhCYXl4eW95a3haR1hfSjl1ZU9MN044eG4zOFBWVkZxVWFpdEJyNjRKaEMzbkx4a2M0QkFJRHpROUYzOWEwQWZfS0FoVkN2dlVuVEtz?oc=5"
     },
     {
-      "time": "10:35 PM",
-      "text": "South Korea draws back investors even as Iran war exposes cracks - Reuters",
+      "time": "12:53 AM",
+      "text": "Iran executes two men accused of involvement in 'spy network linked to Israel', judiciary news outlet - Reuters",
       "tag": "Reuters",
-      "url": "https://news.google.com/rss/articles/CBMi2gFBVV95cUxNWWQxNEszZWlDU05uMVliY3JUZkFLYlpTQk1FeGNaYk12aTBpVS0tUWZtam5SZlROcHctOVM4WGVVTXZIeXBXTjVUWGhlSnlGZkNFR1lVSlJuaTBmTVJWQ015REV1T0VuMFRYUk1hVWdtWVZhWW84RHFwZGlxTy1hVDYwZXB0MFltZ1huZlJacmdmT2Y3YnBpYlNrcGwtV1M5MlpSbkRiZm1BRWs5REQ3ZUdXdlEwYi1PZlp0ZXVNWkJGU3NRdzNXanFDMzVFQ2k2QzRyeS1JLWN6Zw?oc=5"
+      "url": "https://news.google.com/rss/articles/CBMiywFBVV95cUxPWldfODU2R2dqR2xwV0pvUy1icDdsT1dROXR3MEYxSHpMQm1femk0X0lpbjBqNEVXcDlUSVEtSGRnaU5WRlAwTWN4bEptX2pYcU5MVVk0dU15WFdSUTA5S1JtRmR6ZWZnVy1xNjFDNmdLVHRMQzRwdE9oVW50SlI5U0lTeEN4cVc0b2ZmTEZBT1hTUnBxeWN3ckNCWkdnSWZjZ0VZMndSSXlESUNNWUZNNmQwQ1RNaGZyNlUzWFZrNU9GYkNNWFJtc2FGcw?oc=5"
     }
   ],
-  "brief": "<h2><span class=\"sec-icon\">◆</span> Market Overview</h2>\nFutures pointing modestly higher across the board with S&P 500 at $701.66 (+0.25%) as Iran peace deal hopes keep risk-on sentiment alive. VIX sitting elevated at 29.3 suggests markets still pricing geopolitical risk despite the optimism. Tech and Energy leading the charge while Healthcare drags - classic risk-on rotation in play.\n\n<h2><span class=\"sec-icon\">◆</span> What to Watch</h2>\n<ul>\n<li><strong>Building Permits</strong> (12:30 ET) - Housing data critical with rates still elevated and affordability concerns mounting</li>\n<li><strong>Fed Speeches</strong> - Barkin (4:15 PM) and Waller (6:00 PM) could signal policy direction ahead of next meeting</li>\n<li><strong>Bank Earnings</strong> - ALLY, STT, FITB all reporting BMO; watch net interest margin guidance closely</li>\n<li><strong>Baker Hughes Rig Count</strong> (5:00 PM) - Energy names ripping, production data matters for momentum</li>\n</ul>\n\n<h2><span class=\"sec-icon\">◆</span> Sector Rotation</h2>\nClear risk-on move with Tech (+1.14%) and Energy (+1.47%) leading while defensive Healthcare (-0.79%) and Staples lagging. Real Estate (+0.92%) getting bid on rate cut hopes tied to potential Iran resolution. This rotation only works if geopolitical tensions actually ease - watch oil and dollar for confirmation.\n\n<div class=\"callout callout-green\"><div class=\"callout-label\">✦ Bull Case</div>Iran peace deal momentum accelerates risk-on rotation, VIX collapses below 25, and tech multiples expand on lower rate expectations</div>\n\n<div class=\"callout callout-red\"><div class=\"callout-label\">⚠ Bear Case</div>Peace talks stall over weekend, oil spikes Monday, and this relief rally gets sold into resistance at SPY $705</div>\n\n<div class=\"callout callout-amber\"><div class=\"callout-label\">⚡ Key Driver</div>Dollar weakness (second weekly drop) fueling commodity and international exposure trades - watch DXY 103 support</div>\n\n<h2><span class=\"sec-icon\">◆</span> Levels That Matter</h2>\n<ul>\n<li><strong>SPY $705</strong> - Key resistance from March highs, break above opens $715</li>\n<li><strong>QQQ $645</strong> - Clean breakout level, tech leadership needs to hold here</li>\n<li><strong>VIX 27</strong> - Break below signals real de-risking, watch for vol crush</li>\n<li><strong>XLE $95</strong> - Energy at critical breakout, failure here kills the momentum trade</li>\n</ul>\n\n<hr>\n<p><em>Not a prediction. A preparation. Make your plan before the bell.</em></p>"
+  "brief": "<h2><span class=\"sec-icon\">◆</span> Market Overview</h2>\n\nRisk-on rally building steam pre-market with Russell 2000 leading at +2.16% and Dow showing surprising strength at +1.77%. VIX drop to 28.98 suggests some tension relief despite ongoing Iran headlines dominating the tape.\n\n<h2><span class=\"sec-icon\">◆</span> What to Watch</h2>\n\n<ul>\n<li><strong>Treasury Auctions:</strong> 3-month and 6-month bill auctions at 3:30 PM will test demand amid geopolitical uncertainty</li>\n<li><strong>Energy Sector Weakness:</strong> XLE down -2.76% despite Middle East tensions - watch for reversal or continuation</li>\n<li><strong>Iran Ceasefire Developments:</strong> Market pricing in diplomacy hopes while US ship seizure adds complexity</li>\n<li><strong>Small Cap Breakout:</strong> IWM leading charge suggests domestic focus over international concerns</li>\n</ul>\n\n<div class=\"callout callout-amber\"><div class=\"callout-label\">⚡ Key Driver</div>Market torn between geopolitical risk and diplomatic optimism - Iran's emphasis on diplomacy providing relief valve for oversold conditions</div>\n\n<h2><span class=\"sec-icon\">◆</span> Sector Rotation</h2>\n\nClassic risk-on rotation with Consumer Discretionary (+2.36%) and Industrials (+1.87%) leading while defensive Utilities lag at -0.41%. Energy's -2.76% drop paradoxical given Middle East tensions, suggesting traders betting on de-escalation. Tech and Healthcare both strong above +1.4% indicates broad-based appetite returning.\n\n<div class=\"callout callout-green\"><div class=\"callout-label\">✦ Bull Case</div>Small caps outperforming signals domestic confidence returning. VIX decline from elevated levels creates technical tailwind for momentum continuation.</div>\n\n<div class=\"callout callout-red\"><div class=\"callout-label\">⚠ Bear Case</div>Energy sector weakness despite Iran tensions suggests underlying demand concerns. Treasury auctions could reveal funding stress if poorly received.</div>\n\n<h2><span class=\"sec-icon\">◆</span> Levels That Matter</h2>\n\n<ul>\n<li><strong>SPY 712:</strong> Key resistance - break above confirms continuation of relief rally</li>\n<li><strong>QQQ 650:</strong> Psychological level and prior support turned resistance</li>\n<li><strong>VIX 27:</strong> Break below signals meaningful fear reduction</li>\n<li><strong>IWM 280:</strong> Small cap breakout level - failure here kills domestic optimism narrative</li>\n</ul>\n\n<hr>\n<p><em>Not a prediction. A preparation. Make your plan before the bell.</em></p>"
 }

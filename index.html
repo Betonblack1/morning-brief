@@ -654,6 +654,28 @@ async function loadData() {
     renderEarnings(data.earnings || []);
     renderNews(data.news || []);
 
+    // Second Day and Catalyst Plays
+    const s = data.second_day || [];
+    const c = data.catalyst || [];
+    const playsSection = `
+      ${s.length ? `<h2><span class="sec-icon">◆</span> Second Day Plays</h2><div class="earnings-grid" id="secondDayGrid"></div>` : ''}
+      ${c.length ? `<h2><span class="sec-icon">◆</span> Catalyst Plays</h2><div class="earnings-grid" id="catalystGrid"></div>` : ''}
+    `;
+    const briefDiv = document.getElementById('briefContent');
+    if(briefDiv && (s.length || c.length)) {
+      briefDiv.innerHTML = playsSection + '<hr>' + briefDiv.innerHTML;
+    }
+    if(document.getElementById('secondDayGrid')) {
+      document.getElementById('secondDayGrid').innerHTML = s.map(play=>
+        `<div class="earn-cell"><div class="earn-ticker">${play.ticker}</div><div class="earn-info">${play.notes||''}</div><div class="earn-when earn-amc">${play.game_plan||''}</div></div>`
+      ).join('');
+    }
+    if(document.getElementById('catalystGrid')) {
+      document.getElementById('catalystGrid').innerHTML = c.map(play=>
+        `<div class="earn-cell"><div class="earn-ticker">${play.ticker}</div><div class="earn-info">${play.notes||''}</div><div class="earn-when earn-bmo">${play.game_plan||''}</div></div>`
+      ).join('');
+    }
+
   } catch (err) {
     console.error('Failed to load market data:', err);
     document.getElementById('briefContent').innerHTML =

@@ -1,36 +1,36 @@
 {
-  "generated": "2026-04-21T11:38:20.438Z",
-  "date": "2026-04-21",
+  "generated": "2026-04-22T11:37:23.720Z",
+  "date": "2026-04-22",
   "indices": [
     {
       "name": "S&P 500",
-      "val": "708.72",
-      "chg": -0.2,
-      "price": 708.72
+      "val": "704.08",
+      "chg": -0.6547,
+      "price": 704.08
     },
     {
       "name": "NASDAQ",
-      "val": "646.79",
-      "chg": -0.3175,
-      "price": 646.79
+      "val": "644.33",
+      "chg": -0.3803,
+      "price": 644.33
     },
     {
       "name": "DOW",
-      "val": "494.33",
-      "chg": 0.0223,
-      "price": 494.33
+      "val": "491.36",
+      "chg": -0.6008,
+      "price": 491.36
     },
     {
       "name": "RUSSELL",
-      "val": "277.35",
-      "chg": 0.5693,
-      "price": 277.35
+      "val": "274.51",
+      "chg": -1.024,
+      "price": 274.51
     },
     {
       "name": "VIX",
-      "val": "29.33",
-      "chg": 1.2077,
-      "price": 29.33
+      "val": "29.89",
+      "chg": 1.9093,
+      "price": 29.89
     },
     {
       "name": "10Y",
@@ -43,186 +43,186 @@
     {
       "name": "Tech",
       "symbol": "XLK",
-      "chg": 0.1361
+      "chg": 0.0841
     },
     {
       "name": "Health",
       "symbol": "XLV",
-      "chg": -0.9274
+      "chg": -1.0175
     },
     {
       "name": "Financials",
       "symbol": "XLF",
-      "chg": 0.3815
+      "chg": -0.627
     },
     {
       "name": "Energy",
       "symbol": "XLE",
-      "chg": 0.0909
+      "chg": 1.4527
     },
     {
       "name": "Cons Disc",
       "symbol": "XLY",
-      "chg": -0.4485
+      "chg": -0.7508
     },
     {
       "name": "Industrials",
       "symbol": "XLI",
-      "chg": 0.2248
+      "chg": -1.4146
     },
     {
       "name": "Materials",
       "symbol": "XLB",
-      "chg": 0.6746
+      "chg": -0.8807
     },
     {
       "name": "Real Estate",
       "symbol": "XLRE",
-      "chg": 0.3597
+      "chg": -1.9265
     },
     {
       "name": "Utilities",
       "symbol": "XLU",
-      "chg": -0.8882
+      "chg": -1.7486
     },
     {
       "name": "Cons Staples",
       "symbol": "XLP",
-      "chg": -0.0849
+      "chg": -0.6676
     },
     {
       "name": "Comm Svcs",
       "symbol": "XLC",
-      "chg": -0.2939
+      "chg": -1.3389
     }
   ],
   "keyLevels": [
     {
       "tag": "support",
       "label": "SPY Support",
-      "val": "706.14"
+      "val": "702.64"
     },
     {
       "tag": "resist",
       "label": "SPY Resist",
-      "val": "709.91"
+      "val": "711.27"
     },
     {
       "tag": "pivot",
       "label": "QQQ Pivot",
-      "val": "646.02"
+      "val": "645.58"
     },
     {
       "tag": "event",
-      "label": "ADP Employment Chang",
-      "val": "2026-04-21 12:15:00"
+      "label": "MBA 30-Year Mortgage",
+      "val": "2026-04-22 11:00:00"
     }
   ],
   "fearGreed": {
-    "score": 25,
+    "score": 22,
     "label": "Fear"
   },
   "earnings": [
     {
-      "ticker": "DDC",
+      "ticker": "NP",
+      "info": "EPS Est: 0.0936",
+      "when": "AMC"
+    },
+    {
+      "ticker": "KBSX",
       "info": "EPS Est: N/A",
       "when": ""
     },
     {
-      "ticker": "MAMO",
+      "ticker": "TURB",
       "info": "EPS Est: N/A",
       "when": ""
     },
     {
-      "ticker": "ERH",
+      "ticker": "PSBQ",
       "info": "EPS Est: N/A",
       "when": ""
     },
     {
-      "ticker": "MLGF",
+      "ticker": "TRUX",
       "info": "EPS Est: N/A",
       "when": ""
     },
     {
-      "ticker": "GOVB",
-      "info": "EPS Est: N/A",
-      "when": ""
-    },
-    {
-      "ticker": "PFBX",
+      "ticker": "FFBB",
       "info": "EPS Est: N/A",
       "when": ""
     }
   ],
   "econ": [
     {
-      "time": "2026-04-21 12:15:00",
-      "name": "ADP Employment Change Weekly",
+      "time": "2026-04-22 11:00:00",
+      "name": "MBA 30-Year Mortgage Rate",
       "impact": "high"
     },
     {
-      "time": "2026-04-21 12:30:00",
-      "name": "Retail Sales Control Group MoM",
+      "time": "2026-04-22 11:00:00",
+      "name": "MBA Mortgage Applications",
       "impact": "high"
     },
     {
-      "time": "2026-04-21 12:30:00",
-      "name": "Retail Sales Ex Autos MoM",
+      "time": "2026-04-22 11:00:00",
+      "name": "MBA Mortgage Market Index",
       "impact": "high"
     },
     {
-      "time": "2026-04-21 12:30:00",
-      "name": "Retail Sales Ex Gas/Autos MoM",
+      "time": "2026-04-22 11:00:00",
+      "name": "MBA Mortgage Refinance Index",
       "impact": "high"
     },
     {
-      "time": "2026-04-21 12:30:00",
-      "name": "Retail Sales MoM",
+      "time": "2026-04-22 11:00:00",
+      "name": "MBA Purchase Index",
       "impact": "high"
     },
     {
-      "time": "2026-04-21 12:30:00",
-      "name": "Retail Sales YoY",
+      "time": "2026-04-22 14:30:00",
+      "name": "EIA Crude Oil Imports Change",
       "impact": "high"
     }
   ],
   "news": [
     {
-      "time": "6:19 AM",
-      "text": "Many Americans question Trump’s temperament amid Iran war, pope spat: Reuters/Ipsos poll - Reuters",
+      "time": "6:32 AM",
+      "text": "Exclusive: US turns to Ukrainian counter-drone tech after Iran attacks, sources say - Reuters",
       "tag": "Reuters",
-      "url": "https://news.google.com/rss/articles/CBMiwgFBVV95cUxQbFBJZGdKSDhCUHNCSmpFdzlNZkY0eXRhemxrc2VWU2RyQnlJcHlZNUh6eUFJX2owU3JfUHU4SVlJM2VyRi03OTlYSHZFUkJXdXQwOGRiRDBIOG1yNW8wYUFXMDQ1dFpWRUVsR0pPclUzNDJYUXRxRzQySjg1VDVIekhZS29RLUF0SlQ4amVPcTBhRVBiY0dWN2Z0SVVRSThNZDRMWTNmRE1hUTJXXy1jV0loUi0zM0o0dmFhLWd6MXRKUQ?oc=5"
+      "url": "https://news.google.com/rss/articles/CBMiywFBVV95cUxQQ0Z4RkhlOW1LZGV5cEVVVnpWQkEwTHhZMnhiQ29kU195ZjRYVmZxU3AtUGpaUHlWaTNySmVsQVU5dHlSZ0RFUzdLMFVveWtTcDRBMHNaZm12Z1pLamV1eWVncXprOE5sdkN1bmJyU0ZHTC1ic1E1V3VockhFNWZLMW1rS25yd2NoaU5wbzlxQ3VobTZoY1o5M0E1ekdWRDdPR1QzUzhqRFgzTk54dEJOaHlXSFpvRWgyX2Vva0lVSzRvY0Zha1BjazljTQ?oc=5"
     },
     {
-      "time": "5:59 AM",
-      "text": "UnitedHealth tops quarterly estimates, hikes profit outlook as insurer manages high medical costs",
-      "tag": "CNBC",
-      "url": "https://www.cnbc.com/2026/04/21/unitedhealth-group-unh-earnings-q1-2026.html"
+      "time": "5:07 AM",
+      "text": "Three vessels hit by gunfire in Strait of Hormuz, crews safe - Reuters",
+      "tag": "Reuters",
+      "url": "https://news.google.com/rss/articles/CBMipAFBVV95cUxOek56STB6bE5kUE9aLUU4RmtzZmxhTmM1SFRSWHRlMF8xbWFiQlR0MUI1QldvdUZmbGlrYmpucWVvWEVxWi01d1pzSDVzU3E2WDlod3ppRTZIcnBlc09vd0ROSDVBNkk3V1BjaFBBQ0ZuQ3B4aE90Rm9TUWZxeWxUeFhKRkMtS3lmNzMxdFB3WHdnOTdoUGVuMEJxQVBJUkJxSm1TTg?oc=5"
     },
     {
-      "time": "5:55 AM",
-      "text": "World's top condom maker Karex to raise prices sharply as Iran war strains supply chain - Reuters",
+      "time": "4:04 AM",
+      "text": "Diet Coke loses its fizz in India as Iran war hits cans supply - Reuters",
       "tag": "Reuters",
-      "url": "https://news.google.com/rss/articles/CBMi5wFBVV95cUxQTXdFUXI5QlhTTGZHbGM0TUk3OFpYclVSUlcyWW9WYndBUTZqZmxXczlZX09hb0ZIOTNUQ214cTdiU1hkMUkydWxrQWpOVEhZbWpKUlRKellkZkhXV1o5WGlTN0M4bUJncE9lb200RVNSNG1aVDFDaGtfRXhpM1NpVldndHhTUDd0NUh0aTRGZDBJYTdRbW5QMTlaMHlqWV9xUzJMUkdHUU9MOXpvcUZYNlBlNFc2b005UDhyMU94U0x6eXNndExpWFdJRm56N2hkNmZ0a1FfazlwTE5VZ3doWDdPRG1YSjg?oc=5"
+      "url": "https://news.google.com/rss/articles/CBMipwFBVV95cUxOSHZHQllnbzVPXzdBZXo4LUhrLTlsX2VJLVU2ZVhBRDMycGlpd2JxVUt2SW5TQTFqM0VwSXByakVTMmRod09MY1BHR1EwZ2NGNE5TRFI3aXlNQ1BzcGFCYmdCTUFGQ2dybUNFa25ka1lTdTFJR3hGakVGZDVDdXNReTcyMGk3akFYdC13emZkcm1rYkh6UEtJSHpBZ0R5MVZ2NWNCYVd5aw?oc=5"
     },
     {
-      "time": "2:43 AM",
-      "text": "War in Iran is causing biggest energy crisis in history, IEA says - Reuters",
+      "time": "2:14 AM",
+      "text": "Iran war may crush oil demand today, but send it soaring long term - Reuters",
       "tag": "Reuters",
-      "url": "https://news.google.com/rss/articles/CBMirwFBVV95cUxQMWV2Um1HX1V4ZXVkckVsNHNKQTFaR1IxaWt4SG1ScTBrVGc1Z1oxcUlodEFid08tMGVJLXFSbGVKQ0tET2FlWTlfMFJNdXNQSVdXOU5KSmVqb3FQcFJFZGxybUV2TUtTeVBxUnMyZTV4amplaWIxQUQ3UXBWdm9CTW9jRHBCNzU3cGN1VElsSk15TVhHQUF5dnJCY29JM0pwZmNILWwwVE5xd253Q3NZ?oc=5"
+      "url": "https://news.google.com/rss/articles/CBMiuAFBVV95cUxPM2NBUmdfYUk2V3UwbGZZb2VWVHJxQWJVblVreWw1UzhiZjRGeW9uYV9lM00xbDF5bHhaWXN0dWh1bDI5VWR6bUp4WnpjSUVaZVM1Z29fTTBOTXd1U1V0VlVZMnRJRVRwZTRGY3d4US0xcFNpVzRzd0RmQnBUbG00X2dobEFFSzg5blF6SFE2YVBTaFR2ZGZ5c0tEaDdZS0VBS1dBYjhnRUJOeC1DbVd3NmsyRHp3Q2hR?oc=5"
     },
     {
-      "time": "2:41 AM",
-      "text": "Iran executes man over burning of mosque during January protests, Mizan reports - Reuters",
+      "time": "2:04 AM",
+      "text": "UK inflation, showing first hit from Iran war, jumps to 3.3% - Reuters",
       "tag": "Reuters",
-      "url": "https://news.google.com/rss/articles/CBMiyAFBVV95cUxQS1A5VUxxb1hMdlVCVGVEeUJ5U3BUcWh6SHZMVDBzYllzOUIwSVg0LWkyT0VLN0dDcG0xc0hSd1praUdweTY2d0tFSncweVFadlJXOS1CcXFHRzBFY1pHMXJ5LTdxWVhFc0s3TTlMX3Z5cTMzUW80M21mdHhmd2Zxc0FKS0VQS0xNeWRFbERvbzFKWkxRSHI0eGhMVlNrR3hPN3l2anhWcUQ4LXd6NExmUUZVT0FXZFRCZjRDTlJxUHZKd1JhcWEzSw?oc=5"
+      "url": "https://news.google.com/rss/articles/CBMimAFBVV95cUxObWhlMktFb1c3bGdGMEtaTlVvQkFLVTVMeGUyQ014TmhBblFsd2R2Q0FpV3Q4eGdxX1FmZWE5elJZR2hGXzlFSmRGNnlTWFNDWmF4cndRN3ZWY2JILVpxWko2aHJQa3oyNkhScnpjc2J0RVNROFVJM0xHWFM5eGZId3B6cnkta01GSjRVcmhuUXFNUEhuTEllWg?oc=5"
     },
     {
-      "time": "2:10 AM",
-      "text": "Scam messages offering ships safe transit through Hormuz, security firm warns - Reuters",
+      "time": "1:04 AM",
+      "text": "How the Iran war oil and gas supply shock compares with past disruptions - Reuters",
       "tag": "Reuters",
-      "url": "https://news.google.com/rss/articles/CBMiygFBVV95cUxQX01KdkNLUG93WTNVeTl4U1lhQVNHVlNlWlJfak5waV9wbXFocUY0QzlZSUhZMFFpN21LMmFNR3BIaFJ6ZGpYX1E0V01XU1BJRFE0aklvSThKQnpBMUZ1TUx1OUFVNTNNOU80cHlKZ3J6dWZnU3g2UjBhdXJ0aXNjVXQ1NEhvcGMwRkdyZzFnajJfdy1ERDliWV9aeEQwcU5yZHBuOW81M0RXWC1rUHR3ZFk1VEdzZHZpOVl4cTJZZVl0ZEJOMlIzR0NR?oc=5"
+      "url": "https://news.google.com/rss/articles/CBMitwFBVV95cUxQUUFLYV9DV3E3WmpuNUh0cmtkTTZxTzRHTmUtdkFRSTM1MDBranJKbENTYnlBTnNJZjhxV0RTaWd2SVRBMktTUHNZZ2k2VXlGRzBKWUNiNXdaWFBKQ3VGZVZnb3BqYVJERnprVGtCWEsxcW5nQXI2OWxZVFBSTkFBQmRDNDVZVmZuTjVlYTNNNG9WSzA3NVZyTXJJY0F2YzNjQzJkQ0Jwb0dKeHoybTNXR1k1X2VYb3M?oc=5"
     }
   ],
-  "brief": "<h2><span class=\"sec-icon\">◆</span> Market Overview</h2>\n\nFutures are mixed with small caps (IWM +0.57%) leading while tech and large caps struggle. VIX spike to 29.33 signals elevated anxiety as Iran war headlines dominate the tape. Energy crisis narrative is building momentum with materials catching a bid.\n\n<h2><span class=\"sec-icon\">◆</span> What to Watch</h2>\n\n<ul>\n<li><strong>Retail Sales Data (12:30 ET)</strong> - Full suite of retail numbers could move markets significantly given consumer spending concerns</li>\n<li><strong>ADP Employment (12:15 ET)</strong> - Weekly employment data adds to labor market picture ahead of Friday's jobs report</li>\n<li><strong>UnitedHealth Earnings Beat</strong> - Healthcare giant topped estimates and raised outlook, but sector still down -0.93% pre-market</li>\n<li><strong>Iran War Energy Impact</strong> - IEA calling this \"biggest energy crisis in history\" - watch crude and energy names</li>\n</ul>\n\n<h2><span class=\"sec-icon\">◆</span> Sector Rotation</h2>\n\nMaterials (XLB +0.67%) and financials (XLF +0.38%) are leading as war premium drives commodities higher. Healthcare getting hit despite UNH beat - defensive rotation failing. Small caps outperforming suggests risk-on sentiment beneath the surface volatility.\n\n<div class=\"callout callout-amber\"><div class=\"callout-label\">⚡ Key Driver</div>Iran war escalation creating supply chain disruptions across multiple sectors - from energy to industrial commodities. Hormuz Strait concerns are real.</div>\n\n<div class=\"callout callout-red\"><div class=\"callout-label\">⚠ Bear Case</div>VIX above 29 with energy crisis rhetoric building. If retail sales disappoint, consumer spending narrative collapses just as geopolitical risks peak.</div>\n\n<div class=\"callout callout-green\"><div class=\"callout-label\">✦ Bull Case</div>Small caps leading suggests rotation into domestically-focused names. Materials and industrials catching bids on infrastructure/reshoring themes.</div>\n\n<h2><span class=\"sec-icon\">◆</span> Levels That Matter</h2>\n\n<ul>\n<li><strong>SPY $708</strong> - Holding yesterday's close; break below targets $705 support</li>\n<li><strong>QQQ $650</strong> - Key psychological level; reclaim for tech recovery</li>\n<li><strong>VIX 30</strong> - Breakout level signals major volatility expansion</li>\n<li><strong>XLE $95</strong> - Energy sector at critical breakout point on war premium</li>\n</ul>\n\n<hr>\n<p><em>Not a prediction. A preparation. Make your plan before the bell.</em></p>"
+  "brief": "<h2><span class=\"sec-icon\">◆</span> Market Overview</h2>\n\nPre-market showing red across the board with SPY down 0.65% to $704.08 and VIX spiking 1.91% to 29.89. Iran war headlines dominating sentiment as geopolitical risk premium returns to markets. Small caps getting hit hardest with IWM down over 1%.\n\n<h2><span class=\"sec-icon\">◆</span> What to Watch</h2>\n\n<ul>\n<li><strong>Oil Inventory Data (2:30 PM):</strong> EIA crude stocks and Cushing data could be explosive given Middle East supply disruption fears</li>\n<li><strong>Mortgage Applications (11:00 AM):</strong> Full suite of MBA housing data as rates remain elevated</li>\n<li><strong>Energy Sector Momentum:</strong> XLE up 1.45% pre-market, only green sector as oil narrative builds</li>\n<li><strong>VIX Above 29:</strong> Fear gauge signaling potential volatility expansion if geopolitical tensions escalate</li>\n</ul>\n\n<div class=\"callout callout-red\"><div class=\"callout-label\">⚠ Bear Case</div>Iran conflict escalation crushes risk assets. Real estate and utilities getting demolished pre-market as rate fears combine with war premium. Broad sector weakness suggests institutional selling.</div>\n\n<h2><span class=\"sec-icon\">◆</span> Sector Rotation</h2>\n\nClassic risk-off rotation underway with energy the sole winner (+1.45%) as oil supply shock fears build. Real estate (-1.93%) and utilities (-1.75%) leading the carnage while tech showing surprising resilience at +0.08%. Flight to defensive plays getting crushed as duration risk meets geopolitical uncertainty.\n\n<div class=\"callout callout-amber\"><div class=\"callout-label\">⚡ Key Driver</div>Iran war headlines driving everything. Multiple Reuters reports on Strait of Hormuz attacks, supply disruptions, and European energy crisis comparisons setting the narrative.</div>\n\n<div class=\"callout callout-green\"><div class=\"callout-label\">✦ Bull Case</div>Tech holding up despite broad weakness suggests selective buying. Energy momentum could lift broader market if oil bulls take control. VIX spike could mark short-term capitulation bottom.</div>\n\n<h2><span class=\"sec-icon\">◆</span> Levels That Matter</h2>\n\n<ul>\n<li><strong>SPY $700:</strong> Major psychological support, break triggers deeper selling</li>\n<li><strong>VIX $32:</strong> Next resistance level indicating serious fear escalation</li>\n<li><strong>XLE $95:</strong> Energy breakout level if oil narrative accelerates</li>\n<li><strong>QQQ $640:</strong> Tech support holding, loss opens $620 gap fill</li>\n</ul>\n\n<hr>\n<p><em>Not a prediction. A preparation. Make your plan before the bell.</em></p>"
 }

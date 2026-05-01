@@ -1,36 +1,36 @@
 {
-  "generated": "2026-04-30T11:58:36.613Z",
-  "date": "2026-04-30",
+  "generated": "2026-05-01T11:38:15.401Z",
+  "date": "2026-05-01",
   "indices": [
     {
       "name": "S&P 500",
-      "val": "711.58",
-      "chg": -0.0155,
-      "price": 711.58
+      "val": "718.66",
+      "chg": 0.995,
+      "price": 718.66
     },
     {
       "name": "NASDAQ",
-      "val": "661.57",
-      "chg": 0.6114,
-      "price": 661.57
+      "val": "667.74",
+      "chg": 0.9326,
+      "price": 667.74
     },
     {
       "name": "DOW",
-      "val": "488.67",
-      "chg": -0.5596,
-      "price": 488.67
+      "val": "496.65",
+      "chg": 1.633,
+      "price": 496.65
     },
     {
       "name": "RUSSELL",
-      "val": "272.08",
-      "chg": -0.6681,
-      "price": 272.08
+      "val": "277.97",
+      "chg": 2.1648,
+      "price": 277.97
     },
     {
       "name": "VIX",
-      "val": "29.02",
-      "chg": 2.4356,
-      "price": 29.02
+      "val": "28.19",
+      "chg": -2.8601,
+      "price": 28.19
     },
     {
       "name": "10Y",
@@ -43,186 +43,186 @@
     {
       "name": "Tech",
       "symbol": "XLK",
-      "chg": 0.7982
+      "chg": 0.2451
     },
     {
       "name": "Health",
       "symbol": "XLV",
-      "chg": -0.6952
+      "chg": 2.2053
     },
     {
       "name": "Financials",
       "symbol": "XLF",
-      "chg": 0.135
+      "chg": 0.4045
     },
     {
       "name": "Energy",
       "symbol": "XLE",
-      "chg": 2.2873
+      "chg": 1.0503
     },
     {
       "name": "Cons Disc",
       "symbol": "XLY",
-      "chg": -0.1453
+      "chg": 1.2924
     },
     {
       "name": "Industrials",
       "symbol": "XLI",
-      "chg": -0.6141
+      "chg": 2.7364
     },
     {
       "name": "Materials",
       "symbol": "XLB",
-      "chg": -0.856
+      "chg": 1.0008
     },
     {
       "name": "Real Estate",
       "symbol": "XLRE",
-      "chg": -0.6149
+      "chg": 1.7415
     },
     {
       "name": "Utilities",
       "symbol": "XLU",
-      "chg": -1.2324
+      "chg": 2.5613
     },
     {
       "name": "Cons Staples",
       "symbol": "XLP",
-      "chg": -0.1926
+      "chg": 1.6763
     },
     {
       "name": "Comm Svcs",
       "symbol": "XLC",
-      "chg": -0.3974
+      "chg": 1.0582
     }
   ],
   "keyLevels": [
     {
       "tag": "support",
       "label": "SPY Support",
-      "val": "708.37"
+      "val": "710.45"
     },
     {
       "tag": "resist",
       "label": "SPY Resist",
-      "val": "712.20"
+      "val": "719.79"
     },
     {
       "tag": "pivot",
       "label": "QQQ Pivot",
-      "val": "659.96"
+      "val": "664.73"
     },
     {
       "tag": "event",
-      "label": "Continuing Jobless C",
-      "val": "2026-04-30 12:30:00"
+      "label": "S&P Global Manufactu",
+      "val": "2026-05-01 13:45:00"
     }
   ],
   "fearGreed": {
-    "score": 26,
+    "score": 30,
     "label": "Fear"
   },
   "earnings": [
     {
-      "ticker": "LANV",
+      "ticker": "CET",
       "info": "EPS Est: N/A",
       "when": ""
     },
     {
-      "ticker": "TRTN PR A",
+      "ticker": "AACB",
       "info": "EPS Est: N/A",
       "when": ""
     },
     {
-      "ticker": "TLIH",
+      "ticker": "PCF",
       "info": "EPS Est: N/A",
       "when": ""
     },
     {
-      "ticker": "ZGN",
+      "ticker": "DTRK",
       "info": "EPS Est: N/A",
       "when": ""
     },
     {
-      "ticker": "INHD",
+      "ticker": "WGRX",
       "info": "EPS Est: N/A",
       "when": ""
     },
     {
-      "ticker": "QETA",
+      "ticker": "GWTI",
       "info": "EPS Est: N/A",
       "when": ""
     }
   ],
   "econ": [
     {
-      "time": "2026-04-30 12:30:00",
-      "name": "Continuing Jobless Claims",
+      "time": "2026-05-01 13:45:00",
+      "name": "S&P Global Manufacturing PMI Final",
       "impact": "high"
     },
     {
-      "time": "2026-04-30 12:30:00",
-      "name": "Core PCE Price Index MoM",
+      "time": "2026-05-01 14:00:00",
+      "name": "ISM Manufacturing Employment",
       "impact": "high"
     },
     {
-      "time": "2026-04-30 12:30:00",
-      "name": "Core PCE Price Index YoY",
+      "time": "2026-05-01 14:00:00",
+      "name": "ISM Manufacturing New Orders",
       "impact": "high"
     },
     {
-      "time": "2026-04-30 12:30:00",
-      "name": "Core PCE Prices QoQ Adv",
+      "time": "2026-05-01 14:00:00",
+      "name": "ISM Manufacturing PMI",
       "impact": "high"
     },
     {
-      "time": "2026-04-30 12:30:00",
-      "name": "Employment Cost - Benefits QoQ",
+      "time": "2026-05-01 14:00:00",
+      "name": "ISM Manufacturing Prices",
       "impact": "high"
     },
     {
-      "time": "2026-04-30 12:30:00",
-      "name": "Employment Cost - Wages QoQ",
+      "time": "2026-05-01 17:00:00",
+      "name": "Baker Hughes Oil Rig Count",
       "impact": "high"
     }
   ],
   "news": [
     {
-      "time": "7:34 AM",
-      "text": "Lawyers to the wealthy warn that AI legal advice comes with serious risks",
+      "time": "7:00 AM",
+      "text": "Apollo Sports Capital and Tom Dundon make landmark $225 million investment in pickleball",
       "tag": "CNBC",
-      "url": "https://www.cnbc.com/2026/04/30/ai-legal-advice-lawyers-risks.html"
+      "url": "https://www.cnbc.com/2026/05/01/apollo-sports-capital-tom-dundon-pickleball-investment.html"
     },
     {
-      "time": "3:38 AM",
-      "text": "From surplus to strain: world rice supply threatened by Iran war, El Nino - Reuters",
+      "time": "5:55 AM",
+      "text": "UAE says Iran cannot be trusted over Hormuz, peace efforts at an impasse - Reuters",
       "tag": "Reuters",
-      "url": "https://news.google.com/rss/articles/CBMiugFBVV95cUxObXhRRDdPYUtROHRKeDAtNG5zcHQzRFAwVXpSQTZQQjlBbTNPeGVMdjJCNVV6Z3dMbnN3dTdFdTl3eFZMYms4Q0tQTTVEeEZEUjRrblFrMUMwbXpVZmRnZ3A0MVNNTDJuVlJTRUFwVExxNGVBQ3JyQVc5Z2F3a21JLTcyZkdfcEs2dkJlZ2F0cDF4SmViaWYyRktWbkF1SWE4NVlJUXEzZXY3STBrblgwMDRjd2NtSktqX0E?oc=5"
+      "url": "https://news.google.com/rss/articles/CBMiwAFBVV95cUxPOXFST3AwNjc5YVJPejQtWGdQNDY1QWY0Y0g4ODl6UzZSbmRKcnVNOW1vVUpZREw0a1pfWUFLYnFDUlJjd2wweUhiWkZrLXByUC1hTDBlaVBJYVlSNkdWV2FiVjRhVFh6eUJJMWx1MXlhbllaUWQtbFRiR1IxNEI0NVo5QklSSmJscjRXQTRaM0wzTVVvTlpycG01cW9aNzJBMGJsNjRONGh0U1JrcXFSZ3RMUVNZdVNyMW9ocEVyNnQ?oc=5"
     },
     {
-      "time": "12:05 AM",
-      "text": "Stagflation risks stacking up as Iran war enters third month - Reuters",
+      "time": "2:02 AM",
+      "text": "Dubai chefs shrink menus as Iran war makes tomatillos, scallops harder to source - Reuters",
       "tag": "Reuters",
-      "url": "https://news.google.com/rss/articles/CBMijwFBVV95cUxON1lOYzI4T3NwMDdseXRuclFtYzBJQTJpTzdVUV9ZV09qVEZGZVhLaVVzV0ZYREZma2NNNV83bUIzYXI1d29SWUQyYUhZLTNpaTNCdWZaRjdVaW1YT3BuYXFnb1dnMlY0VWZiWFJXVmV6bmNBVHJHbkV0ZlNDZ1lidWFSUklTdnVMZFlrUUVpOA?oc=5"
-    },
-    {
-      "time": "11:12 PM",
-      "text": "US military commander to brief Trump on new military options against Iran, Axios reports - Reuters",
-      "tag": "Reuters",
-      "url": "https://news.google.com/rss/articles/CBMixgFBVV95cUxNbHU2ZzJ1aHpMYUQ4ZENJaVJ5ZXNIbElUWE0zcFpZUGtwaEtZa1lnM1pFcnZIM3pPdGhtY0hrZUdVRlNPRUVlYnhPR3p1cFlEazZRRTU4blgzSW5MazhOZ0JPTHo4MlNrYjM1aFE0N3laRzFadWVDa1prNExMZG51SV9SZzNsMTUtWmN6UVcxdFdCbS16OHdaMGxLSks5VnRLcXJiemRGTm1YU0QwVTVpbXpPQzB3NFFwN1dNTGx1TER5cEVpaFE?oc=5"
-    },
-    {
-      "time": "9:38 PM",
-      "text": "China's factory activity extends expansion, PMI shows, as Iran war risks mount - Reuters",
-      "tag": "Reuters",
-      "url": "https://news.google.com/rss/articles/CBMisgFBVV95cUxQalEzeVE4eEs2YnFNWXdVd2FXZHZHU2FQdEM2bm1ac0lMWW01WkZaclE2QjE0aDlfVEdMdEc2Wm4xcXdKUUxTZUJlaHJGdzNvV09WeHVxNjNGRlp0eE1NMzZZTm9JWjVLa2x1a2dLWW90RHlLdUNGZFJta0s5aGw0ZXZFRDlfRzlOZnB5SWNRMEhzeXZDWENZZnVEeDFLZmNUR29UZ1FCb2d3S2Nja09ZWjVB?oc=5"
+      "url": "https://news.google.com/rss/articles/CBMixgFBVV95cUxOZlF5QzRRbFBsRlgwS0dWaGdFQVJOdUplelMyUGN0aWcyYnBXeXlGSzQ1a0t4ODBraTc2T0IzYVIzWVF4VXkyWVhkWFZaSkNid3dNZWlobHQ5X3FqUFBhc0p1R21ORlF0SHVOUFdkb0tVcWlCZFJZR0phYklHRGczUmtncy1mWFNLOHBDWlBOcVprV21MNzE5WU9GZzhMcXZpMENTZTEyUzJQODdmMzhWTWU0dEt3dG1JTl95OV9CY2lGYy1PMVE?oc=5"
     },
     {
       "time": "9:07 PM",
-      "text": "Global oil price retreats after hitting 4-year high on concern of US-Iran war escalation - Reuters",
+      "text": "US official says Iran war truce 'terminated' hostilities for war powers deadline - Reuters",
       "tag": "Reuters",
-      "url": "https://news.google.com/rss/articles/CBMivAFBVV95cUxQenNidWVwSUNlZUxVRDFaR3N2NVdjRXdmTmJNZGk2T2prVmh6bTJndHR1bm1PUmhmbjN2dkpMYTN5NG5IZlFNUExLclNlcWJMVzFrd1VjTXoxRlFEWmtPbDlGZ055WlJVbEhESGRob0hPVFVKemt2aDNhaGpDR1RzZmRORVM3M0RmbjhuY0ctSGlYaEJXYkVtbmZtZnZZNnZHX3FVcXNIQm4wOXJ1Mk83dXFILXdmQi0xcFYzMw?oc=5"
+      "url": "https://news.google.com/rss/articles/CBMizwFBVV95cUxNemtpZUFjR001YzFHcWRuLWowQmVid2hmYWR2UzJpUTR2UnR5aWRTdUhzNWNtOUZMS0lhc29jamFZODZWa25ZejhkZlpneXY1bVNnSjhPT3dyMDk1MXV4M1FscE8xUTEwakF6NU9CWERuSzJDLVFuSEpRVGdhbjAwUF91dm42RS1ORkw4ZzNpV1NpakVKVndra05YaUxvQi1taVkzOHFKTS00QzFWbzhSX2Z1UXAzWlV4OGlacWRQSFpKY3FzdWtIRzhJTkNlN1E?oc=5"
+    },
+    {
+      "time": "8:02 PM",
+      "text": "In the U.S., CEO pay grew 20 times faster than workers' wages in 2025, says Oxfam",
+      "tag": "CNBC",
+      "url": "https://www.cnbc.com/2026/04/30/us-ceo-pay-grew-20-times-faster-than-workers-wages-in-2025-oxfam.html"
+    },
+    {
+      "time": "6:39 PM",
+      "text": "Oil prices rise with no sign of an end to Iran war - Reuters",
+      "tag": "Reuters",
+      "url": "https://news.google.com/rss/articles/CBMixAFBVV95cUxPWVJqNi1rMnBzZk5NaEl4S0xUUjdlZjMySnhFQ2hVekljdHNIaVVyMk5Kem1pV05sd1ZIazh3akJ4aVpkbjZ2S3FfcjA3VTdYR3hNeWwydUllS1pfVUhzVmxlRWE0ZHJTSnJoaUZSWGtCRFFFVDFnNDZTcU1mNEptNU5GRXBvZ2NKa1NxMnduQjRpalo0UGJRSGNLTS1nTFdOYjJNOFc4em9hN3BZUFBEZHVtcVZYTVl6b0xsSGNDYklSNDct?oc=5"
     }
   ],
-  "brief": "<h2><span class=\"sec-icon\">◆</span> Market Overview</h2>\n\nMixed pre-market action with tech leading (+0.80%) while defensives get hammered. VIX up 2.44% to 29.02 signals elevated anxiety heading into a massive data dump at 12:30. Energy ripping +2.29% on Iran war escalation fears, but oil prices actually retreated from 4-year highs overnight.\n\n<h2><span class=\"sec-icon\">◆</span> What to Watch</h2>\n\n<ul>\n<li><strong>PCE Data Avalanche (12:30)</strong> - Core PCE MoM/YoY plus GDP and Employment Cost Index all drop simultaneously. Fed's preferred inflation gauge could swing markets hard.</li>\n<li><strong>Stagflation Narrative</strong> - Iran war entering month three with global supply chain disruptions mounting. Rice supplies threatened, Japan factory output falling.</li>\n<li><strong>Energy Volatility</strong> - Oil retreating despite war escalation. Trump military briefing on Iran options could reverse this quickly.</li>\n<li><strong>China PMI Strength</strong> - Factory activity expanding despite regional tensions, supporting tech rally in pre-market.</li>\n</ul>\n\n<h2><span class=\"sec-icon\">◆</span> Sector Rotation</h2>\n\nClear flight to growth and away from rate-sensitive plays. Tech and energy leading while utilities (-1.23%) and materials (-0.86%) getting crushed. This screams stagflation positioning - investors want growth that can handle inflation and energy exposure for supply shock protection.\n\n<div class=\"callout callout-green\"><div class=\"callout-label\">✦ Bull Case</div>Tech momentum accelerating with China PMI support. If PCE comes in softer, growth stocks could explode higher on rate cut hopes.</div>\n\n<div class=\"callout callout-red\"><div class=\"callout-label\">⚠ Bear Case</div>VIX approaching 30 with small caps down -0.67%. Hot PCE data + war escalation = stagflation reality check and broad selloff.</div>\n\n<div class=\"callout callout-amber\"><div class=\"callout-label\">⚡ Key Driver</div>12:30 data dump is make-or-break. Core PCE above consensus kills the rally. Below consensus and we gap up hard.</div>\n\n<h2><span class=\"sec-icon\">◆</span> Levels That Matter</h2>\n\n<ul>\n<li><strong>SPY 711.58</strong> - Flat pre-market. Break below 705 triggers broader selloff, above 715 and we're running</li>\n<li><strong>QQQ 661.57</strong> - Leading the charge. 665 resistance becomes launch pad if data cooperates</li>\n<li><strong>VIX 29.02</strong> - Death cross at 30. Above that level and risk-off accelerates fast</li>\n<li><strong>XLE Energy</strong> - Best sector play but watch for oil price reversal if Iran tensions cool</li>\n</ul>\n\n<hr>\n<p><em>Not a prediction. A preparation. Make your plan before the bell.</em></p>"
+  "brief": "<h2><span class=\"sec-icon\">◆</span> Market Overview</h2>\nMarkets are pushing higher across the board with small-caps leading the charge (IWM +2.16%), signaling risk-on appetite despite elevated VIX at 28. The Dow's outperformance (+1.63% vs SPY +0.99%) suggests value rotation is gaining momentum. Iran war headlines continue to dominate, but markets are shrugging off geopolitical noise for now.\n\n<h2><span class=\"sec-icon\">◆</span> What to Watch</h2>\n<ul>\n<li><strong>ISM Manufacturing PMI (2:00 PM ET)</strong> - Key gauge of factory activity with multiple components releasing simultaneously</li>\n<li><strong>Oil rig count data (5:00 PM ET)</strong> - Critical given ongoing Iran supply concerns and rising crude prices</li>\n<li><strong>Iran war developments</strong> - Any escalation could spike energy prices and reverse risk-on sentiment</li>\n<li><strong>End-of-month flows</strong> - Institutional rebalancing could drive afternoon volatility</li>\n</ul>\n\n<div class=\"callout callout-amber\"><div class=\"callout-label\">⚡ Key Driver</div>Iran war creating classic flight-to-safety vs. risk-on tension. Oil prices rising but equities climbing anyway - this divergence won't last.</div>\n\n<h2><span class=\"sec-icon\">◆</span> Sector Rotation</h2>\nIndustrials (XLI +2.74%) and Utilities (XLU +2.56%) are leading, suggesting infrastructure/defensive plays are in favor. Tech lagging at just +0.25% signals money rotating out of growth into value and cyclicals. Healthcare's +2.21% pop adds to the defensive tone despite overall risk-on move.\n\n<div class=\"callout callout-green\"><div class=\"callout-label\">✦ Bull Case</div>Small-cap outperformance and declining VIX (-2.86%) suggest institutional buying underneath. Value rotation could have legs if economic data cooperates.</div>\n\n<div class=\"callout callout-red\"><div class=\"callout-label\">⚠ Bear Case</div>Tech weakness with VIX still near 28 screams fragile rally. Iran headlines could explode higher at any moment, crushing this risk-on move.</div>\n\n<h2><span class=\"sec-icon\">◆</span> Levels That Matter</h2>\n<ul>\n<li><strong>SPY 720</strong> - Key resistance level that's held multiple times this month</li>\n<li><strong>QQQ 670</strong> - Must hold for tech to participate in any sustained rally</li>\n<li><strong>VIX 25</strong> - Break below signals genuine risk-off sentiment fading</li>\n<li><strong>IWM 280</strong> - Small-cap breakout level that could trigger broader value rotation</li>\n</ul>\n\n<hr>\n<p><em>Not a prediction. A preparation. Make your plan before the bell.</em></p>"
 }

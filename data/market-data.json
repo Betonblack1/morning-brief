@@ -1,36 +1,36 @@
 {
-  "generated": "2026-05-08T11:53:13.358Z",
-  "date": "2026-05-08",
+  "generated": "2026-05-11T13:23:11.026Z",
+  "date": "2026-05-11",
   "indices": [
     {
       "name": "S&P 500",
-      "val": "731.58",
-      "chg": -0.3066,
-      "price": 731.58
+      "val": "737.62",
+      "chg": 0.8256,
+      "price": 737.62
     },
     {
       "name": "NASDAQ",
-      "val": "694.94",
-      "chg": -0.1193,
-      "price": 694.94
+      "val": "711.23",
+      "chg": 2.3441,
+      "price": 711.23
     },
     {
       "name": "DOW",
-      "val": "495.91",
-      "chg": -0.6292,
-      "price": 495.91
+      "val": "496.13",
+      "chg": 0.0444,
+      "price": 496.13
     },
     {
       "name": "RUSSELL",
-      "val": "282.26",
-      "chg": -1.583,
-      "price": 282.26
+      "val": "284.17",
+      "chg": 0.6767,
+      "price": 284.17
     },
     {
       "name": "VIX",
-      "val": "27.90",
-      "chg": -0.6056,
-      "price": 27.9
+      "val": "28.06",
+      "chg": 0.5735,
+      "price": 28.06
     },
     {
       "name": "10Y",
@@ -43,186 +43,186 @@
     {
       "name": "Tech",
       "symbol": "XLK",
-      "chg": -0.2
+      "chg": 3.4357
     },
     {
       "name": "Health",
       "symbol": "XLV",
-      "chg": -0.4677
+      "chg": -0.8499
     },
     {
       "name": "Financials",
       "symbol": "XLF",
-      "chg": -0.5594
+      "chg": -0.6014
     },
     {
       "name": "Energy",
       "symbol": "XLE",
-      "chg": -1.8421
+      "chg": -0.4468
     },
     {
       "name": "Cons Disc",
       "symbol": "XLY",
-      "chg": 0.0083
+      "chg": 0.2669
     },
     {
       "name": "Industrials",
       "symbol": "XLI",
-      "chg": -1.6227
+      "chg": -0.4598
     },
     {
       "name": "Materials",
       "symbol": "XLB",
-      "chg": -1.9271
+      "chg": 0.3696
     },
     {
       "name": "Real Estate",
       "symbol": "XLRE",
-      "chg": -0.7599
+      "chg": 0.0225
     },
     {
       "name": "Utilities",
       "symbol": "XLU",
-      "chg": -1.2907
+      "chg": -0.8865
     },
     {
       "name": "Cons Staples",
       "symbol": "XLP",
-      "chg": -0.3086
+      "chg": 0.2382
     },
     {
       "name": "Comm Svcs",
       "symbol": "XLC",
-      "chg": 0.0256
+      "chg": -0.3749
     }
   ],
   "keyLevels": [
     {
       "tag": "support",
       "label": "SPY Support",
-      "val": "729.75"
+      "val": "734.57"
     },
     {
       "tag": "resist",
       "label": "SPY Resist",
-      "val": "736.13"
+      "val": "738.08"
     },
     {
       "tag": "pivot",
       "label": "QQQ Pivot",
-      "val": "695.98"
+      "val": "707.32"
     },
     {
       "tag": "event",
-      "label": "Fed Cook Speech",
-      "val": "2026-05-08 09:45:00"
+      "label": "Existing Home Sales",
+      "val": "2026-05-11 14:00:00"
     }
   ],
   "fearGreed": {
-    "score": 31,
+    "score": 30,
     "label": "Fear"
   },
   "earnings": [
     {
-      "ticker": "IGA",
+      "ticker": "SLMT",
       "info": "EPS Est: N/A",
       "when": ""
     },
     {
-      "ticker": "GYRE",
-      "info": "EPS Est: -0.0748",
-      "when": ""
-    },
-    {
-      "ticker": "NLCP",
-      "info": "EPS Est: 0.2907",
-      "when": ""
-    },
-    {
-      "ticker": "SPCO",
+      "ticker": "NHICU",
       "info": "EPS Est: N/A",
       "when": ""
     },
     {
-      "ticker": "QMCI",
-      "info": "EPS Est: 0",
+      "ticker": "EQFN",
+      "info": "EPS Est: N/A",
       "when": ""
     },
     {
-      "ticker": "RKFL",
+      "ticker": "OLVI",
+      "info": "EPS Est: N/A",
+      "when": ""
+    },
+    {
+      "ticker": "BKFG",
+      "info": "EPS Est: N/A",
+      "when": ""
+    },
+    {
+      "ticker": "JRSS",
       "info": "EPS Est: N/A",
       "when": ""
     }
   ],
   "econ": [
     {
-      "time": "2026-05-08 09:45:00",
-      "name": "Fed Cook Speech",
+      "time": "2026-05-11 14:00:00",
+      "name": "Existing Home Sales",
       "impact": "high"
     },
     {
-      "time": "2026-05-08 12:30:00",
-      "name": "Average Hourly Earnings MoM",
+      "time": "2026-05-11 14:00:00",
+      "name": "Existing Home Sales MoM",
       "impact": "high"
     },
     {
-      "time": "2026-05-08 12:30:00",
-      "name": "Average Hourly Earnings YoY",
+      "time": "2026-05-11 14:20:00",
+      "name": "NY Fed Bill Purchases 1 to 4 months",
       "impact": "high"
     },
     {
-      "time": "2026-05-08 12:30:00",
-      "name": "Average Weekly Hours",
+      "time": "2026-05-11 15:30:00",
+      "name": "3-Month Bill Auction",
       "impact": "high"
     },
     {
-      "time": "2026-05-08 12:30:00",
-      "name": "Government Payrolls",
+      "time": "2026-05-11 15:30:00",
+      "name": "6-Month Bill Auction",
       "impact": "high"
     },
     {
-      "time": "2026-05-08 12:30:00",
-      "name": "Manufacturing Payrolls",
+      "time": "2026-05-11 17:00:00",
+      "name": "3-Year Note Auction",
       "impact": "high"
     }
   ],
   "news": [
     {
-      "time": "7:30 AM",
-      "text": "States crack down on tax break for wealthy investors",
+      "time": "8:53 AM",
+      "text": "‘The haters will hate’: Dan Ives predicts Nasdaq 30,000 as AI rally expands",
       "tag": "CNBC",
-      "url": "https://www.cnbc.com/2026/05/08/tax-break-wealthy-investors-qsbs.html"
+      "url": "https://www.cnbc.com/2026/05/11/the-haters-will-hate-dan-ives-predicts-nasdaq-rally.html"
     },
     {
-      "time": "6:23 AM",
-      "text": "Meloni meets Rubio as Iran war strains Italy-US ties - Reuters",
+      "time": "8:17 AM",
+      "text": "Dollar holds firm as Iran war uncertainty keeps markets on edge - Reuters",
       "tag": "Reuters",
-      "url": "https://news.google.com/rss/articles/CBMilgFBVV95cUxQY0hJakNXX2htd0RtTDNZbW5icEZRTkN0RVBjdlRZbDh3TUhhaTdOMFo4UE9JQlRQY24xZzI2TUVjVUpQeGVBYXhjYnZQNE5DSlhCXzd0aWFNVVdxWlM3WVhSYUdXQ0M2MkV6ZjAwSkpSWEhIMHpiU29TZzdBb2lRMDRUZ0hCWnFiQnp5OXNmWmVUbjctU0E?oc=5"
+      "url": "https://news.google.com/rss/articles/CBMitAFBVV95cUxPcTZ6NW1CNXZSaHpYd2tlQUtjRlFuYmZOc3hkVzlGMVRKVlFXMUwtNG40VC1jSURSVTd2cEVCV2ZXMHNHTGM0YU11OFBfMEtaQXBIN3dyQVhVc1Rmdng4SDAwYU1GUlZWZVRIYzc5S1ROQUJLcmpraHpVU1V1TnpLNm9kVXAtM1ZKUk9aQzQ5OEdPNnZRV0U4ZGlONFMtUmdVcXA0M2xpU2FYQThteFJvLUV4bUU?oc=5"
     },
     {
-      "time": "5:23 AM",
-      "text": "China confirms attack on oil tanker in Strait of Hormuz earlier this week - Reuters",
-      "tag": "Reuters",
-      "url": "https://news.google.com/rss/articles/CBMisgFBVV95cUxQc05ZZzhnR1p0NnBOdXUtRnctcE5nWm54d1VjQVFuOGZDUTNHV3BfQWJHaFpaSzR1c0RPY1FEeFA3aTBneXRwbTE3QjI0VkxoRGpZejJkTW4tVE1va25ZS1VZUDktS05tdWxNVUoxT3owWTh3Mm1vM3I1eF82SkRjTjkzM0pSajUwSDBBNkZ0S0d5azFEVlhWRHBwa0NJWnNyTEtDYlo3c1VkaThhTkQtcTB3?oc=5"
-    },
-    {
-      "time": "4:04 AM",
-      "text": "UK bond vigilantes circle gilts as election losses hit PM Starmer",
+      "time": "8:11 AM",
+      "text": "At TV upfronts, AI is in and corporate shuffles are reshaping the line-up",
       "tag": "CNBC",
-      "url": "https://www.cnbc.com/2026/05/08/uk-election-result-keir-starmer-reform-uk-green-council-markets-gilts.html"
+      "url": "https://www.cnbc.com/2026/05/11/tv-upfronts-ai-data-industry-shifts.html"
     },
     {
-      "time": "1:08 AM",
-      "text": "Toyota expects $4.3 billion hit from effects of Iran war - Reuters",
+      "time": "8:03 AM",
+      "text": "Trump dismisses Iran's offer, oil rises as Hormuz closure persists - Reuters",
       "tag": "Reuters",
-      "url": "https://news.google.com/rss/articles/CBMitgFBVV95cUxQSmpLMVc2WnQyMWdudGxDV2FFdFhmX2xFTXM3a2ZhNXJsZUoxUkR2Vm9WZG9JUGRycmFZbEZXQzFqRFRnSGtjTzZmT2ZZNm5oU0dIeE1JWm9qTklYSnJYaVlWQUk2Mm01bFYzOHJwT0NmSUI5bFgzcHdkejZWX1luaWdQbWlwZzYzS1Z1VkwtZy1rUm9jRWc1X2xoRFNzeUF3d0pTU2dScG8teURDVkhacktjdXNmQQ?oc=5"
+      "url": "https://news.google.com/rss/articles/CBMiqwFBVV95cUxNTTFIeHh6enp1TW1pNmRpVy1pZ1ZtaVFvNTF2emxOOUg3VXV1RWE3SkFqb3pwY28yS0pBTDF3MjRFSVNRclFhTWtCZlN0SmQ1MDV2YUZJSXJhdXRUdldyM3VZbEkzYnIxUXlvSk1JREJwVURVVGJhcV9vcEU2WnlLcVZKaXZQX0Fac1VEWW1VZjlwdDNNWHp5ZENCNTROaEhsVFRuQ2ZUd0gwTmc?oc=5"
     },
     {
-      "time": "11:42 PM",
-      "text": "Southeast Asian leaders seek strategy to ease impacts of Iran war - Reuters",
+      "time": "7:53 AM",
+      "text": "Hantavirus cases spark surge in pharma and biotech stocks — here’s why",
+      "tag": "CNBC",
+      "url": "https://www.cnbc.com/2026/05/11/hantavirus-cases-pharma-stocks-surge-moderna-novavax.html"
+    },
+    {
+      "time": "7:42 AM",
+      "text": "Second Qatari LNG tanker heads through Hormuz to Pakistan as Iran war continues, data shows - Reuters",
       "tag": "Reuters",
-      "url": "https://news.google.com/rss/articles/CBMiqwFBVV95cUxORUN2eVpZOFVtaGhyRHZCdHNTWVJrMmVzOHVJbzZ0dnUyMVh5UTJlVjM3c0x1b1pPMnp2bWpwdXdhc01LdU5taGxQY0FMVU1hMjV6VjhoM2tvd2Z6bVR3NDAxZDJQLXlJdkNZUFRYdnZPTU9VQXVQak1rblFfZlM5Y2F3T09vazFzOEFDc3J1OVdSUkhEWHVuWlA2emtjNm9PNXRKeWoxQ1MwZDg?oc=5"
+      "url": "https://news.google.com/rss/articles/CBMizAFBVV95cUxPcVdvRGJBd01JMDBxRzJZQUVEMzNhRjVpRmhhWmhOWmdrRml0c25kZHBjOWFsVDI1RTVKWUcxOF9QZmRPNFFPVFZLcTF6T3ZVZzVTZnkySEF0UVpGdTExVmJpQTRNZDBhMElBeWY0TlZCWlJadi1VN1BCRzZGQnI0Yk8tdU9kT3VlZktEd29QTTk2OVNQRGNWRHlUeG1oRm9Kc29heXN3cXljSE5nVXRGYWJqYnRGSzg0VGtHOWZ1VVh2VktPdHVUR2RnbVk?oc=5"
     }
   ],
-  "brief": "<h2><span class=\"sec-icon\">◆</span> Market Overview</h2>\n\nFutures pointing lower across the board with small-caps getting hit hardest (IWM -1.58%) as geopolitical tensions from the Iran conflict weigh on risk appetite. VIX cooling slightly to 27.9 but remains elevated, suggesting continued volatility ahead of NFP data. Energy and materials leading the selloff while defensive sectors show relative strength.\n\n<h2><span class=\"sec-icon\">◆</span> What to Watch</h2>\n\n<ul>\n<li><strong>Non-Farm Payrolls (12:30 ET)</strong> - Full employment suite drops with market parsing Fed policy implications amid war premium</li>\n<li><strong>Fed Cook Speech (9:45 ET)</strong> - First Fed commentary since Iran conflict escalation, watch for policy pivot signals</li>\n<li><strong>Oil Tanker Attack Fallout</strong> - China confirming Strait of Hormuz incident puts energy supply chains back in focus</li>\n<li><strong>Toyota Earnings Impact</strong> - $4.3B war-related hit signals broader multinational exposure to Middle East disruption</li>\n</ul>\n\n<h2><span class=\"sec-icon\">◆</span> Sector Rotation</h2>\n\nRisk-off rotation accelerating with cyclicals under pressure - Energy (-1.84%) and Materials (-1.93%) leading declines on supply chain fears. Consumer Discretionary and Communications showing resilience, suggesting domestic consumption remains intact. Financials weak ahead of potential Fed dovish pivot.\n\n<div class=\"callout callout-amber\"><div class=\"callout-label\">⚡ Key Driver</div>NFP data could trigger major Fed repricing if weak numbers justify pause despite inflation concerns. War premium already baked into energy - watch for rotation if cease-fire holds.</div>\n\n<div class=\"callout callout-red\"><div class=\"callout-label\">⚠ Bear Case</div>Iran conflict expanding beyond current scope breaks oil supply chains permanently. Small-cap weakness signals credit tightening hitting Main Street ahead of Fed pivot.</div>\n\n<h2><span class=\"sec-icon\">◆</span> Levels That Matter</h2>\n\n<ul>\n<li><strong>SPY $728</strong> - Key support from April consolidation, break targets $715</li>\n<li><strong>QQQ $690</strong> - 50-day moving average test, hold here keeps uptrend intact</li>\n<li><strong>IWM $280</strong> - Critical small-cap support, breakdown confirms risk-off acceleration</li>\n<li><strong>VIX 30</strong> - Breakout level signals institutional hedging surge</li>\n</ul>\n\n<hr>\n<p><em>Not a prediction. A preparation. Make your plan before the bell.</em></p>"
+  "brief": "<h2><span class=\"sec-icon\">◆</span> Market Overview</h2>\n\nTech is driving the bus this Monday with NASDAQ futures up 2.34% while the Dow barely budges at +0.04%. The AI rally Dan Ives is calling for Nasdaq 30k is gaining steam, but elevated VIX at 28.06 shows traders aren't getting complacent with Iran war uncertainty still hanging over markets.\n\n<h2><span class=\"sec-icon\">◆</span> What to Watch</h2>\n<ul>\n<li><strong>Iran-Hormuz Situation:</strong> Oil rising as Trump dismisses peace talks and Strait closure continues disrupting supply chains</li>\n<li><strong>Existing Home Sales (2:00 PM):</strong> High impact housing data could move rate-sensitive sectors</li>\n<li><strong>Treasury Auctions:</strong> 3-month, 6-month bills at 3:30 PM, 3-year notes at 5:00 PM - watch for demand amid geopolitical stress</li>\n<li><strong>Hantavirus Plays:</strong> Pharma/biotech getting momentum on case surge - scan for continuation patterns</li>\n</ul>\n\n<div class=\"callout callout-green\"><div class=\"callout-label\">✦ Bull Case</div>AI narrative accelerating with tech leading charge. If Ives is right about expansion beyond mega-caps, small-cap tech could catch fire. Russell up 0.68% suggests rotation brewing.</div>\n\n<div class=\"callout callout-red\"><div class=\"callout-label\">⚠ Bear Case</div>VIX elevated despite rally shows fragile sentiment. Energy weakness while oil rises is concerning. If Iran situation escalates, risk-off could hit fast and hard.</div>\n\n<h2><span class=\"sec-icon\">◆</span> Sector Rotation</h2>\n\nClassic risk-on setup with Tech (XLK) leading at +3.44% while defensive plays like Utilities (-0.89%) and Healthcare (-0.85%) get sold. Financials down 0.60% despite firmer dollar suggests rate concerns or credit worries. Energy lagging despite oil strength is the head-scratcher here.\n\n<div class=\"callout callout-amber\"><div class=\"callout-label\">⚡ Key Driver</div>Dollar strength + Iran tensions + AI euphoria = volatile cocktail. Watch how markets handle the 2 PM housing data for clues on Fed expectations.</div>\n\n<h2><span class=\"sec-icon\">◆</span> Levels That Matter</h2>\n<ul>\n<li><strong>SPY 737.62:</strong> Pre-market high - hold above for continuation, break below negates opening strength</li>\n<li><strong>QQQ 715:</strong> Round number resistance if we gap higher - key level for tech momentum</li>\n<li><strong>VIX 30:</strong> Break above triggers defensive positioning across the board</li>\n<li><strong>Oil (WTI) 85:</strong> Watch for breakout on Iran escalation - energy stocks haven't caught up yet</li>\n</ul>\n\n<hr>\n<p><em>Not a prediction. A preparation. Make your plan before the bell.</em></p>"
 }

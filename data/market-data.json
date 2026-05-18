@@ -1,36 +1,36 @@
 {
-  "generated": "2026-05-15T12:16:45.405Z",
-  "date": "2026-05-15",
+  "generated": "2026-05-18T14:04:59.372Z",
+  "date": "2026-05-18",
   "indices": [
     {
       "name": "S&P 500",
-      "val": "748.17",
-      "chg": 0.7894,
-      "price": 748.17
+      "val": "739.29",
+      "chg": 0.0162,
+      "price": 739.29
     },
     {
       "name": "NASDAQ",
-      "val": "719.79",
-      "chg": 0.7108,
-      "price": 719.79
+      "val": "707.11",
+      "chg": -0.2567,
+      "price": 707.11
     },
     {
       "name": "DOW",
-      "val": "500.80",
-      "chg": 0.7362,
-      "price": 500.8
+      "val": "496.23",
+      "chg": 0.1736,
+      "price": 496.23
     },
     {
       "name": "RUSSELL",
-      "val": "284.45",
-      "chg": 0.6297,
-      "price": 284.45
+      "val": "277.45",
+      "chg": -0.054,
+      "price": 277.45
     },
     {
       "name": "VIX",
-      "val": "27.65",
-      "chg": -2.5379,
-      "price": 27.65
+      "val": "27.59",
+      "chg": -1.0047,
+      "price": 27.59
     },
     {
       "name": "10Y",
@@ -43,79 +43,79 @@
     {
       "name": "Tech",
       "symbol": "XLK",
-      "chg": 1.4984
+      "chg": -0.9758
     },
     {
       "name": "Health",
       "symbol": "XLV",
-      "chg": -0.0545
+      "chg": 0.4135
     },
     {
       "name": "Financials",
       "symbol": "XLF",
-      "chg": 0.5884
+      "chg": 1.0568
     },
     {
       "name": "Energy",
       "symbol": "XLE",
-      "chg": 0.7635
+      "chg": 0
     },
     {
       "name": "Cons Disc",
       "symbol": "XLY",
-      "chg": -0.0421
+      "chg": 0.5664
     },
     {
       "name": "Industrials",
       "symbol": "XLI",
-      "chg": 0.5126
+      "chg": -0.6943
     },
     {
       "name": "Materials",
       "symbol": "XLB",
-      "chg": -0.7491
+      "chg": 0.4374
     },
     {
       "name": "Real Estate",
       "symbol": "XLRE",
-      "chg": -0.6786
+      "chg": 1.0641
     },
     {
       "name": "Utilities",
       "symbol": "XLU",
-      "chg": 0.5149
+      "chg": 0.5015
     },
     {
       "name": "Cons Staples",
       "symbol": "XLP",
-      "chg": 0.3069
+      "chg": 1.2405
     },
     {
       "name": "Comm Svcs",
       "symbol": "XLC",
-      "chg": 0.2998
+      "chg": 0.9907
     }
   ],
   "keyLevels": [
     {
       "tag": "support",
       "label": "SPY Support",
-      "val": "743.56"
+      "val": "737.56"
     },
     {
       "tag": "resist",
       "label": "SPY Resist",
-      "val": "749.53"
+      "val": "741.41"
     },
     {
       "tag": "pivot",
       "label": "QQQ Pivot",
-      "val": "718.68"
+      "val": "708.62"
     },
     {
       "tag": "event",
-      "label": "NY Empire State Manu",
-      "val": "2026-05-15 12:30:00"
+      "label": "Fed Venable Speech",
+      "val": "2026-05-18 12:30:00"
     }
   ],
   "fearGreed": {
@@ -124,105 +124,105 @@
   },
   "earnings": [
     {
-      "ticker": "SHAZ",
-      "info": "EPS Est: -0.8925",
-      "when": "AMC"
-    },
-    {
-      "ticker": "CREG",
+      "ticker": "EXOZ",
       "info": "EPS Est: N/A",
       "when": ""
     },
     {
-      "ticker": "GTEC",
+      "ticker": "AZRS",
       "info": "EPS Est: N/A",
       "when": ""
     },
     {
-      "ticker": "VNUE",
+      "ticker": "NXXT",
+      "info": "EPS Est: -0.0816",
+      "when": ""
+    },
+    {
+      "ticker": "AXIM",
       "info": "EPS Est: N/A",
       "when": ""
     },
     {
-      "ticker": "SOAR",
-      "info": "EPS Est: N/A",
+      "ticker": "KEEL",
+      "info": "EPS Est: -0.085",
       "when": ""
     },
     {
-      "ticker": "GRML",
+      "ticker": "BMBN",
       "info": "EPS Est: N/A",
       "when": ""
     }
   ],
   "econ": [
     {
-      "time": "2026-05-15 12:30:00",
-      "name": "NY Empire State Manufacturing Index",
+      "time": "2026-05-18 12:30:00",
+      "name": "Fed Venable Speech",
       "impact": "high"
     },
     {
-      "time": "2026-05-15 13:15:00",
-      "name": "Capacity Utilization",
+      "time": "2026-05-18 12:30:00",
+      "name": "NY Fed Services Activity Index",
       "impact": "high"
     },
     {
-      "time": "2026-05-15 13:15:00",
-      "name": "Industrial Production MoM",
+      "time": "2026-05-18 14:00:00",
+      "name": "NAHB Housing Market Index",
       "impact": "high"
     },
     {
-      "time": "2026-05-15 13:15:00",
-      "name": "Industrial Production YoY",
+      "time": "2026-05-18 15:30:00",
+      "name": "3-Month Bill Auction",
       "impact": "high"
     },
     {
-      "time": "2026-05-15 13:15:00",
-      "name": "Manufacturing Production MoM",
+      "time": "2026-05-18 15:30:00",
+      "name": "6-Month Bill Auction",
       "impact": "high"
     },
     {
-      "time": "2026-05-15 13:15:00",
-      "name": "Manufacturing Production YoY",
+      "time": "2026-05-18 20:00:00",
+      "name": "Foreign Bond Investment",
       "impact": "high"
     }
   ],
   "news": [
     {
-      "time": "7:29 AM",
-      "text": "Trump says he will soon make decision about sanctions on Chinese companies buying Iranian oil",
+      "time": "9:28 AM",
+      "text": "Pakistan hands US revised Iranian proposal for ending war - Reuters",
+      "tag": "Reuters",
+      "url": "https://news.google.com/rss/articles/CBMirAFBVV95cUxNcDZKdU5Cb2tFNmNsTnFKeWlKRFJnZ3lHdGVMRnVBOUR5NnlLaW01eldjcG1YcHZjbndUamVLbV9QWlRhczB6TEt2cDY2bkJqdXB4QlhkQV9nd3dvamF2NnpDU0ptdUZxQXdOQlF5ODB2M0VKbmc4U0xFMVFuWW5Cb0VOeGVYaVA2amRzZ3JGejBGenBGUzh5dlcwM252T2R0cFY0U0U3MEc3Q2t3?oc=5"
+    },
+    {
+      "time": "9:10 AM",
+      "text": "Bank of England does not need to hike interest rates, says IMF — it may even need to cut",
       "tag": "CNBC",
-      "url": "https://www.cnbc.com/2026/05/15/trump-china-sanctions-iranian-oil.html"
+      "url": "https://www.cnbc.com/2026/05/18/bank-of-england-interest-rates-inflation-imf-gdp.html"
     },
     {
-      "time": "7:01 AM",
-      "text": "Family investors turn to old-economy businesses like dealerships and fisheries to avoid AI disruption",
+      "time": "8:58 AM",
+      "text": "We're trimming an AI rocket ship of a stock and one that's now back in favor",
       "tag": "CNBC",
-      "url": "https://www.cnbc.com/2026/05/15/family-investors-economy-businesses-to-avoid-ai-disruption.html"
+      "url": "https://www.cnbc.com/2026/05/18/were-trimming-an-ai-rocket-ship-of-a-stock-and-one-thats-now-back-in-favor.html"
     },
     {
-      "time": "5:32 AM",
-      "text": "Oil prices up 3% after Trump says he is losing patience with Iran - Reuters",
+      "time": "8:54 AM",
+      "text": "Exclusive: Pakistan deploys jet squadron, thousands of troops to Saudi Arabia during Iran war - Reuters",
       "tag": "Reuters",
-      "url": "https://news.google.com/rss/articles/CBMioAFBVV95cUxPMS0waVlBR0ttTF9aOW14VVAxLVl2UklOaktqdHF5R3lUYnBENnI0Y3F3VEh3bV9Kb2VJSUNuR0xSaXFiRVZiM0cyWmlEdWdVR3ZYLU5HUUJkZHdtODlDRFhmamtCTU40eUVrZDBDZVdxeV9OZ3ZzV08zOURTcU5JSVpjelhWUGp2TWJ6SUlkaEVxN0hSOThvUHFFMXhtdlEw?oc=5"
+      "url": "https://news.google.com/rss/articles/CBMiygFBVV95cUxPZXQ0ZGZRZEVoWXNYN1ExempBZ1Ata245ellOQ0JVNTdnNTRyc2oxZWUzakNEZWllaEs1T0F2cktHVUVqUGJWeW80LU5LT3g1LVJZY3RaMDBsNnpyX09sRXRQOENWZktYT0dCRC02R1o2LTBxV2dEcldNT1V1TXpRRjNQcWFHSkE2Y0tRX0V4NDBfdVpoXzRvSXlrdVNVMk9IeDVTaVRRSDhLZFl2Q3dGa0VfVGlMOTk1VjdHd3lzUzd2OVBwOVQ0VnlB?oc=5"
     },
     {
-      "time": "5:04 AM",
-      "text": "India issues chair statement after BRICS meeting amid differences over Gulf crisis - Reuters",
+      "time": "7:58 AM",
+      "text": "Revised Iranian proposal to end war shared with US, Pakistani source says - Reuters",
       "tag": "Reuters",
-      "url": "https://news.google.com/rss/articles/CBMiwAFBVV95cUxOUlBvVS1CSFpOWHFpd3NPbEROQlhLVDMxMm9PN1BBNjlzYVFPMnlFUW9na3JoMkxoQlo0bXQwcFVtZGY0VjNIcExteXNhNm8xSmJydkNHTDlWOFlZUjQybjJGWGx1Wks5MEJlREJYc2o2Yy1hbWpvY013Q2M3N3RfZmplMml3NFdvRmJYZjFkT1NOVWNlMjc5OWdHX3BGMmNETjk3bHFXTW9TTnFwRFZCTmdIbVFudWdzeFBDTDY3SXc?oc=5"
+      "url": "https://news.google.com/rss/articles/CBMiwgFBVV95cUxOakpsZkRTa3dDcTltOXJiUktHZEJsQTNYWlppMzl3Q3lzV01WN01FVC1xaEdfUVdndHV3UTgzc2JlSTQzUmFMR0ZPX2E5b1pRaEQ2Tk9PdEtFTmFCcWtJdTRZNUo2cFFkYWViOWppUGlreWF5SEpVUnFEbG1OMkdZdWZXVk54cTM1eUtVMnBjSFJuWjdlNXpvdDR1WG8zSERTZS14bXd2VWRGWmU4ZlJuTU5pRHo4QWE3WlNhS2pYVGxmdw?oc=5"
     },
     {
-      "time": "2:36 AM",
-      "text": "German economy to take hit from Iran war during Q2, ministry says - Reuters",
-      "tag": "Reuters",
-      "url": "https://news.google.com/rss/articles/CBMiowFBVV95cUxOSDZkZExsZVpBRnlRUkttUm1fVGdvWlF6UHhPMUpxVlhVNExBdktjT1dLbTlhUXFuYkJ6b3ZGT09iN0RTQVNJOEx0MW5WQVRTdTFONlgtcTVyeW1kaWhhOFVzZTRKLXMzb1dJaVI5YkIwN0FDc21ibkdhblZLNVFnbjR6anFpY1pQdkR5S291eFFsdWdrdkFEbHhXdTFLeVRLQWNn?oc=5"
-    },
-    {
-      "time": "2:18 AM",
-      "text": "Trump says US and China are aligned on Iran, Tehran must make a deal soon - Reuters",
-      "tag": "Reuters",
-      "url": "https://news.google.com/rss/articles/CBMirwFBVV95cUxOeFFlcklCYWQwZUZGc2xjSF9QWjJvMU1PWFVtakpUVDljdTFCMzJqN2lULXMycUVxS2V2Q0I4X3h3ZndCczNqZ2JKTEFwdW1tTlBMMGlJRWRiT05jT3otM1BtT3F6YmxNQ1hEM1hjVnZPTEdXX1JlWk9lWWJLd3BvQlozTDFDQnQtbFU5ZUZzakE4Q0RPTHA5QWVmbXluVkFSRVQtZjlmdkRNUHVhR29v?oc=5"
+      "time": "7:41 AM",
+      "text": "Ominous bond trades point to much higher rates",
+      "tag": "CNBC",
+      "url": "https://www.cnbc.com/2026/05/18/ominous-bond-trades-point-to-much-higher-rates.html"
     }
   ],
-  "brief": "<h2><span class=\"sec-icon\">◆</span> Market Overview</h2>\n\nMarkets are opening higher across the board with SPY at $748.17 (+0.79%) as Iran tensions dominate the tape. VIX dropping 2.54% to 27.65 suggests traders are buying the geopolitical dip, but oil spiking 3% is keeping risk assets on edge.\n\n<h2><span class=\"sec-icon\">◆</span> What to Watch</h2>\n\n<ul>\n<li><strong>NY Empire State Manufacturing (12:30 ET)</strong> - First major data drop of the day, watch for any signs of industrial weakness from Iran war impacts</li>\n<li><strong>Industrial Production (1:15 ET)</strong> - Multiple manufacturing metrics hitting at once, could move the needle on economic growth narrative</li>\n<li><strong>Oil Rig Count (5:00 ET)</strong> - With crude up 3% on Iran news, this could extend energy's momentum into next week</li>\n<li><strong>Trump-Iran Headlines</strong> - President says decision on Chinese sanctions coming soon, any escalation will hit markets hard</li>\n</ul>\n\n<div class=\"callout callout-amber\"><div class=\"callout-label\">⚡ Key Driver</div>Iran crisis is the main event. Trump's patience wearing thin while airlines cancel flights and Germany braces for economic hit. Oil spike is real.</div>\n\n<h2><span class=\"sec-icon\">◆</span> Sector Rotation</h2>\n\nTech leading the charge at +1.50% (XLK) while defensive plays like Real Estate (-0.68%) and Materials (-0.75%) are getting sold. Energy up 0.76% on oil surge, but it's tech carrying the load again. Classic risk-on rotation despite geopolitical noise.\n\n<div class=\"callout callout-green\"><div class=\"callout-label\">✦ Bull Case</div>VIX falling while markets rise suggests institutional buying. Tech leadership with falling volatility is a powerful combo for momentum.</div>\n\n<div class=\"callout callout-red\"><div class=\"callout-label\">⚠ Bear Case</div>Oil at 3% gains will hit margins across the board. If Iran situation escalates, this market optimism will reverse fast and hard.</div>\n\n<h2><span class=\"sec-icon\">◆</span> Levels That Matter</h2>\n\n<ul>\n<li><strong>SPY $750</strong> - Round number resistance, break above opens door to $760</li>\n<li><strong>QQQ $725</strong> - Key level to watch with tech leading, failure here kills the rally</li>\n<li><strong>VIX 25</strong> - If we break below, risk-on trade accelerates significantly</li>\n<li><strong>XLE $95</strong> - Energy breakout level, oil surge could push it through</li>\n</ul>\n\n<hr>\n<p><em>Not a prediction. A preparation. Make your plan before the bell.</em></p>"
+  "brief": "<h2><span class=\"sec-icon\">◆</span> Market Overview</h2>\n\nMixed pre-market action with SPY sitting near flat at $739.29 while tech gets hammered down 0.98%. VIX dropping to 27.59 suggests some risk appetite returning, but that elevated level still screams caution. Classic Monday indecision with geopolitical noise from Iran-Pakistan developments creating cross-currents.\n\n<h2><span class=\"sec-icon\">◆</span> What to Watch</h2>\n\n<ul>\n<li><strong>Fed Venable Speech (12:30 ET)</strong> - Any hawkish tilt could crush this fragile bounce</li>\n<li><strong>NY Fed Services Activity Index (12:30 ET)</strong> - Services strength critical for soft landing narrative</li>\n<li><strong>NAHB Housing Market Index (14:00 ET)</strong> - Real estate leading pre-market, watch for confirmation</li>\n<li><strong>Treasury Auctions (15:30 ET)</strong> - 3M/6M bills with \"ominous bond trades\" headlines circulating</li>\n</ul>\n\n<h2><span class=\"sec-icon\">◆</span> Sector Rotation</h2>\n\nDefensive rotation in full swing with staples (+1.24%) and financials (+1.06%) leading while tech bleeds. Real estate matching financials suggests rate cut expectations building despite bond market warnings. Classic flight from growth to value when geopolitical uncertainty spikes.\n\n<div class=\"callout callout-amber\"><div class=\"callout-label\">⚡ Key Driver</div>Iran war developments dominating flow - Pakistan deploying jets to Saudi Arabia while peace proposals circulate. Markets hate uncertainty more than bad news.</div>\n\n<div class=\"callout callout-red\"><div class=\"callout-label\">⚠ Bear Case</div>Bond market screaming higher rates ahead while equity markets pricing cuts. This disconnect ends badly - usually with equities catching down to bonds.</div>\n\n<div class=\"callout callout-green\"><div class=\"callout-label\">✦ Bull Case</div>BOE pause signals from IMF suggest central bank pivot accelerating globally. VIX decline indicates professional money stepping back in selectively.</div>\n\n<h2><span class=\"sec-icon\">◆</span> Levels That Matter</h2>\n\n<ul>\n<li><strong>SPY $735</strong> - Key support from Friday's low, break targets $728</li>\n<li><strong>QQQ $700</strong> - Psychological support with tech under pressure</li>\n<li><strong>VIX $30</strong> - Resistance level that's capped rallies all month</li>\n<li><strong>XLF $45.50</strong> - Financials testing breakout level on rate expectations</li>\n</ul>\n\n<hr>\n<p><em>Not a prediction. A preparation. Make your plan before the bell.</em></p>"
 }

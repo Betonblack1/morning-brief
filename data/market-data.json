@@ -1,36 +1,36 @@
 {
-  "generated": "2026-05-18T14:04:59.372Z",
-  "date": "2026-05-18",
+  "generated": "2026-05-19T13:39:54.992Z",
+  "date": "2026-05-19",
   "indices": [
     {
       "name": "S&P 500",
-      "val": "739.29",
-      "chg": 0.0162,
-      "price": 739.29
+      "val": "735.46",
+      "chg": -0.4319,
+      "price": 735.46
     },
     {
       "name": "NASDAQ",
-      "val": "707.11",
-      "chg": -0.2567,
-      "price": 707.11
+      "val": "704.63",
+      "chg": -0.1771,
+      "price": 704.63
     },
     {
       "name": "DOW",
-      "val": "496.23",
-      "chg": 0.1736,
-      "price": 496.23
+      "val": "493.56",
+      "chg": -0.6942,
+      "price": 493.56
     },
     {
       "name": "RUSSELL",
-      "val": "277.45",
-      "chg": -0.054,
-      "price": 277.45
+      "val": "273.12",
+      "chg": -1.0327,
+      "price": 273.12
     },
     {
       "name": "VIX",
-      "val": "27.59",
-      "chg": -1.0047,
-      "price": 27.59
+      "val": "27.38",
+      "chg": 0.6618,
+      "price": 27.38
     },
     {
       "name": "10Y",
@@ -43,17 +43,17 @@
     {
       "name": "Tech",
       "symbol": "XLK",
-      "chg": -0.9758
+      "chg": 0.3384
     },
     {
       "name": "Health",
       "symbol": "XLV",
-      "chg": 0.4135
+      "chg": -0.247
     },
     {
       "name": "Financials",
       "symbol": "XLF",
-      "chg": 1.0568
+      "chg": -0.5412
     },
     {
       "name": "Energy",
@@ -63,166 +63,166 @@
     {
       "name": "Cons Disc",
       "symbol": "XLY",
-      "chg": 0.5664
+      "chg": -1.4873
     },
     {
       "name": "Industrials",
       "symbol": "XLI",
-      "chg": -0.6943
+      "chg": -1.0893
     },
     {
       "name": "Materials",
       "symbol": "XLB",
-      "chg": 0.4374
+      "chg": -2.0709
     },
     {
       "name": "Real Estate",
       "symbol": "XLRE",
-      "chg": 1.0641
+      "chg": -0.2286
     },
     {
       "name": "Utilities",
       "symbol": "XLU",
-      "chg": 0.5015
+      "chg": -0.1821
     },
     {
       "name": "Cons Staples",
       "symbol": "XLP",
-      "chg": 1.2405
+      "chg": -0.5937
     },
     {
       "name": "Comm Svcs",
       "symbol": "XLC",
-      "chg": 0.9907
+      "chg": -0.4018
     }
   ],
   "keyLevels": [
     {
       "tag": "support",
       "label": "SPY Support",
-      "val": "737.56"
+      "val": "733.82"
     },
     {
       "tag": "resist",
       "label": "SPY Resist",
-      "val": "741.41"
+      "val": "736.92"
     },
     {
       "tag": "pivot",
       "label": "QQQ Pivot",
-      "val": "708.62"
+      "val": "703.19"
     },
     {
       "tag": "event",
-      "label": "Fed Venable Speech",
-      "val": "2026-05-18 12:30:00"
+      "label": "ADP Employment Chang",
+      "val": "2026-05-19 12:15:00"
     }
   ],
   "fearGreed": {
-    "score": 32,
+    "score": 33,
     "label": "Fear"
   },
   "earnings": [
     {
-      "ticker": "EXOZ",
+      "ticker": "SLNH",
       "info": "EPS Est: N/A",
       "when": ""
     },
     {
-      "ticker": "AZRS",
+      "ticker": "MAMO",
       "info": "EPS Est: N/A",
       "when": ""
     },
     {
-      "ticker": "NXXT",
-      "info": "EPS Est: -0.0816",
-      "when": ""
-    },
-    {
-      "ticker": "AXIM",
+      "ticker": "SHFS",
       "info": "EPS Est: N/A",
       "when": ""
     },
     {
-      "ticker": "KEEL",
-      "info": "EPS Est: -0.085",
+      "ticker": "DRDB",
+      "info": "EPS Est: N/A",
       "when": ""
     },
     {
-      "ticker": "BMBN",
+      "ticker": "WGRX",
       "info": "EPS Est: N/A",
-      "when": ""
+      "when": "BMO"
+    },
+    {
+      "ticker": "MOVE",
+      "info": "EPS Est: -3.672",
+      "when": "AMC"
     }
   ],
   "econ": [
     {
-      "time": "2026-05-18 12:30:00",
-      "name": "Fed Venable Speech",
+      "time": "2026-05-19 12:15:00",
+      "name": "ADP Employment Change Weekly",
       "impact": "high"
     },
     {
-      "time": "2026-05-18 12:30:00",
-      "name": "NY Fed Services Activity Index",
+      "time": "2026-05-19 12:55:00",
+      "name": "Redbook YoY",
       "impact": "high"
     },
     {
-      "time": "2026-05-18 14:00:00",
-      "name": "NAHB Housing Market Index",
+      "time": "2026-05-19 13:00:00",
+      "name": "Fed Waller Speech",
       "impact": "high"
     },
     {
-      "time": "2026-05-18 15:30:00",
-      "name": "3-Month Bill Auction",
+      "time": "2026-05-19 14:00:00",
+      "name": "Pending Home Sales MoM",
       "impact": "high"
     },
     {
-      "time": "2026-05-18 15:30:00",
-      "name": "6-Month Bill Auction",
+      "time": "2026-05-19 14:00:00",
+      "name": "Pending Home Sales YoY",
       "impact": "high"
     },
     {
-      "time": "2026-05-18 20:00:00",
-      "name": "Foreign Bond Investment",
+      "time": "2026-05-19 15:30:00",
+      "name": "6-Week Bill Auction",
       "impact": "high"
     }
   ],
   "news": [
     {
-      "time": "9:28 AM",
-      "text": "Pakistan hands US revised Iranian proposal for ending war - Reuters",
-      "tag": "Reuters",
-      "url": "https://news.google.com/rss/articles/CBMirAFBVV95cUxNcDZKdU5Cb2tFNmNsTnFKeWlKRFJnZ3lHdGVMRnVBOUR5NnlLaW01eldjcG1YcHZjbndUamVLbV9QWlRhczB6TEt2cDY2bkJqdXB4QlhkQV9nd3dvamF2NnpDU0ptdUZxQXdOQlF5ODB2M0VKbmc4U0xFMVFuWW5Cb0VOeGVYaVA2amRzZ3JGejBGenBGUzh5dlcwM252T2R0cFY0U0U3MEc3Q2t3?oc=5"
-    },
-    {
-      "time": "9:10 AM",
-      "text": "Bank of England does not need to hike interest rates, says IMF — it may even need to cut",
+      "time": "8:57 AM",
+      "text": "Jim Cramer's top 10 things to watch in the stock market Tuesday",
       "tag": "CNBC",
-      "url": "https://www.cnbc.com/2026/05/18/bank-of-england-interest-rates-inflation-imf-gdp.html"
+      "url": "https://www.cnbc.com/2026/05/19/jim-cramers-top-10-things-to-watch-in-the-stock-market-tuesday.html"
     },
     {
-      "time": "8:58 AM",
-      "text": "We're trimming an AI rocket ship of a stock and one that's now back in favor",
-      "tag": "CNBC",
-      "url": "https://www.cnbc.com/2026/05/18/were-trimming-an-ai-rocket-ship-of-a-stock-and-one-thats-now-back-in-favor.html"
-    },
-    {
-      "time": "8:54 AM",
-      "text": "Exclusive: Pakistan deploys jet squadron, thousands of troops to Saudi Arabia during Iran war - Reuters",
+      "time": "7:20 AM",
+      "text": "Iran says peace proposal includes reparations for war damage, US troop withdrawal - Reuters",
       "tag": "Reuters",
-      "url": "https://news.google.com/rss/articles/CBMiygFBVV95cUxPZXQ0ZGZRZEVoWXNYN1ExempBZ1Ata245ellOQ0JVNTdnNTRyc2oxZWUzakNEZWllaEs1T0F2cktHVUVqUGJWeW80LU5LT3g1LVJZY3RaMDBsNnpyX09sRXRQOENWZktYT0dCRC02R1o2LTBxV2dEcldNT1V1TXpRRjNQcWFHSkE2Y0tRX0V4NDBfdVpoXzRvSXlrdVNVMk9IeDVTaVRRSDhLZFl2Q3dGa0VfVGlMOTk1VjdHd3lzUzd2OVBwOVQ0VnlB?oc=5"
+      "url": "https://news.google.com/rss/articles/CBMiywFBVV95cUxPSF9rZVdjR0RKS2w2VnI2M2dWWXZQQ21vck5sX1BRSGs0UVc0YWpTbXEzUEdXVGN6dmRLaTRMQlBERENZQTlUZnl5ZFVxLUNmd0N6dzk0bWlmaDlmcFlER0FDeFhWRDBUV29ONXBVb0xZblZIWE5VcW04Y3FMdGZUY1dHY3NVa2lzLWRyVGhHSUwwMElGQUFJLTEzTGtaeGlheUlqMjQtNTVwOHBzTjNOX2RfcF9reVFuU2FiSmVLcFRGbGRRZmk5bDdWdw?oc=5"
     },
     {
-      "time": "7:58 AM",
-      "text": "Revised Iranian proposal to end war shared with US, Pakistani source says - Reuters",
+      "time": "7:17 AM",
+      "text": "Explosions heard in Iran's Qeshm island due to disposal of enemy ammunition - Reuters",
       "tag": "Reuters",
-      "url": "https://news.google.com/rss/articles/CBMiwgFBVV95cUxOakpsZkRTa3dDcTltOXJiUktHZEJsQTNYWlppMzl3Q3lzV01WN01FVC1xaEdfUVdndHV3UTgzc2JlSTQzUmFMR0ZPX2E5b1pRaEQ2Tk9PdEtFTmFCcWtJdTRZNUo2cFFkYWViOWppUGlreWF5SEpVUnFEbG1OMkdZdWZXVk54cTM1eUtVMnBjSFJuWjdlNXpvdDR1WG8zSERTZS14bXd2VWRGWmU4ZlJuTU5pRHo4QWE3WlNhS2pYVGxmdw?oc=5"
+      "url": "https://news.google.com/rss/articles/CBMivAFBVV95cUxOYXp2VkJXcWNlaEc3N0JOazlfb2ZDbXljVmVxV0V0enNsRXNTMWhuYkIzZDBDZkREUTBJTkVOdy1JOURBdGFSaHJkeDBmV2lxTm9RZHlTaEtVR1NMMUZiaXdLY2diLWEzQlB0SmFyYnNFSFhlaEo3UExrcWpYc1oxRDAzTXRUa2hNcVlXQXFRQ0xHeC1sNnN3NzhWX1lvcGo4V1dNSzdnS2hOczN3ZDFrVW5KMVVBS2J6WU9yeQ?oc=5"
     },
     {
-      "time": "7:41 AM",
-      "text": "Ominous bond trades point to much higher rates",
-      "tag": "CNBC",
-      "url": "https://www.cnbc.com/2026/05/18/ominous-bond-trades-point-to-much-higher-rates.html"
+      "time": "6:59 AM",
+      "text": "Morning Bid: Ceasefire on a knife edge - Reuters",
+      "tag": "Reuters",
+      "url": "https://news.google.com/rss/articles/CBMilwFBVV95cUxOMjFYVzVWMnlXb3ExWC15QmNnVElKZkZKYUlIQTJNN1BqZ3VxT1pReE1WLVQ4VWFMRm9LTTRBSUw1QzMzZk5IY05JSkU0ZTZmQnI2WVQyT0VWa2pYcDMyQy11YzdWdEZhUlFBb3NYUk9wY1VVQldwY2hFRExod0Y4eWhJSGstMTRSRFcwU3E5bnRLQmwtb0d3?oc=5"
+    },
+    {
+      "time": "6:10 AM",
+      "text": "Rupee plunges for eighth straight session as external headwinds worsen - Reuters",
+      "tag": "Reuters",
+      "url": "https://news.google.com/rss/articles/CBMiwgFBVV95cUxOZTBwMFB1U0RLenhwT3IwWFNWUUVXWEJYc0lfSmtqZi1xTjJBRzdpcEFjX2owZzZlam5IdGFYdUtka18waThFZWh5SEQxUWsxOFpOTEtWRlc0V2x0TDgzOGJiMVpuRzZObnhRLTlSMXNXOWFMbVM2V1VjX25HTTdSZ1pvbXlNNVdIaWRBU2U4X3pPNXlwbW5yOEllY3NXUnpCM0lrYlJxODFwQVkzV2NyLUhVb3NvUHdyQThldFBqN05zdw?oc=5"
+    },
+    {
+      "time": "4:41 AM",
+      "text": "G7 finance ministers explore responses to Iran war fallout - Reuters",
+      "tag": "Reuters",
+      "url": "https://news.google.com/rss/articles/CBMipgFBVV95cUxQUnhudmJ5VG1fcTE3Y1RXSEhSN2diRjQ3Z3hwNVRUd1dwdlFadlBNMDRzak13VjMwdFU1enNmbDZzMFhyNW9ManBTYkJueW5UMnkwMjdsRGNTSE8zRVd5cEFGaWwwVWRiU2t0LXcwSDZYdGpCMXFBLWJzWXZBUk5QTVJSbnR1SjFOdVpUY2dFQ2NONUUwdzZlQmdLTVZxY19RblhUNjhn?oc=5"
     }
   ],
-  "brief": "<h2><span class=\"sec-icon\">◆</span> Market Overview</h2>\n\nMixed pre-market action with SPY sitting near flat at $739.29 while tech gets hammered down 0.98%. VIX dropping to 27.59 suggests some risk appetite returning, but that elevated level still screams caution. Classic Monday indecision with geopolitical noise from Iran-Pakistan developments creating cross-currents.\n\n<h2><span class=\"sec-icon\">◆</span> What to Watch</h2>\n\n<ul>\n<li><strong>Fed Venable Speech (12:30 ET)</strong> - Any hawkish tilt could crush this fragile bounce</li>\n<li><strong>NY Fed Services Activity Index (12:30 ET)</strong> - Services strength critical for soft landing narrative</li>\n<li><strong>NAHB Housing Market Index (14:00 ET)</strong> - Real estate leading pre-market, watch for confirmation</li>\n<li><strong>Treasury Auctions (15:30 ET)</strong> - 3M/6M bills with \"ominous bond trades\" headlines circulating</li>\n</ul>\n\n<h2><span class=\"sec-icon\">◆</span> Sector Rotation</h2>\n\nDefensive rotation in full swing with staples (+1.24%) and financials (+1.06%) leading while tech bleeds. Real estate matching financials suggests rate cut expectations building despite bond market warnings. Classic flight from growth to value when geopolitical uncertainty spikes.\n\n<div class=\"callout callout-amber\"><div class=\"callout-label\">⚡ Key Driver</div>Iran war developments dominating flow - Pakistan deploying jets to Saudi Arabia while peace proposals circulate. Markets hate uncertainty more than bad news.</div>\n\n<div class=\"callout callout-red\"><div class=\"callout-label\">⚠ Bear Case</div>Bond market screaming higher rates ahead while equity markets pricing cuts. This disconnect ends badly - usually with equities catching down to bonds.</div>\n\n<div class=\"callout callout-green\"><div class=\"callout-label\">✦ Bull Case</div>BOE pause signals from IMF suggest central bank pivot accelerating globally. VIX decline indicates professional money stepping back in selectively.</div>\n\n<h2><span class=\"sec-icon\">◆</span> Levels That Matter</h2>\n\n<ul>\n<li><strong>SPY $735</strong> - Key support from Friday's low, break targets $728</li>\n<li><strong>QQQ $700</strong> - Psychological support with tech under pressure</li>\n<li><strong>VIX $30</strong> - Resistance level that's capped rallies all month</li>\n<li><strong>XLF $45.50</strong> - Financials testing breakout level on rate expectations</li>\n</ul>\n\n<hr>\n<p><em>Not a prediction. A preparation. Make your plan before the bell.</em></p>"
+  "brief": "<h2><span class=\"sec-icon\">◆</span> Market Overview</h2>\n\nFutures are painting red across the board with small-caps taking the biggest hit down 1.03% as Iran tensions keep markets on edge. VIX climbing to 27.38 signals continued uncertainty, while the divergence between tech (+0.34%) and cyclicals tells the defensive rotation story clearly.\n\n<h2><span class=\"sec-icon\">◆</span> What to Watch</h2>\n\n<ul>\n<li><strong>ADP Employment Change (12:15 ET)</strong> - Weekly jobs data could shift Fed expectations with Waller speaking later today</li>\n<li><strong>Fed Waller Speech (1:00 PM ET)</strong> - Hawkish commentary could accelerate the tech rotation we're seeing pre-market</li>\n<li><strong>Pending Home Sales (2:00 PM ET)</strong> - Housing weakness would amplify recession fears already brewing from geopolitical stress</li>\n<li><strong>Iran Peace Proposal</strong> - Reparations demand and troop withdrawal conditions suggest this rally on \"peace talks\" is premature</li>\n</ul>\n\n<div class=\"callout callout-amber\"><div class=\"callout-label\">⚡ Key Driver</div>G7 finance ministers meeting on Iran fallout response - any coordinated action announcement could swing markets violently either direction</div>\n\n<h2><span class=\"sec-icon\">◆</span> Sector Rotation</h2>\n\nClassic flight-to-quality setup with tech leading while cyclicals get hammered. Materials down 2.07% and consumer discretionary off 1.49% as investors price in economic damage from prolonged Middle East conflict. Energy flat despite tensions suggests supply disruption fears are overblown or already priced.\n\n<div class=\"callout callout-red\"><div class=\"callout-label\">⚠ Bear Case</div>Small-cap weakness (IWM -1.03%) signals broad economic pessimism beyond just geopolitical noise - domestic growth concerns building</div>\n\n<div class=\"callout callout-green\"><div class=\"callout-label\">✦ Bull Case</div>Tech strength shows quality names can outperform even in risk-off environments - defensive growth trade intact</div>\n\n<h2><span class=\"sec-icon\">◆</span> Levels That Matter</h2>\n\n<ul>\n<li><strong>SPY 730</strong> - Critical support from April lows, break signals deeper correction incoming</li>\n<li><strong>QQQ 710</strong> - Tech holding above this level keeps defensive rotation thesis alive</li>\n<li><strong>VIX 30</strong> - Breach above triggers systematic de-risking across momentum strategies</li>\n<li><strong>IWM 270</strong> - Small-cap breakdown level would confirm broad risk-off acceleration</li>\n</ul>\n\n<hr>\n<p><em>Not a prediction. A preparation. Make your plan before the bell.</em></p>"
 }

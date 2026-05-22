@@ -1,36 +1,36 @@
 {
-  "generated": "2026-05-21T13:43:53.767Z",
-  "date": "2026-05-21",
+  "generated": "2026-05-22T12:38:32.662Z",
+  "date": "2026-05-22",
   "indices": [
     {
       "name": "S&P 500",
-      "val": "737.83",
-      "chg": -0.4614,
-      "price": 737.83
+      "val": "742.72",
+      "chg": 0.1983,
+      "price": 742.72
     },
     {
       "name": "NASDAQ",
-      "val": "709.13",
-      "chg": -0.5637,
-      "price": 709.13
+      "val": "714.51",
+      "chg": 0.1907,
+      "price": 714.51
     },
     {
       "name": "DOW",
-      "val": "497.70",
-      "chg": -0.5078,
-      "price": 497.7
+      "val": "503.11",
+      "chg": 0.5737,
+      "price": 503.11
     },
     {
       "name": "RUSSELL",
-      "val": "278.28",
-      "chg": -0.5681,
-      "price": 278.28
+      "val": "282.49",
+      "chg": 0.9361,
+      "price": 282.49
     },
     {
       "name": "VIX",
-      "val": "27.22",
-      "chg": 0.8148,
-      "price": 27.22
+      "val": "26.21",
+      "chg": -2.9259,
+      "price": 26.21
     },
     {
       "name": "10Y",
@@ -43,186 +43,186 @@
     {
       "name": "Tech",
       "symbol": "XLK",
-      "chg": -0.0113
+      "chg": 0.8242
     },
     {
       "name": "Health",
       "symbol": "XLV",
-      "chg": -0.6185
+      "chg": 0.6933
     },
     {
       "name": "Financials",
       "symbol": "XLF",
-      "chg": -0.6388
+      "chg": 0.1355
     },
     {
       "name": "Energy",
       "symbol": "XLE",
-      "chg": 0.5184
+      "chg": -1.1204
     },
     {
       "name": "Cons Disc",
       "symbol": "XLY",
-      "chg": -0.8055
+      "chg": 0.6444
     },
     {
       "name": "Industrials",
       "symbol": "XLI",
-      "chg": -0.8786
+      "chg": -0.1171
     },
     {
       "name": "Materials",
       "symbol": "XLB",
-      "chg": -0.9252
+      "chg": 0.6034
     },
     {
       "name": "Real Estate",
       "symbol": "XLRE",
-      "chg": -0.8778
+      "chg": 0.1576
     },
     {
       "name": "Utilities",
       "symbol": "XLU",
-      "chg": 0.0674
+      "chg": 1.1009
     },
     {
       "name": "Cons Staples",
       "symbol": "XLP",
-      "chg": -2.1632
+      "chg": -1.0056
     },
     {
       "name": "Comm Svcs",
       "symbol": "XLC",
-      "chg": -0.8355
+      "chg": 0
     }
   ],
   "keyLevels": [
     {
       "tag": "support",
       "label": "SPY Support",
-      "val": "737.51"
+      "val": "737.03"
     },
     {
       "tag": "resist",
       "label": "SPY Resist",
-      "val": "739.52"
+      "val": "744.87"
     },
     {
       "tag": "pivot",
       "label": "QQQ Pivot",
-      "val": "709.15"
+      "val": "712.80"
     },
     {
       "tag": "event",
-      "label": "Building Permits MoM",
-      "val": "2026-05-21 12:30:00"
+      "label": "CB Leading Index MoM",
+      "val": "2026-05-22 14:00:00"
     }
   ],
   "fearGreed": {
-    "score": 34,
+    "score": 38,
     "label": "Fear"
   },
   "earnings": [
     {
-      "ticker": "ARQQ",
-      "info": "EPS Est: N/A",
+      "ticker": "SY",
+      "info": "EPS Est: -0.7457",
       "when": "BMO"
     },
     {
-      "ticker": "FLX",
-      "info": "EPS Est: N/A",
-      "when": "BMO"
-    },
-    {
-      "ticker": "MWG",
+      "ticker": "MOBX",
       "info": "EPS Est: N/A",
       "when": ""
     },
     {
-      "ticker": "BULL",
-      "info": "EPS Est: 0.0442",
-      "when": "AMC"
-    },
-    {
-      "ticker": "MOV",
-      "info": "EPS Est: 0.055",
+      "ticker": "SEGG",
+      "info": "EPS Est: N/A",
       "when": ""
     },
     {
-      "ticker": "ZKH",
-      "info": "EPS Est: N/A",
+      "ticker": "BJ",
+      "info": "EPS Est: 1.059",
+      "when": "BMO"
+    },
+    {
+      "ticker": "IMPP",
+      "info": "EPS Est: 0.3468",
+      "when": "BMO"
+    },
+    {
+      "ticker": "GSL",
+      "info": "EPS Est: 2.4821",
       "when": "BMO"
     }
   ],
   "econ": [
     {
-      "time": "2026-05-21 12:30:00",
-      "name": "Building Permits MoM Prel",
+      "time": "2026-05-22 14:00:00",
+      "name": "CB Leading Index MoM",
       "impact": "high"
     },
     {
-      "time": "2026-05-21 12:30:00",
-      "name": "Building Permits Prel",
+      "time": "2026-05-22 14:00:00",
+      "name": "Michigan 5 Year Inflation Expectations Final",
       "impact": "high"
     },
     {
-      "time": "2026-05-21 12:30:00",
-      "name": "Continuing Jobless Claims",
+      "time": "2026-05-22 14:00:00",
+      "name": "Michigan Consumer Expectations Final",
       "impact": "high"
     },
     {
-      "time": "2026-05-21 12:30:00",
-      "name": "Housing Starts",
+      "time": "2026-05-22 14:00:00",
+      "name": "Michigan Consumer Sentiment Final",
       "impact": "high"
     },
     {
-      "time": "2026-05-21 12:30:00",
-      "name": "Housing Starts MoM",
+      "time": "2026-05-22 14:00:00",
+      "name": "Michigan Current Conditions Final",
       "impact": "high"
     },
     {
-      "time": "2026-05-21 12:30:00",
-      "name": "Initial Jobless Claims",
+      "time": "2026-05-22 14:00:00",
+      "name": "Michigan Inflation Expectations Final",
       "impact": "high"
     }
   ],
   "news": [
     {
-      "time": "8:54 AM",
-      "text": "Jim Cramer's top 10 things to watch in the stock market Thursday",
+      "time": "6:20 AM",
+      "text": "Mega-IPOs could signal market top, say analysts as SpaceX and OpenAI prep record floats",
       "tag": "CNBC",
-      "url": "https://www.cnbc.com/2026/05/21/jim-cramers-top-10-things-to-watch-in-the-stock-market-thursday.html"
+      "url": "https://www.cnbc.com/2026/05/22/ipo-flurry-top-market-analysts-ai-spacex-musk-altman.html"
     },
     {
-      "time": "7:39 AM",
-      "text": "Oil markets could enter ‘red zone’ by July as stocks dwindle ahead of summer travel season, IEA chief says",
+      "time": "7:04 PM",
+      "text": "IMAX has held ‘preliminary talks’ with potential buyers, source says",
       "tag": "CNBC",
-      "url": "https://www.cnbc.com/2026/05/21/oil-markets-red-zone-iea-summer-travel.html"
+      "url": "https://www.cnbc.com/2026/05/21/imax-preliminary-talks-potential-buyers.html"
     },
     {
-      "time": "7:34 AM",
-      "text": "Billionaire families bet on semiconductor and energy stocks in first quarter during Iran war",
+      "time": "3:20 PM",
+      "text": "Will Elon Musk eventually merge SpaceX with Tesla? Speculation is building",
       "tag": "CNBC",
-      "url": "https://www.cnbc.com/2026/05/21/billionaire-investments-q1.html"
+      "url": "https://www.cnbc.com/2026/05/21/will-elon-musk-eventually-merge-spacex-with-tesla-speculation-builds.html"
     },
     {
-      "time": "6:05 AM",
-      "text": "Traders are making big moves ahead of these earnings reports due Thursday",
+      "time": "2:42 PM",
+      "text": "Traders think this legacy tech stock is the ultimate quantum play",
       "tag": "CNBC",
-      "url": "https://www.cnbc.com/2026/05/21/traders-are-making-big-moves-ahead-of-these-earnings-reports-due-thursday.html"
+      "url": "https://www.cnbc.com/2026/05/21/traders-think-this-legacy-tech-stock-is-the-ultimate-quantum-play.html"
     },
     {
-      "time": "6:41 PM",
-      "text": "Jim Cramer says the world of tech investing has changed and it's not going back",
+      "time": "2:26 PM",
+      "text": "SpaceX, OpenAI valuations would mean they leapfrog Berkshire Hathaway on first day of trading",
       "tag": "CNBC",
-      "url": "https://www.cnbc.com/2026/05/20/jim-cramer-says-the-world-of-tech-investing-has-changed-and-its-not-going-back.html"
+      "url": "https://www.cnbc.com/2026/05/21/spacex-openai-valuations-to-leapfrog-berkshire-hathaway-traders-say.html"
     },
     {
-      "time": "4:50 PM",
-      "text": "Sinkhole shuts runway at LaGuardia Airport, delaying flights, Port Authority warns",
+      "time": "2:25 PM",
+      "text": "Oura, smart ring maker, confidentially files for IPO",
       "tag": "CNBC",
-      "url": "https://www.cnbc.com/2026/05/20/laguardia-airport-lga-flights.html"
+      "url": "https://www.cnbc.com/2026/05/21/oura-smart-ring-ipo-filing.html"
     }
   ],
-  "brief": "<h2><span class=\"sec-icon\">◆</span> Market Overview</h2>\n\nFutures bleeding red across the board with SPY down 0.46% to $737.83 as VIX pops 0.81% to 27.22. Broad-based selling hitting all major indices, but the weakness is measured - not panic selling. Iran tensions and oil supply concerns keeping risk-off sentiment alive.\n\n<h2><span class=\"sec-icon\">◆</span> What to Watch</h2>\n\n<ul>\n<li><strong>Housing Data Dump</strong> - Building permits and housing starts at 12:30 ET could move homebuilders and financials</li>\n<li><strong>Jobless Claims</strong> - Weekly initial claims data will test the employment narrative ahead of month-end</li>\n<li><strong>Philadelphia Fed Index</strong> - Manufacturing sentiment could signal broader economic momentum</li>\n<li><strong>Oil Supply Dynamics</strong> - IEA warning about July \"red zone\" as Iran controls Hormuz chokepoints</li>\n</ul>\n\n<h2><span class=\"sec-icon\">◆</span> Sector Rotation</h2>\n\nEnergy (XLE) standing alone with +0.52% gains as oil supply fears dominate headlines. Consumer staples getting hammered down 2.16% - defensive rotation reversing hard. Tech holding up best among growth sectors, down just 0.01%, showing institutional support remains intact.\n\n<div class=\"callout callout-amber\"><div class=\"callout-label\">⚡ Key Driver</div>Iran consolidating Hormuz control with island checkpoints and \"fees\" - this is the geopolitical risk premium being priced in real-time</div>\n\n<div class=\"callout callout-red\"><div class=\"callout-label\">⚠ Bear Case</div>VIX above 27 with broad sector weakness suggests institutional deleveraging. If housing data disappoints, financials could cascade lower</div>\n\n<div class=\"callout callout-green\"><div class=\"callout-label\">✦ Bull Case</div>Samsung strike averted and tech leadership intact. Selloff looks orderly, not capitulation - dip buyers likely emerge on strong economic data</div>\n\n<h2><span class=\"sec-icon\">◆</span> Levels That Matter</h2>\n\n<ul>\n<li><strong>SPY $735</strong> - Key technical support from April consolidation, break triggers 1-2% flush</li>\n<li><strong>QQQ $705</strong> - Round number support, holds here and tech bounce likely</li>\n<li><strong>VIX $30</strong> - Panic threshold, above this level expect accelerated selling</li>\n<li><strong>XLE $95</strong> - Energy breakout level if oil tensions escalate further</li>\n</ul>\n\n<hr>\n<p><em>Not a prediction. A preparation. Make your plan before the bell.</em></p>"
+  "brief": "<h2><span class=\"sec-icon\">◆</span> Market Overview</h2>\n\nFutures pointing to a modest green open with small-caps leading (+0.94% on IWM) and VIX cooling off 3%. Energy getting hammered pre-market while utilities catch a defensive bid. The mega-IPO narrative around SpaceX/OpenAI has analysts calling market top signals - classic late-cycle behavior worth monitoring.\n\n<h2><span class=\"sec-icon\">◆</span> What to Watch</h2>\n\n<ul>\n<li><strong>Michigan Consumer Sentiment Final</strong> - All inflation and sentiment data drops at 2pm, potential market mover given current macro uncertainty</li>\n<li><strong>Fed Waller Speech</strong> - 3pm EST, watch for any hawkish shifts given persistent inflation concerns</li>\n<li><strong>BJ's Wholesale (BJ)</strong> - EPS est $1.059, retail bellwether ahead of Memorial Day weekend</li>\n<li><strong>IMAX Buyout Talks</strong> - Preliminary discussions could spark M&A momentum in entertainment space</li>\n</ul>\n\n<h2><span class=\"sec-icon\">◆</span> Sector Rotation</h2>\n\nUtilities leading (+1.10%) with tech close behind (+0.82%) - classic risk-on/risk-off mixed signals. Energy getting crushed (-1.12%) on what looks like profit-taking after recent strength. Consumer staples weak (-1.01%) suggesting rotation out of defensives, but utilities strength contradicts that thesis.\n\n<div class=\"callout callout-green\"><div class=\"callout-label\">✦ Bull Case</div>VIX compression (-2.93%) with small-cap leadership suggests risk appetite returning. Mega-IPO pipeline could bring massive liquidity flows into broader market.</div>\n\n<div class=\"callout callout-amber\"><div class=\"callout-label\">⚡ Key Driver</div>SpaceX/OpenAI IPO speculation dominating headlines. If these deals price successfully, it validates current valuations. If they crater, it's your canary in the coal mine.</div>\n\n<div class=\"callout callout-red\"><div class=\"callout-label\">⚠ Bear Case</div>Mega-IPO timing at potential market tops historically signals institutional distribution. Mixed sector rotation suggests indecision, not conviction buying.</div>\n\n<h2><span class=\"sec-icon\">◆</span> Levels That Matter</h2>\n\n<ul>\n<li><strong>SPY $745</strong> - Resistance level that's been tested multiple times, break above opens $750+ target</li>\n<li><strong>QQQ $720</strong> - Key psychological level, watch for follow-through if tech continues morning strength</li>\n<li><strong>VIX 25</strong> - Below this level and we're back in complacency territory</li>\n<li><strong>XLE $88</strong> - Energy support level being tested hard, break below accelerates selling</li>\n</ul>\n\n<hr>\n<p><em>Not a prediction. A preparation. Make your plan before the bell.</em></p>"
 }

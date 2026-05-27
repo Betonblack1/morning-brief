@@ -1,36 +1,36 @@
 {
-  "generated": "2026-05-26T13:26:42.074Z",
-  "date": "2026-05-26",
+  "generated": "2026-05-27T13:58:08.969Z",
+  "date": "2026-05-27",
   "indices": [
     {
       "name": "S&P 500",
-      "val": "745.64",
-      "chg": 0.3931,
-      "price": 745.64
+      "val": "750.19",
+      "chg": -0.0533,
+      "price": 750.19
     },
     {
       "name": "NASDAQ",
-      "val": "717.54",
-      "chg": 0.4241,
-      "price": 717.54
+      "val": "728.69",
+      "chg": -0.2177,
+      "price": 728.69
     },
     {
       "name": "DOW",
-      "val": "506.12",
-      "chg": 0.5983,
-      "price": 506.12
+      "val": "506.63",
+      "chg": 0.2731,
+      "price": 506.63
     },
     {
       "name": "RUSSELL",
-      "val": "285.12",
-      "chg": 0.931,
-      "price": 285.12
+      "val": "290.66",
+      "chg": 0.0516,
+      "price": 290.66
     },
     {
       "name": "VIX",
-      "val": "26.42",
-      "chg": 0.8012,
-      "price": 26.42
+      "val": "25.34",
+      "chg": -1.17,
+      "price": 25.34
     },
     {
       "name": "10Y",
@@ -43,186 +43,186 @@
     {
       "name": "Tech",
       "symbol": "XLK",
-      "chg": 1.0022
+      "chg": -0.5833
     },
     {
       "name": "Health",
       "symbol": "XLV",
-      "chg": 1.1745
+      "chg": 0.5252
     },
     {
       "name": "Financials",
       "symbol": "XLF",
-      "chg": 0.406
+      "chg": -0.405
     },
     {
       "name": "Energy",
       "symbol": "XLE",
-      "chg": 0.6088
+      "chg": -1.3656
     },
     {
       "name": "Cons Disc",
       "symbol": "XLY",
-      "chg": 0.4044
+      "chg": 1.4399
     },
     {
       "name": "Industrials",
       "symbol": "XLI",
-      "chg": 0.7271
+      "chg": 0.0688
     },
     {
       "name": "Materials",
       "symbol": "XLB",
-      "chg": 0.5398
+      "chg": 0.2746
     },
     {
       "name": "Real Estate",
       "symbol": "XLRE",
-      "chg": 0.1348
+      "chg": 0.425
     },
     {
       "name": "Utilities",
       "symbol": "XLU",
-      "chg": 0.7778
+      "chg": -0.0662
     },
     {
       "name": "Cons Staples",
       "symbol": "XLP",
-      "chg": 0.1654
+      "chg": 1.4827
     },
     {
       "name": "Comm Svcs",
       "symbol": "XLC",
-      "chg": -0.5512
+      "chg": 0.4414
     }
   ],
   "keyLevels": [
     {
       "tag": "support",
       "label": "SPY Support",
-      "val": "744.48"
+      "val": "749.23"
     },
     {
       "tag": "resist",
       "label": "SPY Resist",
-      "val": "748.94"
+      "val": "751.30"
     },
     {
       "tag": "pivot",
       "label": "QQQ Pivot",
-      "val": "718.54"
+      "val": "729.62"
     },
     {
       "tag": "event",
-      "label": "Chicago Fed National",
-      "val": "2026-05-26 12:30:00"
+      "label": "Fed Logan Speech",
+      "val": "2026-05-27 08:00:00"
     }
   ],
   "fearGreed": {
-    "score": 37,
-    "label": "Fear"
+    "score": 42,
+    "label": "Neutral"
   },
   "earnings": [
     {
-      "ticker": "STG",
-      "info": "EPS Est: N/A",
-      "when": "BMO"
-    },
-    {
-      "ticker": "PNBI",
+      "ticker": "MDBH",
       "info": "EPS Est: N/A",
       "when": ""
     },
     {
-      "ticker": "JG",
+      "ticker": "INTE",
       "info": "EPS Est: N/A",
-      "when": "BMO"
+      "when": ""
     },
     {
-      "ticker": "FSCO",
+      "ticker": "COOT",
       "info": "EPS Est: N/A",
+      "when": ""
+    },
+    {
+      "ticker": "CSAI",
+      "info": "EPS Est: -0.0918",
       "when": "AMC"
     },
     {
-      "ticker": "PONY",
-      "info": "EPS Est: -0.1221",
-      "when": "BMO"
-    },
-    {
-      "ticker": "GWLL",
+      "ticker": "VSTD",
       "info": "EPS Est: N/A",
       "when": ""
+    },
+    {
+      "ticker": "MOV",
+      "info": "EPS Est: 0.055",
+      "when": "BMO"
     }
   ],
   "econ": [
     {
-      "time": "2026-05-26 12:30:00",
-      "name": "Chicago Fed National Activity Index",
+      "time": "2026-05-27 08:00:00",
+      "name": "Fed Logan Speech",
       "impact": "high"
     },
     {
-      "time": "2026-05-26 12:55:00",
-      "name": "Redbook YoY",
+      "time": "2026-05-27 11:00:00",
+      "name": "MBA 30-Year Mortgage Rate",
       "impact": "high"
     },
     {
-      "time": "2026-05-26 13:00:00",
-      "name": "House Price Index",
+      "time": "2026-05-27 11:00:00",
+      "name": "MBA Mortgage Applications",
       "impact": "high"
     },
     {
-      "time": "2026-05-26 13:00:00",
-      "name": "House Price Index MoM",
+      "time": "2026-05-27 11:00:00",
+      "name": "MBA Mortgage Market Index",
       "impact": "high"
     },
     {
-      "time": "2026-05-26 13:00:00",
-      "name": "House Price Index YoY",
+      "time": "2026-05-27 11:00:00",
+      "name": "MBA Mortgage Refinance Index",
       "impact": "high"
     },
     {
-      "time": "2026-05-26 13:00:00",
-      "name": "S&P/Case-Shiller Home Price MoM",
+      "time": "2026-05-27 11:00:00",
+      "name": "MBA Purchase Index",
       "impact": "high"
     }
   ],
   "news": [
     {
-      "time": "8:30 AM",
-      "text": "UK gilt yields retreat from multi-decade highs as political drama mellows, rate hike expectations ease",
+      "time": "9:10 AM",
+      "text": "Amazon starts selling its AI shopping technology to other retailers",
       "tag": "CNBC",
-      "url": "https://www.cnbc.com/2026/05/26/uk-gilt-yields-ease-political-drama-mellows-rate-hikes-ease.html"
+      "url": "https://www.cnbc.com/2026/05/27/amazon-ai-shopping-alexa-kate-spade.html"
     },
     {
-      "time": "7:50 AM",
-      "text": "Eli Lilly stock edges higher as company plans nearly $4 billion in vaccine deals",
+      "time": "8:41 AM",
+      "text": "U.S. oil falls below $89 on report Iran agreement would restore Hormuz traffic in one month",
       "tag": "CNBC",
-      "url": "https://www.cnbc.com/2026/05/26/eli-lilly-stock-vaccine-deals-curevo-limmatech.html"
+      "url": "https://www.cnbc.com/2026/05/27/oil-price-today-iran-war-strait-hormuz.html"
     },
     {
-      "time": "7:40 AM",
-      "text": "What's involved in talks to end the Iran war? - Reuters",
+      "time": "8:36 AM",
+      "text": "Iran says draft U.S. deal would reopen Hormuz shipping, end naval blockade - Reuters",
       "tag": "Reuters",
-      "url": "https://news.google.com/rss/articles/CBMiiAFBVV95cUxOU0JJNi1CdXp2S1hIOXp2Z3hRQUprU2J4b0JtRF9aeFNOd0lwSnlCMkhQa3ZSbWJ0cHJCQWdzOEEybkRENGZFT0pIM2VWcjJVckFWZDNNLUpNUEhmNlZsUmFObExESzRyQ3FYSk53dGx6SUI1UUZoZ3VtcUh3QlJfMFhLa05sVzJS?oc=5"
+      "url": "https://news.google.com/rss/articles/CBMiwwFBVV95cUxPVHB3ZTljSEdNUGlta055MjFRSDNTZGg2WkZmWjdFOUZfRC1Xd2Q2V2FSWmRxd0xPSTBGel91Um5yN3BHRVhhTURxcUFZTHBJckZDU2hvenpkbWg3aGY3cjB1VERORDR6Z00zTEdEbzB4SlBhUG11UkpkcDRTT2lpZmZxNVoxaXNDbHJWUHdkT0Q3d2VqZHFraUY5alIwcGY2WWEtVV9lblgtMy1GOWRIVlU4eVpzU2s2dzVPZFltZC00UXM?oc=5"
     },
     {
-      "time": "7:17 AM",
-      "text": "Exclusive: Pentagon spars with SpaceX over Starlink price hike during Iran war - Reuters",
+      "time": "7:55 AM",
+      "text": "Oil prices drop as traders look for US-Iran talks progress - Reuters",
       "tag": "Reuters",
-      "url": "https://news.google.com/rss/articles/CBMiygFBVV95cUxOaUljVEJaNEJUaGgyZVVOd3Z5SS13OEltSVFPU1ZEc3UtcFpxNVE0VTZjZzVRV2F5Q0J2UHJtV2xZVmczbTlIYlVfZ2JielRqbGFSVktwZzVyRV9QVm4tTkhoVFdLS3kxeTZSVzBzaTM1b3Q1T1E1dllTSXhOWVQwSXVNUXAydEJySXU1anJackpLUHB0YllPaWtxb0FSZkQybEtnOGhpUjNKNDdnYjR5dDhzWHBOdU8wN09ocDdTeXpZZHppR3R0VnBR?oc=5"
+      "url": "https://news.google.com/rss/articles/CBMipAFBVV95cUxOdktTeHl4ZHpzZm0waURXVWVISGZtQzZhMDQxQzEwRkYxVnpzSV9HQzM5ZmVhSkxMSEg3SzdvV0xsMWNMSVBPVG5TbmhDMllLWVM0S2lISzhIZ2ZWU2dST2UwdEtETWZhcGF0VHM3RGxLcXllbG5GN0JtRkpubTRkRzNqbGxqN3pTRTc3ODdqdTFBdnB1WTBYM2MwOHp0VWdBRU16LQ?oc=5"
     },
     {
-      "time": "6:32 AM",
-      "text": "Trump claims 2020 election 'rigged' at least 107 times in six months as midterms loom - Reuters",
-      "tag": "Reuters",
-      "url": "https://news.google.com/rss/articles/CBMiuwFBVV95cUxPdkdCS0ZOdHRDWDkyMXNUaUJJUVZoWTl4V0hiY3FGd2RnWk5XSWFyWF9fTlBfRk8wSl9EZXZ3QnNYUW9QQnRRSjZ3VHhFa05QNHFxRjJjdkJuWEpJYXFSeHlSaDhEQW1KLXdDRC1JaFpRMVVYbThON1dFaUNzODcxZFBsZmdKSEJhWWYtd3JDV1E4cGNtc3NrNVg2aHBwRHhZYmwwNEJpbHNCeXJwUU1Pb0Y5T1BPZ3RNZDNv?oc=5"
+      "time": "7:52 AM",
+      "text": "Lululemon settles proxy battle with founder Chip Wilson, agrees to two board nominees",
+      "tag": "CNBC",
+      "url": "https://www.cnbc.com/2026/05/27/lululemon-settles-proxy-battle-with-founder-chip-wilson.html"
     },
     {
-      "time": "5:41 AM",
-      "text": "Wall St futures gain on US-Iran peace talk hopes - Reuters",
+      "time": "7:44 AM",
+      "text": "Iranian missile likely involved in attack on ship in Strait of Hormuz, South Korea says - Reuters",
       "tag": "Reuters",
-      "url": "https://news.google.com/rss/articles/CBMilAFBVV95cUxPVWRWWDF6RVpndmREd3hkYTZ4Q1YyNmVLN09uSGlUaGdJaTdXM3kxM3lwNXRWdU9vX3NUSS1HR040RzVKQU5YZGFtU1BvSjBnTDBZWExDY0ZLLUcyamhXV0FGWVliZUxfWjFVYlFVckEyRmlsMmVaVEgzTHVOcFZLM0wtU0tHaWU3emFJdmprT0NSdUtq?oc=5"
+      "url": "https://news.google.com/rss/articles/CBMizAFBVV95cUxQU0FvelZ2cHpUUW5qS3FpQ1NJMUVha1YtR2owWnJ1OEROem1MekVoQkVtWEMtTmxuOGFUQ3Q3QW9XVHd6bENOVjVsMVZ3Y2FFT0RYYkJpWHBfbG9meWxwM2tOck1GaTF1djA2Tnd6alNncGVmclhGNkZQX21YRmkzTWFpWU9QeV93OFk5eUhCMTRnc1Bwc0ZGbmJmckp2Q3BWZ2lDR1pGM1F6cHZFU2NkNnlfd05oZUJSd2VlcHVQMWdIZmhCZWhRT0NmS1c?oc=5"
     }
   ],
-  "brief": "<h2><span class=\"sec-icon\">◆</span> Market Overview</h2>\nModest green across the board with small caps leading (+0.93% IWM) as traders position for potential Iran peace breakthrough. VIX uptick to 26.42 suggests underlying caution despite the positive tone. Healthcare and tech driving the move while comm services lag on geopolitical uncertainty.\n\n<h2><span class=\"sec-icon\">◆</span> What to Watch</h2>\n<ul>\n<li><strong>Iran Peace Talks:</strong> Any headlines on US-Iran negotiations will drive intraday volatility - watch defense/energy/oil service names</li>\n<li><strong>Consumer Confidence (2PM):</strong> Critical read on spending power ahead of summer - retail sensitivity high</li>\n<li><strong>Case-Shiller Housing (1PM):</strong> Fed watching closely for rate policy signals - REIT impact likely</li>\n<li><strong>Eli Lilly:</strong> $4B vaccine deal momentum could lift broader healthcare sector</li>\n</ul>\n\n<h2><span class=\"sec-icon\">◆</span> Sector Rotation</h2>\nHealthcare leading (+1.17%) on LLY vaccine news while defensive utilities (+0.78%) getting bid on rate uncertainty. Tech participation (+1.00%) is encouraging for broader rally sustainability. Comm services (-0.55%) under pressure from geopolitical headlines and potential content regulation concerns.\n\n<div class=\"callout callout-green\"><div class=\"callout-label\">✦ Bull Case</div>Peace talks de-risk geopolitical premium while strong healthcare earnings momentum spreads sector-wide. Small cap outperformance signals risk-on appetite returning.</div>\n\n<div class=\"callout callout-amber\"><div class=\"callout-label\">⚡ Key Driver</div>Consumer Confidence at 2PM - any miss below consensus with housing data weakness could flip the script on rate cut expectations and market sentiment.</div>\n\n<h2><span class=\"sec-icon\">◆</span> Levels That Matter</h2>\n<ul>\n<li><strong>SPY 748:</strong> Pre-market high - break above targets 752 resistance zone</li>\n<li><strong>QQQ 720:</strong> Key tech level - hold above keeps NASDAQ leadership intact</li>\n<li><strong>VIX 25:</strong> Break below signals risk-off unwinding, above 28 expect selling pressure</li>\n<li><strong>IWM 290:</strong> Small cap breakout level - Russell strength confirms broadening rally</li>\n</ul>\n\n<hr>\n<p><em>Not a prediction. A preparation. Make your plan before the bell.</em></p>"
+  "brief": "<h2><span class=\"sec-icon\">◆</span> Market Overview</h2>\n\nFutures are mixed with a slight defensive tilt - VIX down to 25.34 but still elevated above comfort levels. The Dow's modest +0.27% gain against NASDAQ's -0.22% drop signals rotation into value ahead of key Fed commentary. Pre-market action is muted but Iran-US diplomatic progress is the dominant macro theme driving energy weakness.\n\n<h2><span class=\"sec-icon\">◆</span> What to Watch</h2>\n\n<ul>\n<li><strong>Fed Logan Speech (8:00 AM):</strong> High-impact event that could shift rate expectations with markets already on edge</li>\n<li><strong>ADP Weekly Employment (12:15 PM):</strong> First look at labor momentum heading into Friday's jobs report</li>\n<li><strong>MBA Mortgage Data (11:00 AM):</strong> Housing demand indicators amid rate uncertainty - watch refinance index closely</li>\n<li><strong>Iran-US Negotiations:</strong> Any headlines on Hormuz shipping agreement will move energy and broader risk assets</li>\n</ul>\n\n<div class=\"callout callout-amber\"><div class=\"callout-label\">⚡ Key Driver</div>Iran deal progress could break oil below $89 and trigger broad energy sector selling while boosting consumer discretionary names on lower input costs.</div>\n\n<h2><span class=\"sec-icon\">◆</span> Sector Rotation</h2>\n\nClear flight to defensive consumer plays - staples (+1.48%) and discretionary (+1.44%) leading while energy (-1.37%) and tech (-0.58%) lag. This rotation screams \"late cycle\" positioning as traders hedge growth concerns. Healthcare's +0.53% gain adds to the defensive narrative while financials remain under pressure at -0.41%.\n\n<div class=\"callout callout-green\"><div class=\"callout-label\">✦ Bull Case</div>Amazon's AI retail licensing could spark broader enterprise AI monetization theme. Consumer strength in XLY/XLP suggests spending resilience despite macro headwinds.</div>\n\n<div class=\"callout callout-red\"><div class=\"callout-label\">⚠ Bear Case</div>Tech weakness with elevated VIX above 25 suggests institutional selling isn't done. Energy sector breakdown could signal broader commodity deflation concerns.</div>\n\n<h2><span class=\"sec-icon\">◆</span> Levels That Matter</h2>\n\n<ul>\n<li><strong>SPY $747:</strong> Pre-market low - break triggers test of $740 support zone</li>\n<li><strong>QQQ $725:</strong> Critical technical level - failure here opens $715 gap fill</li>\n<li><strong>XLE $85:</strong> Energy sector breakdown level if Iran headlines accelerate</li>\n<li><strong>VIX 27:</strong> Upside trigger that would signal broader risk-off move</li>\n</ul>\n\n<hr>\n<p><em>Not a prediction. A preparation. Make your plan before the bell.</em></p>"
 }

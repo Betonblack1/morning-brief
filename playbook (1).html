@@ -1,0 +1,913 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Playbook — Pullback Strategy</title>
+<link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@300;400;500;600;700&family=DM+Sans:wght@300;400;500&family=Playfair+Display:wght@400;500&display=swap" rel="stylesheet">
+<style>
+:root {
+  --bg:        #06090d;
+  --surface:   #0b1017;
+  --surface2:  #10161e;
+  --surface3:  #151d27;
+  --border:    #1a2332;
+  --border2:   #243040;
+  --text:      #c8d8e8;
+  --text2:     #7a90a8;
+  --muted:     #3a5060;
+  --dim:       #263040;
+  --green:     #00e0a0;
+  --green2:    #00c890;
+  --green-bg:  rgba(0,224,160,0.05);
+  --green-glow:rgba(0,224,160,0.2);
+  --amber:     #ffb020;
+  --amber-bg:  rgba(255,176,32,0.05);
+  --red:       #ff4060;
+  --red-bg:    rgba(255,64,96,0.05);
+  --blue:      #40a0ff;
+  --blue-bg:   rgba(64,160,255,0.05);
+  --cyan:      #00d4ff;
+  --cyan-bg:   rgba(0,212,255,0.05);
+  --mono:      'JetBrains Mono', monospace;
+  --sans:      'DM Sans', sans-serif;
+  --display:   'Playfair Display', serif;
+  --sidebar:   280px;
+}
+* { box-sizing: border-box; margin: 0; padding: 0; }
+body { font-family: var(--sans); background: var(--bg); color: var(--text); min-height: 100vh; display: flex; overflow-x: hidden; font-weight: 300; }
+
+/* ── SIDEBAR ── */
+.sidebar { width: var(--sidebar); min-height: 100vh; background: var(--surface); border-right: 1px solid var(--border); display: flex; flex-direction: column; position: fixed; top: 0; left: 0; z-index: 200; }
+.sidebar-brand { padding: 1.25rem 1rem 1rem; border-bottom: 1px solid var(--border); }
+.sidebar-brand .brand-tag { font-family: var(--mono); font-size: 0.58rem; letter-spacing: 0.2em; text-transform: uppercase; color: var(--cyan); margin-bottom: 0.35rem; }
+.sidebar-brand .brand-name { font-family: var(--display); font-size: 2.8rem; font-weight: 400; color: var(--text); line-height: 1.1; }
+.sidebar-brand .brand-sub { font-family: var(--mono); font-size: 0.55rem; letter-spacing: 0.12em; color: var(--muted); text-transform: uppercase; margin-top: 0.3rem; }
+.sidebar-section { padding: 0.7rem 0 0.3rem; }
+.sidebar-section-label { font-family: var(--mono); font-size: 0.52rem; letter-spacing: 0.18em; text-transform: uppercase; color: var(--muted); padding: 0 1rem 0.4rem; }
+.sidebar-link { display: flex; align-items: center; gap: 0.6rem; padding: 0.5rem 1rem; font-family: var(--mono); font-size: 0.72rem; letter-spacing: 0.07em; text-transform: uppercase; color: var(--text2); text-decoration: none; cursor: pointer; transition: all 0.2s; border-left: 2px solid transparent; background: transparent; }
+.sidebar-link:hover { color: var(--cyan); background: rgba(0,212,255,0.04); border-left-color: rgba(0,212,255,0.3); }
+.sidebar-link.active { color: var(--cyan); border-left-color: var(--cyan); background: rgba(0,212,255,0.06); }
+.sidebar-link .sl-icon { font-size: 0.72rem; width: 14px; text-align: center; opacity: 0.7; }
+.sidebar-bottom { margin-top: auto; padding: 1rem; border-top: 1px solid var(--border); }
+.market-status { display: flex; align-items: center; gap: 0.5rem; font-family: var(--mono); font-size: 0.62rem; letter-spacing: 0.06em; text-transform: uppercase; }
+.status-dot { width: 6px; height: 6px; border-radius: 50%; animation: pulse 2s ease-in-out infinite; }
+.status-dot.pre    { background: var(--green); box-shadow: 0 0 6px var(--green-glow); }
+.status-dot.open   { background: var(--amber); }
+.status-dot.closed { background: var(--muted); animation: none; }
+@keyframes pulse { 0%,100%{opacity:1;transform:scale(1);}50%{opacity:0.4;transform:scale(0.75);} }
+
+/* ── MAIN WRAP ── */
+.main-wrap { margin-left: var(--sidebar); flex: 1; display: flex; flex-direction: column; min-height: 100vh; }
+
+/* ── TOP HEADER ── */
+.top-header { padding: 1.5rem 2rem 1.1rem; border-bottom: 1px solid var(--border); background: var(--surface); display: flex; align-items: center; justify-content: space-between; }
+.page-title { font-family: var(--display); font-size: 2.6rem; font-weight: 400; color: var(--text); line-height: 1; }
+.page-date { font-family: var(--mono); font-size: 0.6rem; color: var(--cyan); letter-spacing: 0.14em; text-transform: uppercase; }
+.header-center { display: flex; align-items: baseline; gap: 1.25rem; flex: 1; justify-content: center; }
+.countdown-pill { font-family: var(--mono); font-size: 0.65rem; font-weight: 500; letter-spacing: 0.05em; padding: 0.28rem 0.7rem; border-radius: 4px; display: flex; align-items: center; gap: 0.45rem; }
+.countdown-pill.pre    { color: var(--green); background: var(--green-bg); border: 1px solid rgba(0,224,160,0.12); }
+.countdown-pill.open   { color: var(--amber); background: var(--amber-bg); border: 1px solid rgba(255,176,32,0.12); }
+.countdown-pill.closed { color: var(--muted); background: var(--surface2); border: 1px solid var(--border); }
+.cdot { width:5px; height:5px; border-radius:50%; animation: pulse 1.5s ease-in-out infinite; }
+.countdown-pill.pre  .cdot { background: var(--green); }
+.countdown-pill.open .cdot { background: var(--amber); }
+
+/* ── STRATEGY BANNER ── */
+.strategy-banner {
+  padding: 0.75rem 2rem;
+  background: var(--surface2);
+  border-bottom: 1px solid var(--border);
+  display: flex;
+  align-items: center;
+  gap: 2rem;
+  overflow-x: auto;
+}
+.strat-rule {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  white-space: nowrap;
+  flex-shrink: 0;
+}
+.strat-rule-num {
+  font-family: var(--mono);
+  font-size: 0.48rem;
+  font-weight: 600;
+  color: var(--cyan);
+  background: var(--cyan-bg);
+  border: 1px solid rgba(0,212,255,0.15);
+  border-radius: 2px;
+  padding: 0.1rem 0.35rem;
+}
+.strat-rule-text {
+  font-family: var(--mono);
+  font-size: 0.58rem;
+  color: var(--text2);
+  letter-spacing: 0.04em;
+}
+.strat-rule-text strong { color: var(--green); font-weight: 500; }
+
+/* ── TABS ── */
+.tab-bar {
+  display: flex;
+  align-items: center;
+  padding: 0 2rem;
+  border-bottom: 1px solid var(--border);
+  background: var(--surface);
+  gap: 0;
+}
+.tab-btn {
+  font-family: var(--mono);
+  font-size: 0.65rem;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: var(--muted);
+  padding: 0.75rem 1.25rem;
+  border: none;
+  border-bottom: 2px solid transparent;
+  background: transparent;
+  cursor: pointer;
+  transition: all 0.2s;
+  margin-bottom: -1px;
+}
+.tab-btn:hover { color: var(--text2); }
+.tab-btn.active { color: var(--cyan); border-bottom-color: var(--cyan); }
+.tab-badge {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 0.45rem;
+  font-weight: 600;
+  width: 16px; height: 16px;
+  border-radius: 50%;
+  margin-left: 0.4rem;
+  background: var(--cyan-bg);
+  color: var(--cyan);
+  border: 1px solid rgba(0,212,255,0.2);
+}
+.tab-badge.amber { background: var(--amber-bg); color: var(--amber); border-color: rgba(255,176,32,0.2); }
+
+/* ── CONTENT ── */
+.content { padding: 1.5rem 2rem; flex: 1; }
+.tab-panel { display: none; }
+.tab-panel.active { display: block; }
+
+/* ── LEGEND ── */
+.legend {
+  display: flex;
+  align-items: center;
+  gap: 1.5rem;
+  margin-bottom: 1.25rem;
+  padding: 0.6rem 1rem;
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: 4px;
+}
+.legend-item { display: flex; align-items: center; gap: 0.5rem; font-family: var(--mono); font-size: 0.55rem; color: var(--text2); letter-spacing: 0.05em; }
+.legend-dot { width: 8px; height: 8px; border-radius: 50%; flex-shrink: 0; }
+.legend-dot.zone        { background: var(--green); box-shadow: 0 0 6px var(--green-glow); }
+.legend-dot.approaching { background: var(--amber); }
+.legend-dot.extended    { background: var(--muted); }
+.legend-info { margin-left: auto; font-family: var(--mono); font-size: 0.52rem; color: var(--muted); }
+
+/* ── SECTOR BLOCK ── */
+.sector-block { margin-bottom: 1.5rem; }
+.sector-label {
+  font-family: var(--mono);
+  font-size: 0.55rem;
+  letter-spacing: 0.16em;
+  text-transform: uppercase;
+  color: var(--muted);
+  padding: 0.4rem 0;
+  margin-bottom: 0.5rem;
+  border-bottom: 1px solid var(--border);
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+}
+.sector-zone-count {
+  font-family: var(--mono);
+  font-size: 0.48rem;
+  color: var(--green);
+  background: var(--green-bg);
+  border: 1px solid rgba(0,224,160,0.12);
+  border-radius: 2px;
+  padding: 0.1rem 0.35rem;
+}
+
+/* ── STOCK GRID ── */
+.stock-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+  gap: 6px;
+}
+
+/* ── STOCK CARD ── */
+.stock-card {
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: 4px;
+  padding: 0.75rem;
+  cursor: pointer;
+  transition: all 0.2s;
+  position: relative;
+  overflow: hidden;
+}
+.stock-card:hover { border-color: var(--border2); transform: translateY(-1px); }
+.stock-card.zone {
+  border-color: rgba(0,224,160,0.25);
+  background: linear-gradient(135deg, var(--surface), rgba(0,224,160,0.04));
+}
+.stock-card.zone::before {
+  content: '';
+  position: absolute;
+  top: 0; left: 0;
+  width: 3px; height: 100%;
+  background: var(--green);
+  box-shadow: 0 0 8px var(--green-glow);
+}
+.stock-card.approaching {
+  border-color: rgba(255,176,32,0.2);
+}
+.stock-card.approaching::before {
+  content: '';
+  position: absolute;
+  top: 0; left: 0;
+  width: 3px; height: 100%;
+  background: var(--amber);
+}
+.stock-card.extended::before {
+  content: '';
+  position: absolute;
+  top: 0; left: 0;
+  width: 3px; height: 100%;
+  background: var(--muted);
+}
+
+.card-top { display: flex; align-items: center; justify-content: space-between; margin-bottom: 0.4rem; }
+.card-ticker { font-family: var(--mono); font-size: 0.85rem; font-weight: 600; color: var(--text); }
+.card-grade-pill {
+  font-family: var(--mono);
+  font-size: 0.44rem;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  padding: 0.1rem 0.4rem;
+  border-radius: 2px;
+  font-weight: 600;
+}
+.card-grade-pill.zone        { color: var(--green); background: var(--green-bg); border: 1px solid rgba(0,224,160,0.15); }
+.card-grade-pill.approaching { color: var(--amber); background: var(--amber-bg); border: 1px solid rgba(255,176,32,0.15); }
+.card-grade-pill.extended    { color: var(--muted); background: var(--surface2); border: 1px solid var(--border); }
+
+.card-price { font-family: var(--mono); font-size: 1rem; font-weight: 500; color: var(--text); }
+.card-change { font-family: var(--mono); font-size: 0.6rem; font-weight: 400; }
+.card-change.up   { color: var(--green); }
+.card-change.down { color: var(--red); }
+.card-change.flat { color: var(--muted); }
+
+.card-mas {
+  margin-top: 0.5rem;
+  display: flex;
+  flex-direction: column;
+  gap: 3px;
+}
+.card-ma-row {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  font-family: var(--mono);
+  font-size: 0.52rem;
+}
+.ma-label { color: var(--muted); }
+.ma-val   { color: var(--text2); }
+.ma-pct   { font-weight: 500; }
+.ma-pct.close  { color: var(--green); }
+.ma-pct.near   { color: var(--amber); }
+.ma-pct.far    { color: var(--muted); }
+
+/* ── DETAIL DRAWER ── */
+.detail-drawer {
+  display: none;
+  position: fixed;
+  top: 0; right: 0;
+  width: 360px;
+  height: 100vh;
+  background: var(--surface);
+  border-left: 1px solid var(--border);
+  z-index: 300;
+  flex-direction: column;
+  overflow-y: auto;
+  animation: slideIn 0.2s ease;
+}
+.detail-drawer.open { display: flex; }
+@keyframes slideIn { from { transform: translateX(100%); } to { transform: translateX(0); } }
+
+.drawer-head {
+  padding: 1.25rem 1.25rem 1rem;
+  border-bottom: 1px solid var(--border);
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  background: var(--surface2);
+}
+.drawer-ticker { font-family: var(--display); font-size: 2rem; font-weight: 400; color: var(--text); }
+.drawer-close {
+  font-family: var(--mono);
+  font-size: 0.7rem;
+  color: var(--muted);
+  background: transparent;
+  border: 1px solid var(--border);
+  border-radius: 3px;
+  padding: 0.25rem 0.5rem;
+  cursor: pointer;
+  transition: all 0.15s;
+}
+.drawer-close:hover { color: var(--text); border-color: var(--border2); }
+.drawer-body { padding: 1.25rem; display: flex; flex-direction: column; gap: 1.25rem; }
+
+.drawer-section-title {
+  font-family: var(--mono);
+  font-size: 0.52rem;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  color: var(--muted);
+  margin-bottom: 0.6rem;
+  padding-bottom: 0.3rem;
+  border-bottom: 1px solid var(--border);
+}
+
+.drawer-stat-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 6px;
+}
+.drawer-stat {
+  background: var(--surface2);
+  border: 1px solid var(--border);
+  border-radius: 3px;
+  padding: 0.6rem 0.75rem;
+}
+.drawer-stat-label { font-family: var(--mono); font-size: 0.48rem; letter-spacing: 0.1em; text-transform: uppercase; color: var(--muted); margin-bottom: 0.2rem; }
+.drawer-stat-val   { font-family: var(--mono); font-size: 0.88rem; font-weight: 500; color: var(--text); }
+.drawer-stat-val.green  { color: var(--green); }
+.drawer-stat-val.amber  { color: var(--amber); }
+.drawer-stat-val.red    { color: var(--red); }
+.drawer-stat-val.muted  { color: var(--muted); }
+
+/* ── ENTRY/EXIT RULES ── */
+.rules-section { display: flex; flex-direction: column; gap: 0.5rem; }
+.rule-item {
+  display: flex;
+  gap: 0.6rem;
+  align-items: flex-start;
+  padding: 0.5rem 0.6rem;
+  background: var(--surface2);
+  border: 1px solid var(--border);
+  border-radius: 3px;
+  font-size: 0.75rem;
+  line-height: 1.55;
+  color: var(--text);
+  font-weight: 300;
+}
+.rule-num {
+  font-family: var(--mono);
+  font-size: 0.5rem;
+  font-weight: 600;
+  color: var(--cyan);
+  background: var(--cyan-bg);
+  border: 1px solid rgba(0,212,255,0.15);
+  border-radius: 2px;
+  width: 16px; height: 16px;
+  display: flex; align-items: center; justify-content: center;
+  flex-shrink: 0;
+  margin-top: 1px;
+}
+
+/* ── GRADE SELECTOR ── */
+.grade-section { display: flex; flex-direction: column; gap: 0.4rem; }
+.grade-row {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+  padding: 0.45rem 0.6rem;
+  border-radius: 3px;
+  border: 1px solid transparent;
+  cursor: pointer;
+  transition: all 0.15s;
+  font-size: 0.78rem;
+  font-weight: 300;
+}
+.grade-row:hover { background: var(--surface2); }
+.grade-row input { display: none; }
+.grade-letter { font-family: var(--mono); font-size: 0.82rem; font-weight: 600; width: 20px; text-align: center; flex-shrink: 0; }
+.grade-desc { color: var(--muted); font-size: 0.72rem; }
+.grade-row.sel-A  { background: var(--green-bg);  border-color: rgba(0,224,160,0.18); }
+.grade-row.sel-A  .grade-letter { color: var(--green); }
+.grade-row.sel-A  .grade-desc   { color: rgba(0,224,160,0.7); }
+.grade-row.sel-B  { background: var(--blue-bg);   border-color: rgba(64,160,255,0.18); }
+.grade-row.sel-B  .grade-letter { color: var(--blue); }
+.grade-row.sel-B  .grade-desc   { color: rgba(64,160,255,0.7); }
+.grade-row.sel-C  { background: var(--amber-bg);  border-color: rgba(255,176,32,0.18); }
+.grade-row.sel-C  .grade-letter { color: var(--amber); }
+.grade-row.sel-C  .grade-desc   { color: rgba(255,176,32,0.7); }
+.grade-row.sel-D  { background: var(--red-bg);    border-color: rgba(255,64,96,0.18); }
+.grade-row.sel-D  .grade-letter { color: var(--red); }
+.grade-row.sel-D  .grade-desc   { color: rgba(255,64,96,0.7); }
+
+/* ── NOTES ── */
+.drawer-notes {
+  width: 100%;
+  background: var(--bg);
+  border: 1px solid var(--border);
+  border-radius: 3px;
+  padding: 0.6rem 0.7rem;
+  color: var(--text);
+  font-family: var(--mono);
+  font-size: 0.72rem;
+  resize: vertical;
+  min-height: 72px;
+  line-height: 1.6;
+  font-weight: 300;
+  transition: border-color 0.15s;
+}
+.drawer-notes:focus { outline: none; border-color: var(--cyan); }
+.drawer-notes::placeholder { color: var(--muted); }
+
+/* ── LOADING / EMPTY ── */
+.loading-state {
+  padding: 3rem 1rem;
+  text-align: center;
+  font-family: var(--mono);
+  font-size: 0.7rem;
+  color: var(--muted);
+  letter-spacing: 0.06em;
+}
+
+/* ── RESPONSIVE ── */
+@media (max-width: 768px) {
+  :root { --sidebar: 0px; }
+  .sidebar { display: none; }
+  .content { padding: 1rem; }
+  .detail-drawer { width: 100%; }
+}
+</style>
+</head>
+<body>
+
+<!-- ═══ SIDEBAR ══════════════════════════════════════════ -->
+<aside class="sidebar">
+  <div class="sidebar-brand">
+    <div class="brand-tag">ESP · Trading</div>
+    <div class="brand-name">Morning<br>Brief</div>
+    <div class="brand-sub">Daily · Rolling</div>
+  </div>
+  <div class="sidebar-section">
+    <div class="sidebar-section-label">Daily</div>
+    <a class="sidebar-link" href="index.html"><span class="sl-icon">◆</span> Today</a>
+    <a class="sidebar-link" href="prep.html"><span class="sl-icon">◉</span> Pre-Market Prep</a>
+    <a class="sidebar-link" href="#"><span class="sl-icon">▦</span> Watchlist</a>
+  </div>
+  <div class="sidebar-section">
+    <div class="sidebar-section-label">Market</div>
+    <a class="sidebar-link" href="#"><span class="sl-icon">▤</span> Heatmap</a>
+    <a class="sidebar-link" href="#"><span class="sl-icon">◈</span> Earnings</a>
+    <a class="sidebar-link" href="#"><span class="sl-icon">◷</span> Econ Cal</a>
+  </div>
+  <div class="sidebar-section">
+    <div class="sidebar-section-label">Strategy</div>
+    <a class="sidebar-link active" href="playbook.html"><span class="sl-icon">▸</span> Playbook</a>
+    <a class="sidebar-link" href="#"><span class="sl-icon">◎</span> Journal</a>
+    <a class="sidebar-link" href="#"><span class="sl-icon">▲</span> Performance</a>
+  </div>
+  <div class="sidebar-bottom">
+    <div class="market-status">
+      <span class="status-dot pre" id="statusDot"></span>
+      <span id="statusText" style="color:var(--text2)">Loading...</span>
+    </div>
+  </div>
+</aside>
+
+<!-- ═══ MAIN WRAP ════════════════════════════════════════ -->
+<div class="main-wrap">
+
+  <!-- TOP HEADER -->
+  <div class="top-header">
+    <div class="header-center">
+      <div class="page-title">Playbook</div>
+      <div class="page-date" id="currentDate">—</div>
+    </div>
+    <div class="countdown-pill pre" id="countdown">
+      <span class="cdot"></span>
+      <span id="cdText">--:--:--</span>
+    </div>
+  </div>
+
+  <!-- STRATEGY BANNER -->
+  <div class="strategy-banner">
+    <div class="strat-rule">
+      <span class="strat-rule-num">THESIS</span>
+      <span class="strat-rule-text">Bow &amp; Arrow — <strong>compression builds energy</strong>, pullback to MA = release point</span>
+    </div>
+    <div class="strat-rule">
+      <span class="strat-rule-num">ENTRY</span>
+      <span class="strat-rule-text">Price pulls to <strong>21 EMA or 50 SMA</strong> → confirm bounce → enter above prior day high</span>
+    </div>
+    <div class="strat-rule">
+      <span class="strat-rule-num">STOP</span>
+      <span class="strat-rule-text"><strong>True stop</strong> = below consolidation low. Never tighten intraday</span>
+    </div>
+    <div class="strat-rule">
+      <span class="strat-rule-num">EXIT</span>
+      <span class="strat-rule-text">Trail against <strong>prior day low</strong>. Last in, first out when market extended</span>
+    </div>
+    <div class="strat-rule">
+      <span class="strat-rule-num">GRADE</span>
+      <span class="strat-rule-text">Hot sector + relative strength + clean base = <strong>A+</strong></span>
+    </div>
+  </div>
+
+  <!-- TABS -->
+  <div class="tab-bar">
+    <button class="tab-btn active" onclick="switchTab('pillars', this)">
+      Sector Pillars <span class="tab-badge" id="pillars-badge">—</span>
+    </button>
+    <button class="tab-btn" onclick="switchTab('onthemove', this)">
+      On The Move <span class="tab-badge amber" id="otm-badge">—</span>
+    </button>
+    <button class="tab-btn" onclick="switchTab('rules', this)">
+      Strategy Rules
+    </button>
+  </div>
+
+  <!-- CONTENT -->
+  <div class="content">
+
+    <!-- TAB: SECTOR PILLARS -->
+    <div class="tab-panel active" id="tab-pillars">
+      <div class="legend">
+        <div class="legend-item"><span class="legend-dot zone"></span> In The Zone — at or within 3% of 21 EMA / 50 SMA. Bow pulled back. Watch for bounce.</div>
+        <div class="legend-item"><span class="legend-dot approaching"></span> Approaching — 3–8% above MA. Getting close.</div>
+        <div class="legend-item"><span class="legend-dot extended"></span> Extended — too far from MA. Wait.</div>
+        <div class="legend-info" id="pillars-updated">—</div>
+      </div>
+      <div id="pillars-content">
+        <div class="loading-state">Loading watchlist data...</div>
+      </div>
+    </div>
+
+    <!-- TAB: ON THE MOVE -->
+    <div class="tab-panel" id="tab-onthemove">
+      <div class="legend">
+        <div class="legend-item"><span class="legend-dot zone"></span> In The Zone — narrative theme + at MA = highest conviction setup</div>
+        <div class="legend-item"><span class="legend-dot approaching"></span> Approaching — building toward the zone</div>
+        <div class="legend-item"><span class="legend-dot extended"></span> Extended — wait for mean reversion first</div>
+        <div class="legend-info" id="otm-updated">—</div>
+      </div>
+      <div id="otm-content">
+        <div class="loading-state">Loading watchlist data...</div>
+      </div>
+    </div>
+
+    <!-- TAB: STRATEGY RULES -->
+    <div class="tab-panel" id="tab-rules">
+      <div style="max-width:720px; display:flex; flex-direction:column; gap:1.25rem;">
+
+        <div>
+          <div class="drawer-section-title">The Setup — Bow &amp; Arrow Pullback</div>
+          <div class="rules-section">
+            <div class="rule-item"><span class="rule-num">1</span>Identify a stock in a hot sector showing relative strength to its peers and the broader market.</div>
+            <div class="rule-item"><span class="rule-num">2</span>Stock must have a history of momentum when it has broken out previously. Character matters — if it hasn't moved before, why now?</div>
+            <div class="rule-item"><span class="rule-num">3</span>Wait for the stock to pull back into its rising 21 EMA or 50 SMA. The longer and tighter the consolidation, the more energy built up — rubber band effect.</div>
+            <div class="rule-item"><span class="rule-num">4</span>Confirm the bounce. Do not enter on the way down. Wait for price to take out the prior day's high or show a strong reclaim candle with volume.</div>
+            <div class="rule-item"><span class="rule-num">5</span>Check market environment first: Are breakouts working? Is risk appetite on? Is the sector ETF above its key MAs? If environment is murky — sit on hands.</div>
+          </div>
+        </div>
+
+        <div>
+          <div class="drawer-section-title">Entry Rules</div>
+          <div class="rules-section">
+            <div class="rule-item"><span class="rule-num">1</span>Enter on the first candle that takes out the prior day's high after price has touched or come within 3% of the 21 EMA or 50 SMA.</div>
+            <div class="rule-item"><span class="rule-num">2</span>Starter size first — add to full size only after the breakout level holds and acts well. Never be too big in the middle of the range.</div>
+            <div class="rule-item"><span class="rule-num">3</span>Grade the trade before entering: A+ = hot sector + relative strength + clean base + multiple timeframe confluence. B = one or more checks missing — size down.</div>
+            <div class="rule-item"><span class="rule-num">4</span>Both 21 EMA and 50 SMA matter. The 21 EMA is your short-term trend anchor. The 50 SMA is the intermediate. When both converge — highest conviction.</div>
+          </div>
+        </div>
+
+        <div>
+          <div class="drawer-section-title">Exit &amp; Stop Rules</div>
+          <div class="rules-section">
+            <div class="rule-item"><span class="rule-num">1</span>Stop = below the consolidation low or below the MA that triggered the entry. This is the TRUE stop. Do not tighten it intraday — you will get shaken out of good trades.</div>
+            <div class="rule-item"><span class="rule-num">2</span>Do not sell breakouts on day one of an A+ trade. Let it run. Trim only when extended 1+ ATR from entry.</div>
+            <div class="rule-item"><span class="rule-num">3</span>Once follow-through confirmed, trail against prior day's low for mid/large caps. Multi-day VWAP from breakout day for small caps.</div>
+            <div class="rule-item"><span class="rule-num">4</span>Last in, first out: if the market has been running 3–4 weeks, new buys get a tighter leash. If it doesn't work quickly — cut it. Don't let new buys become baggage.</div>
+            <div class="rule-item"><span class="rule-num">5</span>A bad close below the MA on a closing basis = reduce or exit. Do not hold hoping for morning recovery.</div>
+          </div>
+        </div>
+
+        <div>
+          <div class="drawer-section-title">Market Environment Checks — Run These Before Any Trade</div>
+          <div class="rules-section">
+            <div class="rule-item"><span class="rule-num">✓</span><strong style="color:var(--text);font-weight:500;">Breadth:</strong> Are we in a broad bull trend or just a few names carrying? Breadth matters most at major turns — not in the middle of a trend.</div>
+            <div class="rule-item"><span class="rule-num">✓</span><strong style="color:var(--text);font-weight:500;">Risk Appetite:</strong> Are offensive sectors (tech, semis, small caps) leading? Or is it utilities and healthcare? Crypto as a barometer — if Bitcoin is failing breakouts, caution.</div>
+            <div class="rule-item"><span class="rule-num">✓</span><strong style="color:var(--text);font-weight:500;">Market Behavior:</strong> Are breakouts following through? Is good news being bought or sold? This is the most important check. If the last 5 breakouts failed — do not buy the 6th.</div>
+          </div>
+        </div>
+
+      </div>
+    </div>
+
+  </div>
+</div>
+
+<!-- ═══ DETAIL DRAWER ════════════════════════════════════ -->
+<div class="detail-drawer" id="detailDrawer">
+  <div class="drawer-head">
+    <div>
+      <div class="drawer-ticker" id="drawerTicker">—</div>
+      <div style="font-family:var(--mono);font-size:0.55rem;color:var(--muted);margin-top:0.2rem;" id="drawerSector">—</div>
+    </div>
+    <button class="drawer-close" onclick="closeDrawer()">✕ Close</button>
+  </div>
+  <div class="drawer-body">
+
+    <!-- Price stats -->
+    <div>
+      <div class="drawer-section-title">Price &amp; MAs</div>
+      <div class="drawer-stat-grid">
+        <div class="drawer-stat"><div class="drawer-stat-label">Last Price</div><div class="drawer-stat-val" id="d-price">—</div></div>
+        <div class="drawer-stat"><div class="drawer-stat-label">Day Change</div><div class="drawer-stat-val" id="d-chg">—</div></div>
+        <div class="drawer-stat"><div class="drawer-stat-label">21 EMA</div><div class="drawer-stat-val" id="d-ema21">—</div></div>
+        <div class="drawer-stat"><div class="drawer-stat-label">50 SMA</div><div class="drawer-stat-val" id="d-sma50">—</div></div>
+        <div class="drawer-stat"><div class="drawer-stat-label">% from 21 EMA</div><div class="drawer-stat-val" id="d-pct21">—</div></div>
+        <div class="drawer-stat"><div class="drawer-stat-label">% from 50 SMA</div><div class="drawer-stat-val" id="d-pct50">—</div></div>
+      </div>
+    </div>
+
+    <!-- Grade -->
+    <div>
+      <div class="drawer-section-title">Grade This Setup</div>
+      <div class="grade-section" id="drawerGrades">
+        <label class="grade-row" data-grade="A+"><input type="radio" name="dgrade" value="A+"><span class="grade-letter" style="color:var(--green)">A+</span><span class="grade-desc">Hot sector + RS + clean base + MA confluence + environment green</span></label>
+        <label class="grade-row" data-grade="A"><input type="radio" name="dgrade" value="A"><span class="grade-letter" style="color:var(--green)">A</span><span class="grade-desc">Most checks in favor. Strong setup, press your edge</span></label>
+        <label class="grade-row" data-grade="B"><input type="radio" name="dgrade" value="B"><span class="grade-letter" style="color:var(--blue)">B</span><span class="grade-desc">Decent setup, one check missing. Standard size</span></label>
+        <label class="grade-row" data-grade="C"><input type="radio" name="dgrade" value="C"><span class="grade-letter" style="color:var(--amber)">C</span><span class="grade-desc">Questionable. Size way down or skip</span></label>
+      </div>
+    </div>
+
+    <!-- Notes -->
+    <div>
+      <div class="drawer-section-title">Trade Notes</div>
+      <textarea class="drawer-notes" id="drawerNotes" placeholder="Why this setup, key levels, game plan..."></textarea>
+    </div>
+
+    <!-- Entry checklist -->
+    <div>
+      <div class="drawer-section-title">Entry Checklist</div>
+      <div class="rules-section" id="drawerChecklist"></div>
+    </div>
+
+  </div>
+</div>
+
+<script>
+// ── DATE & COUNTDOWN ──────────────────────────────────────
+document.getElementById('currentDate').textContent = new Date().toLocaleDateString('en-US',{
+  weekday:'long', month:'long', day:'numeric', year:'numeric'
+}).toUpperCase();
+
+function pad(n){ return String(n).padStart(2,'0'); }
+
+function updateCountdown(){
+  const now=new Date(), et=new Date(now.toLocaleString('en-US',{timeZone:'America/New_York'}));
+  const open=new Date(et); open.setHours(9,30,0,0);
+  const close=new Date(et); close.setHours(16,0,0,0);
+  const pill=document.getElementById('countdown'), txt=document.getElementById('cdText');
+  const dot=document.getElementById('statusDot'), stxt=document.getElementById('statusText');
+  const day=et.getDay();
+  if(day===0||day===6){ txt.textContent='WEEKEND'; pill.className='countdown-pill closed'; dot.className='status-dot closed'; stxt.textContent='Weekend'; return; }
+  if(et>=open&&et<=close){
+    const d=close-et,h=Math.floor(d/3600000),m=Math.floor((d%3600000)/60000),s=Math.floor((d%60000)/1000);
+    txt.textContent=`OPEN  ${pad(h)}:${pad(m)}:${pad(s)}`; pill.className='countdown-pill open';
+    dot.className='status-dot open'; stxt.textContent='Market Open'; return;
+  }
+  if(et>close){ txt.textContent='CLOSED'; pill.className='countdown-pill closed'; dot.className='status-dot closed'; stxt.textContent='Market Closed'; return; }
+  const d=open-et,h=Math.floor(d/3600000),m=Math.floor((d%3600000)/60000),s=Math.floor((d%60000)/1000);
+  txt.textContent=`OPENS ${pad(h)}:${pad(m)}:${pad(s)}`; pill.className='countdown-pill pre';
+  dot.className='status-dot pre'; stxt.textContent='Pre-Market';
+}
+updateCountdown(); setInterval(updateCountdown,1000);
+
+// ── TABS ──────────────────────────────────────────────────
+function switchTab(id, btn){
+  document.querySelectorAll('.tab-panel').forEach(p=>p.classList.remove('active'));
+  document.querySelectorAll('.tab-btn').forEach(b=>b.classList.remove('active'));
+  document.getElementById('tab-'+id).classList.add('active');
+  btn.classList.add('active');
+  closeDrawer();
+}
+
+// ── GRADE LABELS ─────────────────────────────────────────
+const GRADE_LABELS = {
+  zone:        '🟢 In The Zone',
+  approaching: '🟡 Approaching',
+  extended:    '⚪ Extended',
+  unknown:     '— No Data'
+};
+
+function pctClass(pct){
+  if(pct===null) return 'far';
+  const abs=Math.abs(pct);
+  if(abs<=3) return 'close';
+  if(abs<=8) return 'near';
+  return 'far';
+}
+
+// ── RENDER SECTOR BLOCK ───────────────────────────────────
+function renderSectorBlock(sectorData){
+  const zoneCount = sectorData.stocks.filter(s=>s.grade==='zone').length;
+  const zoneHTML  = zoneCount > 0 ? `<span class="sector-zone-count">${zoneCount} in zone</span>` : '';
+
+  const stocksHTML = sectorData.stocks.map(stock => {
+    const chgCls  = stock.changePct>0?'up':stock.changePct<0?'down':'flat';
+    const chgSign = stock.changePct>0?'+':'';
+    const p21cls  = pctClass(stock.pct21);
+    const p50cls  = pctClass(stock.pct50);
+    return `
+      <div class="stock-card ${stock.grade}" onclick="openDrawer('${stock.ticker}','${sectorData.sector}')">
+        <div class="card-top">
+          <span class="card-ticker">${stock.ticker}</span>
+          <span class="card-grade-pill ${stock.grade}">${GRADE_LABELS[stock.grade]||'—'}</span>
+        </div>
+        <div style="display:flex;align-items:baseline;gap:0.5rem;margin-top:0.15rem;">
+          <span class="card-price">$${stock.price.toFixed(2)}</span>
+          <span class="card-change ${chgCls}">${chgSign}${stock.changePct.toFixed(2)}%</span>
+        </div>
+        <div class="card-mas">
+          <div class="card-ma-row">
+            <span class="ma-label">21 EMA</span>
+            <span class="ma-val">${stock.ema21?'$'+stock.ema21:'—'}</span>
+            <span class="ma-pct ${p21cls}">${stock.pct21!==null?(stock.pct21>0?'+':'')+stock.pct21.toFixed(1)+'%':'—'}</span>
+          </div>
+          <div class="card-ma-row">
+            <span class="ma-label">50 SMA</span>
+            <span class="ma-val">${stock.sma50?'$'+stock.sma50:'—'}</span>
+            <span class="ma-pct ${p50cls}">${stock.pct50!==null?(stock.pct50>0?'+':'')+stock.pct50.toFixed(1)+'%':'—'}</span>
+          </div>
+        </div>
+      </div>`;
+  }).join('');
+
+  return `
+    <div class="sector-block">
+      <div class="sector-label">
+        ${sectorData.sector}
+        ${zoneHTML}
+      </div>
+      <div class="stock-grid">${stocksHTML}</div>
+    </div>`;
+}
+
+// ── LOAD DATA ─────────────────────────────────────────────
+async function loadData(){
+  try {
+    const resp = await fetch('data/market-data.json');
+    if(!resp.ok) throw new Error('HTTP '+resp.status);
+    const data = await resp.json();
+
+    if(!data.watchlist){
+      document.getElementById('pillars-content').innerHTML = '<div class="loading-state">Watchlist data not yet available.<br><span style="color:var(--muted);font-size:0.6rem;">Will populate at next 7:00 AM run.</span></div>';
+      document.getElementById('otm-content').innerHTML = '<div class="loading-state">Watchlist data not yet available.</div>';
+      return;
+    }
+
+    const generated = new Date(data.generated);
+    const timeStr   = generated.toLocaleTimeString('en-US',{hour:'numeric',minute:'2-digit',timeZone:'America/New_York'});
+    const dateStr   = generated.toLocaleDateString('en-US',{weekday:'short',month:'short',day:'numeric'});
+    const updatedStr = 'Updated '+dateStr+' at '+timeStr+' ET';
+
+    // Render Sector Pillars
+    const pillars = data.watchlist.pillars || [];
+    const pillarZone = pillars.reduce((acc,s)=>acc+s.stocks.filter(st=>st.grade==='zone').length,0);
+    document.getElementById('pillars-badge').textContent = pillarZone;
+    document.getElementById('pillars-updated').textContent = updatedStr;
+    document.getElementById('pillars-content').innerHTML =
+      pillars.length ? pillars.map(renderSectorBlock).join('') : '<div class="loading-state">No pillar data available.</div>';
+
+    // Render On The Move
+    const otm = data.watchlist.onTheMove || [];
+    const otmZone = otm.reduce((acc,s)=>acc+s.stocks.filter(st=>st.grade==='zone').length,0);
+    document.getElementById('otm-badge').textContent = otmZone;
+    document.getElementById('otm-updated').textContent = updatedStr;
+    document.getElementById('otm-content').innerHTML =
+      otm.length ? otm.map(renderSectorBlock).join('') : '<div class="loading-state">No On The Move data available.</div>';
+
+    // Cache data globally for drawer
+    window._watchlistData = data.watchlist;
+
+  } catch(err){
+    console.error(err);
+    document.getElementById('pillars-content').innerHTML = '<div class="loading-state" style="color:var(--red)">Failed to load data.<br><span style="font-size:0.6rem;color:var(--muted);">Check that data/market-data.json exists and has a watchlist key.</span></div>';
+  }
+}
+
+// ── DETAIL DRAWER ─────────────────────────────────────────
+let currentTicker = null;
+
+function openDrawer(ticker, sector){
+  currentTicker = ticker;
+
+  // Find stock data
+  const wl = window._watchlistData;
+  let stock = null;
+  if(wl){
+    const all = [...(wl.pillars||[]), ...(wl.onTheMove||[])];
+    for(const s of all){
+      const found = s.stocks.find(st=>st.ticker===ticker);
+      if(found){ stock=found; break; }
+    }
+  }
+
+  document.getElementById('drawerTicker').textContent = ticker;
+  document.getElementById('drawerSector').textContent = sector;
+
+  if(stock){
+    const chgCls  = stock.changePct>0?'green':stock.changePct<0?'red':'';
+    const chgSign = stock.changePct>0?'+':'';
+    document.getElementById('d-price').textContent  = '$'+stock.price.toFixed(2);
+    document.getElementById('d-chg').textContent    = chgSign+stock.changePct.toFixed(2)+'%';
+    document.getElementById('d-chg').className      = 'drawer-stat-val '+chgCls;
+    document.getElementById('d-ema21').textContent  = stock.ema21 ? '$'+stock.ema21 : '—';
+    document.getElementById('d-sma50').textContent  = stock.sma50 ? '$'+stock.sma50 : '—';
+    const p21sign = stock.pct21>0?'+':'';
+    const p50sign = stock.pct50>0?'+':'';
+    document.getElementById('d-pct21').textContent  = stock.pct21!==null ? p21sign+stock.pct21.toFixed(2)+'%' : '—';
+    document.getElementById('d-pct50').textContent  = stock.pct50!==null ? p50sign+stock.pct50.toFixed(2)+'%' : '—';
+    document.getElementById('d-pct21').className    = 'drawer-stat-val '+(Math.abs(stock.pct21||99)<=3?'green':Math.abs(stock.pct21||99)<=8?'amber':'muted');
+    document.getElementById('d-pct50').className    = 'drawer-stat-val '+(Math.abs(stock.pct50||99)<=3?'green':Math.abs(stock.pct50||99)<=8?'amber':'muted');
+  }
+
+  // Restore saved grade + notes
+  const saved = JSON.parse(localStorage.getItem('playbook_'+ticker)||'{}');
+  document.querySelectorAll('#drawerGrades .grade-row').forEach(r=>{
+    r.className='grade-row';
+    if(saved.grade && r.dataset.grade===saved.grade) r.className='grade-row sel-'+saved.grade.replace('+','plus');
+  });
+  document.getElementById('drawerNotes').value = saved.notes||'';
+
+  // Build entry checklist
+  document.getElementById('drawerChecklist').innerHTML = [
+    'Market environment check — are breakouts working right now?',
+    'Sector is hot and showing relative strength vs SPY',
+    'Stock has history of momentum on prior breakouts',
+    'Price is at or within 3% of 21 EMA or 50 SMA',
+    'Bounce confirmed — prior day high taken out or strong reclaim candle',
+    'Volume confirming the move',
+    'Multiple timeframe confluence (daily + weekly aligned)'
+  ].map((text,i)=>`<div class="rule-item"><span class="rule-num">${i+1}</span>${text}</div>`).join('');
+
+  document.getElementById('detailDrawer').classList.add('open');
+}
+
+function closeDrawer(){
+  if(currentTicker){
+    const grade = document.querySelector('#drawerGrades .grade-row input:checked');
+    const notes = document.getElementById('drawerNotes').value;
+    localStorage.setItem('playbook_'+currentTicker, JSON.stringify({
+      grade: grade ? grade.value : '',
+      notes: notes,
+      saved: new Date().toISOString()
+    }));
+  }
+  document.getElementById('detailDrawer').classList.remove('open');
+  currentTicker = null;
+}
+
+// Grade selector
+document.querySelectorAll('#drawerGrades .grade-row').forEach(row=>{
+  row.addEventListener('click',()=>{
+    row.querySelector('input').checked=true;
+    document.querySelectorAll('#drawerGrades .grade-row').forEach(r=>r.className='grade-row');
+    const g = row.dataset.grade;
+    row.className = 'grade-row sel-'+(g==='A+'?'A':g);
+  });
+});
+
+// Notes auto-save
+document.getElementById('drawerNotes').addEventListener('input',()=>{
+  if(!currentTicker) return;
+  const grade = document.querySelector('#drawerGrades .grade-row input:checked');
+  localStorage.setItem('playbook_'+currentTicker, JSON.stringify({
+    grade: grade?grade.value:'',
+    notes: document.getElementById('drawerNotes').value,
+    saved: new Date().toISOString()
+  }));
+});
+
+// Close drawer on ESC
+document.addEventListener('keydown', e=>{ if(e.key==='Escape') closeDrawer(); });
+
+loadData();
+</script>
+</body>
+</html>

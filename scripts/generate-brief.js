@@ -6,52 +6,235 @@ import { fileURLToPath } from "url";
 const __dirname = path.dirname(fileURLToPath(import.meta.url));
 const OUTPUT_DIR = path.join(__dirname, "..", "data");
 
-const FINNHUB_KEY = process.env.FINNHUB_API_KEY;
+const FINNHUB_KEY   = process.env.FINNHUB_API_KEY;
 const ANTHROPIC_KEY = process.env.ANTHROPIC_API_KEY;
+const MASSIVE_KEY   = process.env.MASSIVE_API_KEY;
 
-if (!FINNHUB_KEY) throw new Error("Missing FINNHUB_API_KEY");
+if (!FINNHUB_KEY)   throw new Error("Missing FINNHUB_API_KEY");
 if (!ANTHROPIC_KEY) throw new Error("Missing ANTHROPIC_API_KEY");
+if (!MASSIVE_KEY)   throw new Error("Missing MASSIVE_API_KEY");
 
-const FH_BASE = "https://finnhub.io/api/v1";
+const FH_BASE  = "https://finnhub.io/api/v1";
+const MV_BASE  = "https://api.massive.com/v2";
 
+// ─────────────────────────────────────────────────────────────
+// UTILITIES
+// ─────────────────────────────────────────────────────────────
+function wait(ms) {
+  return new Promise(function(resolve) { setTimeout(resolve, ms); });
+}
+
+// ─────────────────────────────────────────────────────────────
+// FINNHUB HELPERS  (unchanged)
+// ─────────────────────────────────────────────────────────────
 async function fh(endpoint, params) {
   params = params || {};
   const url = new URL(FH_BASE + endpoint);
   url.searchParams.set("token", FINNHUB_KEY);
-  for (const k of Object.keys(params)) {
-    url.searchParams.set(k, params[k]);
-  }
+  for (const k of Object.keys(params)) url.searchParams.set(k, params[k]);
   const resp = await fetch(url.toString());
-  if (!resp.ok) {
-    console.error("Finnhub error " + resp.status + " on " + endpoint);
-    return null;
-  }
+  if (!resp.ok) { console.error("Finnhub error " + resp.status + " on " + endpoint); return null; }
   return resp.json();
 }
 
-function wait(ms) {
-  return new Promise(function (resolve) {
-    setTimeout(resolve, ms);
+// ─────────────────────────────────────────────────────────────
+// MASSIVE HELPER
+// ─────────────────────────────────────────────────────────────
+async function mv(endpoint, params) {
+  params = params || {};
+  const url = new URL(MV_BASE + endpoint);
+  for (const k of Object.keys(params)) url.searchParams.set(k, params[k]);
+  const resp = await fetch(url.toString(), {
+    headers: { "Authorization": "Bearer " + MASSIVE_KEY }
   });
+  if (!resp.ok) { console.error("Massive error " + resp.status + " on " + endpoint); return null; }
+  return resp.json();
 }
 
+// ─────────────────────────────────────────────────────────────
+// MA CALCULATIONS
+// ─────────────────────────────────────────────────────────────
+function calcEMA(closes, period) {
+  if (!closes || closes.length < period) return null;
+  const k = 2 / (period + 1);
+  let ema = closes.slice(0, period).reduce((a, b) => a + b, 0) / period;
+  for (let i = period; i < closes.length; i++) {
+    ema = closes[i] * k + ema * (1 - k);
+  }
+  return ema;
+}
+
+function calcSMA(closes, period) {
+  if (!closes || closes.length < period) return null;
+  const slice = closes.slice(closes.length - period);
+  return slice.reduce((a, b) => a + b, 0) / period;
+}
+
+function proximityPct(price, ma) {
+  if (!ma || ma === 0) return null;
+  return ((price - ma) / ma) * 100;
+}
+
+function gradeProximity(pct) {
+  if (pct === null) return "unknown";
+  const abs = Math.abs(pct);
+  if (pct > 0 && abs <= 3)  return "zone";       // pulling back into MA from above
+  if (pct > 0 && abs <= 8)  return "approaching"; // getting close
+  if (pct < 0 && abs <= 2)  return "zone";        // just below MA — potential reclaim
+  return "extended";
+}
+
+// ─────────────────────────────────────────────────────────────
+// WATCHLIST DEFINITIONS
+// ─────────────────────────────────────────────────────────────
+const SECTOR_PILLARS = [
+  { sector: "Technology",    tickers: ["NVDA","MSFT","AAPL","META","AMD"] },
+  { sector: "Semis",         tickers: ["ARM","AVGO","ANET","MRVL","AMAT"] },
+  { sector: "Financials",    tickers: ["JPM","GS","V","MA"] },
+  { sector: "Cons Cyclical", tickers: ["AMZN","TSLA","HD"] },
+  { sector: "Industrials",   tickers: ["GE","CAT","RTX"] },
+  { sector: "Energy",        tickers: ["XOM","CVX"] },
+  { sector: "Healthcare",    tickers: ["UNH","LLY","ABBV"] },
+  { sector: "Communication", tickers: ["GOOGL","NFLX"] },
+  { sector: "Defense",       tickers: ["LMT","NOC","RKLB"] }
+];
+
+const ON_THE_MOVE = [
+  { sector: "Semis",     tickers: ["NVDA","AMD","ARM","AVGO","MRVL","AMAT"] },
+  { sector: "Photonics", tickers: ["COHR","LITE","NPAB","IIVI"] },
+  { sector: "Memory",    tickers: ["MU","WDC","NAND"] },
+  { sector: "Space",     tickers: ["RKLB","ASTS","RDW","LUNR"] },
+  { sector: "Drones",    tickers: ["JOBY","ACHR","ONDS","UMAC"] },
+  { sector: "Defense",   tickers: ["LMT","NOC","RTX","PLTR"] }
+];
+
+// ─────────────────────────────────────────────────────────────
+// FETCH SINGLE TICKER DATA FROM MASSIVE
+// ─────────────────────────────────────────────────────────────
+async function fetchTickerData(ticker) {
+  try {
+    // Get last 60 daily candles — enough for 21 EMA + 50 SMA
+    const toDate   = new Date().toISOString().split("T")[0];
+    const fromDate = new Date(Date.now() - 90 * 24 * 60 * 60 * 1000).toISOString().split("T")[0];
+
+    const data = await mv("/aggs/ticker/" + ticker + "/range/1/day/" + fromDate + "/" + toDate, {
+      adjusted: "true",
+      sort: "asc",
+      limit: "60"
+    });
+
+    if (!data || !data.results || data.results.length < 22) {
+      console.log("  Skipping " + ticker + " — not enough data");
+      return null;
+    }
+
+    const closes  = data.results.map(r => r.c);
+    const latest  = data.results[data.results.length - 1];
+    const price   = latest.c;
+    const volume  = latest.v;
+    const changePct = latest.o > 0 ? ((price - latest.o) / latest.o) * 100 : 0;
+
+    const ema21 = calcEMA(closes, 21);
+    const sma50 = calcSMA(closes, 50);
+
+    const pct21 = proximityPct(price, ema21);
+    const pct50 = proximityPct(price, sma50);
+
+    // Grade based on whichever MA is closer
+    const closerPct = (pct21 !== null && pct50 !== null)
+      ? (Math.abs(pct21) < Math.abs(pct50) ? pct21 : pct50)
+      : (pct21 !== null ? pct21 : pct50);
+
+    const grade = gradeProximity(closerPct);
+
+    return {
+      ticker,
+      price:     parseFloat(price.toFixed(2)),
+      changePct: parseFloat(changePct.toFixed(2)),
+      volume,
+      ema21:     ema21 ? parseFloat(ema21.toFixed(2)) : null,
+      sma50:     sma50 ? parseFloat(sma50.toFixed(2)) : null,
+      pct21:     pct21 ? parseFloat(pct21.toFixed(2)) : null,
+      pct50:     pct50 ? parseFloat(pct50.toFixed(2)) : null,
+      grade      // "zone" | "approaching" | "extended" | "unknown"
+    };
+  } catch(err) {
+    console.error("  Error fetching " + ticker + ": " + err.message);
+    return null;
+  }
+}
+
+// ─────────────────────────────────────────────────────────────
+// FETCH FULL WATCHLIST
+// ─────────────────────────────────────────────────────────────
+async function fetchWatchlist() {
+  console.log("Fetching watchlist data from Massive...");
+
+  // Collect all unique tickers across both lists
+  const allTickers = new Set();
+  SECTOR_PILLARS.forEach(s => s.tickers.forEach(t => allTickers.add(t)));
+  ON_THE_MOVE.forEach(s => s.tickers.forEach(t => allTickers.add(t)));
+
+  // Fetch each ticker with a small delay to respect rate limits
+  const tickerData = {};
+  for (const ticker of allTickers) {
+    console.log("  Fetching " + ticker + "...");
+    const data = await fetchTickerData(ticker);
+    if (data) tickerData[ticker] = data;
+    await wait(400); // stay well under rate limits
+  }
+
+  // Build sector pillar output
+  const pillars = SECTOR_PILLARS.map(s => ({
+    sector: s.sector,
+    stocks: s.tickers
+      .map(t => tickerData[t])
+      .filter(Boolean)
+      .sort((a, b) => {
+        // Sort: zone first, then approaching, then extended
+        const order = { zone: 0, approaching: 1, extended: 2, unknown: 3 };
+        return (order[a.grade] || 3) - (order[b.grade] || 3);
+      })
+  }));
+
+  // Build on the move output
+  const onTheMove = ON_THE_MOVE.map(s => ({
+    sector: s.sector,
+    stocks: s.tickers
+      .map(t => tickerData[t])
+      .filter(Boolean)
+      .sort((a, b) => {
+        const order = { zone: 0, approaching: 1, extended: 2, unknown: 3 };
+        return (order[a.grade] || 3) - (order[b.grade] || 3);
+      })
+  }));
+
+  const zoneCount = Object.values(tickerData).filter(t => t.grade === "zone").length;
+  console.log("Watchlist complete. " + Object.keys(tickerData).length + " tickers fetched. " + zoneCount + " in the zone.");
+
+  return { pillars, onTheMove };
+}
+
+// ─────────────────────────────────────────────────────────────
+// FINNHUB FUNCTIONS  (all unchanged from original)
+// ─────────────────────────────────────────────────────────────
 async function fetchQuotes() {
   const symbols = [
-    { symbol: "SPY", name: "S&P 500" },
-    { symbol: "QQQ", name: "NASDAQ" },
-    { symbol: "DIA", name: "DOW" },
-    { symbol: "IWM", name: "RUSSELL" },
-    { symbol: "XLK", name: "Tech" },
-    { symbol: "XLV", name: "Health" },
-    { symbol: "XLF", name: "Financials" },
-    { symbol: "XLE", name: "Energy" },
-    { symbol: "XLY", name: "Cons Disc" },
-    { symbol: "XLI", name: "Industrials" },
-    { symbol: "XLB", name: "Materials" },
+    { symbol: "SPY",  name: "S&P 500" },
+    { symbol: "QQQ",  name: "NASDAQ" },
+    { symbol: "DIA",  name: "DOW" },
+    { symbol: "IWM",  name: "RUSSELL" },
+    { symbol: "XLK",  name: "Tech" },
+    { symbol: "XLV",  name: "Health" },
+    { symbol: "XLF",  name: "Financials" },
+    { symbol: "XLE",  name: "Energy" },
+    { symbol: "XLY",  name: "Cons Disc" },
+    { symbol: "XLI",  name: "Industrials" },
+    { symbol: "XLB",  name: "Materials" },
     { symbol: "XLRE", name: "Real Estate" },
-    { symbol: "XLU", name: "Utilities" },
-    { symbol: "XLP", name: "Cons Staples" },
-    { symbol: "XLC", name: "Comm Svcs" }
+    { symbol: "XLU",  name: "Utilities" },
+    { symbol: "XLP",  name: "Cons Staples" },
+    { symbol: "XLC",  name: "Comm Svcs" }
   ];
   const results = {};
   for (let i = 0; i < symbols.length; i++) {
@@ -59,15 +242,9 @@ async function fetchQuotes() {
     const q = await fh("/quote", { symbol: item.symbol });
     if (q) {
       results[item.symbol] = {
-        name: item.name,
-        symbol: item.symbol,
-        current: q.c,
-        open: q.o,
-        high: q.h,
-        low: q.l,
-        prevClose: q.pc,
-        change: q.d,
-        changePct: q.dp
+        name: item.name, symbol: item.symbol,
+        current: q.c, open: q.o, high: q.h, low: q.l,
+        prevClose: q.pc, change: q.d, changePct: q.dp
       };
     }
     await wait(200);
@@ -77,9 +254,7 @@ async function fetchQuotes() {
 
 async function fetchVIX() {
   const q = await fh("/quote", { symbol: "VXX" });
-  if (q) {
-    return { name: "VIX", symbol: "VXX", current: q.c, changePct: q.dp };
-  }
+  if (q) return { name: "VIX", symbol: "VXX", current: q.c, changePct: q.dp };
   return null;
 }
 
@@ -90,8 +265,7 @@ async function fetchNews() {
   for (var i = 0; i < Math.min(news.length, 12); i++) {
     var n = news[i];
     out.push({
-      headline: n.headline,
-      source: n.source,
+      headline: n.headline, source: n.source,
       summary: n.summary ? n.summary.slice(0, 200) : "",
       url: n.url,
       datetime: new Date(n.datetime * 1000).toISOString(),
@@ -140,13 +314,12 @@ async function fetchEconCalendar() {
   return out;
 }
 
+// ─────────────────────────────────────────────────────────────
+// CLAUDE BRIEF GENERATION  (unchanged)
+// ─────────────────────────────────────────────────────────────
 async function generateBrief(marketData) {
   const client = new Anthropic({ apiKey: ANTHROPIC_KEY });
-  const quotes = marketData.quotes;
-  const vix = marketData.vix;
-  const news = marketData.news;
-  const earnings = marketData.earnings;
-  const econ = marketData.econ;
+  const { quotes, vix, news, earnings, econ } = marketData;
 
   var indexLines = [];
   var indexSymbols = ["SPY", "QQQ", "DIA", "IWM"];
@@ -158,44 +331,32 @@ async function generateBrief(marketData) {
       indexLines.push(q.name + " (" + s + "): $" + q.current + " (" + sign + (q.changePct ? q.changePct.toFixed(2) : "0") + "%)");
     }
   }
-  var indexSummary = indexLines.join("\n");
 
   var sectorLines = [];
-  var allSymbols = Object.keys(quotes);
-  for (var i = 0; i < allSymbols.length; i++) {
-    var sym = allSymbols[i];
-    if (["SPY", "QQQ", "DIA", "IWM", "VXX"].indexOf(sym) === -1) {
+  for (const sym of Object.keys(quotes)) {
+    if (["SPY","QQQ","DIA","IWM","VXX"].indexOf(sym) === -1) {
       var q = quotes[sym];
       var sign = q.changePct >= 0 ? "+" : "";
       sectorLines.push(q.name + " (" + q.symbol + "): " + sign + (q.changePct ? q.changePct.toFixed(2) : "0") + "%");
     }
   }
-  var sectorSummary = sectorLines.join("\n");
 
   var newsLines = [];
-  for (var i = 0; i < Math.min(news.length, 8); i++) {
-    newsLines.push("- " + news[i].headline + " (" + news[i].source + ")");
-  }
-  var newsSummary = newsLines.join("\n") || "No major headlines yet.";
+  for (var i = 0; i < Math.min(news.length, 8); i++) newsLines.push("- " + news[i].headline + " (" + news[i].source + ")");
 
   var earnLines = [];
   for (var i = 0; i < earnings.length; i++) {
     var e = earnings[i];
     earnLines.push(e.symbol + " (" + e.hour + ") - EPS Est: " + (e.epsEstimate != null ? e.epsEstimate : "N/A"));
   }
-  var earningsSummary = earnLines.join("\n") || "No major earnings today.";
 
   var econLines = [];
   for (var i = 0; i < econ.length; i++) {
     var e = econ[i];
     econLines.push(e.time + ": " + e.event + " (Impact: " + e.impact + ")");
   }
-  var econSummary = econLines.join("\n") || "No major economic events today.";
 
-  var todayStr = new Date().toLocaleDateString("en-US", {
-    weekday: "long", year: "numeric", month: "long", day: "numeric"
-  });
-
+  var todayStr = new Date().toLocaleDateString("en-US", { weekday:"long", year:"numeric", month:"long", day:"numeric" });
   var vixLine = "";
   if (vix) {
     var vSign = vix.changePct >= 0 ? "+" : "";
@@ -204,11 +365,11 @@ async function generateBrief(marketData) {
 
   var prompt = "You are a senior market analyst writing a concise morning brief for an active trader. Today is " + todayStr + ".\n\n";
   prompt += "Here is today's pre-market data:\n\n";
-  prompt += "## INDEX QUOTES\n" + indexSummary + "\n" + vixLine + "\n\n";
-  prompt += "## SECTOR PERFORMANCE (Pre-Market)\n" + sectorSummary + "\n\n";
-  prompt += "## TODAY'S NEWS HEADLINES\n" + newsSummary + "\n\n";
-  prompt += "## EARNINGS TODAY\n" + earningsSummary + "\n\n";
-  prompt += "## ECONOMIC CALENDAR\n" + econSummary + "\n\n";
+  prompt += "## INDEX QUOTES\n" + indexLines.join("\n") + "\n" + vixLine + "\n\n";
+  prompt += "## SECTOR PERFORMANCE (Pre-Market)\n" + sectorLines.join("\n") + "\n\n";
+  prompt += "## TODAY'S NEWS HEADLINES\n" + (newsLines.join("\n") || "No major headlines yet.") + "\n\n";
+  prompt += "## EARNINGS TODAY\n" + (earnLines.join("\n") || "No major earnings today.") + "\n\n";
+  prompt += "## ECONOMIC CALENDAR\n" + (econLines.join("\n") || "No major economic events today.") + "\n\n";
   prompt += 'Write a morning brief using this EXACT HTML structure. Keep it punchy, actionable, and under 600 words. No fluff. Write like a seasoned trader talks — direct, informed, no hedging.\n\n';
   prompt += 'Use these exact HTML elements:\n\n';
   prompt += '<h2><span class="sec-icon">◆</span> Market Overview</h2>\n';
@@ -232,13 +393,17 @@ async function generateBrief(marketData) {
     max_tokens: 2000,
     messages: [{ role: "user", content: prompt }]
   });
-
   return response.content[0].text;
 }
 
+// ─────────────────────────────────────────────────────────────
+// MAIN
+// ─────────────────────────────────────────────────────────────
 async function main() {
-  console.log("Fetching market data from Finnhub...");
+  console.log("=== Morning Brief Generator — 7:00 AM ET ===");
+  console.log("Starting data fetch...");
 
+  // Run Finnhub calls + watchlist in parallel where possible
   var results = await Promise.all([
     fetchQuotes(),
     fetchVIX(),
@@ -247,148 +412,121 @@ async function main() {
     fetchEconCalendar()
   ]);
 
-  var quotes = results[0];
-  var vix = results[1];
-  var news = results[2];
+  var quotes   = results[0];
+  var vix      = results[1];
+  var news     = results[2];
   var earnings = results[3];
-  var econ = results[4];
+  var econ     = results[4];
 
-  console.log("Got " + Object.keys(quotes).length + " quotes, " + news.length + " news, " + earnings.length + " earnings, " + econ.length + " econ events");
+  console.log("Finnhub: " + Object.keys(quotes).length + " quotes, " + news.length + " news, " + earnings.length + " earnings, " + econ.length + " econ events");
 
+  // Fetch watchlist from Massive (sequential, rate-limited)
+  var watchlist = { pillars: [], onTheMove: [] };
+  try {
+    watchlist = await fetchWatchlist();
+  } catch(err) {
+    console.error("Watchlist fetch failed: " + err.message);
+  }
+
+  // Generate brief via Claude
   console.log("Generating brief via Claude...");
   var briefHtml;
   try {
-    briefHtml = await generateBrief({ quotes: quotes, vix: vix, news: news, earnings: earnings, econ: econ });
-    console.log("Brief generated");
-  } catch (err) {
+    briefHtml = await generateBrief({ quotes, vix, news, earnings, econ });
+    console.log("Brief generated.");
+  } catch(err) {
     console.error("Claude API error: " + err.message);
     briefHtml = "<p>Brief generation failed. Market data is still current.</p>";
   }
 
-  var indexSymbols = ["SPY", "QQQ", "DIA", "IWM"];
+  // Build index data (unchanged)
   var indexData = [];
-  for (var i = 0; i < indexSymbols.length; i++) {
-    var s = indexSymbols[i];
+  for (const s of ["SPY","QQQ","DIA","IWM"]) {
     var q = quotes[s];
     indexData.push({
       name: q ? q.name : s,
-      val: q ? q.current.toLocaleString("en-US", { minimumFractionDigits: 2 }) : "—",
-      chg: q ? q.changePct : 0,
+      val:  q ? q.current.toLocaleString("en-US", { minimumFractionDigits: 2 }) : "—",
+      chg:  q ? q.changePct : 0,
       price: q ? q.current : 0
     });
   }
-
-  indexData.push({
-    name: "VIX",
-    val: vix ? vix.current.toFixed(2) : "—",
-    chg: vix ? vix.changePct : 0,
-    price: vix ? vix.current : 0
-  });
-
+  indexData.push({ name: "VIX", val: vix ? vix.current.toFixed(2) : "—", chg: vix ? vix.changePct : 0, price: vix ? vix.current : 0 });
   indexData.push({ name: "10Y", val: "—", chg: 0, price: 0 });
 
+  // Build sector data (unchanged)
   var sectorData = [];
-  var allSymbols = Object.keys(quotes);
-  for (var i = 0; i < allSymbols.length; i++) {
-    var sym = allSymbols[i];
-    if (["SPY", "QQQ", "DIA", "IWM", "VXX"].indexOf(sym) === -1) {
+  for (const sym of Object.keys(quotes)) {
+    if (["SPY","QQQ","DIA","IWM","VXX"].indexOf(sym) === -1) {
       var q = quotes[sym];
       sectorData.push({ name: q.name, symbol: q.symbol, chg: q.changePct || 0 });
     }
   }
 
+  // Build news data (unchanged)
   var newsData = [];
   for (var i = 0; i < Math.min(news.length, 6); i++) {
     var n = news[i];
     var d = new Date(n.datetime);
-    var timeStr = d.toLocaleTimeString("en-US", {
-      hour: "numeric", minute: "2-digit", hour12: true, timeZone: "America/New_York"
-    });
+    var timeStr = d.toLocaleTimeString("en-US", { hour:"numeric", minute:"2-digit", hour12:true, timeZone:"America/New_York" });
     newsData.push({ time: timeStr, text: n.headline, tag: n.source, url: n.url });
   }
 
+  // Build earnings data (unchanged)
   var earningsData = [];
   for (var i = 0; i < Math.min(earnings.length, 6); i++) {
     var e = earnings[i];
-    earningsData.push({
-      ticker: e.symbol,
-      info: "EPS Est: " + (e.epsEstimate != null ? e.epsEstimate : "N/A"),
-      when: e.hour
-    });
+    earningsData.push({ ticker: e.symbol, info: "EPS Est: " + (e.epsEstimate != null ? e.epsEstimate : "N/A"), when: e.hour });
   }
 
+  // Build econ data (unchanged)
   var econData = [];
   for (var i = 0; i < Math.min(econ.length, 6); i++) {
     var e = econ[i];
     econData.push({ time: e.time, name: e.event, impact: e.impact });
   }
 
-  var fgScore = 50;
-  var fgLabel = "Neutral";
+  // Fear & Greed (unchanged)
+  var fgScore = 50, fgLabel = "Neutral";
   if (vix && vix.current) {
     fgScore = Math.round(Math.max(0, Math.min(100, 100 - ((vix.current - 12) / 23) * 100)));
-    if (fgScore <= 20) fgLabel = "Extreme Fear";
+    if      (fgScore <= 20) fgLabel = "Extreme Fear";
     else if (fgScore <= 40) fgLabel = "Fear";
     else if (fgScore <= 60) fgLabel = "Neutral";
     else if (fgScore <= 80) fgLabel = "Greed";
-    else fgLabel = "Extreme Greed";
+    else                    fgLabel = "Extreme Greed";
   }
 
-  var spy = quotes["SPY"];
-  var qqq = quotes["QQQ"];
+  // Key levels (unchanged)
+  var spy = quotes["SPY"], qqq = quotes["QQQ"];
   var keyLevelsData = [];
-
   if (spy) {
-    keyLevelsData.push({
-      tag: "support",
-      label: "SPY Support",
-      val: (spy.low || spy.current * 0.995).toFixed(2)
-    });
-    keyLevelsData.push({
-      tag: "resist",
-      label: "SPY Resist",
-      val: (spy.high || spy.current * 1.005).toFixed(2)
-    });
+    keyLevelsData.push({ tag: "support", label: "SPY Support", val: (spy.low  || spy.current * 0.995).toFixed(2) });
+    keyLevelsData.push({ tag: "resist",  label: "SPY Resist",  val: (spy.high || spy.current * 1.005).toFixed(2) });
   }
-
   if (qqq) {
-    keyLevelsData.push({
-      tag: "pivot",
-      label: "QQQ Pivot",
-      val: ((qqq.high + qqq.low + qqq.current) / 3).toFixed(2)
-    });
+    keyLevelsData.push({ tag: "pivot", label: "QQQ Pivot", val: ((qqq.high + qqq.low + qqq.current) / 3).toFixed(2) });
   }
-
   if (econ.length > 0) {
-    var topEvent = null;
-    for (var i = 0; i < econ.length; i++) {
-      if (econ[i].impact === "high") { topEvent = econ[i]; break; }
-    }
-    if (!topEvent) topEvent = econ[0];
-    keyLevelsData.push({
-      tag: "event",
-      label: topEvent.event ? topEvent.event.slice(0, 20) : "Econ Event",
-      val: topEvent.time || "TBD"
-    });
+    var topEvent = econ.find(e => e.impact === "high") || econ[0];
+    keyLevelsData.push({ tag: "event", label: topEvent.event ? topEvent.event.slice(0, 20) : "Econ Event", val: topEvent.time || "TBD" });
   }
 
+  // ── WRITE OUTPUT ──────────────────────────────────────────
   var output = {
-    generated: new Date().toISOString(),
-    date: new Date().toISOString().split("T")[0],
-    indices: indexData,
-    sectors: sectorData,
-    keyLevels: keyLevelsData,
-    fearGreed: { score: fgScore, label: fgLabel },
-    earnings: earningsData,
-    econ: econData,
-    news: newsData,
-    brief: briefHtml
+    generated:  new Date().toISOString(),
+    date:       new Date().toISOString().split("T")[0],
+    indices:    indexData,
+    sectors:    sectorData,
+    keyLevels:  keyLevelsData,
+    fearGreed:  { score: fgScore, label: fgLabel },
+    earnings:   earningsData,
+    econ:       econData,
+    news:       newsData,
+    brief:      briefHtml,
+    watchlist:  watchlist   // ← NEW: Massive-powered watchlist
   };
 
-  if (!fs.existsSync(OUTPUT_DIR)) {
-    fs.mkdirSync(OUTPUT_DIR, { recursive: true });
-  }
-
+  if (!fs.existsSync(OUTPUT_DIR)) fs.mkdirSync(OUTPUT_DIR, { recursive: true });
   var outPath = path.join(OUTPUT_DIR, "market-data.json");
   fs.writeFileSync(outPath, JSON.stringify(output, null, 2));
   console.log("Written to " + outPath);
@@ -396,7 +534,7 @@ async function main() {
   console.log("Done!");
 }
 
-main().catch(function (err) {
+main().catch(function(err) {
   console.error("Fatal error:", err);
   process.exit(1);
 });

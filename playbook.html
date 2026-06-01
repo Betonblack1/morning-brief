@@ -49,6 +49,14 @@ body { font-family: var(--sans); background: var(--bg); color: var(--text); min-
 .sidebar-link:hover { color: var(--cyan); background: rgba(0,212,255,0.04); border-left-color: rgba(0,212,255,0.3); }
 .sidebar-link.active { color: var(--cyan); border-left-color: var(--cyan); background: rgba(0,212,255,0.06); }
 .sidebar-link .sl-icon { font-size: 0.72rem; width: 14px; text-align: center; opacity: 0.7; }
+.sidebar-ticker-section { padding: 0.5rem 0; border-top: 1px solid var(--border); flex-shrink: 0; max-height: 260px; overflow-y: auto; }
+.sidebar-ticker-label { font-family: var(--mono); font-size: 0.5rem; letter-spacing: 0.16em; text-transform: uppercase; color: var(--muted); padding: 0.4rem 1rem 0.3rem; }
+.sidebar-ticker-row { display: flex; align-items: center; justify-content: space-between; padding: 0.35rem 1rem; cursor: pointer; transition: background 0.15s; }
+.sidebar-ticker-row:hover { background: rgba(0,212,255,0.04); }
+.st-ticker { font-family: var(--mono); font-size: 0.66rem; font-weight: 500; color: var(--cyan); letter-spacing: 0.06em; }
+.st-price  { font-family: var(--mono); font-size: 0.62rem; color: var(--text); }
+.st-chg    { font-family: var(--mono); font-size: 0.56rem; min-width: 46px; text-align: right; }
+.st-chg.up { color: var(--green); } .st-chg.down { color: var(--red); }
 .sidebar-bottom { margin-top: auto; padding: 1rem; border-top: 1px solid var(--border); }
 .market-status { display: flex; align-items: center; gap: 0.5rem; font-family: var(--mono); font-size: 0.62rem; letter-spacing: 0.06em; text-transform: uppercase; }
 .status-dot { width: 6px; height: 6px; border-radius: 50%; animation: pulse 2s ease-in-out infinite; }
@@ -61,10 +69,10 @@ body { font-family: var(--sans); background: var(--bg); color: var(--text); min-
 .main-wrap { margin-left: var(--sidebar); flex: 1; display: flex; flex-direction: column; min-height: 100vh; }
 
 /* ── TOP HEADER ── */
-.top-header { padding: 1.5rem 2rem 1.1rem; border-bottom: 1px solid var(--border); background: var(--surface); display: flex; align-items: center; justify-content: space-between; position: relative; }
+.top-header { padding: 1.5rem 2rem 1.1rem; border-bottom: 1px solid var(--border); background: var(--surface); display: flex; align-items: center; justify-content: space-between; }
 .page-title { font-family: var(--display); font-size: 2.6rem; font-weight: 400; color: var(--text); line-height: 1; }
 .page-date { font-family: var(--mono); font-size: 0.6rem; color: var(--cyan); letter-spacing: 0.14em; text-transform: uppercase; }
-.header-center { position: absolute; left: 50%; transform: translateX(-50%); display: flex; align-items: baseline; gap: 1.25rem; }
+.header-center { display: flex; align-items: baseline; gap: 1.25rem; flex: 1; justify-content: center; }
 .countdown-pill { font-family: var(--mono); font-size: 0.65rem; font-weight: 500; letter-spacing: 0.05em; padding: 0.28rem 0.7rem; border-radius: 4px; display: flex; align-items: center; gap: 0.45rem; }
 .countdown-pill.pre    { color: var(--green); background: var(--green-bg); border: 1px solid rgba(0,224,160,0.12); }
 .countdown-pill.open   { color: var(--amber); background: var(--amber-bg); border: 1px solid rgba(255,176,32,0.12); }
@@ -480,6 +488,11 @@ body { font-family: var(--sans); background: var(--bg); color: var(--text); min-
     <a class="sidebar-link" href="#"><span class="sl-icon">◎</span> Journal</a>
     <a class="sidebar-link" href="#"><span class="sl-icon">▲</span> Performance</a>
   </div>
+  <div class="sidebar-ticker-section" id="sidebar-tickers" style="display:none;">
+    <div class="sidebar-ticker-label">My Tickers</div>
+    <div id="sidebar-ticker-list"></div>
+  </div>
+
   <div class="sidebar-bottom">
     <div class="market-status">
       <span class="status-dot pre" id="statusDot"></span>
@@ -493,6 +506,7 @@ body { font-family: var(--sans); background: var(--bg); color: var(--text); min-
 
   <!-- TOP HEADER -->
   <div class="top-header">
+    <div style="min-width:120px;"></div>
     <div class="header-center">
       <div class="page-title">Playbook</div>
       <div class="page-date" id="currentDate">—</div>
@@ -975,12 +989,16 @@ function renderTickerCard(data){
 }
 
 async function fetchTickerData(ticker){
-  const [quoteRes, indRes] = await Promise.all([
+  // Use candle data to compute EMA21 and SMA50 properly
+  const toTs   = Math.floor(Date.now()/1000);
+  const fromTs = Math.floor((Date.now() - 120*86400000)/1000);
+
+  const [quoteRes, candleRes] = await Promise.all([
     fetch(`https://finnhub.io/api/v1/quote?symbol=${ticker}&token=${FINNHUB_KEY}`),
-    fetch(`https://finnhub.io/api/v1/indicator?symbol=${ticker}&resolution=D&from=${Math.floor((Date.now()-120*86400000)/1000)}&to=${Math.floor(Date.now()/1000)}&indicator=ema&timeperiod=21&token=${FINNHUB_KEY}`)
+    fetch(`https://finnhub.io/api/v1/stock/candle?symbol=${ticker}&resolution=D&from=${fromTs}&to=${toTs}&token=${FINNHUB_KEY}`)
   ]);
-  const quote = await quoteRes.json();
-  const ind   = await indRes.json();
+  const quote  = await quoteRes.json();
+  const candle = await candleRes.json();
 
   if(!quote.c || quote.c === 0) throw new Error('Invalid ticker');
 
@@ -988,15 +1006,22 @@ async function fetchTickerData(ticker){
   const changePct = quote.dp || 0;
   const volume    = quote.v || 0;
 
-  // EMA21 from indicator endpoint
-  const emaArr = ind?.ema || ind?.technical?.ema || [];
-  const ema21  = emaArr.length ? emaArr[emaArr.length-1] : price * 0.97;
+  // Compute EMA21 from close prices
+  const closes = (candle.c && candle.s === 'ok') ? candle.c : [];
+  let ema21 = price;
+  let sma50 = price;
 
-  // SMA50 via separate call
-  const smaRes = await fetch(`https://finnhub.io/api/v1/indicator?symbol=${ticker}&resolution=D&from=${Math.floor((Date.now()-120*86400000)/1000)}&to=${Math.floor(Date.now()/1000)}&indicator=sma&timeperiod=50&token=${FINNHUB_KEY}`);
-  const smaData = await smaRes.json();
-  const smaArr = smaData?.sma || smaData?.technical?.sma || [];
-  const sma50  = smaArr.length ? smaArr[smaArr.length-1] : price * 0.95;
+  if(closes.length >= 21){
+    // EMA21
+    const k = 2/(21+1);
+    ema21 = closes.slice(0,21).reduce((a,b)=>a+b,0)/21;
+    for(let i=21;i<closes.length;i++) ema21 = closes[i]*k + ema21*(1-k);
+  }
+  if(closes.length >= 50){
+    // SMA50
+    const last50 = closes.slice(-50);
+    sma50 = last50.reduce((a,b)=>a+b,0)/50;
+  }
 
   const pct21 = ((price - ema21) / ema21) * 100;
   const pct50 = ((price - sma50) / sma50) * 100;
@@ -1016,6 +1041,28 @@ function saveTickerList(){
   localStorage.setItem(STORAGE_KEY, JSON.stringify(list));
 }
 
+function updateSidebarTickers(){
+  const cards = document.querySelectorAll('#ticker-cards > div[id^="card-"]');
+  const section = document.getElementById('sidebar-tickers');
+  const list    = document.getElementById('sidebar-ticker-list');
+  if(!section || !list) return;
+  if(cards.length === 0){ section.style.display='none'; list.innerHTML=''; return; }
+  section.style.display='block';
+  list.innerHTML = Array.from(cards).map(card => {
+    const ticker  = card.id.replace('card-','');
+    const priceEl = card.querySelector('div[style*="1.1rem"]');
+    const chgEl   = card.querySelector('div[style*="0.62rem"]');
+    const price   = priceEl ? priceEl.textContent : '—';
+    const chg     = chgEl   ? chgEl.textContent   : '—';
+    const isUp    = chg.startsWith('+');
+    return `<div class="sidebar-ticker-row" onclick="document.getElementById('card-${ticker}')?.scrollIntoView({behavior:'smooth',block:'center'})">
+      <span class="st-ticker">${ticker}</span>
+      <span class="st-price">${price}</span>
+      <span class="st-chg ${isUp?'up':'down'}">${chg}</span>
+    </div>`;
+  }).join('');
+}
+
 async function addTicker(){
   const input  = document.getElementById('ticker-input');
   const ticker = input.value.trim().toUpperCase();
@@ -1028,6 +1075,7 @@ async function addTicker(){
     const container = document.getElementById('ticker-cards');
     container.insertAdjacentHTML('beforeend', renderTickerCard(data));
     saveTickerList();
+    updateSidebarTickers();
     setMsg(ticker+' added.','var(--green)');
     setTimeout(()=>setMsg(''), 2500);
   } catch(e){
@@ -1040,11 +1088,13 @@ function removeTicker(ticker){
   const card = document.getElementById('card-'+ticker);
   if(card) card.remove();
   saveTickerList();
+  updateSidebarTickers();
 }
 
 function clearAllTickers(){
   document.getElementById('ticker-cards').innerHTML = '';
   localStorage.removeItem(STORAGE_KEY);
+  updateSidebarTickers();
   setMsg('Cleared.','var(--muted)');
   setTimeout(()=>setMsg(''), 1500);
 }
@@ -1059,6 +1109,7 @@ async function restoreSavedTickers(){
     try{
       const data = await fetchTickerData(ticker);
       document.getElementById('ticker-cards').insertAdjacentHTML('beforeend', renderTickerCard(data));
+      updateSidebarTickers();
     } catch(e){ /* skip bad tickers silently */ }
   }
   setMsg('','var(--muted)');

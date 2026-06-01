@@ -57,6 +57,23 @@ body { font-family: var(--sans); background: var(--bg); color: var(--text); min-
 .st-price  { font-family: var(--mono); font-size: 0.62rem; color: var(--text); }
 .st-chg    { font-family: var(--mono); font-size: 0.56rem; min-width: 46px; text-align: right; }
 .st-chg.up { color: var(--green); } .st-chg.down { color: var(--red); }
+/* ── SECTOR HEATMAP ── */
+.sector-heatmap-wrap { margin-bottom:1.25rem; }
+.sector-heatmap-header { display:flex; align-items:center; justify-content:space-between; margin-bottom:0.6rem; cursor:pointer; }
+.sector-heatmap-header:hover .shm-toggle { color:var(--cyan); }
+.shm-title { font-family:var(--mono); font-size:0.54rem; letter-spacing:0.14em; text-transform:uppercase; color:var(--muted); }
+.shm-toggle { font-family:var(--mono); font-size:0.52rem; color:var(--muted); transition:color .15s; }
+.sector-heatmap-grid { display:grid; grid-template-columns:repeat(auto-fill,minmax(110px,1fr)); gap:4px; }
+.shm-cell { background:var(--surface2); border:1px solid var(--border); border-left:3px solid var(--border2); padding:0.5rem 0.65rem; transition:border-color .15s; }
+.shm-cell.hot3 { border-left-color:#00e0a0; background:rgba(0,224,160,0.06); }
+.shm-cell.hot2 { border-left-color:#ffb020; background:rgba(255,176,32,0.05); }
+.shm-cell.hot1 { border-left-color:#40a0ff; background:rgba(64,160,255,0.04); }
+.shm-cell.cold { border-left-color:#ff4060; background:rgba(255,64,96,0.04); }
+.shm-etf  { font-family:var(--mono); font-size:0.46rem; color:var(--muted); letter-spacing:.08em; margin-bottom:3px; }
+.shm-name { font-family:var(--mono); font-size:0.52rem; color:var(--text2); margin-bottom:3px; letter-spacing:.02em; }
+.shm-chg  { font-family:var(--mono); font-size:0.78rem; font-weight:500; }
+.shm-stars{ font-size:0.65rem; margin-top:3px; letter-spacing:1px; }
+
 .sidebar-bottom { margin-top: auto; padding: 1rem; border-top: 1px solid var(--border); }
 .market-status { display: flex; align-items: center; gap: 0.5rem; font-family: var(--mono); font-size: 0.62rem; letter-spacing: 0.06em; text-transform: uppercase; }
 .status-dot { width: 6px; height: 6px; border-radius: 50%; animation: pulse 2s ease-in-out infinite; }
@@ -565,6 +582,17 @@ body { font-family: var(--sans); background: var(--bg); color: var(--text); min-
         <div class="legend-item"><span class="legend-dot extended"></span> Extended — too far from MA. Wait.</div>
         <div class="legend-info" id="pillars-updated">—</div>
       </div>
+      <!-- SECTOR HEATMAP -->
+      <div class="sector-heatmap-wrap">
+        <div class="sector-heatmap-header" onclick="toggleSectorHeatmap()">
+          <span class="shm-title">Sector Heat <span id="shm-hot-count" style="color:var(--cyan)"></span></span>
+          <span class="shm-toggle" id="shm-toggle-lbl">▲ hide</span>
+        </div>
+        <div id="sector-heatmap-grid" class="sector-heatmap-grid">
+          <div style="font-family:var(--mono);font-size:0.6rem;color:var(--muted);grid-column:1/-1;padding:0.5rem 0;">Loading sector data...</div>
+        </div>
+      </div>
+
       <!-- TICKER LOOKUP WIDGET -->
       <div id="ticker-widget" style="margin-bottom:1.25rem;">
         <div style="display:flex;align-items:center;gap:0;margin-bottom:0.75rem;flex-wrap:wrap;gap:6px;">
@@ -946,121 +974,297 @@ document.addEventListener('keydown', e=>{ if(e.key==='Escape') closeDrawer(); })
 const FINNHUB_KEY = 'd6vl6gpr01qiiutc8qj0d6vl6gpr01qiiutc8qjg';
 const STORAGE_KEY = 'playbook_tickers_v1';
 
+/* ── SECTOR ETF MAP ─────────────────────────────── */
+const SECTOR_ETFS = [
+  { etf:'XLK',  name:'Technology',        short:'TECH'  },
+  { etf:'XLF',  name:'Financials',        short:'FIN'   },
+  { etf:'XLE',  name:'Energy',            short:'ENRG'  },
+  { etf:'XLV',  name:'Healthcare',        short:'HLTH'  },
+  { etf:'XLI',  name:'Industrials',       short:'INDU'  },
+  { etf:'XLY',  name:'Cons Cyclical',     short:'CYCL'  },
+  { etf:'XLP',  name:'Cons Defensive',    short:'DEF'   },
+  { etf:'XLB',  name:'Materials',         short:'MATL'  },
+  { etre:'XLRE',  name:'Real Estate',     short:'REIT'  },
+  { etf:'XLU',  name:'Utilities',         short:'UTIL'  },
+  { etf:'XLC',  name:'Comm Services',     short:'COMM'  },
+];
+// fix typo in XLRE entry
+SECTOR_ETFS[8].etf = 'XLRE'; delete SECTOR_ETFS[8].etre;
+
+// live sector data cache: { XLK: { chg, stars, name, short }, ... }
+const sectorCache = {};
+
+// map Finnhub sector string -> our ETF key
+const SECTOR_MAP = {
+  'Technology':                 'XLK',
+  'Financial Services':         'XLF',
+  'Energy':                     'XLE',
+  'Healthcare':                 'XLV',
+  'Industrials':                'XLI',
+  'Consumer Cyclical':          'XLY',
+  'Consumer Defensive':         'XLP',
+  'Basic Materials':            'XLB',
+  'Real Estate':                'XLRE',
+  'Utilities':                  'XLU',
+  'Communication Services':     'XLC',
+};
+
+function starsFromChg(chg){
+  if(chg >= 3)   return '★★★';
+  if(chg >= 1.5) return '★★';
+  if(chg >= 0.75)return '★';
+  return '';
+}
+function starsCount(chg){
+  if(chg >= 3)    return 3;
+  if(chg >= 1.5)  return 2;
+  if(chg >= 0.75) return 1;
+  return 0;
+}
+function heatClass(chg){
+  if(chg >= 3)    return 'hot3';
+  if(chg >= 1.5)  return 'hot2';
+  if(chg >= 0.75) return 'hot1';
+  if(chg < 0)     return 'cold';
+  return '';
+}
+function heatColor(stars){
+  if(stars === 3) return 'var(--green)';
+  if(stars === 2) return 'var(--amber)';
+  if(stars === 1) return 'var(--blue)';
+  return 'var(--muted)';
+}
+
+/* ── LOAD SECTOR HEATMAP ─────────────────────────── */
+async function loadSectorHeatmap(){
+  const grid = document.getElementById('sector-heatmap-grid');
+  try{
+    const symbols = SECTOR_ETFS.map(s=>s.etf).join(',');
+    // fetch all ETF quotes in parallel
+    const results = await Promise.all(SECTOR_ETFS.map(s=>
+      fetch(`https://finnhub.io/api/v1/quote?symbol=${s.etf}&token=${FINNHUB_KEY}`)
+        .then(r=>r.json())
+        .then(q=>({ ...s, chg: q.dp||0, price: q.c||0 }))
+        .catch(()=>({ ...s, chg:0, price:0 }))
+    ));
+
+    let hotCount = 0;
+    results.forEach(s=>{
+      const stars = starsCount(s.chg);
+      sectorCache[s.etf] = { chg:s.chg, stars, name:s.name, short:s.short };
+      if(stars > 0) hotCount++;
+    });
+
+    const countEl = document.getElementById('shm-hot-count');
+    if(countEl) countEl.textContent = hotCount > 0 ? `· ${hotCount} hot` : '';
+
+    grid.innerHTML = results.map(s=>{
+      const stars = starsCount(s.chg);
+      const sign  = s.chg >= 0 ? '+' : '';
+      const cls   = heatClass(s.chg);
+      const col   = s.chg >= 0 ? 'var(--green)' : 'var(--red)';
+      const stStr = starsFromChg(s.chg);
+      return `<div class="shm-cell ${cls}">
+        <div class="shm-etf">${s.etf}</div>
+        <div class="shm-name">${s.short}</div>
+        <div class="shm-chg" style="color:${col}">${sign}${s.chg.toFixed(2)}%</div>
+        <div class="shm-stars" style="color:${heatColor(stars)}">${stStr || '—'}</div>
+      </div>`;
+    }).join('');
+
+    // update any existing ticker cards with fresh sector data
+    refreshAllCardSectors();
+  } catch(e){
+    grid.innerHTML = '<div style="font-family:var(--mono);font-size:0.6rem;color:var(--red);grid-column:1/-1;">Sector data unavailable.</div>';
+  }
+}
+
+let sectorHeatmapVisible = true;
+function toggleSectorHeatmap(){
+  const grid = document.getElementById('sector-heatmap-grid');
+  const lbl  = document.getElementById('shm-toggle-lbl');
+  sectorHeatmapVisible = !sectorHeatmapVisible;
+  grid.style.display = sectorHeatmapVisible ? '' : 'none';
+  lbl.textContent = sectorHeatmapVisible ? '▲ hide' : '▼ show';
+}
+
+/* ── GRADE HELPERS ───────────────────────────────── */
 function gradeFromPcts(pct21, pct50){
   const best = Math.min(Math.abs(pct21), Math.abs(pct50));
   if(best <= 3)  return 'zone';
   if(best <= 8)  return 'approaching';
   return 'extended';
 }
-
 function gradeLabel(g){ return g==='zone'?'In The Zone':g==='approaching'?'Approaching':'Extended'; }
 function gradeColor(g){ return g==='zone'?'var(--green)':g==='approaching'?'var(--amber)':'var(--muted)'; }
 
-function renderTickerCard(data){
-  const { ticker, price, changePct, ema21, sma50, pct21, pct50, grade, volume } = data;
-  const chgColor = changePct >= 0 ? 'var(--green)' : 'var(--red)';
-  const chgSign  = changePct >= 0 ? '+' : '';
-  const volFmt   = volume > 1e6 ? (volume/1e6).toFixed(1)+'M' : volume > 1e3 ? (volume/1e3).toFixed(0)+'K' : volume;
-  return `
-    <div id="card-${ticker}" style="background:var(--surface);border:1px solid var(--border);border-left:3px solid ${gradeColor(grade)};padding:0.75rem 1rem;min-width:190px;max-width:220px;position:relative;animation:fadeIn 0.3s ease both;">
-      <div style="display:flex;align-items:center;justify-content:space-between;margin-bottom:6px;">
-        <div style="font-family:var(--mono);font-size:0.82rem;font-weight:600;color:var(--cyan);letter-spacing:0.08em;">${ticker}</div>
-        <button onclick="removeTicker('${ticker}')" style="background:none;border:none;color:var(--muted);cursor:pointer;font-size:0.7rem;padding:0;line-height:1;" title="Remove">✕</button>
-      </div>
-      <div style="font-family:var(--mono);font-size:1.1rem;font-weight:500;color:var(--text);margin-bottom:2px;">$${price.toFixed(2)}</div>
-      <div style="font-family:var(--mono);font-size:0.62rem;color:${chgColor};margin-bottom:8px;">${chgSign}${changePct.toFixed(2)}%</div>
-      <div style="display:grid;grid-template-columns:1fr 1fr;gap:3px;margin-bottom:8px;">
-        <div style="background:var(--surface2);padding:4px 6px;">
-          <div style="font-family:var(--mono);font-size:0.42rem;color:var(--muted);letter-spacing:.08em;margin-bottom:2px;">21 EMA</div>
-          <div style="font-family:var(--mono);font-size:0.68rem;color:var(--text);">$${ema21.toFixed(2)}</div>
-          <div style="font-family:var(--mono);font-size:0.5rem;color:${Math.abs(pct21)<=3?'var(--green)':Math.abs(pct21)<=8?'var(--amber)':'var(--muted)'};">${pct21>=0?'+':''}${pct21.toFixed(1)}%</div>
-        </div>
-        <div style="background:var(--surface2);padding:4px 6px;">
-          <div style="font-family:var(--mono);font-size:0.42rem;color:var(--muted);letter-spacing:.08em;margin-bottom:2px;">50 SMA</div>
-          <div style="font-family:var(--mono);font-size:0.68rem;color:var(--text);">$${sma50.toFixed(2)}</div>
-          <div style="font-family:var(--mono);font-size:0.5rem;color:${Math.abs(pct50)<=3?'var(--green)':Math.abs(pct50)<=8?'var(--amber)':'var(--muted)'};">${pct50>=0?'+':''}${pct50.toFixed(1)}%</div>
-        </div>
-      </div>
-      <div style="display:flex;align-items:center;justify-content:space-between;">
-        <span style="font-family:var(--mono);font-size:0.48rem;padding:2px 6px;border:1px solid ${gradeColor(grade)};color:${gradeColor(grade)};letter-spacing:.06em;">${gradeLabel(grade).toUpperCase()}</span>
-        <span style="font-family:var(--mono);font-size:0.48rem;color:var(--muted);">Vol ${volFmt}</span>
-      </div>
-    </div>`;
+/* ── SECTOR STARS FOR A TICKER ───────────────────── */
+function getSectorInfo(finnhubSector){
+  const etfKey = SECTOR_MAP[finnhubSector] || null;
+  if(!etfKey || !sectorCache[etfKey]) return { stars:0, name: finnhubSector||'—', short:'—', chg:0 };
+  return sectorCache[etfKey];
 }
 
+/* ── COUNT TICKERS IN SAME SECTOR ───────────────────*/
+function countTickersInSector(etfKey){
+  const cards = document.querySelectorAll('#ticker-cards > div[id^="card-"]');
+  let count = 0;
+  cards.forEach(c=>{
+    if(c.dataset.etf === etfKey) count++;
+  });
+  return count;
+}
+
+function refreshAllCardSectors(){
+  const cards = document.querySelectorAll('#ticker-cards > div[id^="card-"]');
+  cards.forEach(card=>{
+    const etfKey = card.dataset.etf;
+    if(!etfKey) return;
+    const sec = sectorCache[etfKey];
+    if(!sec) return;
+    const count = countTickersInSector(etfKey);
+    const stars = Math.min(sec.stars + (count > 1 ? count - 1 : 0), 3);
+    const stStr = '★'.repeat(stars) || '—';
+    const secEl = card.querySelector('.card-sector-stars');
+    if(secEl){
+      secEl.textContent = stStr;
+      secEl.style.color = heatColor(stars);
+    }
+    const secNameEl = card.querySelector('.card-sector-name');
+    if(secNameEl) secNameEl.textContent = sec.short;
+  });
+  updateSidebarTickers();
+}
+
+/* ── RENDER TICKER CARD ──────────────────────────── */
+function renderTickerCard(data){
+  const { ticker, price, changePct, ema21, sma50, pct21, pct50, grade, volume, sector } = data;
+  const chgColor = changePct >= 0 ? 'var(--green)' : 'var(--red)';
+  const chgSign  = changePct >= 0 ? '+' : '';
+  const volFmt   = volume > 1e6 ? (volume/1e6).toFixed(1)+'M' : volume > 1e3 ? (volume/1e3).toFixed(0)+'K' : (volume||0);
+
+  const etfKey  = SECTOR_MAP[sector] || '';
+  const secData = etfKey && sectorCache[etfKey] ? sectorCache[etfKey] : null;
+  const count   = etfKey ? countTickersInSector(etfKey) + 1 : 1; // +1 for this new card
+  const rawStars= secData ? secData.stars : 0;
+  const stars   = Math.min(rawStars + (count > 1 ? count - 1 : 0), 3);
+  const stStr   = '★'.repeat(stars) || '—';
+  const secShort= secData ? secData.short : (sector ? sector.substring(0,6).toUpperCase() : '—');
+
+  return `<div id="card-${ticker}" data-etf="${etfKey}" data-sector="${sector||''}"
+    style="background:var(--surface);border:1px solid var(--border);border-left:3px solid ${gradeColor(grade)};padding:0.75rem 1rem;min-width:190px;max-width:220px;position:relative;animation:fadeIn 0.3s ease both;flex-shrink:0;">
+    <div style="display:flex;align-items:center;justify-content:space-between;margin-bottom:4px;">
+      <div style="font-family:var(--mono);font-size:0.82rem;font-weight:600;color:var(--cyan);letter-spacing:0.08em;">${ticker}</div>
+      <button onclick="removeTicker('${ticker}')" style="background:none;border:none;color:var(--muted);cursor:pointer;font-size:0.7rem;padding:0;line-height:1;">✕</button>
+    </div>
+    <div style="display:flex;align-items:center;gap:6px;margin-bottom:5px;">
+      <span class="card-sector-name" style="font-family:var(--mono);font-size:0.46rem;color:var(--muted);letter-spacing:.08em;text-transform:uppercase;">${secShort}</span>
+      <span class="card-sector-stars" style="font-size:0.6rem;color:${heatColor(stars)};letter-spacing:1px;">${stStr}</span>
+    </div>
+    <div style="font-family:var(--mono);font-size:1.1rem;font-weight:500;color:var(--text);margin-bottom:2px;">$${price.toFixed(2)}</div>
+    <div style="font-family:var(--mono);font-size:0.62rem;color:${chgColor};margin-bottom:8px;">${chgSign}${changePct.toFixed(2)}%</div>
+    <div style="display:grid;grid-template-columns:1fr 1fr;gap:3px;margin-bottom:8px;">
+      <div style="background:var(--surface2);padding:4px 6px;">
+        <div style="font-family:var(--mono);font-size:0.42rem;color:var(--muted);letter-spacing:.08em;margin-bottom:2px;">21 EMA</div>
+        <div style="font-family:var(--mono);font-size:0.68rem;color:var(--text);">$${ema21.toFixed(2)}</div>
+        <div style="font-family:var(--mono);font-size:0.5rem;color:${Math.abs(pct21)<=3?'var(--green)':Math.abs(pct21)<=8?'var(--amber)':'var(--muted)'};">${pct21>=0?'+':''}${pct21.toFixed(1)}%</div>
+      </div>
+      <div style="background:var(--surface2);padding:4px 6px;">
+        <div style="font-family:var(--mono);font-size:0.42rem;color:var(--muted);letter-spacing:.08em;margin-bottom:2px;">50 SMA</div>
+        <div style="font-family:var(--mono);font-size:0.68rem;color:var(--text);">$${sma50.toFixed(2)}</div>
+        <div style="font-family:var(--mono);font-size:0.5rem;color:${Math.abs(pct50)<=3?'var(--green)':Math.abs(pct50)<=8?'var(--amber)':'var(--muted)'};">${pct50>=0?'+':''}${pct50.toFixed(1)}%</div>
+      </div>
+    </div>
+    <div style="display:flex;align-items:center;justify-content:space-between;">
+      <span style="font-family:var(--mono);font-size:0.48rem;padding:2px 6px;border:1px solid ${gradeColor(grade)};color:${gradeColor(grade)};letter-spacing:.06em;">${gradeLabel(grade).toUpperCase()}</span>
+      <span style="font-family:var(--mono);font-size:0.48rem;color:var(--muted);">Vol ${volFmt}</span>
+    </div>
+  </div>`;
+}
+
+/* ── FETCH TICKER DATA ───────────────────────────── */
 async function fetchTickerData(ticker){
-  // Use candle data to compute EMA21 and SMA50 properly
   const toTs   = Math.floor(Date.now()/1000);
   const fromTs = Math.floor((Date.now() - 120*86400000)/1000);
 
-  const [quoteRes, candleRes] = await Promise.all([
+  const [quoteRes, candleRes, profileRes] = await Promise.all([
     fetch(`https://finnhub.io/api/v1/quote?symbol=${ticker}&token=${FINNHUB_KEY}`),
-    fetch(`https://finnhub.io/api/v1/stock/candle?symbol=${ticker}&resolution=D&from=${fromTs}&to=${toTs}&token=${FINNHUB_KEY}`)
+    fetch(`https://finnhub.io/api/v1/stock/candle?symbol=${ticker}&resolution=D&from=${fromTs}&to=${toTs}&token=${FINNHUB_KEY}`),
+    fetch(`https://finnhub.io/api/v1/stock/profile2?symbol=${ticker}&token=${FINNHUB_KEY}`)
   ]);
-  const quote  = await quoteRes.json();
-  const candle = await candleRes.json();
+  const quote   = await quoteRes.json();
+  const candle  = await candleRes.json();
+  const profile = await profileRes.json();
 
   if(!quote.c || quote.c === 0) throw new Error('Invalid ticker');
 
   const price     = quote.c;
   const changePct = quote.dp || 0;
-  const volume    = quote.v || 0;
+  const volume    = quote.v  || 0;
+  const sector    = profile.finnhubIndustry || profile.ggroup || '';
 
-  // Compute EMA21 from close prices
   const closes = (candle.c && candle.s === 'ok') ? candle.c : [];
-  let ema21 = price;
-  let sma50 = price;
+  let ema21 = price, sma50 = price;
 
   if(closes.length >= 21){
-    // EMA21
     const k = 2/(21+1);
     ema21 = closes.slice(0,21).reduce((a,b)=>a+b,0)/21;
     for(let i=21;i<closes.length;i++) ema21 = closes[i]*k + ema21*(1-k);
   }
   if(closes.length >= 50){
-    // SMA50
-    const last50 = closes.slice(-50);
-    sma50 = last50.reduce((a,b)=>a+b,0)/50;
+    sma50 = closes.slice(-50).reduce((a,b)=>a+b,0)/50;
   }
 
-  const pct21 = ((price - ema21) / ema21) * 100;
-  const pct50 = ((price - sma50) / sma50) * 100;
+  const pct21 = ((price-ema21)/ema21)*100;
+  const pct50 = ((price-sma50)/sma50)*100;
   const grade = gradeFromPcts(pct21, pct50);
 
-  return { ticker, price, changePct, ema21, sma50, pct21, pct50, grade, volume };
+  return { ticker, price, changePct, ema21, sma50, pct21, pct50, grade, volume, sector };
 }
 
-function setMsg(txt, color='var(--muted)'){
-  const el = document.getElementById('ticker-msg');
-  if(el){ el.textContent = txt; el.style.color = color; }
-}
-
+/* ── SIDEBAR ─────────────────────────────────────── */
 function saveTickerList(){
   const cards = document.querySelectorAll('#ticker-cards > div[id^="card-"]');
-  const list  = Array.from(cards).map(c => c.id.replace('card-',''));
+  const list  = Array.from(cards).map(c=>c.id.replace('card-',''));
   localStorage.setItem(STORAGE_KEY, JSON.stringify(list));
 }
 
 function updateSidebarTickers(){
-  const cards = document.querySelectorAll('#ticker-cards > div[id^="card-"]');
+  const cards   = document.querySelectorAll('#ticker-cards > div[id^="card-"]');
   const section = document.getElementById('sidebar-tickers');
   const list    = document.getElementById('sidebar-ticker-list');
-  if(!section || !list) return;
-  if(cards.length === 0){ section.style.display='none'; list.innerHTML=''; return; }
+  if(!section||!list) return;
+  if(cards.length===0){ section.style.display='none'; list.innerHTML=''; return; }
   section.style.display='block';
-  list.innerHTML = Array.from(cards).map(card => {
+  list.innerHTML = Array.from(cards).map(card=>{
     const ticker  = card.id.replace('card-','');
     const priceEl = card.querySelector('div[style*="1.1rem"]');
-    const chgEl   = card.querySelector('div[style*="0.62rem"]');
+    const chgEl   = card.querySelectorAll('div[style*="0.62rem"]')[0];
+    const starsEl = card.querySelector('.card-sector-stars');
+    const secEl   = card.querySelector('.card-sector-name');
     const price   = priceEl ? priceEl.textContent : '—';
     const chg     = chgEl   ? chgEl.textContent   : '—';
+    const stars   = starsEl ? starsEl.textContent  : '';
+    const secName = secEl   ? secEl.textContent    : '';
     const isUp    = chg.startsWith('+');
+    const stColor = starsEl ? starsEl.style.color : 'var(--muted)';
     return `<div class="sidebar-ticker-row" onclick="document.getElementById('card-${ticker}')?.scrollIntoView({behavior:'smooth',block:'center'})">
-      <span class="st-ticker">${ticker}</span>
-      <span class="st-price">${price}</span>
-      <span class="st-chg ${isUp?'up':'down'}">${chg}</span>
+      <div style="display:flex;flex-direction:column;gap:1px;">
+        <span class="st-ticker">${ticker}</span>
+        <span style="font-family:var(--mono);font-size:0.44rem;color:var(--muted);">${secName} <span style="color:${stColor}">${stars}</span></span>
+      </div>
+      <div style="display:flex;flex-direction:column;align-items:flex-end;gap:1px;">
+        <span class="st-price">${price}</span>
+        <span class="st-chg ${isUp?'up':'down'}">${chg}</span>
+      </div>
     </div>`;
   }).join('');
+}
+
+/* ── ADD / REMOVE / CLEAR ────────────────────────── */
+function setMsg(txt, color='var(--muted)'){
+  const el = document.getElementById('ticker-msg');
+  if(el){ el.textContent=txt; el.style.color=color; }
 }
 
 async function addTicker(){
@@ -1072,8 +1276,9 @@ async function addTicker(){
   setMsg('Loading '+ticker+'...','var(--cyan)');
   try{
     const data = await fetchTickerData(ticker);
-    const container = document.getElementById('ticker-cards');
-    container.insertAdjacentHTML('beforeend', renderTickerCard(data));
+    document.getElementById('ticker-cards').insertAdjacentHTML('beforeend', renderTickerCard(data));
+    // refresh all cards in same sector to update star counts
+    refreshAllCardSectors();
     saveTickerList();
     updateSidebarTickers();
     setMsg(ticker+' added.','var(--green)');
@@ -1087,18 +1292,20 @@ async function addTicker(){
 function removeTicker(ticker){
   const card = document.getElementById('card-'+ticker);
   if(card) card.remove();
+  refreshAllCardSectors();
   saveTickerList();
   updateSidebarTickers();
 }
 
 function clearAllTickers(){
-  document.getElementById('ticker-cards').innerHTML = '';
+  document.getElementById('ticker-cards').innerHTML='';
   localStorage.removeItem(STORAGE_KEY);
   updateSidebarTickers();
   setMsg('Cleared.','var(--muted)');
-  setTimeout(()=>setMsg(''), 1500);
+  setTimeout(()=>setMsg(''),1500);
 }
 
+/* ── RESTORE ON LOAD ─────────────────────────────── */
 async function restoreSavedTickers(){
   const saved = localStorage.getItem(STORAGE_KEY);
   if(!saved) return;
@@ -1109,13 +1316,15 @@ async function restoreSavedTickers(){
     try{
       const data = await fetchTickerData(ticker);
       document.getElementById('ticker-cards').insertAdjacentHTML('beforeend', renderTickerCard(data));
-      updateSidebarTickers();
-    } catch(e){ /* skip bad tickers silently */ }
+    } catch(e){ /* skip silently */ }
   }
+  refreshAllCardSectors();
+  updateSidebarTickers();
   setMsg('','var(--muted)');
 }
 
-restoreSavedTickers();
+// Boot sequence: load sector heatmap first, then restore tickers
+loadSectorHeatmap().then(()=> restoreSavedTickers());
 
 loadData();
 </script>

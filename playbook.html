@@ -61,10 +61,10 @@ body { font-family: var(--sans); background: var(--bg); color: var(--text); min-
 .main-wrap { margin-left: var(--sidebar); flex: 1; display: flex; flex-direction: column; min-height: 100vh; }
 
 /* ── TOP HEADER ── */
-.top-header { padding: 1.5rem 2rem 1.1rem; border-bottom: 1px solid var(--border); background: var(--surface); display: flex; align-items: center; justify-content: space-between; }
+.top-header { padding: 1.5rem 2rem 1.1rem; border-bottom: 1px solid var(--border); background: var(--surface); display: flex; align-items: center; justify-content: space-between; position: relative; }
 .page-title { font-family: var(--display); font-size: 2.6rem; font-weight: 400; color: var(--text); line-height: 1; }
 .page-date { font-family: var(--mono); font-size: 0.6rem; color: var(--cyan); letter-spacing: 0.14em; text-transform: uppercase; }
-.header-center { display: flex; align-items: baseline; gap: 1.25rem; flex: 1; justify-content: center; }
+.header-center { position: absolute; left: 50%; transform: translateX(-50%); display: flex; align-items: baseline; gap: 1.25rem; }
 .countdown-pill { font-family: var(--mono); font-size: 0.65rem; font-weight: 500; letter-spacing: 0.05em; padding: 0.28rem 0.7rem; border-radius: 4px; display: flex; align-items: center; gap: 0.45rem; }
 .countdown-pill.pre    { color: var(--green); background: var(--green-bg); border: 1px solid rgba(0,224,160,0.12); }
 .countdown-pill.open   { color: var(--amber); background: var(--amber-bg); border: 1px solid rgba(255,176,32,0.12); }
@@ -551,6 +551,26 @@ body { font-family: var(--sans); background: var(--bg); color: var(--text); min-
         <div class="legend-item"><span class="legend-dot extended"></span> Extended — too far from MA. Wait.</div>
         <div class="legend-info" id="pillars-updated">—</div>
       </div>
+      <!-- TICKER LOOKUP WIDGET -->
+      <div id="ticker-widget" style="margin-bottom:1.25rem;">
+        <div style="display:flex;align-items:center;gap:0;margin-bottom:0.75rem;flex-wrap:wrap;gap:6px;">
+          <input id="ticker-input" type="text" placeholder="Add ticker — e.g. TSLA"
+            style="background:var(--surface2);border:1px solid var(--border);border-right:none;color:var(--cyan);font-family:var(--mono);font-size:0.78rem;padding:0.5rem 0.85rem;outline:none;width:220px;text-transform:uppercase;letter-spacing:0.06em;transition:border-color .15s;"
+            onkeydown="if(event.key==='Enter')addTicker()"
+            onfocus="this.style.borderColor='var(--cyan)'"
+            onblur="this.style.borderColor='var(--border)'">
+          <button onclick="addTicker()"
+            style="background:var(--cyan);border:1px solid var(--cyan);color:var(--bg);font-family:var(--mono);font-size:0.72rem;padding:0.5rem 1rem;cursor:pointer;font-weight:600;letter-spacing:0.08em;transition:opacity .15s;"
+            onmouseover="this.style.opacity='.85'" onmouseout="this.style.opacity='1'">ADD</button>
+          <button onclick="clearAllTickers()"
+            style="background:transparent;border:1px solid var(--border);color:var(--muted);font-family:var(--mono);font-size:0.66rem;padding:0.5rem 0.85rem;cursor:pointer;letter-spacing:0.06em;transition:all .15s;"
+            onmouseover="this.style.borderColor='var(--red)';this.style.color='var(--red)'"
+            onmouseout="this.style.borderColor='var(--border)';this.style.color='var(--muted)'">CLEAR ALL</button>
+          <span id="ticker-msg" style="font-family:var(--mono);font-size:0.56rem;color:var(--muted);letter-spacing:0.05em;"></span>
+        </div>
+        <div id="ticker-cards" style="display:flex;flex-wrap:wrap;gap:10px;"></div>
+      </div>
+
       <div id="pillars-content">
         <div class="loading-state">Loading watchlist data...</div>
       </div>
@@ -906,6 +926,145 @@ document.getElementById('drawerNotes').addEventListener('input',()=>{
 
 // Close drawer on ESC
 document.addEventListener('keydown', e=>{ if(e.key==='Escape') closeDrawer(); });
+
+
+/* ── FINNHUB TICKER LOOKUP ─────────────────────────── */
+const FINNHUB_KEY = 'd6vl6gpr01qiiutc8qj0d6vl6gpr01qiiutc8qjg';
+const STORAGE_KEY = 'playbook_tickers_v1';
+
+function gradeFromPcts(pct21, pct50){
+  const best = Math.min(Math.abs(pct21), Math.abs(pct50));
+  if(best <= 3)  return 'zone';
+  if(best <= 8)  return 'approaching';
+  return 'extended';
+}
+
+function gradeLabel(g){ return g==='zone'?'In The Zone':g==='approaching'?'Approaching':'Extended'; }
+function gradeColor(g){ return g==='zone'?'var(--green)':g==='approaching'?'var(--amber)':'var(--muted)'; }
+
+function renderTickerCard(data){
+  const { ticker, price, changePct, ema21, sma50, pct21, pct50, grade, volume } = data;
+  const chgColor = changePct >= 0 ? 'var(--green)' : 'var(--red)';
+  const chgSign  = changePct >= 0 ? '+' : '';
+  const volFmt   = volume > 1e6 ? (volume/1e6).toFixed(1)+'M' : volume > 1e3 ? (volume/1e3).toFixed(0)+'K' : volume;
+  return `
+    <div id="card-${ticker}" style="background:var(--surface);border:1px solid var(--border);border-left:3px solid ${gradeColor(grade)};padding:0.75rem 1rem;min-width:190px;max-width:220px;position:relative;animation:fadeIn 0.3s ease both;">
+      <div style="display:flex;align-items:center;justify-content:space-between;margin-bottom:6px;">
+        <div style="font-family:var(--mono);font-size:0.82rem;font-weight:600;color:var(--cyan);letter-spacing:0.08em;">${ticker}</div>
+        <button onclick="removeTicker('${ticker}')" style="background:none;border:none;color:var(--muted);cursor:pointer;font-size:0.7rem;padding:0;line-height:1;" title="Remove">✕</button>
+      </div>
+      <div style="font-family:var(--mono);font-size:1.1rem;font-weight:500;color:var(--text);margin-bottom:2px;">$${price.toFixed(2)}</div>
+      <div style="font-family:var(--mono);font-size:0.62rem;color:${chgColor};margin-bottom:8px;">${chgSign}${changePct.toFixed(2)}%</div>
+      <div style="display:grid;grid-template-columns:1fr 1fr;gap:3px;margin-bottom:8px;">
+        <div style="background:var(--surface2);padding:4px 6px;">
+          <div style="font-family:var(--mono);font-size:0.42rem;color:var(--muted);letter-spacing:.08em;margin-bottom:2px;">21 EMA</div>
+          <div style="font-family:var(--mono);font-size:0.68rem;color:var(--text);">$${ema21.toFixed(2)}</div>
+          <div style="font-family:var(--mono);font-size:0.5rem;color:${Math.abs(pct21)<=3?'var(--green)':Math.abs(pct21)<=8?'var(--amber)':'var(--muted)'};">${pct21>=0?'+':''}${pct21.toFixed(1)}%</div>
+        </div>
+        <div style="background:var(--surface2);padding:4px 6px;">
+          <div style="font-family:var(--mono);font-size:0.42rem;color:var(--muted);letter-spacing:.08em;margin-bottom:2px;">50 SMA</div>
+          <div style="font-family:var(--mono);font-size:0.68rem;color:var(--text);">$${sma50.toFixed(2)}</div>
+          <div style="font-family:var(--mono);font-size:0.5rem;color:${Math.abs(pct50)<=3?'var(--green)':Math.abs(pct50)<=8?'var(--amber)':'var(--muted)'};">${pct50>=0?'+':''}${pct50.toFixed(1)}%</div>
+        </div>
+      </div>
+      <div style="display:flex;align-items:center;justify-content:space-between;">
+        <span style="font-family:var(--mono);font-size:0.48rem;padding:2px 6px;border:1px solid ${gradeColor(grade)};color:${gradeColor(grade)};letter-spacing:.06em;">${gradeLabel(grade).toUpperCase()}</span>
+        <span style="font-family:var(--mono);font-size:0.48rem;color:var(--muted);">Vol ${volFmt}</span>
+      </div>
+    </div>`;
+}
+
+async function fetchTickerData(ticker){
+  const [quoteRes, indRes] = await Promise.all([
+    fetch(`https://finnhub.io/api/v1/quote?symbol=${ticker}&token=${FINNHUB_KEY}`),
+    fetch(`https://finnhub.io/api/v1/indicator?symbol=${ticker}&resolution=D&from=${Math.floor((Date.now()-120*86400000)/1000)}&to=${Math.floor(Date.now()/1000)}&indicator=ema&timeperiod=21&token=${FINNHUB_KEY}`)
+  ]);
+  const quote = await quoteRes.json();
+  const ind   = await indRes.json();
+
+  if(!quote.c || quote.c === 0) throw new Error('Invalid ticker');
+
+  const price     = quote.c;
+  const changePct = quote.dp || 0;
+  const volume    = quote.v || 0;
+
+  // EMA21 from indicator endpoint
+  const emaArr = ind?.ema || ind?.technical?.ema || [];
+  const ema21  = emaArr.length ? emaArr[emaArr.length-1] : price * 0.97;
+
+  // SMA50 via separate call
+  const smaRes = await fetch(`https://finnhub.io/api/v1/indicator?symbol=${ticker}&resolution=D&from=${Math.floor((Date.now()-120*86400000)/1000)}&to=${Math.floor(Date.now()/1000)}&indicator=sma&timeperiod=50&token=${FINNHUB_KEY}`);
+  const smaData = await smaRes.json();
+  const smaArr = smaData?.sma || smaData?.technical?.sma || [];
+  const sma50  = smaArr.length ? smaArr[smaArr.length-1] : price * 0.95;
+
+  const pct21 = ((price - ema21) / ema21) * 100;
+  const pct50 = ((price - sma50) / sma50) * 100;
+  const grade = gradeFromPcts(pct21, pct50);
+
+  return { ticker, price, changePct, ema21, sma50, pct21, pct50, grade, volume };
+}
+
+function setMsg(txt, color='var(--muted)'){
+  const el = document.getElementById('ticker-msg');
+  if(el){ el.textContent = txt; el.style.color = color; }
+}
+
+function saveTickerList(){
+  const cards = document.querySelectorAll('#ticker-cards > div[id^="card-"]');
+  const list  = Array.from(cards).map(c => c.id.replace('card-',''));
+  localStorage.setItem(STORAGE_KEY, JSON.stringify(list));
+}
+
+async function addTicker(){
+  const input  = document.getElementById('ticker-input');
+  const ticker = input.value.trim().toUpperCase();
+  if(!ticker){ setMsg('Enter a ticker symbol.'); return; }
+  if(document.getElementById('card-'+ticker)){ setMsg(ticker+' already added.','var(--amber)'); return; }
+  input.value = '';
+  setMsg('Loading '+ticker+'...','var(--cyan)');
+  try{
+    const data = await fetchTickerData(ticker);
+    const container = document.getElementById('ticker-cards');
+    container.insertAdjacentHTML('beforeend', renderTickerCard(data));
+    saveTickerList();
+    setMsg(ticker+' added.','var(--green)');
+    setTimeout(()=>setMsg(''), 2500);
+  } catch(e){
+    setMsg('Could not find '+ticker+'. Check the symbol.','var(--red)');
+    setTimeout(()=>setMsg(''), 3000);
+  }
+}
+
+function removeTicker(ticker){
+  const card = document.getElementById('card-'+ticker);
+  if(card) card.remove();
+  saveTickerList();
+}
+
+function clearAllTickers(){
+  document.getElementById('ticker-cards').innerHTML = '';
+  localStorage.removeItem(STORAGE_KEY);
+  setMsg('Cleared.','var(--muted)');
+  setTimeout(()=>setMsg(''), 1500);
+}
+
+async function restoreSavedTickers(){
+  const saved = localStorage.getItem(STORAGE_KEY);
+  if(!saved) return;
+  const list = JSON.parse(saved);
+  if(!list.length) return;
+  setMsg('Restoring tickers...','var(--muted)');
+  for(const ticker of list){
+    try{
+      const data = await fetchTickerData(ticker);
+      document.getElementById('ticker-cards').insertAdjacentHTML('beforeend', renderTickerCard(data));
+    } catch(e){ /* skip bad tickers silently */ }
+  }
+  setMsg('','var(--muted)');
+}
+
+restoreSavedTickers();
 
 loadData();
 </script>

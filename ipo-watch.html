@@ -1,0 +1,521 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>IPO Watch — Morning Brief</title>
+<link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@300;400;500;600;700&family=DM+Sans:wght@300;400;500&family=Playfair+Display:wght@400;500&display=swap" rel="stylesheet">
+<style>
+:root {
+  --bg:        #06090d;
+  --surface:   #0b1017;
+  --surface2:  #10161e;
+  --surface3:  #151d27;
+  --border:    #1a2332;
+  --border2:   #243040;
+  --text:      #c8d8e8;
+  --text2:     #7a90a8;
+  --muted:     #3a5060;
+  --green:     #00e0a0;
+  --green2:    #00c890;
+  --green-bg:  rgba(0,224,160,0.05);
+  --green-glow:rgba(0,224,160,0.2);
+  --amber:     #ffb020;
+  --amber-bg:  rgba(255,176,32,0.05);
+  --red:       #ff4060;
+  --red-bg:    rgba(255,64,96,0.05);
+  --blue:      #40a0ff;
+  --blue-bg:   rgba(64,160,255,0.05);
+  --cyan:      #00d4ff;
+  --cyan-bg:   rgba(0,212,255,0.05);
+  --mono:      'JetBrains Mono', monospace;
+  --sans:      'DM Sans', sans-serif;
+  --display:   'Playfair Display', serif;
+  --sidebar:   280px;
+}
+* { box-sizing: border-box; margin: 0; padding: 0; }
+body { font-family: var(--sans); background: var(--bg); color: var(--text); min-height: 100vh; display: flex; overflow-x: hidden; font-weight: 300; }
+
+/* ── SIDEBAR ── */
+.sidebar { width: var(--sidebar); min-height: 100vh; background: var(--surface); border-right: 1px solid var(--border); display: flex; flex-direction: column; position: fixed; top: 0; left: 0; z-index: 200; }
+.sidebar-brand { padding: 1.25rem 1rem 1rem; border-bottom: 1px solid var(--border); }
+.sidebar-brand .brand-tag { font-family: var(--mono); font-size: 0.58rem; letter-spacing: 0.2em; text-transform: uppercase; color: var(--cyan); margin-bottom: 0.35rem; }
+.sidebar-brand .brand-name { font-family: var(--display); font-size: 2.8rem; font-weight: 400; color: var(--text); line-height: 1.1; }
+.sidebar-brand .brand-sub { font-family: var(--mono); font-size: 0.55rem; letter-spacing: 0.12em; color: var(--muted); text-transform: uppercase; margin-top: 0.3rem; }
+.sidebar-section { padding: 0.7rem 0 0.3rem; }
+.sidebar-section-label { font-family: var(--mono); font-size: 0.52rem; letter-spacing: 0.18em; text-transform: uppercase; color: var(--muted); padding: 0 1rem 0.4rem; }
+.sidebar-link { display: flex; align-items: center; gap: 0.6rem; padding: 0.5rem 1rem; font-family: var(--mono); font-size: 0.72rem; letter-spacing: 0.07em; text-transform: uppercase; color: var(--text2); text-decoration: none; cursor: pointer; transition: all 0.2s; border-left: 2px solid transparent; }
+.sidebar-link:hover { color: var(--cyan); background: rgba(0,212,255,0.04); border-left-color: rgba(0,212,255,0.3); }
+.sidebar-link.active { color: var(--cyan); border-left-color: var(--cyan); background: rgba(0,212,255,0.06); }
+.sidebar-link .sl-icon { font-size: 0.72rem; width: 14px; text-align: center; opacity: 0.7; }
+.sidebar-bottom { margin-top: auto; padding: 1rem; border-top: 1px solid var(--border); }
+.market-status { display: flex; align-items: center; gap: 0.5rem; font-family: var(--mono); font-size: 0.62rem; letter-spacing: 0.06em; text-transform: uppercase; }
+.status-dot { width: 6px; height: 6px; border-radius: 50%; animation: pulse 2s ease-in-out infinite; }
+.status-dot.pre { background: var(--green); box-shadow: 0 0 6px var(--green-glow); }
+.status-dot.open { background: var(--amber); }
+.status-dot.closed { background: var(--muted); animation: none; }
+@keyframes pulse { 0%,100%{opacity:1;transform:scale(1);}50%{opacity:0.4;transform:scale(0.75);} }
+
+/* ── MAIN ── */
+.main-wrap { margin-left: var(--sidebar); flex: 1; display: flex; flex-direction: column; min-height: 100vh; }
+
+/* ── TOP HEADER ── */
+.top-header { padding: 1.5rem 2rem 1.1rem; border-bottom: 1px solid var(--border); background: var(--surface); display: flex; align-items: flex-end; justify-content: space-between; }
+.page-title { font-family: var(--display); font-size: 2.6rem; font-weight: 400; color: var(--text); line-height: 1; }
+.page-date { font-family: var(--mono); font-size: 0.6rem; color: var(--cyan); letter-spacing: 0.14em; text-transform: uppercase; }
+.back-link { font-family: var(--mono); font-size: 0.62rem; color: var(--text2); letter-spacing: 0.08em; text-transform: uppercase; text-decoration: none; display: flex; align-items: center; gap: 0.4rem; padding: 0.28rem 0.7rem; border: 1px solid var(--border); transition: all 0.2s; }
+.back-link:hover { color: var(--cyan); border-color: rgba(0,212,255,0.3); background: rgba(0,212,255,0.04); }
+
+/* ── CONTENT ── */
+.content { padding: 1.5rem 2rem; flex: 1; }
+
+/* ── ALERT BAR ── */
+.alert-bar { background: rgba(255,176,32,0.07); border: 1px solid rgba(255,176,32,0.28); padding: 0.65rem 1.25rem; font-family: var(--mono); font-size: 0.62rem; color: var(--amber); letter-spacing: 0.05em; margin-bottom: 1.25rem; line-height: 1.6; }
+
+/* ── SECTION LABEL ── */
+.sec-lbl { font-family: var(--mono); font-size: 0.52rem; letter-spacing: 0.18em; text-transform: uppercase; color: var(--muted); margin-bottom: 0.6rem; }
+
+/* ── COUNTDOWN ── */
+.countdown-row { display: grid; grid-template-columns: repeat(4,1fr); gap: 8px; margin-bottom: 1.25rem; }
+.cd-cell { background: var(--surface); border: 1px solid rgba(0,212,255,0.2); padding: 0.75rem 1rem; text-align: center; }
+.cd-num { font-family: var(--mono); font-size: 2rem; font-weight: 700; color: var(--cyan); line-height: 1; }
+.cd-lbl { font-family: var(--mono); font-size: 0.44rem; color: var(--muted); letter-spacing: 0.14em; margin-top: 4px; text-transform: uppercase; }
+
+/* ── KPI GRID ── */
+.kpi-grid { display: grid; grid-template-columns: repeat(auto-fit,minmax(160px,1fr)); gap: 1px; background: rgba(0,212,255,0.15); border: 1px solid rgba(0,212,255,0.15); margin-bottom: 1.25rem; }
+.kpi-cell { background: var(--surface); padding: 0.75rem 1rem; }
+.kpi-lbl { font-family: var(--mono); font-size: 0.5rem; color: var(--muted); letter-spacing: 0.1em; text-transform: uppercase; margin-bottom: 4px; }
+.kpi-val { font-family: var(--mono); font-size: 1rem; font-weight: 500; }
+.kpi-sub { font-family: var(--mono); font-size: 0.48rem; color: var(--muted); margin-top: 3px; }
+.kv-teal { color: var(--cyan); }
+.kv-gold { color: var(--amber); }
+.kv-red  { color: var(--red); }
+.kv-orange { color: #ff9f43; }
+
+/* ── TABS ── */
+.tab-row { display: flex; gap: 4px; margin-bottom: 1rem; flex-wrap: wrap; border-bottom: 1px solid var(--border); padding-bottom: 0.75rem; }
+.tab-btn { font-family: var(--mono); font-size: 0.54rem; padding: 0.28rem 0.8rem; border: 1px solid var(--border); color: var(--muted); background: transparent; cursor: pointer; letter-spacing: 0.08em; text-transform: uppercase; transition: all 0.15s; }
+.tab-btn:hover, .tab-btn.active { border-color: var(--cyan); color: var(--cyan); background: rgba(0,212,255,0.04); }
+.pane { display: none; } .pane.active { display: block; }
+
+/* ── FUND ROWS ── */
+.fund-row { display: flex; justify-content: space-between; align-items: flex-start; padding: 0.45rem 0; border-bottom: 1px solid var(--border); font-family: var(--mono); font-size: 0.62rem; }
+.fund-row:last-child { border-bottom: none; }
+.fr-lbl { color: var(--muted); min-width: 200px; }
+.fr-val { color: var(--text); text-align: right; flex: 1; line-height: 1.5; }
+
+/* ── LEVEL ROWS ── */
+.level-row { display: flex; align-items: center; justify-content: space-between; padding: 0.4rem 0.75rem; background: var(--surface2); border-left: 2px solid var(--border2); font-family: var(--mono); font-size: 0.62rem; margin-bottom: 2px; }
+.level-row.lk { border-left-color: var(--cyan); }
+.level-row.lg { border-left-color: var(--amber); }
+.level-row.lr { border-left-color: var(--red); }
+.level-row.lo { border-left-color: #ff9f43; }
+.ll { color: var(--text2); } .lv { color: var(--text); font-weight: 500; }
+
+/* ── STRAT GRID ── */
+.strat-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 8px; margin-bottom: 1rem; }
+.strat-card { background: var(--surface2); border: 1px solid var(--border); padding: 0.85rem 1rem; cursor: pointer; transition: border-color 0.15s; }
+.strat-card:hover, .strat-card.on { border-color: var(--cyan); background: rgba(0,212,255,0.03); }
+.sc-num { font-family: var(--mono); font-size: 0.5rem; color: var(--muted); margin-bottom: 4px; letter-spacing: 0.08em; }
+.sc-title { font-family: var(--mono); font-size: 0.72rem; color: var(--cyan); font-weight: 500; margin-bottom: 6px; }
+.sc-body { font-family: var(--mono); font-size: 0.58rem; color: var(--text2); line-height: 1.6; }
+
+/* ── BULL/BEAR ── */
+.bull-block { background: var(--green-bg); border: 1px solid rgba(0,224,160,0.18); padding: 0.85rem 1rem; margin-bottom: 8px; }
+.bull-title { font-family: var(--mono); font-size: 0.52rem; color: var(--green); letter-spacing: 0.12em; text-transform: uppercase; margin-bottom: 8px; font-weight: 500; }
+.bull-item { font-family: var(--mono); font-size: 0.6rem; color: rgba(0,224,160,0.8); padding: 3px 0; border-bottom: 1px solid rgba(0,224,160,0.08); line-height: 1.55; }
+.bull-item:last-child { border-bottom: none; }
+.bull-item::before { content: '✓  '; }
+.risk-block { background: var(--red-bg); border: 1px solid rgba(255,64,96,0.2); padding: 0.85rem 1rem; margin-bottom: 8px; }
+.risk-title { font-family: var(--mono); font-size: 0.52rem; color: var(--red); letter-spacing: 0.12em; text-transform: uppercase; margin-bottom: 8px; font-weight: 500; }
+.risk-item { font-family: var(--mono); font-size: 0.6rem; color: rgba(255,64,96,0.85); padding: 3px 0; border-bottom: 1px solid rgba(255,64,96,0.08); line-height: 1.55; }
+.risk-item:last-child { border-bottom: none; }
+.risk-item::before { content: '⚠  '; }
+
+/* ── ENVIRONMENT ── */
+.env-tags { display: flex; gap: 6px; flex-wrap: wrap; margin-bottom: 1rem; }
+.env-tag { font-family: var(--mono); font-size: 0.52rem; padding: 0.25rem 0.6rem; border: 1px solid var(--border); color: var(--muted); letter-spacing: 0.06em; }
+.env-tag.on   { border-color: var(--green2); color: var(--green);  background: var(--green-bg); }
+.env-tag.warn { border-color: var(--amber);  color: var(--amber);  background: var(--amber-bg); }
+.env-tag.off  { border-color: var(--red);    color: var(--red);    background: var(--red-bg); }
+.verdict-row { display: flex; align-items: flex-start; gap: 1rem; background: var(--surface2); border: 1px solid var(--border); padding: 0.65rem 1rem; margin-bottom: 5px; flex-wrap: wrap; }
+.vr-lbl { font-family: var(--mono); font-size: 0.5rem; color: var(--muted); letter-spacing: 0.08em; text-transform: uppercase; min-width: 130px; padding-top: 1px; }
+.vr-val { font-family: var(--mono); font-size: 0.65rem; font-weight: 500; line-height: 1.5; }
+
+/* ── FINAL CHECK ── */
+.chk-row { display: flex; align-items: center; gap: 0.85rem; cursor: pointer; padding: 0.55rem 0.75rem; border: 1px solid var(--border); font-family: var(--mono); font-size: 0.64rem; color: var(--text2); letter-spacing: 0.04em; margin-bottom: 5px; transition: all 0.15s; }
+.chk-row:hover { border-color: rgba(0,212,255,0.25); background: rgba(0,212,255,0.02); }
+.chk-row.done { border-color: rgba(0,212,255,0.3); color: var(--cyan); background: rgba(0,212,255,0.03); }
+.chk-box { width: 16px; height: 16px; border: 1px solid rgba(0,212,255,0.35); flex-shrink: 0; display: flex; align-items: center; justify-content: center; font-size: 11px; transition: all 0.15s; }
+.chk-row.done .chk-box { background: var(--cyan); border-color: var(--cyan); color: var(--bg); }
+
+/* ── CALCULATOR ── */
+.calc-section { margin-top: 1.25rem; }
+.calc-grid { display: grid; grid-template-columns: 1fr 1fr 1fr; gap: 8px; margin-bottom: 8px; }
+.calc-lbl { font-family: var(--mono); font-size: 0.5rem; color: var(--muted); letter-spacing: 0.1em; text-transform: uppercase; margin-bottom: 5px; }
+.calc-input { background: var(--surface2); border: 1px solid var(--border); color: var(--cyan); font-family: var(--mono); font-size: 0.82rem; padding: 0.55rem 0.75rem; width: 100%; text-align: right; outline: none; transition: border-color 0.15s; }
+.calc-input:focus { border-color: var(--cyan); }
+.calc-input::placeholder { color: var(--muted); }
+.stop-label-row { display: flex; justify-content: space-between; align-items: center; margin-bottom: 5px; }
+.stop-auto { font-family: var(--mono); font-size: 0.48rem; color: var(--muted); letter-spacing: 0.06em; }
+.results-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 1px; background: rgba(0,212,255,0.12); border: 1px solid rgba(0,212,255,0.12); margin: 10px 0 1.25rem; }
+.res-cell { background: var(--surface); padding: 0.6rem 0.85rem; display: flex; justify-content: space-between; align-items: center; }
+.res-lbl { font-family: var(--mono); font-size: 0.5rem; color: var(--muted); letter-spacing: 0.08em; text-transform: uppercase; }
+.res-val { font-family: var(--mono); font-size: 0.78rem; font-weight: 500; color: var(--text); }
+.res-val.pos { color: var(--green); } .res-val.neg { color: var(--red); } .res-val.warn { color: var(--amber); }
+
+/* ── NOTES ── */
+.notes-area { background: var(--surface2); border: 1px solid var(--border); color: var(--text2); font-family: var(--mono); font-size: 0.64rem; padding: 0.75rem 0.85rem; width: 100%; resize: vertical; min-height: 80px; outline: none; letter-spacing: 0.03em; line-height: 1.7; transition: border-color 0.15s; }
+.notes-area:focus { border-color: var(--cyan); }
+.notes-area::placeholder { color: var(--muted); }
+.mantra { font-family: var(--mono); font-size: 0.52rem; color: var(--muted); letter-spacing: 0.05em; margin-top: 8px; padding-top: 8px; border-top: 1px solid var(--border); font-style: italic; }
+
+/* ── DIVIDER ── */
+.divider { border: none; border-top: 1px solid var(--border); margin: 1.25rem 0; }
+
+@media (max-width: 768px) {
+  :root { --sidebar: 0px; }
+  .sidebar { display: none; }
+  .content { padding: 1rem; }
+  .strat-grid { grid-template-columns: 1fr; }
+  .calc-grid { grid-template-columns: 1fr 1fr; }
+  .results-grid { grid-template-columns: 1fr; }
+  .kpi-grid { grid-template-columns: repeat(2,1fr); }
+}
+</style>
+</head>
+<body>
+
+<!-- SIDEBAR -->
+<aside class="sidebar">
+  <div class="sidebar-brand">
+    <div class="brand-tag">ESP · Trading</div>
+    <div class="brand-name">Morning<br>Brief</div>
+    <div class="brand-sub">Daily · Rolling</div>
+  </div>
+  <div class="sidebar-section">
+    <div class="sidebar-section-label">Daily</div>
+    <a class="sidebar-link" href="index.html"><span class="sl-icon">◆</span> Today</a>
+    <a class="sidebar-link" href="prep.html"><span class="sl-icon">◉</span> Pre-Market Prep</a>
+    <a class="sidebar-link" href="#"><span class="sl-icon">▦</span> Watchlist</a>
+  </div>
+  <div class="sidebar-section">
+    <div class="sidebar-section-label">Market</div>
+    <a class="sidebar-link" href="#"><span class="sl-icon">▤</span> Heatmap</a>
+    <a class="sidebar-link" href="#"><span class="sl-icon">◈</span> Earnings</a>
+    <a class="sidebar-link" href="#"><span class="sl-icon">◷</span> Econ Cal</a>
+  </div>
+  <div class="sidebar-section">
+    <div class="sidebar-section-label">Strategy</div>
+    <a class="sidebar-link" href="playbook.html"><span class="sl-icon">▸</span> Playbook</a>
+    <a class="sidebar-link active" href="ipo-watch.html"><span class="sl-icon">◆</span> IPO Watch</a>
+    <a class="sidebar-link" href="#"><span class="sl-icon">◎</span> Journal</a>
+    <a class="sidebar-link" href="#"><span class="sl-icon">▲</span> Performance</a>
+  </div>
+  <div class="sidebar-bottom">
+    <div class="market-status">
+      <span class="status-dot pre" id="statusDot"></span>
+      <span id="statusText" style="color:var(--text2)">Pre-Market</span>
+    </div>
+  </div>
+</aside>
+
+<!-- MAIN -->
+<div class="main-wrap">
+
+  <!-- HEADER -->
+  <div class="top-header">
+    <div style="display:flex;align-items:baseline;gap:1.25rem;flex:1;">
+      <div class="page-title">IPO Watch</div>
+      <div class="page-date" id="pageDate">—</div>
+    </div>
+    <a class="back-link" href="index.html">← Back</a>
+  </div>
+
+  <div class="content">
+
+    <div class="alert-bar">⚡ LARGEST IPO IN MARKET HISTORY — $75B RAISE · $1.75T VALUATION · 21-BANK SYNDICATE · PRICING JUNE 11 NIGHT · NASDAQ: SPCX</div>
+
+    <!-- TICKER HEADER -->
+    <div style="display:flex;align-items:flex-start;justify-content:space-between;margin-bottom:1.25rem;flex-wrap:wrap;gap:0.75rem;">
+      <div>
+        <div style="font-family:var(--mono);font-size:1.8rem;font-weight:700;color:var(--cyan);letter-spacing:0.06em;">$SPCX</div>
+        <div style="font-family:var(--mono);font-size:0.58rem;color:var(--muted);letter-spacing:0.08em;margin-top:4px;">SPACE EXPLORATION TECHNOLOGIES CORP · NASDAQ · JUNE 12, 2026</div>
+      </div>
+      <div style="display:flex;gap:6px;align-items:center;flex-wrap:wrap;">
+        <span style="font-family:var(--mono);font-size:0.5rem;padding:0.2rem 0.6rem;border:1px solid rgba(0,212,255,0.4);color:var(--cyan);background:rgba(0,212,255,0.06);letter-spacing:0.06em;display:flex;align-items:center;gap:5px;"><span style="width:5px;height:5px;border-radius:50%;background:var(--cyan);display:inline-block;animation:pulse 1.2s ease-in-out infinite;"></span>PRE-IPO</span>
+        <span style="font-family:var(--mono);font-size:0.5rem;padding:0.2rem 0.6rem;border:1px solid rgba(255,176,32,0.4);color:var(--amber);background:var(--amber-bg);letter-spacing:0.06em;">RECORD IPO</span>
+        <span style="font-family:var(--mono);font-size:0.5rem;padding:0.2rem 0.6rem;border:1px solid rgba(0,224,160,0.3);color:var(--green);background:var(--green-bg);letter-spacing:0.06em;">HOT SECTOR</span>
+      </div>
+    </div>
+
+    <!-- COUNTDOWN -->
+    <div class="sec-lbl">Days to listing — June 12, 2026 · 9:30 AM ET</div>
+    <div class="countdown-row">
+      <div class="cd-cell"><div class="cd-num" id="cd-d">—</div><div class="cd-lbl">Days</div></div>
+      <div class="cd-cell"><div class="cd-num" id="cd-h">—</div><div class="cd-lbl">Hours</div></div>
+      <div class="cd-cell"><div class="cd-num" id="cd-m">—</div><div class="cd-lbl">Minutes</div></div>
+      <div class="cd-cell"><div class="cd-num" id="cd-s">—</div><div class="cd-lbl">Seconds</div></div>
+    </div>
+
+    <!-- KPI GRID -->
+    <div class="kpi-grid">
+      <div class="kpi-cell"><div class="kpi-lbl">IPO Price</div><div class="kpi-val kv-gold">TBD June 11</div><div class="kpi-sub">Set night before listing</div></div>
+      <div class="kpi-cell"><div class="kpi-lbl">Target Valuation</div><div class="kpi-val kv-teal">$1.75–$2T</div><div class="kpi-sub">Largest IPO ever</div></div>
+      <div class="kpi-cell"><div class="kpi-lbl">Capital Raise</div><div class="kpi-val kv-orange">~$75B</div><div class="kpi-sub">2.5× Saudi Aramco record</div></div>
+      <div class="kpi-cell"><div class="kpi-lbl">Float Size</div><div class="kpi-val kv-red">3–4%</div><div class="kpi-sub">Extremely tight · 20–30% swings</div></div>
+      <div class="kpi-cell"><div class="kpi-lbl">Retail Allocation</div><div class="kpi-val kv-teal">30%</div><div class="kpi-sub">Robinhood / Fidelity / Schwab</div></div>
+      <div class="kpi-cell"><div class="kpi-lbl">Synthetic Pre-Mkt</div><div class="kpi-val kv-gold">~$203</div><div class="kpi-sub">Hyperliquid SPCX-USD</div></div>
+      <div class="kpi-cell"><div class="kpi-lbl">Lead Underwriter</div><div class="kpi-val kv-teal">Goldman Sachs</div><div class="kpi-sub">21-bank syndicate</div></div>
+      <div class="kpi-cell"><div class="kpi-lbl">2025 Revenue</div><div class="kpi-val kv-teal">$18.7B</div><div class="kpi-sub">+33% YoY · Starlink 61%</div></div>
+      <div class="kpi-cell"><div class="kpi-lbl">Q1 2026 Net Loss</div><div class="kpi-val kv-red">−$4.28B</div><div class="kpi-sub">GAAP · stock comp heavy</div></div>
+      <div class="kpi-cell"><div class="kpi-lbl">Musk Voting Control</div><div class="kpi-val kv-red">85.1%</div><div class="kpi-sub">Class B · zero governance</div></div>
+      <div class="kpi-cell"><div class="kpi-lbl">Starlink Subscribers</div><div class="kpi-val kv-teal">10M+</div><div class="kpi-sub">+750K–1.5M/month</div></div>
+      <div class="kpi-cell"><div class="kpi-lbl">Lockup Expiry</div><div class="kpi-val kv-red">Sept–Dec 2026</div><div class="kpi-sub">Supply cliff risk</div></div>
+    </div>
+
+    <!-- TABS -->
+    <div class="tab-row">
+      <button class="tab-btn active" onclick="setTab('fundamentals',this)">Fundamentals</button>
+      <button class="tab-btn" onclick="setTab('levels',this)">Key Levels</button>
+      <button class="tab-btn" onclick="setTab('strategies',this)">Strategies</button>
+      <button class="tab-btn" onclick="setTab('bull',this)">Bull / Bear</button>
+      <button class="tab-btn" onclick="setTab('environment',this)">Environment</button>
+      <button class="tab-btn" onclick="setTab('finalcheck',this)">9:25 Final Check</button>
+    </div>
+
+    <!-- FUNDAMENTALS -->
+    <div class="pane active" id="pane-fundamentals">
+      <div class="fund-row"><span class="fr-lbl">Ticker / Exchange</span><span class="fr-val" style="color:var(--cyan)">SPCX — Nasdaq</span></div>
+      <div class="fund-row"><span class="fr-lbl">Listing date</span><span class="fr-val" style="color:var(--cyan)">June 12, 2026</span></div>
+      <div class="fund-row"><span class="fr-lbl">Pricing date</span><span class="fr-val" style="color:var(--amber)">June 11, 2026 (night) — most important number</span></div>
+      <div class="fund-row"><span class="fr-lbl">Roadshow</span><span class="fr-val">June 4–11, 2026</span></div>
+      <div class="fund-row"><span class="fr-lbl">Share class</span><span class="fr-val" style="color:var(--red)">Class A (1 vote) public · Class B (10 votes) Musk. Zero governance for buyers.</span></div>
+      <div class="fund-row"><span class="fr-lbl">Musk equity stake</span><span class="fr-val">42% equity / 85.1% voting power</span></div>
+      <div class="fund-row"><span class="fr-lbl">Accumulated deficit</span><span class="fr-val" style="color:var(--red)">−$41.3B</span></div>
+      <div class="fund-row"><span class="fr-lbl">Starlink revenue 2025</span><span class="fr-val" style="color:var(--cyan)">$11.4B · 61% of total · 10M subs · 160 countries</span></div>
+      <div class="fund-row"><span class="fr-lbl">Launch services 2025</span><span class="fr-val">$4.1B · 165 orbital launches · 500th Falcon 9</span></div>
+      <div class="fund-row"><span class="fr-lbl">Adj EBITDA 2025</span><span class="fr-val" style="color:var(--cyan)">$6.6B profit (non-GAAP)</span></div>
+      <div class="fund-row"><span class="fr-lbl">xAI merger impact</span><span class="fr-val" style="color:#ff9f43">$450B added · adds $2.5B/qtr AI losses</span></div>
+      <div class="fund-row"><span class="fr-lbl">Price / sales multiple</span><span class="fr-val" style="color:var(--red)">87–110× trailing revenue. Nvidia AI peak was ~40×.</span></div>
+      <div class="fund-row"><span class="fr-lbl">TSLA correlation risk</span><span class="fr-val" style="color:#ff9f43">TSLA fell avg 4.2% on every SPCX milestone. Capital rotation June 12.</span></div>
+      <div class="fund-row"><span class="fr-lbl">Polymarket IPO odds</span><span class="fr-val" style="color:var(--cyan)">94% probability — June 2026 window</span></div>
+    </div>
+
+    <!-- KEY LEVELS -->
+    <div class="pane" id="pane-levels">
+      <div style="font-family:var(--mono);font-size:0.6rem;color:var(--amber);margin-bottom:10px;line-height:1.6;">⚡ Official IPO price set June 11 night. Update these levels immediately. Everything flows from that number.</div>
+      <div class="level-row lk"><span class="ll">IPO Price (official)</span><span class="lv" style="color:var(--cyan)">Set June 11 night</span></div>
+      <div class="level-row lg"><span class="ll">Synthetic pre-market</span><span class="lv" style="color:var(--amber)">~$203 (Hyperliquid)</span></div>
+      <div class="level-row lo"><span class="ll">Opening print (Day 1)</span><span class="lv" style="color:#ff9f43">Unknown — watch open auction</span></div>
+      <div class="level-row"><span class="ll">Opening range high (first 10 min)</span><span class="lv">Mark after open</span></div>
+      <div class="level-row"><span class="ll">Opening range low (first 10 min)</span><span class="lv">Mark after open</span></div>
+      <div class="level-row"><span class="ll">VWAP</span><span class="lv">Dynamic — directional filter</span></div>
+      <div class="level-row lr"><span class="ll">Float warning</span><span class="lv" style="color:var(--red)">3–4% = 20–30% projected intraday swings</span></div>
+      <div class="level-row lr"><span class="ll">Lockup expiry</span><span class="lv" style="color:var(--red)">Sept–Dec 2026 — supply cliff</span></div>
+      <div style="font-family:var(--mono);font-size:0.58rem;color:var(--muted);margin-top:10px;line-height:1.7;">Opens 20%+ above IPO price = long bias confirmed. Opens at or below IPO price = flip to short immediately. Whole dollar levels on SPCX will be $5–$10 apart. Adjust stops accordingly. Use 50% normal size.</div>
+    </div>
+
+    <!-- STRATEGIES -->
+    <div class="pane" id="pane-strategies">
+      <div class="strat-grid">
+        <div class="strat-card" onclick="this.classList.toggle('on')">
+          <div class="sc-num">Strategy 1</div>
+          <div class="sc-title">Opening Drive</div>
+          <div class="sc-body">TF: 1-min primary / 2-min confirm / 5-min trend. Wait candle 2–3. Prior bar lows hold = long. Stop below opening range low. SPCX: expect $20–50 candles. Limit orders ONLY — spreads will be massive.</div>
+        </div>
+        <div class="strat-card" onclick="this.classList.toggle('on')">
+          <div class="sc-num">Strategy 2</div>
+          <div class="sc-title">Counter Drive</div>
+          <div class="sc-body">TF: 1-min + Time &amp; Sales. Wait for failed HOD push, volume spike no follow-through. Short if opens at/below IPO price. 3% float = exhaustion fast and violent. Cover at each whole dollar below.</div>
+        </div>
+        <div class="strat-card" onclick="this.classList.toggle('on')">
+          <div class="sc-num">Strategy 3</div>
+          <div class="sc-title">Late Breakout</div>
+          <div class="sc-body">TF: 5-min base / 15-min trend. Mark consolidation range after morning drive. 5-min close above range on 1.5× vol = entry. Stop: close back inside base. Target: measured move. Window: 11:30 AM–1:30 PM.</div>
+        </div>
+        <div class="strat-card" onclick="this.classList.toggle('on')">
+          <div class="sc-num">Strategy 4</div>
+          <div class="sc-title">Overnight Momentum</div>
+          <div class="sc-body">TF: Daily close / 1-min Day 2. Hold 30–50% partial if closes within 2% of HOD. Global media = extreme retail FOMO Day 2. Check TSLA rotation drag before holding overnight.</div>
+        </div>
+      </div>
+      <div style="font-family:var(--mono);font-size:0.58rem;color:var(--muted);line-height:1.7;border-top:1px solid var(--border);padding-top:10px;">
+        <span style="color:var(--amber)">⚡ SPCX-specific rules:</span> Use 50% of normal IPO size. 3–4% float = 20–30% projected swings (Morningstar). 30% retail via Robinhood/Fidelity/Schwab = unpredictable momentum spikes. Limit orders only at the open. The synthetic SPCX-USD at ~$203 sits above the target IPO range — if official price comes in below $203 and it opens near $203, that is the strongest possible bull confirmation.
+      </div>
+    </div>
+
+    <!-- BULL/BEAR -->
+    <div class="pane" id="pane-bull">
+      <div class="bull-block">
+        <div class="bull-title">Bull Case</div>
+        <div class="bull-item">Starlink: 10M subs, +750K–1.5M/month, $11.4B revenue, profitable segment. Recurring revenue moat that no competitor can touch.</div>
+        <div class="bull-item">165 orbital launches 2025 — 6th consecutive annual record. Falcon 9 reusability permanently broke the economics of every competitor.</div>
+        <div class="bull-item">$2B Pentagon Golden Dome contract + NASA + Milnet participation. Government revenue expanding rapidly.</div>
+        <div class="bull-item">Starship FAA cleared for 25 launches/year at Starbase. Only company that can commercially send humans to Mars.</div>
+        <div class="bull-item">30% retail allocation = massive Day 1 demand surge from retail traders who waited years for this name.</div>
+        <div class="bull-item">21-bank syndicate with Goldman Sachs lead. Every bank's institutional clients are allocated and motivated to support Day 1 price.</div>
+        <div class="bull-item">Polymarket 94% probability for June 2026. Demand signal as strong as it gets before any IPO in history.</div>
+      </div>
+      <div class="risk-block">
+        <div class="risk-title">Bear Case / Risks</div>
+        <div class="risk-item">Q1 2026 GAAP net loss −$4.28B. Full year 2025 GAAP loss −$4.94B. xAI merger adds $2.5B/qtr in AI losses. GAAP losses accelerating, not shrinking.</div>
+        <div class="risk-item">87–110× trailing revenue valuation. Nvidia at AI peak was ~40×. Priced for perfection on top of perfection.</div>
+        <div class="risk-item">85.1% Musk voting control via Class B shares. Public shareholders have zero governance power. Musk can do anything with the company unilaterally.</div>
+        <div class="risk-item">3–4% float = 20–30% projected intraday swings (Morningstar). Most violent Day 1 open of any major IPO in history. Not a trade for large size.</div>
+        <div class="risk-item">Lockup expiry Sept–Dec 2026. Billions in insider and VC shares unlock 90–180 days after listing. Supply cliff is confirmed and coming.</div>
+        <div class="risk-item">TSLA capital rotation: Tesla fell avg 4.2% on every previous SPCX IPO milestone event. On June 12 Musk-bull capital splits between two names.</div>
+        <div class="risk-item">xAI merger added $450B in valuation via a related-party transaction. If the market contests this mark the entire $1.75T anchor becomes contested.</div>
+        <div class="risk-item">Accumulated deficit −$41.3B. Real cash costs (capex, Starlink constellation depreciation, stock comp) are enormous despite the adj EBITDA profit.</div>
+      </div>
+    </div>
+
+    <!-- ENVIRONMENT -->
+    <div class="pane" id="pane-environment">
+      <div class="sec-lbl" style="margin-top:0">Environment checklist — run June 12 morning</div>
+      <div class="env-tags">
+        <span class="env-tag on">Hot Sector ✓</span>
+        <span class="env-tag warn">Market: Check June 12</span>
+        <span class="env-tag warn">Float: Extremely Tight ⚠</span>
+        <span class="env-tag on">Institutional Demand ✓</span>
+        <span class="env-tag warn">Macro: Check Fed/CPI</span>
+        <span class="env-tag warn">TSLA Rotation Risk ⚠</span>
+      </div>
+      <div class="verdict-row"><span class="vr-lbl">Bias on open</span><span class="vr-val" style="color:var(--amber)">Determined by IPO price vs open price — set June 11 night</span></div>
+      <div class="verdict-row"><span class="vr-lbl">Size guidance</span><span class="vr-val" style="color:var(--red)">50% of normal IPO size — 3% float = extreme volatility</span></div>
+      <div class="verdict-row"><span class="vr-lbl">Best strategy</span><span class="vr-val" style="color:var(--cyan)">Strat 1 if opens 20%+ above IPO · Strat 2 if opens at/below IPO</span></div>
+      <div class="verdict-row"><span class="vr-lbl">Overnight hold</span><span class="vr-val" style="color:#ff9f43">High probability — global media coverage = extreme retail FOMO Day 2</span></div>
+      <div style="font-family:var(--mono);font-size:0.6rem;color:var(--muted);line-height:1.7;margin-top:10px;">The one number that matters most: the official IPO price set the night of June 11. Opens 20%+ above that price = Strategy 1 long confirmed. Opens at or below the IPO price = most bearish signal possible for the largest IPO in history. Do NOT go long a SPCX that opens below its IPO price. Flip to Strategy 2 immediately.</div>
+    </div>
+
+    <!-- FINAL CHECK -->
+    <div class="pane" id="pane-finalcheck">
+      <div class="sec-lbl" style="margin-top:0">9:25 AM — Final check before open</div>
+
+      <div id="chkList" style="margin-bottom:1rem;">
+        <div class="chk-row" onclick="doChk(this)"><div class="chk-box"></div>All alerts are set — no excuses to miss a move</div>
+        <div class="chk-row" onclick="doChk(this)"><div class="chk-box"></div>Risk sizing confirmed — SPCX: 50% normal size</div>
+        <div class="chk-row" onclick="doChk(this)"><div class="chk-box"></div>Not committed to any ticker — ready to react to what sets up</div>
+        <div class="chk-row" onclick="doChk(this)"><div class="chk-box"></div>Playbooks reviewed — I know what I'm looking for on SPCX Day 1</div>
+      </div>
+
+      <div class="divider"></div>
+
+      <div class="calc-section">
+        <div class="sec-lbl">Calculator</div>
+        <div class="calc-grid">
+          <div>
+            <div class="calc-lbl">Entry price</div>
+            <input class="calc-input" id="c-entry" type="number" step="0.01" placeholder="0.00" oninput="doCalc()">
+          </div>
+          <div>
+            <div class="calc-lbl">Exit price</div>
+            <input class="calc-input" id="c-exit" type="number" step="0.01" placeholder="0.00" oninput="doCalc()">
+          </div>
+          <div>
+            <div class="calc-lbl">Shares</div>
+            <input class="calc-input" id="c-shares" type="number" placeholder="100" value="100" oninput="doCalc()">
+          </div>
+        </div>
+        <div class="stop-label-row">
+          <div class="calc-lbl">Stop loss price</div>
+          <div class="stop-auto">Auto: Entry − ($250 ÷ Shares)</div>
+        </div>
+        <input class="calc-input" id="c-stop" type="number" step="0.01" placeholder="0.00" style="width:100%;margin-bottom:4px;" oninput="doCalc()">
+      </div>
+
+      <div class="results-grid">
+        <div class="res-cell"><span class="res-lbl">Stop loss price</span><span class="res-val" id="r-stop">—</span></div>
+        <div class="res-cell"><span class="res-lbl">Max loss</span><span class="res-val neg" id="r-loss">—</span></div>
+        <div class="res-cell"><span class="res-lbl">P&amp;L at target</span><span class="res-val pos" id="r-pnl">—</span></div>
+        <div class="res-cell"><span class="res-lbl">Risk / Reward</span><span class="res-val warn" id="r-rr">—</span></div>
+        <div class="res-cell" style="grid-column:span 2"><span class="res-lbl">Position size ($ notional)</span><span class="res-val" id="r-notional">—</span></div>
+      </div>
+
+      <div class="sec-lbl">Open notes</div>
+      <textarea class="notes-area" placeholder="SPCX IPO price set last night: $___  ·  Opens at: $___  ·  Bias: ___  ·  Strategy: ___  ·  Size 50% = ___ shares  ·  Stop: $___  ·  First target: $___"></textarea>
+      <div class="mantra">I am not trying to predict anything. I am never committed to any specific ticker or sector.</div>
+    </div>
+
+  </div><!-- content -->
+</div><!-- main-wrap -->
+
+<script>
+// Date
+document.getElementById('pageDate').textContent = new Date().toLocaleDateString('en-US',{
+  weekday:'long', month:'long', day:'numeric', year:'numeric'
+}).toUpperCase();
+
+// Market status
+function updateStatus(){
+  const et = new Date(new Date().toLocaleString('en-US',{timeZone:'America/New_York'}));
+  const day = et.getDay();
+  const dot = document.getElementById('statusDot');
+  const txt = document.getElementById('statusText');
+  if(day===0||day===6){ dot.className='status-dot closed'; txt.textContent='Weekend'; return; }
+  const open=new Date(et); open.setHours(9,30,0,0);
+  const close=new Date(et); close.setHours(16,0,0,0);
+  if(et>=open&&et<=close){ dot.className='status-dot open'; txt.textContent='Market Open'; }
+  else if(et<open){ dot.className='status-dot pre'; txt.textContent='Pre-Market'; }
+  else { dot.className='status-dot closed'; txt.textContent='Market Closed'; }
+}
+updateStatus();
+
+// Countdown to June 12 2026 9:30 AM ET
+function tick(){
+  const t = new Date('2026-06-12T09:30:00-04:00');
+  const d = t - new Date();
+  if(d<=0){
+    document.getElementById('cd-d').textContent='LIVE';
+    ['cd-h','cd-m','cd-s'].forEach(id=>document.getElementById(id).textContent='--');
+    return;
+  }
+  document.getElementById('cd-d').textContent = Math.floor(d/864e5);
+  document.getElementById('cd-h').textContent = String(Math.floor((d%864e5)/36e5)).padStart(2,'0');
+  document.getElementById('cd-m').textContent = String(Math.floor((d%36e5)/6e4)).padStart(2,'0');
+  document.getElementById('cd-s').textContent = String(Math.floor((d%6e4)/1e3)).padStart(2,'0');
+  setTimeout(tick,1000);
+}
+tick();
+
+// Tabs
+function setTab(id, btn){
+  document.querySelectorAll('.pane').forEach(p=>p.classList.remove('active'));
+  document.querySelectorAll('.tab-btn').forEach(b=>b.classList.remove('active'));
+  document.getElementById('pane-'+id).classList.add('active');
+  btn.classList.add('active');
+}
+
+// Checklist
+function doChk(el){
+  el.classList.toggle('done');
+  el.querySelector('.chk-box').textContent = el.classList.contains('done') ? '✓' : '';
+}
+
+// Calculator
+function doCalc(){
+  const entry  = parseFloat(document.getElementById('c-entry').value)  || 0;
+  const exit   = parseFloat(document.getElementById('c-exit').value)   || 0;
+  const shares = parseFloat(document.getElementById('c-shares').value) || 100;
+  let   stop   = parseFloat(document.getElementById('c-stop').value);
+  if(!document.getElementById('c-stop').value && entry>0){
+    stop = +(entry-(250/shares)).toFixed(2);
+    document.getElementById('c-stop').placeholder = stop.toFixed(2);
+  }
+  if(entry>0 && stop>0){
+    const maxLoss = (stop-entry)*shares;
+    const pnl     = exit>0 ? (exit-entry)*shares : null;
+    const risk    = Math.abs(maxLoss);
+    const reward  = pnl!==null ? Math.abs(pnl) : null;
+    const rr      = reward&&risk ? +(reward/risk).toFixed(2) : null;
+    const fmt = n => Math.abs(n).toFixed(0).replace(/\B(?=(\d{3})+(?!\d))/g,',');
+    document.getElementById('r-stop').textContent    = '$'+stop.toFixed(2);
+    document.getElementById('r-loss').textContent    = (maxLoss>=0?'+':'')+maxLoss.toFixed(0).replace(/\B(?=(\d{3})+(?!\d))/g,',');
+    document.getElementById('r-pnl').textContent     = pnl!==null ? (pnl>=0?'+$':'−$')+fmt(pnl) : '—';
+    document.getElementById('r-rr').textContent      = rr ? rr+'R' : '—';
+    document.getElementById('r-notional').textContent = '$'+(entry*shares).toFixed(0).replace(/\B(?=(\d{3})+(?!\d))/g,',');
+  }
+}
+</script>
+</body>
+</html>

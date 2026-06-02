@@ -182,6 +182,38 @@ body { font-family: var(--sans); background: var(--bg); color: var(--text); min-
   .results-grid { grid-template-columns: 1fr; }
   .kpi-grid { grid-template-columns: repeat(2,1fr); }
 }
+/* ── IPO TRACKER STRIP ───────────────────────────── */
+.ipo-tracker { padding: 1rem 2rem 0; }
+.ipo-tracker-label { font-family:var(--mono); font-size:0.52rem; letter-spacing:0.18em; text-transform:uppercase; color:var(--muted); margin-bottom:0.6rem; }
+.ipo-tracker-grid { display:grid; grid-template-columns:repeat(4,1fr); gap:10px; margin-bottom:1.25rem; }
+.ipo-card { background:var(--surface2,#0f1117); border:1px solid var(--border); border-radius:2px; padding:0.75rem; display:flex; flex-direction:column; gap:4px; }
+.ipo-card.permanent { border-color:rgba(245,197,66,0.3); }
+.ipo-card.loaded { border-color:rgba(0,212,255,0.3); }
+.ipo-card-ticker { font-family:var(--mono); font-size:0.9rem; font-weight:700; color:var(--cyan); letter-spacing:0.06em; }
+.ipo-card-name { font-family:var(--mono); font-size:0.58rem; color:var(--text2,#8b8fa8); margin-bottom:2px; white-space:nowrap; overflow:hidden; text-overflow:ellipsis; }
+.ipo-card-badge-row { display:flex; gap:4px; margin-bottom:6px; }
+.ipo-badge { font-family:var(--mono); font-size:0.48rem; padding:2px 6px; border-radius:2px; letter-spacing:0.06em; text-transform:uppercase; }
+.ipo-badge.pre  { background:rgba(245,197,66,0.12); color:#F5C542; border:1px solid rgba(245,197,66,0.3); }
+.ipo-badge.live { background:rgba(0,212,255,0.1);   color:var(--cyan); border:1px solid rgba(0,212,255,0.3); }
+.ipo-card-divider { border:none; border-top:1px solid var(--border); margin:4px 0; }
+.ipo-fields { display:grid; grid-template-columns:1fr 1fr; gap:4px 8px; }
+.ipo-field { display:flex; flex-direction:column; gap:1px; }
+.ipo-field-label { font-family:var(--mono); font-size:0.46rem; letter-spacing:0.1em; text-transform:uppercase; color:var(--muted); }
+.ipo-field-val { font-family:var(--mono); font-size:0.68rem; color:var(--text); font-weight:500; }
+.ipo-field-val.up   { color:var(--green,#4caf50); }
+.ipo-field-val.down { color:var(--red,#f44336); }
+.ipo-manual-row { display:flex; flex-direction:column; gap:4px; margin-bottom:6px; }
+.ipo-manual-input { background:var(--surface,#0a0b0f); border:1px solid var(--border); color:var(--text); font-family:var(--mono); font-size:0.62rem; padding:3px 7px; outline:none; width:100%; transition:border-color .15s; }
+.ipo-manual-input:focus { border-color:var(--cyan); }
+.ipo-manual-input::placeholder { color:var(--muted); }
+.ipo-load-row { display:flex; gap:0; margin-top:4px; }
+.ipo-ticker-input { background:var(--surface); border:1px solid var(--border); border-right:none; color:var(--cyan); font-family:var(--mono); font-size:0.7rem; padding:4px 8px; outline:none; width:100%; text-transform:uppercase; letter-spacing:0.06em; }
+.ipo-ticker-input:focus { border-color:var(--cyan); }
+.ipo-btn-load  { background:var(--cyan); border:1px solid var(--cyan); color:#000; font-family:var(--mono); font-size:0.6rem; padding:4px 10px; cursor:pointer; font-weight:700; letter-spacing:0.08em; white-space:nowrap; transition:opacity .15s; }
+.ipo-btn-load:hover { opacity:.85; }
+.ipo-btn-clear { background:transparent; border:1px solid var(--border); border-left:none; color:var(--muted); font-family:var(--mono); font-size:0.6rem; padding:4px 8px; cursor:pointer; transition:all .15s; }
+.ipo-btn-clear:hover { border-color:var(--red,#f44336); color:var(--red,#f44336); }
+.ipo-empty { font-family:var(--mono); font-size:0.56rem; color:var(--muted); text-align:center; padding:8px 0; }
 </style>
 </head>
 <body>
@@ -197,7 +229,6 @@ body { font-family: var(--sans); background: var(--bg); color: var(--text); min-
     <div class="sidebar-section-label">Daily</div>
     <a class="sidebar-link" href="index.html"><span class="sl-icon">◆</span> Today</a>
     <a class="sidebar-link" href="prep.html"><span class="sl-icon">◉</span> Pre-Market Prep</a>
-    <a class="sidebar-link" href="#"><span class="sl-icon">▦</span> Watchlist</a>
   </div>
   <div class="sidebar-section">
     <div class="sidebar-section-label">Market</div>
@@ -222,6 +253,92 @@ body { font-family: var(--sans); background: var(--bg); color: var(--text); min-
 
 <!-- MAIN -->
 <div class="main-wrap">
+
+  <!-- IPO TRACKER STRIP -->
+  <div class="ipo-tracker">
+    <div class="ipo-tracker-label">◆ IPO Tracker — 4 Active Watches</div>
+    <div class="ipo-tracker-grid">
+
+      <!-- CARD 1 — SPCX PERMANENT -->
+      <div class="ipo-card permanent" id="ipocard-0">
+        <div class="ipo-card-ticker">$SPCX</div>
+        <div class="ipo-card-name">Space Exploration Technologies Corp</div>
+        <div class="ipo-card-badge-row">
+          <span class="ipo-badge pre" id="ipo-badge-0">PRE-IPO</span>
+          <span class="ipo-badge pre">NASDAQ</span>
+        </div>
+        <hr class="ipo-card-divider">
+        <div class="ipo-fields" id="ipo-fields-0">
+          <div class="ipo-field"><div class="ipo-field-label">IPO Date</div><div class="ipo-field-val">June 12, 2026</div></div>
+          <div class="ipo-field"><div class="ipo-field-label">Price Range</div><div class="ipo-field-val">TBD June 11</div></div>
+          <div class="ipo-field"><div class="ipo-field-label">Target Val.</div><div class="ipo-field-val">$1.75–$2T</div></div>
+          <div class="ipo-field"><div class="ipo-field-label">Capital Raise</div><div class="ipo-field-val">~$75B</div></div>
+          <div class="ipo-field"><div class="ipo-field-label">Float</div><div class="ipo-field-val">3–4%</div></div>
+          <div class="ipo-field"><div class="ipo-field-label">Underwriter</div><div class="ipo-field-val">Goldman Sachs</div></div>
+        </div>
+        <div class="ipo-load-row" style="margin-top:8px;">
+          <input class="ipo-ticker-input" id="ipo-input-0" type="text" value="SPCX" placeholder="SPCX" onkeydown="if(event.key==='Enter')loadIpoCard(0)" />
+          <button class="ipo-btn-load" onclick="loadIpoCard(0)">LOAD LIVE</button>
+          <button class="ipo-btn-clear" onclick="resetIpoCard(0)" title="Reset">✕</button>
+        </div>
+      </div>
+
+      <!-- CARD 2 — SWAPPABLE -->
+      <div class="ipo-card" id="ipocard-1">
+        <div class="ipo-manual-row">
+          <input class="ipo-manual-input" id="ipo-name-1" type="text" placeholder="Company Name" />
+          <input class="ipo-manual-input" id="ipo-date-1" type="text" placeholder="Expected IPO Date" />
+          <input class="ipo-manual-input" id="ipo-range-1" type="text" placeholder="Price Range (e.g. $18–$21)" />
+          <input class="ipo-manual-input" id="ipo-exchange-1" type="text" placeholder="Exchange (NYSE / NASDAQ)" />
+        </div>
+        <hr class="ipo-card-divider">
+        <div class="ipo-empty" id="ipo-empty-1">Enter ticker below once trading</div>
+        <div class="ipo-fields" id="ipo-fields-1" style="display:none;"></div>
+        <div class="ipo-load-row" style="margin-top:8px;">
+          <input class="ipo-ticker-input" id="ipo-input-1" type="text" placeholder="TICKER" onkeydown="if(event.key==='Enter')loadIpoCard(1)" />
+          <button class="ipo-btn-load" onclick="loadIpoCard(1)">LOAD</button>
+          <button class="ipo-btn-clear" onclick="resetIpoCard(1)" title="Clear">✕</button>
+        </div>
+      </div>
+
+      <!-- CARD 3 — SWAPPABLE -->
+      <div class="ipo-card" id="ipocard-2">
+        <div class="ipo-manual-row">
+          <input class="ipo-manual-input" id="ipo-name-2" type="text" placeholder="Company Name" />
+          <input class="ipo-manual-input" id="ipo-date-2" type="text" placeholder="Expected IPO Date" />
+          <input class="ipo-manual-input" id="ipo-range-2" type="text" placeholder="Price Range (e.g. $18–$21)" />
+          <input class="ipo-manual-input" id="ipo-exchange-2" type="text" placeholder="Exchange (NYSE / NASDAQ)" />
+        </div>
+        <hr class="ipo-card-divider">
+        <div class="ipo-empty" id="ipo-empty-2">Enter ticker below once trading</div>
+        <div class="ipo-fields" id="ipo-fields-2" style="display:none;"></div>
+        <div class="ipo-load-row" style="margin-top:8px;">
+          <input class="ipo-ticker-input" id="ipo-input-2" type="text" placeholder="TICKER" onkeydown="if(event.key==='Enter')loadIpoCard(2)" />
+          <button class="ipo-btn-load" onclick="loadIpoCard(2)">LOAD</button>
+          <button class="ipo-btn-clear" onclick="resetIpoCard(2)" title="Clear">✕</button>
+        </div>
+      </div>
+
+      <!-- CARD 4 — SWAPPABLE -->
+      <div class="ipo-card" id="ipocard-3">
+        <div class="ipo-manual-row">
+          <input class="ipo-manual-input" id="ipo-name-3" type="text" placeholder="Company Name" />
+          <input class="ipo-manual-input" id="ipo-date-3" type="text" placeholder="Expected IPO Date" />
+          <input class="ipo-manual-input" id="ipo-range-3" type="text" placeholder="Price Range (e.g. $18–$21)" />
+          <input class="ipo-manual-input" id="ipo-exchange-3" type="text" placeholder="Exchange (NYSE / NASDAQ)" />
+        </div>
+        <hr class="ipo-card-divider">
+        <div class="ipo-empty" id="ipo-empty-3">Enter ticker below once trading</div>
+        <div class="ipo-fields" id="ipo-fields-3" style="display:none;"></div>
+        <div class="ipo-load-row" style="margin-top:8px;">
+          <input class="ipo-ticker-input" id="ipo-input-3" type="text" placeholder="TICKER" onkeydown="if(event.key==='Enter')loadIpoCard(3)" />
+          <button class="ipo-btn-load" onclick="loadIpoCard(3)">LOAD</button>
+          <button class="ipo-btn-clear" onclick="resetIpoCard(3)" title="Clear">✕</button>
+        </div>
+      </div>
+
+    </div>
+  </div>
 
   <!-- HEADER -->
   <div class="top-header">
@@ -515,6 +632,127 @@ function doCalc(){
     document.getElementById('r-rr').textContent      = rr ? rr+'R' : '—';
     document.getElementById('r-notional').textContent = '$'+(entry*shares).toFixed(0).replace(/\B(?=(\d{3})+(?!\d))/g,',');
   }
+}
+/* ── IPO TRACKER ─────────────────────────────────── */
+const FINNHUB_KEY = 'd6vl6gpr01qiiutc8qj0d6vl6gpr01qiiutc8qjg';
+
+function fmtMktCapIpo(v){
+  if(!v) return '—';
+  if(v>=1e12) return '$'+(v/1e12).toFixed(2)+'T';
+  if(v>=1e9)  return '$'+(v/1e9).toFixed(2)+'B';
+  if(v>=1e6)  return '$'+(v/1e6).toFixed(2)+'M';
+  return '$'+v.toLocaleString();
+}
+function fmtVolIpo(v){ return v?(v>=1e6?(v/1e6).toFixed(2)+'M':(v/1e3).toFixed(0)+'K'):'—'; }
+
+async function loadIpoCard(idx){
+  const input    = document.getElementById(`ipo-input-${idx}`);
+  const ticker   = (input.value||'').trim().toUpperCase();
+  if(!ticker) return;
+
+  const card     = document.getElementById(`ipocard-${idx}`);
+  const fieldsEl = document.getElementById(`ipo-fields-${idx}`);
+  const emptyEl  = document.getElementById(`ipo-empty-${idx}`);
+  const badgeEl  = document.getElementById(`ipo-badge-${idx}`);
+
+  if(emptyEl) { emptyEl.textContent = 'Loading...'; emptyEl.style.display='block'; }
+  fieldsEl.style.display = 'none';
+
+  try {
+    const [quoteRes, profileRes, metricRes] = await Promise.all([
+      fetch(`https://finnhub.io/api/v1/quote?symbol=${ticker}&token=${FINNHUB_KEY}`).then(r=>r.json()),
+      fetch(`https://finnhub.io/api/v1/stock/profile2?symbol=${ticker}&token=${FINNHUB_KEY}`).then(r=>r.json()),
+      fetch(`https://finnhub.io/api/v1/stock/metric?symbol=${ticker}&metric=all&token=${FINNHUB_KEY}`).then(r=>r.json()),
+    ]);
+
+    if(!quoteRes.c || quoteRes.c===0) throw new Error('Not yet trading');
+
+    const m       = metricRes.metric || {};
+    const price   = quoteRes.c;
+    const chgPct  = quoteRes.dp || 0;
+    const mktCap  = profileRes.marketCapitalization ? profileRes.marketCapitalization*1e6 : 0;
+    const shares  = profileRes.shareOutstanding ? (profileRes.shareOutstanding/1e6).toFixed(1)+'M' : '—';
+    const sector  = profileRes.finnhubIndustry || '—';
+    const hi52    = m['52WeekHigh'] || 0;
+    const lo52    = m['52WeekLow']  || 0;
+    const avgVol  = m['10DayAverageTradingVolume'] ? m['10DayAverageTradingVolume']*1e6 : 0;
+    const eps     = m['epsNormalizedAnnual'] || m['epsTTM'] || null;
+    const chgCls  = chgPct>0?'up':chgPct<0?'down':'';
+
+    // Update badge to LIVE for non-SPCX cards
+    if(badgeEl){ badgeEl.textContent='LIVE'; badgeEl.className='ipo-badge live'; }
+    card.classList.add('loaded');
+
+    // If SPCX card — update ticker display
+    if(idx===0){
+      const nameInput = document.getElementById('ipo-name-0');
+      if(!nameInput) {
+        // permanent card — update the static name
+      }
+    }
+
+    fieldsEl.innerHTML = `
+      <div class="ipo-field"><div class="ipo-field-label">Price</div>
+        <div class="ipo-field-val ${chgCls}">$${price.toFixed(2)} <span style="font-size:0.52rem">${chgPct>=0?'+':''}${chgPct.toFixed(2)}%</span></div></div>
+      <div class="ipo-field"><div class="ipo-field-label">Market Cap</div>
+        <div class="ipo-field-val">${fmtMktCapIpo(mktCap)}</div></div>
+      <div class="ipo-field"><div class="ipo-field-label">Avg Vol (10d)</div>
+        <div class="ipo-field-val">${fmtVolIpo(avgVol)}</div></div>
+      <div class="ipo-field"><div class="ipo-field-label">Shares Out</div>
+        <div class="ipo-field-val">${shares}</div></div>
+      <div class="ipo-field"><div class="ipo-field-label">52-Wk High</div>
+        <div class="ipo-field-val">${hi52?'$'+hi52.toFixed(2):'—'}</div></div>
+      <div class="ipo-field"><div class="ipo-field-label">52-Wk Low</div>
+        <div class="ipo-field-val">${lo52?'$'+lo52.toFixed(2):'—'}</div></div>
+      <div class="ipo-field"><div class="ipo-field-label">Sector</div>
+        <div class="ipo-field-val" style="font-size:0.56rem">${sector}</div></div>
+      <div class="ipo-field"><div class="ipo-field-label">EPS (TTM)</div>
+        <div class="ipo-field-val ${eps&&eps>0?'up':eps&&eps<0?'down':''}">${eps!==null?(eps>=0?'+':'')+eps.toFixed(2):'—'}</div></div>
+    `;
+
+    if(emptyEl) emptyEl.style.display = 'none';
+    fieldsEl.style.display = 'grid';
+    input.value = ticker;
+
+  } catch(e){
+    if(emptyEl){ emptyEl.textContent = e.message==='Not yet trading' ? 'Not yet trading — check back June 12' : 'Error loading data'; emptyEl.style.display='block'; }
+  }
+}
+
+function resetIpoCard(idx){
+  const card     = document.getElementById(`ipocard-${idx}`);
+  const fieldsEl = document.getElementById(`ipo-fields-${idx}`);
+  const emptyEl  = document.getElementById(`ipo-empty-${idx}`);
+  const badgeEl  = document.getElementById(`ipo-badge-${idx}`);
+
+  if(idx===0){
+    // SPCX — reset to pre-IPO state, restore static fields
+    document.getElementById('ipo-input-0').value = 'SPCX';
+    if(badgeEl){ badgeEl.textContent='PRE-IPO'; badgeEl.className='ipo-badge pre'; }
+    card.classList.remove('loaded');
+    fieldsEl.style.display = 'grid';
+    fieldsEl.innerHTML = `
+      <div class="ipo-field"><div class="ipo-field-label">IPO Date</div><div class="ipo-field-val">June 12, 2026</div></div>
+      <div class="ipo-field"><div class="ipo-field-label">Price Range</div><div class="ipo-field-val">TBD June 11</div></div>
+      <div class="ipo-field"><div class="ipo-field-label">Target Val.</div><div class="ipo-field-val">$1.75–$2T</div></div>
+      <div class="ipo-field"><div class="ipo-field-label">Capital Raise</div><div class="ipo-field-val">~$75B</div></div>
+      <div class="ipo-field"><div class="ipo-field-label">Float</div><div class="ipo-field-val">3–4%</div></div>
+      <div class="ipo-field"><div class="ipo-field-label">Underwriter</div><div class="ipo-field-val">Goldman Sachs</div></div>
+    `;
+    return;
+  }
+
+  // Swappable cards — clear everything
+  ['ipo-name','ipo-date','ipo-range','ipo-exchange'].forEach(id => {
+    const el = document.getElementById(`${id}-${idx}`);
+    if(el) el.value = '';
+  });
+  document.getElementById(`ipo-input-${idx}`).value = '';
+  if(emptyEl){ emptyEl.textContent='Enter ticker below once trading'; emptyEl.style.display='block'; }
+  if(badgeEl){ badgeEl.textContent='PRE-IPO'; badgeEl.className='ipo-badge pre'; }
+  fieldsEl.innerHTML = '';
+  fieldsEl.style.display = 'none';
+  card.classList.remove('loaded');
 }
 </script>
 </body>

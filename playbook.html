@@ -501,6 +501,7 @@ body { font-family: var(--sans); background: var(--bg); color: var(--text); min-
   <div class="sidebar-section">
     <div class="sidebar-section-label">Strategy</div>
     <a class="sidebar-link active" href="playbook.html"><span class="sl-icon">▸</span> Playbook</a>
+    <a class="sidebar-link" href="ipo-watch.html"><span class="sl-icon">◆</span> IPO Watch</a>
     <a class="sidebar-link" href="#"><span class="sl-icon">◎</span> Journal</a>
     <a class="sidebar-link" href="#"><span class="sl-icon">▲</span> Performance</a>
   </div>
@@ -522,8 +523,7 @@ body { font-family: var(--sans); background: var(--bg); color: var(--text); min-
 
   <!-- TOP HEADER -->
   <div class="top-header">
-    <div style="min-width:120px;"></div>
-    <div class="header-center">
+    <div style="display:flex; align-items:baseline; gap:1.25rem; flex:1; justify-content:flex-start; padding-left:2rem;">
       <div class="page-title">Playbook</div>
       <div class="page-date" id="currentDate">—</div>
     </div>
@@ -718,8 +718,25 @@ body { font-family: var(--sans); background: var(--bg); color: var(--text); min-
 
     <!-- Notes -->
     <div>
-      <div class="drawer-section-title">Trade Notes</div>
-      <textarea class="drawer-notes" id="drawerNotes" placeholder="Why this setup, key levels, game plan..."></textarea>
+      <div class="drawer-section-title">Trade Plan</div>
+      <div style="display:flex; flex-direction:column; gap:6px;">
+        <div>
+          <div class="drawer-stat-label" style="margin-bottom:3px;">Thesis</div>
+          <textarea class="drawer-notes" id="drawerThesis" rows="2" placeholder="Why this setup..."></textarea>
+        </div>
+        <div>
+          <div class="drawer-stat-label" style="margin-bottom:3px;">Entry</div>
+          <textarea class="drawer-notes" id="drawerEntry" rows="2" placeholder="Entry trigger..."></textarea>
+        </div>
+        <div>
+          <div class="drawer-stat-label" style="margin-bottom:3px;">Stop</div>
+          <textarea class="drawer-notes" id="drawerStop" rows="2" placeholder="Stop level..."></textarea>
+        </div>
+        <div>
+          <div class="drawer-stat-label" style="margin-bottom:3px;">Exit</div>
+          <textarea class="drawer-notes" id="drawerExit" rows="2" placeholder="Exit target..."></textarea>
+        </div>
+      </div>
     </div>
 
     <!-- Entry checklist -->
@@ -958,7 +975,10 @@ function openDrawer(ticker, sector){
     r.className='grade-row';
     if(saved.grade && r.dataset.grade===saved.grade) r.className='grade-row sel-'+saved.grade.replace('+','plus');
   });
-  document.getElementById('drawerNotes').value = saved.notes||'';
+  document.getElementById('drawerThesis').value = saved.thesis||'';
+  document.getElementById('drawerEntry').value = saved.entry||'';
+  document.getElementById('drawerStop').value = saved.stop||'';
+  document.getElementById('drawerExit').value = saved.exit||'';
 
   // Build entry checklist
   document.getElementById('drawerChecklist').innerHTML = [
@@ -977,10 +997,12 @@ function openDrawer(ticker, sector){
 function closeDrawer(){
   if(currentTicker){
     const grade = document.querySelector('#drawerGrades .grade-row input:checked');
-    const notes = document.getElementById('drawerNotes').value;
     localStorage.setItem('playbook_'+currentTicker, JSON.stringify({
       grade: grade ? grade.value : '',
-      notes: notes,
+      thesis: document.getElementById('drawerThesis').value,
+      entry:  document.getElementById('drawerEntry').value,
+      stop:   document.getElementById('drawerStop').value,
+      exit:   document.getElementById('drawerExit').value,
       saved: new Date().toISOString()
     }));
   }
@@ -998,15 +1020,20 @@ document.querySelectorAll('#drawerGrades .grade-row').forEach(row=>{
   });
 });
 
-// Notes auto-save
-document.getElementById('drawerNotes').addEventListener('input',()=>{
-  if(!currentTicker) return;
-  const grade = document.querySelector('#drawerGrades .grade-row input:checked');
-  localStorage.setItem('playbook_'+currentTicker, JSON.stringify({
-    grade: grade?grade.value:'',
-    notes: document.getElementById('drawerNotes').value,
-    saved: new Date().toISOString()
-  }));
+// Trade plan auto-save
+['drawerThesis','drawerEntry','drawerStop','drawerExit'].forEach(id=>{
+  document.getElementById(id).addEventListener('input',()=>{
+    if(!currentTicker) return;
+    const grade = document.querySelector('#drawerGrades .grade-row input:checked');
+    localStorage.setItem('playbook_'+currentTicker, JSON.stringify({
+      grade:  grade?grade.value:'',
+      thesis: document.getElementById('drawerThesis').value,
+      entry:  document.getElementById('drawerEntry').value,
+      stop:   document.getElementById('drawerStop').value,
+      exit:   document.getElementById('drawerExit').value,
+      saved:  new Date().toISOString()
+    }));
+  });
 });
 
 // Close drawer on ESC

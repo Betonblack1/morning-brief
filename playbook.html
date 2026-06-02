@@ -720,10 +720,22 @@ body { font-family: var(--sans); background: var(--bg); color: var(--text); min-
     <div>
       <div class="drawer-section-title">Trade Plan</div>
       <div style="display:flex; flex-direction:column; gap:6px; width:100%;">
-        <div style="width:100%;"><div style="display:inline-block; background:rgba(0,212,255,0.12); border:1px solid rgba(0,212,255,0.25); padding:1px 8px; margin-bottom:3px; font-family:var(--mono); font-size:0.48rem; letter-spacing:0.1em; text-transform:uppercase; color:var(--cyan);">Thesis</div><textarea class="drawer-notes" id="drawerThesis" rows="2" style="width:100%;" placeholder="Why this setup..."></textarea></div>
-        <div style="width:100%;"><div style="display:inline-block; background:rgba(0,212,255,0.12); border:1px solid rgba(0,212,255,0.25); padding:1px 8px; margin-bottom:3px; font-family:var(--mono); font-size:0.48rem; letter-spacing:0.1em; text-transform:uppercase; color:var(--cyan);">Entry</div><textarea class="drawer-notes" id="drawerEntry" rows="2" style="width:100%;" placeholder="Entry trigger..."></textarea></div>
-        <div style="width:100%;"><div style="display:inline-block; background:rgba(0,212,255,0.12); border:1px solid rgba(0,212,255,0.25); padding:1px 8px; margin-bottom:3px; font-family:var(--mono); font-size:0.48rem; letter-spacing:0.1em; text-transform:uppercase; color:var(--cyan);">Stop</div><textarea class="drawer-notes" id="drawerStop" rows="2" style="width:100%;" placeholder="Stop level..."></textarea></div>
-        <div style="width:100%;"><div style="display:inline-block; background:rgba(0,212,255,0.12); border:1px solid rgba(0,212,255,0.25); padding:1px 8px; margin-bottom:3px; font-family:var(--mono); font-size:0.48rem; letter-spacing:0.1em; text-transform:uppercase; color:var(--cyan);">Exit</div><textarea class="drawer-notes" id="drawerExit" rows="2" style="width:100%;" placeholder="Exit target..."></textarea></div>
+        <div style="display:flex; align-items:flex-start; gap:0; width:100%;">
+          <div style="background:rgba(0,212,255,0.12); border:1px solid rgba(0,212,255,0.25); padding:4px 8px; font-family:var(--mono); font-size:0.48rem; letter-spacing:0.1em; text-transform:uppercase; color:var(--cyan); white-space:nowrap; line-height:1.6; border-right:none;">Thesis</div>
+          <textarea class="drawer-notes" id="drawerThesis" rows="2" style="width:100%; border-top-left-radius:0; border-bottom-left-radius:0;" placeholder="Why this setup — catalyst, structure, sector strength..."></textarea>
+        </div>
+        <div style="display:flex; align-items:flex-start; gap:0; width:100%;">
+          <div style="background:rgba(0,212,255,0.12); border:1px solid rgba(0,212,255,0.25); padding:4px 8px; font-family:var(--mono); font-size:0.48rem; letter-spacing:0.1em; text-transform:uppercase; color:var(--cyan); white-space:nowrap; line-height:1.6; border-right:none;">Entry</div>
+          <textarea class="drawer-notes" id="drawerEntry" rows="2" style="width:100%;" placeholder="Entry trigger — price level, confirmation signal..."></textarea>
+        </div>
+        <div style="display:flex; align-items:flex-start; gap:0; width:100%;">
+          <div style="background:rgba(0,212,255,0.12); border:1px solid rgba(0,212,255,0.25); padding:4px 8px; font-family:var(--mono); font-size:0.48rem; letter-spacing:0.1em; text-transform:uppercase; color:var(--cyan); white-space:nowrap; line-height:1.6; border-right:none;">Stop</div>
+          <textarea class="drawer-notes" id="drawerStop" rows="2" style="width:100%;" placeholder="Stop level — below consolidation low, below MA..."></textarea>
+        </div>
+        <div style="display:flex; align-items:flex-start; gap:0; width:100%;">
+          <div style="background:rgba(0,212,255,0.12); border:1px solid rgba(0,212,255,0.25); padding:4px 8px; font-family:var(--mono); font-size:0.48rem; letter-spacing:0.1em; text-transform:uppercase; color:var(--cyan); white-space:nowrap; line-height:1.6; border-right:none;">Exit</div>
+          <textarea class="drawer-notes" id="drawerExit" rows="2" style="width:100%;" placeholder="Exit target — R multiple, extension level, time stop..."></textarea>
+        </div>
       </div>
     </div>
 

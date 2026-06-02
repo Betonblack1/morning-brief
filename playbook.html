@@ -491,7 +491,6 @@ body { font-family: var(--sans); background: var(--bg); color: var(--text); min-
     <div class="sidebar-section-label">Daily</div>
     <a class="sidebar-link" href="index.html"><span class="sl-icon">◆</span> Today</a>
     <a class="sidebar-link" href="prep.html"><span class="sl-icon">◉</span> Pre-Market Prep</a>
-    <a class="sidebar-link" href="#"><span class="sl-icon">▦</span> Watchlist</a>
   </div>
   <div class="sidebar-section">
     <div class="sidebar-section-label">Market</div>
@@ -787,6 +786,7 @@ function pctClass(pct){
 
 // ── RENDER SECTOR BLOCK ───────────────────────────────────
 function renderSectorBlock(sectorData){
+  if(!sectorData.stocks || sectorData.stocks.length === 0) return '';
   const zoneCount = sectorData.stocks.filter(s=>s.grade==='zone').length;
   const zoneHTML  = zoneCount > 0 ? `<span class="sector-zone-count">${zoneCount} in zone</span>` : '';
 
@@ -831,6 +831,53 @@ function renderSectorBlock(sectorData){
 }
 
 // ── LOAD DATA ─────────────────────────────────────────────
+/* ── DEFAULT REPRESENTATIVES ─────────────────────────
+   Pillar defaults shown before GitHub Action runs.
+   Ticker defaults loaded on first visit (no localStorage).
+──────────────────────────────────────────────────── */
+const DEFAULT_PILLARS = ['AAPL','AMD','NVDA','MSFT','META'];
+const DEFAULT_TICKERS = ['DELL','FTNT','ZS','CRWD','MU','AMD','FLNC'];
+
+async function loadDefaultPillars(){
+  const el = document.getElementById('pillars-content');
+  el.innerHTML = '<div class="loading-state">Loading pace representatives...</div>';
+  try {
+    const results = await Promise.allSettled(DEFAULT_PILLARS.map(t => fetchTickerData(t)));
+    const stocks = results.filter(r => r.status === 'fulfilled').map(r => r.value);
+    if(!stocks.length){ el.innerHTML = '<div class="loading-state">Could not load default data.</div>'; return; }
+    const groups = {};
+    stocks.forEach(s => {
+      const sec = s.sector || 'Technology';
+      if(!groups[sec]) groups[sec] = [];
+      groups[sec].push({ ticker:s.ticker, price:s.price, changePct:s.changePct,
+        ema21:s.ema21?s.ema21.toFixed(2):null, sma50:s.sma50?s.sma50.toFixed(2):null,
+        pct21:s.pct21, pct50:s.pct50, grade:s.grade, volume:s.volume });
+    });
+    const zoneCount = stocks.filter(s => s.grade === 'zone').length;
+    document.getElementById('pillars-badge').textContent = zoneCount;
+    document.getElementById('pillars-updated').textContent = 'Pace Representatives — updates 7 AM & 2:30 PM ET';
+    el.innerHTML = Object.entries(groups).map(([sector, stks]) => renderSectorBlock({ sector, stocks: stks })).join('');
+  } catch(e){
+    el.innerHTML = '<div class="loading-state" style="color:var(--red)">Failed to load pace representatives.</div>';
+  }
+}
+
+async function loadDefaultTickers(){
+  const saved = localStorage.getItem(STORAGE_KEY);
+  if(saved && JSON.parse(saved).length > 0) return;
+  setMsg('Loading default tickers...','var(--muted)');
+  for(const ticker of DEFAULT_TICKERS){
+    try {
+      const data = await fetchTickerData(ticker);
+      document.getElementById('ticker-cards').insertAdjacentHTML('beforeend', renderTickerCard(data));
+    } catch(e){ /* skip silently */ }
+  }
+  refreshAllCardSectors();
+  updateSidebarTickers();
+  saveTickerList();
+  setMsg('','var(--muted)');
+}
+
 async function loadData(){
   try {
     const resp = await fetch('data/market-data.json');
@@ -838,8 +885,7 @@ async function loadData(){
     const data = await resp.json();
 
     if(!data.watchlist){
-      document.getElementById('pillars-content').innerHTML = '<div class="loading-state">Watchlist data not yet available.<br><span style="color:var(--muted);font-size:0.6rem;">Will populate at next 7:00 AM run.</span></div>';
-      document.getElementById('otm-content').innerHTML = '<div class="loading-state">Watchlist data not yet available.</div>';
+      await loadDefaultPillars();
       return;
     }
 
@@ -848,7 +894,6 @@ async function loadData(){
     const dateStr   = generated.toLocaleDateString('en-US',{weekday:'short',month:'short',day:'numeric'});
     const updatedStr = 'Updated '+dateStr+' at '+timeStr+' ET';
 
-    // Render Sector Pillars
     const pillars = data.watchlist.pillars || [];
     const pillarZone = pillars.reduce((acc,s)=>acc+s.stocks.filter(st=>st.grade==='zone').length,0);
     document.getElementById('pillars-badge').textContent = pillarZone;
@@ -856,7 +901,6 @@ async function loadData(){
     document.getElementById('pillars-content').innerHTML =
       pillars.length ? pillars.map(renderSectorBlock).join('') : '<div class="loading-state">No pillar data available.</div>';
 
-    // Render On The Move
     const otm = data.watchlist.onTheMove || [];
     const otmZone = otm.reduce((acc,s)=>acc+s.stocks.filter(st=>st.grade==='zone').length,0);
     document.getElementById('otm-badge').textContent = otmZone;
@@ -864,12 +908,11 @@ async function loadData(){
     document.getElementById('otm-content').innerHTML =
       otm.length ? otm.map(renderSectorBlock).join('') : '<div class="loading-state">No On The Move data available.</div>';
 
-    // Cache data globally for drawer
     window._watchlistData = data.watchlist;
 
   } catch(err){
     console.error(err);
-    document.getElementById('pillars-content').innerHTML = '<div class="loading-state" style="color:var(--red)">Failed to load data.<br><span style="font-size:0.6rem;color:var(--muted);">Check that data/market-data.json exists and has a watchlist key.</span></div>';
+    await loadDefaultPillars();
   }
 }
 
@@ -977,19 +1020,11 @@ const STORAGE_KEY = 'playbook_tickers_v1';
 /* ── SECTOR ETF MAP ─────────────────────────────── */
 const SECTOR_ETFS = [
   { etf:'XLK',  name:'Technology',        short:'TECH'  },
-  { etf:'XLF',  name:'Financials',        short:'FIN'   },
-  { etf:'XLE',  name:'Energy',            short:'ENRG'  },
-  { etf:'XLV',  name:'Healthcare',        short:'HLTH'  },
-  { etf:'XLI',  name:'Industrials',       short:'INDU'  },
-  { etf:'XLY',  name:'Cons Cyclical',     short:'CYCL'  },
   { etf:'XLP',  name:'Cons Defensive',    short:'DEF'   },
   { etf:'XLB',  name:'Materials',         short:'MATL'  },
-  { etre:'XLRE',  name:'Real Estate',     short:'REIT'  },
+  { etf:'XLRE', name:'Real Estate',       short:'REIT'  },
   { etf:'XLU',  name:'Utilities',         short:'UTIL'  },
-  { etf:'XLC',  name:'Comm Services',     short:'COMM'  },
 ];
-// fix typo in XLRE entry
-SECTOR_ETFS[8].etf = 'XLRE'; delete SECTOR_ETFS[8].etre;
 
 // live sector data cache: { XLK: { chg, stars, name, short }, ... }
 const sectorCache = {};
@@ -997,16 +1032,10 @@ const sectorCache = {};
 // map Finnhub sector string -> our ETF key
 const SECTOR_MAP = {
   'Technology':                 'XLK',
-  'Financial Services':         'XLF',
-  'Energy':                     'XLE',
-  'Healthcare':                 'XLV',
-  'Industrials':                'XLI',
-  'Consumer Cyclical':          'XLY',
   'Consumer Defensive':         'XLP',
   'Basic Materials':            'XLB',
   'Real Estate':                'XLRE',
   'Utilities':                  'XLU',
-  'Communication Services':     'XLC',
 };
 
 function starsFromChg(chg){
@@ -1324,7 +1353,7 @@ async function restoreSavedTickers(){
 }
 
 // Boot sequence: load sector heatmap first, then restore tickers
-loadSectorHeatmap().then(()=> restoreSavedTickers());
+loadSectorHeatmap().then(()=> restoreSavedTickers()).then(()=> loadDefaultTickers());
 
 loadData();
 </script>

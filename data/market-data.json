@@ -1,36 +1,36 @@
 {
-  "generated": "2026-06-02T16:11:25.890Z",
-  "date": "2026-06-02",
+  "generated": "2026-06-03T16:26:21.220Z",
+  "date": "2026-06-03",
   "indices": [
     {
       "name": "S&P 500",
-      "val": "759.75",
-      "chg": 0.1595,
-      "price": 759.75
+      "val": "754.14",
+      "chg": -0.7149,
+      "price": 754.14
     },
     {
       "name": "NASDAQ",
-      "val": "746.00",
-      "chg": 0.4389,
-      "price": 746
+      "val": "742.31",
+      "chg": -0.516,
+      "price": 742.31
     },
     {
       "name": "DOW",
-      "val": "512.41",
-      "chg": 0.1897,
-      "price": 512.41
+      "val": "509.37",
+      "chg": -0.9104,
+      "price": 509.37
     },
     {
       "name": "RUSSELL",
-      "val": "291.20",
-      "chg": 0.7682,
-      "price": 291.2
+      "val": "287.24",
+      "chg": -1.5155,
+      "price": 287.24
     },
     {
       "name": "VIX",
-      "val": "24.47",
-      "chg": -1.251,
-      "price": 24.47
+      "val": "24.62",
+      "chg": 1.0259,
+      "price": 24.62
     },
     {
       "name": "10Y",
@@ -43,253 +43,309 @@
     {
       "name": "Tech",
       "symbol": "XLK",
-      "chg": 1.0063
+      "chg": -1.2815
     },
     {
       "name": "Health",
       "symbol": "XLV",
-      "chg": -1.0687
+      "chg": 0.9221
     },
     {
       "name": "Financials",
       "symbol": "XLF",
-      "chg": -0.0778
+      "chg": -1.3408
     },
     {
       "name": "Energy",
       "symbol": "XLE",
-      "chg": 1.1169
+      "chg": 2.2774
     },
     {
       "name": "Cons Disc",
       "symbol": "XLY",
-      "chg": -0.33
+      "chg": -0.8759
     },
     {
       "name": "Industrials",
       "symbol": "XLI",
-      "chg": 0.7251
+      "chg": 0.4076
     },
     {
       "name": "Materials",
       "symbol": "XLB",
-      "chg": 0.9623
+      "chg": 0.5435
     },
     {
       "name": "Real Estate",
       "symbol": "XLRE",
-      "chg": 0.3004
+      "chg": 0.7358
     },
     {
       "name": "Utilities",
       "symbol": "XLU",
-      "chg": 1.6473
+      "chg": 0.82
     },
     {
       "name": "Cons Staples",
       "symbol": "XLP",
-      "chg": -0.3901
+      "chg": 0.8677
     },
     {
       "name": "Comm Svcs",
       "symbol": "XLC",
-      "chg": -1.2456
+      "chg": -1.4881
     }
   ],
   "keyLevels": [
     {
       "tag": "support",
       "label": "SPY Support",
-      "val": "756.75"
+      "val": "754.08"
     },
     {
       "tag": "resist",
       "label": "SPY Resist",
-      "val": "760.40"
+      "val": "758.80"
     },
     {
       "tag": "pivot",
       "label": "QQQ Pivot",
-      "val": "743.82"
+      "val": "743.99"
     },
     {
       "tag": "event",
-      "label": "Fed Kashkari Speech",
-      "val": "2026-06-02 05:50:00"
+      "label": "Total Vehicle Sales",
+      "val": "2026-06-03 06:00:00"
     }
   ],
   "fearGreed": {
-    "score": 46,
+    "score": 45,
     "label": "Neutral"
   },
   "earnings": [
     {
-      "ticker": "PICS",
-      "info": "EPS Est: 1.1881",
+      "ticker": "NTSK",
+      "info": "EPS Est: N/A",
       "when": "AMC"
     },
     {
-      "ticker": "RMCO",
-      "info": "EPS Est: 0",
-      "when": ""
-    },
-    {
-      "ticker": "HQL",
+      "ticker": "RENT",
       "info": "EPS Est: N/A",
-      "when": ""
-    },
-    {
-      "ticker": "JFIN",
-      "info": "EPS Est: N/A",
-      "when": ""
-    },
-    {
-      "ticker": "GOTU",
-      "info": "EPS Est: -0.0408",
       "when": "BMO"
     },
     {
-      "ticker": "KITL",
+      "ticker": "YB",
       "info": "EPS Est: N/A",
       "when": ""
+    },
+    {
+      "ticker": "BWTL",
+      "info": "EPS Est: N/A",
+      "when": ""
+    },
+    {
+      "ticker": "IGPK",
+      "info": "EPS Est: N/A",
+      "when": ""
+    },
+    {
+      "ticker": "NTSK",
+      "info": "EPS Est: -0.0714",
+      "when": "AMC"
     }
   ],
   "econ": [
     {
-      "time": "2026-06-02 05:50:00",
-      "name": "Fed Kashkari Speech",
+      "time": "2026-06-03 06:00:00",
+      "name": "Total Vehicle Sales",
       "impact": "high"
     },
     {
-      "time": "2026-06-02 10:00:00",
-      "name": "LMI Logistics Managers Index",
+      "time": "2026-06-03 07:00:00",
+      "name": "Total Vehicle Sales",
       "impact": "high"
     },
     {
-      "time": "2026-06-02 12:30:00",
-      "name": "Fed Hammack Speech",
+      "time": "2026-06-03 11:00:00",
+      "name": "MBA 30-Year Mortgage Rate",
       "impact": "high"
     },
     {
-      "time": "2026-06-02 12:55:00",
-      "name": "Redbook YoY",
+      "time": "2026-06-03 11:00:00",
+      "name": "MBA Mortgage Applications",
       "impact": "high"
     },
     {
-      "time": "2026-06-02 14:00:00",
-      "name": "JOLTs Job Openings",
+      "time": "2026-06-03 11:00:00",
+      "name": "MBA Mortgage Market Index",
       "impact": "high"
     },
     {
-      "time": "2026-06-02 14:00:00",
-      "name": "JOLTs Job Quits",
+      "time": "2026-06-03 11:00:00",
+      "name": "MBA Mortgage Refinance Index",
       "impact": "high"
     }
   ],
   "news": [
     {
-      "time": "11:41 AM",
-      "text": "Iran studying deal to halt war as stalemate persists - Reuters",
-      "tag": "Reuters",
-      "url": "https://news.google.com/rss/articles/CBMiogFBVV95cUxQcG1DSFVhQ3MxRlgtdV9LYlZndTBDX0VvZDZ4ZkZuZEV5QnhMYlhmd2phazdVMnBlUXRWXzUzWTZFSXZfSDhNMzF2VTVwdlZiMU9aMEVVVVhyWEk1QmFNWjJRSFNfWTFzOGNMXzk1ZnJSOE5EZDJycERabElIeEQ1SjQxWE9CejBZT2FDY1FnLVdFaGlvR0FQeVVkM3JSanNmdkE?oc=5"
-    },
-    {
-      "time": "11:18 AM",
-      "text": "We're trimming 2 stocks — a surging AI winner and one that's left plenty to be desired",
+      "time": "10:42 AM",
+      "text": "Sellers are pulling homes off the market at the fastest pace since 2020",
       "tag": "CNBC",
-      "url": "https://www.cnbc.com/2026/06/02/were-trimming-2-stocks-a-surging-ai-winner-and-one-thats-left-plenty-to-be-desired.html"
+      "url": "https://www.cnbc.com/2026/06/03/sellers-delisting-homes-redfin.html"
     },
     {
-      "time": "11:10 AM",
-      "text": "Netanyahu faces criticism after Trump halts Israeli strikes on Beirut - Reuters",
+      "time": "10:38 AM",
+      "text": "Hezbollah launches rockets at Israel, testing U.S.-mediated deal - Reuters",
       "tag": "Reuters",
-      "url": "https://news.google.com/rss/articles/CBMiyAFBVV95cUxQZWZLTTJ4UXAzSlBOV095bmFhd2hLQW1TSDhQUGRFVWNfMVNXekxMem9KNXVXVTdmQWFvcms3ZEpzSDFiVVd4MEF3SzdMYkJJZDRwY0dLT3FTNHk3SFN5TmhxWXk4SnROLUpLZnctbUNOZXhLWVRjdUt0cWNMVnVmN3FYUlFCdVpPQmVhQVM0c3NoQlRUTmdOU3dUeFVsckE1VlBuSElPcU1IT2xXcXNwVEk3clY3dDBrbkpVY3pPWWgwaEREYUlXTA?oc=5"
+      "url": "https://news.google.com/rss/articles/CBMirAFBVV95cUxNejNUYzdtTjIxM1JOY1FzOFYxZnVKQjNIa2RyZk5QSXh4TFFSSjYtd2EydDkyS0FaR0E2bmw2ZEJVaFJab0pBUmg1OEVBQXJ3MnlmcDJ1cnRsYUR0UEV5OFVzRVp1LXJUeEtKenZHR0RuRkJoT3V5d0ZQQnZ2aXFLaDNPbEZ0VFhXcGc4alhwTkNrdkdUQUZZUWpScTltT0E0eEJ6NlVIZ2lBSTRu?oc=5"
     },
     {
-      "time": "10:40 AM",
-      "text": "Job openings in April surged to 7.6 million, the highest in nearly two years",
-      "tag": "CNBC",
-      "url": "https://www.cnbc.com/2026/06/02/job-openings-april-2026.html"
-    },
-    {
-      "time": "10:29 AM",
-      "text": "The top 10 highest-paying jobs for teens in the U.S.—No. 1 isn't retail or food service",
-      "tag": "CNBC",
-      "url": "https://www.cnbc.com/2026/06/02/the-top-10-highest-paying-jobs-for-teens-in-the-united-states-no-1-isnt-retail-or-food-service.html"
-    },
-    {
-      "time": "10:18 AM",
-      "text": "US lawmakers to grill Rubio, as Iran war enters fourth month - Reuters",
+      "time": "9:43 AM",
+      "text": "Trump confirms he called Netanyahu crazy in phone call - Reuters",
       "tag": "Reuters",
-      "url": "https://news.google.com/rss/articles/CBMinwFBVV95cUxQMnhHX3pib0VOUmUzRkNhT1VGQVRRVnBVeVc1eVgta1dMNDVGRVVTZ0Jtb21oYUIyYjg1b3BoY28zMHd1dVQza1hPa3pWMFBzRktIOVVmdG5zVGFHaHdRZjJrdWVNUVJ1cEZPa0d6S2FiVDFOb1haX1I0ZlRLcjNJQjFRNk9MUWlodkxpOVhwM3RtdzE0Q1B4QklrNklVTDQ?oc=5"
+      "url": "https://news.google.com/rss/articles/CBMiqAFBVV95cUxPYXBGWXJkR0NIUGdJVW9WZjFkeEpvZkxxQXJCUGNfbVQzbF9OQkdEUEVab052cEpuYmNuM3drVWdaTUlmbG1wYzJsTEFFYU8xNm5qMXN5SjYzQ3BiMnowYWtLTTh2Y09Bdl9hMjljUGV2Q1FESnZfT1FMeWhaVnRjbERfY2o0anVINUhQMjd0VU96UDJGdU9lRzJpZE9ObnE3TndDUkEtekQ?oc=5"
+    },
+    {
+      "time": "9:31 AM",
+      "text": "We're starting a position in a chipmaker that is benefiting from the AI boom in multiple ways",
+      "tag": "CNBC",
+      "url": "https://www.cnbc.com/2026/06/03/were-starting-a-position-in-a-chipmaker-that-is-benefiting-from-the-ai-boom-in-multiple-ways.html"
+    },
+    {
+      "time": "9:05 AM",
+      "text": "Jim Cramer's top 10 things to watch in the stock market Wednesday",
+      "tag": "CNBC",
+      "url": "https://www.cnbc.com/2026/06/03/jim-cramers-top-10-things-to-watch-in-the-stock-market-wednesday-.html"
+    },
+    {
+      "time": "8:39 AM",
+      "text": "Trump says Iran has agreed to not have a nuclear weapon - Reuters",
+      "tag": "Reuters",
+      "url": "https://news.google.com/rss/articles/CBMipwFBVV95cUxNclpNOGV6ZDdVV04yTGFpTW9NaG9peGpnRTNuYkM2dmg1dmctSEJnRl80a01OZjgydVdueURjUVpMLVJZbWlzVWxxZ3BkSi03b0RsaThqdnk0bzJsaEhkdzhZbE52OTFCd1N4bWdKc3hfMnNBVlYtTTgwV0FMYXgxd1BCdU1MRi1MX0huLW93M2RqNWZjczgyUlhERmZrcEdPS3RjZ2Z6UQ?oc=5"
     }
   ],
-  "brief": "<h2><span class=\"sec-icon\">◆</span> Market Overview</h2>\n\nFutures showing modest green across the board with small caps leading (+0.77% IWM) as risk appetite returns. VIX down -1.25% to 24.47 signals some tension relief, but we're still well above complacency levels. Iran war headlines creating cross-currents but job market strength (7.6M openings) keeping the bulls fed.\n\n<h2><span class=\"sec-icon\">◆</span> What to Watch</h2>\n\n<ul>\n<li><strong>Fed Speakers (Kashkari 5:50am, Hammack 12:30pm):</strong> Hawks vs doves narrative continues with labor data as backdrop</li>\n<li><strong>JOLTs Data (2pm):</strong> April openings already leaked at 7.6M - highest in nearly 2 years, watch for revisions</li>\n<li><strong>HPE Momentum:</strong> Following Dell's AI guidance surge, enterprise hardware getting re-rated hard</li>\n<li><strong>MOMO Earnings (BMO):</strong> EPS est 1.59, China exposure makes this a geopolitical play</li>\n</ul>\n\n<div class=\"callout callout-green\"><div class=\"callout-label\">✦ Bull Case</div>Small cap outperformance (+0.77% vs +0.16% SPY) suggests rotation into domestic plays. Enterprise AI spend accelerating with Dell/HPE guidance beats creating sector momentum.</div>\n\n<h2><span class=\"sec-icon\">◆</span> Sector Rotation</h2>\n\nClear risk-on rotation with Utilities (+1.65%) leading alongside Tech (+1.01%) and Energy (+1.12%) - unusual combination suggesting both growth and defensive positioning. Health (-1.07%) and Comm Services (-1.25%) getting dumped, likely profit-taking after recent runs.\n\n<div class=\"callout callout-amber\"><div class=\"callout-label\">⚡ Key Driver</div>Job market strength vs Fed policy divergence creating volatility. Strong openings data could force hawkish pivot despite geopolitical uncertainty.</div>\n\n<div class=\"callout callout-red\"><div class=\"callout-label\">⚠ Bear Case</div>VIX at 24+ still reflects elevated uncertainty. Iran war entering month four with no clear resolution. Strong jobs data could trigger Fed hawkishness fears.</div>\n\n<h2><span class=\"sec-icon\">◆</span> Levels That Matter</h2>\n\n<ul>\n<li><strong>SPY 760:</strong> Psychological resistance after overnight gap, needs volume to hold</li>\n<li><strong>QQQ 750:</strong> Round number magnet, break above targets 755 continuation</li>\n<li><strong>VIX 23:</strong> Key breakdown level to confirm risk-on sentiment</li>\n<li><strong>XLK 185:</strong> Tech sector ETF testing prior highs on AI hardware momentum</li>\n</ul>\n\n<hr>\n<p><em>Not a prediction. A preparation. Make your plan before the bell.</em></p>",
+  "brief": "<p>Brief generation failed. Market data is still current.</p>",
   "watchlist": {
     "pillars": [
       {
         "sector": "Technology",
         "stocks": [
           {
-            "ticker": "AAPL",
-            "price": 312.51,
-            "changePct": 0.59,
-            "volume": 48220390.299506,
-            "ema21": 295.66,
-            "sma50": 274.04,
-            "pct21": 5.7,
-            "pct50": 14.04,
+            "ticker": "NVDA",
+            "price": 222.82,
+            "changePct": -1.92,
+            "volume": 193400622.307177,
+            "ema21": 215.5,
+            "sma50": 201.27,
+            "pct21": 3.4,
+            "pct50": 10.71,
             "grade": "approaching"
           },
           {
-            "ticker": "AMD",
-            "price": 518.09,
-            "changePct": 3.83,
-            "volume": 31438519.646209,
-            "ema21": 427.12,
-            "sma50": 321.81,
-            "pct21": 21.3,
-            "pct50": 60.99,
-            "grade": "extended"
-          },
-          {
-            "ticker": "NVDA",
-            "price": 214.25,
-            "changePct": 1.41,
-            "volume": 143996048.997874,
-            "ema21": 214.09,
-            "sma50": 198.73,
-            "pct21": 0.08,
-            "pct50": 7.81,
-            "grade": "zone"
-          },
-          {
             "ticker": "MSFT",
-            "price": 426.99,
-            "changePct": 3.39,
-            "volume": 47250541.314879,
-            "ema21": 415.82,
-            "sma50": 401.66,
-            "pct21": 2.69,
-            "pct50": 6.31,
-            "grade": "zone"
+            "price": 441.31,
+            "changePct": -1.25,
+            "volume": 37249717.828812,
+            "ema21": 424.41,
+            "sma50": 405.44,
+            "pct21": 3.98,
+            "pct50": 8.85,
+            "grade": "approaching"
+          },
+          {
+            "ticker": "AAPL",
+            "price": 315.2,
+            "changePct": 2.52,
+            "volume": 44666498.908943,
+            "ema21": 299.54,
+            "sma50": 277.78,
+            "pct21": 5.23,
+            "pct50": 13.47,
+            "grade": "approaching"
           },
           {
             "ticker": "META",
-            "price": 635.29,
-            "changePct": -0.66,
-            "volume": 16772379.280322,
-            "ema21": 620.39,
-            "sma50": 618.2,
-            "pct21": 2.4,
-            "pct50": 2.77,
-            "grade": "zone"
+            "price": 597.63,
+            "changePct": -0.93,
+            "volume": 18280873.087916,
+            "ema21": 617.56,
+            "sma50": 618.49,
+            "pct21": -3.23,
+            "pct50": -3.37,
+            "grade": "extended"
+          },
+          {
+            "ticker": "AMD",
+            "price": 521.54,
+            "changePct": 3.01,
+            "volume": 24293121.359061,
+            "ema21": 449.23,
+            "sma50": 340.65,
+            "pct21": 16.1,
+            "pct50": 53.1,
+            "grade": "extended"
           }
         ]
       },
       {
         "sector": "Semis",
-        "stocks": []
+        "stocks": [
+          {
+            "ticker": "ARM",
+            "price": 402.71,
+            "changePct": 0.39,
+            "volume": 15447344.465429,
+            "ema21": 284.62,
+            "sma50": 209.42,
+            "pct21": 41.49,
+            "pct50": 92.29,
+            "grade": "extended"
+          },
+          {
+            "ticker": "AVGO",
+            "price": 481.57,
+            "changePct": -1.48,
+            "volume": 39071314.334698,
+            "ema21": 427.73,
+            "sma50": 391.92,
+            "pct21": 12.59,
+            "pct50": 22.87,
+            "grade": "extended"
+          },
+          {
+            "ticker": "ANET",
+            "price": 175.33,
+            "changePct": 2.71,
+            "volume": 9144025.217068,
+            "ema21": 155.61,
+            "sma50": 150.42,
+            "pct21": 12.67,
+            "pct50": 16.56,
+            "grade": "extended"
+          },
+          {
+            "ticker": "MRVL",
+            "price": 290.79,
+            "changePct": 14.73,
+            "volume": 112648683.833129,
+            "ema21": 193.9,
+            "sma50": 153.33,
+            "pct21": 49.97,
+            "pct50": 89.64,
+            "grade": "extended"
+          },
+          {
+            "ticker": "AMAT",
+            "price": 490.05,
+            "changePct": 5.32,
+            "volume": 10763964.299121,
+            "ema21": 435.65,
+            "sma50": 401.93,
+            "pct21": 12.49,
+            "pct50": 21.92,
+            "grade": "extended"
+          }
+        ]
       },
       {
         "sector": "Financials",
@@ -325,26 +381,70 @@
         "sector": "Semis",
         "stocks": [
           {
+            "ticker": "NVDA",
+            "price": 222.82,
+            "changePct": -1.92,
+            "volume": 193400622.307177,
+            "ema21": 215.5,
+            "sma50": 201.27,
+            "pct21": 3.4,
+            "pct50": 10.71,
+            "grade": "approaching"
+          },
+          {
             "ticker": "AMD",
-            "price": 518.09,
-            "changePct": 3.83,
-            "volume": 31438519.646209,
-            "ema21": 427.12,
-            "sma50": 321.81,
-            "pct21": 21.3,
-            "pct50": 60.99,
+            "price": 521.54,
+            "changePct": 3.01,
+            "volume": 24293121.359061,
+            "ema21": 449.23,
+            "sma50": 340.65,
+            "pct21": 16.1,
+            "pct50": 53.1,
             "grade": "extended"
           },
           {
-            "ticker": "NVDA",
-            "price": 214.25,
-            "changePct": 1.41,
-            "volume": 143996048.997874,
-            "ema21": 214.09,
-            "sma50": 198.73,
-            "pct21": 0.08,
-            "pct50": 7.81,
-            "grade": "zone"
+            "ticker": "ARM",
+            "price": 402.71,
+            "changePct": 0.39,
+            "volume": 15447344.465429,
+            "ema21": 284.62,
+            "sma50": 209.42,
+            "pct21": 41.49,
+            "pct50": 92.29,
+            "grade": "extended"
+          },
+          {
+            "ticker": "AVGO",
+            "price": 481.57,
+            "changePct": -1.48,
+            "volume": 39071314.334698,
+            "ema21": 427.73,
+            "sma50": 391.92,
+            "pct21": 12.59,
+            "pct50": 22.87,
+            "grade": "extended"
+          },
+          {
+            "ticker": "MRVL",
+            "price": 290.79,
+            "changePct": 14.73,
+            "volume": 112648683.833129,
+            "ema21": 193.9,
+            "sma50": 153.33,
+            "pct21": 49.97,
+            "pct50": 89.64,
+            "grade": "extended"
+          },
+          {
+            "ticker": "AMAT",
+            "price": 490.05,
+            "changePct": 5.32,
+            "volume": 10763964.299121,
+            "ema21": 435.65,
+            "sma50": 401.93,
+            "pct21": 12.49,
+            "pct50": 21.92,
+            "grade": "extended"
           }
         ]
       },
@@ -354,57 +454,11 @@
       },
       {
         "sector": "Memory",
-        "stocks": [
-          {
-            "ticker": "MU",
-            "price": 923.52,
-            "changePct": -0.68,
-            "volume": 49694349.826846,
-            "ema21": 729.34,
-            "sma50": 547.37,
-            "pct21": 26.62,
-            "pct50": 68.72,
-            "grade": "extended"
-          },
-          {
-            "ticker": "WDC",
-            "price": 531.18,
-            "changePct": -1.73,
-            "volume": 6002841.298124,
-            "ema21": 471.56,
-            "sma50": 393.65,
-            "pct21": 12.64,
-            "pct50": 34.94,
-            "grade": "extended"
-          }
-        ]
+        "stocks": []
       },
       {
         "sector": "Space",
-        "stocks": [
-          {
-            "ticker": "ASTS",
-            "price": 133.09,
-            "changePct": 4.91,
-            "volume": 21640073.903617,
-            "ema21": 94.91,
-            "sma50": 86.42,
-            "pct21": 40.23,
-            "pct50": 54,
-            "grade": "extended"
-          },
-          {
-            "ticker": "RDW",
-            "price": 25.9,
-            "changePct": 12.9,
-            "volume": 86741495.795575,
-            "ema21": 15.38,
-            "sma50": 11.25,
-            "pct21": 68.4,
-            "pct50": 130.21,
-            "grade": "extended"
-          }
-        ]
+        "stocks": []
       },
       {
         "sector": "Drones",

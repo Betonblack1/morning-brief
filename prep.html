@@ -344,30 +344,31 @@ body {
 .grade-grid {
   display: flex;
   flex-direction: column;
-  gap: 4px;
+  gap: 6px;
 }
 .grade-option {
   display: flex;
   align-items: center;
-  gap: 0.75rem;
-  padding: 0.5rem 0.6rem;
+  gap: 1rem;
+  padding: 0.75rem 0.85rem;
   border-radius: 4px;
   border: 1px solid transparent;
   cursor: pointer;
   transition: all 0.15s;
-  font-size: 0.8rem;
+  font-size: 1rem;
 }
 .grade-option:hover { background: var(--surface2); }
 .grade-option input { display: none; }
 .grade-letter {
   font-family: var(--mono);
-  font-size: 0.85rem;
-  font-weight: 600;
-  width: 22px;
+  font-size: 1.3rem;
+  font-weight: 700;
+  width: 28px;
   text-align: center;
   flex-shrink: 0;
+  color: var(--text);
 }
-.grade-desc { color: var(--muted); font-size: 0.78rem; line-height: 1.4; }
+.grade-desc { color: #7a9ab0; font-size: 0.92rem; line-height: 1.4; font-weight: 400; }
 
 .grade-option.sel-A { background: rgba(0,224,160,0.06); border-color: rgba(0,224,160,0.18); }
 .grade-option.sel-A .grade-letter { color: var(--green); }
@@ -507,19 +508,37 @@ body {
 .calc-input::placeholder { color: var(--dim); }
 .calc-results {
   background: #071820;
-  border: 1px solid #1a3a45;
+  border: 1px solid #1a4a5a;
   border-radius: 4px;
   padding: 0.6rem 0.75rem;
   display: flex;
   flex-direction: column;
-  gap: 5px;
+  gap: 6px;
 }
 .calc-result-row { display: flex; justify-content: space-between; align-items: center; }
-.calc-result-label { font-family: var(--mono); font-size: 0.58rem; letter-spacing: 0.08em; text-transform: uppercase; color: var(--muted); }
-.calc-result-val { font-family: var(--mono); font-size: 0.8rem; font-weight: 600; color: var(--text); }
-.calc-result-val.pos { color: var(--green); }
-.calc-result-val.neg { color: var(--red); }
-.calc-result-val.neutral { color: var(--cyan); }
+.calc-result-label { font-family: var(--mono); font-size: 0.6rem; letter-spacing: 0.1em; text-transform: uppercase; color: #5a8a9a; }
+.calc-result-val { font-family: var(--mono); font-size: 0.88rem; font-weight: 600; color: #c8e8f0; }
+.calc-result-val.pos { color: var(--green); text-shadow: 0 0 8px rgba(0,224,160,0.5); }
+.calc-result-val.neg { color: var(--red); text-shadow: 0 0 8px rgba(255,64,96,0.5); }
+.calc-result-val.neutral { color: var(--cyan); text-shadow: 0 0 8px rgba(0,212,255,0.4); }
+/* neon dot indicator for empty state */
+.hs-dot {
+  display: inline-block;
+  width: 7px; height: 7px;
+  border-radius: 50%;
+  background: #1a3a45;
+  border: 1px solid #2a5a6a;
+  transition: background 0.3s, box-shadow 0.3s;
+  vertical-align: middle;
+}
+.hs-dot.active-green { background: var(--green); border-color: var(--green); box-shadow: 0 0 8px rgba(0,224,160,0.7), 0 0 16px rgba(0,224,160,0.3); animation: dot-pulse-g 1.8s ease-in-out infinite; }
+.hs-dot.active-cyan  { background: var(--cyan);  border-color: var(--cyan);  box-shadow: 0 0 8px rgba(0,212,255,0.7), 0 0 16px rgba(0,212,255,0.3); animation: dot-pulse-c 1.8s ease-in-out infinite; }
+.hs-dot.active-red   { background: var(--red);   border-color: var(--red);   box-shadow: 0 0 8px rgba(255,64,96,0.7),  0 0 16px rgba(255,64,96,0.3);  animation: dot-pulse-r 1.8s ease-in-out infinite; }
+.hs-dot.active-amber { background: var(--amber); border-color: var(--amber); box-shadow: 0 0 8px rgba(255,176,32,0.7), 0 0 16px rgba(255,176,32,0.3); animation: dot-pulse-a 1.8s ease-in-out infinite; }
+@keyframes dot-pulse-g { 0%,100%{box-shadow:0 0 6px rgba(0,224,160,0.7),0 0 14px rgba(0,224,160,0.3)} 50%{box-shadow:0 0 12px rgba(0,224,160,1),0 0 24px rgba(0,224,160,0.5)} }
+@keyframes dot-pulse-c { 0%,100%{box-shadow:0 0 6px rgba(0,212,255,0.7),0 0 14px rgba(0,212,255,0.3)} 50%{box-shadow:0 0 12px rgba(0,212,255,1),0 0 24px rgba(0,212,255,0.5)} }
+@keyframes dot-pulse-r { 0%,100%{box-shadow:0 0 6px rgba(255,64,96,0.7),0 0 14px rgba(255,64,96,0.3)}  50%{box-shadow:0 0 12px rgba(255,64,96,1),0 0 24px rgba(255,64,96,0.5)}  }
+@keyframes dot-pulse-a { 0%,100%{box-shadow:0 0 6px rgba(255,176,32,0.7),0 0 14px rgba(255,176,32,0.3)} 50%{box-shadow:0 0 12px rgba(255,176,32,1),0 0 24px rgba(255,176,32,0.5)} }
 
 /* RULE NOTE */
 .rule-note {
@@ -577,6 +596,11 @@ body {
     <a class="sidebar-link" href="ipo-watch.html"><span class="sl-icon">◆</span> IPO Watch</a>
     <a class="sidebar-link" href="#"><span class="sl-icon">◎</span> Journal</a>
     <a class="sidebar-link" href="#"><span class="sl-icon">▲</span> Performance</a>
+  </div>
+  <div class="sidebar-section">
+    <div class="sidebar-section-label">Live Tools</div>
+    <a class="sidebar-link" href="halts.html"><span class="sl-icon">⚡</span> Halt Feed <span id="sb-halt-count" style="margin-left:auto;font-family:var(--mono);font-size:0.55rem;background:rgba(255,64,96,0.15);color:var(--red);border:1px solid rgba(255,64,96,0.3);border-radius:3px;padding:0.1rem 0.35rem;display:none;">0</span></a>
+    <a class="sidebar-link" href="https://www.nasdaqtrader.com/trader.aspx?id=tradehalts" target="_blank"><span class="sl-icon">◈</span> NASDAQ Halts ↗</a>
   </div>
   <div class="sidebar-bottom">
     <div class="s-market-status">
@@ -834,7 +858,7 @@ body {
         <span class="card-title">Temp Check</span>
         <span class="card-progress-mini"><span id="c3p">—</span></span>
       </div>
-      <div class="card-body">
+      <div class="card-body" style="display:flex;flex-direction:column;">
         <div>
           <div class="field-label">Mental state check</div>
           <ul class="checklist" id="temp-list">
@@ -845,7 +869,7 @@ body {
         </div>
         <div class="divider"></div>
         <div>
-          <div class="field-label">Today's grade</div>
+          <div class="field-label" style="font-size:0.72rem;letter-spacing:0.14em;color:#5a8aaa;">Today's grade</div>
           <div class="grade-grid" id="grade-grid">
             <label class="grade-option" data-grade="A"><input type="radio" name="grade" value="A"><span class="grade-letter">A</span><span class="grade-desc">Full sizing — press your edge</span></label>
             <label class="grade-option" data-grade="B"><input type="radio" name="grade" value="B"><span class="grade-letter">B</span><span class="grade-desc">Standard sizing, stay disciplined</span></label>
@@ -854,6 +878,34 @@ body {
             <label class="grade-option" data-grade="F"><input type="radio" name="grade" value="F"><span class="grade-letter">F</span><span class="grade-desc">Do not trade — protect capital</span></label>
           </div>
         </div>
+
+        <div class="divider"></div>
+
+        <!-- ══ LUDP ALERT PANEL ════════════════════════════ -->
+        <div id="ludp-panel" style="display:flex;flex-direction:column;flex:1;">
+          <div style="display:flex;align-items:center;justify-content:space-between;margin-top:10px;margin-bottom:22px;">
+            <div style="display:flex;align-items:center;gap:12px;">
+              <span id="ludp-pulse" style="display:inline-block;width:14px;height:14px;border-radius:50%;background:var(--muted);transition:all 0.3s;flex-shrink:0;"></span>
+              <span style="font-family:var(--mono);font-size:1.05rem;font-weight:700;letter-spacing:0.18em;text-transform:uppercase;color:var(--cyan);text-shadow:0 0 10px rgba(0,212,255,0.8),0 0 22px rgba(0,212,255,0.4);" id="ludp-panel-label">Halt Monitor</span>
+            </div>
+            <div style="display:flex;align-items:center;gap:8px;">
+              <span style="font-family:var(--mono);font-size:0.62rem;color:var(--muted);" id="ludp-last-check">—</span>
+              <button onclick="pollHalts()" style="font-family:var(--mono);font-size:0.65rem;letter-spacing:0.08em;padding:0.25rem 0.65rem;border-radius:3px;border:1px solid var(--border2);background:transparent;color:var(--muted);cursor:pointer;">↺ refresh</button>
+            </div>
+          </div>
+
+          <!-- IDLE STATE — no halts -->
+          <div id="ludp-idle" style="background:#071820;border:1px solid #1a3a45;border-radius:4px;padding:0;text-align:center;flex:1;display:flex;flex-direction:column;align-items:center;justify-content:center;min-height:160px;">
+            <div style="font-family:var(--mono);font-size:0.82rem;letter-spacing:0.12em;text-transform:uppercase;color:#2a5a6a;margin-bottom:10px;">Watching for LUDP halts...</div>
+            <div style="font-family:var(--mono);font-size:0.7rem;color:#1a3a4a;letter-spacing:0.06em;">Checks every 30s · 4am – 4pm ET</div>
+          </div>
+
+          <!-- ACTIVE STATE — halt(s) detected, hidden by default -->
+          <div id="ludp-active" style="display:none;display:flex;flex-direction:column;gap:6px;" hidden>
+          </div>
+        </div>
+        <!-- ══ END LUDP ALERT PANEL ═══════════════════════ -->
+
       </div>
     </div>
 
@@ -871,28 +923,105 @@ body {
           <li><div class="check-box">✓</div><span class="check-text">Playbooks reviewed — I know what I'm looking for</span></li>
         </ul>
         <div class="divider"></div>
+
+        <!-- ══ HALT SCOUT ══════════════════════════════════ -->
         <div>
-          <div class="field-label">Calculator</div>
-          <div class="calc-grid">
-            <div class="calc-box"><div class="calc-label">Entry Price</div><input class="calc-input" id="calc-entry" type="number" step="0.01" placeholder="0.00" oninput="calcAutoStop(); calcUpdate()"></div>
-            <div class="calc-box"><div class="calc-label">Exit Price</div><input class="calc-input" id="calc-exit" type="number" step="0.01" placeholder="0.00" oninput="calcUpdate()"></div>
-            <div class="calc-box"><div class="calc-label">Shares</div><input class="calc-input" id="calc-shares-input" type="number" step="1" value="100" oninput="calcAutoStop(); calcUpdate()"></div>
-            <div class="calc-box" style="grid-column: 1 / -1;"><div class="calc-label">Stop Loss Price <span style="color:var(--muted);font-size:0.5rem;margin-left:4px;">auto: entry − ($250 ÷ shares)</span></div><input class="calc-input" id="calc-stop" type="number" step="0.01" placeholder="0.00" oninput="calcUpdate()"></div>
+          <!-- Header: serif title + BIG GO/STOP button -->
+          <div style="display:flex;align-items:center;justify-content:space-between;margin-bottom:10px;">
+            <span style="font-family:var(--display);font-size:1.55rem;font-weight:400;letter-spacing:0.02em;color:var(--text);line-height:1;">Halt Scout</span>
+            <div id="hs-go-btn" style="font-family:var(--mono);font-size:1.05rem;font-weight:700;letter-spacing:0.18em;padding:0.42rem 1.3rem;border-radius:5px;border:2px solid var(--border2);background:var(--surface3);color:var(--muted);transition:all 0.3s;text-align:center;min-width:116px;">— —</div>
           </div>
+
+          <!-- VOLUME BAR — visible immediately, above the fold -->
+          <div style="margin-bottom:10px;">
+            <div style="display:flex;justify-content:space-between;align-items:center;margin-bottom:4px;">
+              <span class="calc-label">Volume Strength</span>
+              <span id="hs-volratio" style="font-family:var(--mono);font-size:0.75rem;font-weight:600;color:var(--muted);">—</span>
+            </div>
+            <div style="height:8px;background:var(--dim);border-radius:4px;overflow:hidden;">
+              <div id="hs-volbar" style="height:100%;width:0%;background:var(--muted);border-radius:4px;transition:width 0.5s cubic-bezier(0.4,0,0.2,1),background 0.4s;"></div>
+            </div>
+            <div style="display:flex;justify-content:space-between;margin-top:3px;">
+              <span style="font-family:var(--mono);font-size:0.5rem;color:var(--muted);">THIN</span>
+              <span style="font-family:var(--mono);font-size:0.5rem;color:var(--amber);">2x WATCH</span>
+              <span style="font-family:var(--mono);font-size:0.5rem;color:var(--green);">5x GO</span>
+              <span style="font-family:var(--mono);font-size:0.5rem;color:var(--green);">10x+</span>
+            </div>
+          </div>
+
+          <!-- Row 1: Ticker + Halt number -->
+          <div style="display:grid;grid-template-columns:1fr 1fr;gap:6px;margin-bottom:6px;">
+            <div class="calc-box">
+              <div class="calc-label">Ticker</div>
+              <input class="calc-input" id="hs-ticker" type="text" placeholder="e.g. NVDA" style="text-transform:uppercase;text-align:left;" oninput="haltScout()">
+            </div>
+            <div class="calc-box">
+              <div class="calc-label">Halt #</div>
+              <select class="calc-input" id="hs-haltnum" onchange="haltScout()" style="cursor:pointer;">
+                <option value="">— select —</option>
+                <option value="1">1st halt</option>
+                <option value="2">2nd halt ★</option>
+                <option value="3">3rd halt</option>
+                <option value="4">4th halt+</option>
+              </select>
+            </div>
+          </div>
+
+          <!-- Row 2: Entry + Target -->
+          <div style="display:grid;grid-template-columns:1fr 1fr;gap:6px;margin-bottom:6px;">
+            <div class="calc-box">
+              <div class="calc-label">Entry Price</div>
+              <input class="calc-input" id="hs-entry" type="number" step="0.01" placeholder="0.00" oninput="calcAutoStop(); calcUpdate(); haltScout()">
+            </div>
+            <div class="calc-box">
+              <div class="calc-label">Target Price</div>
+              <input class="calc-input" id="hs-target" type="number" step="0.01" placeholder="0.00" oninput="haltScout()">
+            </div>
+          </div>
+
+          <!-- Row 3: Volume + Avg Volume + Shares -->
+          <div style="display:grid;grid-template-columns:1fr 1fr 1fr;gap:6px;margin-bottom:8px;">
+            <div class="calc-box">
+              <div class="calc-label">Volume Now</div>
+              <input class="calc-input" id="hs-vol" type="number" step="1" placeholder="0" oninput="haltScout()">
+            </div>
+            <div class="calc-box">
+              <div class="calc-label">Avg Volume</div>
+              <input class="calc-input" id="hs-avgvol" type="number" step="1" placeholder="0" oninput="haltScout()">
+            </div>
+            <div class="calc-box">
+              <div class="calc-label">Shares</div>
+              <input class="calc-input" id="calc-shares-input" type="number" step="1" value="100" oninput="calcAutoStop(); calcUpdate(); haltScout()">
+            </div>
+          </div>
+
+          <!-- Stop row -->
+          <div style="margin-bottom:8px;">
+            <div class="calc-box">
+              <div class="calc-label">Stop Loss Price <span style="color:var(--muted);font-size:0.5rem;margin-left:4px;">auto: entry − ($250 ÷ shares)</span></div>
+              <input class="calc-input" id="calc-stop" type="number" step="0.01" placeholder="0.00" oninput="calcUpdate(); haltScout()">
+            </div>
+          </div>
+
+          <!-- Calc results -->
           <div class="calc-results" id="calc-results">
-            <div class="calc-result-row"><span class="calc-result-label">Stop Loss Price</span><span class="calc-result-val neutral" id="calc-stop-display">—</span></div>
-            <div class="calc-result-row"><span class="calc-result-label">Max Loss</span><span class="calc-result-val" id="calc-maxloss">—</span></div>
-            <div class="calc-result-row"><span class="calc-result-label">P&amp;L at target</span><span class="calc-result-val" id="calc-pnl">—</span></div>
-            <div class="calc-result-row"><span class="calc-result-label">Risk / Reward</span><span class="calc-result-val" id="calc-rr">—</span></div>
-            <div class="calc-result-row"><span class="calc-result-label">Position size</span><span class="calc-result-val" id="calc-size">—</span></div>
+            <div class="calc-result-row"><span class="calc-result-label">Stop Loss Price</span><span class="calc-result-val neutral" id="calc-stop-display"><span class="hs-dot" id="dot-stop"></span></span></div>
+            <div class="calc-result-row"><span class="calc-result-label">Max Loss</span><span class="calc-result-val" id="calc-maxloss"><span class="hs-dot" id="dot-loss"></span></span></div>
+            <div class="calc-result-row"><span class="calc-result-label">P&amp;L at Target</span><span class="calc-result-val" id="calc-pnl"><span class="hs-dot" id="dot-pnl"></span></span></div>
+            <div class="calc-result-row"><span class="calc-result-label">Risk / Reward</span><span class="calc-result-val" id="calc-rr"><span class="hs-dot" id="dot-rr"></span></span></div>
+            <div class="calc-result-row"><span class="calc-result-label">Position Size</span><span class="calc-result-val" id="calc-size"><span class="hs-dot" id="dot-size"></span></span></div>
+            <div class="divider" style="margin:6px 0;"></div>
+            <div style="padding:4px 0 2px;">
+              <div class="calc-result-label" style="margin-bottom:4px;">Scout Verdict</div>
+              <div id="hs-verdict-text" style="font-family:var(--mono);font-size:0.72rem;font-weight:600;color:#5a8a9a;line-height:1.6;letter-spacing:0.03em;">Fill in the fields above.</div>
+            </div>
           </div>
         </div>
-        <div class="divider"></div>
-        <div>
-          <div class="field-label">Open notes</div>
-          <textarea class="field-input" id="playNotes" placeholder="What looks set up today..."></textarea>
+        <!-- ══ END HALT SCOUT ══════════════════════════════ -->
+        <div style="background:rgba(0,0,0,0.3);border:1px solid #1a2a32;border-radius:4px;padding:0.75rem 1rem;display:flex;flex-direction:column;gap:6px;">
+          <span style="font-family:var(--mono);font-size:0.78rem;font-weight:700;letter-spacing:0.06em;color:var(--red);text-shadow:0 0 10px rgba(255,64,96,0.9),0 0 24px rgba(255,64,96,0.5),0 0 40px rgba(255,64,96,0.2);line-height:1.6;">When the BULLS sell — price will drop.</span>
+          <span style="font-family:var(--mono);font-size:0.78rem;font-weight:700;letter-spacing:0.06em;color:var(--green);text-shadow:0 0 10px rgba(0,224,160,0.9),0 0 24px rgba(0,224,160,0.5),0 0 40px rgba(0,224,160,0.2);line-height:1.6;">When the BEARS sell — price will shoot up.</span>
         </div>
-        <div class="rule-note">I am not trying to predict anything. I am never committed to any specific ticker or sector.</div>
       </div>
     </div>
   </div>
@@ -907,7 +1036,7 @@ document.getElementById('currentDate').textContent = new Date().toLocaleDateStri
 
 // ── CALCULATOR ─────────────────────────────────────────────
 function calcAutoStop() {
-  const entry  = parseFloat(document.getElementById('calc-entry').value);
+  const entry  = parseFloat(document.getElementById('hs-entry').value);
   const shares = parseFloat(document.getElementById('calc-shares-input').value) || 100;
   if (!entry || entry <= 0) return;
   const autoStop = (entry - (250 / shares)).toFixed(2);
@@ -915,8 +1044,8 @@ function calcAutoStop() {
 }
 
 function calcUpdate() {
-  const entry  = parseFloat(document.getElementById('calc-entry').value);
-  const exit   = parseFloat(document.getElementById('calc-exit').value);
+  const entry  = parseFloat(document.getElementById('hs-entry').value);
+  const exit   = parseFloat(document.getElementById('hs-target').value);
   const stop   = parseFloat(document.getElementById('calc-stop').value);
   const shares = parseFloat(document.getElementById('calc-shares-input').value) || 100;
 
@@ -926,8 +1055,28 @@ function calcUpdate() {
   const rrEl        = document.getElementById('calc-rr');
   const sizeEl      = document.getElementById('calc-size');
 
+  function setDot(el, dotId, text, cls) {
+    el.innerHTML = '';
+    if (text === null) {
+      const d = document.createElement('span');
+      d.className = 'hs-dot';
+      d.id = dotId;
+      el.appendChild(d);
+      el.className = 'calc-result-val';
+    } else {
+      el.textContent = text;
+      el.className = 'calc-result-val ' + cls;
+      // light up the glow color based on class
+      const glowMap = { pos:'active-green', neg:'active-red', neutral:'active-cyan', '':'active-cyan' };
+    }
+  }
+
   if (!entry || entry <= 0 || !stop || stop <= 0) {
-    [stopDispEl, maxLossEl, pnlEl, rrEl, sizeEl].forEach(e => { e.textContent = '—'; e.className = 'calc-result-val'; });
+    setDot(stopDispEl, 'dot-stop', null, '');
+    setDot(maxLossEl,  'dot-loss', null, '');
+    setDot(pnlEl,      'dot-pnl',  null, '');
+    setDot(rrEl,       'dot-rr',   null, '');
+    setDot(sizeEl,     'dot-size', null, '');
     return;
   }
 
@@ -939,6 +1088,7 @@ function calcUpdate() {
 
   stopDispEl.textContent = '$' + stop.toFixed(2);
   stopDispEl.className = 'calc-result-val neutral';
+
   maxLossEl.textContent = '-$' + Math.abs(maxLoss).toFixed(2);
   maxLossEl.className = 'calc-result-val neg';
 
@@ -948,12 +1098,323 @@ function calcUpdate() {
     rrEl.textContent = rr + ':1';
     rrEl.className = 'calc-result-val ' + (parseFloat(rr) >= 2 ? 'pos' : parseFloat(rr) >= 1 ? 'neutral' : 'neg');
   } else {
-    pnlEl.textContent = '—'; pnlEl.className = 'calc-result-val';
-    rrEl.textContent  = '—'; rrEl.className  = 'calc-result-val';
+    setDot(pnlEl, 'dot-pnl', null, '');
+    setDot(rrEl,  'dot-rr',  null, '');
   }
+
   sizeEl.textContent = '$' + posSize.toLocaleString(undefined, { maximumFractionDigits: 2 });
   sizeEl.className = 'calc-result-val neutral';
 }
+
+// ── HALT SCOUT ─────────────────────────────────────────────
+function haltScout() {
+  const ticker   = (document.getElementById('hs-ticker').value || '').trim().toUpperCase();
+  const haltNum  = parseInt(document.getElementById('hs-haltnum').value) || 0;
+  const entry    = parseFloat(document.getElementById('hs-entry').value);
+  const target   = parseFloat(document.getElementById('hs-target').value);
+  const vol      = parseFloat(document.getElementById('hs-vol').value);
+  const avgVol   = parseFloat(document.getElementById('hs-avgvol').value);
+
+  const verdictEl = document.getElementById('hs-verdict-text');
+  const volRatioEl= document.getElementById('hs-volratio');
+  const volBarEl  = document.getElementById('hs-volbar');
+
+  // Volume ratio
+  let volRatio = 0;
+  if (vol > 0 && avgVol > 0) {
+    volRatio = vol / avgVol;
+    volRatioEl.textContent = volRatio.toFixed(1) + 'x avg';
+    const barPct = Math.min(volRatio / 10 * 100, 100);
+    volBarEl.style.width = barPct + '%';
+    if (volRatio >= 5) {
+      volRatioEl.className = 'calc-result-val pos';
+      volBarEl.style.background = 'var(--green)';
+    } else if (volRatio >= 2) {
+      volRatioEl.className = 'calc-result-val neutral';
+      volBarEl.style.background = 'var(--amber)';
+    } else {
+      volRatioEl.className = 'calc-result-val neg';
+      volBarEl.style.background = 'var(--red)';
+    }
+  } else {
+    volRatioEl.textContent = '—';
+    volRatioEl.className = 'calc-result-val';
+    volBarEl.style.width = '0%';
+  }
+
+  // Need at least ticker + halt # + entry + volume to give a verdict
+  if (!ticker || !haltNum || !entry || !vol || !avgVol) {
+    verdictEl.textContent = 'Fill in the fields above.';
+    verdictEl.style.color = 'var(--muted)';
+    return;
+  }
+
+  // Volume gate — below 2x is thin, skip
+  const volOk    = volRatio >= 5;
+  const volWarn  = volRatio >= 2 && volRatio < 5;
+  const volThin  = volRatio < 2;
+
+  // Halt number scoring
+  // 1 = confirm, 2 = prime window, 3 = half size, 4+ = pass / minimal
+  const haltLabel   = ['1st halt', '2nd halt ★', '3rd halt', '4th halt+'][haltNum - 1] || '';
+  const haltPrime   = haltNum <= 2;
+  const haltCaution = haltNum === 3;
+  const haltLate    = haltNum >= 4;
+
+  // R:R quick check
+  let rrOk = false;
+  let rrText = '';
+  if (target > 0 && entry > 0) {
+    const stop = parseFloat(document.getElementById('calc-stop').value);
+    if (stop > 0) {
+      const rr = (target - entry) / (entry - stop);
+      rrOk = rr >= 2;
+      rrText = ' R:R ' + rr.toFixed(1) + ':1' + (rrOk ? ' ✓' : ' — improve target');
+    }
+  }
+
+  // Build verdict
+  let verdict = '', color = '', badge = '', badgeBg = '', badgeBorder = '';
+
+  if (volThin) {
+    verdict = ticker + ' — volume too thin (' + volRatio.toFixed(1) + 'x). Spread will be wide. Pass on this one. Wait for a cleaner setup with 5x+ volume.';
+    color = 'var(--red)';
+    badge = 'NO GO'; badgeBg = 'rgba(255,64,96,0.1)'; badgeBorder = 'rgba(255,64,96,0.3)';
+  } else if (haltLate) {
+    verdict = ticker + ' — ' + haltLabel + '. Most of the move is behind you. Volume is ' + volRatio.toFixed(1) + 'x.' + (volOk ? ' Tape looks active' : '') + '. If you go in: minimal size, tight stop, no chasing.' + rrText;
+    color = 'var(--amber)';
+    badge = 'REDUCE SIZE'; badgeBg = 'rgba(255,176,32,0.1)'; badgeBorder = 'rgba(255,176,32,0.3)';
+  } else if (haltCaution) {
+    if (volOk) {
+      verdict = ticker + ' — ' + haltLabel + '. Volume is strong at ' + volRatio.toFixed(1) + 'x. Edge is shrinking — cut to half size. Bulls trying for a 3rd push. Stop tight, watch VWAP.' + rrText;
+      color = 'var(--amber)';
+      badge = 'HALF SIZE'; badgeBg = 'rgba(255,176,32,0.1)'; badgeBorder = 'rgba(255,176,32,0.3)';
+    } else {
+      verdict = ticker + ' — ' + haltLabel + ' with weak volume at ' + volRatio.toFixed(1) + 'x. Double caution here: late halt + thin tape. Sit out or very minimal size.';
+      color = 'var(--red)';
+      badge = 'CAUTION'; badgeBg = 'rgba(255,64,96,0.08)'; badgeBorder = 'rgba(255,64,96,0.25)';
+    }
+  } else {
+    // Halt 1 or 2
+    if (volOk) {
+      const prime = haltNum === 2;
+      verdict = ticker + ' — ' + haltLabel + (prime ? ' — PRIME window.' : ' — momentum confirmed.') + ' Volume firing at ' + volRatio.toFixed(1) + 'x avg. Tape is thick.' + (prime ? ' This is where edge is sharpest — size up, stop in place.' : ' Let halt 2 be your prime entry.') + rrText;
+      color = 'var(--green)';
+      badge = prime ? 'PRIME SETUP' : 'CONFIRMED'; badgeBg = 'var(--green-bg)'; badgeBorder = 'rgba(0,224,160,0.25)';
+    } else {
+      verdict = ticker + ' — ' + haltLabel + ' but volume is only ' + volRatio.toFixed(1) + 'x. Momentum is there but the tape is not confirming. Reduce size. Watch the reopen for volume surge before committing.' + rrText;
+      color = 'var(--amber)';
+      badge = 'WATCH'; badgeBg = 'rgba(255,176,32,0.1)'; badgeBorder = 'rgba(255,176,32,0.3)';
+    }
+  }
+
+  verdictEl.textContent = verdict;
+  verdictEl.style.color = color;
+
+  // ── BIG GO / STOP BUTTON ──────────────────────────────
+  const btn = document.getElementById('hs-go-btn');
+  if (volThin) {
+    btn.textContent = 'NO GO';
+    btn.style.background = 'rgba(255,64,96,0.12)';
+    btn.style.borderColor = 'rgba(255,64,96,0.55)';
+    btn.style.color = 'var(--red)';
+    btn.style.boxShadow = '0 0 14px rgba(255,64,96,0.18)';
+  } else if (haltLate) {
+    btn.textContent = 'REDUCE';
+    btn.style.background = 'rgba(255,176,32,0.1)';
+    btn.style.borderColor = 'rgba(255,176,32,0.45)';
+    btn.style.color = 'var(--amber)';
+    btn.style.boxShadow = '0 0 10px rgba(255,176,32,0.12)';
+  } else if (haltCaution && !volOk) {
+    btn.textContent = 'CAUTION';
+    btn.style.background = 'rgba(255,64,96,0.08)';
+    btn.style.borderColor = 'rgba(255,64,96,0.35)';
+    btn.style.color = 'var(--red)';
+    btn.style.boxShadow = 'none';
+  } else if (haltCaution && volOk) {
+    btn.textContent = 'HALF SIZE';
+    btn.style.background = 'rgba(255,176,32,0.1)';
+    btn.style.borderColor = 'rgba(255,176,32,0.45)';
+    btn.style.color = 'var(--amber)';
+    btn.style.boxShadow = '0 0 10px rgba(255,176,32,0.12)';
+  } else if (volOk) {
+    btn.textContent = haltNum === 2 ? '★ GO' : 'GO';
+    btn.style.background = 'rgba(0,224,160,0.1)';
+    btn.style.borderColor = 'rgba(0,224,160,0.5)';
+    btn.style.color = 'var(--green)';
+    btn.style.boxShadow = '0 0 18px rgba(0,224,160,0.2)';
+  } else {
+    btn.textContent = 'WATCH';
+    btn.style.background = 'rgba(255,176,32,0.07)';
+    btn.style.borderColor = 'rgba(255,176,32,0.35)';
+    btn.style.color = 'var(--amber)';
+    btn.style.boxShadow = 'none';
+  }
+}
+
+// ── LUDP HALT MONITOR ─────────────────────────────────────
+const HALT_RSS = 'https://api.allorigins.win/get?url=' + encodeURIComponent('https://www.nasdaqtrader.com/rss.aspx?feed=tradehalts');
+let knownHaltIds = new Set();
+let haltPollTimer = null;
+
+async function pollHalts() {
+  const lastEl  = document.getElementById('ludp-last-check');
+  const pulseEl = document.getElementById('ludp-pulse');
+  const labelEl = document.getElementById('ludp-panel-label');
+
+  // pulse white while fetching
+  pulseEl.style.background = 'var(--cyan)';
+  pulseEl.style.boxShadow  = '0 0 8px rgba(0,212,255,0.7)';
+
+  try {
+    const res  = await fetch(HALT_RSS);
+    const json = await res.json();
+    const xml  = new DOMParser().parseFromString(json.contents, 'text/xml');
+    const items = xml.querySelectorAll('item');
+
+    const newLUDP = [];
+
+    items.forEach(item => {
+      const title = item.querySelector('title')?.textContent || '';
+      const desc  = item.querySelector('description')?.textContent || '';
+      const parts = title.split(' - ');
+      const ticker    = (parts[0] || '').trim();
+      const code      = (parts[1] || '').trim();
+      const haltTime  = (parts[2] || '').trim();
+
+      const getField = (key) => {
+        const rx = new RegExp(key + '[:\s]+([^<\n]+)', 'i');
+        const m = desc.match(rx);
+        return m ? m[1].trim() : '';
+      };
+
+      const reasonCode = getField('Reason Code') || code;
+      const issueSymbol = getField('Issue Symbol') || ticker;
+      const issueName   = getField('Issue Name') || '—';
+      const resumeQuote = getField('Resumption Quote Time') || '';
+      const resumeTrade = getField('Resumption Trade Time') || '';
+      const uid = issueSymbol + '-' + haltTime;
+
+      if (reasonCode === 'LUDP' && !knownHaltIds.has(uid)) {
+        knownHaltIds.add(uid);
+        newLUDP.push({ ticker: issueSymbol, name: issueName, haltTime, resumeQuote, resumeTrade, uid });
+      }
+    });
+
+    const now = new Date().toLocaleTimeString('en-US', { timeZone:'America/New_York', hour:'2-digit', minute:'2-digit', second:'2-digit' });
+    lastEl.textContent = 'checked ' + now + ' ET';
+
+    if (newLUDP.length > 0) {
+      showLUDPAlerts(newLUDP);
+    } else {
+      // still show idle unless we already have active cards
+      const activeDiv = document.getElementById('ludp-active');
+      if (!activeDiv.children.length) {
+        pulseEl.style.background = 'var(--cyan)';
+        pulseEl.style.boxShadow  = '0 0 8px rgba(0,212,255,0.5)';
+        labelEl.textContent = 'Halt Monitor';
+        labelEl.style.color = 'var(--cyan)';
+        labelEl.style.textShadow = '0 0 10px rgba(0,212,255,0.8),0 0 22px rgba(0,212,255,0.4)';
+      } else {
+        pulseEl.style.background = 'var(--red)';
+        pulseEl.style.boxShadow  = '0 0 10px rgba(255,64,96,0.8), 0 0 20px rgba(255,64,96,0.4)';
+        pulseEl.style.animation  = 'pulse-dot 1s ease-in-out infinite';
+      }
+    }
+  } catch(e) {
+    pulseEl.style.background = 'var(--muted)';
+    pulseEl.style.boxShadow  = 'none';
+    lastEl.textContent = 'feed unavailable';
+  }
+}
+
+function showLUDPAlerts(halts) {
+  const idleDiv  = document.getElementById('ludp-idle');
+  const activeDiv = document.getElementById('ludp-active');
+  const pulseEl  = document.getElementById('ludp-pulse');
+  const labelEl  = document.getElementById('ludp-panel-label');
+
+  idleDiv.style.display  = 'none';
+  activeDiv.removeAttribute('hidden');
+  activeDiv.style.display = 'flex';
+
+  halts.forEach(h => {
+    const card = document.createElement('div');
+    card.style.cssText = 'background:rgba(255,64,96,0.08);border:1px solid rgba(255,64,96,0.4);border-radius:4px;padding:0.7rem 0.85rem;animation:fadeUp 0.3s ease;';
+    card.innerHTML = `
+      <div style="display:flex;align-items:center;justify-content:space-between;margin-bottom:6px;">
+        <div style="display:flex;align-items:center;gap:8px;">
+          <span style="font-family:var(--mono);font-size:0.58rem;font-weight:700;letter-spacing:0.14em;padding:0.15rem 0.45rem;border-radius:3px;background:rgba(255,64,96,0.2);color:var(--red);border:1px solid rgba(255,64,96,0.4);text-shadow:0 0 8px rgba(255,64,96,0.6);">⚡ LUDP</span>
+          <span style="font-family:var(--mono);font-size:1rem;font-weight:700;color:var(--text);letter-spacing:0.06em;">${h.ticker}</span>
+        </div>
+        <button onclick="this.closest('div[style]').remove(); checkAllCleared();" style="font-family:var(--mono);font-size:0.55rem;padding:0.1rem 0.4rem;border-radius:3px;border:1px solid var(--border2);background:transparent;color:var(--muted);cursor:pointer;">✕</button>
+      </div>
+      <div style="font-family:var(--mono);font-size:0.65rem;color:var(--text2);margin-bottom:8px;line-height:1.6;">
+        ${h.name}<br>
+        <span style="color:var(--muted);">Halted:</span> ${h.haltTime}
+        ${h.resumeTrade ? ' &nbsp;|&nbsp; <span style="color:var(--muted);">Resumes:</span> <span style="color:var(--green);">' + h.resumeTrade + '</span>' : ' &nbsp;|&nbsp; <span style="color:var(--amber);">Resumption pending</span>'}
+      </div>
+      <div style="display:flex;gap:6px;">
+        <button onclick="loadIntoScout('${h.ticker}')" style="flex:1;font-family:var(--mono);font-size:0.65rem;font-weight:700;letter-spacing:0.1em;padding:0.35rem 0;border-radius:4px;border:1px solid rgba(0,212,255,0.35);background:rgba(0,212,255,0.08);color:var(--cyan);cursor:pointer;transition:all 0.15s;" onmouseover="this.style.background='rgba(0,212,255,0.16)'" onmouseout="this.style.background='rgba(0,212,255,0.08)'">Scout ↗</button>
+        <a href="halts.html" style="flex:1;font-family:var(--mono);font-size:0.65rem;font-weight:600;letter-spacing:0.08em;padding:0.35rem 0;border-radius:4px;border:1px solid var(--border2);background:transparent;color:var(--text2);cursor:pointer;text-decoration:none;text-align:center;transition:all 0.15s;" onmouseover="this.style.color='var(--text)'" onmouseout="this.style.color='var(--text2)'">Full Feed</a>
+      </div>`;
+    activeDiv.prepend(card);
+  });
+
+  // Red pulsing dot + label update
+  pulseEl.style.background = 'var(--red)';
+  pulseEl.style.boxShadow  = '0 0 10px rgba(255,64,96,0.9), 0 0 22px rgba(255,64,96,0.4)';
+  pulseEl.style.animation  = 'pulse-dot 0.9s ease-in-out infinite';
+  const count = document.getElementById('ludp-active').children.length;
+  labelEl.textContent = count + ' LUDP HALT' + (count > 1 ? 'S' : '') + ' ACTIVE';
+  labelEl.style.color = 'var(--red)';
+  labelEl.style.textShadow = '0 0 10px rgba(255,64,96,0.9),0 0 24px rgba(255,64,96,0.5),0 0 40px rgba(255,64,96,0.2)';
+}
+
+function checkAllCleared() {
+  const activeDiv = document.getElementById('ludp-active');
+  const idleDiv   = document.getElementById('ludp-idle');
+  const pulseEl   = document.getElementById('ludp-pulse');
+  const labelEl   = document.getElementById('ludp-panel-label');
+  if (!activeDiv.children.length) {
+    activeDiv.hidden = true;
+    idleDiv.style.display = 'block';
+    pulseEl.style.background = 'var(--muted)';
+    pulseEl.style.boxShadow  = 'none';
+    pulseEl.style.animation  = 'none';
+    labelEl.textContent = 'Halt Monitor';
+    labelEl.style.color = 'var(--cyan)';
+    labelEl.style.textShadow = '0 0 10px rgba(0,212,255,0.8),0 0 22px rgba(0,212,255,0.4)';
+  }
+}
+
+function loadIntoScout(ticker) {
+  const el = document.getElementById('hs-ticker');
+  if (el) {
+    el.value = ticker.toUpperCase();
+    if (window.haltScout) haltScout();
+    el.scrollIntoView({ behavior: 'smooth', block: 'center' });
+    el.focus();
+    // flash the input border
+    el.style.borderColor = 'var(--cyan)';
+    el.style.boxShadow   = '0 0 10px rgba(0,212,255,0.4)';
+    setTimeout(() => { el.style.borderColor = ''; el.style.boxShadow = ''; }, 1500);
+  }
+}
+
+// Poll every 30s, but only during market + pre-market hours
+function startHaltMonitor() {
+  pollHalts();
+  haltPollTimer = setInterval(() => {
+    const now = new Date();
+    const et  = new Date(now.toLocaleString('en-US', { timeZone: 'America/New_York' }));
+    const h   = et.getHours();
+    const day = et.getDay();
+    // 4am–4pm ET Mon–Fri
+    if (day > 0 && day < 6 && h >= 4 && h < 16) pollHalts();
+  }, 30000);
+}
+startHaltMonitor();
 
 // ── COUNTDOWN ──────────────────────────────────────────────
 function pad(n) { return String(n).padStart(2,'0'); }

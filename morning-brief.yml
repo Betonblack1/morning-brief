@@ -1,39 +1,33 @@
 name: Generate Morning Brief
-
 on:
   schedule:
-    - cron: '0 12 * * 1-5'   # 7:00 AM ET (12:00 UTC) Mon-Fri
-  workflow_dispatch:           # allow manual trigger
-
+    - cron: '0 12 * * 1-5'      # 7:00 AM ET (12:00 UTC) Mon-Fri — morning run
+    - cron: '*/30 13-21 * * 1-5' # every 30 min, 9:00 AM–5:00 PM ET (13:00–21:00 UTC) Mon-Fri
+  workflow_dispatch:              # allow manual trigger
 jobs:
   generate:
     runs-on: ubuntu-latest
     permissions:
       contents: write
-
     steps:
       - name: Checkout repo
         uses: actions/checkout@v4
-
       - name: Setup Node.js
         uses: actions/setup-node@v4
         with:
           node-version: '20'
-
       - name: Install dependencies
         run: npm install
-
       - name: Generate morning brief
         env:
           FINNHUB_API_KEY:   ${{ secrets.FINNHUB_API_KEY }}
           ANTHROPIC_API_KEY: ${{ secrets.ANTHROPIC_API_KEY }}
           MASSIVE_API_KEY:   ${{ secrets.MASSIVE_API_KEY }}
         run: node scripts/generate-brief.js
-
       - name: Commit and push data
         run: |
           git config user.name  "github-actions[bot]"
           git config user.email "github-actions[bot]@users.noreply.github.com"
           git add data/market-data.json
-          git diff --staged --quiet || git commit -m "Morning brief $(date -u '+%Y-%m-%d %H:%M UTC')"
+          git diff --staged --quiet || git commit -m "Market data $(date -u '+%Y-%m-%d %H:%M UTC')"
           git push

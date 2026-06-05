@@ -1,318 +1,506 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
 <title>Live Halt Feed</title>
-<link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@300;400;500;600;700&family=DM+Sans:wght@300;400;500&family=Playfair+Display:wght@400;500&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700&family=IBM+Plex+Mono:wght@400;600&family=IBM+Plex+Sans:wght@300;400;600&display=swap" rel="stylesheet" />
 <style>
-:root {
-  --bg:        #06090d;
-  --surface:   #0b1017;
-  --surface2:  #10161e;
-  --surface3:  #151d27;
-  --border:    #1a2332;
-  --border2:   #243040;
-  --text:      #c8d8e8;
-  --text2:     #7a90a8;
-  --muted:     #3a5060;
-  --dim:       #263040;
-  --green:     #00e0a0;
-  --green-bg:  rgba(0,224,160,0.05);
-  --green-glow:rgba(0,224,160,0.2);
-  --amber:     #ffb020;
-  --red:       #ff4060;
-  --blue:      #40a0ff;
-  --cyan:      #00d4ff;
-  --cyan-bg:   rgba(0,212,255,0.05);
-  --mono:      'JetBrains Mono', monospace;
-  --sans:      'DM Sans', sans-serif;
-  --display:   'Playfair Display', serif;
-  --sidebar:   280px;
-}
-* { box-sizing: border-box; margin: 0; padding: 0; }
-body { font-family: var(--sans); background: var(--bg); color: var(--text); min-height: 100vh; display: flex; font-weight: 300; }
+  :root {
+    --bg:        #090b13;
+    --surface:   #0e1120;
+    --border:    rgba(255,255,255,0.07);
+    --cyan:      #00d4ff;
+    --green:     #00ff9d;
+    --red:       #ff4d6a;
+    --gold:      #f5c542;
+    --muted:     #4a5270;
+    --text:      #c8cfe8;
+    --text-dim:  #636b8a;
+    --sidebar:   280px;
+  }
 
-/* SIDEBAR */
-.sidebar { width: var(--sidebar); min-height: 100vh; background: var(--surface); border-right: 1px solid var(--border); display: flex; flex-direction: column; position: fixed; top: 0; left: 0; z-index: 200; }
-.sidebar-brand { padding: 1.25rem 1rem 1rem; border-bottom: 1px solid var(--border); }
-.sidebar-brand .brand-tag { font-family: var(--mono); font-size: 0.58rem; letter-spacing: 0.2em; text-transform: uppercase; color: var(--cyan); margin-bottom: 0.35rem; }
-.sidebar-brand .brand-name { font-family: var(--display); font-size: 2.8rem; font-weight: 400; color: var(--text); line-height: 1.1; }
-.sidebar-brand .brand-sub { font-family: var(--mono); font-size: 0.55rem; letter-spacing: 0.12em; color: var(--muted); text-transform: uppercase; margin-top: 0.3rem; }
-.sidebar-section { padding: 0.7rem 0 0.3rem; }
-.sidebar-section-label { font-family: var(--mono); font-size: 0.52rem; letter-spacing: 0.18em; text-transform: uppercase; color: var(--muted); padding: 0 1rem 0.4rem; }
-.sidebar-link { display: flex; align-items: center; gap: 0.6rem; padding: 0.5rem 1rem; font-family: var(--mono); font-size: 0.72rem; letter-spacing: 0.07em; text-transform: uppercase; color: var(--text2); text-decoration: none; cursor: pointer; transition: all 0.2s; border-left: 2px solid transparent; }
-.sidebar-link:hover { color: var(--cyan); background: rgba(0,212,255,0.04); border-left-color: rgba(0,212,255,0.3); }
-.sidebar-link.active { color: var(--cyan); border-left-color: var(--cyan); background: rgba(0,212,255,0.06); }
-.sidebar-bottom { margin-top: auto; padding: 1rem; border-top: 1px solid var(--border); }
-.s-market-status { display: flex; align-items: center; gap: 0.5rem; font-family: var(--mono); font-size: 0.62rem; letter-spacing: 0.06em; text-transform: uppercase; }
-.s-status-dot { width: 6px; height: 6px; border-radius: 50%; }
-.s-status-dot.pre { background: var(--green); box-shadow: 0 0 6px rgba(0,224,160,0.4); animation: pulse-dot 2s infinite; }
-.s-status-dot.open { background: var(--amber); }
-.s-status-dot.closed { background: var(--muted); }
-@keyframes pulse-dot { 0%,100%{opacity:1;transform:scale(1)} 50%{opacity:0.5;transform:scale(0.8)} }
+  * { box-sizing: border-box; margin: 0; padding: 0; }
 
-/* MAIN */
-.main-wrap { margin-left: var(--sidebar); flex: 1; display: flex; flex-direction: column; min-height: 100vh; }
-.top-header { padding: 1.5rem 2rem 1.1rem; border-bottom: 1px solid var(--border); background: var(--surface); display: flex; align-items: center; justify-content: space-between; }
-.page-title { font-family: var(--display); font-size: 2.6rem; font-weight: 400; color: var(--text); line-height: 1; }
-.page-date { font-family: var(--mono); font-size: 0.6rem; color: var(--cyan); letter-spacing: 0.14em; text-transform: uppercase; }
-.countdown-pill { font-family: var(--mono); font-size: 0.65rem; font-weight: 500; letter-spacing: 0.05em; padding: 0.28rem 0.7rem; border-radius: 4px; display: flex; align-items: center; gap: 0.45rem; }
-.countdown-pill.pre  { color: var(--green); background: var(--green-bg); border: 1px solid rgba(0,224,160,0.12); }
-.countdown-pill.open { color: var(--amber); background: rgba(255,176,32,0.05); border: 1px solid rgba(255,176,32,0.12); }
-.countdown-pill.closed { color: var(--muted); background: var(--surface2); border: 1px solid var(--border); }
-.cdot { width:5px; height:5px; border-radius:50%; animation: pulse-dot 1.5s ease-in-out infinite; }
-.countdown-pill.pre .cdot { background: var(--green); }
-.countdown-pill.open .cdot { background: var(--amber); }
+  body {
+    background: var(--bg);
+    color: var(--text);
+    font-family: 'IBM Plex Sans', sans-serif;
+    font-size: 14px;
+    min-height: 100vh;
+    display: flex;
+  }
 
-/* CONTROLS BAR */
-.controls-bar {
-  padding: 0.75rem 2rem;
-  border-bottom: 1px solid var(--border);
-  background: var(--surface2);
-  display: flex;
-  align-items: center;
-  gap: 1rem;
-  flex-wrap: wrap;
-}
-.filter-btn {
-  font-family: var(--mono);
-  font-size: 0.62rem;
-  font-weight: 600;
-  letter-spacing: 0.1em;
-  text-transform: uppercase;
-  padding: 0.3rem 0.8rem;
-  border-radius: 3px;
-  border: 1px solid var(--border2);
-  background: transparent;
-  color: var(--text2);
-  cursor: pointer;
-  transition: all 0.15s;
-}
-.filter-btn:hover { border-color: var(--cyan); color: var(--cyan); }
-.filter-btn.active-ludp { border-color: var(--green); color: var(--green); background: rgba(0,224,160,0.07); }
-.filter-btn.active-all  { border-color: var(--cyan);  color: var(--cyan);  background: rgba(0,212,255,0.07); }
-.refresh-info { font-family: var(--mono); font-size: 0.58rem; color: var(--muted); margin-left: auto; display: flex; align-items: center; gap: 0.5rem; }
-.refresh-dot { width: 5px; height: 5px; border-radius: 50%; background: var(--muted); }
-.refresh-dot.spinning { background: var(--green); box-shadow: 0 0 6px rgba(0,224,160,0.6); animation: pulse-dot 0.8s ease-in-out infinite; }
-.halt-count-badge { font-family: var(--mono); font-size: 0.62rem; font-weight: 600; padding: 0.2rem 0.55rem; border-radius: 3px; }
-.badge-ludp { background: rgba(255,64,96,0.12); color: var(--red); border: 1px solid rgba(255,64,96,0.3); }
-.badge-total { background: rgba(0,212,255,0.08); color: var(--cyan); border: 1px solid rgba(0,212,255,0.2); }
+  /* ── SIDEBAR ── */
+  .sidebar {
+    width: var(--sidebar);
+    min-height: 100vh;
+    background: var(--surface);
+    border-right: 1px solid var(--border);
+    display: flex;
+    flex-direction: column;
+    padding: 28px 0;
+    position: fixed;
+    top: 0; left: 0; bottom: 0;
+    z-index: 10;
+  }
 
-/* MAIN CONTENT */
-.main { padding: 1.5rem 2rem; display: flex; flex-direction: column; gap: 1rem; }
+  .brand {
+    padding: 0 24px 28px;
+    border-bottom: 1px solid var(--border);
+  }
+  .brand-sub {
+    font-family: 'IBM Plex Mono', monospace;
+    font-size: 10px;
+    color: var(--muted);
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    margin-bottom: 6px;
+  }
+  .brand-title {
+    font-family: 'Playfair Display', serif;
+    font-size: 26px;
+    color: #fff;
+    line-height: 1.1;
+  }
+  .brand-title span { color: var(--cyan); }
 
-/* HALT TABLE */
-.halt-table-wrap {
-  background: var(--surface);
-  border: 1px solid var(--border);
-  border-radius: 6px;
-  overflow: hidden;
-}
-.halt-table {
-  width: 100%;
-  border-collapse: collapse;
-  font-family: var(--mono);
-}
-.halt-table thead tr {
-  background: var(--surface2);
-  border-bottom: 1px solid var(--border2);
-}
-.halt-table th {
-  font-size: 0.55rem;
-  font-weight: 600;
-  letter-spacing: 0.12em;
-  text-transform: uppercase;
-  color: var(--muted);
-  padding: 0.6rem 1rem;
-  text-align: left;
-  white-space: nowrap;
-}
-.halt-table td {
-  padding: 0.65rem 1rem;
-  font-size: 0.75rem;
-  border-bottom: 1px solid var(--border);
-  vertical-align: middle;
-  color: var(--text2);
-}
-.halt-table tbody tr { transition: background 0.15s; }
-.halt-table tbody tr:hover { background: var(--surface2); }
-.halt-table tbody tr:last-child td { border-bottom: none; }
+  .nav-section { padding: 20px 24px 8px; }
+  .nav-label {
+    font-family: 'IBM Plex Mono', monospace;
+    font-size: 9px;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    color: var(--muted);
+    margin-bottom: 8px;
+  }
+  .nav-link {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    padding: 8px 10px;
+    border-radius: 6px;
+    color: var(--text-dim);
+    text-decoration: none;
+    font-size: 13px;
+    transition: all .15s;
+    margin-bottom: 2px;
+  }
+  .nav-link:hover { background: rgba(255,255,255,0.05); color: var(--text); }
+  .nav-link.active { background: rgba(0,212,255,0.1); color: var(--cyan); }
+  .nav-link .icon { font-size: 14px; width: 18px; text-align: center; }
 
-/* NEW ROW flash animation */
-@keyframes row-flash {
-  0%   { background: rgba(255,64,96,0.18); }
-  100% { background: transparent; }
-}
-.halt-table tbody tr.new-halt { animation: row-flash 2s ease-out forwards; }
+  /* ── MAIN ── */
+  .main {
+    margin-left: var(--sidebar);
+    flex: 1;
+    padding: 32px 36px;
+    max-width: 1200px;
+  }
 
-/* TICKER col */
-.ticker-cell { font-size: 0.88rem; font-weight: 700; color: var(--text); letter-spacing: 0.05em; }
+  /* ── HEADER BAR ── */
+  .page-header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-bottom: 28px;
+    flex-wrap: wrap;
+    gap: 12px;
+  }
+  .page-title {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+  }
+  .page-title h1 {
+    font-family: 'IBM Plex Mono', monospace;
+    font-size: 13px;
+    letter-spacing: 3px;
+    text-transform: uppercase;
+    color: var(--cyan);
+  }
+  .pulse {
+    width: 8px; height: 8px;
+    background: var(--cyan);
+    border-radius: 50%;
+    animation: pulse 2s infinite;
+    flex-shrink: 0;
+  }
+  @keyframes pulse {
+    0%,100% { opacity:1; box-shadow: 0 0 0 0 rgba(0,212,255,.4); }
+    50%      { opacity:.7; box-shadow: 0 0 0 6px rgba(0,212,255,0); }
+  }
 
-/* REASON CODE badges */
-.code-badge {
-  font-family: var(--mono);
-  font-size: 0.62rem;
-  font-weight: 700;
-  letter-spacing: 0.08em;
-  padding: 0.2rem 0.55rem;
-  border-radius: 3px;
-  display: inline-block;
-}
-.code-LUDP { background: rgba(255,64,96,0.14); color: var(--red); border: 1px solid rgba(255,64,96,0.35); text-shadow: 0 0 8px rgba(255,64,96,0.5); }
-.code-T1   { background: rgba(255,176,32,0.1);  color: var(--amber); border: 1px solid rgba(255,176,32,0.3); }
-.code-T12  { background: rgba(58,80,96,0.4);    color: var(--muted); border: 1px solid var(--border2); }
-.code-M    { background: rgba(64,160,255,0.1);  color: var(--blue);  border: 1px solid rgba(64,160,255,0.25); }
-.code-OTHER{ background: var(--surface2);       color: var(--muted); border: 1px solid var(--border); }
+  .header-right {
+    display: flex;
+    align-items: center;
+    gap: 14px;
+  }
+  .last-checked {
+    font-family: 'IBM Plex Mono', monospace;
+    font-size: 11px;
+    color: var(--text-dim);
+  }
+  .btn {
+    font-family: 'IBM Plex Mono', monospace;
+    font-size: 11px;
+    padding: 6px 14px;
+    border-radius: 5px;
+    border: 1px solid var(--border);
+    background: rgba(255,255,255,0.04);
+    color: var(--text);
+    cursor: pointer;
+    transition: all .15s;
+    letter-spacing: 1px;
+  }
+  .btn:hover { border-color: var(--cyan); color: var(--cyan); background: rgba(0,212,255,0.06); }
 
-/* RESUME TIME col */
-.resume-cell { color: var(--green); font-size: 0.72rem; }
-.resume-cell.pending { color: var(--muted); font-style: italic; }
+  /* ── STATS STRIP ── */
+  .stats-strip {
+    display: flex;
+    gap: 10px;
+    margin-bottom: 22px;
+    flex-wrap: wrap;
+  }
+  .stat-pill {
+    font-family: 'IBM Plex Mono', monospace;
+    font-size: 11px;
+    padding: 5px 14px;
+    border-radius: 20px;
+    border: 1px solid var(--border);
+    background: var(--surface);
+    color: var(--text-dim);
+    display: flex;
+    align-items: center;
+    gap: 6px;
+  }
+  .stat-pill .num { color: var(--cyan); font-weight: 600; }
+  .stat-pill.ludp-count .num { color: var(--green); }
 
-/* SCOUT BUTTON */
-.scout-btn {
-  font-family: var(--mono);
-  font-size: 0.6rem;
-  font-weight: 600;
-  letter-spacing: 0.08em;
-  padding: 0.22rem 0.6rem;
-  border-radius: 3px;
-  border: 1px solid rgba(0,212,255,0.25);
-  background: rgba(0,212,255,0.06);
-  color: var(--cyan);
-  cursor: pointer;
-  transition: all 0.15s;
-  white-space: nowrap;
-}
-.scout-btn:hover { background: rgba(0,212,255,0.14); border-color: var(--cyan); }
+  /* ── FILTER TABS ── */
+  .filter-tabs {
+    display: flex;
+    gap: 4px;
+    margin-bottom: 18px;
+  }
+  .tab {
+    font-family: 'IBM Plex Mono', monospace;
+    font-size: 11px;
+    padding: 6px 16px;
+    border-radius: 5px;
+    border: 1px solid var(--border);
+    background: transparent;
+    color: var(--text-dim);
+    cursor: pointer;
+    transition: all .15s;
+    letter-spacing: 1px;
+  }
+  .tab.active { background: rgba(0,212,255,0.12); border-color: var(--cyan); color: var(--cyan); }
+  .tab:hover:not(.active) { border-color: rgba(255,255,255,0.15); color: var(--text); }
 
-/* EMPTY / ERROR STATE */
-.feed-state {
-  padding: 3rem 2rem;
-  text-align: center;
-  font-family: var(--mono);
-  font-size: 0.72rem;
-  color: var(--muted);
-  letter-spacing: 0.06em;
-}
-.feed-state .feed-icon { font-size: 2rem; margin-bottom: 1rem; opacity: 0.3; }
-.feed-state.error .feed-msg { color: var(--red); }
+  /* ── TABLE ── */
+  .table-wrap {
+    background: var(--surface);
+    border: 1px solid var(--border);
+    border-radius: 10px;
+    overflow: hidden;
+    margin-bottom: 28px;
+  }
+  table {
+    width: 100%;
+    border-collapse: collapse;
+  }
+  thead tr {
+    background: rgba(255,255,255,0.03);
+    border-bottom: 1px solid var(--border);
+  }
+  th {
+    font-family: 'IBM Plex Mono', monospace;
+    font-size: 10px;
+    letter-spacing: 1.5px;
+    text-transform: uppercase;
+    color: var(--muted);
+    padding: 12px 14px;
+    text-align: left;
+    white-space: nowrap;
+  }
+  tbody tr {
+    border-bottom: 1px solid var(--border);
+    transition: background .1s;
+  }
+  tbody tr:last-child { border-bottom: none; }
+  tbody tr:hover { background: rgba(255,255,255,0.025); }
+  td {
+    padding: 12px 14px;
+    font-size: 13px;
+    white-space: nowrap;
+    vertical-align: middle;
+  }
+  td.ticker {
+    font-family: 'IBM Plex Mono', monospace;
+    font-weight: 600;
+    color: #fff;
+    font-size: 14px;
+  }
+  td.company { color: var(--text); max-width: 180px; white-space: normal; line-height: 1.3; }
+  td.time-col { font-family: 'IBM Plex Mono', monospace; color: var(--text-dim); font-size: 12px; }
+  td.resume { font-family: 'IBM Plex Mono', monospace; color: var(--green); font-size: 12px; }
+  td.gap-win { font-family: 'IBM Plex Mono', monospace; color: var(--gold); font-size: 12px; }
 
-/* LAST UPDATED STRIP */
-.last-updated {
-  font-family: var(--mono);
-  font-size: 0.58rem;
-  color: var(--muted);
-  padding: 0.5rem 1rem;
-  background: var(--surface2);
-  border-top: 1px solid var(--border);
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-}
+  .badge {
+    display: inline-block;
+    font-family: 'IBM Plex Mono', monospace;
+    font-size: 10px;
+    font-weight: 600;
+    padding: 3px 8px;
+    border-radius: 4px;
+    letter-spacing: 1px;
+  }
+  .badge-ludp  { background: rgba(0,255,157,0.15); color: var(--green); border: 1px solid rgba(0,255,157,0.3); }
+  .badge-t1    { background: rgba(255,77,106,0.15); color: var(--red);   border: 1px solid rgba(255,77,106,0.3); }
+  .badge-t12   { background: rgba(245,197,66,0.15); color: var(--gold);  border: 1px solid rgba(245,197,66,0.3); }
+  .badge-m     { background: rgba(100,100,150,0.2); color: #8899cc;       border: 1px solid rgba(100,100,150,0.3); }
+  .badge-other { background: rgba(100,100,100,0.15); color: var(--muted); border: 1px solid var(--border); }
 
-/* LUDP EXPLAINER CARD */
-.explainer {
-  background: var(--surface);
-  border: 1px solid var(--border);
-  border-radius: 6px;
-  padding: 1rem 1.25rem;
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
-  gap: 0.75rem 1.5rem;
-}
-.exp-item { display: flex; flex-direction: column; gap: 3px; }
-.exp-label { font-family: var(--mono); font-size: 0.55rem; letter-spacing: 0.1em; text-transform: uppercase; color: var(--muted); }
-.exp-val { font-family: var(--mono); font-size: 0.78rem; font-weight: 600; color: var(--text); line-height: 1.5; }
-.exp-val.green { color: var(--green); }
-.exp-val.amber { color: var(--amber); }
-.exp-val.red   { color: var(--red); }
+  .scout-btn {
+    font-family: 'IBM Plex Mono', monospace;
+    font-size: 10px;
+    padding: 4px 10px;
+    border-radius: 4px;
+    border: 1px solid rgba(0,212,255,0.3);
+    background: rgba(0,212,255,0.06);
+    color: var(--cyan);
+    cursor: pointer;
+    transition: all .15s;
+    white-space: nowrap;
+  }
+  .scout-btn:hover { background: rgba(0,212,255,0.15); border-color: var(--cyan); }
 
-@keyframes fadeUp { from{opacity:0;transform:translateY(8px)} to{opacity:1;transform:translateY(0)} }
+  .empty-state {
+    padding: 60px 20px;
+    text-align: center;
+    color: var(--text-dim);
+    font-family: 'IBM Plex Mono', monospace;
+    font-size: 12px;
+    letter-spacing: 1px;
+  }
+  .empty-icon { font-size: 28px; margin-bottom: 12px; opacity: .4; }
+
+  /* ── BOTTOM GRID ── */
+  .bottom-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 18px;
+  }
+
+  .panel {
+    background: var(--surface);
+    border: 1px solid var(--border);
+    border-radius: 10px;
+    padding: 20px;
+  }
+  .panel-title {
+    font-family: 'IBM Plex Mono', monospace;
+    font-size: 10px;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    color: var(--muted);
+    margin-bottom: 14px;
+  }
+
+  /* Legend */
+  .legend-row {
+    display: flex;
+    align-items: flex-start;
+    gap: 10px;
+    margin-bottom: 10px;
+    font-size: 12px;
+    line-height: 1.4;
+  }
+  .legend-row:last-child { margin-bottom: 0; }
+  .legend-label {
+    font-family: 'IBM Plex Mono', monospace;
+    font-size: 10px;
+    letter-spacing: 1px;
+    text-transform: uppercase;
+    color: var(--text-dim);
+    min-width: 80px;
+    padding-top: 1px;
+  }
+  .legend-row .dot {
+    width: 7px; height: 7px;
+    border-radius: 50%;
+    margin-top: 4px;
+    flex-shrink: 0;
+  }
+  .dot-green { background: var(--green); }
+  .dot-red   { background: var(--red); }
+  .dot-gold  { background: var(--gold); }
+  .dot-cyan  { background: var(--cyan); }
+
+  /* Halt Scout */
+  .scout-panel { grid-column: 1 / -1; }
+
+  .scout-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 14px;
+  }
+  .scout-field label {
+    font-family: 'IBM Plex Mono', monospace;
+    font-size: 10px;
+    letter-spacing: 1.5px;
+    text-transform: uppercase;
+    color: var(--muted);
+    display: block;
+    margin-bottom: 5px;
+  }
+  .scout-field input {
+    width: 100%;
+    background: rgba(255,255,255,0.04);
+    border: 1px solid var(--border);
+    border-radius: 5px;
+    padding: 8px 12px;
+    color: var(--text);
+    font-family: 'IBM Plex Mono', monospace;
+    font-size: 13px;
+    transition: border-color .15s;
+    outline: none;
+  }
+  .scout-field input:focus { border-color: var(--cyan); }
+  .scout-field input::placeholder { color: var(--muted); }
+
+  .scout-results {
+    margin-top: 16px;
+    background: rgba(0,0,0,0.3);
+    border: 1px solid var(--border);
+    border-radius: 6px;
+    padding: 14px 16px;
+  }
+  .scout-row {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 5px 0;
+    border-bottom: 1px solid var(--border);
+    font-size: 12px;
+  }
+  .scout-row:last-of-type { border-bottom: none; }
+  .scout-row .sr-label { color: var(--text-dim); font-family: 'IBM Plex Mono', monospace; font-size: 10px; letter-spacing: 1px; text-transform: uppercase; }
+  .scout-row .sr-val   { font-family: 'IBM Plex Mono', monospace; color: var(--text); }
+
+  .verdict {
+    margin-top: 14px;
+    padding: 10px 14px;
+    border-radius: 6px;
+    font-family: 'IBM Plex Mono', monospace;
+    font-size: 12px;
+    letter-spacing: 1px;
+    text-align: center;
+  }
+  .verdict.go     { background: rgba(0,255,157,0.1); border: 1px solid rgba(0,255,157,0.3); color: var(--green); }
+  .verdict.nogo   { background: rgba(255,77,106,0.1); border: 1px solid rgba(255,77,106,0.3); color: var(--red); }
+  .verdict.empty  { background: rgba(255,255,255,0.03); border: 1px solid var(--border); color: var(--muted); }
+
+  .imbalance-note {
+    margin-top: 14px;
+    font-size: 12px;
+    line-height: 1.6;
+  }
+  .imbalance-note .bull { color: var(--red); }
+  .imbalance-note .bear { color: var(--green); }
+
+  /* Source footer */
+  .source-footer {
+    margin-top: 18px;
+    font-family: 'IBM Plex Mono', monospace;
+    font-size: 10px;
+    color: var(--muted);
+    letter-spacing: 1px;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+  }
+  .source-footer a { color: var(--muted); text-decoration: none; }
+  .source-footer a:hover { color: var(--cyan); }
+
+  @media (max-width: 900px) {
+    .sidebar { display: none; }
+    .main { margin-left: 0; padding: 20px; }
+    .bottom-grid { grid-template-columns: 1fr; }
+    .scout-grid { grid-template-columns: 1fr; }
+  }
 </style>
 </head>
 <body>
 
-<!-- SIDEBAR -->
-<aside class="sidebar">
-  <div class="sidebar-brand">
-    <div class="brand-tag">ESP · Trading</div>
-    <div class="brand-name">Morning<br>Brief</div>
-    <div class="brand-sub">Daily · Rolling</div>
+<!-- ── SIDEBAR ── -->
+<nav class="sidebar">
+  <div class="brand">
+    <div class="brand-sub">ESP · Trading</div>
+    <div class="brand-title">Morning<br><span>Brief</span></div>
   </div>
-  <div class="sidebar-section">
-    <div class="sidebar-section-label">Daily</div>
-    <a class="sidebar-link" href="index.html"><span class="sl-icon">◆</span> Today</a>
-    <a class="sidebar-link" href="prep.html"><span class="sl-icon">◉</span> Pre-Market Prep</a>
+
+  <div class="nav-section">
+    <div class="nav-label">Daily</div>
+    <a href="index.html" class="nav-link"><span class="icon">◆</span> Today</a>
+    <a href="prep.html"  class="nav-link"><span class="icon">◉</span> Pre-Market Prep</a>
   </div>
-  <div class="sidebar-section">
-    <div class="sidebar-section-label">Market</div>
-    <a class="sidebar-link" href="#"><span class="sl-icon">▤</span> Heatmap</a>
-    <a class="sidebar-link" href="#"><span class="sl-icon">◈</span> Earnings</a>
-    <a class="sidebar-link" href="#"><span class="sl-icon">◷</span> Econ Cal</a>
+
+  <div class="nav-section">
+    <div class="nav-label">Market</div>
+    <a href="#" class="nav-link"><span class="icon">▤</span> Heatmap</a>
+    <a href="#" class="nav-link"><span class="icon">◈</span> Earnings</a>
+    <a href="#" class="nav-link"><span class="icon">◷</span> Econ Cal</a>
   </div>
-  <div class="sidebar-section">
-    <div class="sidebar-section-label">Strategy</div>
-    <a class="sidebar-link" href="playbook.html"><span class="sl-icon">▸</span> Playbook</a>
-    <a class="sidebar-link" href="ipo-watch.html"><span class="sl-icon">◆</span> IPO Watch</a>
-    <a class="sidebar-link" href="#"><span class="sl-icon">◎</span> Journal</a>
-    <a class="sidebar-link" href="#"><span class="sl-icon">▲</span> Performance</a>
+
+  <div class="nav-section">
+    <div class="nav-label">Strategy</div>
+    <a href="playbook.html"  class="nav-link"><span class="icon">▸</span> Playbook</a>
+    <a href="ipo-watch.html" class="nav-link"><span class="icon">◆</span> IPO Watch</a>
+    <a href="#"              class="nav-link"><span class="icon">◎</span> Journal</a>
+    <a href="#"              class="nav-link"><span class="icon">▲</span> Performance</a>
   </div>
-  <div class="sidebar-section">
-    <div class="sidebar-section-label">Live Tools</div>
-    <a class="sidebar-link active" href="halts.html"><span class="sl-icon">⚡</span> Halt Feed</a>
-    <a class="sidebar-link" href="https://www.nasdaqtrader.com/trader.aspx?id=tradehalts" target="_blank"><span class="sl-icon">◈</span> NASDAQ Halts ↗</a>
+
+  <div class="nav-section">
+    <div class="nav-label">Live Tools</div>
+    <a href="halts.html"  class="nav-link active"><span class="icon">⚡</span> Halt Feed</a>
+    <a href="https://www.nasdaqtrader.com/trader.aspx?id=tradehalts" target="_blank" class="nav-link">
+      <span class="icon">◈</span> NASDAQ Halts ↗
+    </a>
   </div>
-  <div class="sidebar-bottom">
-    <div class="s-market-status">
-      <span class="s-status-dot pre" id="statusDot"></span>
-      <span id="statusText" style="color:var(--text2)">Loading...</span>
+</nav>
+
+<!-- ── MAIN ── -->
+<main class="main">
+
+  <div class="page-header">
+    <div class="page-title">
+      <div class="pulse"></div>
+      <h1>Live Halt Feed</h1>
+    </div>
+    <div class="header-right">
+      <div class="last-checked" id="lastChecked">—</div>
+      <button class="btn" onclick="fetchHalts()">↺ Refresh Now</button>
     </div>
   </div>
-</aside>
 
-<!-- MAIN -->
-<div class="main-wrap">
-
-<div class="top-header">
-  <div style="display:flex;align-items:baseline;gap:1.25rem;flex:1;justify-content:center;">
-    <div class="page-title">Live Halt Feed</div>
-    <div class="page-date" id="currentDate">—</div>
-  </div>
-  <div class="countdown-pill pre" id="countdown">
-    <span class="cdot"></span>
-    <span id="cdText">--:--:--</span>
-  </div>
-</div>
-
-<!-- CONTROLS -->
-<div class="controls-bar">
-  <button class="filter-btn active-ludp" id="btn-ludp" onclick="setFilter('LUDP')">⚡ LUDP Only</button>
-  <button class="filter-btn" id="btn-all"  onclick="setFilter('ALL')">All Halts</button>
-  <span class="halt-count-badge badge-ludp" id="ludp-count">0 LUDP</span>
-  <span class="halt-count-badge badge-total" id="total-count">0 total</span>
-  <div class="refresh-info">
-    <span class="refresh-dot" id="refresh-dot"></span>
-    <span id="refresh-label">Refreshes every 30s</span>
-    <button class="filter-btn" style="margin-left:0.5rem;" onclick="fetchHalts()">↺ Refresh Now</button>
-  </div>
-</div>
-
-<div class="main">
-
-  <!-- EXPLAINER -->
-  <div class="explainer">
-    <div class="exp-item"><div class="exp-label">Your Play</div><div class="exp-val green">LUDP — Limit Up/Down Pause</div></div>
-    <div class="exp-item"><div class="exp-label">Avoid</div><div class="exp-val amber">T1 = News halt (usually bad)</div></div>
-    <div class="exp-item"><div class="exp-label">Avoid</div><div class="exp-val red">T12 = Regulatory — weeks/months</div></div>
-    <div class="exp-item"><div class="exp-label">Edge Signal</div><div class="exp-val">Long quote→trade gap = big imbalance</div></div>
-    <div class="exp-item"><div class="exp-label">Prime Window</div><div class="exp-val green">1st &amp; 2nd LUDP halt — max edge</div></div>
-    <div class="exp-item"><div class="exp-label">Workflow</div><div class="exp-val">See LUDP → open Halt Scout → GO / NO GO</div></div>
+  <!-- Stats -->
+  <div class="stats-strip">
+    <div class="stat-pill ludp-count">LUDP <span class="num" id="ludpCount">0</span></div>
+    <div class="stat-pill">Total <span class="num" id="totalCount">0</span></div>
+    <div class="stat-pill">Refreshes every 30s</div>
   </div>
 
-  <!-- HALT TABLE -->
-  <div class="halt-table-wrap">
-    <table class="halt-table">
+  <!-- Filter tabs -->
+  <div class="filter-tabs">
+    <button class="tab active" id="tab-ludp"  onclick="setFilter('LUDP')">⚡ LUDP Only</button>
+    <button class="tab"        id="tab-all"   onclick="setFilter('ALL')">All Halts</button>
+  </div>
+
+  <!-- Table -->
+  <div class="table-wrap">
+    <table>
       <thead>
         <tr>
           <th>Time (ET)</th>
@@ -326,229 +514,333 @@ body { font-family: var(--sans); background: var(--bg); color: var(--text); min-
           <th>Scout</th>
         </tr>
       </thead>
-      <tbody id="halt-tbody">
-        <tr><td colspan="9"><div class="feed-state"><div class="feed-icon">⚡</div><div class="feed-msg" id="feed-msg">Loading halts...</div></div></td></tr>
+      <tbody id="haltBody">
+        <tr>
+          <td colspan="9">
+            <div class="empty-state">
+              <div class="empty-icon">⚡</div>
+              Loading halts...
+            </div>
+          </td>
+        </tr>
       </tbody>
     </table>
-    <div class="last-updated">
-      <span>Source: NasdaqTrader.com · RSS feed via CORS proxy</span>
-      <span id="last-updated-time">—</span>
-    </div>
   </div>
 
-</div>
-</div><!-- end main-wrap -->
+  <!-- Bottom panels -->
+  <div class="bottom-grid">
+
+    <!-- Legend -->
+    <div class="panel">
+      <div class="panel-title">Halt Code Guide</div>
+      <div class="legend-row">
+        <div class="dot dot-green"></div>
+        <div class="legend-label">Your Play</div>
+        <div>LUDP — Limit Up/Down Pause</div>
+      </div>
+      <div class="legend-row">
+        <div class="dot dot-red"></div>
+        <div class="legend-label">Avoid</div>
+        <div>T1 = News halt (usually bad)</div>
+      </div>
+      <div class="legend-row">
+        <div class="dot dot-gold"></div>
+        <div class="legend-label">Avoid</div>
+        <div>T12 = Regulatory — weeks/months</div>
+      </div>
+      <div class="legend-row">
+        <div class="dot dot-cyan"></div>
+        <div class="legend-label">Edge Signal</div>
+        <div>Long quote→trade gap = big imbalance</div>
+      </div>
+      <div class="legend-row">
+        <div class="dot dot-green"></div>
+        <div class="legend-label">Prime Window</div>
+        <div>1st &amp; 2nd LUDP halt — max edge</div>
+      </div>
+      <div class="legend-row">
+        <div class="dot dot-cyan"></div>
+        <div class="legend-label">Workflow</div>
+        <div>See LUDP → open Halt Scout → GO / NO GO</div>
+      </div>
+    </div>
+
+    <!-- Halt Scout -->
+    <div class="panel">
+      <div class="panel-title">Halt Scout</div>
+      <div class="scout-grid">
+        <div class="scout-field">
+          <label>Entry Price</label>
+          <input type="number" id="scEntry" placeholder="0.00" oninput="calcScout()" />
+        </div>
+        <div class="scout-field">
+          <label>Target Price</label>
+          <input type="number" id="scTarget" placeholder="0.00" oninput="calcScout()" />
+        </div>
+        <div class="scout-field">
+          <label>Volume Now</label>
+          <input type="number" id="scVolNow" placeholder="0" oninput="calcScout()" />
+        </div>
+        <div class="scout-field">
+          <label>Avg Volume</label>
+          <input type="number" id="scVolAvg" placeholder="0" oninput="calcScout()" />
+        </div>
+        <div class="scout-field">
+          <label>Shares</label>
+          <input type="number" id="scShares" placeholder="100" value="100" oninput="calcScout()" />
+        </div>
+        <div class="scout-field">
+          <label>Stop Loss (auto)</label>
+          <input type="number" id="scStop" placeholder="0.00" readonly style="opacity:.6;" />
+        </div>
+      </div>
+
+      <div class="scout-results">
+        <div class="scout-row"><span class="sr-label">Stop Loss Price</span><span class="sr-val" id="srStop">—</span></div>
+        <div class="scout-row"><span class="sr-label">Max Loss</span>       <span class="sr-val" id="srLoss">—</span></div>
+        <div class="scout-row"><span class="sr-label">P&amp;L at Target</span><span class="sr-val" id="srPnl">—</span></div>
+        <div class="scout-row"><span class="sr-label">Risk / Reward</span>  <span class="sr-val" id="srRR">—</span></div>
+        <div class="scout-row"><span class="sr-label">Position Size</span>  <span class="sr-val" id="srSize">—</span></div>
+      </div>
+
+      <div class="verdict empty" id="scVerdict">Fill in the fields above.</div>
+
+      <div class="imbalance-note">
+        <div class="bull">When the BULLS sell — price will drop.</div>
+        <div class="bear">When the BEARS sell — price will shoot up.</div>
+      </div>
+    </div>
+
+  </div><!-- /bottom-grid -->
+
+  <div class="source-footer">
+    Source: <a href="https://www.nasdaqtrader.com/trader.aspx?id=tradehalts" target="_blank">NasdaqTrader.com</a>
+    · RSS feed via corsproxy.io
+    <span id="proxyStatus"></span>
+  </div>
+
+</main>
 
 <script>
-document.getElementById('currentDate').textContent = new Date().toLocaleDateString('en-US',{weekday:'short',month:'short',day:'numeric',year:'numeric'}).toUpperCase();
+  // ── CONFIG ──────────────────────────────────────────────────────────────
+  const RSS_URL   = 'https://www.nasdaqtrader.com/rss.aspx?feed=tradehalts';
+  const PROXY_URL = 'https://corsproxy.io/?' + encodeURIComponent(RSS_URL);
+  const INTERVAL  = 30000; // 30 seconds
 
-let currentFilter = 'LUDP';
-let allHalts = [];
-let knownIds = new Set();
+  let allHalts   = [];
+  let filterMode = 'LUDP';
 
-// ── FILTER ──────────────────────────────────────────────────
-function setFilter(f) {
-  currentFilter = f;
-  document.getElementById('btn-ludp').className = 'filter-btn' + (f==='LUDP' ? ' active-ludp' : '');
-  document.getElementById('btn-all').className  = 'filter-btn' + (f==='ALL'  ? ' active-all'  : '');
-  renderTable();
-}
-
-// ── FETCH ───────────────────────────────────────────────────
-// NASDAQ RSS via allorigins CORS proxy
-const RSS_URL = 'https://api.allorigins.win/get?url=' + encodeURIComponent('https://www.nasdaqtrader.com/rss.aspx?feed=tradehalts');
-
-async function fetchHalts() {
-  const dot = document.getElementById('refresh-dot');
-  const lbl = document.getElementById('refresh-label');
-  dot.className = 'refresh-dot spinning';
-  lbl.textContent = 'Fetching...';
-
-  try {
-    const res = await fetch(RSS_URL);
-    if (!res.ok) throw new Error('HTTP ' + res.status);
-    const json = await res.json();
-    const xml = new DOMParser().parseFromString(json.contents, 'text/xml');
-    parseRSS(xml);
-    document.getElementById('last-updated-time').textContent = 'Last updated: ' + new Date().toLocaleTimeString('en-US',{timeZone:'America/New_York'}) + ' ET';
-    dot.className = 'refresh-dot';
-    lbl.textContent = 'Refreshes every 30s';
-  } catch(e) {
-    dot.className = 'refresh-dot';
-    lbl.textContent = 'Fetch error — retrying';
-    showError('Unable to reach NASDAQ feed. Check your connection or open NASDAQ Halts ↗ directly.');
-    console.error('Halt fetch error:', e);
-  }
-}
-
-// ── PARSE RSS ────────────────────────────────────────────────
-function parseRSS(xml) {
-  const items = xml.querySelectorAll('item');
-  const newHalts = [];
-
-  items.forEach(item => {
-    const title = item.querySelector('title')?.textContent || '';
-    const desc  = item.querySelector('description')?.textContent || '';
-    const link  = item.querySelector('link')?.textContent || '';
-
-    // NASDAQ RSS title format: "TICKER - ReasonCode - HaltDate HaltTime"
-    // description has more details
-    const parts = title.split(' - ');
-    const ticker   = (parts[0] || '').trim();
-    const code     = (parts[1] || '').trim();
-    const datetime = (parts[2] || '').trim();
-
-    // Parse description fields (key: value pairs separated by <br>)
-    const getField = (key) => {
-      const rx = new RegExp(key + '[:\\s]+([^<\\n]+)', 'i');
-      const m = desc.match(rx);
-      return m ? m[1].trim() : '';
-    };
-
-    const haltTime     = getField('Halt Time') || datetime;
-    const issueSymbol  = getField('Issue Symbol') || ticker;
-    const issueName    = getField('Issue Name') || getField('Name') || '—';
-    const market       = getField('Market') || getField('Exchange') || '—';
-    const reasonCode   = getField('Reason Code') || code;
-    const resumeQuote  = getField('Resumption Quote Time') || getField('Quote Time') || '';
-    const resumeTrade  = getField('Resumption Trade Time') || getField('Trade Time') || '';
-    const haltDate     = getField('Halt Date') || '';
-
-    const uid = (issueSymbol || ticker) + '-' + (haltTime || datetime);
-    const isNew = !knownIds.has(uid);
-    if (isNew) knownIds.add(uid);
-
-    newHalts.push({ ticker: issueSymbol || ticker, name: issueName, market, code: reasonCode, haltTime, haltDate, resumeQuote, resumeTrade, isNew });
-  });
-
-  // Sort newest first
-  newHalts.sort((a,b) => (b.haltTime > a.haltTime ? 1 : -1));
-  allHalts = newHalts;
-
-  updateCounts();
-  renderTable();
-}
-
-// ── COUNTS ───────────────────────────────────────────────────
-function updateCounts() {
-  const ludp = allHalts.filter(h => h.code === 'LUDP').length;
-  document.getElementById('ludp-count').textContent  = ludp + ' LUDP';
-  document.getElementById('total-count').textContent = allHalts.length + ' total';
-
-  // Update sidebar badge on prep page if exists
-  const sb = document.getElementById('sb-halt-count');
-  if (sb && ludp > 0) { sb.textContent = ludp; sb.style.display = 'inline'; }
-}
-
-// ── RENDER ───────────────────────────────────────────────────
-function codeClass(code) {
-  if (code === 'LUDP') return 'code-LUDP';
-  if (code === 'T1')   return 'code-T1';
-  if (code === 'T12')  return 'code-T12';
-  if (code === 'M')    return 'code-M';
-  return 'code-OTHER';
-}
-
-function gapWindow(q, t) {
-  if (!q || !t) return '—';
-  // parse HH:MM:SS
-  const toSec = s => { const p = s.split(':'); return (+p[0])*3600 + (+p[1])*60 + (+p[2]||0); };
-  try {
-    const diff = toSec(t) - toSec(q);
-    if (diff <= 0) return '—';
-    if (diff < 60) return diff + 's';
-    return Math.floor(diff/60) + 'm ' + (diff%60) + 's';
-  } catch { return '—'; }
-}
-
-function renderTable() {
-  const tbody = document.getElementById('halt-tbody');
-  const filtered = currentFilter === 'LUDP' ? allHalts.filter(h => h.code === 'LUDP') : allHalts;
-
-  if (filtered.length === 0) {
-    const msg = currentFilter === 'LUDP'
-      ? 'No LUDP halts yet today. Watching...'
-      : 'No halts found. Market may be closed or feed loading.';
-    tbody.innerHTML = `<tr><td colspan="9"><div class="feed-state"><div class="feed-icon">⚡</div><div class="feed-msg">${msg}</div></div></td></tr>`;
-    return;
+  // ── FETCH ────────────────────────────────────────────────────────────────
+  async function fetchHalts() {
+    try {
+      const res  = await fetch(PROXY_URL, { cache: 'no-store' });
+      if (!res.ok) throw new Error(`HTTP ${res.status}`);
+      const text = await res.text();
+      parseRSS(text);
+      updateLastChecked();
+      document.getElementById('proxyStatus').textContent = '';
+    } catch (e) {
+      console.error('Halt fetch error:', e);
+      document.getElementById('proxyStatus').textContent = '⚠ proxy error — ' + e.message;
+      showEmpty('⚠ Could not load halts — proxy error');
+    }
   }
 
-  tbody.innerHTML = filtered.map(h => {
-    const gap = gapWindow(h.resumeQuote, h.resumeTrade);
-    const gapColor = gap !== '—' && parseInt(gap) >= 3 ? 'color:var(--green);font-weight:600;' : '';
-    const resumeClass = h.resumeTrade ? 'resume-cell' : 'resume-cell pending';
-    const resumeText  = h.resumeTrade || 'pending';
-    return `<tr class="${h.isNew ? 'new-halt' : ''}">
-      <td style="font-size:0.7rem;color:var(--text2);">${h.haltTime}</td>
-      <td class="ticker-cell">${h.ticker}</td>
-      <td style="font-size:0.72rem;max-width:160px;white-space:nowrap;overflow:hidden;text-overflow:ellipsis;">${h.name}</td>
-      <td style="font-size:0.68rem;">${h.market}</td>
-      <td><span class="code-badge ${codeClass(h.code)}">${h.code}</span></td>
-      <td style="font-size:0.7rem;color:var(--cyan);">${h.resumeQuote || '<span style="color:var(--muted);font-style:italic">pending</span>'}</td>
-      <td class="${resumeClass}">${resumeText}</td>
-      <td style="font-size:0.72rem;${gapColor}">${gap}</td>
-      <td><button class="scout-btn" onclick="openScout('${h.ticker}')">Scout ↗</button></td>
-    </tr>`;
-  }).join('');
-}
+  // ── PARSE RSS ────────────────────────────────────────────────────────────
+  function parseRSS(xmlText) {
+    const parser  = new DOMParser();
+    const doc     = parser.parseFromString(xmlText, 'application/xml');
+    const items   = Array.from(doc.querySelectorAll('item'));
 
-function showError(msg) {
-  document.getElementById('halt-tbody').innerHTML = `<tr><td colspan="9"><div class="feed-state error"><div class="feed-icon">⚠</div><div class="feed-msg">${msg}</div></div></td></tr>`;
-}
+    allHalts = items.map(item => {
+      const title = (item.querySelector('title')?.textContent || '').trim();
+      const desc  = (item.querySelector('description')?.textContent || '').trim();
 
-// ── SCOUT LINK ───────────────────────────────────────────────
-function openScout(ticker) {
-  // Pre-fill ticker on prep page and navigate there
-  sessionStorage.setItem('scoutTicker', ticker);
-  window.location.href = 'prep.html#halt-scout';
-}
+      // Nasdaq RSS: title = "TICKER | Company Name | Reason | HaltDate | HaltTime"
+      // OR fields in <description> as pipe-delimited
+      const parts = title.split('|').map(s => s.trim());
+      const dParts = desc.split(/[|\n]/).map(s => s.trim());
 
-// ── COUNTDOWN ────────────────────────────────────────────────
-function pad(n) { return String(n).padStart(2,'0'); }
-function updateCountdown() {
-  const now = new Date();
-  const et = new Date(now.toLocaleString('en-US',{timeZone:'America/New_York'}));
-  const open  = new Date(et); open.setHours(9,30,0,0);
-  const close = new Date(et); close.setHours(16,0,0,0);
-  const pill  = document.getElementById('countdown');
-  const txt   = document.getElementById('cdText');
-  const dot   = document.getElementById('statusDot');
-  const stxt  = document.getElementById('statusText');
-  const day   = et.getDay();
-  if (day===0||day===6) { txt.textContent='WEEKEND'; pill.className='countdown-pill closed'; dot.className='s-status-dot closed'; stxt.textContent='Weekend'; return; }
-  if (et>=open&&et<=close) {
-    const d=close-et; txt.textContent=`OPEN  ${pad(Math.floor(d/3600000))}:${pad(Math.floor((d%3600000)/60000))}:${pad(Math.floor((d%60000)/1000))}`;
-    pill.className='countdown-pill open'; dot.className='s-status-dot open'; stxt.textContent='Market Open'; return;
+      // Try to extract structured fields; fall back gracefully
+      const ticker      = parts[0] || '';
+      const company     = parts[1] || dParts[1] || '';
+      const reasonCode  = parts[2] || dParts[2] || '';
+      const haltDate    = parts[3] || '';
+      const haltTime    = parts[4] || '';
+
+      // Also try to parse description for resumption fields
+      const resumeQuote  = extractField(desc, 'ResumptionQuoteTime') || extractField(desc, 'ResumeQuote') || '';
+      const resumeTrade  = extractField(desc, 'ResumptionTradeTime') || extractField(desc, 'ResumeTrade') || '';
+      const market       = extractField(desc, 'Market') || extractField(desc, 'Exchange') || '';
+
+      return { ticker, company, reasonCode, haltDate, haltTime, market, resumeQuote, resumeTrade };
+    }).filter(h => h.ticker);
+
+    updateCounts();
+    renderTable();
   }
-  if (et>close) { txt.textContent='CLOSED'; pill.className='countdown-pill closed'; dot.className='s-status-dot closed'; stxt.textContent='Market Closed'; return; }
-  const d=open-et; txt.textContent=`OPENS ${pad(Math.floor(d/3600000))}:${pad(Math.floor((d%3600000)/60000))}:${pad(Math.floor((d%60000)/1000))}`;
-  pill.className='countdown-pill pre'; dot.className='s-status-dot pre'; stxt.textContent='Pre-Market';
-}
 
-// ── AUTO REFRESH ─────────────────────────────────────────────
-let secondsLeft = 30;
-function tick() {
-  secondsLeft--;
-  if (secondsLeft <= 0) {
-    secondsLeft = 30;
-    fetchHalts();
-  } else {
-    document.getElementById('refresh-label').textContent = `Next refresh in ${secondsLeft}s`;
+  function extractField(desc, field) {
+    const re = new RegExp(field + '[:\\s]+([^|\\n<]+)', 'i');
+    const m  = desc.match(re);
+    return m ? m[1].trim() : '';
   }
-}
 
-// ── INIT ─────────────────────────────────────────────────────
-updateCountdown();
-setInterval(updateCountdown, 1000);
-setInterval(tick, 1000);
-fetchHalts();
+  // ── RENDER ───────────────────────────────────────────────────────────────
+  function renderTable() {
+    const tbody  = document.getElementById('haltBody');
+    const source = filterMode === 'LUDP'
+      ? allHalts.filter(h => h.reasonCode.toUpperCase().includes('LUDP'))
+      : allHalts;
 
-// Pick up scout ticker from session if navigating back
-const scoutTicker = sessionStorage.getItem('scoutTicker');
-if (scoutTicker) {
-  const el = document.getElementById('hs-ticker');
-  if (el) { el.value = scoutTicker; sessionStorage.removeItem('scoutTicker'); if(window.haltScout) haltScout(); }
-}
+    if (source.length === 0) {
+      const msg = allHalts.length === 0
+        ? 'WATCHING FOR LUDP HALTS...<br><small style="color:var(--muted)">Checks every 30s · 4am – 4pm ET</small>'
+        : 'No LUDP halts right now — ' + allHalts.length + ' other halt(s) active';
+      showEmpty(msg);
+      return;
+    }
+
+    tbody.innerHTML = source.map(h => {
+      const timeET   = formatTime(h.haltTime);
+      const gapWin   = calcGapWindow(h.resumeQuote, h.resumeTrade);
+      const badgeHtml = codeBadge(h.reasonCode);
+
+      return `<tr>
+        <td class="time-col">${timeET}</td>
+        <td class="ticker">${h.ticker}</td>
+        <td class="company">${h.company}</td>
+        <td>${h.market || '—'}</td>
+        <td>${badgeHtml}</td>
+        <td class="resume">${h.resumeQuote || '—'}</td>
+        <td class="resume">${h.resumeTrade || '—'}</td>
+        <td class="gap-win">${gapWin}</td>
+        <td><button class="scout-btn" onclick="populateScout('${h.ticker}')">SCOUT →</button></td>
+      </tr>`;
+    }).join('');
+  }
+
+  function showEmpty(msg) {
+    document.getElementById('haltBody').innerHTML =
+      `<tr><td colspan="9"><div class="empty-state"><div class="empty-icon">⚡</div>${msg}</div></td></tr>`;
+  }
+
+  function codeBadge(code) {
+    const c = (code || '').toUpperCase();
+    if (c.includes('LUDP'))  return `<span class="badge badge-ludp">LUDP</span>`;
+    if (c === 'T1')           return `<span class="badge badge-t1">T1</span>`;
+    if (c.includes('T12'))    return `<span class="badge badge-t12">T12</span>`;
+    if (c === 'M')            return `<span class="badge badge-m">M</span>`;
+    return `<span class="badge badge-other">${code || '—'}</span>`;
+  }
+
+  function formatTime(t) {
+    if (!t) return '—';
+    // If it's already HH:MM:SS or similar, show as-is; try converting to ET
+    return t;
+  }
+
+  function calcGapWindow(quote, trade) {
+    if (!quote || !trade || quote === '—' || trade === '—') return '—';
+    try {
+      const q = parseTimeMs(quote);
+      const t = parseTimeMs(trade);
+      if (q && t) {
+        const diffSec = Math.round((t - q) / 1000);
+        if (diffSec > 0) return diffSec + 's';
+      }
+    } catch(e) {}
+    return '—';
+  }
+
+  function parseTimeMs(ts) {
+    const m = ts.match(/(\d{1,2}):(\d{2}):(\d{2})/);
+    if (!m) return null;
+    return (parseInt(m[1])*3600 + parseInt(m[2])*60 + parseInt(m[3])) * 1000;
+  }
+
+  function updateCounts() {
+    const ludp  = allHalts.filter(h => h.reasonCode.toUpperCase().includes('LUDP')).length;
+    document.getElementById('ludpCount').textContent  = ludp;
+    document.getElementById('totalCount').textContent = allHalts.length;
+  }
+
+  function updateLastChecked() {
+    const now = new Date();
+    const et  = now.toLocaleTimeString('en-US', { timeZone: 'America/New_York', hour12: false });
+    document.getElementById('lastChecked').textContent = `checked ${et} ET`;
+  }
+
+  // ── FILTER ───────────────────────────────────────────────────────────────
+  function setFilter(mode) {
+    filterMode = mode;
+    document.getElementById('tab-ludp').classList.toggle('active', mode === 'LUDP');
+    document.getElementById('tab-all').classList.toggle('active',  mode === 'ALL');
+    renderTable();
+  }
+
+  // ── HALT SCOUT CALC ──────────────────────────────────────────────────────
+  function calcScout() {
+    const entry   = parseFloat(document.getElementById('scEntry').value);
+    const target  = parseFloat(document.getElementById('scTarget').value);
+    const volNow  = parseFloat(document.getElementById('scVolNow').value);
+    const volAvg  = parseFloat(document.getElementById('scVolAvg').value);
+    const shares  = parseFloat(document.getElementById('scShares').value) || 100;
+
+    const MAX_LOSS = 250;
+
+    if (!entry || entry <= 0) {
+      clearScout(); return;
+    }
+
+    const stop     = +(entry - (MAX_LOSS / shares)).toFixed(4);
+    const stopLoss = stop > 0 ? stop : 0.01;
+    document.getElementById('scStop').value = stopLoss.toFixed(2);
+
+    const maxLoss  = +((entry - stopLoss) * shares).toFixed(2);
+    const pnl      = target ? +((target - entry) * shares).toFixed(2) : null;
+    const rr       = pnl && maxLoss > 0 ? (pnl / maxLoss).toFixed(2) : null;
+    const size     = +(entry * shares).toFixed(2);
+
+    document.getElementById('srStop').textContent = `$${stopLoss.toFixed(2)}`;
+    document.getElementById('srLoss').textContent = maxLoss ? `-$${maxLoss.toFixed(2)}` : '—';
+    document.getElementById('srPnl').textContent  = pnl !== null ? (pnl >= 0 ? '+' : '') + '$' + pnl.toFixed(2) : '—';
+    document.getElementById('srRR').textContent   = rr ? `1 : ${rr}` : '—';
+    document.getElementById('srSize').textContent = `$${size.toLocaleString()}`;
+
+    const verdict = document.getElementById('scVerdict');
+    if (rr === null) {
+      verdict.className = 'verdict empty';
+      verdict.textContent = 'Enter target to get verdict.';
+    } else if (parseFloat(rr) >= 2) {
+      verdict.className = 'verdict go';
+      verdict.textContent = '✓ GO — R:R is favorable';
+    } else {
+      verdict.className = 'verdict nogo';
+      verdict.textContent = '✗ NO GO — R:R too tight';
+    }
+  }
+
+  function clearScout() {
+    ['srStop','srLoss','srPnl','srRR','srSize'].forEach(id => {
+      document.getElementById(id).textContent = '—';
+    });
+    const verdict = document.getElementById('scVerdict');
+    verdict.className = 'verdict empty';
+    verdict.textContent = 'Fill in the fields above.';
+    document.getElementById('scStop').value = '';
+  }
+
+  function populateScout(ticker) {
+    // Pre-fill ticker label (future: pull live price)
+    document.getElementById('scEntry').placeholder = ticker + ' entry...';
+    document.getElementById('scEntry').focus();
+  }
+
+  // ── INIT ─────────────────────────────────────────────────────────────────
+  fetchHalts();
+  setInterval(fetchHalts, INTERVAL);
+  updateLastChecked();
 </script>
 </body>
 </html>

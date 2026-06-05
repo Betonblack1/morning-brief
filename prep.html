@@ -6,17 +6,7 @@
 <title>Pre-Market Prep</title>
 <link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@300;400;500;600;700&family=DM+Sans:wght@300;400;500&family=Playfair+Display:wght@400;500&display=swap" rel="stylesheet">
 <style>
-:root {
-  --bg:#06090d;--surface:#0b1017;--surface2:#10161e;--surface3:#151d27;
-  --border:#1a2332;--border2:#243040;--text:#c8d8e8;--text2:#7a90a8;
-  --muted:#3a5060;--dim:#263040;--green:#00e0a0;--green2:#00c890;
-  --green-bg:rgba(0,224,160,0.05);--green-glow:rgba(0,224,160,0.2);
-  --green-dim:#00e0a020;--amber:#ffb020;--amber-dim:#ffb02018;
-  --red:#ff4060;--red-dim:#ff406018;--blue:#40a0ff;--blue-dim:#40a0ff15;
-  --cyan:#00d4ff;--cyan-bg:rgba(0,212,255,0.05);
-  --mono:'JetBrains Mono',monospace;--sans:'DM Sans',sans-serif;
-  --display:'Playfair Display',serif;--sidebar:280px;
-}
+:root{--bg:#06090d;--surface:#0b1017;--surface2:#10161e;--surface3:#151d27;--border:#1a2332;--border2:#243040;--text:#c8d8e8;--text2:#7a90a8;--muted:#3a5060;--dim:#263040;--green:#00e0a0;--green-bg:rgba(0,224,160,0.05);--green-glow:rgba(0,224,160,0.2);--amber:#ffb020;--red:#ff4060;--blue:#40a0ff;--cyan:#00d4ff;--mono:'JetBrains Mono',monospace;--sans:'DM Sans',sans-serif;--display:'Playfair Display',serif;--sidebar:280px;}
 *{box-sizing:border-box;margin:0;padding:0;}
 body{font-family:var(--sans);background:var(--bg);color:var(--text);min-height:100vh;display:flex;overflow-x:hidden;font-weight:300;}
 .sidebar{width:var(--sidebar);min-height:100vh;background:var(--surface);border-right:1px solid var(--border);display:flex;flex-direction:column;position:fixed;top:0;left:0;z-index:200;}
@@ -26,21 +16,21 @@ body{font-family:var(--sans);background:var(--bg);color:var(--text);min-height:1
 .sidebar-brand .brand-sub{font-family:var(--mono);font-size:.55rem;letter-spacing:.12em;color:var(--muted);text-transform:uppercase;margin-top:.3rem;}
 .sidebar-section{padding:.7rem 0 .3rem;}
 .sidebar-section-label{font-family:var(--mono);font-size:.52rem;letter-spacing:.18em;text-transform:uppercase;color:var(--muted);padding:0 1rem .4rem;}
-.sidebar-link{display:flex;align-items:center;gap:.6rem;padding:.5rem 1rem;font-family:var(--mono);font-size:.72rem;letter-spacing:.07em;text-transform:uppercase;color:var(--text2);text-decoration:none;transition:all .2s;border-left:2px solid transparent;background:transparent;}
+.sidebar-link{display:flex;align-items:center;gap:.6rem;padding:.5rem 1rem;font-family:var(--mono);font-size:.72rem;letter-spacing:.07em;text-transform:uppercase;color:var(--text2);text-decoration:none;transition:all .2s;border-left:2px solid transparent;}
 .sidebar-link:hover{color:var(--cyan);background:rgba(0,212,255,.04);border-left-color:rgba(0,212,255,.3);}
 .sidebar-link.active{color:var(--cyan);border-left-color:var(--cyan);background:rgba(0,212,255,.06);}
 .sidebar-link .sl-icon{font-size:.72rem;width:14px;text-align:center;opacity:.7;}
 .sidebar-bottom{margin-top:auto;padding:1rem;border-top:1px solid var(--border);}
 .s-market-status{display:flex;align-items:center;gap:.5rem;font-family:var(--mono);font-size:.62rem;letter-spacing:.06em;text-transform:uppercase;}
 .s-status-dot{width:6px;height:6px;border-radius:50%;animation:pulse-dot 2s ease-in-out infinite;}
-.s-status-dot.pre{background:var(--green);box-shadow:0 0 6px rgba(0,224,160,.2);}
-.s-status-dot.open{background:var(--amber);}
+.s-status-dot.pre{background:var(--green);}
+.s-status-dot.open{background:var(--amber);animation:none;}
 .s-status-dot.closed{background:var(--muted);animation:none;}
+@keyframes pulse-dot{0%,100%{opacity:1;transform:scale(1);}50%{opacity:.5;transform:scale(.8);}}
 .main-wrap{margin-left:var(--sidebar);flex:1;display:flex;flex-direction:column;min-height:100vh;}
 .top-header{padding:1.5rem 2rem 1.1rem;border-bottom:1px solid var(--border);background:var(--surface);display:flex;align-items:center;justify-content:space-between;}
 .page-title{font-family:var(--display);font-size:2.6rem;font-weight:400;color:var(--text);line-height:1;}
 .page-date{font-family:var(--mono);font-size:.6rem;color:var(--cyan);letter-spacing:.14em;text-transform:uppercase;}
-@keyframes pulse-dot{0%,100%{opacity:1;transform:scale(1);}50%{opacity:.5;transform:scale(.8);}}
 .countdown-pill{font-family:var(--mono);font-size:.65rem;font-weight:500;letter-spacing:.05em;padding:.28rem .7rem;border-radius:4px;display:flex;align-items:center;gap:.45rem;}
 .countdown-pill.pre{color:var(--green);background:var(--green-bg);border:1px solid rgba(0,224,160,.12);}
 .countdown-pill.open{color:var(--amber);background:rgba(255,176,32,.05);border:1px solid rgba(255,176,32,.12);}
@@ -50,7 +40,7 @@ body{font-family:var(--sans);background:var(--bg);color:var(--text);min-height:1
 .countdown-pill.open .cdot{background:var(--amber);}
 .progress-section{padding:.75rem 1.5rem;border-bottom:1px solid var(--border);background:var(--surface);display:flex;align-items:center;gap:1.5rem;}
 .progress-bar-outer{flex:1;height:3px;background:var(--dim);border-radius:2px;overflow:hidden;}
-.progress-bar-fill{height:100%;background:var(--green);border-radius:2px;transition:width .4s cubic-bezier(.4,0,.2,1);width:0%;box-shadow:0 0 8px var(--green-glow);}
+.progress-bar-fill{height:100%;background:var(--green);border-radius:2px;transition:width .4s;width:0%;box-shadow:0 0 8px var(--green-glow);}
 .progress-stats{font-family:var(--mono);font-size:.7rem;color:var(--muted);white-space:nowrap;display:flex;gap:1.5rem;}
 .progress-stats .pct{color:var(--green);font-weight:600;}
 .status-strip{display:flex;align-items:center;justify-content:center;gap:2rem;padding:.5rem 1.5rem;background:var(--surface2);border-bottom:1px solid var(--border);font-family:var(--mono);font-size:.62rem;letter-spacing:.08em;color:var(--muted);overflow-x:auto;}
@@ -65,10 +55,8 @@ body{font-family:var(--sans);background:var(--bg);color:var(--text);min-height:1
 .row-full{width:100%;}
 .row-pair{display:grid;grid-template-columns:1fr 1fr;gap:1rem;}
 .card{background:var(--surface);border:1px solid var(--border);border-radius:6px;overflow:hidden;display:flex;flex-direction:column;transition:border-color .2s;animation:fadeUp .4s ease both;}
-.card:nth-child(1){animation-delay:.05s;}
-.card:nth-child(2){animation-delay:.1s;}
-.card:hover{border-color:var(--border2);}
 @keyframes fadeUp{from{opacity:0;transform:translateY(12px);}to{opacity:1;transform:translateY(0);}}
+.card:hover{border-color:var(--border2);}
 .card-head{display:flex;align-items:center;justify-content:space-between;padding:.6rem 1rem;border-bottom:1px solid var(--border);background:var(--surface2);}
 .card-time{font-family:var(--mono);font-size:.6rem;font-weight:600;letter-spacing:.1em;color:var(--green);background:var(--green-bg);padding:.15rem .45rem;border-radius:3px;border:1px solid rgba(0,224,160,.12);}
 .card-title{font-family:var(--mono);font-size:.65rem;font-weight:600;letter-spacing:.1em;text-transform:uppercase;color:var(--text2);}
@@ -76,14 +64,13 @@ body{font-family:var(--sans);background:var(--bg);color:var(--text);min-height:1
 .card-progress-mini span{color:var(--green);}
 .card-body{padding:1rem;flex:1;display:flex;flex-direction:column;gap:.75rem;}
 .playbook-inner{display:grid;grid-template-columns:1fr 1fr;gap:1rem;align-items:stretch;}
-.playbook-inner-left{display:flex;flex-direction:column;gap:.75rem;}
-.playbook-inner-right{display:flex;flex-direction:column;gap:.75rem;}
+.playbook-inner-left,.playbook-inner-right{display:flex;flex-direction:column;gap:.75rem;}
 .playbook-inner-right .notes-wrap{display:flex;flex-direction:column;flex:1;}
 .playbook-inner-right .notes-wrap textarea{flex:1;resize:none;}
 .checklist{list-style:none;display:flex;flex-direction:column;gap:1px;}
-.checklist li{display:flex;align-items:flex-start;gap:.6rem;padding:.5rem .5rem;border-radius:4px;cursor:pointer;font-size:.82rem;line-height:1.5;color:var(--text);transition:background .1s,color .2s;user-select:none;}
+.checklist li{display:flex;align-items:flex-start;gap:.6rem;padding:.5rem;border-radius:4px;cursor:pointer;font-size:.82rem;line-height:1.5;color:var(--text);transition:background .1s;user-select:none;}
 .checklist li:hover{background:var(--surface2);}
-.check-box{width:15px;height:15px;border:1px solid var(--border2);border-radius:2px;flex-shrink:0;margin-top:2px;display:flex;align-items:center;justify-content:center;transition:background .15s,border-color .15s;font-size:10px;color:transparent;}
+.check-box{width:15px;height:15px;border:1px solid var(--border2);border-radius:2px;flex-shrink:0;margin-top:2px;display:flex;align-items:center;justify-content:center;font-size:10px;color:transparent;transition:all .15s;}
 .checklist li.checked .check-box{background:var(--green);border-color:var(--green);color:#000;}
 .checklist li.checked .check-text{color:var(--muted);text-decoration:line-through;text-decoration-color:var(--dim);}
 .field-label{font-family:var(--mono);font-size:.58rem;letter-spacing:.1em;text-transform:uppercase;color:var(--muted);margin-bottom:.3rem;}
@@ -91,7 +78,7 @@ body{font-family:var(--sans);background:var(--bg);color:var(--text);min-height:1
 .field-input:focus{outline:none;border-color:var(--green);}
 .field-input::placeholder{color:var(--dim);}
 .grade-grid{display:flex;flex-direction:column;gap:6px;}
-.grade-option{display:flex;align-items:center;gap:1rem;padding:.75rem .85rem;border-radius:4px;border:1px solid transparent;cursor:pointer;transition:all .15s;font-size:1rem;}
+.grade-option{display:flex;align-items:center;gap:1rem;padding:.75rem .85rem;border-radius:4px;border:1px solid transparent;cursor:pointer;transition:all .15s;}
 .grade-option:hover{background:var(--surface2);}
 .grade-option input{display:none;}
 .grade-letter{font-family:var(--mono);font-size:1.3rem;font-weight:700;width:28px;text-align:center;flex-shrink:0;color:var(--text);}
@@ -146,16 +133,12 @@ body{font-family:var(--sans);background:var(--bg);color:var(--text);min-height:1
 .calc-result-val{font-family:var(--mono);font-size:.88rem;font-weight:600;color:#c8e8f0;}
 .calc-result-val.pos{color:var(--green);text-shadow:0 0 8px rgba(0,224,160,.5);}
 .calc-result-val.neg{color:var(--red);text-shadow:0 0 8px rgba(255,64,96,.5);}
-.calc-result-val.neutral{color:var(--cyan);text-shadow:0 0 8px rgba(0,212,255,.4);}
-.hs-dot{display:inline-block;width:7px;height:7px;border-radius:50%;background:#1a3a45;border:1px solid #2a5a6a;transition:background .3s,box-shadow .3s;vertical-align:middle;}
-@keyframes dot-pulse-g{0%,100%{box-shadow:0 0 6px rgba(0,224,160,.7),0 0 14px rgba(0,224,160,.3)}50%{box-shadow:0 0 12px rgba(0,224,160,1),0 0 24px rgba(0,224,160,.5)}}
-@keyframes dot-pulse-c{0%,100%{box-shadow:0 0 6px rgba(0,212,255,.7),0 0 14px rgba(0,212,255,.3)}50%{box-shadow:0 0 12px rgba(0,212,255,1),0 0 24px rgba(0,212,255,.5)}}
-@keyframes dot-pulse-r{0%,100%{box-shadow:0 0 6px rgba(255,64,96,.7),0 0 14px rgba(255,64,96,.3)}50%{box-shadow:0 0 12px rgba(255,64,96,1),0 0 24px rgba(255,64,96,.5)}}
-@keyframes dot-pulse-a{0%,100%{box-shadow:0 0 6px rgba(255,176,32,.7),0 0 14px rgba(255,176,32,.3)}50%{box-shadow:0 0 12px rgba(255,176,32,1),0 0 24px rgba(255,176,32,.5)}}
+.calc-result-val.neutral{color:var(--cyan);}
+.hs-dot{display:inline-block;width:7px;height:7px;border-radius:50%;background:#1a3a45;border:1px solid #2a5a6a;vertical-align:middle;}
 .rule-note{font-size:.75rem;font-style:italic;color:var(--muted);padding:.5rem .75rem;background:var(--surface2);border-left:2px solid var(--green-glow);border-radius:0 4px 4px 0;line-height:1.5;}
 .divider{height:1px;background:var(--border);margin:.25rem 0;}
 @media(max-width:900px){.row-pair{grid-template-columns:1fr;}.playbook-inner{grid-template-columns:1fr;}}
-@media(max-width:768px){:root{--sidebar:0px;}.sidebar{display:none;}.top-header{padding:1rem;}.main{padding:1rem;}.progress-section{padding:.75rem 1rem;}.status-strip{gap:1rem;}}
+@media(max-width:768px){:root{--sidebar:0px;}.sidebar{display:none;}.main{padding:1rem;}}
 </style>
 </head>
 <body>
@@ -186,7 +169,7 @@ body{font-family:var(--sans);background:var(--bg);color:var(--text);min-height:1
   <div class="sidebar-section">
     <div class="sidebar-section-label">Live Tools</div>
     <a class="sidebar-link" href="halts.html"><span class="sl-icon">⚡</span> Halt Feed
-      <span id="sb-halt-count" style="margin-left:auto;font-family:var(--mono);font-size:.55rem;background:rgba(255,64,96,.15);color:var(--red);border:1px solid rgba(255,64,96,.3);border-radius:3px;padding:.1rem .35rem;display:none;">0</span>
+      <span id="sb-halt-count" style="margin-left:auto;font-family:var(--mono);font-size:.55rem;background:rgba(255,64,96,.15);color:var(--red);border:1px solid rgba(255,64,96,.3);border-radius:3px;padding:.1rem .35rem;display:none;"></span>
     </a>
     <a class="sidebar-link" href="https://www.nasdaqtrader.com/trader.aspx?id=tradehalts" target="_blank"><span class="sl-icon">◈</span> NASDAQ Halts ↗</a>
   </div>
@@ -206,14 +189,11 @@ body{font-family:var(--sans);background:var(--bg);color:var(--text);min-height:1
     </div>
     <div class="countdown-pill pre" id="countdown"><span class="cdot"></span><span id="cdText">--:--:--</span></div>
   </div>
-
   <div class="status-strip">
-    <div class="status-item"><div class="status-dot" id="futures-dot"></div><span>Futures</span><span id="futures-status" style="color:var(--text)">—</span></div>
     <div class="status-item"><div class="status-dot amber"></div><span>Pre-Market</span><span id="session-label" style="color:var(--text)">—</span></div>
     <div class="status-item"><div class="status-dot green"></div><span>NYSE Open</span><span style="color:var(--text)">9:30 AM ET</span></div>
     <div class="status-item"><div class="status-dot"></div><span>NYSE Close</span><span style="color:var(--text)">4:00 PM ET</span></div>
   </div>
-
   <div class="progress-section">
     <div class="progress-bar-outer"><div class="progress-bar-fill" id="globalProgress"></div></div>
     <div class="progress-stats">
@@ -223,96 +203,31 @@ body{font-family:var(--sans);background:var(--bg);color:var(--text);min-height:1
   </div>
 
   <div class="main">
-
     <!-- STEP 1 -->
     <div class="row-label"><span class="row-label-num">Step 1</span><div class="row-label-line"></div></div>
     <div class="row-full">
       <div class="card">
-        <div class="card-head">
-          <span class="card-time">9:15 AM</span>
-          <span class="card-title">Playbook</span>
-          <span class="card-progress-mini" id="c4p" style="color:var(--muted)">tap to expand</span>
-        </div>
+        <div class="card-head"><span class="card-time">9:15 AM</span><span class="card-title">Playbook</span><span class="card-progress-mini" id="c4p" style="color:var(--muted)">tap to expand</span></div>
         <div class="card-body">
           <div class="playbook-inner">
             <div class="playbook-inner-left">
               <div>
                 <div class="field-label">Setups in play today — tap for guide</div>
-                <div class="playbook-grid" id="playbook-grid">
-                  <div class="play-btn" data-play="Gap & Go" data-num="1" onclick="togglePlay(this)">
-                    <div class="play-btn-top"><span class="play-num">1</span><span class="play-name">Gap &amp; Go</span></div>
-                    <div class="play-meta"><span class="play-win">65–72%</span><div class="play-dots"><div class="play-dot filled"></div><div class="play-dot"></div><div class="play-dot"></div></div><span class="play-diff">Easy</span></div>
-                  </div>
-                  <div class="play-btn" data-play="ORB 15-min" data-num="2" onclick="togglePlay(this)">
-                    <div class="play-btn-top"><span class="play-num">2</span><span class="play-name">ORB 15-min</span></div>
-                    <div class="play-meta"><span class="play-win">62–70%</span><div class="play-dots"><div class="play-dot filled"></div><div class="play-dot"></div><div class="play-dot"></div></div><span class="play-diff">Easy</span></div>
-                  </div>
-                  <div class="play-btn" data-play="VWAP Reclaim" data-num="3" onclick="togglePlay(this)">
-                    <div class="play-btn-top"><span class="play-num">3</span><span class="play-name">VWAP Reclaim</span></div>
-                    <div class="play-meta"><span class="play-win">60–68%</span><div class="play-dots"><div class="play-dot filled"></div><div class="play-dot filled"></div><div class="play-dot"></div></div><span class="play-diff">Easy-Med</span></div>
-                  </div>
-                  <div class="play-btn" data-play="Breakout" data-num="4" onclick="togglePlay(this)">
-                    <div class="play-btn-top"><span class="play-num">4</span><span class="play-name">Breakout</span></div>
-                    <div class="play-meta"><span class="play-win">58–65%</span><div class="play-dots"><div class="play-dot filled"></div><div class="play-dot filled"></div><div class="play-dot"></div></div><span class="play-diff">Easy-Med</span></div>
-                  </div>
+                <div class="playbook-grid">
+                  <div class="play-btn" data-play="Gap & Go" data-num="1" onclick="togglePlay(this)"><div class="play-btn-top"><span class="play-num">1</span><span class="play-name">Gap &amp; Go</span></div><div class="play-meta"><span class="play-win">65–72%</span><div class="play-dots"><div class="play-dot filled"></div><div class="play-dot"></div><div class="play-dot"></div></div><span class="play-diff">Easy</span></div></div>
+                  <div class="play-btn" data-play="ORB 15-min" data-num="2" onclick="togglePlay(this)"><div class="play-btn-top"><span class="play-num">2</span><span class="play-name">ORB 15-min</span></div><div class="play-meta"><span class="play-win">62–70%</span><div class="play-dots"><div class="play-dot filled"></div><div class="play-dot"></div><div class="play-dot"></div></div><span class="play-diff">Easy</span></div></div>
+                  <div class="play-btn" data-play="VWAP Reclaim" data-num="3" onclick="togglePlay(this)"><div class="play-btn-top"><span class="play-num">3</span><span class="play-name">VWAP Reclaim</span></div><div class="play-meta"><span class="play-win">60–68%</span><div class="play-dots"><div class="play-dot filled"></div><div class="play-dot filled"></div><div class="play-dot"></div></div><span class="play-diff">Easy-Med</span></div></div>
+                  <div class="play-btn" data-play="Breakout" data-num="4" onclick="togglePlay(this)"><div class="play-btn-top"><span class="play-num">4</span><span class="play-name">Breakout</span></div><div class="play-meta"><span class="play-win">58–65%</span><div class="play-dots"><div class="play-dot filled"></div><div class="play-dot filled"></div><div class="play-dot"></div></div><span class="play-diff">Easy-Med</span></div></div>
                 </div>
-                <div id="detail-panels-grid" style="margin-top:6px;display:grid;grid-template-columns:1fr 1fr;gap:6px;">
-                  <div class="play-detail" id="detail-1">
-                    <div class="play-detail-title">Gap &amp; Go — How to play it</div>
-                    <div class="play-section"><div class="play-section-label">Steps</div><div class="play-steps">
-                      <div class="play-step"><div class="play-step-num">1</div><span>Pre-market: find stocks gapping 4%+ on a news catalyst (earnings, upgrade, PR)</span></div>
-                      <div class="play-step"><div class="play-step-num">2</div><span>Mark the pre-market high. This is your key level at the open</span></div>
-                      <div class="play-step"><div class="play-step-num">3</div><span>At 9:30 watch the first 1–2 candles. Let the initial spike happen — do not chase</span></div>
-                      <div class="play-step"><div class="play-step-num">4</div><span>Buy the first pullback candle that holds above VWAP or the pre-market high</span></div>
-                      <div class="play-step"><div class="play-step-num">5</div><span>Stop below the low of the pullback candle. Target: prior resistance or high of day</span></div>
-                      <div class="play-step"><div class="play-step-num">6</div><span>If it reclaims and breaks pre-market high with volume — full send</span></div>
-                    </div></div>
-                    <div class="play-section"><div class="play-section-label">Indicators</div><div class="play-tags-row"><span class="play-pill">VWAP</span><span class="play-pill">Pre-mkt High</span><span class="play-pill">Relative Volume</span><span class="play-pill">L2 / Tape</span></div></div>
-                    <div class="play-section"><div class="play-section-label">Best time</div><div class="play-step"><div class="play-step-num" style="width:auto;padding:0 6px;">⏱</div><span>9:30–10:30 AM ET. After 10:30 the momentum fades fast</span></div></div>
-                  </div>
-                  <div class="play-detail" id="detail-2">
-                    <div class="play-detail-title">ORB 15-min — How to play it</div>
-                    <div class="play-section"><div class="play-section-label">Steps</div><div class="play-steps">
-                      <div class="play-step"><div class="play-step-num">1</div><span>Let the first 15 minutes trade. Do not enter during this window — just watch</span></div>
-                      <div class="play-step"><div class="play-step-num">2</div><span>Mark the exact high and low of the 9:30–9:45 candle. This is your range</span></div>
-                      <div class="play-step"><div class="play-step-num">3</div><span>Set alerts at both levels. At 9:44 be ready — react the instant the candle closes</span></div>
-                      <div class="play-step"><div class="play-step-num">4</div><span>If price breaks above the range high on volume: go long. Stop below range high</span></div>
-                      <div class="play-step"><div class="play-step-num">5</div><span>If price breaks below the range low on volume: go short. Stop above range low</span></div>
-                      <div class="play-step"><div class="play-step-num">6</div><span>Best when the breakout aligns with the pre-market trend direction</span></div>
-                    </div></div>
-                    <div class="play-section"><div class="play-section-label">Indicators</div><div class="play-tags-row"><span class="play-pill">15-min Chart</span><span class="play-pill">VWAP</span><span class="play-pill">Volume Surge</span><span class="play-pill">Pre-mkt Trend</span></div></div>
-                    <div class="play-section"><div class="play-section-label">Best time</div><div class="play-step"><div class="play-step-num" style="width:auto;padding:0 6px;">⏱</div><span>Entry at 9:45 AM ET. Secondary entries 10:00–11:00 on retests of the range</span></div></div>
-                  </div>
-                  <div class="play-detail" id="detail-3">
-                    <div class="play-detail-title">VWAP Reclaim — How to play it</div>
-                    <div class="play-section"><div class="play-section-label">Steps</div><div class="play-steps">
-                      <div class="play-step"><div class="play-step-num">1</div><span>Find a stock that dipped below VWAP but is showing signs of stabilizing</span></div>
-                      <div class="play-step"><div class="play-step-num">2</div><span>Watch for a candle that closes back above VWAP with increasing volume</span></div>
-                      <div class="play-step"><div class="play-step-num">3</div><span>Enter on the candle that reclaims VWAP or the first pullback to VWAP after reclaim</span></div>
-                      <div class="play-step"><div class="play-step-num">4</div><span>Stop below VWAP — if it loses VWAP again the setup is failed</span></div>
-                      <div class="play-step"><div class="play-step-num">5</div><span>Target: prior high, next resistance level, or HOD</span></div>
-                      <div class="play-step"><div class="play-step-num">6</div><span>Strongest when the broader market (SPY) is also above its VWAP</span></div>
-                    </div></div>
-                    <div class="play-section"><div class="play-section-label">Indicators</div><div class="play-tags-row"><span class="play-pill">VWAP</span><span class="play-pill">Volume</span><span class="play-pill">SPY Correlation</span><span class="play-pill">1-min / 5-min</span></div></div>
-                    <div class="play-section"><div class="play-section-label">Best time</div><div class="play-step"><div class="play-step-num" style="width:auto;padding:0 6px;">⏱</div><span>9:45–11:30 AM and 1:00–2:30 PM ET. Avoid the choppy midday 11:30–1:00 window</span></div></div>
-                  </div>
-                  <div class="play-detail" id="detail-4">
-                    <div class="play-detail-title">Breakout — How to play it</div>
-                    <div class="play-section"><div class="play-section-label">Steps</div><div class="play-steps">
-                      <div class="play-step"><div class="play-step-num">1</div><span>Identify a stock consolidating in a tight range near a key resistance level</span></div>
-                      <div class="play-step"><div class="play-step-num">2</div><span>The tighter and longer the consolidation the better — coiled spring effect</span></div>
-                      <div class="play-step"><div class="play-step-num">3</div><span>Watch for a candle that closes above resistance with a volume spike (2x average or more)</span></div>
-                      <div class="play-step"><div class="play-step-num">4</div><span>Enter on the breakout candle or the first pullback retest of the broken level</span></div>
-                      <div class="play-step"><div class="play-step-num">5</div><span>Stop below the breakout level — if it fails back below, the breakout is false</span></div>
-                      <div class="play-step"><div class="play-step-num">6</div><span>Target: measured move (height of the base added to breakout point)</span></div>
-                    </div></div>
-                    <div class="play-section"><div class="play-section-label">Indicators</div><div class="play-tags-row"><span class="play-pill">Resistance Level</span><span class="play-pill">Volume</span><span class="play-pill">5-min Chart</span><span class="play-pill">ATR</span></div></div>
-                    <div class="play-section"><div class="play-section-label">Best time</div><div class="play-step"><div class="play-step-num" style="width:auto;padding:0 6px;">⏱</div><span>9:45–11:00 AM and 2:00–3:30 PM ET. Volume must confirm — no volume = no breakout</span></div></div>
-                  </div>
+                <div style="margin-top:6px;display:grid;grid-template-columns:1fr 1fr;gap:6px;" id="detail-panels-grid">
+                  <div class="play-detail" id="detail-1"><div class="play-detail-title">Gap &amp; Go — How to play it</div><div class="play-section"><div class="play-section-label">Steps</div><div class="play-steps"><div class="play-step"><div class="play-step-num">1</div><span>Pre-market: find stocks gapping 4%+ on a news catalyst</span></div><div class="play-step"><div class="play-step-num">2</div><span>Mark the pre-market high — key level at the open</span></div><div class="play-step"><div class="play-step-num">3</div><span>At 9:30 watch the first 1–2 candles. Do not chase the spike</span></div><div class="play-step"><div class="play-step-num">4</div><span>Buy first pullback candle that holds above VWAP or pre-mkt high</span></div><div class="play-step"><div class="play-step-num">5</div><span>Stop below the low of the pullback candle</span></div><div class="play-step"><div class="play-step-num">6</div><span>If it reclaims pre-mkt high with volume — full send</span></div></div></div><div class="play-section"><div class="play-section-label">Indicators</div><div class="play-tags-row"><span class="play-pill">VWAP</span><span class="play-pill">Pre-mkt High</span><span class="play-pill">Rel Volume</span><span class="play-pill">L2/Tape</span></div></div><div class="play-section"><div class="play-section-label">Best time</div><div class="play-step"><div class="play-step-num" style="width:auto;padding:0 6px;">⏱</div><span>9:30–10:30 AM ET</span></div></div></div>
+                  <div class="play-detail" id="detail-2"><div class="play-detail-title">ORB 15-min — How to play it</div><div class="play-section"><div class="play-section-label">Steps</div><div class="play-steps"><div class="play-step"><div class="play-step-num">1</div><span>Let the first 15 min trade — do not enter, just watch</span></div><div class="play-step"><div class="play-step-num">2</div><span>Mark the exact high and low of the 9:30–9:45 candle</span></div><div class="play-step"><div class="play-step-num">3</div><span>Set alerts at both levels, be ready at 9:44</span></div><div class="play-step"><div class="play-step-num">4</div><span>Break above high on volume: go long. Stop below range high</span></div><div class="play-step"><div class="play-step-num">5</div><span>Break below low on volume: go short. Stop above range low</span></div><div class="play-step"><div class="play-step-num">6</div><span>Best when breakout aligns with pre-market trend</span></div></div></div><div class="play-section"><div class="play-section-label">Indicators</div><div class="play-tags-row"><span class="play-pill">15-min Chart</span><span class="play-pill">VWAP</span><span class="play-pill">Volume Surge</span></div></div><div class="play-section"><div class="play-section-label">Best time</div><div class="play-step"><div class="play-step-num" style="width:auto;padding:0 6px;">⏱</div><span>Entry 9:45 AM ET</span></div></div></div>
+                  <div class="play-detail" id="detail-3"><div class="play-detail-title">VWAP Reclaim — How to play it</div><div class="play-section"><div class="play-section-label">Steps</div><div class="play-steps"><div class="play-step"><div class="play-step-num">1</div><span>Find stock that dipped below VWAP and is stabilizing</span></div><div class="play-step"><div class="play-step-num">2</div><span>Watch for candle closing back above VWAP with rising volume</span></div><div class="play-step"><div class="play-step-num">3</div><span>Enter on reclaim candle or first pullback to VWAP after</span></div><div class="play-step"><div class="play-step-num">4</div><span>Stop below VWAP — if it loses VWAP again, setup is failed</span></div><div class="play-step"><div class="play-step-num">5</div><span>Strongest when SPY is also above its VWAP</span></div></div></div><div class="play-section"><div class="play-section-label">Indicators</div><div class="play-tags-row"><span class="play-pill">VWAP</span><span class="play-pill">Volume</span><span class="play-pill">SPY Correlation</span></div></div><div class="play-section"><div class="play-section-label">Best time</div><div class="play-step"><div class="play-step-num" style="width:auto;padding:0 6px;">⏱</div><span>9:45–11:30 AM and 1:00–2:30 PM ET</span></div></div></div>
+                  <div class="play-detail" id="detail-4"><div class="play-detail-title">Breakout — How to play it</div><div class="play-section"><div class="play-section-label">Steps</div><div class="play-steps"><div class="play-step"><div class="play-step-num">1</div><span>Find stock consolidating near key resistance</span></div><div class="play-step"><div class="play-step-num">2</div><span>Tighter and longer the consolidation, the better</span></div><div class="play-step"><div class="play-step-num">3</div><span>Candle closes above resistance with 2x+ volume spike</span></div><div class="play-step"><div class="play-step-num">4</div><span>Enter on breakout candle or first pullback retest</span></div><div class="play-step"><div class="play-step-num">5</div><span>Stop below the breakout level</span></div><div class="play-step"><div class="play-step-num">6</div><span>Target: measured move (base height + breakout point)</span></div></div></div><div class="play-section"><div class="play-section-label">Indicators</div><div class="play-tags-row"><span class="play-pill">Resistance</span><span class="play-pill">Volume</span><span class="play-pill">ATR</span></div></div><div class="play-section"><div class="play-section-label">Best time</div><div class="play-step"><div class="play-step-num" style="width:auto;padding:0 6px;">⏱</div><span>9:45–11:00 AM and 2:00–3:30 PM ET</span></div></div></div>
                 </div>
                 <div style="margin-top:8px;display:flex;align-items:center;gap:8px;">
                   <input class="field-input" id="play-input" type="text" inputmode="numeric" placeholder="Type numbers to activate e.g. 1 2" style="min-height:unset;padding:.4rem .7rem;font-size:.75rem;flex:1;">
-                  <button onclick="applyPlayNumbers()" style="font-family:var(--mono);font-size:.68rem;padding:.4rem .8rem;background:#0a1e28;border:1px solid var(--cyan);color:var(--cyan);border-radius:4px;cursor:pointer;white-space:nowrap;letter-spacing:.05em;">Apply</button>
+                  <button onclick="applyPlayNumbers()" style="font-family:var(--mono);font-size:.68rem;padding:.4rem .8rem;background:#0a1e28;border:1px solid var(--cyan);color:var(--cyan);border-radius:4px;cursor:pointer;white-space:nowrap;">Apply</button>
                 </div>
               </div>
               <div id="slot-a"></div>
@@ -365,8 +280,6 @@ body{font-family:var(--sans);background:var(--bg);color:var(--text);min-height:1
     <!-- STEP 3 -->
     <div class="row-label"><span class="row-label-num">Step 3</span><div class="row-label-line"></div></div>
     <div class="row-pair">
-
-      <!-- TEMP CHECK + HALT MONITOR -->
       <div class="card">
         <div class="card-head"><span class="card-time">9:00 AM</span><span class="card-title">Temp Check</span><span class="card-progress-mini"><span id="c3p">—</span></span></div>
         <div class="card-body" style="display:flex;flex-direction:column;">
@@ -381,7 +294,7 @@ body{font-family:var(--sans);background:var(--bg);color:var(--text);min-height:1
           <div class="divider"></div>
           <div>
             <div class="field-label" style="font-size:.72rem;letter-spacing:.14em;color:#5a8aaa;">Today's grade</div>
-            <div class="grade-grid" id="grade-grid">
+            <div class="grade-grid">
               <label class="grade-option" data-grade="A"><input type="radio" name="grade" value="A"><span class="grade-letter">A</span><span class="grade-desc">Full sizing — press your edge</span></label>
               <label class="grade-option" data-grade="B"><input type="radio" name="grade" value="B"><span class="grade-letter">B</span><span class="grade-desc">Standard sizing, stay disciplined</span></label>
               <label class="grade-option" data-grade="C"><input type="radio" name="grade" value="C"><span class="grade-letter">C</span><span class="grade-desc">Size way down, trade selectively</span></label>
@@ -390,28 +303,27 @@ body{font-family:var(--sans);background:var(--bg);color:var(--text);min-height:1
             </div>
           </div>
           <div class="divider"></div>
-          <!-- HALT MONITOR -->
-          <div id="ludp-panel" style="display:flex;flex-direction:column;flex:1;">
-            <div style="display:flex;align-items:center;justify-content:space-between;margin-top:10px;margin-bottom:22px;">
+          <!-- HALT MONITOR — reads halts.json, no proxy -->
+          <div style="display:flex;flex-direction:column;flex:1;">
+            <div style="display:flex;align-items:center;justify-content:space-between;margin-top:10px;margin-bottom:16px;">
               <div style="display:flex;align-items:center;gap:12px;">
                 <span id="ludp-pulse" style="display:inline-block;width:14px;height:14px;border-radius:50%;background:var(--muted);transition:all .3s;flex-shrink:0;"></span>
-                <span id="ludp-panel-label" style="font-family:var(--mono);font-size:1.05rem;font-weight:700;letter-spacing:.18em;text-transform:uppercase;color:var(--cyan);text-shadow:0 0 10px rgba(0,212,255,.8),0 0 22px rgba(0,212,255,.4);">Halt Monitor</span>
+                <span id="ludp-label" style="font-family:var(--mono);font-size:1.05rem;font-weight:700;letter-spacing:.18em;text-transform:uppercase;color:var(--cyan);text-shadow:0 0 10px rgba(0,212,255,.8);">Halt Monitor</span>
               </div>
               <div style="display:flex;align-items:center;gap:8px;">
-                <span id="ludp-last-check" style="font-family:var(--mono);font-size:.62rem;color:var(--muted);">—</span>
-                <button onclick="pollHalts()" style="font-family:var(--mono);font-size:.65rem;letter-spacing:.08em;padding:.25rem .65rem;border-radius:3px;border:1px solid var(--border2);background:transparent;color:var(--muted);cursor:pointer;">↺ refresh</button>
+                <span id="ludp-time" style="font-family:var(--mono);font-size:.62rem;color:var(--muted);">—</span>
+                <button onclick="pollHalts()" style="font-family:var(--mono);font-size:.65rem;padding:.25rem .65rem;border-radius:3px;border:1px solid var(--border2);background:transparent;color:var(--muted);cursor:pointer;">↺ refresh</button>
               </div>
             </div>
-            <div id="ludp-idle" style="background:#071820;border:1px solid #1a3a45;border-radius:4px;text-align:center;flex:1;display:flex;flex-direction:column;align-items:center;justify-content:center;min-height:160px;">
-              <div style="font-family:var(--mono);font-size:.82rem;letter-spacing:.12em;text-transform:uppercase;color:#2a5a6a;margin-bottom:10px;">Watching for LUDP halts...</div>
-              <div style="font-family:var(--mono);font-size:.7rem;color:#1a3a4a;letter-spacing:.06em;">Checks every 30s · 4am – 4pm ET</div>
+            <div id="ludp-idle" style="background:#071820;border:1px solid #1a3a45;border-radius:4px;text-align:center;flex:1;display:flex;flex-direction:column;align-items:center;justify-content:center;min-height:140px;">
+              <div style="font-family:var(--mono);font-size:.82rem;letter-spacing:.12em;text-transform:uppercase;color:#2a5a6a;margin-bottom:8px;">Watching for LUDP halts...</div>
+              <div style="font-family:var(--mono);font-size:.7rem;color:#1a3a4a;">Updates every 2 min via GitHub Actions</div>
             </div>
             <div id="ludp-active" style="display:none;flex-direction:column;gap:6px;" hidden></div>
           </div>
         </div>
       </div>
 
-      <!-- FINAL CHECK + HALT SCOUT -->
       <div class="card">
         <div class="card-head"><span class="card-time">9:25 AM</span><span class="card-title">Final Check Before Open</span><span class="card-progress-mini"><span id="c5p">0</span>/4</span></div>
         <div class="card-body">
@@ -429,13 +341,8 @@ body{font-family:var(--sans);background:var(--bg);color:var(--text);min-height:1
               <div id="hs-go-btn" style="font-family:var(--mono);font-size:1.05rem;font-weight:700;letter-spacing:.18em;padding:.42rem 1.3rem;border-radius:5px;border:2px solid var(--border2);background:var(--surface3);color:var(--muted);transition:all .3s;text-align:center;min-width:116px;">— —</div>
             </div>
             <div style="margin-bottom:10px;">
-              <div style="display:flex;justify-content:space-between;align-items:center;margin-bottom:4px;">
-                <span class="calc-label">Volume Strength</span>
-                <span id="hs-volratio" style="font-family:var(--mono);font-size:.75rem;font-weight:600;color:var(--muted);">—</span>
-              </div>
-              <div style="height:8px;background:var(--dim);border-radius:4px;overflow:hidden;">
-                <div id="hs-volbar" style="height:100%;width:0%;background:var(--muted);border-radius:4px;transition:width .5s cubic-bezier(.4,0,.2,1),background .4s;"></div>
-              </div>
+              <div style="display:flex;justify-content:space-between;align-items:center;margin-bottom:4px;"><span class="calc-label">Volume Strength</span><span id="hs-volratio" style="font-family:var(--mono);font-size:.75rem;font-weight:600;color:var(--muted);">—</span></div>
+              <div style="height:8px;background:var(--dim);border-radius:4px;overflow:hidden;"><div id="hs-volbar" style="height:100%;width:0%;background:var(--muted);border-radius:4px;transition:width .5s,background .4s;"></div></div>
               <div style="display:flex;justify-content:space-between;margin-top:3px;">
                 <span style="font-family:var(--mono);font-size:.5rem;color:var(--muted);">THIN</span>
                 <span style="font-family:var(--mono);font-size:.5rem;color:var(--amber);">2x WATCH</span>
@@ -445,11 +352,7 @@ body{font-family:var(--sans);background:var(--bg);color:var(--text);min-height:1
             </div>
             <div style="display:grid;grid-template-columns:1fr 1fr;gap:6px;margin-bottom:6px;">
               <div class="calc-box"><div class="calc-label">Ticker</div><input class="calc-input" id="hs-ticker" type="text" placeholder="e.g. NVDA" style="text-transform:uppercase;text-align:left;" oninput="haltScout()"></div>
-              <div class="calc-box"><div class="calc-label">Halt #</div>
-                <select class="calc-input" id="hs-haltnum" onchange="haltScout()" style="cursor:pointer;">
-                  <option value="">— select —</option><option value="1">1st halt</option><option value="2">2nd halt ★</option><option value="3">3rd halt</option><option value="4">4th halt+</option>
-                </select>
-              </div>
+              <div class="calc-box"><div class="calc-label">Halt #</div><select class="calc-input" id="hs-haltnum" onchange="haltScout()" style="cursor:pointer;"><option value="">— select —</option><option value="1">1st halt</option><option value="2">2nd halt ★</option><option value="3">3rd halt</option><option value="4">4th halt+</option></select></div>
             </div>
             <div style="display:grid;grid-template-columns:1fr 1fr;gap:6px;margin-bottom:6px;">
               <div class="calc-box"><div class="calc-label">Entry Price</div><input class="calc-input" id="hs-entry" type="number" step="0.01" placeholder="0.00" oninput="calcAutoStop();calcUpdate();haltScout()"></div>
@@ -460,161 +363,80 @@ body{font-family:var(--sans);background:var(--bg);color:var(--text);min-height:1
               <div class="calc-box"><div class="calc-label">Avg Volume</div><input class="calc-input" id="hs-avgvol" type="number" placeholder="0" oninput="haltScout()"></div>
               <div class="calc-box"><div class="calc-label">Shares</div><input class="calc-input" id="calc-shares-input" type="number" value="100" oninput="calcAutoStop();calcUpdate();haltScout()"></div>
             </div>
-            <div style="margin-bottom:8px;">
-              <div class="calc-box">
-                <div class="calc-label">Stop Loss Price <span style="color:var(--muted);font-size:.5rem;margin-left:4px;">auto: entry − ($250 ÷ shares)</span></div>
-                <input class="calc-input" id="calc-stop" type="number" step="0.01" placeholder="0.00" oninput="calcUpdate();haltScout()">
-              </div>
-            </div>
+            <div style="margin-bottom:8px;"><div class="calc-box"><div class="calc-label">Stop Loss <span style="color:var(--muted);font-size:.5rem;">auto: entry − ($250 ÷ shares)</span></div><input class="calc-input" id="calc-stop" type="number" step="0.01" placeholder="0.00" oninput="calcUpdate();haltScout()"></div></div>
             <div class="calc-results">
-              <div class="calc-result-row"><span class="calc-result-label">Stop Loss Price</span><span class="calc-result-val neutral" id="calc-stop-display"><span class="hs-dot"></span></span></div>
+              <div class="calc-result-row"><span class="calc-result-label">Stop Loss</span><span class="calc-result-val neutral" id="calc-stop-display"><span class="hs-dot"></span></span></div>
               <div class="calc-result-row"><span class="calc-result-label">Max Loss</span><span class="calc-result-val" id="calc-maxloss"><span class="hs-dot"></span></span></div>
               <div class="calc-result-row"><span class="calc-result-label">P&amp;L at Target</span><span class="calc-result-val" id="calc-pnl"><span class="hs-dot"></span></span></div>
               <div class="calc-result-row"><span class="calc-result-label">Risk / Reward</span><span class="calc-result-val" id="calc-rr"><span class="hs-dot"></span></span></div>
               <div class="calc-result-row"><span class="calc-result-label">Position Size</span><span class="calc-result-val" id="calc-size"><span class="hs-dot"></span></span></div>
               <div class="divider" style="margin:6px 0;"></div>
-              <div style="padding:4px 0 2px;">
-                <div class="calc-result-label" style="margin-bottom:4px;">Scout Verdict</div>
-                <div id="hs-verdict-text" style="font-family:var(--mono);font-size:.72rem;font-weight:600;color:#5a8a9a;line-height:1.6;letter-spacing:.03em;">Fill in the fields above.</div>
-              </div>
+              <div style="padding:4px 0 2px;"><div class="calc-result-label" style="margin-bottom:4px;">Scout Verdict</div><div id="hs-verdict-text" style="font-family:var(--mono);font-size:.72rem;font-weight:600;color:#5a8a9a;line-height:1.6;">Fill in the fields above.</div></div>
             </div>
           </div>
-          <div style="background:rgba(0,0,0,.3);border:1px solid #1a2a32;border-radius:4px;padding:.75rem 1rem;display:flex;flex-direction:column;gap:6px;">
-            <span style="font-family:var(--mono);font-size:.78rem;font-weight:700;letter-spacing:.06em;color:var(--red);text-shadow:0 0 10px rgba(255,64,96,.9),0 0 24px rgba(255,64,96,.5);line-height:1.6;">When the BULLS sell — price will drop.</span>
-            <span style="font-family:var(--mono);font-size:.78rem;font-weight:700;letter-spacing:.06em;color:var(--green);text-shadow:0 0 10px rgba(0,224,160,.9),0 0 24px rgba(0,224,160,.5);line-height:1.6;">When the BEARS sell — price will shoot up.</span>
+          <div style="background:rgba(0,0,0,.3);border:1px solid #1a2a32;border-radius:4px;padding:.75rem 1rem;display:flex;flex-direction:column;gap:6px;margin-top:8px;">
+            <span style="font-family:var(--mono);font-size:.78rem;font-weight:700;color:var(--red);text-shadow:0 0 10px rgba(255,64,96,.9);line-height:1.6;">When the BULLS sell — price will drop.</span>
+            <span style="font-family:var(--mono);font-size:.78rem;font-weight:700;color:var(--green);text-shadow:0 0 10px rgba(0,224,160,.9);line-height:1.6;">When the BEARS sell — price will shoot up.</span>
           </div>
         </div>
       </div>
-    </div><!-- /row-pair -->
-  </div><!-- /main -->
-</div><!-- /main-wrap -->
+    </div>
+  </div>
+</div>
 
 <script>
-const today = new Date().toLocaleDateString('en-US',{weekday:'long',year:'numeric',month:'long',day:'numeric'});
-document.getElementById('currentDate').textContent = new Date().toLocaleDateString('en-US',{weekday:'short',month:'short',day:'numeric',year:'numeric'}).toUpperCase();
+const today=new Date().toLocaleDateString('en-US',{weekday:'long',year:'numeric',month:'long',day:'numeric'});
+document.getElementById('currentDate').textContent=new Date().toLocaleDateString('en-US',{weekday:'short',month:'short',day:'numeric',year:'numeric'}).toUpperCase();
 
-// ── CALCULATOR ────────────────────────────────────────────
-function calcAutoStop(){
-  const entry=parseFloat(document.getElementById('hs-entry').value);
-  const shares=parseFloat(document.getElementById('calc-shares-input').value)||100;
-  if(!entry||entry<=0)return;
-  document.getElementById('calc-stop').value=(entry-(250/shares)).toFixed(2);
-}
-function calcUpdate(){
-  const entry=parseFloat(document.getElementById('hs-entry').value);
-  const exit=parseFloat(document.getElementById('hs-target').value);
-  const stop=parseFloat(document.getElementById('calc-stop').value);
-  const shares=parseFloat(document.getElementById('calc-shares-input').value)||100;
-  const stopEl=document.getElementById('calc-stop-display');
-  const lossEl=document.getElementById('calc-maxloss');
-  const pnlEl=document.getElementById('calc-pnl');
-  const rrEl=document.getElementById('calc-rr');
-  const sizeEl=document.getElementById('calc-size');
-  function dot(el){el.innerHTML='<span class="hs-dot"></span>';el.className='calc-result-val';}
-  if(!entry||entry<=0||!stop||stop<=0){[stopEl,lossEl,pnlEl,rrEl,sizeEl].forEach(dot);return;}
-  const risk=Math.abs(entry-stop);
-  stopEl.textContent='$'+stop.toFixed(2);stopEl.className='calc-result-val neutral';
-  lossEl.textContent='-$'+(shares*risk).toFixed(2);lossEl.className='calc-result-val neg';
-  if(exit){
-    const pnl=shares*(exit-entry);
-    const rr=risk>0?((exit-entry)/risk).toFixed(2):null;
-    pnlEl.textContent=(pnl>=0?'+$':'-$')+Math.abs(pnl).toFixed(2);pnlEl.className='calc-result-val '+(pnl>0?'pos':'neg');
-    if(rr){rrEl.textContent=rr+':1';rrEl.className='calc-result-val '+(parseFloat(rr)>=2?'pos':parseFloat(rr)>=1?'neutral':'neg');}else dot(rrEl);
-  }else{dot(pnlEl);dot(rrEl);}
-  sizeEl.textContent='$'+(shares*entry).toLocaleString(undefined,{maximumFractionDigits:2});sizeEl.className='calc-result-val neutral';
-}
-
-// ── HALT SCOUT ────────────────────────────────────────────
-function haltScout(){
-  const ticker=(document.getElementById('hs-ticker').value||'').trim().toUpperCase();
-  const haltNum=parseInt(document.getElementById('hs-haltnum').value)||0;
-  const entry=parseFloat(document.getElementById('hs-entry').value);
-  const target=parseFloat(document.getElementById('hs-target').value);
-  const vol=parseFloat(document.getElementById('hs-vol').value);
-  const avgVol=parseFloat(document.getElementById('hs-avgvol').value);
-  const vEl=document.getElementById('hs-verdict-text');
-  const vrEl=document.getElementById('hs-volratio');
-  const vbEl=document.getElementById('hs-volbar');
-  let vr=0;
-  if(vol>0&&avgVol>0){
-    vr=vol/avgVol;vrEl.textContent=vr.toFixed(1)+'x avg';
-    vbEl.style.width=Math.min(vr/10*100,100)+'%';
-    if(vr>=5){vrEl.className='calc-result-val pos';vbEl.style.background='var(--green)';}
-    else if(vr>=2){vrEl.className='calc-result-val neutral';vbEl.style.background='var(--amber)';}
-    else{vrEl.className='calc-result-val neg';vbEl.style.background='var(--red)';}
-  }else{vrEl.textContent='—';vrEl.className='calc-result-val';vbEl.style.width='0%';}
-  if(!ticker||!haltNum||!entry||!vol||!avgVol){vEl.textContent='Fill in the fields above.';vEl.style.color='var(--muted)';return;}
-  const thin=vr<2,ok=vr>=5,late=haltNum>=4,caution=haltNum===3;
-  const hl=['1st halt','2nd halt ★','3rd halt','4th halt+'][haltNum-1]||'';
-  let rrText='';
-  if(target>0&&entry>0){const s=parseFloat(document.getElementById('calc-stop').value);if(s>0){const r=((target-entry)/(entry-s)).toFixed(2);rrText=' R:R '+r+':1'+(parseFloat(r)>=2?' ✓':' — improve target');}}
-  let v='',c='';
-  const btn=document.getElementById('hs-go-btn');
-  if(thin){v=ticker+' — volume too thin ('+vr.toFixed(1)+'x). Spread will be wide. Pass. Wait for 5x+ volume.';c='var(--red)';btn.textContent='NO GO';btn.style.cssText='font-family:var(--mono);font-size:1.05rem;font-weight:700;letter-spacing:.18em;padding:.42rem 1.3rem;border-radius:5px;border:2px solid rgba(255,64,96,.55);background:rgba(255,64,96,.12);color:var(--red);transition:all .3s;text-align:center;min-width:116px;box-shadow:0 0 14px rgba(255,64,96,.18);';}
-  else if(late){v=ticker+' — '+hl+'. Most of the move is behind you. Vol '+vr.toFixed(1)+'x. Minimal size, tight stop.'+rrText;c='var(--amber)';btn.textContent='REDUCE';btn.style.cssText='font-family:var(--mono);font-size:1.05rem;font-weight:700;letter-spacing:.18em;padding:.42rem 1.3rem;border-radius:5px;border:2px solid rgba(255,176,32,.45);background:rgba(255,176,32,.1);color:var(--amber);transition:all .3s;text-align:center;min-width:116px;';}
-  else if(caution&&!ok){v=ticker+' — '+hl+' with weak vol '+vr.toFixed(1)+'x. Late halt + thin tape. Sit out.';c='var(--red)';btn.textContent='CAUTION';btn.style.cssText='font-family:var(--mono);font-size:1.05rem;font-weight:700;letter-spacing:.18em;padding:.42rem 1.3rem;border-radius:5px;border:2px solid rgba(255,64,96,.35);background:rgba(255,64,96,.08);color:var(--red);transition:all .3s;text-align:center;min-width:116px;';}
-  else if(caution&&ok){v=ticker+' — '+hl+'. Vol strong at '+vr.toFixed(1)+'x. Cut to half size. Stop tight, watch VWAP.'+rrText;c='var(--amber)';btn.textContent='HALF SIZE';btn.style.cssText='font-family:var(--mono);font-size:1.05rem;font-weight:700;letter-spacing:.18em;padding:.42rem 1.3rem;border-radius:5px;border:2px solid rgba(255,176,32,.45);background:rgba(255,176,32,.1);color:var(--amber);transition:all .3s;text-align:center;min-width:116px;';}
-  else if(ok){const prime=haltNum===2;v=ticker+' — '+hl+(prime?' — PRIME window.':' — momentum confirmed.')+' Volume firing at '+vr.toFixed(1)+'x.'+(prime?' This is where edge is sharpest — size up, stop in place.':' Let halt 2 be your prime entry.')+rrText;c='var(--green)';btn.textContent=prime?'★ GO':'GO';btn.style.cssText='font-family:var(--mono);font-size:1.05rem;font-weight:700;letter-spacing:.18em;padding:.42rem 1.3rem;border-radius:5px;border:2px solid rgba(0,224,160,.5);background:rgba(0,224,160,.1);color:var(--green);transition:all .3s;text-align:center;min-width:116px;box-shadow:0 0 18px rgba(0,224,160,.2);';}
-  else{v=ticker+' — '+hl+' but vol only '+vr.toFixed(1)+'x. Reduce size. Watch for volume surge on reopen.'+rrText;c='var(--amber)';btn.textContent='WATCH';btn.style.cssText='font-family:var(--mono);font-size:1.05rem;font-weight:700;letter-spacing:.18em;padding:.42rem 1.3rem;border-radius:5px;border:2px solid rgba(255,176,32,.35);background:rgba(255,176,32,.07);color:var(--amber);transition:all .3s;text-align:center;min-width:116px;';}
-  vEl.textContent=v;vEl.style.color=c;
-}
-
-// ── HALT MONITOR — corsproxy.io (fixed from dead allorigins.win) ──
-const HALT_RSS='https://corsproxy.io/?'+encodeURIComponent('https://www.nasdaqtrader.com/rss.aspx?feed=tradehalts');
+// ── HALT MONITOR — reads halts.json (written by GitHub Actions) ──
+const HALTS_JSON='halts.json';
 let knownHaltIds=new Set();
 
 async function pollHalts(){
-  const lastEl=document.getElementById('ludp-last-check');
-  const pulseEl=document.getElementById('ludp-pulse');
-  const labelEl=document.getElementById('ludp-panel-label');
-  pulseEl.style.background='var(--cyan)';pulseEl.style.boxShadow='0 0 8px rgba(0,212,255,.7)';
+  const pulse=document.getElementById('ludp-pulse');
+  const timeEl=document.getElementById('ludp-time');
+  pulse.style.background='var(--cyan)';pulse.style.boxShadow='0 0 8px rgba(0,212,255,.7)';
   try{
-    const res=await fetch(HALT_RSS,{cache:'no-store'});
-    const text=await res.text();
-    const xml=new DOMParser().parseFromString(text,'application/xml');
-    const items=xml.querySelectorAll('item');
-    const newLUDP=[];
-    items.forEach(item=>{
-      const title=item.querySelector('title')?.textContent||'';
-      const desc=item.querySelector('description')?.textContent||'';
-      const parts=title.split(' - ');
-      const ticker=(parts[0]||'').trim();
-      const code=(parts[1]||'').trim();
-      const haltTime=(parts[2]||'').trim();
-      const gf=k=>{const m=desc.match(new RegExp(k+'[:\\s]+([^<\\n]+)','i'));return m?m[1].trim():'';};
-      const reasonCode=gf('Reason Code')||code;
-      const issueSymbol=gf('Issue Symbol')||ticker;
-      const issueName=gf('Issue Name')||'—';
-      const resumeTrade=gf('Resumption Trade Time')||'';
-      const uid=issueSymbol+'-'+haltTime;
-      if(reasonCode==='LUDP'&&!knownHaltIds.has(uid)){knownHaltIds.add(uid);newLUDP.push({ticker:issueSymbol,name:issueName,haltTime,resumeTrade,uid});}
+    const res=await fetch(HALTS_JSON+'?t='+Date.now());
+    if(!res.ok)throw new Error('HTTP '+res.status);
+    const data=await res.json();
+    const halts=data.halts||[];
+    const t=data.updated?new Date(data.updated).toLocaleTimeString('en-US',{timeZone:'America/New_York',hour:'2-digit',minute:'2-digit',second:'2-digit'}):'—';
+    timeEl.textContent='updated '+t+' ET';
+    const newLUDP=halts.filter(h=>{
+      const uid=h.ticker+'-'+h.haltTime;
+      if((h.reason||'').toUpperCase()==='LUDP'&&!knownHaltIds.has(uid)){knownHaltIds.add(uid);return true;}
+      return false;
     });
-    const now=new Date().toLocaleTimeString('en-US',{timeZone:'America/New_York',hour:'2-digit',minute:'2-digit',second:'2-digit'});
-    lastEl.textContent='checked '+now+' ET';
     if(newLUDP.length>0){showLUDP(newLUDP);}
     else{
-      const ad=document.getElementById('ludp-active');
-      if(!ad.children.length){pulseEl.style.background='var(--cyan)';pulseEl.style.boxShadow='0 0 8px rgba(0,212,255,.5)';labelEl.textContent='Halt Monitor';labelEl.style.color='var(--cyan)';labelEl.style.textShadow='0 0 10px rgba(0,212,255,.8),0 0 22px rgba(0,212,255,.4)';}
-      else{pulseEl.style.background='var(--red)';pulseEl.style.boxShadow='0 0 10px rgba(255,64,96,.8),0 0 20px rgba(255,64,96,.4)';}
+      const active=document.getElementById('ludp-active');
+      if(!active.children.length){pulse.style.background='var(--cyan)';pulse.style.boxShadow='0 0 8px rgba(0,212,255,.5)';}
     }
-  }catch(e){pulseEl.style.background='var(--muted)';pulseEl.style.boxShadow='none';lastEl.textContent='feed unavailable';console.error('Halt poll:',e);}
+    // update sidebar badge
+    const ludpTotal=halts.filter(h=>(h.reason||'').toUpperCase()==='LUDP').length;
+    const badge=document.getElementById('sb-halt-count');
+    if(ludpTotal>0){badge.textContent=ludpTotal;badge.style.display='inline';}else{badge.style.display='none';}
+  }catch(e){
+    pulse.style.background='var(--muted)';pulse.style.boxShadow='none';
+    timeEl.textContent='unavailable';
+  }
 }
 
 function showLUDP(halts){
   const idle=document.getElementById('ludp-idle');
   const active=document.getElementById('ludp-active');
   const pulse=document.getElementById('ludp-pulse');
-  const label=document.getElementById('ludp-panel-label');
+  const label=document.getElementById('ludp-label');
   idle.style.display='none';active.removeAttribute('hidden');active.style.display='flex';
   halts.forEach(h=>{
     const card=document.createElement('div');
-    card.style.cssText='background:rgba(255,64,96,.08);border:1px solid rgba(255,64,96,.4);border-radius:4px;padding:.7rem .85rem;animation:fadeUp .3s ease;';
-    card.innerHTML=`<div style="display:flex;align-items:center;justify-content:space-between;margin-bottom:6px;"><div style="display:flex;align-items:center;gap:8px;"><span style="font-family:var(--mono);font-size:.58rem;font-weight:700;letter-spacing:.14em;padding:.15rem .45rem;border-radius:3px;background:rgba(255,64,96,.2);color:var(--red);border:1px solid rgba(255,64,96,.4);">⚡ LUDP</span><span style="font-family:var(--mono);font-size:1rem;font-weight:700;color:var(--text);">${h.ticker}</span></div><button onclick="this.closest('div[style]').remove();checkCleared();" style="font-family:var(--mono);font-size:.55rem;padding:.1rem .4rem;border-radius:3px;border:1px solid var(--border2);background:transparent;color:var(--muted);cursor:pointer;">✕</button></div><div style="font-family:var(--mono);font-size:.65rem;color:var(--text2);margin-bottom:8px;line-height:1.6;">${h.name}<br><span style="color:var(--muted);">Halted:</span> ${h.haltTime}${h.resumeTrade?' &nbsp;|&nbsp; <span style="color:var(--muted);">Resumes:</span> <span style="color:var(--green);">'+h.resumeTrade+'</span>':' &nbsp;|&nbsp; <span style="color:var(--amber);">Resumption pending</span>'}</div><div style="display:flex;gap:6px;"><button onclick="loadScout('${h.ticker}')" style="flex:1;font-family:var(--mono);font-size:.65rem;font-weight:700;padding:.35rem 0;border-radius:4px;border:1px solid rgba(0,212,255,.35);background:rgba(0,212,255,.08);color:var(--cyan);cursor:pointer;">Scout ↗</button><a href="halts.html" style="flex:1;font-family:var(--mono);font-size:.65rem;padding:.35rem 0;border-radius:4px;border:1px solid var(--border2);background:transparent;color:var(--text2);text-decoration:none;text-align:center;">Full Feed</a></div>`;
+    card.style.cssText='background:rgba(255,64,96,.08);border:1px solid rgba(255,64,96,.4);border-radius:4px;padding:.7rem .85rem;';
+    card.innerHTML='<div style="display:flex;align-items:center;justify-content:space-between;margin-bottom:6px;"><div style="display:flex;align-items:center;gap:8px;"><span style="font-family:var(--mono);font-size:.58rem;font-weight:700;padding:.15rem .45rem;border-radius:3px;background:rgba(255,64,96,.2);color:var(--red);border:1px solid rgba(255,64,96,.4);">⚡ LUDP</span><span style="font-family:var(--mono);font-size:1rem;font-weight:700;color:var(--text);">'+h.ticker+'</span></div><button onclick="this.closest(\'div[style]\').remove();checkCleared();" style="font-family:var(--mono);font-size:.55rem;padding:.1rem .4rem;border-radius:3px;border:1px solid var(--border2);background:transparent;color:var(--muted);cursor:pointer;">✕</button></div><div style="font-family:var(--mono);font-size:.65rem;color:var(--text2);margin-bottom:8px;line-height:1.6;">'+h.company+'<br><span style="color:var(--muted);">Halted:</span> '+h.haltTime+(h.resumeTrade?' &nbsp;|&nbsp; <span style="color:var(--muted);">Resumes:</span> <span style="color:var(--green);">'+h.resumeTrade+'</span>':' &nbsp;|&nbsp; <span style="color:var(--amber);">Resumption pending</span>')+'</div><div style="display:flex;gap:6px;"><button onclick="loadScout(\''+h.ticker+'\')" style="flex:1;font-family:var(--mono);font-size:.65rem;font-weight:700;padding:.35rem 0;border-radius:4px;border:1px solid rgba(0,212,255,.35);background:rgba(0,212,255,.08);color:var(--cyan);cursor:pointer;">Scout ↗</button><a href="halts.html" style="flex:1;font-family:var(--mono);font-size:.65rem;padding:.35rem 0;border-radius:4px;border:1px solid var(--border2);background:transparent;color:var(--text2);text-decoration:none;text-align:center;">Full Feed</a></div>';
     active.prepend(card);
   });
-  pulse.style.background='var(--red)';pulse.style.boxShadow='0 0 10px rgba(255,64,96,.9),0 0 22px rgba(255,64,96,.4)';pulse.style.animation='pulse-dot .9s ease-in-out infinite';
-  const n=active.children.length;label.textContent=n+' LUDP HALT'+(n>1?'S':'')+' ACTIVE';label.style.color='var(--red)';label.style.textShadow='0 0 10px rgba(255,64,96,.9),0 0 24px rgba(255,64,96,.5)';
-  const badge=document.getElementById('sb-halt-count');badge.textContent=n;badge.style.display='inline';
+  pulse.style.background='var(--red)';pulse.style.boxShadow='0 0 10px rgba(255,64,96,.9)';pulse.style.animation='pulse-dot .9s ease-in-out infinite';
+  const n=active.children.length;label.textContent=n+' LUDP HALT'+(n>1?'S':'')+' ACTIVE';label.style.color='var(--red)';label.style.textShadow='0 0 10px rgba(255,64,96,.9)';
 }
 
 function checkCleared(){
@@ -622,28 +444,65 @@ function checkCleared(){
   if(!active.children.length){
     active.hidden=true;document.getElementById('ludp-idle').style.display='flex';
     const p=document.getElementById('ludp-pulse');p.style.background='var(--muted)';p.style.boxShadow='none';p.style.animation='none';
-    const l=document.getElementById('ludp-panel-label');l.textContent='Halt Monitor';l.style.color='var(--cyan)';l.style.textShadow='0 0 10px rgba(0,212,255,.8),0 0 22px rgba(0,212,255,.4)';
-    document.getElementById('sb-halt-count').style.display='none';
+    const l=document.getElementById('ludp-label');l.textContent='Halt Monitor';l.style.color='var(--cyan)';l.style.textShadow='0 0 10px rgba(0,212,255,.8)';
   }
 }
 
-function loadScout(ticker){
+function loadScout(t){
   const el=document.getElementById('hs-ticker');if(!el)return;
-  el.value=ticker.toUpperCase();haltScout();
-  el.scrollIntoView({behavior:'smooth',block:'center'});el.focus();
-  el.style.borderColor='var(--cyan)';el.style.boxShadow='0 0 10px rgba(0,212,255,.4)';
-  setTimeout(()=>{el.style.borderColor='';el.style.boxShadow='';},1500);
+  el.value=t.toUpperCase();haltScout();el.scrollIntoView({behavior:'smooth',block:'center'});el.focus();
+  el.style.borderColor='var(--cyan)';setTimeout(()=>{el.style.borderColor='';},1500);
 }
 
-function startHaltMonitor(){
-  pollHalts();
-  setInterval(()=>{
-    const et=new Date(new Date().toLocaleString('en-US',{timeZone:'America/New_York'}));
-    const h=et.getHours(),d=et.getDay();
-    if(d>0&&d<6&&h>=4&&h<16)pollHalts();
-  },30000);
+pollHalts();setInterval(pollHalts,30000);
+
+// ── CALCULATOR ────────────────────────────────────────────
+function calcAutoStop(){
+  const e=parseFloat(document.getElementById('hs-entry').value);
+  const s=parseFloat(document.getElementById('calc-shares-input').value)||100;
+  if(!e||e<=0)return;
+  document.getElementById('calc-stop').value=(e-(250/s)).toFixed(2);
 }
-startHaltMonitor();
+function calcUpdate(){
+  const e=parseFloat(document.getElementById('hs-entry').value);
+  const x=parseFloat(document.getElementById('hs-target').value);
+  const s=parseFloat(document.getElementById('calc-stop').value);
+  const n=parseFloat(document.getElementById('calc-shares-input').value)||100;
+  const sd=document.getElementById('calc-stop-display'),ml=document.getElementById('calc-maxloss'),pnl=document.getElementById('calc-pnl'),rr=document.getElementById('calc-rr'),sz=document.getElementById('calc-size');
+  function dot(el){el.innerHTML='<span class="hs-dot"></span>';el.className='calc-result-val';}
+  if(!e||e<=0||!s||s<=0){[sd,ml,pnl,rr,sz].forEach(dot);return;}
+  const risk=Math.abs(e-s);
+  sd.textContent='$'+s.toFixed(2);sd.className='calc-result-val neutral';
+  ml.textContent='-$'+(n*risk).toFixed(2);ml.className='calc-result-val neg';
+  if(x){const p=n*(x-e);const r=risk>0?((x-e)/risk).toFixed(2):null;pnl.textContent=(p>=0?'+$':'-$')+Math.abs(p).toFixed(2);pnl.className='calc-result-val '+(p>0?'pos':'neg');if(r){rr.textContent=r+':1';rr.className='calc-result-val '+(parseFloat(r)>=2?'pos':parseFloat(r)>=1?'neutral':'neg');}else dot(rr);}else{dot(pnl);dot(rr);}
+  sz.textContent='$'+(n*e).toLocaleString(undefined,{maximumFractionDigits:2});sz.className='calc-result-val neutral';
+}
+function haltScout(){
+  const ticker=(document.getElementById('hs-ticker').value||'').trim().toUpperCase();
+  const hn=parseInt(document.getElementById('hs-haltnum').value)||0;
+  const entry=parseFloat(document.getElementById('hs-entry').value);
+  const target=parseFloat(document.getElementById('hs-target').value);
+  const vol=parseFloat(document.getElementById('hs-vol').value);
+  const avg=parseFloat(document.getElementById('hs-avgvol').value);
+  const vEl=document.getElementById('hs-verdict-text'),vrEl=document.getElementById('hs-volratio'),vbEl=document.getElementById('hs-volbar');
+  let vr=0;
+  if(vol>0&&avg>0){vr=vol/avg;vrEl.textContent=vr.toFixed(1)+'x avg';vbEl.style.width=Math.min(vr/10*100,100)+'%';if(vr>=5){vrEl.className='calc-result-val pos';vbEl.style.background='var(--green)';}else if(vr>=2){vrEl.className='calc-result-val neutral';vbEl.style.background='var(--amber)';}else{vrEl.className='calc-result-val neg';vbEl.style.background='var(--red)';}}else{vrEl.textContent='—';vrEl.className='calc-result-val';vbEl.style.width='0%';}
+  if(!ticker||!hn||!entry||!vol||!avg){vEl.textContent='Fill in the fields above.';vEl.style.color='var(--muted)';return;}
+  const thin=vr<2,ok=vr>=5,late=hn>=4,caution=hn===3;
+  const hl=['1st halt','2nd halt ★','3rd halt','4th halt+'][hn-1]||'';
+  let rrText='';
+  if(target>0&&entry>0){const st=parseFloat(document.getElementById('calc-stop').value);if(st>0){const rv=((target-entry)/(entry-st)).toFixed(2);rrText=' R:R '+rv+':1'+(parseFloat(rv)>=2?' ✓':' — improve target');}}
+  let v='',c='';
+  const btn=document.getElementById('hs-go-btn');
+  function styleBtn(txt,bg,bc,col,sh){btn.textContent=txt;btn.style.background=bg;btn.style.borderColor=bc;btn.style.color=col;btn.style.boxShadow=sh||'none';}
+  if(thin){v=ticker+' — volume too thin ('+vr.toFixed(1)+'x). Spread will be wide. Pass.';c='var(--red)';styleBtn('NO GO','rgba(255,64,96,.12)','rgba(255,64,96,.55)','var(--red)','0 0 14px rgba(255,64,96,.18)');}
+  else if(late){v=ticker+' — '+hl+'. Most of the move is behind you. Vol '+vr.toFixed(1)+'x. Minimal size.'+rrText;c='var(--amber)';styleBtn('REDUCE','rgba(255,176,32,.1)','rgba(255,176,32,.45)','var(--amber)');}
+  else if(caution&&!ok){v=ticker+' — '+hl+' with weak vol '+vr.toFixed(1)+'x. Late halt + thin tape. Sit out.';c='var(--red)';styleBtn('CAUTION','rgba(255,64,96,.08)','rgba(255,64,96,.35)','var(--red)');}
+  else if(caution&&ok){v=ticker+' — '+hl+'. Vol strong at '+vr.toFixed(1)+'x. Half size. Stop tight.'+rrText;c='var(--amber)';styleBtn('HALF SIZE','rgba(255,176,32,.1)','rgba(255,176,32,.45)','var(--amber)');}
+  else if(ok){const prime=hn===2;v=ticker+' — '+hl+(prime?' — PRIME window.':' — momentum confirmed.')+' Vol '+vr.toFixed(1)+'x.'+rrText;c='var(--green)';styleBtn(prime?'★ GO':'GO','rgba(0,224,160,.1)','rgba(0,224,160,.5)','var(--green)','0 0 18px rgba(0,224,160,.2)');}
+  else{v=ticker+' — '+hl+' vol only '+vr.toFixed(1)+'x. Watch for surge on reopen.'+rrText;c='var(--amber)';styleBtn('WATCH','rgba(255,176,32,.07)','rgba(255,176,32,.35)','var(--amber)');}
+  vEl.textContent=v;vEl.style.color=c;
+}
 
 // ── COUNTDOWN ─────────────────────────────────────────────
 function pad(n){return String(n).padStart(2,'0');}
@@ -651,17 +510,9 @@ function updateCountdown(){
   const et=new Date(new Date().toLocaleString('en-US',{timeZone:'America/New_York'}));
   const open=new Date(et);open.setHours(9,30,0,0);
   const close=new Date(et);close.setHours(16,0,0,0);
-  const pill=document.getElementById('countdown');
-  const txt=document.getElementById('cdText');
-  const dot=document.getElementById('statusDot');
-  const stxt=document.getElementById('statusText');
-  const day=et.getDay();
+  const pill=document.getElementById('countdown'),txt=document.getElementById('cdText'),dot=document.getElementById('statusDot'),stxt=document.getElementById('statusText'),day=et.getDay();
   if(day===0||day===6){txt.textContent='WEEKEND';pill.className='countdown-pill closed';if(dot){dot.className='s-status-dot closed';stxt.textContent='Weekend';}return;}
-  if(et>=open&&et<=close){
-    const d=close-et,h=Math.floor(d/3600000),m=Math.floor(d%3600000/60000),s=Math.floor(d%60000/1000);
-    txt.textContent='OPEN  '+pad(h)+':'+pad(m)+':'+pad(s);pill.className='countdown-pill open';
-    if(dot){dot.className='s-status-dot open';stxt.textContent='Market Open';}return;
-  }
+  if(et>=open&&et<=close){const d=close-et,h=Math.floor(d/3600000),m=Math.floor(d%3600000/60000),s=Math.floor(d%60000/1000);txt.textContent='OPEN  '+pad(h)+':'+pad(m)+':'+pad(s);pill.className='countdown-pill open';if(dot){dot.className='s-status-dot open';stxt.textContent='Market Open';}return;}
   if(et>close){txt.textContent='CLOSED';pill.className='countdown-pill closed';if(dot){dot.className='s-status-dot closed';stxt.textContent='Market Closed';}return;}
   const d=open-et,h=Math.floor(d/3600000),m=Math.floor(d%3600000/60000),s=Math.floor(d%60000/1000);
   txt.textContent='OPENS '+pad(h)+':'+pad(m)+':'+pad(s);pill.className='countdown-pill pre';
@@ -676,25 +527,13 @@ const lists={'awareness-list':'c1p','watchlist-list':'c2p','temp-list':'c3p','fi
 document.querySelectorAll('.checklist li').forEach(li=>{li.addEventListener('click',()=>{li.classList.toggle('checked');updateProgress();save();});});
 function updateProgress(){
   let total=0,done=0;
-  Object.entries(lists).forEach(([id,cid])=>{
-    const all=document.querySelectorAll('#'+id+' li');
-    const chk=document.querySelectorAll('#'+id+' li.checked');
-    document.getElementById(cid).textContent=chk.length;total+=all.length;done+=chk.length;
-  });
+  Object.entries(lists).forEach(([id,cid])=>{const a=document.querySelectorAll('#'+id+' li'),c=document.querySelectorAll('#'+id+' li.checked');document.getElementById(cid).textContent=c.length;total+=a.length;done+=c.length;});
   const pct=total?Math.round(done/total*100):0;
-  document.getElementById('globalProgress').style.width=pct+'%';
-  document.getElementById('globalPct').textContent=pct+'%';
-  document.getElementById('globalFraction').textContent=done+' / '+total+' tasks';
+  document.getElementById('globalProgress').style.width=pct+'%';document.getElementById('globalPct').textContent=pct+'%';document.getElementById('globalFraction').textContent=done+' / '+total+' tasks';
 }
 
 // ── GRADE ─────────────────────────────────────────────────
-document.querySelectorAll('.grade-option').forEach(opt=>{
-  opt.addEventListener('click',()=>{
-    const g=opt.dataset.grade;opt.querySelector('input').checked=true;
-    document.querySelectorAll('.grade-option').forEach(o=>o.className='grade-option');
-    opt.className='grade-option sel-'+g;save();
-  });
-});
+document.querySelectorAll('.grade-option').forEach(opt=>{opt.addEventListener('click',()=>{const g=opt.dataset.grade;opt.querySelector('input').checked=true;document.querySelectorAll('.grade-option').forEach(o=>o.className='grade-option');opt.className='grade-option sel-'+g;save();});});
 
 // ── PLAYBOOK ──────────────────────────────────────────────
 let activeSlots=[];
@@ -702,32 +541,25 @@ function applyPlayNumbers(){
   const val=document.getElementById('play-input').value;
   const nums=[...new Set(val.replace(/[^0-9]/g,'').split(''))].slice(0,2);
   activeSlots=[];document.querySelectorAll('.play-btn').forEach(b=>b.classList.remove('active'));
-  nums.forEach(n=>{const btn=document.querySelector('.play-btn[data-num="'+n+'"]');if(btn){activeSlots.push(n);btn.classList.add('active');}});
+  nums.forEach(n=>{const b=document.querySelector('.play-btn[data-num="'+n+'"]');if(b){activeSlots.push(n);b.classList.add('active');}});
   document.getElementById('play-input').value='';renderSlots();save();
 }
 document.getElementById('play-input').addEventListener('keydown',e=>{if(e.key==='Enter')applyPlayNumbers();});
 function renderSlots(){
-  ['a','b'].forEach((s,i)=>{
-    const slot=document.getElementById('slot-'+s);slot.innerHTML='';
-    if(activeSlots[i]){const d=document.getElementById('detail-'+activeSlots[i]);if(d){const c=d.cloneNode(true);c.classList.add('show');c.id='';slot.appendChild(c);}}
-  });
+  ['a','b'].forEach((s,i)=>{const slot=document.getElementById('slot-'+s);slot.innerHTML='';if(activeSlots[i]){const d=document.getElementById('detail-'+activeSlots[i]);if(d){const c=d.cloneNode(true);c.classList.add('show');c.id='';slot.appendChild(c);}}});
 }
 function togglePlay(btn){
-  const num=btn.dataset.num;const idx=activeSlots.indexOf(num);
+  const num=btn.dataset.num,idx=activeSlots.indexOf(num);
   if(idx!==-1){activeSlots.splice(idx,1);btn.classList.remove('active');}
-  else{if(activeSlots.length>=2){const bumped=activeSlots.shift();const bb=document.querySelector('.play-btn[data-num="'+bumped+'"]');if(bb)bb.classList.remove('active');}activeSlots.push(num);btn.classList.add('active');}
+  else{if(activeSlots.length>=2){const b=document.querySelector('.play-btn[data-num="'+activeSlots.shift()+'"]');if(b)b.classList.remove('active');}activeSlots.push(num);btn.classList.add('active');}
   renderSlots();save();
 }
 
 // ── SAVE / RESTORE ────────────────────────────────────────
 function save(){
   const s={date:today,awareness:[],watchlist:[],temp:[],final:[],tickers:'',playbookNotes:'',grade:'',plays:[],activeSlots:activeSlots.slice()};
-  ['awareness-list','watchlist-list','temp-list','final-list'].forEach((id,i)=>{
-    const k=['awareness','watchlist','temp','final'][i];
-    document.querySelectorAll('#'+id+' li').forEach((li,j)=>{if(li.classList.contains('checked'))s[k].push(j);});
-  });
-  s.tickers=document.getElementById('tickers').value;
-  s.playbookNotes=document.getElementById('playbookNotes').value;
+  ['awareness-list','watchlist-list','temp-list','final-list'].forEach((id,i)=>{const k=['awareness','watchlist','temp','final'][i];document.querySelectorAll('#'+id+' li').forEach((li,j)=>{if(li.classList.contains('checked'))s[k].push(j);});});
+  s.tickers=document.getElementById('tickers').value;s.playbookNotes=document.getElementById('playbookNotes').value;
   const g=document.querySelector('.grade-option input:checked');if(g)s.grade=g.value;
   document.querySelectorAll('.play-btn').forEach(t=>{if(t.classList.contains('active'))s.plays.push(t.dataset.play);});
   localStorage.setItem('preMarketPrep',JSON.stringify(s));
@@ -735,13 +567,10 @@ function save(){
 function restore(){
   const s=JSON.parse(localStorage.getItem('preMarketPrep')||'{}');
   if(s.date!==today)return;
-  ['awareness-list','watchlist-list','temp-list','final-list'].forEach((id,i)=>{
-    const k=['awareness','watchlist','temp','final'][i];
-    document.querySelectorAll('#'+id+' li').forEach((li,j)=>{if(s[k]?.includes(j))li.classList.add('checked');});
-  });
+  ['awareness-list','watchlist-list','temp-list','final-list'].forEach((id,i)=>{const k=['awareness','watchlist','temp','final'][i];document.querySelectorAll('#'+id+' li').forEach((li,j)=>{if(s[k]?.includes(j))li.classList.add('checked');});});
   if(s.tickers)document.getElementById('tickers').value=s.tickers;
   if(s.playbookNotes)document.getElementById('playbookNotes').value=s.playbookNotes;
-  if(s.grade){const opt=document.querySelector('.grade-option[data-grade="'+s.grade+'"]');if(opt){opt.querySelector('input').checked=true;opt.className='grade-option sel-'+s.grade;}}
+  if(s.grade){const o=document.querySelector('.grade-option[data-grade="'+s.grade+'"]');if(o){o.querySelector('input').checked=true;o.className='grade-option sel-'+s.grade;}}
   if(s.plays)document.querySelectorAll('.play-btn').forEach(t=>{if(s.plays.includes(t.dataset.play))t.classList.add('active');});
   if(s.activeSlots){activeSlots=s.activeSlots;activeSlots.forEach(n=>{const b=document.querySelector('.play-btn[data-num="'+n+'"]');if(b)b.classList.add('active');});renderSlots();}
   updateProgress();

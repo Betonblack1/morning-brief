@@ -1,0 +1,554 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Live Halt Feed</title>
+<link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@300;400;500;600;700&family=DM+Sans:wght@300;400;500&family=Playfair+Display:wght@400;500&display=swap" rel="stylesheet">
+<style>
+:root {
+  --bg:        #06090d;
+  --surface:   #0b1017;
+  --surface2:  #10161e;
+  --surface3:  #151d27;
+  --border:    #1a2332;
+  --border2:   #243040;
+  --text:      #c8d8e8;
+  --text2:     #7a90a8;
+  --muted:     #3a5060;
+  --dim:       #263040;
+  --green:     #00e0a0;
+  --green-bg:  rgba(0,224,160,0.05);
+  --green-glow:rgba(0,224,160,0.2);
+  --amber:     #ffb020;
+  --red:       #ff4060;
+  --blue:      #40a0ff;
+  --cyan:      #00d4ff;
+  --cyan-bg:   rgba(0,212,255,0.05);
+  --mono:      'JetBrains Mono', monospace;
+  --sans:      'DM Sans', sans-serif;
+  --display:   'Playfair Display', serif;
+  --sidebar:   280px;
+}
+* { box-sizing: border-box; margin: 0; padding: 0; }
+body { font-family: var(--sans); background: var(--bg); color: var(--text); min-height: 100vh; display: flex; font-weight: 300; }
+
+/* SIDEBAR */
+.sidebar { width: var(--sidebar); min-height: 100vh; background: var(--surface); border-right: 1px solid var(--border); display: flex; flex-direction: column; position: fixed; top: 0; left: 0; z-index: 200; }
+.sidebar-brand { padding: 1.25rem 1rem 1rem; border-bottom: 1px solid var(--border); }
+.sidebar-brand .brand-tag { font-family: var(--mono); font-size: 0.58rem; letter-spacing: 0.2em; text-transform: uppercase; color: var(--cyan); margin-bottom: 0.35rem; }
+.sidebar-brand .brand-name { font-family: var(--display); font-size: 2.8rem; font-weight: 400; color: var(--text); line-height: 1.1; }
+.sidebar-brand .brand-sub { font-family: var(--mono); font-size: 0.55rem; letter-spacing: 0.12em; color: var(--muted); text-transform: uppercase; margin-top: 0.3rem; }
+.sidebar-section { padding: 0.7rem 0 0.3rem; }
+.sidebar-section-label { font-family: var(--mono); font-size: 0.52rem; letter-spacing: 0.18em; text-transform: uppercase; color: var(--muted); padding: 0 1rem 0.4rem; }
+.sidebar-link { display: flex; align-items: center; gap: 0.6rem; padding: 0.5rem 1rem; font-family: var(--mono); font-size: 0.72rem; letter-spacing: 0.07em; text-transform: uppercase; color: var(--text2); text-decoration: none; cursor: pointer; transition: all 0.2s; border-left: 2px solid transparent; }
+.sidebar-link:hover { color: var(--cyan); background: rgba(0,212,255,0.04); border-left-color: rgba(0,212,255,0.3); }
+.sidebar-link.active { color: var(--cyan); border-left-color: var(--cyan); background: rgba(0,212,255,0.06); }
+.sidebar-bottom { margin-top: auto; padding: 1rem; border-top: 1px solid var(--border); }
+.s-market-status { display: flex; align-items: center; gap: 0.5rem; font-family: var(--mono); font-size: 0.62rem; letter-spacing: 0.06em; text-transform: uppercase; }
+.s-status-dot { width: 6px; height: 6px; border-radius: 50%; }
+.s-status-dot.pre { background: var(--green); box-shadow: 0 0 6px rgba(0,224,160,0.4); animation: pulse-dot 2s infinite; }
+.s-status-dot.open { background: var(--amber); }
+.s-status-dot.closed { background: var(--muted); }
+@keyframes pulse-dot { 0%,100%{opacity:1;transform:scale(1)} 50%{opacity:0.5;transform:scale(0.8)} }
+
+/* MAIN */
+.main-wrap { margin-left: var(--sidebar); flex: 1; display: flex; flex-direction: column; min-height: 100vh; }
+.top-header { padding: 1.5rem 2rem 1.1rem; border-bottom: 1px solid var(--border); background: var(--surface); display: flex; align-items: center; justify-content: space-between; }
+.page-title { font-family: var(--display); font-size: 2.6rem; font-weight: 400; color: var(--text); line-height: 1; }
+.page-date { font-family: var(--mono); font-size: 0.6rem; color: var(--cyan); letter-spacing: 0.14em; text-transform: uppercase; }
+.countdown-pill { font-family: var(--mono); font-size: 0.65rem; font-weight: 500; letter-spacing: 0.05em; padding: 0.28rem 0.7rem; border-radius: 4px; display: flex; align-items: center; gap: 0.45rem; }
+.countdown-pill.pre  { color: var(--green); background: var(--green-bg); border: 1px solid rgba(0,224,160,0.12); }
+.countdown-pill.open { color: var(--amber); background: rgba(255,176,32,0.05); border: 1px solid rgba(255,176,32,0.12); }
+.countdown-pill.closed { color: var(--muted); background: var(--surface2); border: 1px solid var(--border); }
+.cdot { width:5px; height:5px; border-radius:50%; animation: pulse-dot 1.5s ease-in-out infinite; }
+.countdown-pill.pre .cdot { background: var(--green); }
+.countdown-pill.open .cdot { background: var(--amber); }
+
+/* CONTROLS BAR */
+.controls-bar {
+  padding: 0.75rem 2rem;
+  border-bottom: 1px solid var(--border);
+  background: var(--surface2);
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  flex-wrap: wrap;
+}
+.filter-btn {
+  font-family: var(--mono);
+  font-size: 0.62rem;
+  font-weight: 600;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  padding: 0.3rem 0.8rem;
+  border-radius: 3px;
+  border: 1px solid var(--border2);
+  background: transparent;
+  color: var(--text2);
+  cursor: pointer;
+  transition: all 0.15s;
+}
+.filter-btn:hover { border-color: var(--cyan); color: var(--cyan); }
+.filter-btn.active-ludp { border-color: var(--green); color: var(--green); background: rgba(0,224,160,0.07); }
+.filter-btn.active-all  { border-color: var(--cyan);  color: var(--cyan);  background: rgba(0,212,255,0.07); }
+.refresh-info { font-family: var(--mono); font-size: 0.58rem; color: var(--muted); margin-left: auto; display: flex; align-items: center; gap: 0.5rem; }
+.refresh-dot { width: 5px; height: 5px; border-radius: 50%; background: var(--muted); }
+.refresh-dot.spinning { background: var(--green); box-shadow: 0 0 6px rgba(0,224,160,0.6); animation: pulse-dot 0.8s ease-in-out infinite; }
+.halt-count-badge { font-family: var(--mono); font-size: 0.62rem; font-weight: 600; padding: 0.2rem 0.55rem; border-radius: 3px; }
+.badge-ludp { background: rgba(255,64,96,0.12); color: var(--red); border: 1px solid rgba(255,64,96,0.3); }
+.badge-total { background: rgba(0,212,255,0.08); color: var(--cyan); border: 1px solid rgba(0,212,255,0.2); }
+
+/* MAIN CONTENT */
+.main { padding: 1.5rem 2rem; display: flex; flex-direction: column; gap: 1rem; }
+
+/* HALT TABLE */
+.halt-table-wrap {
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: 6px;
+  overflow: hidden;
+}
+.halt-table {
+  width: 100%;
+  border-collapse: collapse;
+  font-family: var(--mono);
+}
+.halt-table thead tr {
+  background: var(--surface2);
+  border-bottom: 1px solid var(--border2);
+}
+.halt-table th {
+  font-size: 0.55rem;
+  font-weight: 600;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: var(--muted);
+  padding: 0.6rem 1rem;
+  text-align: left;
+  white-space: nowrap;
+}
+.halt-table td {
+  padding: 0.65rem 1rem;
+  font-size: 0.75rem;
+  border-bottom: 1px solid var(--border);
+  vertical-align: middle;
+  color: var(--text2);
+}
+.halt-table tbody tr { transition: background 0.15s; }
+.halt-table tbody tr:hover { background: var(--surface2); }
+.halt-table tbody tr:last-child td { border-bottom: none; }
+
+/* NEW ROW flash animation */
+@keyframes row-flash {
+  0%   { background: rgba(255,64,96,0.18); }
+  100% { background: transparent; }
+}
+.halt-table tbody tr.new-halt { animation: row-flash 2s ease-out forwards; }
+
+/* TICKER col */
+.ticker-cell { font-size: 0.88rem; font-weight: 700; color: var(--text); letter-spacing: 0.05em; }
+
+/* REASON CODE badges */
+.code-badge {
+  font-family: var(--mono);
+  font-size: 0.62rem;
+  font-weight: 700;
+  letter-spacing: 0.08em;
+  padding: 0.2rem 0.55rem;
+  border-radius: 3px;
+  display: inline-block;
+}
+.code-LUDP { background: rgba(255,64,96,0.14); color: var(--red); border: 1px solid rgba(255,64,96,0.35); text-shadow: 0 0 8px rgba(255,64,96,0.5); }
+.code-T1   { background: rgba(255,176,32,0.1);  color: var(--amber); border: 1px solid rgba(255,176,32,0.3); }
+.code-T12  { background: rgba(58,80,96,0.4);    color: var(--muted); border: 1px solid var(--border2); }
+.code-M    { background: rgba(64,160,255,0.1);  color: var(--blue);  border: 1px solid rgba(64,160,255,0.25); }
+.code-OTHER{ background: var(--surface2);       color: var(--muted); border: 1px solid var(--border); }
+
+/* RESUME TIME col */
+.resume-cell { color: var(--green); font-size: 0.72rem; }
+.resume-cell.pending { color: var(--muted); font-style: italic; }
+
+/* SCOUT BUTTON */
+.scout-btn {
+  font-family: var(--mono);
+  font-size: 0.6rem;
+  font-weight: 600;
+  letter-spacing: 0.08em;
+  padding: 0.22rem 0.6rem;
+  border-radius: 3px;
+  border: 1px solid rgba(0,212,255,0.25);
+  background: rgba(0,212,255,0.06);
+  color: var(--cyan);
+  cursor: pointer;
+  transition: all 0.15s;
+  white-space: nowrap;
+}
+.scout-btn:hover { background: rgba(0,212,255,0.14); border-color: var(--cyan); }
+
+/* EMPTY / ERROR STATE */
+.feed-state {
+  padding: 3rem 2rem;
+  text-align: center;
+  font-family: var(--mono);
+  font-size: 0.72rem;
+  color: var(--muted);
+  letter-spacing: 0.06em;
+}
+.feed-state .feed-icon { font-size: 2rem; margin-bottom: 1rem; opacity: 0.3; }
+.feed-state.error .feed-msg { color: var(--red); }
+
+/* LAST UPDATED STRIP */
+.last-updated {
+  font-family: var(--mono);
+  font-size: 0.58rem;
+  color: var(--muted);
+  padding: 0.5rem 1rem;
+  background: var(--surface2);
+  border-top: 1px solid var(--border);
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+/* LUDP EXPLAINER CARD */
+.explainer {
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: 6px;
+  padding: 1rem 1.25rem;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+  gap: 0.75rem 1.5rem;
+}
+.exp-item { display: flex; flex-direction: column; gap: 3px; }
+.exp-label { font-family: var(--mono); font-size: 0.55rem; letter-spacing: 0.1em; text-transform: uppercase; color: var(--muted); }
+.exp-val { font-family: var(--mono); font-size: 0.78rem; font-weight: 600; color: var(--text); line-height: 1.5; }
+.exp-val.green { color: var(--green); }
+.exp-val.amber { color: var(--amber); }
+.exp-val.red   { color: var(--red); }
+
+@keyframes fadeUp { from{opacity:0;transform:translateY(8px)} to{opacity:1;transform:translateY(0)} }
+</style>
+</head>
+<body>
+
+<!-- SIDEBAR -->
+<aside class="sidebar">
+  <div class="sidebar-brand">
+    <div class="brand-tag">ESP · Trading</div>
+    <div class="brand-name">Morning<br>Brief</div>
+    <div class="brand-sub">Daily · Rolling</div>
+  </div>
+  <div class="sidebar-section">
+    <div class="sidebar-section-label">Daily</div>
+    <a class="sidebar-link" href="index.html"><span class="sl-icon">◆</span> Today</a>
+    <a class="sidebar-link" href="prep.html"><span class="sl-icon">◉</span> Pre-Market Prep</a>
+  </div>
+  <div class="sidebar-section">
+    <div class="sidebar-section-label">Market</div>
+    <a class="sidebar-link" href="#"><span class="sl-icon">▤</span> Heatmap</a>
+    <a class="sidebar-link" href="#"><span class="sl-icon">◈</span> Earnings</a>
+    <a class="sidebar-link" href="#"><span class="sl-icon">◷</span> Econ Cal</a>
+  </div>
+  <div class="sidebar-section">
+    <div class="sidebar-section-label">Strategy</div>
+    <a class="sidebar-link" href="playbook.html"><span class="sl-icon">▸</span> Playbook</a>
+    <a class="sidebar-link" href="ipo-watch.html"><span class="sl-icon">◆</span> IPO Watch</a>
+    <a class="sidebar-link" href="#"><span class="sl-icon">◎</span> Journal</a>
+    <a class="sidebar-link" href="#"><span class="sl-icon">▲</span> Performance</a>
+  </div>
+  <div class="sidebar-section">
+    <div class="sidebar-section-label">Live Tools</div>
+    <a class="sidebar-link active" href="halts.html"><span class="sl-icon">⚡</span> Halt Feed</a>
+    <a class="sidebar-link" href="https://www.nasdaqtrader.com/trader.aspx?id=tradehalts" target="_blank"><span class="sl-icon">◈</span> NASDAQ Halts ↗</a>
+  </div>
+  <div class="sidebar-bottom">
+    <div class="s-market-status">
+      <span class="s-status-dot pre" id="statusDot"></span>
+      <span id="statusText" style="color:var(--text2)">Loading...</span>
+    </div>
+  </div>
+</aside>
+
+<!-- MAIN -->
+<div class="main-wrap">
+
+<div class="top-header">
+  <div style="display:flex;align-items:baseline;gap:1.25rem;flex:1;justify-content:center;">
+    <div class="page-title">Live Halt Feed</div>
+    <div class="page-date" id="currentDate">—</div>
+  </div>
+  <div class="countdown-pill pre" id="countdown">
+    <span class="cdot"></span>
+    <span id="cdText">--:--:--</span>
+  </div>
+</div>
+
+<!-- CONTROLS -->
+<div class="controls-bar">
+  <button class="filter-btn active-ludp" id="btn-ludp" onclick="setFilter('LUDP')">⚡ LUDP Only</button>
+  <button class="filter-btn" id="btn-all"  onclick="setFilter('ALL')">All Halts</button>
+  <span class="halt-count-badge badge-ludp" id="ludp-count">0 LUDP</span>
+  <span class="halt-count-badge badge-total" id="total-count">0 total</span>
+  <div class="refresh-info">
+    <span class="refresh-dot" id="refresh-dot"></span>
+    <span id="refresh-label">Refreshes every 30s</span>
+    <button class="filter-btn" style="margin-left:0.5rem;" onclick="fetchHalts()">↺ Refresh Now</button>
+  </div>
+</div>
+
+<div class="main">
+
+  <!-- EXPLAINER -->
+  <div class="explainer">
+    <div class="exp-item"><div class="exp-label">Your Play</div><div class="exp-val green">LUDP — Limit Up/Down Pause</div></div>
+    <div class="exp-item"><div class="exp-label">Avoid</div><div class="exp-val amber">T1 = News halt (usually bad)</div></div>
+    <div class="exp-item"><div class="exp-label">Avoid</div><div class="exp-val red">T12 = Regulatory — weeks/months</div></div>
+    <div class="exp-item"><div class="exp-label">Edge Signal</div><div class="exp-val">Long quote→trade gap = big imbalance</div></div>
+    <div class="exp-item"><div class="exp-label">Prime Window</div><div class="exp-val green">1st &amp; 2nd LUDP halt — max edge</div></div>
+    <div class="exp-item"><div class="exp-label">Workflow</div><div class="exp-val">See LUDP → open Halt Scout → GO / NO GO</div></div>
+  </div>
+
+  <!-- HALT TABLE -->
+  <div class="halt-table-wrap">
+    <table class="halt-table">
+      <thead>
+        <tr>
+          <th>Time (ET)</th>
+          <th>Ticker</th>
+          <th>Company</th>
+          <th>Market</th>
+          <th>Code</th>
+          <th>Resume Quote</th>
+          <th>Resume Trade</th>
+          <th>Gap Window</th>
+          <th>Scout</th>
+        </tr>
+      </thead>
+      <tbody id="halt-tbody">
+        <tr><td colspan="9"><div class="feed-state"><div class="feed-icon">⚡</div><div class="feed-msg" id="feed-msg">Loading halts...</div></div></td></tr>
+      </tbody>
+    </table>
+    <div class="last-updated">
+      <span>Source: NasdaqTrader.com · RSS feed via CORS proxy</span>
+      <span id="last-updated-time">—</span>
+    </div>
+  </div>
+
+</div>
+</div><!-- end main-wrap -->
+
+<script>
+document.getElementById('currentDate').textContent = new Date().toLocaleDateString('en-US',{weekday:'short',month:'short',day:'numeric',year:'numeric'}).toUpperCase();
+
+let currentFilter = 'LUDP';
+let allHalts = [];
+let knownIds = new Set();
+
+// ── FILTER ──────────────────────────────────────────────────
+function setFilter(f) {
+  currentFilter = f;
+  document.getElementById('btn-ludp').className = 'filter-btn' + (f==='LUDP' ? ' active-ludp' : '');
+  document.getElementById('btn-all').className  = 'filter-btn' + (f==='ALL'  ? ' active-all'  : '');
+  renderTable();
+}
+
+// ── FETCH ───────────────────────────────────────────────────
+// NASDAQ RSS via allorigins CORS proxy
+const RSS_URL = 'https://api.allorigins.win/get?url=' + encodeURIComponent('https://www.nasdaqtrader.com/rss.aspx?feed=tradehalts');
+
+async function fetchHalts() {
+  const dot = document.getElementById('refresh-dot');
+  const lbl = document.getElementById('refresh-label');
+  dot.className = 'refresh-dot spinning';
+  lbl.textContent = 'Fetching...';
+
+  try {
+    const res = await fetch(RSS_URL);
+    if (!res.ok) throw new Error('HTTP ' + res.status);
+    const json = await res.json();
+    const xml = new DOMParser().parseFromString(json.contents, 'text/xml');
+    parseRSS(xml);
+    document.getElementById('last-updated-time').textContent = 'Last updated: ' + new Date().toLocaleTimeString('en-US',{timeZone:'America/New_York'}) + ' ET';
+    dot.className = 'refresh-dot';
+    lbl.textContent = 'Refreshes every 30s';
+  } catch(e) {
+    dot.className = 'refresh-dot';
+    lbl.textContent = 'Fetch error — retrying';
+    showError('Unable to reach NASDAQ feed. Check your connection or open NASDAQ Halts ↗ directly.');
+    console.error('Halt fetch error:', e);
+  }
+}
+
+// ── PARSE RSS ────────────────────────────────────────────────
+function parseRSS(xml) {
+  const items = xml.querySelectorAll('item');
+  const newHalts = [];
+
+  items.forEach(item => {
+    const title = item.querySelector('title')?.textContent || '';
+    const desc  = item.querySelector('description')?.textContent || '';
+    const link  = item.querySelector('link')?.textContent || '';
+
+    // NASDAQ RSS title format: "TICKER - ReasonCode - HaltDate HaltTime"
+    // description has more details
+    const parts = title.split(' - ');
+    const ticker   = (parts[0] || '').trim();
+    const code     = (parts[1] || '').trim();
+    const datetime = (parts[2] || '').trim();
+
+    // Parse description fields (key: value pairs separated by <br>)
+    const getField = (key) => {
+      const rx = new RegExp(key + '[:\\s]+([^<\\n]+)', 'i');
+      const m = desc.match(rx);
+      return m ? m[1].trim() : '';
+    };
+
+    const haltTime     = getField('Halt Time') || datetime;
+    const issueSymbol  = getField('Issue Symbol') || ticker;
+    const issueName    = getField('Issue Name') || getField('Name') || '—';
+    const market       = getField('Market') || getField('Exchange') || '—';
+    const reasonCode   = getField('Reason Code') || code;
+    const resumeQuote  = getField('Resumption Quote Time') || getField('Quote Time') || '';
+    const resumeTrade  = getField('Resumption Trade Time') || getField('Trade Time') || '';
+    const haltDate     = getField('Halt Date') || '';
+
+    const uid = (issueSymbol || ticker) + '-' + (haltTime || datetime);
+    const isNew = !knownIds.has(uid);
+    if (isNew) knownIds.add(uid);
+
+    newHalts.push({ ticker: issueSymbol || ticker, name: issueName, market, code: reasonCode, haltTime, haltDate, resumeQuote, resumeTrade, isNew });
+  });
+
+  // Sort newest first
+  newHalts.sort((a,b) => (b.haltTime > a.haltTime ? 1 : -1));
+  allHalts = newHalts;
+
+  updateCounts();
+  renderTable();
+}
+
+// ── COUNTS ───────────────────────────────────────────────────
+function updateCounts() {
+  const ludp = allHalts.filter(h => h.code === 'LUDP').length;
+  document.getElementById('ludp-count').textContent  = ludp + ' LUDP';
+  document.getElementById('total-count').textContent = allHalts.length + ' total';
+
+  // Update sidebar badge on prep page if exists
+  const sb = document.getElementById('sb-halt-count');
+  if (sb && ludp > 0) { sb.textContent = ludp; sb.style.display = 'inline'; }
+}
+
+// ── RENDER ───────────────────────────────────────────────────
+function codeClass(code) {
+  if (code === 'LUDP') return 'code-LUDP';
+  if (code === 'T1')   return 'code-T1';
+  if (code === 'T12')  return 'code-T12';
+  if (code === 'M')    return 'code-M';
+  return 'code-OTHER';
+}
+
+function gapWindow(q, t) {
+  if (!q || !t) return '—';
+  // parse HH:MM:SS
+  const toSec = s => { const p = s.split(':'); return (+p[0])*3600 + (+p[1])*60 + (+p[2]||0); };
+  try {
+    const diff = toSec(t) - toSec(q);
+    if (diff <= 0) return '—';
+    if (diff < 60) return diff + 's';
+    return Math.floor(diff/60) + 'm ' + (diff%60) + 's';
+  } catch { return '—'; }
+}
+
+function renderTable() {
+  const tbody = document.getElementById('halt-tbody');
+  const filtered = currentFilter === 'LUDP' ? allHalts.filter(h => h.code === 'LUDP') : allHalts;
+
+  if (filtered.length === 0) {
+    const msg = currentFilter === 'LUDP'
+      ? 'No LUDP halts yet today. Watching...'
+      : 'No halts found. Market may be closed or feed loading.';
+    tbody.innerHTML = `<tr><td colspan="9"><div class="feed-state"><div class="feed-icon">⚡</div><div class="feed-msg">${msg}</div></div></td></tr>`;
+    return;
+  }
+
+  tbody.innerHTML = filtered.map(h => {
+    const gap = gapWindow(h.resumeQuote, h.resumeTrade);
+    const gapColor = gap !== '—' && parseInt(gap) >= 3 ? 'color:var(--green);font-weight:600;' : '';
+    const resumeClass = h.resumeTrade ? 'resume-cell' : 'resume-cell pending';
+    const resumeText  = h.resumeTrade || 'pending';
+    return `<tr class="${h.isNew ? 'new-halt' : ''}">
+      <td style="font-size:0.7rem;color:var(--text2);">${h.haltTime}</td>
+      <td class="ticker-cell">${h.ticker}</td>
+      <td style="font-size:0.72rem;max-width:160px;white-space:nowrap;overflow:hidden;text-overflow:ellipsis;">${h.name}</td>
+      <td style="font-size:0.68rem;">${h.market}</td>
+      <td><span class="code-badge ${codeClass(h.code)}">${h.code}</span></td>
+      <td style="font-size:0.7rem;color:var(--cyan);">${h.resumeQuote || '<span style="color:var(--muted);font-style:italic">pending</span>'}</td>
+      <td class="${resumeClass}">${resumeText}</td>
+      <td style="font-size:0.72rem;${gapColor}">${gap}</td>
+      <td><button class="scout-btn" onclick="openScout('${h.ticker}')">Scout ↗</button></td>
+    </tr>`;
+  }).join('');
+}
+
+function showError(msg) {
+  document.getElementById('halt-tbody').innerHTML = `<tr><td colspan="9"><div class="feed-state error"><div class="feed-icon">⚠</div><div class="feed-msg">${msg}</div></div></td></tr>`;
+}
+
+// ── SCOUT LINK ───────────────────────────────────────────────
+function openScout(ticker) {
+  // Pre-fill ticker on prep page and navigate there
+  sessionStorage.setItem('scoutTicker', ticker);
+  window.location.href = 'prep.html#halt-scout';
+}
+
+// ── COUNTDOWN ────────────────────────────────────────────────
+function pad(n) { return String(n).padStart(2,'0'); }
+function updateCountdown() {
+  const now = new Date();
+  const et = new Date(now.toLocaleString('en-US',{timeZone:'America/New_York'}));
+  const open  = new Date(et); open.setHours(9,30,0,0);
+  const close = new Date(et); close.setHours(16,0,0,0);
+  const pill  = document.getElementById('countdown');
+  const txt   = document.getElementById('cdText');
+  const dot   = document.getElementById('statusDot');
+  const stxt  = document.getElementById('statusText');
+  const day   = et.getDay();
+  if (day===0||day===6) { txt.textContent='WEEKEND'; pill.className='countdown-pill closed'; dot.className='s-status-dot closed'; stxt.textContent='Weekend'; return; }
+  if (et>=open&&et<=close) {
+    const d=close-et; txt.textContent=`OPEN  ${pad(Math.floor(d/3600000))}:${pad(Math.floor((d%3600000)/60000))}:${pad(Math.floor((d%60000)/1000))}`;
+    pill.className='countdown-pill open'; dot.className='s-status-dot open'; stxt.textContent='Market Open'; return;
+  }
+  if (et>close) { txt.textContent='CLOSED'; pill.className='countdown-pill closed'; dot.className='s-status-dot closed'; stxt.textContent='Market Closed'; return; }
+  const d=open-et; txt.textContent=`OPENS ${pad(Math.floor(d/3600000))}:${pad(Math.floor((d%3600000)/60000))}:${pad(Math.floor((d%60000)/1000))}`;
+  pill.className='countdown-pill pre'; dot.className='s-status-dot pre'; stxt.textContent='Pre-Market';
+}
+
+// ── AUTO REFRESH ─────────────────────────────────────────────
+let secondsLeft = 30;
+function tick() {
+  secondsLeft--;
+  if (secondsLeft <= 0) {
+    secondsLeft = 30;
+    fetchHalts();
+  } else {
+    document.getElementById('refresh-label').textContent = `Next refresh in ${secondsLeft}s`;
+  }
+}
+
+// ── INIT ─────────────────────────────────────────────────────
+updateCountdown();
+setInterval(updateCountdown, 1000);
+setInterval(tick, 1000);
+fetchHalts();
+
+// Pick up scout ticker from session if navigating back
+const scoutTicker = sessionStorage.getItem('scoutTicker');
+if (scoutTicker) {
+  const el = document.getElementById('hs-ticker');
+  if (el) { el.value = scoutTicker; sessionStorage.removeItem('scoutTicker'); if(window.haltScout) haltScout(); }
+}
+</script>
+</body>
+</html>

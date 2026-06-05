@@ -1,0 +1,67 @@
+name: Fetch Halt Data
+
+on:
+  schedule:
+    - cron: '*/2 13-20 * * 1-5'  # every 2 min, 9am-4pm ET (UTC 13-20), Mon-Fri
+  workflow_dispatch:               # manual trigger anytime
+
+jobs:
+  fetch:
+    runs-on: ubuntu-latest
+    permissions:
+      contents: write
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Fetch Nasdaq halt RSS and convert to JSON
+        run: |
+          curl -s "https://www.nasdaqtrader.com/rss.aspx?feed=tradehalts" -o halts.xml
+          python3 << 'PYEOF'
+          import xml.etree.ElementTree as ET, json, re
+          from datetime import datetime, timezone
+
+          tree = ET.parse('halts.xml')
+          root = tree.getroot()
+          channel = root.find('channel')
+          items = channel.findall('item') if channel else []
+
+          halts = []
+          for item in items:
+              desc = (item.findtext('description') or '').strip()
+
+              def gf(key):
+                  m = re.search(r'(?i)' + re.escape(key) + r'[:\s]+([^|<\n]+)', desc)
+                  return m.group(1).strip() if m else ''
+
+              halts.append({
+                  'ticker':      gf('Issue Symbol'),
+                  'company':     gf('Issue Name'),
+                  'reason':      gf('Reason Code'),
+                  'haltDate':    gf('Halt Date'),
+                  'haltTime':    gf('Halt Time'),
+                  'market':      gf('Market'),
+                  'resumeQuote': gf('Resumption Quote Time'),
+                  'resumeTrade': gf('Resumption Trade Time'),
+                  'pausePrice':  gf('Pause Threshold Price'),
+              })
+
+          # remove empty entries
+          halts = [h for h in halts if h['ticker']]
+
+          output = {
+              'updated': datetime.now(timezone.utc).strftime('%Y-%m-%dT%H:%M:%SZ'),
+              'count':   len(halts),
+              'halts':   halts
+          }
+          with open('halts.json', 'w') as f:
+              json.dump(output, f)
+          print(f"Written {len(halts)} halts")
+          PYEOF
+
+      - name: Commit halts.json
+        run: |
+          git config user.name  "github-actions[bot]"
+          git config user.email "github-actions[bot]@users.noreply.github.com"
+          git add halts.json
+          git diff --staged --quiet || git commit -m "chore: update halts.json [skip ci]"
+          git push

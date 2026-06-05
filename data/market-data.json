@@ -1,36 +1,36 @@
 {
-  "generated": "2026-06-05T16:27:55.200Z",
+  "generated": "2026-06-05T16:41:39.998Z",
   "date": "2026-06-05",
   "indices": [
     {
       "name": "S&P 500",
-      "val": "745.43",
-      "chg": -1.5401,
-      "price": 745.43
+      "val": "744.25",
+      "chg": -1.696,
+      "price": 744.25
     },
     {
       "name": "NASDAQ",
-      "val": "719.01",
-      "chg": -2.9165,
-      "price": 719.01
+      "val": "716.78",
+      "chg": -3.2176,
+      "price": 716.78
     },
     {
       "name": "DOW",
-      "val": "512.86",
-      "chg": -0.7432,
-      "price": 512.86
+      "val": "512.72",
+      "chg": -0.7703,
+      "price": 512.72
     },
     {
       "name": "RUSSELL",
-      "val": "284.87",
-      "chg": -2.4451,
-      "price": 284.87
+      "val": "284.18",
+      "chg": -2.6814,
+      "price": 284.18
     },
     {
       "name": "VIX",
-      "val": "24.68",
-      "chg": 5.0213,
-      "price": 24.68
+      "val": "24.89",
+      "chg": 5.9149,
+      "price": 24.89
     },
     {
       "name": "10Y",
@@ -43,64 +43,64 @@
     {
       "name": "Tech",
       "symbol": "XLK",
-      "chg": -4.5866
+      "chg": -5.1095
     },
     {
       "name": "Health",
       "symbol": "XLV",
-      "chg": 1.6833
+      "chg": 1.7228
     },
     {
       "name": "Financials",
       "symbol": "XLF",
-      "chg": -0.0575
+      "chg": 0.0192
     },
     {
       "name": "Energy",
       "symbol": "XLE",
-      "chg": -1.3787
+      "chg": -1.4809
     },
     {
       "name": "Cons Disc",
       "symbol": "XLY",
-      "chg": -0.8954
+      "chg": -0.8699
     },
     {
       "name": "Industrials",
       "symbol": "XLI",
-      "chg": -0.5733
+      "chg": -0.5677
     },
     {
       "name": "Materials",
       "symbol": "XLB",
-      "chg": -1.5304
+      "chg": -1.5498
     },
     {
       "name": "Real Estate",
       "symbol": "XLRE",
-      "chg": 0.991
+      "chg": 1.1261
     },
     {
       "name": "Utilities",
       "symbol": "XLU",
-      "chg": 0.8648
+      "chg": 1.1152
     },
     {
       "name": "Cons Staples",
       "symbol": "XLP",
-      "chg": 1.8406
+      "chg": 2.0112
     },
     {
       "name": "Comm Svcs",
       "symbol": "XLC",
-      "chg": -0.9725
+      "chg": -0.946
     }
   ],
   "keyLevels": [
     {
       "tag": "support",
       "label": "SPY Support",
-      "val": "744.62"
+      "val": "743.74"
     },
     {
       "tag": "resist",
@@ -110,7 +110,7 @@
     {
       "tag": "pivot",
       "label": "QQQ Pivot",
-      "val": "722.87"
+      "val": "721.59"
     },
     {
       "tag": "event",
@@ -119,7 +119,7 @@
     }
   ],
   "fearGreed": {
-    "score": 45,
+    "score": 44,
     "label": "Neutral"
   },
   "earnings": [
@@ -194,6 +194,18 @@
       "url": "https://www.cnbc.com/2026/06/05/boeing-ceo-737-max-production-assembly-line.html"
     },
     {
+      "time": "11:26 AM",
+      "text": "US says it has issued new Iran-related sanctions - Reuters",
+      "tag": "Reuters",
+      "url": "https://news.google.com/rss/articles/CBMinAFBVV95cUxQU05IR1JudzV6T3A0Q0E3OThERjNCUHVwOVJGem45SWRsaHluTmtvV1o2MXJRNVVjRDZmZHNsWXpNSU5qcFdvcUthNDhMVTBZdElIWC1fRHZBLS0ybnlsNDg3QnhmREwyTkVrYXRVVldwN3JMSzR2cU1Na1RJRE1iczFfRjJzS3pBSzI4NmNpbVJDVElWTkgzMXlabmY?oc=5"
+    },
+    {
+      "time": "11:03 AM",
+      "text": "Iran using Lebanon as bargaining chip in US talks, Lebanese president says - Reuters",
+      "tag": "Reuters",
+      "url": "https://news.google.com/rss/articles/CBMivgFBVV95cUxOek1MOVV2M1JkZzJlN2h5aGFPaWJvQ2hQRHVELU5pQXhCUkoxRERqMi0wLUwwdFlRQ2lOeDF2ZUlFT0Y4QlpCVEEtczVRZ1lRRTZVNk5NQUR3SzRPdEtUUkxmekxET2FmNGdTU3pmZ1JZYXY2NW1hdDAyT1BZR1FvbHRQT3p5SGRVc2tvMnBfblFHcmYzaGhSbFlodkp1aUQ1cG9XYjZvV1pJeTBfUHFIbnZ1dnZkWXZzM2ttdFdR?oc=5"
+    },
+    {
       "time": "10:59 AM",
       "text": "Iran declares support for Hezbollah with wider peace deal in doubt - Reuters",
       "tag": "Reuters",
@@ -210,79 +222,67 @@
       "text": "Trump's 'crazy' rebuke undercuts Netanyahu at a critical moment - Reuters",
       "tag": "Reuters",
       "url": "https://news.google.com/rss/articles/CBMirgFBVV95cUxNOVJhNXhDSC1NbGdmd1NJUnlTaGFMM3JxTnZFNUR6VVpDdXlMS2ZOLW05TW1YMXJhcUdGSVFfM1Q3VVNURUNVSnl4VVM3WnlFMGZuZjVOSUhQZkFCZjBBYVFBeEMzTVViNnFLZWtCWGdKMDFRTF8xZ0RVUlBPbDZBV2FFZVpCZmhHTG00RWNDRGtIS0N5TXI1RzRFY1ozQXR3SXpDNm9JX0ZPcUxQR0E?oc=5"
-    },
-    {
-      "time": "9:22 AM",
-      "text": "Jim Cramer's top 10 things to watch in the stock market Friday",
-      "tag": "CNBC",
-      "url": "https://www.cnbc.com/2026/06/05/jim-cramers-top-10-things-to-watch-in-the-stock-market-friday.html"
-    },
-    {
-      "time": "8:19 AM",
-      "text": "Iran says it fired warning missiles and drones at US warships in Gulf of Oman - Reuters",
-      "tag": "Reuters",
-      "url": "https://news.google.com/rss/articles/CBMiugFBVV95cUxPeVp1M3RPRDFGMzZGQ3RtaW1HZzNFZ3IybWFUZk1sZmtYUjM3Vm5BWHBpV0s2LU5YZ3dsdWtSTVJJNU9xeW01XzZ1cWRvYl8zX3g5RlRLbHFtczMzYzhFRTY2X0RtVTZoVFlPa3h1b2ROaWhhcmo0TWVnYURPWVRGUzRsdzhRYWZyNWRhQkJJT2lHeXBhTmxxbUxvRTlTczZGa0pjQ2dBNlhDYWdaVE14UUNMMDRySGx2eFE?oc=5"
     }
   ],
-  "brief": "<h2><span class=\"sec-icon\">◆</span> Market Overview</h2>\n\nFutures are bleeding red ahead of NFP, with NASDAQ leading the carnage down 2.92% as tech gets hammered. VIX spiking 5% to 24.68 signals real fear, while geopolitical tensions in the Gulf add fuel to the fire. Classic risk-off setup with money rotating into defensive sectors.\n\n<h2><span class=\"sec-icon\">◆</span> What to Watch</h2>\n\n<ul>\n<li><strong>Non Farm Payrolls (8:30 ET)</strong> - The big kahuna today. Market's pricing in volatility with VIX elevated</li>\n<li><strong>Iran-US Naval Tensions</strong> - Iran fired warning shots at US warships in Gulf of Oman. Oil and defense plays on watch</li>\n<li><strong>Tech Sector Meltdown</strong> - XLK down 4.59% pre-market. Major support levels being tested across mega-caps</li>\n<li><strong>ABM Earnings (BMO)</strong> - EPS est 0.883, one of the few notable reports in a light earnings day</li>\n</ul>\n\n<h2><span class=\"sec-icon\">◆</span> Sector Rotation</h2>\n\nClassic flight to safety underway with defensive sectors leading. Consumer Staples (+1.84%) and Healthcare (+1.68%) catching bids while Tech gets annihilated. Energy surprisingly weak despite Middle East tensions, down 1.38% as growth fears trump geopolitical risk premiums.\n\n<div class=\"callout callout-red\"><div class=\"callout-label\">⚠ Bear Case</div>Tech breakdown accelerates if NFP comes in hot, forcing Fed to stay hawkish longer. Geopolitical escalation could trigger broader risk-off spiral into the weekend.</div>\n\n<div class=\"callout callout-amber\"><div class=\"callout-label\">⚡ Key Driver</div>Jobs data at 8:30 ET will set the tone. Strong number = more Fed hawkishness = tech pain continues. Weak number = recession fears = different kind of selling.</div>\n\n<h2><span class=\"sec-icon\">◆</span> Levels That Matter</h2>\n\n<ul>\n<li><strong>SPY 745</strong> - Currently testing this level pre-market. Break below targets 740 support</li>\n<li><strong>QQQ 715</strong> - Key technical level. Failure here opens door to 700 round number</li>\n<li><strong>VIX 25</strong> - Just shy of this psychological resistance. Break above signals real panic</li>\n<li><strong>XLK 180</strong> - Major support for tech sector ETF. Watch for volume on any bounce attempt</li>\n</ul>\n\n<hr>\n<p><em>Not a prediction. A preparation. Make your plan before the bell.</em></p>",
+  "brief": "<h2><span class=\"sec-icon\">◆</span> Market Overview</h2>\n\nFutures are painting red across the board with tech leading the selloff - QQQ down 3.22% while SPY holds relatively better at -1.70%. VIX spiking to 24.89 signals real fear ahead of NFP, and the geopolitical headlines from Iran aren't helping risk sentiment.\n\n<h2><span class=\"sec-icon\">◆</span> What to Watch</h2>\n\n<ul>\n<li><strong>NFP Release (8:30 AM EST)</strong> - The big kahuna. All employment metrics dropping at once with high impact ratings</li>\n<li><strong>Iran Escalation</strong> - Multiple headlines about missile warnings at US warships and new sanctions creating oil volatility</li>\n<li><strong>Boeing Production News</strong> - 737 Max assembly line restart July 6th could move industrials</li>\n<li><strong>Tech Earnings Aftermath</strong> - XLK down over 5% suggests lingering concerns from this week's reports</li>\n</ul>\n\n<div class=\"callout callout-red\"><div class=\"callout-label\">⚠ Bear Case</div>Tech's -5.11% pre-market drop combined with Iran tensions creates perfect storm for broader market breakdown below key support levels.</div>\n\n<h2><span class=\"sec-icon\">◆</span> Sector Rotation</h2>\n\nClassic risk-off rotation in play with defensive sectors leading - Consumer Staples up 2.01%, Healthcare +1.72%, and Utilities +1.12%. Tech's massive 5.11% gap down is dragging growth while safe havens catch bids. Energy surprisingly weak at -1.48% despite Middle East tensions.\n\n<div class=\"callout callout-amber\"><div class=\"callout-label\">⚡ Key Driver</div>NFP at 8:30 AM will either rescue this selloff or accelerate it. With VIX above 24, expect violent moves in either direction.</div>\n\n<h2><span class=\"sec-icon\">◆</span> Levels That Matter</h2>\n\n<ul>\n<li><strong>SPY 740</strong> - Key support from May lows; break here opens door to 720s</li>\n<li><strong>QQQ 710</strong> - Major technical level; already testing in pre-market</li>\n<li><strong>VIX 27</strong> - Next resistance that would signal full panic mode</li>\n<li><strong>XLK 180</strong> - Tech sector ETF critical support that's getting tested hard</li>\n</ul>\n\n<div class=\"callout callout-green\"><div class=\"callout-label\">✦ Bull Case</div>Strong NFP could reverse this morning's weakness quickly, especially if wage growth disappoints and eases Fed concerns.</div>\n\n<hr>\n<p><em>Not a prediction. A preparation. Make your plan before the bell.</em></p>",
   "watchlist": {
     "pillars": [
       {
         "sector": "Technology",
         "stocks": [
           {
-            "ticker": "NVDA",
-            "price": 209.02,
-            "changePct": -4.41,
-            "volume": 169022152.423913,
-            "ema21": 215.72,
-            "sma50": 202.92,
-            "pct21": -3.11,
-            "pct50": 3.01,
-            "grade": "approaching"
-          },
-          {
             "ticker": "AAPL",
-            "price": 312.33,
-            "changePct": 0.35,
+            "price": 311.14,
+            "changePct": -0.03,
             "volume": 44869134.400348,
             "ema21": 301.48,
             "sma50": 280.14,
-            "pct21": 3.6,
-            "pct50": 11.49,
+            "pct21": 3.21,
+            "pct50": 11.06,
             "grade": "approaching"
           },
           {
-            "ticker": "AMD",
-            "price": 479.6,
-            "changePct": -8.33,
-            "volume": 29109999.793875,
-            "ema21": 463.65,
-            "sma50": 353.8,
-            "pct21": 3.44,
-            "pct50": 35.56,
-            "grade": "approaching"
+            "ticker": "NVDA",
+            "price": 207.74,
+            "changePct": -4.99,
+            "volume": 169022152.423913,
+            "ema21": 215.72,
+            "sma50": 202.92,
+            "pct21": -3.7,
+            "pct50": 2.38,
+            "grade": "zone"
           },
           {
             "ticker": "MSFT",
-            "price": 420.39,
-            "changePct": -1.79,
+            "price": 419.62,
+            "changePct": -1.97,
             "volume": 26899511.802233,
             "ema21": 424.96,
             "sma50": 407.44,
-            "pct21": -1.08,
-            "pct50": 3.18,
+            "pct21": -1.26,
+            "pct50": 2.99,
             "grade": "zone"
           },
           {
             "ticker": "META",
-            "price": 610.6,
-            "changePct": -2.7,
+            "price": 609.58,
+            "changePct": -2.87,
             "volume": 21469248.475394,
             "ema21": 618.88,
             "sma50": 619.56,
-            "pct21": -1.34,
-            "pct50": -1.45,
+            "pct21": -1.5,
+            "pct50": -1.61,
+            "grade": "zone"
+          },
+          {
+            "ticker": "AMD",
+            "price": 475.88,
+            "changePct": -9.04,
+            "volume": 29109999.793875,
+            "ema21": 463.65,
+            "sma50": 353.8,
+            "pct21": 2.64,
+            "pct50": 34.5,
             "grade": "zone"
           }
         ]
@@ -326,25 +326,25 @@
         "stocks": [
           {
             "ticker": "NVDA",
-            "price": 209.02,
-            "changePct": -4.41,
+            "price": 207.74,
+            "changePct": -4.99,
             "volume": 169022152.423913,
             "ema21": 215.72,
             "sma50": 202.92,
-            "pct21": -3.11,
-            "pct50": 3.01,
-            "grade": "approaching"
+            "pct21": -3.7,
+            "pct50": 2.38,
+            "grade": "zone"
           },
           {
             "ticker": "AMD",
-            "price": 479.6,
-            "changePct": -8.33,
+            "price": 475.88,
+            "changePct": -9.04,
             "volume": 29109999.793875,
             "ema21": 463.65,
             "sma50": 353.8,
-            "pct21": 3.44,
-            "pct50": 35.56,
-            "grade": "approaching"
+            "pct21": 2.64,
+            "pct50": 34.5,
+            "grade": "zone"
           }
         ]
       },

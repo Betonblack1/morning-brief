@@ -17,16 +17,10 @@ if (!MASSIVE_KEY)   throw new Error("Missing MASSIVE_API_KEY");
 const FH_BASE  = "https://finnhub.io/api/v1";
 const MV_BASE  = "https://api.massive.com/v2";
 
-// ─────────────────────────────────────────────────────────────
-// UTILITIES
-// ─────────────────────────────────────────────────────────────
 function wait(ms) {
   return new Promise(function(resolve) { setTimeout(resolve, ms); });
 }
 
-// ─────────────────────────────────────────────────────────────
-// FINNHUB HELPERS  (unchanged)
-// ─────────────────────────────────────────────────────────────
 async function fh(endpoint, params) {
   params = params || {};
   const url = new URL(FH_BASE + endpoint);
@@ -37,9 +31,6 @@ async function fh(endpoint, params) {
   return resp.json();
 }
 
-// ─────────────────────────────────────────────────────────────
-// MASSIVE HELPER
-// ─────────────────────────────────────────────────────────────
 async function mv(endpoint, params) {
   params = params || {};
   const url = new URL(MV_BASE + endpoint);
@@ -51,9 +42,6 @@ async function mv(endpoint, params) {
   return resp.json();
 }
 
-// ─────────────────────────────────────────────────────────────
-// MA CALCULATIONS
-// ─────────────────────────────────────────────────────────────
 function calcEMA(closes, period) {
   if (!closes || closes.length < period) return null;
   const k = 2 / (period + 1);
@@ -78,15 +66,12 @@ function proximityPct(price, ma) {
 function gradeProximity(pct) {
   if (pct === null) return "unknown";
   const abs = Math.abs(pct);
-  if (pct > 0 && abs <= 3)  return "zone";       // pulling back into MA from above
-  if (pct > 0 && abs <= 8)  return "approaching"; // getting close
-  if (pct < 0 && abs <= 2)  return "zone";        // just below MA — potential reclaim
+  if (pct > 0 && abs <= 3)  return "zone";
+  if (pct > 0 && abs <= 8)  return "approaching";
+  if (pct < 0 && abs <= 2)  return "zone";
   return "extended";
 }
 
-// ─────────────────────────────────────────────────────────────
-// WATCHLIST DEFINITIONS
-// ─────────────────────────────────────────────────────────────
 const SECTOR_PILLARS = [
   { sector: "Technology",    tickers: ["NVDA","MSFT","AAPL","META","AMD"] },
   { sector: "Semis",         tickers: ["ARM","AVGO","ANET","MRVL","AMAT"] },
@@ -109,38 +94,42 @@ const ON_THE_MOVE = [
 ];
 
 // ─────────────────────────────────────────────────────────────
-// FETCH SINGLE TICKER DATA FROM MASSIVE
+// FETCH SINGLE TICKER — live price from Finnhub + MAs from Massive
 // ─────────────────────────────────────────────────────────────
 async function fetchTickerData(ticker) {
   try {
-    // Get last 60 daily candles — enough for 21 EMA + 50 SMA
     const toDate   = new Date().toISOString().split("T")[0];
     const fromDate = new Date(Date.now() - 90 * 24 * 60 * 60 * 1000).toISOString().split("T")[0];
 
-    const data = await mv("/aggs/ticker/" + ticker + "/range/1/day/" + fromDate + "/" + toDate, {
-      adjusted: "true",
-      sort: "asc",
-      limit: "60"
-    });
+    // Fetch candles (for MA calc) and live quote in parallel
+    const [candleData, quoteData] = await Promise.all([
+      mv("/aggs/ticker/" + ticker + "/range/1/day/" + fromDate + "/" + toDate, {
+        adjusted: "true",
+        sort: "asc",
+        limit: "60"
+      }),
+      fh("/quote", { symbol: ticker })
+    ]);
 
-    if (!data || !data.results || data.results.length < 22) {
-      console.log("  Skipping " + ticker + " — not enough data");
+    if (!candleData || !candleData.results || candleData.results.length < 22) {
+      console.log("  Skipping " + ticker + " — not enough candle data");
       return null;
     }
 
-    const closes  = data.results.map(r => r.c);
-    const latest  = data.results[data.results.length - 1];
-    const price   = latest.c;
-    const volume  = latest.v;
-    const changePct = latest.o > 0 ? ((price - latest.o) / latest.o) * 100 : 0;
+    // ── LIVE price + change from Finnhub quote ──
+    // q.c = current price, q.dp = % change from prev close (LIVE intraday)
+    const price     = quoteData && quoteData.c ? quoteData.c : candleData.results[candleData.results.length - 1].c;
+    const changePct = quoteData && quoteData.dp != null ? quoteData.dp : 0;
+    const volume    = quoteData && quoteData.v  ? quoteData.v  : candleData.results[candleData.results.length - 1].v;
 
-    const ema21 = calcEMA(closes, 21);
-    const sma50 = calcSMA(closes, 50);
+    // ── MAs from historical daily closes ──
+    const closes = candleData.results.map(r => r.c);
+    const ema21  = calcEMA(closes, 21);
+    const sma50  = calcSMA(closes, 50);
 
     const pct21 = proximityPct(price, ema21);
     const pct50 = proximityPct(price, sma50);
 
-    // Grade based on whichever MA is closer
     const closerPct = (pct21 !== null && pct50 !== null)
       ? (Math.abs(pct21) < Math.abs(pct50) ? pct21 : pct50)
       : (pct21 !== null ? pct21 : pct50);
@@ -156,7 +145,7 @@ async function fetchTickerData(ticker) {
       sma50:     sma50 ? parseFloat(sma50.toFixed(2)) : null,
       pct21:     pct21 ? parseFloat(pct21.toFixed(2)) : null,
       pct50:     pct50 ? parseFloat(pct50.toFixed(2)) : null,
-      grade      // "zone" | "approaching" | "extended" | "unknown"
+      grade
     };
   } catch(err) {
     console.error("  Error fetching " + ticker + ": " + err.message);
@@ -164,40 +153,32 @@ async function fetchTickerData(ticker) {
   }
 }
 
-// ─────────────────────────────────────────────────────────────
-// FETCH FULL WATCHLIST
-// ─────────────────────────────────────────────────────────────
 async function fetchWatchlist() {
-  console.log("Fetching watchlist data from Massive...");
+  console.log("Fetching watchlist data...");
 
-  // Collect all unique tickers across both lists
   const allTickers = new Set();
   SECTOR_PILLARS.forEach(s => s.tickers.forEach(t => allTickers.add(t)));
   ON_THE_MOVE.forEach(s => s.tickers.forEach(t => allTickers.add(t)));
 
-  // Fetch each ticker with a small delay to respect rate limits
   const tickerData = {};
   for (const ticker of allTickers) {
     console.log("  Fetching " + ticker + "...");
     const data = await fetchTickerData(ticker);
     if (data) tickerData[ticker] = data;
-    await wait(400); // stay well under rate limits
+    await wait(400);
   }
 
-  // Build sector pillar output
   const pillars = SECTOR_PILLARS.map(s => ({
     sector: s.sector,
     stocks: s.tickers
       .map(t => tickerData[t])
       .filter(Boolean)
       .sort((a, b) => {
-        // Sort: zone first, then approaching, then extended
         const order = { zone: 0, approaching: 1, extended: 2, unknown: 3 };
         return (order[a.grade] || 3) - (order[b.grade] || 3);
       })
   }));
 
-  // Build on the move output
   const onTheMove = ON_THE_MOVE.map(s => ({
     sector: s.sector,
     stocks: s.tickers
@@ -210,14 +191,11 @@ async function fetchWatchlist() {
   }));
 
   const zoneCount = Object.values(tickerData).filter(t => t.grade === "zone").length;
-  console.log("Watchlist complete. " + Object.keys(tickerData).length + " tickers fetched. " + zoneCount + " in the zone.");
+  console.log("Watchlist complete. " + Object.keys(tickerData).length + " tickers. " + zoneCount + " in zone.");
 
   return { pillars, onTheMove };
 }
 
-// ─────────────────────────────────────────────────────────────
-// FINNHUB FUNCTIONS  (all unchanged from original)
-// ─────────────────────────────────────────────────────────────
 async function fetchQuotes() {
   const symbols = [
     { symbol: "SPY",  name: "S&P 500" },
@@ -314,9 +292,6 @@ async function fetchEconCalendar() {
   return out;
 }
 
-// ─────────────────────────────────────────────────────────────
-// CLAUDE BRIEF GENERATION  (unchanged)
-// ─────────────────────────────────────────────────────────────
 async function generateBrief(marketData) {
   const client = new Anthropic({ apiKey: ANTHROPIC_KEY });
   const { quotes, vix, news, earnings, econ } = marketData;
@@ -396,14 +371,10 @@ async function generateBrief(marketData) {
   return response.content[0].text;
 }
 
-// ─────────────────────────────────────────────────────────────
-// MAIN
-// ─────────────────────────────────────────────────────────────
 async function main() {
-  console.log("=== Morning Brief Generator — 7:00 AM ET ===");
+  console.log("=== Morning Brief Generator ===");
   console.log("Starting data fetch...");
 
-  // Run Finnhub calls + watchlist in parallel where possible
   var results = await Promise.all([
     fetchQuotes(),
     fetchVIX(),
@@ -420,7 +391,6 @@ async function main() {
 
   console.log("Finnhub: " + Object.keys(quotes).length + " quotes, " + news.length + " news, " + earnings.length + " earnings, " + econ.length + " econ events");
 
-  // Fetch watchlist from Massive (sequential, rate-limited)
   var watchlist = { pillars: [], onTheMove: [] };
   try {
     watchlist = await fetchWatchlist();
@@ -428,7 +398,6 @@ async function main() {
     console.error("Watchlist fetch failed: " + err.message);
   }
 
-  // Generate brief via Claude
   console.log("Generating brief via Claude...");
   var briefHtml;
   try {
@@ -439,7 +408,6 @@ async function main() {
     briefHtml = "<p>Brief generation failed. Market data is still current.</p>";
   }
 
-  // Build index data (unchanged)
   var indexData = [];
   for (const s of ["SPY","QQQ","DIA","IWM"]) {
     var q = quotes[s];
@@ -453,7 +421,6 @@ async function main() {
   indexData.push({ name: "VIX", val: vix ? vix.current.toFixed(2) : "—", chg: vix ? vix.changePct : 0, price: vix ? vix.current : 0 });
   indexData.push({ name: "10Y", val: "—", chg: 0, price: 0 });
 
-  // Build sector data (unchanged)
   var sectorData = [];
   for (const sym of Object.keys(quotes)) {
     if (["SPY","QQQ","DIA","IWM","VXX"].indexOf(sym) === -1) {
@@ -462,7 +429,6 @@ async function main() {
     }
   }
 
-  // Build news data (unchanged)
   var newsData = [];
   for (var i = 0; i < Math.min(news.length, 6); i++) {
     var n = news[i];
@@ -471,21 +437,18 @@ async function main() {
     newsData.push({ time: timeStr, text: n.headline, tag: n.source, url: n.url });
   }
 
-  // Build earnings data (unchanged)
   var earningsData = [];
   for (var i = 0; i < Math.min(earnings.length, 6); i++) {
     var e = earnings[i];
     earningsData.push({ ticker: e.symbol, info: "EPS Est: " + (e.epsEstimate != null ? e.epsEstimate : "N/A"), when: e.hour });
   }
 
-  // Build econ data (unchanged)
   var econData = [];
   for (var i = 0; i < Math.min(econ.length, 6); i++) {
     var e = econ[i];
     econData.push({ time: e.time, name: e.event, impact: e.impact });
   }
 
-  // Fear & Greed (unchanged)
   var fgScore = 50, fgLabel = "Neutral";
   if (vix && vix.current) {
     fgScore = Math.round(Math.max(0, Math.min(100, 100 - ((vix.current - 12) / 23) * 100)));
@@ -496,7 +459,6 @@ async function main() {
     else                    fgLabel = "Extreme Greed";
   }
 
-  // Key levels (unchanged)
   var spy = quotes["SPY"], qqq = quotes["QQQ"];
   var keyLevelsData = [];
   if (spy) {
@@ -511,7 +473,6 @@ async function main() {
     keyLevelsData.push({ tag: "event", label: topEvent.event ? topEvent.event.slice(0, 20) : "Econ Event", val: topEvent.time || "TBD" });
   }
 
-  // ── WRITE OUTPUT ──────────────────────────────────────────
   var output = {
     generated:  new Date().toISOString(),
     date:       new Date().toISOString().split("T")[0],
@@ -523,14 +484,13 @@ async function main() {
     econ:       econData,
     news:       newsData,
     brief:      briefHtml,
-    watchlist:  watchlist   // ← NEW: Massive-powered watchlist
+    watchlist:  watchlist
   };
 
   if (!fs.existsSync(OUTPUT_DIR)) fs.mkdirSync(OUTPUT_DIR, { recursive: true });
   var outPath = path.join(OUTPUT_DIR, "market-data.json");
   fs.writeFileSync(outPath, JSON.stringify(output, null, 2));
   console.log("Written to " + outPath);
-  console.log("Date: " + output.date);
   console.log("Done!");
 }
 

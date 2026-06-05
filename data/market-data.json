@@ -1,36 +1,36 @@
 {
-  "generated": "2026-06-05T14:35:31.785Z",
+  "generated": "2026-06-05T16:14:51.610Z",
   "date": "2026-06-05",
   "indices": [
     {
       "name": "S&P 500",
-      "val": "750.02",
-      "chg": -0.9338,
-      "price": 750.02
+      "val": "745.53",
+      "chg": -1.5269,
+      "price": 745.53
     },
     {
       "name": "NASDAQ",
-      "val": "726.02",
-      "chg": -1.97,
-      "price": 726.02
+      "val": "719.35",
+      "chg": -2.8706,
+      "price": 719.35
     },
     {
       "name": "DOW",
-      "val": "515.60",
-      "chg": -0.2129,
-      "price": 515.6
+      "val": "513.06",
+      "chg": -0.7045,
+      "price": 513.06
     },
     {
       "name": "RUSSELL",
-      "val": "287.21",
-      "chg": -1.6438,
-      "price": 287.21
+      "val": "285.00",
+      "chg": -2.4006,
+      "price": 285
     },
     {
       "name": "VIX",
-      "val": "23.84",
-      "chg": 1.4468,
-      "price": 23.84
+      "val": "24.68",
+      "chg": 5.0213,
+      "price": 24.68
     },
     {
       "name": "10Y",
@@ -43,64 +43,64 @@
     {
       "name": "Tech",
       "symbol": "XLK",
-      "chg": -3.2614
+      "chg": -4.3537
     },
     {
       "name": "Health",
       "symbol": "XLV",
-      "chg": 1.4532
+      "chg": 1.44
     },
     {
       "name": "Financials",
       "symbol": "XLF",
-      "chg": 0.3832
+      "chg": -0.0575
     },
     {
       "name": "Energy",
       "symbol": "XLE",
-      "chg": -0.6638
+      "chg": -1.1745
     },
     {
       "name": "Cons Disc",
       "symbol": "XLY",
-      "chg": -0.145
+      "chg": -0.8954
     },
     {
       "name": "Industrials",
       "symbol": "XLI",
-      "chg": -0.2725
+      "chg": -0.4882
     },
     {
       "name": "Materials",
       "symbol": "XLB",
-      "chg": -0.7749
+      "chg": -1.4336
     },
     {
       "name": "Real Estate",
       "symbol": "XLRE",
-      "chg": 0.6982
+      "chg": 0.9009
     },
     {
       "name": "Utilities",
       "symbol": "XLU",
-      "chg": 0.8648
+      "chg": 0.9331
     },
     {
       "name": "Cons Staples",
       "symbol": "XLP",
-      "chg": 1.7065
+      "chg": 1.8528
     },
     {
       "name": "Comm Svcs",
       "symbol": "XLC",
-      "chg": -0.4951
+      "chg": -0.9902
     }
   ],
   "keyLevels": [
     {
       "tag": "support",
       "label": "SPY Support",
-      "val": "748.23"
+      "val": "745.02"
     },
     {
       "tag": "resist",
@@ -110,7 +110,7 @@
     {
       "tag": "pivot",
       "label": "QQQ Pivot",
-      "val": "727.02"
+      "val": "723.22"
     },
     {
       "tag": "event",
@@ -119,7 +119,7 @@
     }
   ],
   "fearGreed": {
-    "score": 49,
+    "score": 45,
     "label": "Neutral"
   },
   "earnings": [
@@ -188,10 +188,28 @@
   ],
   "news": [
     {
-      "time": "9:44 AM",
+      "time": "11:38 AM",
+      "text": "Boeing to start 737 Max production on new assembly line July 6, CEO says",
+      "tag": "CNBC",
+      "url": "https://www.cnbc.com/2026/06/05/boeing-ceo-737-max-production-assembly-line.html"
+    },
+    {
+      "time": "10:59 AM",
       "text": "Iran declares support for Hezbollah with wider peace deal in doubt - Reuters",
       "tag": "Reuters",
       "url": "https://news.google.com/rss/articles/CBMiswFBVV95cUxNMkJmdHFzTERGVlZsOTRwbkozTUFSZ3N4cXZhUlJUY1ZaSTJ4ZjZaYXV0NEhZWHgwbUhYVlhYTmpDakgzXzNiTEJpeGdObmkzR1lVMGtIV3FrWVd5eGJUVHdZaEgzVWVGUnlHbHJOYnNGNlprMzNHY3djMWUweFlGWGoyMnJUNlJJNkJuUlhpWWVFanZZcW04aFBMTUlUd1ZjVUk1c2lrcmFwbTFnTHdZNU02WQ?oc=5"
+    },
+    {
+      "time": "10:14 AM",
+      "text": "US forces board sanctioned tanker in Indian Ocean, Pentagon says - Reuters",
+      "tag": "Reuters",
+      "url": "https://news.google.com/rss/articles/CBMipAFBVV95cUxONFVpNEYzc3huRHNUeEt6RHZxQllKemFLSnRlUmVYcWlGLVl1Q0RQSGVQQ0dCTFp4UmhJaXkySjdXNlloTlg3dTBxS0JnRWYzYkNhZmViLTE3SUljbkZTeW40U0p1OFhtdkk0eFBJaTIybGx0X2NHYVE0OEZ6MWpNR0RPUl9Ic1JCWTlFb2VYdU1kZUVVdGszVkJDTWU4Z1c0MGNoeA?oc=5"
+    },
+    {
+      "time": "10:07 AM",
+      "text": "Trump's 'crazy' rebuke undercuts Netanyahu at a critical moment - Reuters",
+      "tag": "Reuters",
+      "url": "https://news.google.com/rss/articles/CBMirgFBVV95cUxNOVJhNXhDSC1NbGdmd1NJUnlTaGFMM3JxTnZFNUR6VVpDdXlMS2ZOLW05TW1YMXJhcUdGSVFfM1Q3VVNURUNVSnl4VVM3WnlFMGZuZjVOSUhQZkFCZjBBYVFBeEMzTVViNnFLZWtCWGdKMDFRTF8xZ0RVUlBPbDZBV2FFZVpCZmhHTG00RWNDRGtIS0N5TXI1RzRFY1ozQXR3SXpDNm9JX0ZPcUxQR0E?oc=5"
     },
     {
       "time": "9:22 AM",
@@ -204,27 +222,9 @@
       "text": "Iran says it fired warning missiles and drones at US warships in Gulf of Oman - Reuters",
       "tag": "Reuters",
       "url": "https://news.google.com/rss/articles/CBMiugFBVV95cUxPeVp1M3RPRDFGMzZGQ3RtaW1HZzNFZ3IybWFUZk1sZmtYUjM3Vm5BWHBpV0s2LU5YZ3dsdWtSTVJJNU9xeW01XzZ1cWRvYl8zX3g5RlRLbHFtczMzYzhFRTY2X0RtVTZoVFlPa3h1b2ROaWhhcmo0TWVnYURPWVRGUzRsdzhRYWZyNWRhQkJJT2lHeXBhTmxxbUxvRTlTczZGa0pjQ2dBNlhDYWdaVE14UUNMMDRySGx2eFE?oc=5"
-    },
-    {
-      "time": "8:12 AM",
-      "text": "US forces board sanctioned tanker in Indian Ocean, Pentagon says - Reuters",
-      "tag": "Reuters",
-      "url": "https://news.google.com/rss/articles/CBMipAFBVV95cUxONFVpNEYzc3huRHNUeEt6RHZxQllKemFLSnRlUmVYcWlGLVl1Q0RQSGVQQ0dCTFp4UmhJaXkySjdXNlloTlg3dTBxS0JnRWYzYkNhZmViLTE3SUljbkZTeW40U0p1OFhtdkk0eFBJaTIybGx0X2NHYVE0OEZ6MWpNR0RPUl9Ic1JCWTlFb2VYdU1kZUVVdGszVkJDTWU4Z1c0MGNoeA?oc=5"
-    },
-    {
-      "time": "8:00 AM",
-      "text": "Broadway's $1.9 billion season is the latest sign of consumers splurging on experiences",
-      "tag": "CNBC",
-      "url": "https://www.cnbc.com/2026/06/05/broadway-record-ticket-sales.html"
-    },
-    {
-      "time": "8:00 AM",
-      "text": "Family offices bet on sports, from pickleball leagues to smart soccer balls",
-      "tag": "CNBC",
-      "url": "https://www.cnbc.com/2026/06/05/family-office-sport-investments.html"
     }
   ],
-  "brief": "<h2><span class=\"sec-icon\">◆</span> Market Overview</h2>\n\nPre-market showing classic risk-off with tech getting hammered (-3.26%) while defensive sectors rally. SPY down 0.93% to $750, but VIX only at 23.84 suggests this isn't panic mode yet. Iran tensions escalating with missile warnings at US warships - geopolitical premium building into Friday's NFP.\n\n<h2><span class=\"sec-icon\">◆</span> What to Watch</h2>\n\n<ul>\n<li><strong>Non-Farm Payrolls (12:30 ET):</strong> The big kahuna today. Full employment data dump including wages and participation rate.</li>\n<li><strong>Iran-US Tensions:</strong> Warning missiles fired at US warships in Gulf of Oman. Oil and defense plays getting bid.</li>\n<li><strong>Tech Rotation:</strong> QQQ down nearly 2% pre-market. Watch if this is profit-taking or real distribution.</li>\n<li><strong>G III Apparel (GIII):</strong> BMO earnings with -$0.31 EPS estimate. Consumer discretionary health check.</li>\n</ul>\n\n<div class=\"callout callout-amber\"><div class=\"callout-label\">⚡ Key Driver</div>Jobs report at 12:30 ET will dictate afternoon direction. Strong number could accelerate tech selling as rate cut hopes fade further.</div>\n\n<h2><span class=\"sec-icon\">◆</span> Sector Rotation</h2>\n\nMoney flooding into defensive plays - Consumer Staples (XLP) up 1.71%, Health (XLV) +1.45%, Utilities (XLU) +0.86%. Classic flight to safety with geopolitical heat and NFP uncertainty. Tech getting destroyed while Dow making records - the rotation to value accelerating.\n\n<div class=\"callout callout-red\"><div class=\"callout-label\">⚠ Bear Case</div>Tech breakdown continues with growth premium collapsing. Iran situation escalates, triggering broader risk-off into the weekend.</div>\n\n<div class=\"callout callout-green\"><div class=\"callout-label\">✦ Bull Case</div>Healthy rotation from overvalued tech to fundamentally sound value plays. Dow leadership suggests institutional money still working.</div>\n\n<h2><span class=\"sec-icon\">◆</span> Levels That Matter</h2>\n\n<ul>\n<li><strong>SPY $745:</strong> Key support from May lows. Break here opens $735-740 zone.</li>\n<li><strong>QQQ $720:</strong> Major technical support. Violation signals deeper tech correction.</li>\n<li><strong>VIX $25:</strong> Above this level and we're in real fear territory for weekend holding.</li>\n<li><strong>DIA $520:</strong> Dow strength continuation above this resistance confirms leadership rotation.</li>\n</ul>\n\n<hr>\n<p><em>Not a prediction. A preparation. Make your plan before the bell.</em></p>",
+  "brief": "<h2><span class=\"sec-icon\">◆</span> Market Overview</h2>\n\nRisk-off Friday with futures bleeding red ahead of jobs data. SPY down 1.5% to $745, but tech getting hammered with QQQ off nearly 3% and XLK down over 4%. VIX spiking to 24.68 signals real fear, while defensive sectors like staples and utilities are catching bids.\n\n<h2><span class=\"sec-icon\">◆</span> What to Watch</h2>\n\n<ul>\n<li><strong>Non-Farm Payrolls (12:30 ET)</strong> - The big kahuna. Market's pricing in volatility with VIX elevated. Any surprise could amplify today's moves.</li>\n<li><strong>Middle East Tensions</strong> - Iran firing warning missiles at US warships in Gulf of Oman. Geopolitical risk premium building in energy and defense names.</li>\n<li><strong>Tech Breakdown</strong> - XLK down 4.35% pre-market. Watch if this is sector rotation or broader risk-off that spreads.</li>\n<li><strong>Boeing (BA) Production News</strong> - 737 Max new assembly line starting July 6. Industrial play in focus.</li>\n</ul>\n\n<div class=\"callout callout-red\"><div class=\"callout-label\">⚠ Bear Case</div>Tech leading the selloff with growth names getting crushed. If jobs data disappoints or geopolitical tensions escalate, we could see a full risk-off cascade into the weekend.</div>\n\n<h2><span class=\"sec-icon\">◆</span> Sector Rotation</h2>\n\nClassic flight to quality underway. Consumer staples (XLP) up 1.85%, utilities gaining, and healthcare holding strong while tech gets annihilated. This isn't just profit-taking - it's defensive positioning ahead of weekend geopolitical uncertainty. Energy down despite Middle East headlines, suggesting broader risk-off trumps sector-specific catalysts.\n\n<div class=\"callout callout-amber\"><div class=\"callout-label\">⚡ Key Driver</div>Jobs data at 12:30 ET is the make-or-break moment. With tech already weak and VIX elevated, any deviation from expectations could trigger major moves in either direction.</div>\n\n<h2><span class=\"sec-icon\">◆</span> Levels That Matter</h2>\n\n<ul>\n<li><strong>SPY $740</strong> - Key support. Break below opens door to $725 gap fill from May.</li>\n<li><strong>QQQ $715</strong> - Critical level holding pre-market. Lose this and $700 comes into play fast.</li>\n<li><strong>VIX $25</strong> - Above this level and we're in legitimate fear territory. Watch for acceleration.</li>\n<li><strong>XLK $210</strong> - Tech ETF at make-or-break level. Sector leadership hangs in the balance.</li>\n</ul>\n\n<hr>\n<p><em>Not a prediction. A preparation. Make your plan before the bell.</em></p>",
   "watchlist": {
     "pillars": [
       {
@@ -309,73 +309,15 @@
       },
       {
         "sector": "Healthcare",
-        "stocks": [
-          {
-            "ticker": "ABBV",
-            "price": 224.94,
-            "changePct": 1.1,
-            "volume": 6782013.642348,
-            "ema21": 213.56,
-            "sma50": 209.21,
-            "pct21": 5.33,
-            "pct50": 7.52,
-            "grade": "approaching"
-          }
-        ]
+        "stocks": []
       },
       {
         "sector": "Communication",
-        "stocks": [
-          {
-            "ticker": "NFLX",
-            "price": 81.56,
-            "changePct": -1.96,
-            "volume": 39338810.403442,
-            "ema21": 87.02,
-            "sma50": 92.33,
-            "pct21": -6.27,
-            "pct50": -11.66,
-            "grade": "extended"
-          },
-          {
-            "ticker": "GOOGL",
-            "price": 372.19,
-            "changePct": 3.7,
-            "volume": 44055520.601694,
-            "ema21": 377.13,
-            "sma50": 352.95,
-            "pct21": -1.31,
-            "pct50": 5.45,
-            "grade": "zone"
-          }
-        ]
+        "stocks": []
       },
       {
         "sector": "Defense",
-        "stocks": [
-          {
-            "ticker": "NOC",
-            "price": 545.17,
-            "changePct": 2.38,
-            "volume": 1014259.778612,
-            "ema21": 556.97,
-            "sma50": 604.07,
-            "pct21": -2.12,
-            "pct50": -9.75,
-            "grade": "extended"
-          },
-          {
-            "ticker": "LMT",
-            "price": 519.05,
-            "changePct": 0.25,
-            "volume": 851276.117166,
-            "ema21": 526.5,
-            "sma50": 555.57,
-            "pct21": -1.42,
-            "pct50": -6.57,
-            "grade": "zone"
-          }
-        ]
+        "stocks": []
       }
     ],
     "onTheMove": [
@@ -424,30 +366,7 @@
       },
       {
         "sector": "Defense",
-        "stocks": [
-          {
-            "ticker": "NOC",
-            "price": 545.17,
-            "changePct": 2.38,
-            "volume": 1014259.778612,
-            "ema21": 556.97,
-            "sma50": 604.07,
-            "pct21": -2.12,
-            "pct50": -9.75,
-            "grade": "extended"
-          },
-          {
-            "ticker": "LMT",
-            "price": 519.05,
-            "changePct": 0.25,
-            "volume": 851276.117166,
-            "ema21": 526.5,
-            "sma50": 555.57,
-            "pct21": -1.42,
-            "pct50": -6.57,
-            "grade": "zone"
-          }
-        ]
+        "stocks": []
       }
     ]
   }

@@ -1,36 +1,36 @@
 {
-  "generated": "2026-06-04T14:45:21.670Z",
-  "date": "2026-06-04",
+  "generated": "2026-06-05T14:35:31.785Z",
+  "date": "2026-06-05",
   "indices": [
     {
       "name": "S&P 500",
-      "val": "754.00",
-      "chg": -0.0318,
-      "price": 754
+      "val": "750.02",
+      "chg": -0.9338,
+      "price": 750.02
     },
     {
       "name": "NASDAQ",
-      "val": "736.64",
-      "chg": -1.0172,
-      "price": 736.64
+      "val": "726.02",
+      "chg": -1.97,
+      "price": 726.02
     },
     {
       "name": "DOW",
-      "val": "514.79",
-      "chg": 1.2848,
-      "price": 514.79
+      "val": "515.60",
+      "chg": -0.2129,
+      "price": 515.6
     },
     {
       "name": "RUSSELL",
-      "val": "290.28",
-      "chg": 0.9073,
-      "price": 290.28
+      "val": "287.21",
+      "chg": -1.6438,
+      "price": 287.21
     },
     {
       "name": "VIX",
-      "val": "24.07",
-      "chg": -0.9872,
-      "price": 24.07
+      "val": "23.84",
+      "chg": 1.4468,
+      "price": 23.84
     },
     {
       "name": "10Y",
@@ -43,188 +43,188 @@
     {
       "name": "Tech",
       "symbol": "XLK",
-      "chg": -2.492
+      "chg": -3.2614
     },
     {
       "name": "Health",
       "symbol": "XLV",
-      "chg": 3.0091
+      "chg": 1.4532
     },
     {
       "name": "Financials",
       "symbol": "XLF",
-      "chg": 2.2017
+      "chg": 0.3832
     },
     {
       "name": "Energy",
       "symbol": "XLE",
-      "chg": -0.1363
+      "chg": -0.6638
     },
     {
       "name": "Cons Disc",
       "symbol": "XLY",
-      "chg": 0.711
+      "chg": -0.145
     },
     {
       "name": "Industrials",
       "symbol": "XLI",
-      "chg": 0.586
+      "chg": -0.2725
     },
     {
       "name": "Materials",
       "symbol": "XLB",
-      "chg": 0.368
+      "chg": -0.7749
     },
     {
       "name": "Real Estate",
       "symbol": "XLRE",
-      "chg": 1.0572
+      "chg": 0.6982
     },
     {
       "name": "Utilities",
       "symbol": "XLU",
-      "chg": -0.0686
+      "chg": 0.8648
     },
     {
       "name": "Cons Staples",
       "symbol": "XLP",
-      "chg": 0.9129
+      "chg": 1.7065
     },
     {
       "name": "Comm Svcs",
       "symbol": "XLC",
-      "chg": 1.8291
+      "chg": -0.4951
     }
   ],
   "keyLevels": [
     {
       "tag": "support",
       "label": "SPY Support",
-      "val": "751.47"
+      "val": "748.23"
     },
     {
       "tag": "resist",
       "label": "SPY Resist",
-      "val": "754.29"
+      "val": "752.82"
     },
     {
       "tag": "pivot",
       "label": "QQQ Pivot",
-      "val": "735.82"
+      "val": "727.02"
     },
     {
       "tag": "event",
-      "label": "Challenger Job Cuts",
-      "val": "2026-06-04 09:30:00"
+      "label": "Average Hourly Earni",
+      "val": "2026-06-05 12:30:00"
     }
   ],
   "fearGreed": {
-    "score": 48,
+    "score": 49,
     "label": "Neutral"
   },
   "earnings": [
     {
-      "ticker": "NBB",
+      "ticker": "FGPR",
       "info": "EPS Est: N/A",
       "when": ""
     },
     {
-      "ticker": "ECF",
+      "ticker": "SENEA",
       "info": "EPS Est: N/A",
       "when": ""
     },
     {
-      "ticker": "WLTH",
-      "info": "EPS Est: 0.1209",
-      "when": "AMC"
+      "ticker": "HERE",
+      "info": "EPS Est: N/A",
+      "when": "BMO"
     },
     {
-      "ticker": "CETY",
+      "ticker": "TOUR",
       "info": "EPS Est: N/A",
-      "when": ""
+      "when": "BMO"
     },
     {
-      "ticker": "MFON",
-      "info": "EPS Est: N/A",
-      "when": ""
+      "ticker": "GASS",
+      "info": "EPS Est: 0.3876",
+      "when": "BMO"
     },
     {
-      "ticker": "BRST",
-      "info": "EPS Est: N/A",
+      "ticker": "DAWN",
+      "info": "EPS Est: -0.4284",
       "when": ""
     }
   ],
   "econ": [
     {
-      "time": "2026-06-04 09:30:00",
-      "name": "Challenger Job Cuts",
+      "time": "2026-06-05 12:30:00",
+      "name": "Average Hourly Earnings MoM",
       "impact": "high"
     },
     {
-      "time": "2026-06-04 11:30:00",
-      "name": "Challenger Job Cuts",
+      "time": "2026-06-05 12:30:00",
+      "name": "Average Hourly Earnings YoY",
       "impact": "high"
     },
     {
-      "time": "2026-06-04 12:30:00",
-      "name": "Continuing Jobless Claims",
+      "time": "2026-06-05 12:30:00",
+      "name": "Average Weekly Hours",
       "impact": "high"
     },
     {
-      "time": "2026-06-04 12:30:00",
-      "name": "Fed Barkin Speech",
+      "time": "2026-06-05 12:30:00",
+      "name": "Government Payrolls",
       "impact": "high"
     },
     {
-      "time": "2026-06-04 12:30:00",
-      "name": "Initial Jobless Claims",
+      "time": "2026-06-05 12:30:00",
+      "name": "Manufacturing Payrolls",
       "impact": "high"
     },
     {
-      "time": "2026-06-04 12:30:00",
-      "name": "Jobless Claims 4-week Average",
+      "time": "2026-06-05 12:30:00",
+      "name": "Non Farm Payrolls",
       "impact": "high"
     }
   ],
   "news": [
     {
-      "time": "9:16 AM",
-      "text": "Jim Cramer's top 10 things to watch in the stock market Thursday",
-      "tag": "CNBC",
-      "url": "https://www.cnbc.com/2026/06/04/jim-cramers-top-10-things-to-watch-in-the-stock-market-thursday.html"
-    },
-    {
-      "time": "9:00 AM",
-      "text": "Trafigura profit, volumes, surge in first results since Hormuz closure - Reuters",
+      "time": "9:44 AM",
+      "text": "Iran declares support for Hezbollah with wider peace deal in doubt - Reuters",
       "tag": "Reuters",
-      "url": "https://news.google.com/rss/articles/CBMirgFBVV95cUxQY002cVN5dW5qZXNCOWJ4OGNvSlBwYV9pcDZCTUwxYUZlSmtvRzNueUR5QXMzMHI5bjNmanZnTXZEMHpoZEw1b0tRQ1JxdmxtN1ZmMVc1ZzhOVVNmd3o3REdTcW5xZWdSVm9iMzNKTGZQOXlHOEF1RUg3TkN2ejlIUXE1U2cybVpDWUF2RzlubDJieGpUSVNjU2R4Y21ueHRDZmJ3NWdZaVoyYklyeGc?oc=5"
+      "url": "https://news.google.com/rss/articles/CBMiswFBVV95cUxNMkJmdHFzTERGVlZsOTRwbkozTUFSZ3N4cXZhUlJUY1ZaSTJ4ZjZaYXV0NEhZWHgwbUhYVlhYTmpDakgzXzNiTEJpeGdObmkzR1lVMGtIV3FrWVd5eGJUVHdZaEgzVWVGUnlHbHJOYnNGNlprMzNHY3djMWUweFlGWGoyMnJUNlJJNkJuUlhpWWVFanZZcW04aFBMTUlUd1ZjVUk1c2lrcmFwbTFnTHdZNU02WQ?oc=5"
     },
     {
-      "time": "7:54 AM",
-      "text": "Inside Wealth: Trump's 'big beautiful bill' has a 'double taxation' trap for top earners, tax lawyers say",
+      "time": "9:22 AM",
+      "text": "Jim Cramer's top 10 things to watch in the stock market Friday",
       "tag": "CNBC",
-      "url": "https://www.cnbc.com/2026/06/04/trump-tax-bill-double-taxation-trusts.html"
+      "url": "https://www.cnbc.com/2026/06/05/jim-cramers-top-10-things-to-watch-in-the-stock-market-friday.html"
     },
     {
-      "time": "7:36 AM",
-      "text": "Marjane Satrapi, Iranian-French author of graphic novel 'Persepolis', dies aged 56 - Reuters",
+      "time": "8:19 AM",
+      "text": "Iran says it fired warning missiles and drones at US warships in Gulf of Oman - Reuters",
       "tag": "Reuters",
-      "url": "https://news.google.com/rss/articles/CBMizwFBVV95cUxPVUV6WWw0Smx4TF9DRzdYdVJTdlJHMnlWWlAxLXlMSWpjQ1dNWjkyTmlrN0d2RFluZGQzWmFjYTBLZWYwdlFjNmduNDFhTElYM1VoRDRyZTRoMEoxX19UNm1DdDQwT3I4Z3FSMWMwUGp4WEprdldtV29SaUFVYnMySk1Vb3NGN1BCVEtqczhnOXFwb3ZLd3JZZUFPYW9OZHRfTmVhMjQtRmlrU21HaGRBMHBhZmpoS2R2VHZuQUhaVXZXdUlCYTNleVJTR1VuTFU?oc=5"
+      "url": "https://news.google.com/rss/articles/CBMiugFBVV95cUxPeVp1M3RPRDFGMzZGQ3RtaW1HZzNFZ3IybWFUZk1sZmtYUjM3Vm5BWHBpV0s2LU5YZ3dsdWtSTVJJNU9xeW01XzZ1cWRvYl8zX3g5RlRLbHFtczMzYzhFRTY2X0RtVTZoVFlPa3h1b2ROaWhhcmo0TWVnYURPWVRGUzRsdzhRYWZyNWRhQkJJT2lHeXBhTmxxbUxvRTlTczZGa0pjQ2dBNlhDYWdaVE14UUNMMDRySGx2eFE?oc=5"
     },
     {
-      "time": "6:37 AM",
-      "text": "Eli Manning's private equity firm acquires licensing company for NFL Flag in bet on youth sports",
+      "time": "8:12 AM",
+      "text": "US forces board sanctioned tanker in Indian Ocean, Pentagon says - Reuters",
+      "tag": "Reuters",
+      "url": "https://news.google.com/rss/articles/CBMipAFBVV95cUxONFVpNEYzc3huRHNUeEt6RHZxQllKemFLSnRlUmVYcWlGLVl1Q0RQSGVQQ0dCTFp4UmhJaXkySjdXNlloTlg3dTBxS0JnRWYzYkNhZmViLTE3SUljbkZTeW40U0p1OFhtdkk0eFBJaTIybGx0X2NHYVE0OEZ6MWpNR0RPUl9Ic1JCWTlFb2VYdU1kZUVVdGszVkJDTWU4Z1c0MGNoeA?oc=5"
+    },
+    {
+      "time": "8:00 AM",
+      "text": "Broadway's $1.9 billion season is the latest sign of consumers splurging on experiences",
       "tag": "CNBC",
-      "url": "https://www.cnbc.com/2026/06/04/eli-manning-private-equity-rcx-youth-sports.html"
+      "url": "https://www.cnbc.com/2026/06/05/broadway-record-ticket-sales.html"
     },
     {
-      "time": "6:11 AM",
-      "text": "Indian shares muted ahead of crucial RBI policy decision - Reuters",
-      "tag": "Reuters",
-      "url": "https://news.google.com/rss/articles/CBMisgFBVV95cUxPUVotcUdyRVdLVnM3MWVzMkNRSGFwekdicC1SalB4Tm91WEVveHUzUHVWU2doTXQ5TEdhT0w0dlNDdHlsUmdObkYteHprNURhamJNNFhnUlA0eVhIOUhqR3g4THZ3VWktaW51Q2Y2X2ExS0NNUVZMcXlYbTdPOS1uelgwVTZaNW5JWmxhczNqRDhKRnlkQ3N6VzdEVFpId2JnZGpnWExpMGxXTHRDd3lraEln?oc=5"
+      "time": "8:00 AM",
+      "text": "Family offices bet on sports, from pickleball leagues to smart soccer balls",
+      "tag": "CNBC",
+      "url": "https://www.cnbc.com/2026/06/05/family-office-sport-investments.html"
     }
   ],
-  "brief": "<h2><span class=\"sec-icon\">◆</span> Market Overview</h2>\n\nMixed signals in pre-market with a clear defensive rotation underway. Tech bleeding with QQQ down 1.02% while Healthcare leads at +3.01%, suggesting institutional money is moving to safety. VIX cooling to 24.07 indicates some complacency, but this sector divergence screams caution.\n\n<h2><span class=\"sec-icon\">◆</span> What to Watch</h2>\n\n<ul>\n<li><strong>Initial Jobless Claims (12:30 ET)</strong> - Labor market data could shift Fed expectations with multiple employment metrics hitting simultaneously</li>\n<li><strong>Fed Barkin Speech (12:30 ET)</strong> - Timing with jobs data makes this critical for rate trajectory signals</li>\n<li><strong>Nonfarm Productivity Final (12:30 ET)</strong> - Inflation implications if productivity disappoints while labor costs surge</li>\n<li><strong>Tech Sector Weakness</strong> - XLK down 2.49% needs to hold key support or broader market follows</li>\n</ul>\n\n<h2><span class=\"sec-icon\">◆</span> Sector Rotation</h2>\n\nClassic risk-off rotation with Healthcare (XLV +3.01%) and Financials (XLF +2.20%) leading while Tech gets hammered. This isn't random - smart money positioning for economic uncertainty or rate environment shifts. Energy barely red despite Iran supply concerns suggests demand destruction fears outweigh geopolitics.\n\n<div class=\"callout callout-green\"><div class=\"callout-label\">✦ Bull Case</div>Healthcare strength suggests institutional rotation, not broad selling. Small caps (IWM +0.91%) outperforming indicates domestic growth optimism intact.</div>\n\n<div class=\"callout callout-red\"><div class=\"callout-label\">⚠ Bear Case</div>Tech weakness spreading could trigger broader tech selloff. VIX at 24 means any surprise from jobs data or Fed speech amplifies volatility.</div>\n\n<div class=\"callout callout-amber\"><div class=\"callout-label\">⚡ Key Driver</div>12:30 ET data dump with jobs claims, productivity, and Fed speech simultaneously could whipsaw markets in either direction.</div>\n\n<h2><span class=\"sec-icon\">◆</span> Levels That Matter</h2>\n\n<ul>\n<li><strong>SPY 750</strong> - Critical support, break below opens 740 gap fill</li>\n<li><strong>QQQ 730</strong> - Must hold or tech rout accelerates</li>\n<li><strong>XLK 185</strong> - Sector support level, break triggers broader tech selling</li>\n<li><strong>VIX 26</strong> - Break above signals fear escalation, defensive positioning warranted</li>\n</ul>\n\n<hr>\n<p><em>Not a prediction. A preparation. Make your plan before the bell.</em></p>",
+  "brief": "<h2><span class=\"sec-icon\">◆</span> Market Overview</h2>\n\nPre-market showing classic risk-off with tech getting hammered (-3.26%) while defensive sectors rally. SPY down 0.93% to $750, but VIX only at 23.84 suggests this isn't panic mode yet. Iran tensions escalating with missile warnings at US warships - geopolitical premium building into Friday's NFP.\n\n<h2><span class=\"sec-icon\">◆</span> What to Watch</h2>\n\n<ul>\n<li><strong>Non-Farm Payrolls (12:30 ET):</strong> The big kahuna today. Full employment data dump including wages and participation rate.</li>\n<li><strong>Iran-US Tensions:</strong> Warning missiles fired at US warships in Gulf of Oman. Oil and defense plays getting bid.</li>\n<li><strong>Tech Rotation:</strong> QQQ down nearly 2% pre-market. Watch if this is profit-taking or real distribution.</li>\n<li><strong>G III Apparel (GIII):</strong> BMO earnings with -$0.31 EPS estimate. Consumer discretionary health check.</li>\n</ul>\n\n<div class=\"callout callout-amber\"><div class=\"callout-label\">⚡ Key Driver</div>Jobs report at 12:30 ET will dictate afternoon direction. Strong number could accelerate tech selling as rate cut hopes fade further.</div>\n\n<h2><span class=\"sec-icon\">◆</span> Sector Rotation</h2>\n\nMoney flooding into defensive plays - Consumer Staples (XLP) up 1.71%, Health (XLV) +1.45%, Utilities (XLU) +0.86%. Classic flight to safety with geopolitical heat and NFP uncertainty. Tech getting destroyed while Dow making records - the rotation to value accelerating.\n\n<div class=\"callout callout-red\"><div class=\"callout-label\">⚠ Bear Case</div>Tech breakdown continues with growth premium collapsing. Iran situation escalates, triggering broader risk-off into the weekend.</div>\n\n<div class=\"callout callout-green\"><div class=\"callout-label\">✦ Bull Case</div>Healthy rotation from overvalued tech to fundamentally sound value plays. Dow leadership suggests institutional money still working.</div>\n\n<h2><span class=\"sec-icon\">◆</span> Levels That Matter</h2>\n\n<ul>\n<li><strong>SPY $745:</strong> Key support from May lows. Break here opens $735-740 zone.</li>\n<li><strong>QQQ $720:</strong> Major technical support. Violation signals deeper tech correction.</li>\n<li><strong>VIX $25:</strong> Above this level and we're in real fear territory for weekend holding.</li>\n<li><strong>DIA $520:</strong> Dow strength continuation above this resistance confirms leadership rotation.</li>\n</ul>\n\n<hr>\n<p><em>Not a prediction. A preparation. Make your plan before the bell.</em></p>",
   "watchlist": {
     "pillars": [
       {
@@ -232,57 +232,57 @@
         "stocks": [
           {
             "ticker": "AAPL",
-            "price": 310.26,
-            "changePct": -1.25,
-            "volume": 50836705.186145,
-            "ema21": 300.51,
-            "sma50": 278.95,
-            "pct21": 3.25,
-            "pct50": 11.22,
+            "price": 311.23,
+            "changePct": -0.64,
+            "volume": 44869134.400348,
+            "ema21": 301.48,
+            "sma50": 280.14,
+            "pct21": 3.23,
+            "pct50": 11.1,
             "grade": "approaching"
           },
           {
             "ticker": "AMD",
-            "price": 542.52,
+            "price": 523.2,
             "changePct": 1.64,
-            "volume": 29411149.186162,
-            "ema21": 457.7,
-            "sma50": 347.44,
-            "pct21": 18.53,
-            "pct50": 56.15,
+            "volume": 29109999.793875,
+            "ema21": 463.65,
+            "sma50": 353.8,
+            "pct21": 12.84,
+            "pct50": 47.88,
             "grade": "extended"
           },
           {
             "ticker": "NVDA",
-            "price": 214.75,
-            "changePct": -3.14,
-            "volume": 160907001.706774,
-            "ema21": 215.43,
-            "sma50": 202.05,
-            "pct21": -0.32,
-            "pct50": 6.29,
+            "price": 218.66,
+            "changePct": 2.22,
+            "volume": 169022152.423913,
+            "ema21": 215.72,
+            "sma50": 202.92,
+            "pct21": 1.36,
+            "pct50": 7.76,
             "grade": "zone"
           },
           {
             "ticker": "MSFT",
-            "price": 427.34,
-            "changePct": -2.53,
-            "volume": 39037007.174846,
-            "ema21": 424.67,
-            "sma50": 406.33,
-            "pct21": 0.63,
-            "pct50": 5.17,
+            "price": 428.05,
+            "changePct": -1.78,
+            "volume": 26899511.802233,
+            "ema21": 424.96,
+            "sma50": 407.44,
+            "pct21": 0.73,
+            "pct50": 5.06,
             "grade": "zone"
           },
           {
             "ticker": "META",
-            "price": 622.98,
-            "changePct": 3.31,
-            "volume": 23020056.279322,
-            "ema21": 618.03,
-            "sma50": 618.87,
-            "pct21": 0.8,
-            "pct50": 0.66,
+            "price": 627.57,
+            "changePct": 0.63,
+            "volume": 21469248.475394,
+            "ema21": 618.88,
+            "sma50": 619.56,
+            "pct21": 1.4,
+            "pct50": 1.29,
             "grade": "zone"
           }
         ]
@@ -309,15 +309,73 @@
       },
       {
         "sector": "Healthcare",
-        "stocks": []
+        "stocks": [
+          {
+            "ticker": "ABBV",
+            "price": 224.94,
+            "changePct": 1.1,
+            "volume": 6782013.642348,
+            "ema21": 213.56,
+            "sma50": 209.21,
+            "pct21": 5.33,
+            "pct50": 7.52,
+            "grade": "approaching"
+          }
+        ]
       },
       {
         "sector": "Communication",
-        "stocks": []
+        "stocks": [
+          {
+            "ticker": "NFLX",
+            "price": 81.56,
+            "changePct": -1.96,
+            "volume": 39338810.403442,
+            "ema21": 87.02,
+            "sma50": 92.33,
+            "pct21": -6.27,
+            "pct50": -11.66,
+            "grade": "extended"
+          },
+          {
+            "ticker": "GOOGL",
+            "price": 372.19,
+            "changePct": 3.7,
+            "volume": 44055520.601694,
+            "ema21": 377.13,
+            "sma50": 352.95,
+            "pct21": -1.31,
+            "pct50": 5.45,
+            "grade": "zone"
+          }
+        ]
       },
       {
         "sector": "Defense",
-        "stocks": []
+        "stocks": [
+          {
+            "ticker": "NOC",
+            "price": 545.17,
+            "changePct": 2.38,
+            "volume": 1014259.778612,
+            "ema21": 556.97,
+            "sma50": 604.07,
+            "pct21": -2.12,
+            "pct50": -9.75,
+            "grade": "extended"
+          },
+          {
+            "ticker": "LMT",
+            "price": 519.05,
+            "changePct": 0.25,
+            "volume": 851276.117166,
+            "ema21": 526.5,
+            "sma50": 555.57,
+            "pct21": -1.42,
+            "pct50": -6.57,
+            "grade": "zone"
+          }
+        ]
       }
     ],
     "onTheMove": [
@@ -326,24 +384,24 @@
         "stocks": [
           {
             "ticker": "AMD",
-            "price": 542.52,
+            "price": 523.2,
             "changePct": 1.64,
-            "volume": 29411149.186162,
-            "ema21": 457.7,
-            "sma50": 347.44,
-            "pct21": 18.53,
-            "pct50": 56.15,
+            "volume": 29109999.793875,
+            "ema21": 463.65,
+            "sma50": 353.8,
+            "pct21": 12.84,
+            "pct50": 47.88,
             "grade": "extended"
           },
           {
             "ticker": "NVDA",
-            "price": 214.75,
-            "changePct": -3.14,
-            "volume": 160907001.706774,
-            "ema21": 215.43,
-            "sma50": 202.05,
-            "pct21": -0.32,
-            "pct50": 6.29,
+            "price": 218.66,
+            "changePct": 2.22,
+            "volume": 169022152.423913,
+            "ema21": 215.72,
+            "sma50": 202.92,
+            "pct21": 1.36,
+            "pct50": 7.76,
             "grade": "zone"
           }
         ]
@@ -358,72 +416,38 @@
       },
       {
         "sector": "Space",
-        "stocks": [
-          {
-            "ticker": "LUNR",
-            "price": 33.83,
-            "changePct": -8.69,
-            "volume": 16521518.739063,
-            "ema21": 34.97,
-            "sma50": 28.19,
-            "pct21": -3.27,
-            "pct50": 20.02,
-            "grade": "extended"
-          }
-        ]
+        "stocks": []
       },
       {
         "sector": "Drones",
-        "stocks": [
-          {
-            "ticker": "JOBY",
-            "price": 11.43,
-            "changePct": -1.34,
-            "volume": 32629016.786201,
-            "ema21": 10.88,
-            "sma50": 9.61,
-            "pct21": 5.04,
-            "pct50": 18.94,
-            "grade": "approaching"
-          },
-          {
-            "ticker": "ONDS",
-            "price": 11.61,
-            "changePct": -10.42,
-            "volume": 95129027.470256,
-            "ema21": 10.97,
-            "sma50": 10.07,
-            "pct21": 5.85,
-            "pct50": 15.33,
-            "grade": "approaching"
-          },
-          {
-            "ticker": "UMAC",
-            "price": 28.86,
-            "changePct": -7.14,
-            "volume": 9139019.295055,
-            "ema21": 21.16,
-            "sma50": 16.05,
-            "pct21": 36.39,
-            "pct50": 79.8,
-            "grade": "extended"
-          },
-          {
-            "ticker": "ACHR",
-            "price": 6.53,
-            "changePct": -1.06,
-            "volume": 51682079.662037,
-            "ema21": 6.38,
-            "sma50": 5.94,
-            "pct21": 2.4,
-            "pct50": 9.96,
-            "grade": "zone"
-          }
-        ]
+        "stocks": []
       },
       {
         "sector": "Defense",
-        "stocks": []
+        "stocks": [
+          {
+            "ticker": "NOC",
+            "price": 545.17,
+            "changePct": 2.38,
+            "volume": 1014259.778612,
+            "ema21": 556.97,
+            "sma50": 604.07,
+            "pct21": -2.12,
+            "pct50": -9.75,
+            "grade": "extended"
+          },
+          {
+            "ticker": "LMT",
+            "price": 519.05,
+            "changePct": 0.25,
+            "volume": 851276.117166,
+            "ema21": 526.5,
+            "sma50": 555.57,
+            "pct21": -1.42,
+            "pct50": -6.57,
+            "grade": "zone"
+          }
+        ]
       }
     ]
   }

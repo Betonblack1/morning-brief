@@ -387,8 +387,9 @@ body{font-family:var(--sans);background:var(--bg);color:var(--text);min-height:1
 const today=new Date().toLocaleDateString('en-US',{weekday:'long',year:'numeric',month:'long',day:'numeric'});
 document.getElementById('currentDate').textContent=new Date().toLocaleDateString('en-US',{weekday:'short',month:'short',day:'numeric',year:'numeric'}).toUpperCase();
 
-// ── HALT MONITOR — reads halts.json (written by GitHub Actions) ──
-const HALTS_JSON='halts.json';
+// ── HALT MONITOR — live NASDAQ RSS fetch (browser, no GitHub Actions dependency) ──
+const NASDAQ_RSS='https://www.nasdaqtrader.com/rss.aspx?feed=tradehalts';
+const CORS_PROXY='https://api.allorigins.win/get?url=';
 const MAX_CARDS=5;
 
 // Parse HH:MM:SS to seconds since midnight for comparison
@@ -404,17 +405,44 @@ function nowETSec(){
   return et.getHours()*3600+et.getMinutes()*60+et.getSeconds();
 }
 
+// Parse NASDAQ halt RSS XML into halt objects matching the old halts.json shape
+function parseHaltXML(xmlText){
+  const NS='http://www.nasdaqtrader.com/';
+  const parser=new DOMParser();
+  const doc=parser.parseFromString(xmlText,'text/xml');
+  const items=[...doc.querySelectorAll('item')];
+  const g=(el,field)=>{
+    const ns=el.getElementsByTagNameNS(NS,field);
+    if(ns.length)return (ns[0].textContent||'').trim();
+    // fallback: no-namespace
+    const plain=el.getElementsByTagName(field);
+    return plain.length?(plain[0].textContent||'').trim():'';
+  };
+  return items.map(el=>({
+    ticker:      g(el,'IssueSymbol'),
+    company:     g(el,'IssueName'),
+    reason:      g(el,'ReasonCode'),
+    haltDate:    g(el,'HaltDate'),
+    haltTime:    g(el,'HaltTime'),
+    market:      g(el,'Market'),
+    resumeQuote: g(el,'ResumptionQuoteTime'),
+    resumeTrade: g(el,'ResumptionTradeTime'),
+    pausePrice:  g(el,'PauseThresholdPrice'),
+  })).filter(h=>h.ticker);
+}
+
 async function pollHalts(){
   const pulse=document.getElementById('ludp-pulse');
   const timeEl=document.getElementById('ludp-time');
   pulse.style.background='var(--cyan)';pulse.style.boxShadow='0 0 8px rgba(0,212,255,.7)';
   try{
-    const res=await fetch(HALTS_JSON+'?t='+Date.now());
+    const proxyURL=CORS_PROXY+encodeURIComponent(NASDAQ_RSS+'&t='+Date.now());
+    const res=await fetch(proxyURL);
     if(!res.ok)throw new Error('HTTP '+res.status);
-    const data=await res.json();
-    const halts=data.halts||[];
-    const t=data.updated?new Date(data.updated).toLocaleTimeString('en-US',{timeZone:'America/New_York',hour:'2-digit',minute:'2-digit',second:'2-digit'}):'—';
-    timeEl.textContent='updated '+t+' ET';
+    const json=await res.json();
+    const halts=parseHaltXML(json.contents||'');
+    const t=new Date().toLocaleTimeString('en-US',{timeZone:'America/New_York',hour:'2-digit',minute:'2-digit',second:'2-digit'});
+    timeEl.textContent='live · updated '+t+' ET';
 
     // Get all LUDP halts, sort newest first by haltTime
     const now=nowETSec();
@@ -494,7 +522,7 @@ function loadScout(t){
   el.style.borderColor='var(--cyan)';setTimeout(()=>{el.style.borderColor='';},1500);
 }
 
-pollHalts();setInterval(pollHalts,30000);
+pollHalts();setInterval(pollHalts,120000); // 2-min live RSS poll
 
 // ── CALCULATOR ────────────────────────────────────────────
 function calcAutoStop(){

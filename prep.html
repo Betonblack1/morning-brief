@@ -316,7 +316,7 @@ body{font-family:var(--sans);background:var(--bg);color:var(--text);min-height:1
             </div>
             <div id="ludp-idle" style="background:#071820;border:1px solid #1a3a45;border-radius:4px;text-align:center;flex:1;display:flex;flex-direction:column;align-items:center;justify-content:center;min-height:140px;">
               <div style="font-family:var(--mono);font-size:.82rem;letter-spacing:.12em;text-transform:uppercase;color:#2a5a6a;margin-bottom:8px;">Watching for LUDP halts...</div>
-              <div style="font-family:var(--mono);font-size:.7rem;color:#1a3a4a;">Updates every 2 min via GitHub Actions</div>
+              <div id="ludp-idle-sub" style="font-family:var(--mono);font-size:.7rem;color:#1a3a4a;">Refreshes every 30s</div>
             </div>
             <div id="ludp-active" style="display:none;flex-direction:column;gap:6px;" hidden></div>
           </div>
@@ -387,10 +387,11 @@ body{font-family:var(--sans);background:var(--bg);color:var(--text);min-height:1
 const today=new Date().toLocaleDateString('en-US',{weekday:'long',year:'numeric',month:'long',day:'numeric'});
 document.getElementById('currentDate').textContent=new Date().toLocaleDateString('en-US',{weekday:'short',month:'short',day:'numeric',year:'numeric'}).toUpperCase();
 
-// ── HALT MONITOR — live NASDAQ RSS fetch (browser, no GitHub Actions dependency) ──
-const NASDAQ_RSS='https://www.nasdaqtrader.com/rss.aspx?feed=tradehalts';
-const CORS_PROXY='https://api.allorigins.win/get?url=';
+// ── HALT MONITOR — reads halts.json (written by GitHub Actions every 2 min) ──
+const HALTS_JSON='halts.json';
 const MAX_CARDS=5;
+const STALE_WARN_MS=5*60*1000;   // warn if file is >5 min old
+const STALE_ERROR_MS=15*60*1000; // error state if >15 min old
 
 // Parse HH:MM:SS to seconds since midnight for comparison
 function timeToSec(t){
@@ -405,44 +406,37 @@ function nowETSec(){
   return et.getHours()*3600+et.getMinutes()*60+et.getSeconds();
 }
 
-// Parse NASDAQ halt RSS XML into halt objects matching the old halts.json shape
-function parseHaltXML(xmlText){
-  const NS='http://www.nasdaqtrader.com/';
-  const parser=new DOMParser();
-  const doc=parser.parseFromString(xmlText,'text/xml');
-  const items=[...doc.querySelectorAll('item')];
-  const g=(el,field)=>{
-    const ns=el.getElementsByTagNameNS(NS,field);
-    if(ns.length)return (ns[0].textContent||'').trim();
-    // fallback: no-namespace
-    const plain=el.getElementsByTagName(field);
-    return plain.length?(plain[0].textContent||'').trim():'';
-  };
-  return items.map(el=>({
-    ticker:      g(el,'IssueSymbol'),
-    company:     g(el,'IssueName'),
-    reason:      g(el,'ReasonCode'),
-    haltDate:    g(el,'HaltDate'),
-    haltTime:    g(el,'HaltTime'),
-    market:      g(el,'Market'),
-    resumeQuote: g(el,'ResumptionQuoteTime'),
-    resumeTrade: g(el,'ResumptionTradeTime'),
-    pausePrice:  g(el,'PauseThresholdPrice'),
-  })).filter(h=>h.ticker);
-}
-
 async function pollHalts(){
   const pulse=document.getElementById('ludp-pulse');
   const timeEl=document.getElementById('ludp-time');
+  const sub=document.getElementById('ludp-idle-sub');
   pulse.style.background='var(--cyan)';pulse.style.boxShadow='0 0 8px rgba(0,212,255,.7)';
   try{
-    const proxyURL=CORS_PROXY+encodeURIComponent(NASDAQ_RSS+'&t='+Date.now());
-    const res=await fetch(proxyURL);
+    const res=await fetch(HALTS_JSON+'?t='+Date.now());
     if(!res.ok)throw new Error('HTTP '+res.status);
-    const json=await res.json();
-    const halts=parseHaltXML(json.contents||'');
-    const t=new Date().toLocaleTimeString('en-US',{timeZone:'America/New_York',hour:'2-digit',minute:'2-digit',second:'2-digit'});
-    timeEl.textContent='live · updated '+t+' ET';
+    const data=await res.json();
+    const halts=data.halts||[];
+
+    // Staleness check
+    const fileAge=data.updated?Date.now()-new Date(data.updated).getTime():null;
+    const t=data.updated?new Date(data.updated).toLocaleTimeString('en-US',{timeZone:'America/New_York',hour:'2-digit',minute:'2-digit',second:'2-digit'}):'—';
+
+    if(fileAge!==null && fileAge>STALE_ERROR_MS){
+      // >15 min stale — market likely closed or Actions broken
+      pulse.style.background='var(--amber)';pulse.style.boxShadow='0 0 8px rgba(255,180,0,.6)';
+      const mins=Math.floor(fileAge/60000);
+      timeEl.textContent='⚠ stale · '+mins+'m ago';
+      if(sub){sub.textContent='Market closed or Actions paused';sub.style.color='var(--amber)';}
+    } else if(fileAge!==null && fileAge>STALE_WARN_MS){
+      // 5–15 min stale — warn but still show data
+      pulse.style.background='var(--amber)';pulse.style.boxShadow='0 0 8px rgba(255,180,0,.6)';
+      const mins=Math.floor(fileAge/60000);
+      timeEl.textContent='⚠ '+mins+'m ago · '+t+' ET';
+      if(sub){sub.textContent='Actions may be delayed';sub.style.color='var(--amber)';}
+    } else {
+      timeEl.textContent='updated '+t+' ET';
+      if(sub){sub.textContent='Refreshes every 30s';sub.style.color='#1a3a4a';}
+    }
 
     // Get all LUDP halts, sort newest first by haltTime
     const now=nowETSec();
@@ -463,8 +457,10 @@ async function pollHalts(){
     const badge=document.getElementById('sb-halt-count');
     if(ludpAll.length>0){badge.textContent=ludpAll.length;badge.style.display='inline';}else{badge.style.display='none';}
   }catch(e){
-    pulse.style.background='var(--muted)';pulse.style.boxShadow='none';
-    timeEl.textContent='unavailable';
+    pulse.style.background='var(--red)';pulse.style.boxShadow='0 0 8px rgba(255,64,96,.7)';
+    timeEl.textContent='fetch error · halts.json missing?';
+    const sub=document.getElementById('ludp-idle-sub');
+    if(sub){sub.textContent='halts.json not found — check Actions ran';sub.style.color='var(--red)';}
   }
 }
 
@@ -522,7 +518,7 @@ function loadScout(t){
   el.style.borderColor='var(--cyan)';setTimeout(()=>{el.style.borderColor='';},1500);
 }
 
-pollHalts();setInterval(pollHalts,120000); // 2-min live RSS poll
+pollHalts();setInterval(pollHalts,30000); // 30s — picks up new halts.json fast
 
 // ── CALCULATOR ────────────────────────────────────────────
 function calcAutoStop(){

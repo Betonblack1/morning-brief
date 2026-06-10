@@ -1,36 +1,36 @@
 {
-  "generated": "2026-06-09T14:36:38.050Z",
-  "date": "2026-06-09",
+  "generated": "2026-06-10T15:21:17.233Z",
+  "date": "2026-06-10",
   "indices": [
     {
       "name": "S&P 500",
-      "val": "741.17",
-      "chg": 0.2638,
-      "price": 741.17
+      "val": "729.71",
+      "chg": -0.9959,
+      "price": 729.71
     },
     {
       "name": "NASDAQ",
-      "val": "715.76",
-      "chg": -0.0433,
-      "price": 715.76
+      "val": "697.55",
+      "chg": -1.4523,
+      "price": 697.55
     },
     {
       "name": "DOW",
-      "val": "511.71",
-      "chg": 0.5502,
-      "price": 511.71
+      "val": "503.94",
+      "chg": -1.0738,
+      "price": 503.94
     },
     {
       "name": "RUSSELL",
-      "val": "287.87",
-      "chg": 1.3234,
-      "price": 287.87
+      "val": "283.79",
+      "chg": -0.4315,
+      "price": 283.79
     },
     {
       "name": "VIX",
-      "val": "24.48",
-      "chg": -1.1309,
-      "price": 24.48
+      "val": "26.50",
+      "chg": 5.2841,
+      "price": 26.5
     },
     {
       "name": "10Y",
@@ -43,287 +43,242 @@
     {
       "name": "Tech",
       "symbol": "XLK",
-      "chg": -0.5484
+      "chg": -1.8864
     },
     {
       "name": "Health",
       "symbol": "XLV",
-      "chg": 1.0744
+      "chg": -0.0194
     },
     {
       "name": "Financials",
       "symbol": "XLF",
-      "chg": 1.2122
+      "chg": 0.1144
     },
     {
       "name": "Energy",
       "symbol": "XLE",
-      "chg": -1.8515
+      "chg": 2.1607
     },
     {
       "name": "Cons Disc",
       "symbol": "XLY",
-      "chg": 1.5773
+      "chg": -1.4931
     },
     {
       "name": "Industrials",
       "symbol": "XLI",
-      "chg": 1.2267
+      "chg": -2.6139
     },
     {
       "name": "Materials",
       "symbol": "XLB",
-      "chg": 1.261
+      "chg": -1.3197
     },
     {
       "name": "Real Estate",
       "symbol": "XLRE",
-      "chg": 2.0668
+      "chg": 0.5337
     },
     {
       "name": "Utilities",
       "symbol": "XLU",
-      "chg": 0.4825
+      "chg": 0.2274
     },
     {
       "name": "Cons Staples",
       "symbol": "XLP",
-      "chg": 1.0593
+      "chg": 1.5933
     },
     {
       "name": "Comm Svcs",
       "symbol": "XLC",
-      "chg": 0.8282
+      "chg": 0.305
     }
   ],
   "keyLevels": [
     {
       "tag": "support",
       "label": "SPY Support",
-      "val": "739.42"
+      "val": "729.51"
     },
     {
       "tag": "resist",
       "label": "SPY Resist",
-      "val": "746.90"
+      "val": "738.38"
     },
     {
       "tag": "pivot",
       "label": "QQQ Pivot",
-      "val": "718.48"
+      "val": "701.98"
     },
     {
       "tag": "event",
-      "label": "NFIB Business Optimi",
-      "val": "2026-06-09 10:00:00"
+      "label": "MBA 30-Year Mortgage",
+      "val": "2026-06-10 11:00:00"
     }
   ],
   "fearGreed": {
-    "score": 46,
-    "label": "Neutral"
+    "score": 37,
+    "label": "Fear"
   },
   "earnings": [
     {
-      "ticker": "SUJA",
-      "info": "EPS Est: 0.2176",
+      "ticker": "NAVN",
+      "info": "EPS Est: -0.0098",
       "when": "AMC"
     },
     {
-      "ticker": "SAIL",
-      "info": "EPS Est: 0.0451",
-      "when": "BMO"
-    },
-    {
-      "ticker": "VLGEA",
+      "ticker": "IDWM",
       "info": "EPS Est: N/A",
       "when": ""
     },
     {
-      "ticker": "WELNF",
+      "ticker": "NOBH",
       "info": "EPS Est: N/A",
       "when": ""
     },
     {
-      "ticker": "APXIF",
+      "ticker": "IVDN",
       "info": "EPS Est: N/A",
       "when": ""
     },
     {
-      "ticker": "TPHS",
+      "ticker": "IEHC",
+      "info": "EPS Est: N/A",
+      "when": ""
+    },
+    {
+      "ticker": "MSB",
       "info": "EPS Est: N/A",
       "when": ""
     }
   ],
   "econ": [
     {
-      "time": "2026-06-09 10:00:00",
-      "name": "NFIB Business Optimism Index",
+      "time": "2026-06-10 11:00:00",
+      "name": "MBA 30-Year Mortgage Rate",
       "impact": "high"
     },
     {
-      "time": "2026-06-09 12:15:00",
-      "name": "ADP Employment Change Weekly",
+      "time": "2026-06-10 11:00:00",
+      "name": "MBA Mortgage Applications",
       "impact": "high"
     },
     {
-      "time": "2026-06-09 12:30:00",
-      "name": "Balance of Trade",
+      "time": "2026-06-10 11:00:00",
+      "name": "MBA Mortgage Market Index",
       "impact": "high"
     },
     {
-      "time": "2026-06-09 12:30:00",
-      "name": "Exports",
+      "time": "2026-06-10 11:00:00",
+      "name": "MBA Mortgage Refinance Index",
       "impact": "high"
     },
     {
-      "time": "2026-06-09 12:30:00",
-      "name": "Imports",
+      "time": "2026-06-10 11:00:00",
+      "name": "MBA Purchase Index",
       "impact": "high"
     },
     {
-      "time": "2026-06-09 12:55:00",
-      "name": "Redbook YoY",
+      "time": "2026-06-10 12:30:00",
+      "name": "Core Inflation Rate MoM",
       "impact": "high"
     }
   ],
   "news": [
     {
-      "time": "9:26 AM",
-      "text": "Most Gulf markets rebound after Iran and Israel halt attacks - Reuters",
+      "time": "10:57 AM",
+      "text": "Palantir's Karp says businesses are 'unhappy' with the frontier AI labs",
+      "tag": "CNBC",
+      "url": "https://www.cnbc.com/2026/06/10/palantir-karp-enterprise-ai.html"
+    },
+    {
+      "time": "9:52 AM",
+      "text": "Trump says Iran has taken too long to negotiate, will 'pay the price' - Reuters",
       "tag": "Reuters",
-      "url": "https://news.google.com/rss/articles/CBMisAFBVV95cUxOa09iM1JTQ3pyNmMwcm5uRWVuclk4TUtFQzJLNVctdmVwVElVVXQzUmxlanNCSWFvenJXSmN5Sjc4aXBtbndEd25CSDhuSTNGOW1OSDRVUEFNQXRzNFQ2c1hxN1NMdHNxdlloaU1jTjh6V19Ybkt0bDZoU2N4cjFBTVlKZXdRaEVWOS1aaW5Zd0xHMWtWc1pwVURqdUwxSE5oa1lWb19UeFBTUjkwVUhkQg?oc=5"
+      "url": "https://news.google.com/rss/articles/CBMiswFBVV95cUxOQjBfR0dyb2k4WjB2MkZEMjVxLTladHdVNmk5R2tjUHh2SmVmRGs5SDZBLTRuSEJOMzdxMnFoZmZDWEh3VzhBalF3MmtGMUFfelB5Vm9fb3JROUFOaVUwWUxqUTBtbURXTnYtOUNUZ1U2UkxoZnNoN1ZvLWlIN2VvNVBhNmJlUlRZYlJ4ZERYRnA5LTJ3QktSU1VwUkNzS2RWeGpmR05ndllnalFqeVp5endGQQ?oc=5"
     },
     {
-      "time": "9:14 AM",
-      "text": "Jim Cramer's top 10 things to watch in the stock market Tuesday",
+      "time": "9:50 AM",
+      "text": "Amazon trucking expansion sparks freight stock selloff",
       "tag": "CNBC",
-      "url": "https://www.cnbc.com/2026/06/09/jim-cramers-top-10-things-to-watch-in-the-stock-market-tuesday.html"
+      "url": "https://www.cnbc.com/2026/06/10/amazon-trucking-expansion-freight-stock-selloff.html"
     },
     {
-      "time": "8:05 AM",
-      "text": "Climate cost of expanded World Cup under scrutiny as emissions set to soar - Reuters",
+      "time": "9:35 AM",
+      "text": "We're trimming another stock to increase cash ahead of any SpaceX IPO volatility",
+      "tag": "CNBC",
+      "url": "https://www.cnbc.com/2026/06/10/were-trimming-a-stock-raising-our-large-cash-position-ahead-of-volatility.html"
+    },
+    {
+      "time": "9:21 AM",
+      "text": "Two crew missing after suspected US strike on tanker off Oman - Reuters",
       "tag": "Reuters",
-      "url": "https://news.google.com/rss/articles/CBMivwFBVV95cUxNT2hObnZJYjNzS2NFME5fVkdndElQVVd6UWZqdXhBejJMSkl2eTQ3R2VVSUlUeHFFYldIMlVjbl9BTElwbEVsUm10S004VGtJT29ETVZtWUk2RU5wRl82Nkt1Ym9oVW52LUdvNkVMdjdUWkV4bG9NcERjT25WMGhlUzdiaDJiLTgxdVVvVkU3djNJVjRKcGlQaVBCMUlqa3RWeEIzdHloeVAzVjg1SHdSX25GNG9HWjFyQ29mY245bw?oc=5"
+      "url": "https://news.google.com/rss/articles/CBMiqwFBVV95cUxORWRzWENKaDVOcTgwMVNLLVlhMVhzYXphRExOeXY1dFN1S1NSdUd0YnhYVkdCMFEzQ1B2TFdKNlhnM1Z3dmVuZlJYRU16ZTlGWDR5VFRfLW8zOVRuc2NBNnNKU1ZJX2g1VnRyakxNMFhmNWVsVGdSdTUxVm9GZWJKaUY3ZVF4eEpobFNjb2daWEVwd3gwM2pIVERFenlZMXowQlJUNU13RHpveGM?oc=5"
     },
     {
-      "time": "8:00 AM",
-      "text": "5 takeaways from airline CEOs' biggest annual gathering",
-      "tag": "CNBC",
-      "url": "https://www.cnbc.com/2026/06/09/iata-annual-meeting-airline-ceo-takeaways.html"
-    },
-    {
-      "time": "7:00 AM",
-      "text": "Trump's trade war has a new target: forced labor. The case behind it is far from simple",
-      "tag": "CNBC",
-      "url": "https://www.cnbc.com/2026/06/09/trump-tariffs-trade-china-forced-labor.html"
-    },
-    {
-      "time": "6:30 AM",
-      "text": "51% of U.S. adults say the American Dream is out of reach for most people right now: CNBC survey",
-      "tag": "CNBC",
-      "url": "https://www.cnbc.com/2026/06/09/american-dream-out-of-reach-most-people-right-now-cnbc-survey.html"
+      "time": "9:05 AM",
+      "text": "German air show opens under shadow of Iran war, fighter project collapse - Reuters",
+      "tag": "Reuters",
+      "url": "https://news.google.com/rss/articles/CBMitwFBVV95cUxQY19XWE1kZ1Z2U3JJWE1ZY2NNa0RraU16Ty1kU2c2TG5YQktkOEVHdTZ4V09ydjF2RVZRVnNPQ0U5WUJLS2hLS3Vhcy1zNVU1UEoyV2ZNYkl1eElQQXBfN2ppal9zaHY4eWlxZ0RuU3llZ09weW9EajM1aE96d1ZUUkNvemZ3aEl2Y1czaUFueE5IVEJtRW05Skw4Ymg1ckZILWdiRUE5TUFhT3NXSzkwRjNlMm42d1U?oc=5"
     }
   ],
-  "brief": "<h2><span class=\"sec-icon\">◆</span> Market Overview</h2>\n\nMarkets showing cautious optimism in pre-market with SPY up 0.26% to $741.17, though NASDAQ lagging slightly at -0.04%. VIX dropping to 24.48 signals some risk appetite returning, while small caps (IWM) leading with +1.32% suggests rotation into domestic plays. Geopolitical relief from Iran-Israel ceasefire driving early sentiment.\n\n<h2><span class=\"sec-icon\">◆</span> What to Watch</h2>\n\n<ul>\n<li><strong>NFIB Business Optimism (10:00 AM)</strong> - Small business sentiment will be key given IWM strength</li>\n<li><strong>ADP Employment Weekly (12:15 PM)</strong> - Labor market data ahead of Friday's NFP</li>\n<li><strong>Trade Balance (12:30 PM)</strong> - Import/export data amid ongoing trade tensions</li>\n<li><strong>Energy sector weakness</strong> - XLE down 1.85% despite Middle East tensions easing</li>\n</ul>\n\n<div class=\"callout callout-green\"><div class=\"callout-label\">✦ Bull Case</div>Small cap leadership suggests confidence in domestic economy. Real estate (XLRE) up 2.07% indicates rate cut expectations building momentum.</div>\n\n<div class=\"callout callout-amber\"><div class=\"callout-label\">⚡ Key Driver</div>Iran-Israel ceasefire removing major geopolitical overhang. Oil complex cooling off as supply disruption fears fade.</div>\n\n<h2><span class=\"sec-icon\">◆</span> Sector Rotation</h2>\n\nClear defensive-to-cyclical rotation underway with Real Estate, Consumer Discretionary, and Financials leading while Tech and Energy lag. XLF up 1.21% suggests market pricing in economic resilience despite rate uncertainty. Energy's 1.85% drop counterintuitive given recent tensions - watch for oversold bounce if geopolitics heat up again.\n\n<div class=\"callout callout-red\"><div class=\"callout-label\">⚠ Bear Case</div>Tech weakness (XLK -0.55%) could drag NASDAQ lower. VIX still elevated at 24+ suggests underlying nervousness beneath surface optimism.</div>\n\n<h2><span class=\"sec-icon\">◆</span> Levels That Matter</h2>\n\n<ul>\n<li><strong>SPY 742</strong> - Pre-market high; break above opens path to 745 resistance</li>\n<li><strong>QQQ 710</strong> - Critical support; losing this level targets 705</li>\n<li><strong>VIX 25</strong> - Holding below keeps risk-on trade alive</li>\n<li><strong>XLE 78</strong> - Energy oversold bounce level if geopolitics flare</li>\n</ul>\n\n<hr>\n<p><em>Not a prediction. A preparation. Make your plan before the bell.</em></p>",
+  "brief": "<h2><span class=\"sec-icon\">◆</span> Market Overview</h2>\nFutures are bleeding red across the board with SPY down 1% at $729.71 and QQQ leading the decline at -1.45%. VIX spiked 5.28% to 26.5, signaling fear is creeping back into the tape after yesterday's whipsaw action.\n\n<h2><span class=\"sec-icon\">◆</span> What to Watch</h2>\n<ul>\n<li><strong>CPI Print (12:30 ET)</strong> - Core inflation data will determine if the Fed stays hawkish or pivots. Market's positioned for disappointment.</li>\n<li><strong>Mortgage Data (11:00 ET)</strong> - Full slate of MBA housing metrics could amplify real estate sector moves if rates spike.</li>\n<li><strong>Iran Tensions</strong> - Trump's latest comments on negotiation timeline plus tanker strike reports keeping energy bid strong.</li>\n<li><strong>Amazon Freight Play</strong> - AMZN's trucking expansion hammering traditional freight stocks in pre-market.</li>\n</ul>\n\n<div class=\"callout callout-red\"><div class=\"callout-label\">⚠ Bear Case</div>Tech leading the selloff with XLK down 1.89% while industrials crater 2.61%. If CPI runs hot, this rotation accelerates into defensive plays.</div>\n\n<h2><span class=\"sec-icon\">◆</span> Sector Rotation</h2>\nClassic risk-off rotation in play with energy (+2.16%) and staples (+1.59%) leading while tech (-1.89%) and industrials (-2.61%) get sold hard. Financials holding flat suggests traders aren't convinced higher rates are sustainable yet.\n\n<div class=\"callout callout-amber\"><div class=\"callout-label\">⚡ Key Driver</div>All eyes on 12:30 ET CPI release. Hot print breaks this market lower, soft print triggers violent reversal rally.</div>\n\n<h2><span class=\"sec-icon\">◆</span> Levels That Matter</h2>\n<ul>\n<li><strong>SPY $725</strong> - Critical support from May lows. Break triggers cascade selling</li>\n<li><strong>QQQ $690</strong> - Tech's line in the sand. Failure opens path to $675</li>\n<li><strong>VIX 30</strong> - Fear gauge resistance. Pop above signals real panic mode</li>\n<li><strong>XLE $95</strong> - Energy breakout level if geopolitical tensions escalate</li>\n</ul>\n\n<hr>\n<p><em>Not a prediction. A preparation. Make your plan before the bell.</em></p>",
   "watchlist": {
     "pillars": [
       {
         "sector": "Technology",
         "stocks": [
           {
-            "ticker": "AMD",
-            "price": 487.63,
-            "changePct": -0.55,
-            "volume": 29109999.793875,
-            "ema21": 463.6,
-            "sma50": 353.8,
-            "pct21": 5.18,
-            "pct50": 37.83,
-            "grade": "approaching"
-          },
-          {
-            "ticker": "AAPL",
-            "price": 292.34,
-            "changePct": -3.05,
-            "volume": 44869134.400348,
-            "ema21": 301.45,
-            "sma50": 280.14,
-            "pct21": -3.02,
-            "pct50": 4.35,
+            "ticker": "MSFT",
+            "price": 401.81,
+            "changePct": -0.4,
+            "volume": 35317302.699492,
+            "ema21": 421.24,
+            "sma50": 410.2,
+            "pct21": -4.61,
+            "pct50": -2.04,
             "grade": "extended"
           },
           {
             "ticker": "META",
-            "price": 596.28,
-            "changePct": 1.86,
-            "volume": 21469248.475394,
-            "ema21": 618.71,
-            "sma50": 619.56,
-            "pct21": -3.62,
-            "pct50": -3.76,
+            "price": 576.45,
+            "changePct": -1.39,
+            "volume": 16977383.817295,
+            "ema21": 610.83,
+            "sma50": 621.45,
+            "pct21": -5.63,
+            "pct50": -7.24,
             "grade": "extended"
           },
           {
             "ticker": "NVDA",
-            "price": 206.67,
-            "changePct": -0.94,
-            "volume": 169022152.423913,
-            "ema21": 215.7,
-            "sma50": 202.92,
-            "pct21": -4.19,
-            "pct50": 1.85,
+            "price": 201.88,
+            "changePct": -3.03,
+            "volume": 180962450.330624,
+            "ema21": 213.62,
+            "sma50": 205.01,
+            "pct21": -5.5,
+            "pct50": -1.53,
             "grade": "zone"
           },
           {
-            "ticker": "MSFT",
-            "price": 409.49,
-            "changePct": -0.55,
-            "volume": 26899511.802233,
-            "ema21": 424.93,
-            "sma50": 407.44,
-            "pct21": -3.63,
-            "pct50": 0.5,
+            "ticker": "AAPL",
+            "price": 290.25,
+            "changePct": -0.1,
+            "volume": 70108847.597585,
+            "ema21": 300.9,
+            "sma50": 283.05,
+            "pct21": -3.54,
+            "pct50": 2.55,
             "grade": "zone"
           }
         ]
       },
       {
         "sector": "Semis",
-        "stocks": [
-          {
-            "ticker": "ARM",
-            "price": 331.29,
-            "changePct": -4.36,
-            "volume": 10915944.204732,
-            "ema21": 305.05,
-            "sma50": 220.09,
-            "pct21": 8.6,
-            "pct50": 50.52,
-            "grade": "extended"
-          },
-          {
-            "ticker": "AVGO",
-            "price": 392.28,
-            "changePct": -1.09,
-            "volume": 80979446.453929,
-            "ema21": 431.05,
-            "sma50": 397.07,
-            "pct21": -8.99,
-            "pct50": -1.21,
-            "grade": "zone"
-          },
-          {
-            "ticker": "ANET",
-            "price": 155.1,
-            "changePct": -0.83,
-            "volume": 10213951.283855,
-            "ema21": 158.05,
-            "sma50": 151.89,
-            "pct21": -1.87,
-            "pct50": 2.11,
-            "grade": "zone"
-          }
-        ]
+        "stocks": []
       },
       {
         "sector": "Financials",
@@ -359,47 +314,14 @@
         "sector": "Semis",
         "stocks": [
           {
-            "ticker": "AMD",
-            "price": 487.63,
-            "changePct": -0.55,
-            "volume": 29109999.793875,
-            "ema21": 463.6,
-            "sma50": 353.8,
-            "pct21": 5.18,
-            "pct50": 37.83,
-            "grade": "approaching"
-          },
-          {
-            "ticker": "ARM",
-            "price": 331.29,
-            "changePct": -4.36,
-            "volume": 10915944.204732,
-            "ema21": 305.05,
-            "sma50": 220.09,
-            "pct21": 8.6,
-            "pct50": 50.52,
-            "grade": "extended"
-          },
-          {
             "ticker": "NVDA",
-            "price": 206.67,
-            "changePct": -0.94,
-            "volume": 169022152.423913,
-            "ema21": 215.7,
-            "sma50": 202.92,
-            "pct21": -4.19,
-            "pct50": 1.85,
-            "grade": "zone"
-          },
-          {
-            "ticker": "AVGO",
-            "price": 392.28,
-            "changePct": -1.09,
-            "volume": 80979446.453929,
-            "ema21": 431.05,
-            "sma50": 397.07,
-            "pct21": -8.99,
-            "pct50": -1.21,
+            "price": 201.88,
+            "changePct": -3.03,
+            "volume": 180962450.330624,
+            "ema21": 213.62,
+            "sma50": 205.01,
+            "pct21": -5.5,
+            "pct50": -1.53,
             "grade": "zone"
           }
         ]

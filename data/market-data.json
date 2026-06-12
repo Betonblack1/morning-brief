@@ -1,36 +1,36 @@
 {
-  "generated": "2026-06-11T15:44:44.617Z",
-  "date": "2026-06-11",
+  "generated": "2026-06-12T14:46:00.843Z",
+  "date": "2026-06-12",
   "indices": [
     {
       "name": "S&P 500",
-      "val": "728.91",
-      "chg": 0.4797,
-      "price": 728.91
+      "val": "738.33",
+      "chg": 0.0773,
+      "price": 738.33
     },
     {
       "name": "NASDAQ",
-      "val": "702.24",
-      "chg": 1.2325,
-      "price": 702.24
+      "val": "716.47",
+      "chg": -0.0906,
+      "price": 716.47
     },
     {
       "name": "DOW",
-      "val": "503.76",
-      "chg": 0.7016,
-      "price": 503.76
+      "val": "511.61",
+      "chg": 0.4417,
+      "price": 511.61
     },
     {
       "name": "RUSSELL",
-      "val": "286.35",
-      "chg": 1.5246,
-      "price": 286.35
+      "val": "293.42",
+      "chg": 1.0365,
+      "price": 293.42
     },
     {
       "name": "VIX",
-      "val": "26.78",
-      "chg": 0.6767,
-      "price": 26.78
+      "val": "25.20",
+      "chg": -0.4739,
+      "price": 25.2
     },
     {
       "name": "10Y",
@@ -43,108 +43,88 @@
     {
       "name": "Tech",
       "symbol": "XLK",
-      "chg": 1.3022
+      "chg": 0.191
     },
     {
       "name": "Health",
       "symbol": "XLV",
-      "chg": 0.7785
+      "chg": -0.3115
     },
     {
       "name": "Financials",
       "symbol": "XLF",
-      "chg": 0.0957
+      "chg": 1.2733
     },
     {
       "name": "Energy",
       "symbol": "XLE",
-      "chg": 0.3605
+      "chg": 1.5756
     },
     {
       "name": "Cons Disc",
       "symbol": "XLY",
-      "chg": 0.5463
+      "chg": -0.9888
     },
     {
       "name": "Industrials",
       "symbol": "XLI",
-      "chg": 1.6798
+      "chg": 0.3483
     },
     {
       "name": "Materials",
       "symbol": "XLB",
-      "chg": 1.4919
+      "chg": 1.4057
     },
     {
       "name": "Real Estate",
       "symbol": "XLRE",
-      "chg": -0.0667
+      "chg": 1.0463
     },
     {
       "name": "Utilities",
       "symbol": "XLU",
-      "chg": 0.7955
+      "chg": 0.8627
     },
     {
       "name": "Cons Staples",
       "symbol": "XLP",
-      "chg": 0.1521
+      "chg": 0.129
     },
     {
       "name": "Comm Svcs",
       "symbol": "XLC",
-      "chg": -0.0901
+      "chg": -0.5797
     }
   ],
   "keyLevels": [
     {
       "tag": "support",
       "label": "SPY Support",
-      "val": "724.40"
+      "val": "735.03"
     },
     {
       "tag": "resist",
       "label": "SPY Resist",
-      "val": "731.58"
+      "val": "741.20"
     },
     {
       "tag": "pivot",
       "label": "QQQ Pivot",
-      "val": "701.22"
+      "val": "716.19"
     }
   ],
   "fearGreed": {
-    "score": 36,
-    "label": "Fear"
+    "score": 43,
+    "label": "Neutral"
   },
   "earnings": [
     {
-      "ticker": "SVIN",
+      "ticker": "SODI",
       "info": "EPS Est: N/A",
       "when": ""
     },
     {
-      "ticker": "GTEN",
-      "info": "EPS Est: N/A",
-      "when": ""
-    },
-    {
-      "ticker": "MCRAA",
-      "info": "EPS Est: N/A",
-      "when": ""
-    },
-    {
-      "ticker": "HMMR",
-      "info": "EPS Est: N/A",
-      "when": ""
-    },
-    {
-      "ticker": "MH",
-      "info": "EPS Est: 0.1743",
-      "when": "BMO"
-    },
-    {
-      "ticker": "BTOC",
+      "ticker": "FRHC",
       "info": "EPS Est: N/A",
       "when": ""
     }
@@ -152,169 +132,112 @@
   "econ": [],
   "news": [
     {
-      "time": "9:45 AM",
-      "text": "Trump says he wants to \"take\" Iran's Kharg Island oil hub - Reuters",
-      "tag": "Reuters",
-      "url": "https://news.google.com/rss/articles/CBMiqwFBVV95cUxQS3p5OEw3eVhKRzdxY0x0SXNxd2dnMjJvaks0VWRudHdSVXpIejRyR2YwdVhPeHkzYW5zNHJYUXFTV0N5LXZYa2NNUnZ4NjZMZmJ6MkE2QVBjVWdmdU5Db1VtdGxKejdDZ3l6MGRPM3VFT3pwRTlxbHE1VUdEdFBVeWU4RGRpaXo2V1ZWejh1dU0tT05hM0FKaGJaS25aNjh5cC1BcjJZT0tvMms?oc=5"
-    },
-    {
-      "time": "9:20 AM",
-      "text": "Baldwin, Khanna propose new direct foreign investment review board to probe Trump's deals",
+      "time": "8:59 AM",
+      "text": "Jim Cramer's top 10 things to watch in the stock market Friday",
       "tag": "CNBC",
-      "url": "https://www.cnbc.com/2026/06/11/baldwin-khanna-propose-direct-foreign-investment-board-to-probe-trump.html"
+      "url": "https://www.cnbc.com/2026/06/12/jim-cramers-top-10-things-to-watch-in-the-stock-market-friday.html"
     },
     {
-      "time": "9:09 AM",
-      "text": "Jim Cramer's top 10 things to watch in the stock market Thursday",
+      "time": "7:22 AM",
+      "text": "Former Tesla board member says SpaceX needs to achieve 2 of its 3 moonshots to keep its valuation",
       "tag": "CNBC",
-      "url": "https://www.cnbc.com/2026/06/11/jim-cramers-top-10-things-to-watch-in-the-stock-market-thursday-.html"
+      "url": "https://www.cnbc.com/2026/06/12/spacex-moonshots-valuation-westly-tesla.html"
     },
     {
-      "time": "8:58 AM",
-      "text": "Trump says US will hit Iran 'very hard,' take control of energy infrastructure - Reuters",
+      "time": "3:41 AM",
+      "text": "European stocks rally as oil falls on hopes for US-Iran deal - Reuters",
       "tag": "Reuters",
-      "url": "https://news.google.com/rss/articles/CBMilgFBVV95cUxPSmF4VnNQTlk0WGl5TGlSVUVnQkxzY20tel9jZXBMNXp0djhaMTl4djJWN0VWWUNpbzVyUzZrVmI4dDVPRXBRU2NJOFFNemppeFlCNTRVbVBJTVozdHd5S05EZU5YNG9vcXFvRFE4akFLU3QwWmpIQ01Ub3BsODlUSUtiSXBET2dWRmY5UjI3aXRwWEVJcGc?oc=5"
+      "url": "https://news.google.com/rss/articles/CBMiowFBVV95cUxNU2NwbnhSejZzNkxual9ZYm1wRmRmVjVHTlYwQjlVYmdZaW8yQlFVbVBaVWR5c1RXaTNyMGZXdVV0c2J2eV9STWRlaEExTndPVkZIc2g2WVpxdHdmZE9aT0txYTg5WXk5LWdpRmRyN29FMnNaeEhBb3FPOVc5NU1XQ3h0czRRNWxmdnRPTmVlWWowYVFOdFdtTE0yd0JJTHpmWDc0?oc=5"
     },
     {
-      "time": "8:26 AM",
-      "text": "US, Iran haggle over frozen funds as they inch toward interim deal, sources say - Reuters",
+      "time": "2:06 AM",
+      "text": "UK economy began to feel fallout from Iran war in April, data shows - Reuters",
       "tag": "Reuters",
-      "url": "https://news.google.com/rss/articles/CBMirAFBVV95cUxQdmRFM01CVXZFS0FoUHBWUmRlS29pUUdsZmVJU3lwSTI3V21ORGpPZUZJM3hVbFkwbmk1ZkYyZmxfSnVrWXoxaFRNOTlmMGkxOG1KSksxUzBWUjRHdHl6Y21YNDdRRTJDdTIzMXBJcml6NUxCaWVvQmN5LVFOVGdNc3pTX0t4ckt0RmFhbU9PeTk0RjlTYVowZ0NuY2lHdUVMVmlYQ19LeDJ4dWdE?oc=5"
+      "url": "https://news.google.com/rss/articles/CBMikAFBVV95cUxNOFItQU9WdzE0Y0xvS2g2clhhTV9HN0M4ZW9BM0FjSFd6MjJyalljN181bWJ0OXNIM2dnMlY2bDVESkFUMTIzcUstalVfUWQwM1F0bXNLM0ttNUpmZk5EbHg5cjFKR2J0OEVkMEx4U3ZKZzJjd01iU2E1ME43NGpHVmVrVS1fandFSzN5a0NsSk0?oc=5"
     },
     {
-      "time": "8:10 AM",
-      "text": "SpaceX IPO won’t ‘break’ the bull market. But investors are worried about what comes next",
-      "tag": "CNBC",
-      "url": "https://www.cnbc.com/2026/06/11/spacex-ipo-wont-break-the-bull-market-but-investors-are-worried-about-what-comes-next.html"
+      "time": "1:36 AM",
+      "text": "Taking Kharg Island would pose risks for US troops - Reuters",
+      "tag": "Reuters",
+      "url": "https://news.google.com/rss/articles/CBMiswFBVV95cUxOeVptY3pRQnZwZWticGdhV3dBc0hmZzlvanVBdXp0MFlmcVFDNWlOU2NubENld21zOXhRSm9IUWFFOUgtTWhGaDdaM180b09nN014V1Fnb0VuTDcwNVp5MWxxOHVoWVRqLVZWWGxuQ1luNEZ5LUd6aUtQcGEtTGppMWpXV3VjUVM2dFF3ZFRWY3FTTHlWSU5LNnVhNkxrNWVBN2M1S1ZhcmNkTG1jcmtTQzhjOA?oc=5"
+    },
+    {
+      "time": "1:06 AM",
+      "text": "U.S.-Iran peace memorandum could be signed on Sunday in Geneva, source says - Reuters",
+      "tag": "Reuters",
+      "url": "https://news.google.com/rss/articles/CBMitAFBVV95cUxNMXk5cUo1M00yVjgxUGh5ZHl5SWdsUFcxZWhQUUF4MUhZY3pzNGZUbUU1SEtHUEh0dnZJM1Y4TFU0SzloMWNlQ1VqcjBZZ09raU1QdnFXallaeTBVMEZsNGhsOVVDcFNUZ2tjY29zX3hYYjJ6ZzAtZU1FSURnY0J3TktmSEk2eGFpd1Njek1SUG1mbkJrVmltN3RMQVk5WFpOOUxuMEVLUHRuVE50alhrTGk0VGs?oc=5"
     }
   ],
-  "brief": "<h2><span class=\"sec-icon\">◆</span> Market Overview</h2>\nPre-market is showing risk-on rotation with small caps (IWM +1.52%) and NASDAQ (+1.23%) leading the charge. VIX elevated at 26.78 signals underlying tension, but bulls are buying the geopolitical dip. Industrials and materials outperforming suggests infrastructure/defense play is in motion.\n\n<h2><span class=\"sec-icon\">◆</span> What to Watch</h2>\n<ul>\n<li><strong>Iran tensions escalating</strong> - Trump's aggressive rhetoric on Kharg Island could spike oil volatility</li>\n<li><strong>SpaceX IPO chatter</strong> - Market digesting potential impact on growth rotation</li>\n<li><strong>Light earnings slate</strong> - Focus shifts to price action and sector momentum</li>\n<li><strong>Economic calendar empty</strong> - Pure technicals and news-driven trading today</li>\n</ul>\n\n<h2><span class=\"sec-icon\">◆</span> Sector Rotation</h2>\nClear flight to cyclicals with industrials (+1.68%) and materials (+1.49%) leading on defense/infrastructure themes. Tech holding strong (+1.30%) despite geopolitical noise. Defensives like REITs and comm services lagging suggests risk appetite intact despite elevated VIX.\n\n<div class=\"callout callout-green\"><div class=\"callout-label\">✦ Bull Case</div>Small cap outperformance (IWM +1.52%) signals domestic focus amid foreign tensions. Industrial complex pricing in infrastructure spending boom.</div>\n\n<div class=\"callout callout-amber\"><div class=\"callout-label\">⚡ Key Driver</div>Iran situation could trigger energy sector breakout - XLE only up 0.36% but massive upside if tensions escalate further.</div>\n\n<div class=\"callout callout-red\"><div class=\"callout-label\">⚠ Bear Case</div>VIX at 26.78 with markets rallying is classic divergence. One bad headline could trigger swift reversal in risk assets.</div>\n\n<h2><span class=\"sec-icon\">◆</span> Levels That Matter</h2>\n<ul>\n<li><strong>SPY $730</strong> - Clean breakout level, pre-market testing now</li>\n<li><strong>QQQ $705</strong> - Key resistance from May highs</li>\n<li><strong>VIX $25</strong> - Support break would signal fear subsiding</li>\n<li><strong>XLE $95</strong> - Energy sector poised for breakout on Iran news</li>\n</ul>\n\n<hr>\n<p><em>Not a prediction. A preparation. Make your plan before the bell.</em></p>",
+  "brief": "<h2><span class=\"sec-icon\">◆</span> Market Overview</h2>\nMixed futures with rotation in play - Russell small caps leading at +1.04% while Nasdaq slightly red. VIX down to 25.2 suggesting some risk appetite returning, but elevated volatility remains the baseline.\n\n<h2><span class=\"sec-icon\">◆</span> What to Watch</h2>\n<ul>\n<li><strong>Iran Peace Deal Headlines</strong> - Reports of potential US-Iran memorandum signing Sunday driving oil down and risk-on flows</li>\n<li><strong>Russell 2000 Breakout</strong> - Small caps up 1.04% pre-market, testing key resistance levels</li>\n<li><strong>Energy Sector Momentum</strong> - XLE up 1.58% despite oil decline on geopolitical relief</li>\n<li><strong>Tech Divergence</strong> - XLK holding modest gains while QQQ slightly negative, watch AAPL and MSFT for direction</li>\n</ul>\n\n<div class=\"callout callout-green\"><div class=\"callout-label\">✦ Bull Case</div>Iran peace talks removing geopolitical premium from markets. Small cap leadership suggests domestic focus and broadening rally beyond mega-caps.</div>\n\n<div class=\"callout callout-amber\"><div class=\"callout-label\">⚡ Key Driver</div>Geneva peace memorandum rumors creating massive currency and commodity flows. Oil down, dollar mixed, emerging markets rallying hard.</div>\n\n<h2><span class=\"sec-icon\">◆</span> Sector Rotation</h2>\nClassic risk-on rotation with Energy (+1.58%), Financials (+1.27%), and Materials (+1.41%) leading despite falling oil prices. Defensive areas like Consumer Discretionary (-0.99%) and Communication Services (-0.58%) getting sold. This is peace dividend rotation, not growth rotation.\n\n<h2><span class=\"sec-icon\">◆</span> Levels That Matter</h2>\n<ul>\n<li><strong>SPY 740</strong> - Overhead resistance, break confirms continuation of relief rally</li>\n<li><strong>IWM 295</strong> - Small cap breakout level, critical for broadening thesis</li>\n<li><strong>XLE 95</strong> - Energy sector running into major resistance despite fundamental tailwinds</li>\n<li><strong>VIX 23</strong> - Below here and we're back in normal volatility regime</li>\n</ul>\n\n<div class=\"callout callout-red\"><div class=\"callout-label\">⚠ Bear Case</div>Peace talks have failed before. If Iran headlines disappoint over weekend, gap down Monday likely with energy complex and defensives leading.</div>\n\n<hr>\n<p><em>Not a prediction. A preparation. Make your plan before the bell.</em></p>",
   "watchlist": {
     "pillars": [
       {
         "sector": "Technology",
         "stocks": [
           {
-            "ticker": "NVDA",
-            "price": 201.58,
-            "changePct": 0.58,
-            "volume": 161746587.544386,
-            "ema21": 212.4,
-            "sma50": 205.71,
-            "pct21": -5.1,
-            "pct50": -2.01,
-            "grade": "extended"
-          },
-          {
             "ticker": "MSFT",
-            "price": 387.49,
-            "changePct": -2.48,
-            "volume": 32576041.704457,
-            "ema21": 419.04,
-            "sma50": 410.97,
-            "pct21": -7.53,
-            "pct50": -5.71,
-            "grade": "extended"
-          },
-          {
-            "ticker": "AAPL",
-            "price": 293,
-            "changePct": 0.49,
-            "volume": 52793266.201966,
-            "ema21": 300.04,
-            "sma50": 283.94,
-            "pct21": -2.35,
-            "pct50": 3.19,
+            "price": 384.76,
+            "changePct": -1.43,
+            "volume": 47224135.068075,
+            "ema21": 416.4,
+            "sma50": 411.37,
+            "pct21": -7.6,
+            "pct50": -6.47,
             "grade": "extended"
           },
           {
             "ticker": "META",
-            "price": 561.64,
-            "changePct": -1.64,
-            "volume": 17064048.521937,
-            "ema21": 607.13,
-            "sma50": 622.15,
-            "pct21": -7.49,
-            "pct50": -9.73,
+            "price": 563.43,
+            "changePct": -0.88,
+            "volume": 17627966.738078,
+            "ema21": 603.53,
+            "sma50": 622.07,
+            "pct21": -6.64,
+            "pct50": -9.43,
             "grade": "extended"
           },
           {
             "ticker": "AMD",
-            "price": 468.4,
-            "changePct": 3.54,
-            "volume": 27777399.183852,
-            "ema21": 465.72,
-            "sma50": 375.05,
-            "pct21": 0.58,
-            "pct50": 24.89,
+            "price": 510.98,
+            "changePct": 4.61,
+            "volume": 30463082.001956,
+            "ema21": 467.76,
+            "sma50": 380.75,
+            "pct21": 9.24,
+            "pct50": 34.2,
+            "grade": "extended"
+          },
+          {
+            "ticker": "NVDA",
+            "price": 204.69,
+            "changePct": -0.09,
+            "volume": 158643204.463725,
+            "ema21": 211.7,
+            "sma50": 206.32,
+            "pct21": -3.31,
+            "pct50": -0.79,
+            "grade": "zone"
+          },
+          {
+            "ticker": "AAPL",
+            "price": 291.18,
+            "changePct": -1.51,
+            "volume": 42572497.853978,
+            "ema21": 299.64,
+            "sma50": 284.78,
+            "pct21": -2.82,
+            "pct50": 2.25,
             "grade": "zone"
           }
         ]
       },
       {
         "sector": "Semis",
-        "stocks": [
-          {
-            "ticker": "AMAT",
-            "price": 533.62,
-            "changePct": 7.37,
-            "volume": 11393843.5009,
-            "ema21": 459.6,
-            "sma50": 418.73,
-            "pct21": 16.1,
-            "pct50": 27.44,
-            "grade": "extended"
-          }
-        ]
+        "stocks": []
       },
       {
         "sector": "Financials",
-        "stocks": [
-          {
-            "ticker": "JPM",
-            "price": 310.57,
-            "changePct": 0.46,
-            "volume": 7446218.859581,
-            "ema21": 305.35,
-            "sma50": 305.7,
-            "pct21": 1.71,
-            "pct50": 1.59,
-            "grade": "zone"
-          },
-          {
-            "ticker": "GS",
-            "price": 1014.76,
-            "changePct": 1.35,
-            "volume": 2287194.558695,
-            "ema21": 1005.64,
-            "sma50": 948.75,
-            "pct21": 0.91,
-            "pct50": 6.96,
-            "grade": "zone"
-          },
-          {
-            "ticker": "V",
-            "price": 320.04,
-            "changePct": -0.9,
-            "volume": 5793052.283561,
-            "ema21": 322.58,
-            "sma50": 318.24,
-            "pct21": -0.79,
-            "pct50": 0.56,
-            "grade": "zone"
-          },
-          {
-            "ticker": "MA",
-            "price": 486.64,
-            "changePct": -0.5,
-            "volume": 3239939.366673,
-            "ema21": 491.89,
-            "sma50": 499.7,
-            "pct21": -1.07,
-            "pct50": -2.61,
-            "grade": "zone"
-          }
-        ]
+        "stocks": []
       },
       {
         "sector": "Cons Cyclical",
@@ -346,36 +269,25 @@
         "sector": "Semis",
         "stocks": [
           {
-            "ticker": "NVDA",
-            "price": 201.58,
-            "changePct": 0.58,
-            "volume": 161746587.544386,
-            "ema21": 212.4,
-            "sma50": 205.71,
-            "pct21": -5.1,
-            "pct50": -2.01,
-            "grade": "extended"
-          },
-          {
-            "ticker": "AMAT",
-            "price": 533.62,
-            "changePct": 7.37,
-            "volume": 11393843.5009,
-            "ema21": 459.6,
-            "sma50": 418.73,
-            "pct21": 16.1,
-            "pct50": 27.44,
-            "grade": "extended"
-          },
-          {
             "ticker": "AMD",
-            "price": 468.4,
-            "changePct": 3.54,
-            "volume": 27777399.183852,
-            "ema21": 465.72,
-            "sma50": 375.05,
-            "pct21": 0.58,
-            "pct50": 24.89,
+            "price": 510.98,
+            "changePct": 4.61,
+            "volume": 30463082.001956,
+            "ema21": 467.76,
+            "sma50": 380.75,
+            "pct21": 9.24,
+            "pct50": 34.2,
+            "grade": "extended"
+          },
+          {
+            "ticker": "NVDA",
+            "price": 204.69,
+            "changePct": -0.09,
+            "volume": 158643204.463725,
+            "ema21": 211.7,
+            "sma50": 206.32,
+            "pct21": -3.31,
+            "pct50": -0.79,
             "grade": "zone"
           }
         ]

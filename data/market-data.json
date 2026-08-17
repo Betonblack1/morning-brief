@@ -1,36 +1,36 @@
 {
-  "generated": "2026-08-14T12:51:39.599Z",
-  "date": "2026-08-14",
+  "generated": "2026-08-17T12:30:43.686Z",
+  "date": "2026-08-17",
   "indices": [
     {
       "name": "S&P 500",
-      "val": "777.88",
-      "chg": 0.6977,
-      "price": 777.88
+      "val": "776.34",
+      "chg": -0.198,
+      "price": 776.34
     },
     {
       "name": "NASDAQ",
-      "val": "732.07",
-      "chg": 1.1566,
-      "price": 732.07
+      "val": "731.07",
+      "chg": -0.1366,
+      "price": 731.07
     },
     {
       "name": "DOW",
-      "val": "537.91",
-      "chg": 0.1415,
-      "price": 537.91
+      "val": "536.80",
+      "chg": -0.2064,
+      "price": 536.8
     },
     {
       "name": "RUSSELL",
-      "val": "303.50",
-      "chg": 0.261,
-      "price": 303.5
+      "val": "305.09",
+      "chg": 0.5239,
+      "price": 305.09
     },
     {
       "name": "VIX",
-      "val": "19.62",
-      "chg": 0.874,
-      "price": 19.62
+      "val": "19.36",
+      "chg": -1.3507,
+      "price": 19.355
     },
     {
       "name": "10Y",
@@ -43,149 +43,149 @@
     {
       "name": "Tech",
       "symbol": "XLK",
-      "chg": 1.0113
+      "chg": -0.3984
     },
     {
       "name": "Health",
       "symbol": "XLV",
-      "chg": -0.0356
+      "chg": -0.5998
     },
     {
       "name": "Financials",
       "symbol": "XLF",
-      "chg": 0.587
+      "chg": -0.1716
     },
     {
       "name": "Energy",
       "symbol": "XLE",
-      "chg": 0.0492
+      "chg": 1.3921
     },
     {
       "name": "Cons Disc",
       "symbol": "XLY",
-      "chg": 0.475
+      "chg": -0.2111
     },
     {
       "name": "Industrials",
       "symbol": "XLI",
-      "chg": -0.0484
+      "chg": 0.3875
     },
     {
       "name": "Materials",
       "symbol": "XLB",
-      "chg": -0.5135
+      "chg": 0.4397
     },
     {
       "name": "Real Estate",
       "symbol": "XLRE",
-      "chg": 1.416
+      "chg": 0.3324
     },
     {
       "name": "Utilities",
       "symbol": "XLU",
-      "chg": 0.4562
+      "chg": 0.6131
     },
     {
       "name": "Cons Staples",
       "symbol": "XLP",
-      "chg": 1.0813
+      "chg": 0.1047
     },
     {
       "name": "Comm Svcs",
       "symbol": "XLC",
-      "chg": 2.0677
+      "chg": 0.3554
     }
   ],
   "keyLevels": [
     {
       "tag": "support",
       "label": "SPY Support",
-      "val": "774.11"
+      "val": "775.43"
     },
     {
       "tag": "resist",
       "label": "SPY Resist",
-      "val": "779.37"
+      "val": "778.80"
     },
     {
       "tag": "pivot",
       "label": "QQQ Pivot",
-      "val": "730.02"
+      "val": "731.26"
     }
   ],
   "fearGreed": {
-    "score": 67,
+    "score": 68,
     "label": "Greed"
   },
   "earnings": [
     {
-      "ticker": "ACTU",
-      "info": "EPS Est: -0.1904",
-      "when": ""
-    },
-    {
-      "ticker": "ACXP",
-      "info": "EPS Est: -0.3842",
+      "ticker": "AGPU",
+      "info": "EPS Est: N/A",
       "when": "BMO"
     },
     {
-      "ticker": "AIRE",
-      "info": "EPS Est: -0.765",
+      "ticker": "AHRO",
+      "info": "EPS Est: N/A",
       "when": ""
     },
     {
-      "ticker": "AMSS",
-      "info": "EPS Est: 0.2958",
-      "when": "AMC"
-    },
-    {
-      "ticker": "BKYI",
-      "info": "EPS Est: -0.816",
+      "ticker": "AIDG",
+      "info": "EPS Est: N/A",
       "when": ""
     },
     {
-      "ticker": "BRFH",
-      "info": "EPS Est: -0.051",
-      "when": "AMC"
+      "ticker": "AIHS",
+      "info": "EPS Est: N/A",
+      "when": ""
+    },
+    {
+      "ticker": "ANNX",
+      "info": "EPS Est: -0.2438",
+      "when": ""
+    },
+    {
+      "ticker": "AREC",
+      "info": "EPS Est: -0.0918",
+      "when": ""
     }
   ],
   "econ": [],
   "news": [
     {
-      "time": "7:03 AM",
-      "text": "Oil set for weekly gains after US threatens indefinite blockade of Iran - Reuters",
-      "tag": "Reuters",
-      "url": "https://news.google.com/rss/articles/CBMitwFBVV95cUxON2pvV0t4T25LdUVjOHpBU2tzN1RER1ZRQWF3cGZ3aEVZUm1JRXJXSk5xdWxaV3VEbEFMWHAtUkZ6MlpKX0VVRWlmNklKaUM3R3hER1o2WkEydXl0ZzZiS3NpNVNVdm80ck55SktBekVZbG1SaDdVdTJJOWJuUDMyV0RLNlJ5QkpYNUxGVjFQUHNQTWg1bVlJT3RXcXkyNkEwcUFtSGhLOXpWUno0LThMelpqWWRoQW8?oc=5"
-    },
-    {
-      "time": "7:00 AM",
-      "text": "US warns Iran it will step up economic pressure; two more ships attacked in Hormuz - Reuters",
-      "tag": "Reuters",
-      "url": "https://news.google.com/rss/articles/CBMizAFBVV95cUxNcUdkcXFHNHlWMzdKeGE0QzFWU2FRNTl4aHYxMk5VNEU1REROam1XMW5hQnVPMlVCOHV5Y1k5X2N6eEx1UlpJOExJVFlXQzU5bWE1LXE1ZndpQUtpeFpVb2FoWUhlODVPWUVxeTNwcjNXQXRzMFloclJMNFBqNDJiUmFjam1kODNyQ1BvYU90dmptbG1mLWd6enN6dDZRb2JiRFg2TGdNSzJaM1g1c2xPd0lqTFBSblp6RGFKWktyVkI3dEVRMmJqNDdfLUc?oc=5"
-    },
-    {
-      "time": "4:55 AM",
-      "text": "Treasury yields rise as U.S. threatens Iran with more economic sanctions",
+      "time": "6:31 AM",
+      "text": "Santoli: Earnings bonanza that lifted market to record may not be all that it appears to be",
       "tag": "CNBC",
-      "url": "https://www.cnbc.com/2026/08/14/treasury-yields-us-iran-economic-sanctions.html"
+      "url": "https://www.cnbc.com/2026/08/17/santoli-earnings-bonanza-that-lifted-market-to-record-may-not-be-all-that-it-appears-to-be.html"
     },
     {
-      "time": "3:59 AM",
-      "text": "China calls Taiwan's annual military drills a 'wasteful charade' - Reuters",
+      "time": "5:41 AM",
+      "text": "Iran says two French embassy employees barred from returning - reuters.com",
       "tag": "Reuters",
-      "url": "https://news.google.com/rss/articles/CBMiqwFBVV95cUxNbGhMU25fVEswcGdXUVItRVJmUE05cG52RjJXRUJZMWRsMElTVHhMeTQ4SVd6QXJRRTh5NUFSV3NmdmJHLXpTclI2U09NdlN5c3pGTlFGRkhMVm55Z21QWHZ3dVJTMUU4N2ZzX2VFX25DVXpGU2FKTFNlVlYyTXFjS1Zhcm8ydmFLRF9neTJCbW10RDlCcV9JUS1mUG9EcHMtelZnbVZ0bHAxV1k?oc=5"
+      "url": "https://news.google.com/rss/articles/CBMirgFBVV95cUxOWkZkRXBDZ3pPWVFROGdBUVlseGpmSEpONkJ2MEdvQjFjajdMYmtLSVNOc1ZjeHg0WGZwNWZpM3ZjV1A2S2FNeHFrZTlRUFRKZGo4SUdwNDBoMUs3UEhwZTMxMzNXRDJEeEdzd0NTTVRaZF9JZFItWUduXzlsMEptODRYR2hFdVRKaDk1Sm83NFFMaTI0SFo5d3ExOTNIZ1M2TGsxWEdtRHRCdFB0eWc?oc=5"
     },
     {
-      "time": "2:01 AM",
-      "text": "Israeli settlers divert Palestinian water to fill West Bank pool - Reuters",
+      "time": "5:10 AM",
+      "text": "Drones target office of Iraqi Kurdistan's PM, no casualties reported - reuters.com",
       "tag": "Reuters",
-      "url": "https://news.google.com/rss/articles/CBMiuAFBVV95cUxPLXVEdENUNENwYzlmYS1QQkxJeGlxVUt6Vkp4Zm80UklLMHBWRzNzWENDcUFhdkxkcUtMc2lmdzY1NElLSXFuT2wtWG5RNC1ybkk4V3RDMlJqQ3JDM1M0em5VanBHUHBTRTNJMjZ5TU00Z0MwT2t4bFVIMmJTMnpJdmg0czV4cDZDTWUxbHN6N2xadDhOd0hmYmpob1BTc2R4Y0l6V2I3WEpxTGxVNGpPWXpvc1otZk1l?oc=5"
+      "url": "https://news.google.com/rss/articles/CBMiwwFBVV95cUxQX1RqUHdlLUdxNkQweWdveHJybEs3OWpDaTFNRUhpWDFsSGd1V1hub0QzaTdNSlA3Sm1oX1I3NmEzNDdXRWx6UHZxUTJ0c0dmd1hUSzFfSnBraG5WVUQ5Y0RvLWlXUnY1Wi1OWnRQdFhISExZWWYyN2N0UUhJdWlMZzE3LUZXMTJrTFUtcmhIZkFmaU9YZGJONkN4NG9WSTByREhvVkpheWE1S2REbVBNcVNvNmNNQzhjVG9qcHRheG9NcnM?oc=5"
     },
     {
-      "time": "1:23 AM",
-      "text": "Philippine president says joint oil and gas exploration with China a 'distinct possibility' - Reuters",
+      "time": "2:17 AM",
+      "text": "Trump envoy discusses Gaza plan with Netanyahu after rare Hamas meeting - Reuters",
       "tag": "Reuters",
-      "url": "https://news.google.com/rss/articles/CBMivgFBVV95cUxNS0JHby03N0ZqSUVaWDJZU2tvcHNIVDZmdTJNYzkwakcxSjljRmNwU3lfSTlicnoxTGl5MWpqLVQ5UTNmTnpPcXhMX0NXcFBBNTNYQ3d2X1YyRGt4VGJ4RWhuNHdvc0VfOUF1ZzZoc05QTEZ5ZXpMcEdrbTFib1hwX0tyaV9LZ1VUOENkSFJvcjdLb1Z5QjZVc0tGNlU3NmtDbUppVk1RU1NZR2dEcWpGc3hYN2c5SWkxTThLZ0tn?oc=5"
+      "url": "https://news.google.com/rss/articles/CBMiuAFBVV95cUxOcEx3MFJPNUM1WXN5SzhvTjJKMjk5aXZHWkxtMlBSaS14RTZpaDZsV3cweGdLdGo3dWJDU1ZCZVlob1NESk1CT0l3OFh6OGRXVFVVLXRtb3d0UGRNMlpkSGFobzk4c1dmZ0dtRUxQcEtVQ0tLVWZZbENQRlRSR0FkNWw4eDNtcTk2bkpRNXEyNDN2OFp6clItN0ZPRWUwbmFVQlZUdEdRVmU2R2NiY2hLTFRTOWJGM1VL?oc=5"
+    },
+    {
+      "time": "2:10 AM",
+      "text": "Trump seeks cuts to US-South Korea drills, reviving earlier objections - Reuters",
+      "tag": "Reuters",
+      "url": "https://news.google.com/rss/articles/CBMivgFBVV95cUxOTFVPX2pQSTZzb1l1ekdiT1JMWGdmeEhFbVIzeHpoYjlDY0Q2QV9TZ1ZsbXdMY2ZlOGlNc0QwS2dqaE1mT25seDhUTTBFNkFnNFNGSEQ4OHcwMjVMSHZDVGtYWnhCZUZoSkRqaDhuZk1nYm1YcjBEWEpmTDJfQ2hJOHNSQzlEV3ZBU3dyTkZLQnNReENoYXg0M084N3dmc3FxZEdsc2ZzU0lLVW5lU1NWZTA4RWs5ZGUyVS1lel9n?oc=5"
+    },
+    {
+      "time": "10:32 PM",
+      "text": "WEEKAHEAD Indian rupee expected to be rangebound, bond traders await policy minutes - Reuters",
+      "tag": "Reuters",
+      "url": "https://news.google.com/rss/articles/CBMixgFBVV95cUxQWDFjUnFHUE1WM1psUjhsS0N3R0plSTRER2cyeTVlQl9wSDBLankxeEkyT2w1cGlrZWJNaUxZcktrVU96QU1rd0lkdjh1ZjVmR2dqRDBSNFdNNVdpV1c2MkVqbXFBWjdPTURwVjBnazA4OGdyOXZDMWtlOEo2ajJsQVpRV2kwUHFCRnc5MDBnbS1vdm5xcWpXRHJRNURnRjVpQ3NzNklpVGtUc3RDajdWREVSLXN0cWlGWTlJQmppeENNb0w3RGc?oc=5"
     }
   ],
   "brief": "<p>Brief generation failed. Market data is still current.</p>",
@@ -196,57 +196,57 @@
         "stocks": [
           {
             "ticker": "NVDA",
-            "price": 225.3,
-            "changePct": 0.54,
+            "price": 225.16,
+            "changePct": -0.06,
             "volume": 98867226.762232,
             "ema21": 212.14,
             "sma50": 206.31,
-            "pct21": 6.2,
-            "pct50": 9.2,
+            "pct21": 6.14,
+            "pct50": 9.14,
             "grade": "approaching"
           },
           {
             "ticker": "MSFT",
-            "price": 496.88,
-            "changePct": 0.9,
+            "price": 495.4,
+            "changePct": -0.3,
             "volume": 23038979.013575,
-            "ema21": 456.74,
+            "ema21": 456.77,
             "sma50": 411.41,
-            "pct21": 8.79,
-            "pct50": 20.77,
+            "pct21": 8.46,
+            "pct50": 20.41,
             "grade": "extended"
           },
           {
             "ticker": "AAPL",
-            "price": 305.26,
-            "changePct": 1,
+            "price": 305.93,
+            "changePct": 0.22,
             "volume": 40349289.46625,
-            "ema21": 313.76,
+            "ema21": 313.78,
             "sma50": 309.28,
-            "pct21": -2.71,
-            "pct50": -1.3,
+            "pct21": -2.5,
+            "pct50": -1.08,
             "grade": "zone"
           },
           {
             "ticker": "META",
-            "price": 594.97,
-            "changePct": 2.78,
+            "price": 589.85,
+            "changePct": -0.86,
             "volume": 11164157.443585,
-            "ema21": 595.92,
+            "ema21": 595.95,
             "sma50": 597.8,
-            "pct21": -0.16,
-            "pct50": -0.47,
+            "pct21": -1.02,
+            "pct50": -1.33,
             "grade": "zone"
           },
           {
             "ticker": "AMD",
-            "price": 483.01,
-            "changePct": 0.02,
+            "price": 514.39,
+            "changePct": 6.5,
             "volume": 18764893.237632,
-            "ema21": 492.75,
+            "ema21": 492.8,
             "sma50": 510.96,
-            "pct21": -1.98,
-            "pct50": -5.47,
+            "pct21": 4.38,
+            "pct50": 0.67,
             "grade": "zone"
           }
         ]
@@ -290,24 +290,24 @@
         "stocks": [
           {
             "ticker": "NVDA",
-            "price": 225.3,
-            "changePct": 0.54,
+            "price": 225.16,
+            "changePct": -0.06,
             "volume": 98867226.762232,
             "ema21": 212.14,
             "sma50": 206.31,
-            "pct21": 6.2,
-            "pct50": 9.2,
+            "pct21": 6.14,
+            "pct50": 9.14,
             "grade": "approaching"
           },
           {
             "ticker": "AMD",
-            "price": 483.01,
-            "changePct": 0.02,
+            "price": 514.39,
+            "changePct": 6.5,
             "volume": 18764893.237632,
-            "ema21": 492.75,
+            "ema21": 492.8,
             "sma50": 510.96,
-            "pct21": -1.98,
-            "pct50": -5.47,
+            "pct21": 4.38,
+            "pct50": 0.67,
             "grade": "zone"
           }
         ]

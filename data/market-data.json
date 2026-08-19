@@ -1,36 +1,36 @@
 {
-  "generated": "2026-08-18T12:31:51.864Z",
-  "date": "2026-08-18",
+  "generated": "2026-08-19T12:33:18.484Z",
+  "date": "2026-08-19",
   "indices": [
     {
       "name": "S&P 500",
-      "val": "772.67",
-      "chg": -0.4727,
-      "price": 772.67
+      "val": "767.45",
+      "chg": -0.6756,
+      "price": 767.45
     },
     {
       "name": "NASDAQ",
-      "val": "729.87",
-      "chg": -0.1641,
-      "price": 729.87
+      "val": "717.51",
+      "chg": -1.6935,
+      "price": 717.51
     },
     {
       "name": "DOW",
-      "val": "534.19",
-      "chg": -0.4862,
-      "price": 534.19
+      "val": "532.91",
+      "chg": -0.2396,
+      "price": 532.91
     },
     {
       "name": "RUSSELL",
-      "val": "304.06",
-      "chg": -0.3376,
-      "price": 304.06
+      "val": "300.23",
+      "chg": -1.2596,
+      "price": 300.23
     },
     {
       "name": "VIX",
-      "val": "19.50",
-      "chg": 0.7492,
-      "price": 19.5
+      "val": "19.65",
+      "chg": 0.7692,
+      "price": 19.65
     },
     {
       "name": "10Y",
@@ -43,74 +43,74 @@
     {
       "name": "Tech",
       "symbol": "XLK",
-      "chg": 0.1631
+      "chg": -2.4695
     },
     {
       "name": "Health",
       "symbol": "XLV",
-      "chg": -0.1912
+      "chg": 1.6043
     },
     {
       "name": "Financials",
       "symbol": "XLF",
-      "chg": -0.9972
+      "chg": 0.4515
     },
     {
       "name": "Energy",
       "symbol": "XLE",
-      "chg": 1.0822
+      "chg": 1.7578
     },
     {
       "name": "Cons Disc",
       "symbol": "XLY",
-      "chg": -1.2267
+      "chg": -0.334
     },
     {
       "name": "Industrials",
       "symbol": "XLI",
-      "chg": -0.1019
+      "chg": -1.476
     },
     {
       "name": "Materials",
       "symbol": "XLB",
-      "chg": -0.571
+      "chg": -0.8806
     },
     {
       "name": "Real Estate",
       "symbol": "XLRE",
-      "chg": -0.9719
+      "chg": -0.4461
     },
     {
       "name": "Utilities",
       "symbol": "XLU",
-      "chg": -0.2934
+      "chg": -0.3622
     },
     {
       "name": "Cons Staples",
       "symbol": "XLP",
-      "chg": -1.6378
+      "chg": 1.0628
     },
     {
       "name": "Comm Svcs",
       "symbol": "XLC",
-      "chg": -1.8858
+      "chg": -0.3068
     }
   ],
   "keyLevels": [
     {
       "tag": "support",
       "label": "SPY Support",
-      "val": "772.51"
+      "val": "766.92"
     },
     {
       "tag": "resist",
       "label": "SPY Resist",
-      "val": "776.77"
+      "val": "769.50"
     },
     {
       "tag": "pivot",
       "label": "QQQ Pivot",
-      "val": "731.24"
+      "val": "718.52"
     }
   ],
   "fearGreed": {
@@ -119,73 +119,73 @@
   },
   "earnings": [
     {
-      "ticker": "ABHBY",
-      "info": "EPS Est: N/A",
+      "ticker": "AARD",
+      "info": "EPS Est: -0.8917",
       "when": ""
     },
     {
-      "ticker": "ACRG",
-      "info": "EPS Est: N/A",
+      "ticker": "ACRV",
+      "info": "EPS Est: -0.51",
       "when": ""
     },
     {
-      "ticker": "ARMP",
-      "info": "EPS Est: -0.4539",
+      "ticker": "ADGM",
+      "info": "EPS Est: -0.3128",
       "when": ""
     },
     {
-      "ticker": "AS",
-      "info": "EPS Est: 0.1098",
+      "ticker": "ADI",
+      "info": "EPS Est: 3.3681",
       "when": "BMO"
     },
     {
-      "ticker": "ASII",
-      "info": "EPS Est: N/A",
+      "ticker": "ALMS",
+      "info": "EPS Est: -0.7436",
       "when": ""
     },
     {
-      "ticker": "AUNA",
-      "info": "EPS Est: 0.8767",
-      "when": "AMC"
+      "ticker": "ALVO",
+      "info": "EPS Est: -0.0275",
+      "when": ""
     }
   ],
   "econ": [],
   "news": [
     {
-      "time": "8:00 AM",
-      "text": "Prediction markets entrant Novig posts more than $125 million in trading volume during its first week",
-      "tag": "CNBC",
-      "url": "https://www.cnbc.com/2026/08/18/novig-posts-more-than-125-million-in-trading-volume-in-its-first-week.html"
-    },
-    {
-      "time": "7:59 AM",
-      "text": "Sea Ray parent Brunswick bets on AI navigation and new revenue streams to help stalling boat sales",
-      "tag": "CNBC",
-      "url": "https://www.cnbc.com/2026/08/18/sea-ray-parent-brunswick-ai-recurring-revenue-boat-sales.html"
-    },
-    {
-      "time": "7:06 AM",
-      "text": "US stock futures fall as fading Iran peace prospects drive up oil, yields - Reuters",
+      "time": "7:43 AM",
+      "text": "Wall St futures flat after tech rout; Iran tensions, retail earnings in focus - reuters.com",
       "tag": "Reuters",
-      "url": "https://news.google.com/rss/articles/CBMisAFBVV95cUxPUzFvaDFSek1CYmFoSHEzTG9feVA2blNkZE9LMy00ZnpQbnFmVXYwSDJkeDR5OEFNSExNcGdrWWNjdTNLQzlia0V4b0hvV2VaTTcyaXRFdldtaDJUcm9KcDAxQ3NNWV9MaDd2Q2NaVWtHVUEwS0YyU21ia3lJQVpMTjNBMGtlaXp0M0JWaTIxeExpYlpHOEN0b05NN00xRmhHSHc0bERMOG1COGVNYTEzSw?oc=5"
+      "url": "https://news.google.com/rss/articles/CBMivwFBVV95cUxQNnFzX1pZYUZsd0lHWkM3SGVWNE9NRkFvRVdmQ1JIcVJMeXBKenVjQnJLVlFOTnpSVTU2VW95Y2ZUNUdaTnNqd0ItNGpUVktVMkFjR29JTExtc1NUV3lKYkw3MGRDWFozRmlJM0lIdW0xd3daMHZPTVVwZzV3d1ZZTGkybTBPYlZ6czhMVDNtY29pRE5SM2hvejNyZFFLUnRRSXMzTmhYTjBjTTBCejc5N1dxakdsSXBVSzZNRFV6cw?oc=5"
     },
     {
-      "time": "6:44 AM",
-      "text": "Hormuz Strait to remain shut until U.S. meets interim deal conditions, Iran says - Reuters",
+      "time": "7:40 AM",
+      "text": "Britain's energy price cap to hit three-year high in October, Cornwall Insight says - Reuters",
       "tag": "Reuters",
-      "url": "https://news.google.com/rss/articles/CBMixwFBVV95cUxOSENtbzRKbGs1djM0OE56Z0w0ODhCSVBFdHBXeTFqUGo2dzVPZ25GQkhGUTNXQTFtY0tNNDFrTnlSN2ZtQ282M2pSbWZrMncwUGFOcEtyaTB6TXNLNDR4Y0gtMEloYUU2S185bVBjeEpnYTBEUF9peWhzeEV0NVR5TVU3d3psNnc2VHdzYTJ5ZlhUM3dVbXh0SlFQZmhUQl9wbzQ4WG5ETXp4UjZyeWRmV2FyekpaYTFiZ0djY1E5LTY0aXI4WjZn?oc=5"
+      "url": "https://news.google.com/rss/articles/CBMiygFBVV95cUxOTUkzcjBJVHphRWJDcFhBSjFzaVZoS0VpblpPRzNLT0VrajJPZUoyZXFBa1JQV25Va3ZEODhIbVp0bU5zb2RDLUN5MlI2TjRkX0FkaFV4aGlLNTBRQl9JSDNoMF9GNnZFYWk5X08xMUtnLVFjN3l2UktNQjQ5eWJwVGVVbU9lUGpKNHJZd1p0TU1DT0o2eDlVVlU2cGNwdlc1X3loc3NmTVZTeUh5N1pjR3liajFlVEN6c1RTckhaVkFwWF95THY5WkpB?oc=5"
     },
     {
-      "time": "6:37 AM",
-      "text": "Morning Bid: Yields give way - Reuters",
+      "time": "7:27 AM",
+      "text": "UAE's financial embargo on Iran after missile threat puts rivalry back in spotlight - reuters.com",
       "tag": "Reuters",
-      "url": "https://news.google.com/rss/articles/CBMilwFBVV95cUxQbzd0djlpMGQ3NlRiOG1GNTZUbGx0SGxWcGdsQk5rYWlfQi16YTZ5QUM2U0pyNGRWLWNRWVNFOTN0eVU0X25xSWlRdTczRVpaQ1NDVGlWVk05V0tQaHNGWkJRRnRZTjFaa2xtUWJfc2FMZkI3MDdOb1JhNnFGRzVmWWhobF9hZjI2NjhON21uQjZkR0JlbHRr?oc=5"
+      "url": "https://news.google.com/rss/articles/CBMiygFBVV95cUxNdzR1UDJHQ1pYM2Y2dzJ4Wmo3d3VCNFBEbDZQamtaSm5wdF9uWUdwRzdNa0ZtTFdzaUppUkdtelNyaDV0ZnU4aWY1aUlBLWhNdzN2VmhvZzJNdk8zM3gwSXZvc0p6Zld0UHhRQ0RjY2NTekZOekZnMEhwWlo1OXc2Mk1KZ0ZkZHF4WFR5NVRMejB2eDQxdXJJR0VocU5QVmRHbHFTZXlJNWRfdE43Sko3cXlYalB2VmFWSFczb044NlZEU21vOTNHOHpB?oc=5"
     },
     {
-      "time": "5:19 AM",
-      "text": "European shares slip as oil prices and bond yields surge on Middle East fears - Reuters",
+      "time": "4:37 AM",
+      "text": "Turkey slams Israel's 'untenable' claims after strikes on Syrian base - reuters.com",
       "tag": "Reuters",
-      "url": "https://news.google.com/rss/articles/CBMiugFBVV95cUxPQWJYWndUWEJjOWp1RXhHeWpQOFdFaTVhRFkzY3Rhc2pCYXJKcDRJWUlWeXlUZnhISjNiaXJVN0doZU9CdVZGcGhNRW5aUno1Vzc0U0xFNGpIbnRTV3BoWWtPNkE5ZXNrN0FDSlBOLVFrbHFDYjk5T0RJTGhGR2VtTmNxRzF1RUFNT3hJZnhCazgxdl96UFlJTzFnTE5CNkl1anFmYThZeXhodF9tX1MzbU1wRmZneU1EN3c?oc=5"
+      "url": "https://news.google.com/rss/articles/CBMiuAFBVV95cUxPeTdCNlA1LTNVZ0ttZ2VXTGJLVnR5YjBnUnZMNFVWVzc5cUJEcHdxekdHLXBzcDNLUnp1TUx4N3J6SzJQQ0pOTEtSRFVWOTJpZC1xZEd4QTA1TkpEaG1mOXdTM2pQWU5kV3FqWTM3SlJUZEYyb180ZWxMRHlSZlVveDMtWkNJMTFwMWs0VTB6R1M1aHhNRVAzdXc2V29oOVBBRV8wM2FmWnE4OTNJVWpWU3E0Z0VBcnQ4?oc=5"
+    },
+    {
+      "time": "3:11 AM",
+      "text": "PODCAST: US-Iran ceasefire expires, Tupac murder trial and microdramas - reuters.com",
+      "tag": "Reuters",
+      "url": "https://news.google.com/rss/articles/CBMiowFBVV95cUxPbmZvWi1pSnAyOW9WZ0lLdkhfcDZvVXNPODFDRE9OYjVvYXJ1MmJzNFN5Z1FJNDgyNzFRR05pNHlValB2RFZuT3lmSVU4UEFkNUdSaEQ0RXBUZ2c0enpCRzlOZWJVUERyTGxlYUplTnY5YVNYekNZMXdqQWtsM1lLUWI1WGxHd0V6d183MGxVQkpqdFpDUmRVZjloNFVyWnRWSU9J?oc=5"
+    },
+    {
+      "time": "1:19 AM",
+      "text": "South Korea minister says Trump appears to be pressuring Seoul over Iran, investment - reuters.com",
+      "tag": "Reuters",
+      "url": "https://news.google.com/rss/articles/CBMi0AFBVV95cUxQTVZrYXM5NGpibkZyR1hqU0JpVWV4S084VkR4UGhsUDItUlpodjhuSl90NkJXdXBSc3NEcFZ2QzVIZFpoLXpDNWliT014aW9IbnNOd2o4eWUyZ2gyOFU4bHhSam1uczNnMVRrdlhHcVBKZDNqdWk2eTBJUkdWcjdSZEJfZ0pwQ0YzVk9vbmU2RFdOOTdQVE53WDNyOFUzend2Z01CaHBGaVFWc2hrSWxPdXMzV3Zfa083S2poUTI4b3hhM3FtVURfWXRsTmp5cFNY?oc=5"
     }
   ],
   "brief": "<p>Brief generation failed. Market data is still current.</p>",
@@ -195,69 +195,126 @@
         "sector": "Technology",
         "stocks": [
           {
-            "ticker": "NVDA",
-            "price": 225.01,
-            "changePct": -0.07,
-            "volume": 93678685.881838,
-            "ema21": 214.38,
-            "sma50": 206.65,
-            "pct21": 4.96,
-            "pct50": 8.89,
-            "grade": "approaching"
-          },
-          {
             "ticker": "MSFT",
-            "price": 480.35,
-            "changePct": -3.04,
-            "volume": 29635848.065872,
-            "ema21": 462.14,
-            "sma50": 413.82,
-            "pct21": 3.94,
-            "pct50": 16.08,
+            "price": 481.63,
+            "changePct": 0.27,
+            "volume": 24087591.628095,
+            "ema21": 463.95,
+            "sma50": 415.12,
+            "pct21": 3.81,
+            "pct50": 16.02,
             "grade": "approaching"
           },
           {
             "ticker": "META",
-            "price": 568.97,
-            "changePct": -3.54,
-            "volume": 17225609.840283,
-            "ema21": 593.02,
-            "sma50": 595.96,
-            "pct21": -4.05,
-            "pct50": -4.53,
+            "price": 543.67,
+            "changePct": -4.45,
+            "volume": 27094871.166154,
+            "ema21": 588.56,
+            "sma50": 594.98,
+            "pct21": -7.63,
+            "pct50": -8.62,
             "grade": "extended"
           },
           {
-            "ticker": "AAPL",
-            "price": 305.59,
-            "changePct": -0.11,
-            "volume": 38169263.837284,
-            "ema21": 312.4,
-            "sma50": 309.08,
-            "pct21": -2.18,
-            "pct50": -1.13,
+            "ticker": "AMD",
+            "price": 484.39,
+            "changePct": -4.27,
+            "volume": 23721548.257724,
+            "ema21": 494.79,
+            "sma50": 510.42,
+            "pct21": -2.1,
+            "pct50": -5.1,
+            "grade": "extended"
+          },
+          {
+            "ticker": "NVDA",
+            "price": 219.74,
+            "changePct": -2.34,
+            "volume": 103128247.719125,
+            "ema21": 214.86,
+            "sma50": 206.94,
+            "pct21": 2.27,
+            "pct50": 6.19,
             "grade": "zone"
           },
           {
-            "ticker": "AMD",
-            "price": 506,
-            "changePct": -1.63,
-            "volume": 20057628.12883,
-            "ema21": 495.83,
-            "sma50": 510.06,
-            "pct21": 2.05,
-            "pct50": -0.8,
+            "ticker": "AAPL",
+            "price": 310.03,
+            "changePct": 1.45,
+            "volume": 53424535.21961,
+            "ema21": 312.19,
+            "sma50": 309.13,
+            "pct21": -0.69,
+            "pct50": 0.29,
             "grade": "zone"
           }
         ]
       },
       {
         "sector": "Semis",
-        "stocks": []
+        "stocks": [
+          {
+            "ticker": "AMAT",
+            "price": 514.33,
+            "changePct": -3.92,
+            "volume": 8611917.679202,
+            "ema21": 530.78,
+            "sma50": 560.78,
+            "pct21": -3.1,
+            "pct50": -8.28,
+            "grade": "extended"
+          }
+        ]
       },
       {
         "sector": "Financials",
-        "stocks": []
+        "stocks": [
+          {
+            "ticker": "JPM",
+            "price": 363.25,
+            "changePct": 0.63,
+            "volume": 5525081.299745,
+            "ema21": 355.38,
+            "sma50": 341.39,
+            "pct21": 2.21,
+            "pct50": 6.4,
+            "grade": "zone"
+          },
+          {
+            "ticker": "GS",
+            "price": 1040.47,
+            "changePct": -1.03,
+            "volume": 1909158.068854,
+            "ema21": 1044.02,
+            "sma50": 1053.69,
+            "pct21": -0.34,
+            "pct50": -1.25,
+            "grade": "zone"
+          },
+          {
+            "ticker": "V",
+            "price": 364.25,
+            "changePct": 1.51,
+            "volume": 6820284.593618,
+            "ema21": 361.4,
+            "sma50": 350.06,
+            "pct21": 0.79,
+            "pct50": 4.05,
+            "grade": "zone"
+          },
+          {
+            "ticker": "MA",
+            "price": 574.31,
+            "changePct": 2.14,
+            "volume": 3907935.32603,
+            "ema21": 559.33,
+            "sma50": 532.52,
+            "pct21": 2.68,
+            "pct50": 7.85,
+            "grade": "zone"
+          }
+        ]
       },
       {
         "sector": "Cons Cyclical",
@@ -289,25 +346,36 @@
         "sector": "Semis",
         "stocks": [
           {
-            "ticker": "NVDA",
-            "price": 225.01,
-            "changePct": -0.07,
-            "volume": 93678685.881838,
-            "ema21": 214.38,
-            "sma50": 206.65,
-            "pct21": 4.96,
-            "pct50": 8.89,
-            "grade": "approaching"
+            "ticker": "AMD",
+            "price": 484.39,
+            "changePct": -4.27,
+            "volume": 23721548.257724,
+            "ema21": 494.79,
+            "sma50": 510.42,
+            "pct21": -2.1,
+            "pct50": -5.1,
+            "grade": "extended"
           },
           {
-            "ticker": "AMD",
-            "price": 506,
-            "changePct": -1.63,
-            "volume": 20057628.12883,
-            "ema21": 495.83,
-            "sma50": 510.06,
-            "pct21": 2.05,
-            "pct50": -0.8,
+            "ticker": "AMAT",
+            "price": 514.33,
+            "changePct": -3.92,
+            "volume": 8611917.679202,
+            "ema21": 530.78,
+            "sma50": 560.78,
+            "pct21": -3.1,
+            "pct50": -8.28,
+            "grade": "extended"
+          },
+          {
+            "ticker": "NVDA",
+            "price": 219.74,
+            "changePct": -2.34,
+            "volume": 103128247.719125,
+            "ema21": 214.86,
+            "sma50": 206.94,
+            "pct21": 2.27,
+            "pct50": 6.19,
             "grade": "zone"
           }
         ]

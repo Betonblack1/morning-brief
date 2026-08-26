@@ -1,36 +1,36 @@
 {
-  "generated": "2026-08-25T12:34:59.353Z",
-  "date": "2026-08-25",
+  "generated": "2026-08-26T12:38:38.300Z",
+  "date": "2026-08-26",
   "indices": [
     {
       "name": "S&P 500",
-      "val": "763.47",
-      "chg": -0.2938,
-      "price": 763.47
+      "val": "765.91",
+      "chg": 0.3196,
+      "price": 765.91
     },
     {
       "name": "NASDAQ",
-      "val": "706.32",
-      "chg": -0.998,
-      "price": 706.32
+      "val": "710.72",
+      "chg": 0.6229,
+      "price": 710.72
     },
     {
       "name": "DOW",
-      "val": "533.65",
-      "chg": 0.2687,
-      "price": 533.65
+      "val": "535.24",
+      "chg": 0.2979,
+      "price": 535.24
     },
     {
       "name": "RUSSELL",
-      "val": "297.97",
-      "chg": -0.6634,
-      "price": 297.97
+      "val": "299.23",
+      "chg": 0.4229,
+      "price": 299.23
     },
     {
       "name": "VIX",
-      "val": "18.96",
-      "chg": 0.0528,
-      "price": 18.96
+      "val": "18.67",
+      "chg": -1.5295,
+      "price": 18.67
     },
     {
       "name": "10Y",
@@ -43,149 +43,149 @@
     {
       "name": "Tech",
       "symbol": "XLK",
-      "chg": -1.7784
+      "chg": 0.9386
     },
     {
       "name": "Health",
       "symbol": "XLV",
-      "chg": 0.0458
+      "chg": 0.3377
     },
     {
       "name": "Financials",
       "symbol": "XLF",
-      "chg": 1.2874
+      "chg": 0.1546
     },
     {
       "name": "Energy",
       "symbol": "XLE",
-      "chg": -0.8328
+      "chg": -1.6638
     },
     {
       "name": "Cons Disc",
       "symbol": "XLY",
-      "chg": 0.2372
+      "chg": -0.2959
     },
     {
       "name": "Industrials",
       "symbol": "XLI",
-      "chg": -0.6935
+      "chg": -0.3352
     },
     {
       "name": "Materials",
       "symbol": "XLB",
-      "chg": 0.0747
+      "chg": 0
     },
     {
       "name": "Real Estate",
       "symbol": "XLRE",
-      "chg": 0.5546
+      "chg": 0.0662
     },
     {
       "name": "Utilities",
       "symbol": "XLU",
-      "chg": 1.0521
+      "chg": 0.2082
     },
     {
       "name": "Cons Staples",
       "symbol": "XLP",
-      "chg": 1.6979
+      "chg": -1.0635
     },
     {
       "name": "Comm Svcs",
       "symbol": "XLC",
-      "chg": 0.8259
+      "chg": 0.7657
     }
   ],
   "keyLevels": [
     {
       "tag": "support",
       "label": "SPY Support",
-      "val": "762.08"
+      "val": "763.05"
     },
     {
       "tag": "resist",
       "label": "SPY Resist",
-      "val": "765.22"
+      "val": "766.78"
     },
     {
       "tag": "pivot",
       "label": "QQQ Pivot",
-      "val": "706.27"
+      "val": "710.74"
     }
   ],
   "fearGreed": {
-    "score": 70,
+    "score": 71,
     "label": "Greed"
   },
   "earnings": [
     {
-      "ticker": "ALCY",
-      "info": "EPS Est: N/A",
-      "when": ""
-    },
-    {
-      "ticker": "ANF",
-      "info": "EPS Est: 1.9958",
-      "when": ""
-    },
-    {
-      "ticker": "BOX",
-      "info": "EPS Est: 0.4022",
+      "ticker": "A",
+      "info": "EPS Est: 1.5154",
       "when": "AMC"
     },
     {
-      "ticker": "BSPK",
+      "ticker": "AFYA",
+      "info": "EPS Est: 2.1896",
+      "when": ""
+    },
+    {
+      "ticker": "AVNW",
+      "info": "EPS Est: 0.5566",
+      "when": ""
+    },
+    {
+      "ticker": "BANX",
       "info": "EPS Est: N/A",
       "when": ""
     },
     {
-      "ticker": "DREM",
-      "info": "EPS Est: N/A",
-      "when": ""
+      "ticker": "BBWI",
+      "info": "EPS Est: 0.2465",
+      "when": "BMO"
     },
     {
-      "ticker": "DXLG",
-      "info": "EPS Est: -0.0408",
+      "ticker": "BURL",
+      "info": "EPS Est: 2.2093",
       "when": ""
     }
   ],
   "econ": [],
   "news": [
     {
-      "time": "7:21 AM",
-      "text": "OpenAI bans Russian ChatGPT accounts used in covert misinformation campaign",
+      "time": "7:56 AM",
+      "text": "Medical device maker Boston Scientific is being hit by a cyberattack. The shares are falling",
       "tag": "CNBC",
-      "url": "https://www.cnbc.com/2026/08/25/openai-russia-chatgpt-influence-campaign.html"
+      "url": "https://www.cnbc.com/2026/08/26/medical-device-maker-boston-scientific-is-being-hit-by-a-cyber-attack-the-shares-are-falling.html"
     },
     {
-      "time": "7:09 AM",
-      "text": "Six months into Iran war, almost half of global oil flows from war zones - Reuters",
+      "time": "6:32 AM",
+      "text": "EXCLUSIVE: Hack of water sector supplier draws FBI scrutiny as Iran-linked cyber concerns grow - Reuters",
       "tag": "Reuters",
-      "url": "https://news.google.com/rss/articles/CBMitgFBVV95cUxPV0VHRE5tclJ6Z1NRR0l2S3JOMURfLUFMY2hVMkZOUTNSdWJsS2pXejZFbkFOX3YyVE9GTDdscFlpWUVMY3hBRExLS0dVUk1qWEFuZC0yb09zYW5UYVF2NVc0c2Y0OExPMWdXSHVsMzNLcy1sRmEwTW5ON3gxY0h1MXF2MGRtRExBTllHdnF5NncwTzNGXzh1QUtWMjg2MTBCWWFYZHczYWt1R2pKZzF4NFUzRkN1dw?oc=5"
+      "url": "https://news.google.com/rss/articles/CBMiuwFBVV95cUxQY3VTcnZQcEJYNnZOWFBwd1Vwam15ZFltRThzM21BYVpZWjZWbDg2X05jdG9TQkRNR1hmZjQ4WFFXdzVmQ3FscGkwal9SdF9SVUNBTl9YNUtieW1acjg3WFBzOGJybzcwRUk1S0VxNGlqQk1vaG4yU2hHMmF3dnM0MkVSR2xNN1Rpc0VpMzdpcWFRM1pkWWowWVN3T2xBR3cyTGhhelRmOVJSeVl6WXBlMGNuaFA0cVpGcC1N?oc=5"
     },
     {
-      "time": "7:00 AM",
-      "text": "United Airlines adds 2027 flights spanning Sardinia to Okinawa. Here's what it says about travel today",
-      "tag": "CNBC",
-      "url": "https://www.cnbc.com/2026/08/25/united-airlines-2027-international-routes.html"
-    },
-    {
-      "time": "6:57 AM",
-      "text": "US prepares to send diplomats back to Middle East embassies after Iran war evacuations, NYT reports - Reuters",
+      "time": "4:37 AM",
+      "text": "US-Iran war spurs Europe, Asia to boost renewables - Reuters",
       "tag": "Reuters",
-      "url": "https://news.google.com/rss/articles/CBMizwFBVV95cUxOS253amNScVNTdFF4SjVlU1RQVGFzVjBZalVKYUpUckZOX1FzdklkcDI4NlRoc0x5VXZtaUgxNW5wN092R05HRVRHMU51VG5iOU9SblF6d2VxU2ZTVnZmTWw3eVNnZEFRRExHcmlQRmhoWXBvOGRPcEdUeXphX2lMZnZSektOcHVjUEd1dFNLUURsb0dVcXF4WElkcE5yOGFxbl94dUdJYmFuZjBZWk85UjRGaXpaaUtzZnFmX2NXcTgwVXdjdDBrVFF4RmZEWmc?oc=5"
+      "url": "https://news.google.com/rss/articles/CBMinwFBVV95cUxNTTVNd3JBNVpOVlFWcUlabjhLbU52TmV4WXNjbUwyVzVlWXFHMFBvenNoUVItMnhFbkh6VWM0dXBrVVpmbmhDTEROdlVlNG43OElCeVY3Uy1jQVNIRnljcUt6b1h2Uy1RZzN3c1lHbkhXeGlLTnhfc2g3WlRlTERCb2VON3NTQU1uTUtGTVpad2gyY3pnYUo1cU9pNlNRRVU?oc=5"
     },
     {
-      "time": "5:26 AM",
-      "text": "BlackBerry CEO says robotics is one of its fastest-growing businesses",
-      "tag": "CNBC",
-      "url": "https://www.cnbc.com/2026/08/25/blackberry-qnx-robotics-physical-ai.html"
-    },
-    {
-      "time": "5:08 AM",
-      "text": "Iran war makes multibillion-dollar Tanzania LNG more attractive, Equinor says - Reuters",
+      "time": "3:13 AM",
+      "text": "Dubai's DXB first-half passenger traffic falls more than 30% as Iran war disrupts travel - Reuters",
       "tag": "Reuters",
-      "url": "https://news.google.com/rss/articles/CBMipgFBVV95cUxOQVRRRXpGLTQzSUFSbHE2c1c0RGxGTGRhOWpneHlwRTI5WlBDQWY1UWJBOWFITHFyZkxGQ2xGYzkxT1ZZLWtCM0ZRbVhncEUyeTM3aG05Y0gtekpwNE1vdjdkNjNUc1BiOUw1cDljM1gtX0p3Yi16elh6UTNYeGJlNXRiVlZRU0diWnlnVkVOVnVuY2JITnNKVHgzRnJGVzRsTW5jRXNB?oc=5"
+      "url": "https://news.google.com/rss/articles/CBMiygFBVV95cUxNbEsycFlDR0QyX3p6R2YwTHVfUTMwaUo3Xy1XMU14Q2xjNU9hZERvYzhkQTQ1ZF95RF8waXhVdnlHX21XblJPWHRqMjVRcU5MMkM4VllGNjVmMnVPeWh5Nm1MZnVKQ0Y4eGJvb3NyMWlCRFJUbW5Sd1Z5UXZlZE1jWkJCVVdWV1ZzcG1qWXVJVk5ZWFN4WFdXSVU3ZzBfNDZQM01Kcnp5cG9tQktIdHJxaFhjdUFKQUw3QXZObTlrVU9wc1NUeWxCVWxB?oc=5"
+    },
+    {
+      "time": "2:09 AM",
+      "text": "British energy price cap to rise 4% as Iran war pushes up costs - Reuters",
+      "tag": "Reuters",
+      "url": "https://news.google.com/rss/articles/CBMiuwFBVV95cUxNQlZZZUthczBuQ2FsOEZnMEhWQ0ZhMUh1ajdxc1R0c1ZzUWhtWjlDckRqUFNLRXBscjV0RDltV0RMSEJjbWpyWk4ySlV2TEhFdTFPUTgyY1d1aV8taTdtS21rUHpWanJvSDc5V1UtZ2J4TmZIdG5HMVhVZWpQUnlCeTlLQ0M5WFhjU1BkTDBNUkJKQlRJckxzRTdSN1B2bjRSNVFMMktvQkMyeF9IT1kya2FnZXd6a1N3REpv?oc=5"
+    },
+    {
+      "time": "2:00 AM",
+      "text": "US-Iran war sinks into energy trench warfare six months on - Reuters",
+      "tag": "Reuters",
+      "url": "https://news.google.com/rss/articles/CBMiwgFBVV95cUxQcUMxd0dzb1VHdVAxRERXaTE2RFhfaEE1M1pQY084QWJIU2ZLWEZ3VUpVbi1ORkpXMEJNRjUyS1dwUUdvYnROb1kwNXFpQm40V3VjellLTWdRYWQ1ZWxKY1dvc3ZLWXVzSVhJSmJqSXNGWmRieDJMQ2RlSktPeS1zSVFFTndmQ0NXaFcwTDFiUGRZU1VHdzlUdFdDWW04MEtMZ0dwT0JQamhjWU1RRkYxQlBWcUJFTlQzWnFZdGs2U0NIZw?oc=5"
     }
   ],
   "brief": "<p>Brief generation failed. Market data is still current.</p>",
@@ -196,57 +196,57 @@
         "stocks": [
           {
             "ticker": "MSFT",
-            "price": 487.31,
-            "changePct": 0.84,
-            "volume": 20020822.615727,
-            "ema21": 467.29,
-            "sma50": 418.13,
-            "pct21": 4.28,
-            "pct50": 16.55,
+            "price": 491.71,
+            "changePct": 0.9,
+            "volume": 19518987.275228,
+            "ema21": 472.38,
+            "sma50": 423.8,
+            "pct21": 4.09,
+            "pct50": 16.02,
             "grade": "approaching"
           },
           {
-            "ticker": "META",
-            "price": 559.02,
-            "changePct": 1.66,
-            "volume": 13872173.310106,
-            "ema21": 581.23,
-            "sma50": 593.41,
-            "pct21": -3.82,
-            "pct50": -5.8,
-            "grade": "extended"
-          },
-          {
-            "ticker": "AMD",
-            "price": 456.75,
-            "changePct": -3.49,
-            "volume": 15178892.469469,
-            "ema21": 490.2,
-            "sma50": 509.82,
-            "pct21": -6.82,
-            "pct50": -10.41,
-            "grade": "extended"
-          },
-          {
             "ticker": "NVDA",
-            "price": 208.48,
-            "changePct": -2.91,
-            "volume": 92457037.425713,
-            "ema21": 215.28,
-            "sma50": 207.29,
-            "pct21": -3.16,
-            "pct50": 0.57,
+            "price": 213.05,
+            "changePct": 2.19,
+            "volume": 122309019.852387,
+            "ema21": 214.49,
+            "sma50": 207.81,
+            "pct21": -0.67,
+            "pct50": 2.52,
             "grade": "zone"
           },
           {
             "ticker": "AAPL",
-            "price": 310.34,
-            "changePct": 0.32,
-            "volume": 40959184.98359,
-            "ema21": 312.52,
-            "sma50": 309.85,
-            "pct21": -0.7,
-            "pct50": 0.16,
+            "price": 309.9,
+            "changePct": -0.14,
+            "volume": 25869807.752578,
+            "ema21": 311.87,
+            "sma50": 310.88,
+            "pct21": -0.63,
+            "pct50": -0.31,
+            "grade": "zone"
+          },
+          {
+            "ticker": "META",
+            "price": 570.05,
+            "changePct": 1.97,
+            "volume": 9769094.429191,
+            "ema21": 576.02,
+            "sma50": 592.86,
+            "pct21": -1.04,
+            "pct50": -3.85,
+            "grade": "zone"
+          },
+          {
+            "ticker": "AMD",
+            "price": 479.18,
+            "changePct": 4.91,
+            "volume": 19001388.486675,
+            "ema21": 485.16,
+            "sma50": 508.95,
+            "pct21": -1.23,
+            "pct50": -5.85,
             "grade": "zone"
           }
         ]
@@ -289,25 +289,25 @@
         "sector": "Semis",
         "stocks": [
           {
-            "ticker": "AMD",
-            "price": 456.75,
-            "changePct": -3.49,
-            "volume": 15178892.469469,
-            "ema21": 490.2,
-            "sma50": 509.82,
-            "pct21": -6.82,
-            "pct50": -10.41,
-            "grade": "extended"
+            "ticker": "NVDA",
+            "price": 213.05,
+            "changePct": 2.19,
+            "volume": 122309019.852387,
+            "ema21": 214.49,
+            "sma50": 207.81,
+            "pct21": -0.67,
+            "pct50": 2.52,
+            "grade": "zone"
           },
           {
-            "ticker": "NVDA",
-            "price": 208.48,
-            "changePct": -2.91,
-            "volume": 92457037.425713,
-            "ema21": 215.28,
-            "sma50": 207.29,
-            "pct21": -3.16,
-            "pct50": 0.57,
+            "ticker": "AMD",
+            "price": 479.18,
+            "changePct": 4.91,
+            "volume": 19001388.486675,
+            "ema21": 485.16,
+            "sma50": 508.95,
+            "pct21": -1.23,
+            "pct50": -5.85,
             "grade": "zone"
           }
         ]

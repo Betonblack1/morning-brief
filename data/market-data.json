@@ -1,36 +1,36 @@
 {
-  "generated": "2026-08-27T21:34:59.874Z",
-  "date": "2026-08-27",
+  "generated": "2026-08-28T21:38:52.756Z",
+  "date": "2026-08-28",
   "indices": [
     {
       "name": "S&P 500",
-      "val": "771.10",
-      "chg": 0.6553,
-      "price": 771.1
+      "val": "769.35",
+      "chg": -0.2269,
+      "price": 769.35
     },
     {
       "name": "NASDAQ",
-      "val": "721.11",
-      "chg": 1.3692,
-      "price": 721.11
+      "val": "716.43",
+      "chg": -0.649,
+      "price": 716.43
     },
     {
       "name": "DOW",
-      "val": "535.22",
-      "chg": 0.1853,
-      "price": 535.22
+      "val": "535.06",
+      "chg": -0.0299,
+      "price": 535.06
     },
     {
       "name": "RUSSELL",
-      "val": "299.81",
-      "chg": 0.2944,
-      "price": 299.81
+      "val": "295.75",
+      "chg": -1.3542,
+      "price": 295.75
     },
     {
       "name": "VIX",
-      "val": "18.10",
-      "chg": -2.3732,
-      "price": 18.1
+      "val": "18.36",
+      "chg": 1.4365,
+      "price": 18.36
     },
     {
       "name": "10Y",
@@ -43,149 +43,149 @@
     {
       "name": "Tech",
       "symbol": "XLK",
-      "chg": 3.1558
+      "chg": -1.5482
     },
     {
       "name": "Health",
       "symbol": "XLV",
-      "chg": -1.1294
+      "chg": -0.2448
     },
     {
       "name": "Financials",
       "symbol": "XLF",
-      "chg": -0.6522
+      "chg": 0.3801
     },
     {
       "name": "Energy",
       "symbol": "XLE",
-      "chg": -0.2243
+      "chg": 0.6261
     },
     {
       "name": "Cons Disc",
       "symbol": "XLY",
-      "chg": -1.0925
+      "chg": 1.1477
     },
     {
       "name": "Industrials",
       "symbol": "XLI",
-      "chg": -0.8539
+      "chg": -0.9284
     },
     {
       "name": "Materials",
       "symbol": "XLB",
-      "chg": -0.8198
+      "chg": -0.0939
     },
     {
       "name": "Real Estate",
       "symbol": "XLRE",
-      "chg": -0.9536
+      "chg": -0.403
     },
     {
       "name": "Utilities",
       "symbol": "XLU",
-      "chg": -0.7584
+      "chg": -1.0421
     },
     {
       "name": "Cons Staples",
       "symbol": "XLP",
-      "chg": -1.3794
+      "chg": 0.4349
     },
     {
       "name": "Comm Svcs",
       "symbol": "XLC",
-      "chg": -1.0656
+      "chg": 1.4182
     }
   ],
   "keyLevels": [
     {
       "tag": "support",
       "label": "SPY Support",
-      "val": "767.16"
+      "val": "768.31"
     },
     {
       "tag": "resist",
       "label": "SPY Resist",
-      "val": "772.36"
+      "val": "775.30"
     },
     {
       "tag": "pivot",
       "label": "QQQ Pivot",
-      "val": "719.00"
+      "val": "718.55"
     }
   ],
   "fearGreed": {
-    "score": 73,
+    "score": 72,
     "label": "Greed"
   },
   "earnings": [
     {
-      "ticker": "AAPI",
+      "ticker": "AUSI",
       "info": "EPS Est: N/A",
       "when": ""
     },
     {
-      "ticker": "ABIT",
+      "ticker": "BACK",
       "info": "EPS Est: N/A",
       "when": ""
     },
     {
-      "ticker": "ADNH",
+      "ticker": "BANX",
       "info": "EPS Est: N/A",
       "when": ""
     },
     {
-      "ticker": "ADSK",
-      "info": "EPS Est: 3.1864",
-      "when": "AMC"
+      "ticker": "BLPG",
+      "info": "EPS Est: N/A",
+      "when": ""
     },
     {
-      "ticker": "AFRM",
-      "info": "EPS Est: 0.3504",
-      "when": "AMC"
+      "ticker": "BZYR",
+      "info": "EPS Est: N/A",
+      "when": ""
     },
     {
-      "ticker": "ANAB",
-      "info": "EPS Est: -0.0717",
-      "when": "AMC"
+      "ticker": "CHA",
+      "info": "EPS Est: 2.3722",
+      "when": "BMO"
     }
   ],
   "econ": [],
   "news": [
     {
-      "time": "3:55 PM",
-      "text": "Iran's security chief denies report about a potential plot against Trump's son - Reuters",
-      "tag": "Reuters",
-      "url": "https://news.google.com/rss/articles/CBMizgFBVV95cUxOMmxfUzFLX1V3NWtDWmZFZ3dsUGIzWV9VZmNZVUo1NjV6dUxQM1VpRTNPS3UtQzg3TWtPaHBuUDJ5STJNSGFnZlMwT2w4UHlpWjMtejRnbUllbWtFeVpXWUJSVkMyeGZjU1hwc1ZSU0xTdHN2eFlMNXd2SEFIWG9EeFlxNkh4TjBOM0J0dUFFV1FrYmp4NVJXZXZjbWM2UGtrRWYyMFlJeEJOb3lBSXdoRm03bmZucjhUN05yejhTRWV6cUpsV1lHVHBDZWJWdw?oc=5"
-    },
-    {
-      "time": "2:53 PM",
-      "text": "Trump to meet refiners, fuel retailers as Iran war boosts gas prices ahead of midterms, sources say - Reuters",
-      "tag": "Reuters",
-      "url": "https://news.google.com/rss/articles/CBMiywFBVV95cUxQUTVfLVZrNnM2eTJJcmZaVjN5Ym83a094ZUYxR3RqenVKVUxyWGpIaldFZTJpZUVaRFJ4TkpJUkctd0VIc1Nzb05qamt6cnZVU3lqSkw3NUdUYmE3WXpXNTUyTjNnLUFUZERfYXp6SjMzV2hrOV9nN1FDWTI4QUxSWGpIMnhwUURoeWRoOUNsYVRMOGx3d1BwdFF1LVNYejhVSjJpT201YWxKTWNBeEdJNm5nZjEyNE1zMWg4TTN4QXNORzN1akNuVEgyWQ?oc=5"
-    },
-    {
-      "time": "2:48 PM",
-      "text": "What's expected at Apple's September event — plus, an uneven rally in AI stocks",
+      "time": "3:35 PM",
+      "text": "Stock traders warm up to Warsh as volatility index touches year-to-date low",
       "tag": "CNBC",
-      "url": "https://www.cnbc.com/2026/08/27/what-to-expect-from-apples-september-event-and-whats-driving-rally.html"
+      "url": "https://www.cnbc.com/2026/08/28/stock-traders-warm-up-to-warsh-as-volatility-index-touches-year-to-date-low.html"
     },
     {
-      "time": "2:14 PM",
-      "text": "What Warsh will say and how the market will react, according to prediction markets",
+      "time": "3:23 PM",
+      "text": "Bessent attacks Warren over yen intervention query, offers ‘Foreign Exchange for Dummies’ lesson",
       "tag": "CNBC",
-      "url": "https://www.cnbc.com/2026/08/27/what-warsh-will-say-and-how-the-market-will-react-according-to-prediction-markets.html"
+      "url": "https://www.cnbc.com/2026/08/28/bessent-warren-yen-intervention-treasury-japan.html"
     },
     {
-      "time": "2:09 PM",
-      "text": "Donald Trump Jr. told Republican state attorneys not to fight prediction markets, NY Times reports",
+      "time": "3:07 PM",
+      "text": "Meta's $17 billion settlement mandates new safeguards for kids—many are promising, says safety expert",
       "tag": "CNBC",
-      "url": "https://www.cnbc.com/2026/08/27/trump-jr-told-gop-state-attorneys-general-dont-fight-prediction-markets-nyt-reports.html"
+      "url": "https://www.cnbc.com/2026/08/28/new-meta-safeguards-teens.html"
     },
     {
       "time": "2:03 PM",
-      "text": "After six months, the Iran war has reached its endgame — a costly stalemate - Reuters",
+      "text": "What we learned from Warsh's Jackson Hole speech, and GE Vernova's CFO to retire",
+      "tag": "CNBC",
+      "url": "https://www.cnbc.com/2026/08/28/what-we-learned-from-warshs-jackson-hole-speech-and-ge-vernovas-cfo-to-retire.html"
+    },
+    {
+      "time": "1:37 PM",
+      "text": "US hits Egyptian bank branches with Iran sanctions as war marks six months - Reuters",
       "tag": "Reuters",
-      "url": "https://news.google.com/rss/articles/CBMitAFBVV95cUxPanlhWGJGcHdKencyMnlRUHBUejVOZlByMTJjWm8wSVVOdWRZV3FBQUlFNFI1WXVqTUdQaEtFeEJkeHl4aTEwaXJmd0MwTFY4VmJOMS02cWJ6ZGZzVEczaGFNelFqdmJoeFNhMGlzNzVzQ3hQOVFtejNvRXZqcVBQek5zY2l2VERfVlk4aHd3WXQ4YTc0MVhIdXF6ZHA4bFVBRlNNWXlKS0ZnbU1JdFo3MWFzMDg?oc=5"
+      "url": "https://news.google.com/rss/articles/CBMisgFBVV95cUxOZnRmTktBaHNUcXJSeXVoMEhUSDg0QlpTRkFGcllGUW5zcW84bE81NjQxTWZ0VjBSNHpxZjBnRkNmVHAyZkFaNkYtYXZ4R1VaRlpIVHF0YVIwZ3BfY1ByZVdKM0RPOXBNMnJzTDkyVnF6b0FnNlRFQ0ozTk02cWY0dHZPYm40TUY2TVlSUklxWUJWVkdZdXNYX21TM05QV1R4dnBxU3pWekdVelEwWXZObHNn?oc=5"
+    },
+    {
+      "time": "12:57 PM",
+      "text": "Apple hikes subscription prices for Apple TV and Apple One in the U.S.",
+      "tag": "CNBC",
+      "url": "https://www.cnbc.com/2026/08/28/apple-tv-one-price-hike-us.html"
     }
   ],
   "brief": "<p>Brief generation failed. Market data is still current.</p>",
@@ -195,58 +195,58 @@
         "sector": "Technology",
         "stocks": [
           {
-            "ticker": "NVDA",
-            "price": 227.98,
-            "changePct": 8.74,
-            "volume": 179900003.968421,
-            "ema21": 214.05,
-            "sma50": 207.75,
-            "pct21": 6.51,
-            "pct50": 9.74,
+            "ticker": "MSFT",
+            "price": 513.53,
+            "changePct": 1.68,
+            "volume": 28688756.316431,
+            "ema21": 477.31,
+            "sma50": 427.96,
+            "pct21": 7.59,
+            "pct50": 19.99,
             "grade": "approaching"
           },
           {
-            "ticker": "MSFT",
-            "price": 505.06,
-            "changePct": 1.75,
-            "volume": 20758853.846318,
-            "ema21": 474.57,
-            "sma50": 425.74,
-            "pct21": 6.43,
-            "pct50": 18.63,
-            "grade": "approaching"
+            "ticker": "AMD",
+            "price": 465.58,
+            "changePct": -2.33,
+            "volume": 16441821.767762,
+            "ema21": 483.96,
+            "sma50": 507.01,
+            "pct21": -3.8,
+            "pct50": -8.17,
+            "grade": "extended"
+          },
+          {
+            "ticker": "NVDA",
+            "price": 217.55,
+            "changePct": -4.58,
+            "volume": 298909822.119368,
+            "ema21": 215.32,
+            "sma50": 208.16,
+            "pct21": 1.03,
+            "pct50": 4.51,
+            "grade": "zone"
           },
           {
             "ticker": "AAPL",
-            "price": 314.58,
-            "changePct": 0.36,
-            "volume": 34024486.623868,
-            "ema21": 312.01,
-            "sma50": 311.22,
-            "pct21": 0.82,
-            "pct50": 1.08,
+            "price": 319.7,
+            "changePct": 1.63,
+            "volume": 32419233.540189,
+            "ema21": 312.24,
+            "sma50": 311.53,
+            "pct21": 2.39,
+            "pct50": 2.62,
             "grade": "zone"
           },
           {
             "ticker": "META",
-            "price": 571.1,
-            "changePct": -0.87,
-            "volume": 31416337.004467,
-            "ema21": 576,
-            "sma50": 592.52,
-            "pct21": -0.85,
-            "pct50": -3.61,
-            "grade": "zone"
-          },
-          {
-            "ticker": "AMD",
-            "price": 476.67,
-            "changePct": -0.89,
-            "volume": 14348127.849588,
-            "ema21": 484.75,
-            "sma50": 507.63,
-            "pct21": -1.67,
-            "pct50": -6.1,
+            "price": 578.02,
+            "changePct": 1.21,
+            "volume": 15221385.613591,
+            "ema21": 575.52,
+            "sma50": 591.94,
+            "pct21": 0.43,
+            "pct50": -2.35,
             "grade": "zone"
           }
         ]
@@ -289,25 +289,25 @@
         "sector": "Semis",
         "stocks": [
           {
-            "ticker": "NVDA",
-            "price": 227.98,
-            "changePct": 8.74,
-            "volume": 179900003.968421,
-            "ema21": 214.05,
-            "sma50": 207.75,
-            "pct21": 6.51,
-            "pct50": 9.74,
-            "grade": "approaching"
+            "ticker": "AMD",
+            "price": 465.58,
+            "changePct": -2.33,
+            "volume": 16441821.767762,
+            "ema21": 483.96,
+            "sma50": 507.01,
+            "pct21": -3.8,
+            "pct50": -8.17,
+            "grade": "extended"
           },
           {
-            "ticker": "AMD",
-            "price": 476.67,
-            "changePct": -0.89,
-            "volume": 14348127.849588,
-            "ema21": 484.75,
-            "sma50": 507.63,
-            "pct21": -1.67,
-            "pct50": -6.1,
+            "ticker": "NVDA",
+            "price": 217.55,
+            "changePct": -4.58,
+            "volume": 298909822.119368,
+            "ema21": 215.32,
+            "sma50": 208.16,
+            "pct21": 1.03,
+            "pct50": 4.51,
             "grade": "zone"
           }
         ]

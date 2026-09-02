@@ -1,36 +1,36 @@
 {
-  "generated": "2026-09-01T15:54:58.368Z",
-  "date": "2026-09-01",
+  "generated": "2026-09-02T15:47:45.934Z",
+  "date": "2026-09-02",
   "indices": [
     {
       "name": "S&P 500",
-      "val": "764.64",
-      "chg": -0.3142,
-      "price": 764.64
+      "val": "765.32",
+      "chg": 0.4647,
+      "price": 765.32
     },
     {
       "name": "NASDAQ",
-      "val": "712.21",
-      "chg": -0.6348,
-      "price": 712.21
+      "val": "708.55",
+      "chg": 0.1286,
+      "price": 708.55
     },
     {
       "name": "DOW",
-      "val": "529.75",
-      "chg": -0.3424,
-      "price": 529.75
+      "val": "530.09",
+      "chg": 0.4434,
+      "price": 530.09
     },
     {
       "name": "RUSSELL",
-      "val": "292.11",
-      "chg": -0.6192,
-      "price": 292.11
+      "val": "292.82",
+      "chg": 0.7743,
+      "price": 292.82
     },
     {
       "name": "VIX",
-      "val": "18.16",
-      "chg": 0.8889,
-      "price": 18.16
+      "val": "18.25",
+      "chg": -1.6173,
+      "price": 18.25
     },
     {
       "name": "10Y",
@@ -43,74 +43,74 @@
     {
       "name": "Tech",
       "symbol": "XLK",
-      "chg": -0.8633
+      "chg": -0.0817
     },
     {
       "name": "Health",
       "symbol": "XLV",
-      "chg": 0.5864
+      "chg": 0.8039
     },
     {
       "name": "Financials",
       "symbol": "XLF",
-      "chg": -0.3812
+      "chg": 1.1364
     },
     {
       "name": "Energy",
       "symbol": "XLE",
-      "chg": 0.5159
+      "chg": 0.3705
     },
     {
       "name": "Cons Disc",
       "symbol": "XLY",
-      "chg": -1.1493
+      "chg": 0.0873
     },
     {
       "name": "Industrials",
       "symbol": "XLI",
-      "chg": -1.1306
+      "chg": 0.1274
     },
     {
       "name": "Materials",
       "symbol": "XLB",
-      "chg": -0.8541
+      "chg": 1.69
     },
     {
       "name": "Real Estate",
       "symbol": "XLRE",
-      "chg": 0.2267
+      "chg": -0.5677
     },
     {
       "name": "Utilities",
       "symbol": "XLU",
-      "chg": 0.4026
+      "chg": -0.3524
     },
     {
       "name": "Cons Staples",
       "symbol": "XLP",
-      "chg": 0.9296
+      "chg": 0.5396
     },
     {
       "name": "Comm Svcs",
       "symbol": "XLC",
-      "chg": 0.0179
+      "chg": 1.6504
     }
   ],
   "keyLevels": [
     {
       "tag": "support",
       "label": "SPY Support",
-      "val": "761.17"
+      "val": "761.73"
     },
     {
       "tag": "resist",
       "label": "SPY Resist",
-      "val": "764.67"
+      "val": "766.43"
     },
     {
       "tag": "pivot",
       "label": "QQQ Pivot",
-      "val": "710.04"
+      "val": "707.82"
     }
   ],
   "fearGreed": {
@@ -119,73 +119,73 @@
   },
   "earnings": [
     {
-      "ticker": "ABLT",
+      "ticker": "AGX",
+      "info": "EPS Est: 2.6684",
+      "when": "AMC"
+    },
+    {
+      "ticker": "AI",
+      "info": "EPS Est: -0.2568",
+      "when": "AMC"
+    },
+    {
+      "ticker": "AVGO",
+      "info": "EPS Est: 3.3013",
+      "when": "AMC"
+    },
+    {
+      "ticker": "BBN",
       "info": "EPS Est: N/A",
       "when": ""
     },
     {
-      "ticker": "ABLT",
+      "ticker": "BCAT",
       "info": "EPS Est: N/A",
       "when": ""
     },
     {
-      "ticker": "BASE",
-      "info": "EPS Est: 0.0074",
-      "when": ""
-    },
-    {
-      "ticker": "BOE",
-      "info": "EPS Est: N/A",
-      "when": ""
-    },
-    {
-      "ticker": "CIK",
-      "info": "EPS Est: N/A",
-      "when": ""
-    },
-    {
-      "ticker": "COE",
-      "info": "EPS Est: N/A",
-      "when": ""
+      "ticker": "BF.B",
+      "info": "EPS Est: 0.3755",
+      "when": "BMO"
     }
   ],
   "econ": [],
   "news": [
     {
-      "time": "9:51 AM",
-      "text": "U.S. House aims to avoid government shutdown amid GOP hardliner resistance",
+      "time": "10:08 AM",
+      "text": "Private equity funds are losing to the S&P 500 of late—why investments for the wealthy aren't necessarily better",
       "tag": "CNBC",
-      "url": "https://www.cnbc.com/2026/09/01/congress-government-shutdown-vote.html"
+      "url": "https://www.cnbc.com/2026/09/02/why-funds-meant-for-wealthier-investors-dont-always-perform-better.html"
     },
     {
-      "time": "8:59 AM",
-      "text": "Jim Cramer's top 10 things to watch in the stock market Tuesday",
+      "time": "10:00 AM",
+      "text": "American Airlines continues premium push with redesigned Boeing planes",
       "tag": "CNBC",
-      "url": "https://www.cnbc.com/2026/09/01/jim-cramers-top-10-things-to-watch-in-the-stock-market-tuesday.html"
+      "url": "https://www.cnbc.com/2026/09/02/american-airlines-flagship-suite.html"
     },
     {
-      "time": "6:47 AM",
-      "text": "10-year yield hits highest since January 2025 as Middle East tensions return to focus",
+      "time": "8:51 AM",
+      "text": "Jim Cramer's top 10 things to watch in the stock market Wednesday",
       "tag": "CNBC",
-      "url": "https://www.cnbc.com/2026/09/01/bonds-treasury-yields-middle-east-tensions.html"
+      "url": "https://www.cnbc.com/2026/09/02/jim-cramers-top-10-things-to-watch-in-the-stock-market-wednesday.html"
     },
     {
-      "time": "3:09 PM",
-      "text": "Risk-reward outlook for stocks is getting worse as historically tough month kicks off, says Citadel",
+      "time": "8:10 AM",
+      "text": "Apple shares are doing something they haven't done in 20 years. Here’s what’s happening",
       "tag": "CNBC",
-      "url": "https://www.cnbc.com/2026/08/31/risk-reward-outlook-for-stocks-is-getting-worse-says-citadel.html"
+      "url": "https://www.cnbc.com/2026/09/02/apple-shares-are-doing-something-they-havent-done-in-20-years-heres-whats-happening.html"
     },
     {
-      "time": "2:27 PM",
-      "text": "Lilly taps obesity windfall for more M&A. Plus, Elon Musk remarks pull GE Vernova lower",
+      "time": "4:12 PM",
+      "text": "OpenAI says Astra AI model is its first that crosses 'Critical' cybersecurity capability",
       "tag": "CNBC",
-      "url": "https://www.cnbc.com/2026/08/31/lilly-taps-obesity-windfall-for-more-ma-plus-elon-musk-remarks-pull-ge-vernova-lower.html"
+      "url": "https://www.cnbc.com/2026/09/01/open-ai-astra-cyber-model.html"
     },
     {
-      "time": "1:56 PM",
-      "text": "Mortgage rates surge to the highest since June 2025 as new Middle East attacks push oil prices up",
+      "time": "3:40 PM",
+      "text": "Stan Kroenke buys controlling stake in MLB's Los Angeles Angels",
       "tag": "CNBC",
-      "url": "https://www.cnbc.com/2026/08/31/mortgage-rates-surge-middle-east-attacks-oil.html"
+      "url": "https://www.cnbc.com/2026/09/01/stan-kroenke-controlling-stake-los-angeles-angels.html"
     }
   ],
   "brief": "<p>Brief generation failed. Market data is still current.</p>",
@@ -195,65 +195,99 @@
         "sector": "Technology",
         "stocks": [
           {
-            "ticker": "MSFT",
-            "price": 500.96,
-            "changePct": -1.25,
-            "volume": 28688756.316431,
-            "ema21": 477.2,
-            "sma50": 427.96,
-            "pct21": 4.98,
-            "pct50": 17.06,
+            "ticker": "NVDA",
+            "price": 226.85,
+            "changePct": 4.33,
+            "volume": 109756184.193647,
+            "ema21": 216.12,
+            "sma50": 208.8,
+            "pct21": 4.97,
+            "pct50": 8.65,
             "grade": "approaching"
           },
           {
             "ticker": "AAPL",
-            "price": 327.15,
-            "changePct": 3.25,
-            "volume": 32419233.540189,
-            "ema21": 312.2,
-            "sma50": 311.53,
-            "pct21": 4.79,
-            "pct50": 5.02,
+            "price": 325.12,
+            "changePct": 0,
+            "volume": 53167388.094327,
+            "ema21": 314.29,
+            "sma50": 312.94,
+            "pct21": 3.45,
+            "pct50": 3.89,
             "grade": "approaching"
           },
           {
             "ticker": "AMD",
-            "price": 460.51,
-            "changePct": -2.17,
-            "volume": 16441821.767762,
-            "ema21": 483.94,
-            "sma50": 507.01,
-            "pct21": -4.84,
-            "pct50": -9.17,
+            "price": 457.96,
+            "changePct": -0.36,
+            "volume": 16212787.746544,
+            "ema21": 479.2,
+            "sma50": 502.9,
+            "pct21": -4.43,
+            "pct50": -8.94,
             "grade": "extended"
           },
           {
-            "ticker": "NVDA",
-            "price": 220.23,
-            "changePct": -0.25,
-            "volume": 298909822.119368,
-            "ema21": 215.3,
-            "sma50": 208.16,
-            "pct21": 2.29,
-            "pct50": 5.8,
+            "ticker": "MSFT",
+            "price": 495.13,
+            "changePct": -1.18,
+            "volume": 21046892.920355,
+            "ema21": 484.54,
+            "sma50": 435.88,
+            "pct21": 2.18,
+            "pct50": 13.59,
             "grade": "zone"
           },
           {
             "ticker": "META",
-            "price": 582.09,
-            "changePct": 1.7,
-            "volume": 15221385.613591,
-            "ema21": 575.45,
-            "sma50": 591.94,
-            "pct21": 1.15,
-            "pct50": -1.66,
+            "price": 592.22,
+            "changePct": 2.36,
+            "volume": 15796898.70833,
+            "ema21": 575.6,
+            "sma50": 592.34,
+            "pct21": 2.89,
+            "pct50": -0.02,
             "grade": "zone"
           }
         ]
       },
       {
         "sector": "Semis",
-        "stocks": []
+        "stocks": [
+          {
+            "ticker": "ARM",
+            "price": 231.7,
+            "changePct": -1.33,
+            "volume": 2959817.24468,
+            "ema21": 255.43,
+            "sma50": 280.45,
+            "pct21": -9.29,
+            "pct50": -17.38,
+            "grade": "extended"
+          },
+          {
+            "ticker": "AVGO",
+            "price": 370.65,
+            "changePct": 0.26,
+            "volume": 19288937.682548,
+            "ema21": 378.6,
+            "sma50": 384.84,
+            "pct21": -2.1,
+            "pct50": -3.69,
+            "grade": "extended"
+          },
+          {
+            "ticker": "ANET",
+            "price": 186.04,
+            "changePct": -1.7,
+            "volume": 4375820.103076,
+            "ema21": 191.39,
+            "sma50": 181.29,
+            "pct21": -2.79,
+            "pct50": 2.62,
+            "grade": "zone"
+          }
+        ]
       },
       {
         "sector": "Financials",
@@ -289,26 +323,48 @@
         "sector": "Semis",
         "stocks": [
           {
+            "ticker": "NVDA",
+            "price": 226.85,
+            "changePct": 4.33,
+            "volume": 109756184.193647,
+            "ema21": 216.12,
+            "sma50": 208.8,
+            "pct21": 4.97,
+            "pct50": 8.65,
+            "grade": "approaching"
+          },
+          {
             "ticker": "AMD",
-            "price": 460.51,
-            "changePct": -2.17,
-            "volume": 16441821.767762,
-            "ema21": 483.94,
-            "sma50": 507.01,
-            "pct21": -4.84,
-            "pct50": -9.17,
+            "price": 457.96,
+            "changePct": -0.36,
+            "volume": 16212787.746544,
+            "ema21": 479.2,
+            "sma50": 502.9,
+            "pct21": -4.43,
+            "pct50": -8.94,
             "grade": "extended"
           },
           {
-            "ticker": "NVDA",
-            "price": 220.23,
-            "changePct": -0.25,
-            "volume": 298909822.119368,
-            "ema21": 215.3,
-            "sma50": 208.16,
-            "pct21": 2.29,
-            "pct50": 5.8,
-            "grade": "zone"
+            "ticker": "ARM",
+            "price": 231.7,
+            "changePct": -1.33,
+            "volume": 2959817.24468,
+            "ema21": 255.43,
+            "sma50": 280.45,
+            "pct21": -9.29,
+            "pct50": -17.38,
+            "grade": "extended"
+          },
+          {
+            "ticker": "AVGO",
+            "price": 370.65,
+            "changePct": 0.26,
+            "volume": 19288937.682548,
+            "ema21": 378.6,
+            "sma50": 384.84,
+            "pct21": -2.1,
+            "pct50": -3.69,
+            "grade": "extended"
           }
         ]
       },

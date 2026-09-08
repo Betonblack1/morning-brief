@@ -1,36 +1,36 @@
 {
-  "generated": "2026-09-07T17:01:42.394Z",
-  "date": "2026-09-07",
+  "generated": "2026-09-08T15:48:55.108Z",
+  "date": "2026-09-08",
   "indices": [
     {
       "name": "S&P 500",
-      "val": "770.23",
-      "chg": -0.3803,
-      "price": 770.23
+      "val": "767.65",
+      "chg": -0.3298,
+      "price": 767.65
     },
     {
       "name": "NASDAQ",
-      "val": "719.00",
-      "chg": 0.1853,
-      "price": 719
+      "val": "720.28",
+      "chg": 0.1836,
+      "price": 720.28
     },
     {
       "name": "DOW",
-      "val": "534.12",
-      "chg": -0.5233,
-      "price": 534.12
+      "val": "528.65",
+      "chg": -1.0167,
+      "price": 528.65
     },
     {
       "name": "RUSSELL",
-      "val": "296.05",
-      "chg": 0.2913,
-      "price": 296.05
+      "val": "295.51",
+      "chg": -0.1689,
+      "price": 295.51
     },
     {
       "name": "VIX",
-      "val": "17.73",
-      "chg": 0.6243,
-      "price": 17.73
+      "val": "17.86",
+      "chg": 0.7901,
+      "price": 17.86
     },
     {
       "name": "10Y",
@@ -43,74 +43,74 @@
     {
       "name": "Tech",
       "symbol": "XLK",
-      "chg": 0.7205
+      "chg": 0.7048
     },
     {
       "name": "Health",
       "symbol": "XLV",
-      "chg": -1.0274
+      "chg": -2.4672
     },
     {
       "name": "Financials",
       "symbol": "XLF",
-      "chg": -0.7514
+      "chg": -0.9294
     },
     {
       "name": "Energy",
       "symbol": "XLE",
-      "chg": -0.8357
+      "chg": 1.0927
     },
     {
       "name": "Cons Disc",
       "symbol": "XLY",
-      "chg": -1.3052
+      "chg": -0.6527
     },
     {
       "name": "Industrials",
       "symbol": "XLI",
-      "chg": 0.4239
+      "chg": -0.0399
     },
     {
       "name": "Materials",
       "symbol": "XLB",
-      "chg": -0.3041
+      "chg": -0.4005
     },
     {
       "name": "Real Estate",
       "symbol": "XLRE",
-      "chg": -0.7006
+      "chg": 0.387
     },
     {
       "name": "Utilities",
       "symbol": "XLU",
-      "chg": 0.1394
+      "chg": 1.3695
     },
     {
       "name": "Cons Staples",
       "symbol": "XLP",
-      "chg": -0.7741
+      "chg": -0.7567
     },
     {
       "name": "Comm Svcs",
       "symbol": "XLC",
-      "chg": -1.1642
+      "chg": -0.6873
     }
   ],
   "keyLevels": [
     {
       "tag": "support",
       "label": "SPY Support",
-      "val": "769.00"
+      "val": "765.99"
     },
     {
       "tag": "resist",
       "label": "SPY Resist",
-      "val": "772.87"
+      "val": "769.70"
     },
     {
       "tag": "pivot",
       "label": "QQQ Pivot",
-      "val": "719.14"
+      "val": "719.25"
     }
   ],
   "fearGreed": {
@@ -119,75 +119,38 @@
   },
   "earnings": [
     {
-      "ticker": "ALOT",
-      "info": "EPS Est: N/A",
-      "when": ""
-    },
-    {
-      "ticker": "BNR",
-      "info": "EPS Est: N/A",
-      "when": ""
-    },
-    {
-      "ticker": "BWTL",
-      "info": "EPS Est: N/A",
-      "when": ""
-    },
-    {
-      "ticker": "CGNT",
-      "info": "EPS Est: 0.089",
-      "when": ""
-    },
-    {
-      "ticker": "DBI",
-      "info": "EPS Est: 0.2576",
-      "when": ""
-    },
-    {
-      "ticker": "FCEL",
-      "info": "EPS Est: -0.421",
+      "ticker": "ABM",
+      "info": "EPS Est: 1.0244",
       "when": "BMO"
+    },
+    {
+      "ticker": "ADSE",
+      "info": "EPS Est: N/A",
+      "when": ""
+    },
+    {
+      "ticker": "AEF",
+      "info": "EPS Est: N/A",
+      "when": ""
+    },
+    {
+      "ticker": "ALZN",
+      "info": "EPS Est: -0.6834",
+      "when": ""
+    },
+    {
+      "ticker": "ANIX",
+      "info": "EPS Est: -0.0877",
+      "when": ""
+    },
+    {
+      "ticker": "AVO",
+      "info": "EPS Est: 0.1162",
+      "when": "AMC"
     }
   ],
   "econ": [],
-  "news": [
-    {
-      "time": "10:27 AM",
-      "text": "Gulf equities mixed amid US-Iran flare-ups - Reuters",
-      "tag": "Reuters",
-      "url": "https://news.google.com/rss/articles/CBMiugFBVV95cUxOdmdIRU5UbW8yRmxOUXhfR0trOVEtdHVrMC1Nc2N0OXVqcVhUbWtHc2hTVFZHd1NZNjVDdnF0VldrcXUwOHVQb2xxMXRRTVdBRjRHU252Ty1iR09JQi1QakZkV1hFVnd3WXBKNllJaWRoOUxYTW14dGhpaEM1WVpaeko2dmZVM1U5RG1fTGE4TzBCdlN3blQ0Vm5ISF9HOGl2eXdiOFg4REtmTHd0RXB2Z1pLZV9aSjc1eVE?oc=5"
-    },
-    {
-      "time": "9:45 AM",
-      "text": "'Ah! Rejected, yet again': How this 45-year-old turned his 'demoralizing' job search into a one-man show",
-      "tag": "CNBC",
-      "url": "https://www.cnbc.com/2026/09/07/45-year-old-turns-job-search-into-a-one-man-show.html"
-    },
-    {
-      "time": "9:13 AM",
-      "text": "UAE says its energy exports will not be 'held hostage' by Iran war - Reuters",
-      "tag": "Reuters",
-      "url": "https://news.google.com/rss/articles/CBMiyAFBVV95cUxNX2k1aEFKNWUzaXRzZXlkTVZNb3MyOTZoSjBoa2N5Zmtpd1Z2VVRWbV9JcnNHN0hkS1ZPRXEyb1UxdGMzN1pFNUFCUmpPVTNvQndsa3c1TzBwNEVvVXNLVXZjNGVnbzF6TUdGS2N5SVdLT2k2Nlk1TmREb0ZlTVp1cGlLRzJTMWJqLTN4VVRiY2s1emV6YldrQnJHQWRmZFBKRUdDalJjb1lFM1NxaHI2eDdWWFN1R0tydFJYOUh3Z0phb0paZUNRMw?oc=5"
-    },
-    {
-      "time": "8:49 AM",
-      "text": "Saudi Arabia preparing to grant IAEA more intrusive powers, Grossi says - Reuters",
-      "tag": "Reuters",
-      "url": "https://news.google.com/rss/articles/CBMiuwFBVV95cUxNTEZFOFdkQkNyVk5LRXRVVEdIbWtYY0VkUENMOGFSMUhJdmxXWmFyR0d4UVQxRk4yVXd0N1BWR2ctQnVQSHlCOFV0OUd4UTczWTZmc2NJSXYtVnZJU2xpUkNDUG40aTU0M3dsa1BzTHVVZUF1NEtBdFBwazd3SWgtRll4bXZRWmtXQm9jaHRrVkxpaHQzVWhKZWo4dmJzaGdFV29qeDNONmpNQ0MzLXVCU3N3OUFmNmMtNzJF?oc=5"
-    },
-    {
-      "time": "7:14 AM",
-      "text": "COMMENTARY: China's crude oil imports stayed weak in August. Can this continue? - Reuters",
-      "tag": "Reuters",
-      "url": "https://news.google.com/rss/articles/CBMiygFBVV95cUxQNjJvZmc3M0wteXQ1VzNhSUZHY3p4eGl4UjNUWC1BYi16ajFCbzZYUlBfV0tQajNaSVFvWVRWTmY5WlhpT1hPb0JwRUF4OHY2NG96bl9xTVppUTFyZUN3clpMLTJfNnRhenNsTVVuUXlXZmxxMDV6R00tQk1MWVBkOTlUdi1uOUxuV1l2WnZaODZESnNLWVdzM0RxSFlQZTF5ZWhiUkZtSExpWmQ5cGZ1M0dnTTdjNjNRR3hqV21pT3lOMlZlZEJRQ0lB?oc=5"
-    },
-    {
-      "time": "7:04 AM",
-      "text": "Oman says it evacuated 16 crew members of Saudi Sidr vessel attacked by Iran - Reuters",
-      "tag": "Reuters",
-      "url": "https://news.google.com/rss/articles/CBMixgFBVV95cUxPSUp5ZGlTQWNQSDNtbzRnQzdZNTM4TXpLeFpjV1E3SElQRmxzSWVqRU5mODRJN0ZCTzdyaFZ2dW5GMEQxMVB6ZldNS2JOQzFpRk9KeGNMNFlZVnpMSDZ3MFJnRVByT0JCaEdyZHhONFRjTjgtVG8yeXVmQngxM2xSd3ZyeExZS0tZejN2QkhyQk44NTdlZTFscDZaTmF4Um41S3c4Q2tKaXkyMXFOa2JVTEZjdU9aSENuMV95Z2tFZnd4Yk5BQ1E?oc=5"
-    }
-  ],
+  "news": [],
   "brief": "<p>Brief generation failed. Market data is still current.</p>",
   "watchlist": {
     "pillars": [
@@ -196,57 +159,57 @@
         "stocks": [
           {
             "ticker": "NVDA",
-            "price": 230.4,
-            "changePct": 0.85,
-            "volume": 157104683.154645,
-            "ema21": 216.85,
-            "sma50": 209.28,
-            "pct21": 6.25,
-            "pct50": 10.09,
+            "price": 226.63,
+            "changePct": -1.62,
+            "volume": 134681610.414452,
+            "ema21": 217.88,
+            "sma50": 209.87,
+            "pct21": 4.01,
+            "pct50": 7.98,
             "grade": "approaching"
           },
           {
             "ticker": "META",
-            "price": 616.81,
-            "changePct": 1,
-            "volume": 16552678.894498,
-            "ema21": 576.98,
-            "sma50": 592.95,
-            "pct21": 6.9,
-            "pct50": 4.02,
+            "price": 616.13,
+            "changePct": -0.1,
+            "volume": 19737139.143272,
+            "ema21": 579.95,
+            "sma50": 594.01,
+            "pct21": 6.24,
+            "pct50": 3.72,
             "grade": "approaching"
           },
           {
             "ticker": "MSFT",
-            "price": 499.74,
-            "changePct": -2.03,
-            "volume": 15336074.468929,
-            "ema21": 485.55,
-            "sma50": 438.34,
-            "pct21": 2.92,
-            "pct50": 14.01,
+            "price": 492.97,
+            "changePct": -1.35,
+            "volume": 24125893.133774,
+            "ema21": 487.76,
+            "sma50": 441.23,
+            "pct21": 1.07,
+            "pct50": 11.73,
             "grade": "zone"
           },
           {
             "ticker": "AAPL",
-            "price": 320.01,
-            "changePct": -2.5,
-            "volume": 33776370.489241,
-            "ema21": 315.18,
-            "sma50": 313.55,
-            "pct21": 1.53,
-            "pct50": 2.06,
+            "price": 316.18,
+            "changePct": -1.18,
+            "volume": 37225838.643891,
+            "ema21": 316.35,
+            "sma50": 314.25,
+            "pct21": -0.05,
+            "pct50": 0.61,
             "grade": "zone"
           },
           {
             "ticker": "AMD",
-            "price": 477.61,
-            "changePct": 4.7,
-            "volume": 11938812.010796,
-            "ema21": 477.25,
-            "sma50": 501.65,
-            "pct21": 0.08,
-            "pct50": -4.79,
+            "price": 509.09,
+            "changePct": 6.6,
+            "volume": 14868085.661836,
+            "ema21": 475.35,
+            "sma50": 500.37,
+            "pct21": 7.1,
+            "pct50": 1.74,
             "grade": "zone"
           }
         ]
@@ -290,24 +253,24 @@
         "stocks": [
           {
             "ticker": "NVDA",
-            "price": 230.4,
-            "changePct": 0.85,
-            "volume": 157104683.154645,
-            "ema21": 216.85,
-            "sma50": 209.28,
-            "pct21": 6.25,
-            "pct50": 10.09,
+            "price": 226.63,
+            "changePct": -1.62,
+            "volume": 134681610.414452,
+            "ema21": 217.88,
+            "sma50": 209.87,
+            "pct21": 4.01,
+            "pct50": 7.98,
             "grade": "approaching"
           },
           {
             "ticker": "AMD",
-            "price": 477.61,
-            "changePct": 4.7,
-            "volume": 11938812.010796,
-            "ema21": 477.25,
-            "sma50": 501.65,
-            "pct21": 0.08,
-            "pct50": -4.79,
+            "price": 509.09,
+            "changePct": 6.6,
+            "volume": 14868085.661836,
+            "ema21": 475.35,
+            "sma50": 500.37,
+            "pct21": 7.1,
+            "pct50": 1.74,
             "grade": "zone"
           }
         ]

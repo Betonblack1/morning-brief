@@ -1,36 +1,36 @@
 {
-  "generated": "2026-09-09T15:44:46.825Z",
-  "date": "2026-09-09",
+  "generated": "2026-09-10T15:39:48.857Z",
+  "date": "2026-09-10",
   "indices": [
     {
       "name": "S&P 500",
-      "val": "762.28",
-      "chg": -0.4804,
-      "price": 762.28
+      "val": "759.43",
+      "chg": -0.3896,
+      "price": 759.43
     },
     {
       "name": "NASDAQ",
-      "val": "716.02",
-      "chg": -0.3257,
-      "price": 716.02
+      "val": "711.34",
+      "chg": -0.6938,
+      "price": 711.34
     },
     {
       "name": "DOW",
-      "val": "523.99",
-      "chg": -0.7651,
-      "price": 523.99
+      "val": "521.65",
+      "chg": -0.4618,
+      "price": 521.65
     },
     {
       "name": "RUSSELL",
-      "val": "291.32",
-      "chg": -1.1369,
-      "price": 291.32
+      "val": "288.55",
+      "chg": -0.7191,
+      "price": 288.55
     },
     {
       "name": "VIX",
-      "val": "18.21",
-      "chg": 1.2229,
-      "price": 18.21
+      "val": "18.61",
+      "chg": 1.694,
+      "price": 18.61
     },
     {
       "name": "10Y",
@@ -43,149 +43,149 @@
     {
       "name": "Tech",
       "symbol": "XLK",
-      "chg": 0
+      "chg": -0.8091
     },
     {
       "name": "Health",
       "symbol": "XLV",
-      "chg": -0.1556
+      "chg": -0.3602
     },
     {
       "name": "Financials",
       "symbol": "XLF",
-      "chg": -0.2094
+      "chg": -0.1227
     },
     {
       "name": "Energy",
       "symbol": "XLE",
-      "chg": 0.7256
+      "chg": -0.49
     },
     {
       "name": "Cons Disc",
       "symbol": "XLY",
-      "chg": -1.2633
+      "chg": -0.0622
     },
     {
       "name": "Industrials",
       "symbol": "XLI",
-      "chg": -1.118
+      "chg": -0.4715
     },
     {
       "name": "Materials",
       "symbol": "XLB",
-      "chg": -0.5776
+      "chg": -1.0897
     },
     {
       "name": "Real Estate",
       "symbol": "XLRE",
-      "chg": -0.9795
+      "chg": -0.4607
     },
     {
       "name": "Utilities",
       "symbol": "XLU",
-      "chg": -1.2658
+      "chg": -0.5589
     },
     {
       "name": "Cons Staples",
       "symbol": "XLP",
-      "chg": -1.2378
+      "chg": 0.3733
     },
     {
       "name": "Comm Svcs",
       "symbol": "XLC",
-      "chg": -0.5829
+      "chg": 0.4602
     }
   ],
   "keyLevels": [
     {
       "tag": "support",
       "label": "SPY Support",
-      "val": "760.94"
+      "val": "756.64"
     },
     {
       "tag": "resist",
       "label": "SPY Resist",
-      "val": "764.47"
+      "val": "760.11"
     },
     {
       "tag": "pivot",
       "label": "QQQ Pivot",
-      "val": "716.58"
+      "val": "710.09"
     }
   ],
   "fearGreed": {
-    "score": 73,
+    "score": 71,
     "label": "Greed"
   },
   "earnings": [
     {
-      "ticker": "AEO",
-      "info": "EPS Est: 0.2161",
+      "ticker": "ADBE",
+      "info": "EPS Est: 6.1999",
       "when": "AMC"
     },
     {
-      "ticker": "ASO",
-      "info": "EPS Est: 2.1056",
-      "when": "BMO"
-    },
-    {
-      "ticker": "AVAV",
-      "info": "EPS Est: 0.2892",
-      "when": "AMC"
-    },
-    {
-      "ticker": "CHWY",
-      "info": "EPS Est: 0.183",
-      "when": "BMO"
-    },
-    {
-      "ticker": "CMCM",
+      "ticker": "ADNH",
       "info": "EPS Est: N/A",
       "when": ""
     },
     {
-      "ticker": "CNM",
-      "info": "EPS Est: 0.9248",
-      "when": "BMO"
+      "ticker": "AENT",
+      "info": "EPS Est: 0.0612",
+      "when": "AMC"
+    },
+    {
+      "ticker": "BANX",
+      "info": "EPS Est: N/A",
+      "when": ""
+    },
+    {
+      "ticker": "BDRX",
+      "info": "EPS Est: 0",
+      "when": ""
+    },
+    {
+      "ticker": "CPRT",
+      "info": "EPS Est: 0.3898",
+      "when": "AMC"
     }
   ],
   "econ": [],
   "news": [
     {
-      "time": "11:04 AM",
-      "text": "COMMENTARY: Oil prices fly blind as the Hormuz enigma deepens - Reuters",
+      "time": "11:18 AM",
+      "text": "ECB hikes rates as Iran war adds to inflation angst - Reuters",
       "tag": "Reuters",
-      "url": "https://news.google.com/rss/articles/CBMisAFBVV95cUxPWHRWamh0dmRPM3B6NjlrWE5YbnVtMGxDVll0ZGdKalVwOXh2QzMyUmtmR0R6UWg1Sk4xRjV0MVlwb0c2bzJKYWwxVUU2VmszZnpYd2NSQ2U2OXRNZkgzZVc1N3Zaa05IV0hKX3pKSlM0d0JoUnFFdVlXUTE2dXdMaHZhdDdrd1RHcm5tTzlUaFI0VDBxMzNINkw2eEVSREowcmJaOTIzSlQ5ZHBzU3lScg?oc=5"
+      "url": "https://news.google.com/rss/articles/CBMimwFBVV95cUxOY0VWcFhfaVg1bHdEUzlqVTlvNlREOFdweDVteVNCVWFCY29MVFJMRVdWeEJuSDAxWlY3cjU4ZGlxdkNremFBTThYSVQ5cFNBaTliSGMwbmJRR0NkNkwtUUhORFFwZ3gwLXJSZnNOR1ZfVDlEanZ5TzFNZ3FsX1hobnkyODI3cE96RkI2S3htVk5LRWNWbmF1c1FvNA?oc=5"
     },
     {
-      "time": "9:56 AM",
-      "text": "Oil pushes past $100 as wave of US-Iran attacks exposes dwindling safety net - Reuters",
-      "tag": "Reuters",
-      "url": "https://news.google.com/rss/articles/CBMiwgFBVV95cUxQWk83eHNVQXFWUEdoZGxYdmRpdnhuMFFKM3JfMkRRNDMxWmM0c1JPVmpkRWhQVVBvX0VLdjlhZ296NHpDVDdUNS0xZl9jRXJEeWZ1N1ZWSnZGUjVueEc2MzdjNTAwUTNlUFEtZWZ5el9Jc3dBYjJzVzN6R080aFJLLVlYWEVqUTU0WHRGX1hMSXQ3cnFpaVNHeHM3enRkYjZDcEUyb0Vic1JhMExzU1BCZVBvZlh2dExCZ3dRTVBlNWxNZw?oc=5"
+      "time": "10:55 AM",
+      "text": "Kimmel says interview with Senate candidate Talarico won't air on ABC amid FCC threats",
+      "tag": "CNBC",
+      "url": "https://www.cnbc.com/2026/09/10/abc-kimmel-talarico-fcc.html"
     },
     {
-      "time": "9:54 AM",
-      "text": "Brent crude oil rises above $100 a barrel as Middle East conflict intensifies - Reuters",
+      "time": "10:35 AM",
+      "text": "Trump touts $5,000 payout if Republicans win as Vance waits in wings - Reuters",
       "tag": "Reuters",
-      "url": "https://news.google.com/rss/articles/CBMiuAFBVV95cUxNcV81aHB4Z3dteWpsZGxOM01KRFFXZ3hhZlBUUlJUb3Y0QXVXaWpfSXJxRGx0R2Z2LXRrb25jYWJBTUNxc3llTFNVdmRoQzkxRjlLc0czRUxKczdyYU8temtJbXJRUXNOUGpuRkdXenNZTFVLX3ZhUkFQZ191cjV3amlwZ0RocHBoUHNZYzVfZy1pSlFNNGlma0NMMFVvRFIxSXNUOTRyYnNDWU1qc0JxWmpDRHMyTmVj?oc=5"
+      "url": "https://news.google.com/rss/articles/CBMiqAFBVV95cUxObTBDWU8wZ01YSnowWGVWbUFZQ0ozZlZaSzRYWFhuaUdxajB6T05JS29iX180anZIUWdKUUE4SjZGdzN1cmc3Tmx2bjMtT0Z4TE55bGQ1NjYxUThlU21OTnZvbVJxeTNXVjZZcXJrdG1pQzRMTnVqeGUzcVY5aGluV1V0YTh0UlN1eVBScUZTajd4S0tCaFNEWGltbE9jRHk5eS1rTFVkRHg?oc=5"
     },
     {
-      "time": "9:35 AM",
-      "text": "Oil tanker hit in Iraqi waters, as vessels get caught in US-Iran attacks - Reuters",
+      "time": "10:10 AM",
+      "text": "Yemen's Houthis close in on Bab el-Mandeb Strait in new threat to shipping - Reuters",
       "tag": "Reuters",
-      "url": "https://news.google.com/rss/articles/CBMirwFBVV95cUxNckd4WVFmZEhoNEFkVzRzdE9JMVJ2QVUwMmk3MDRuUTA3NHc3N0xrY2VLZl9GY2Q2WU1ybzBodjhINEQwaV9GQmpKS3FSdXpSY3B3M0VUY3V6NUJvSU1zR1NPYmpLMUtvN3ZrYlZEVlZVNmhZTWZhdnhpM2dEaEZJZzBlbDN3cE42cXNsbDdnYmNkT3ROZTVzVjdBZUJ0NjRCYW4tQUdQQk5NNTV4NFIw?oc=5"
+      "url": "https://news.google.com/rss/articles/CBMixgFBVV95cUxNSUNHSEc4V2xmVVpPcmx6cE1GaF85MVB3Tnl5ZzdyWVBlYy0zcnNzOTQ1R2ZyNFdzbmp6c2xodVlOallDQTAyeUFodEUwa0dkOFFCN3ZIcmg0V3Iyc0NiUGczTklDSzhUOGNkUUd5ZWlRME5LRGhBdHFvSDdVUm9WdjZacC0zcFdkM0xZY09LUHFDR3lua1ZXMW1GN0NxT21CTFRYNkFOVGRNMzFsTjJXS1hnejFfVTdUZHBvMEJoMmJGU2xLQnc?oc=5"
     },
     {
-      "time": "9:24 AM",
-      "text": "Saudi Arabia lifts alert in southern city a day after Houthi strikes - Reuters",
+      "time": "9:30 AM",
+      "text": "Two arrested by UK police over suspected National Security Act offences relating to Iran - Reuters",
       "tag": "Reuters",
-      "url": "https://news.google.com/rss/articles/CBMiuAFBVV95cUxOVkFZWWVmRkxOZ0dqSFdYQnh1dkpQTkZBbFdyU2Rydm1aMUo5eDFhNGpTaURVcmZLN25rS0s0ZUlEd1hFdEJ1TXJjT01mVzYtS1I1X2duVjhXTTFseHZOVGNWLURySnN3M0d1aGpVdUZLUXBDT0NMUjlhYXRHdGo4ekY0Q2stN3VyY09XSFRFZTdka1BhMDJnTFR2NzB2eVVzSW9ENV8wYi1jcWZhdEl0VjQxd1l2VXFI?oc=5"
+      "url": "https://news.google.com/rss/articles/CBMiwwFBVV95cUxObjN5Vjg2bUdlVFdmVnlnaFhNR0FVNnp6QnRqaDBQVTNwc3hQa3ExNmtnekpQS2E1dVlUV1Q1dG5QOUZveHBUdVpVaEk2bTk4eEpMMjkzRXRET2pzS1ZiSm5tQnF6Q3d4d0tFZHp2M3U5bHBMTW9raW83Z2htcFBtZTBmUDE0TmZLX3g1eU5ocjJzX0NEYmp3MzJCVWx3OEdVVEVSNWJJQU1RTHBSemVHQl9HWnNwVUEtblJuaGp6VFN4b2c?oc=5"
     },
     {
-      "time": "9:21 AM",
-      "text": "Iran and US hit tankers in biggest wave of attacks on shipping since war began - Reuters",
-      "tag": "Reuters",
-      "url": "https://news.google.com/rss/articles/CBMiugFBVV95cUxOZ2FPaUNRYjRBWnd2cmxkT044cmZYbENZYnhTWXAzUGxadUpEZ3N3aHpVSEtodVVsWUt6djBaeFhjUm5JOGVrNEE1SXlaUkxoSzBVaUpaWjZTdkdXZzItRTFOaGtMZWVtbEhpdUFSUWgwczNXa2VqZ3ktdzVhajBmYllFNVJIaUxnMDBLazE4S0VSTzZSbVFxMDZSUVY4aHIxVmhkcUpZeF85TzZYV2tqWkE5bVNWM29qWlE?oc=5"
+      "time": "9:26 AM",
+      "text": "Jim Cramer's top 10 things to watch in the stock market Thursday",
+      "tag": "CNBC",
+      "url": "https://www.cnbc.com/2026/09/10/jim-cramers-top-10-things-to-watch-in-the-stock-market-thursday.html"
     }
   ],
   "brief": "<p>Brief generation failed. Market data is still current.</p>",
@@ -195,58 +195,58 @@
         "sector": "Technology",
         "stocks": [
           {
-            "ticker": "AMD",
-            "price": 521.91,
-            "changePct": 3.2,
-            "volume": 28166529.487347,
-            "ema21": 478.37,
-            "sma50": 498.96,
-            "pct21": 9.1,
-            "pct50": 4.6,
-            "grade": "approaching"
-          },
-          {
             "ticker": "META",
-            "price": 651.73,
-            "changePct": 6.23,
-            "volume": 18909714.742133,
-            "ema21": 585.98,
-            "sma50": 596.76,
-            "pct21": 11.22,
-            "pct50": 9.21,
+            "price": 651.23,
+            "changePct": -0.38,
+            "volume": 35900728.429368,
+            "ema21": 592.09,
+            "sma50": 598.58,
+            "pct21": 9.99,
+            "pct50": 8.8,
             "grade": "extended"
           },
           {
             "ticker": "NVDA",
-            "price": 224.17,
-            "changePct": -0.69,
-            "volume": 122965555.350301,
-            "ema21": 219.63,
-            "sma50": 211.23,
-            "pct21": 2.07,
-            "pct50": 6.13,
+            "price": 218.61,
+            "changePct": -2.26,
+            "volume": 82955478.550876,
+            "ema21": 219.98,
+            "sma50": 211.8,
+            "pct21": -0.62,
+            "pct50": 3.21,
             "grade": "zone"
           },
           {
             "ticker": "MSFT",
-            "price": 491.76,
-            "changePct": -0.44,
-            "volume": 18882338.098502,
-            "ema21": 489.28,
-            "sma50": 446.59,
-            "pct21": 0.51,
-            "pct50": 10.11,
+            "price": 491.9,
+            "changePct": 0.05,
+            "volume": 12889572.03324,
+            "ema21": 489.48,
+            "sma50": 449.05,
+            "pct21": 0.49,
+            "pct50": 9.54,
             "grade": "zone"
           },
           {
             "ticker": "AAPL",
-            "price": 313.4,
-            "changePct": -0.89,
-            "volume": 35477090.54685,
-            "ema21": 316.62,
-            "sma50": 315.8,
-            "pct21": -1.02,
-            "pct50": -0.76,
+            "price": 323.72,
+            "changePct": 2.66,
+            "volume": 65639962.372183,
+            "ema21": 316.5,
+            "sma50": 316.47,
+            "pct21": 2.28,
+            "pct50": 2.29,
+            "grade": "zone"
+          },
+          {
+            "ticker": "AMD",
+            "price": 507.89,
+            "changePct": -2.53,
+            "volume": 22152382.978103,
+            "ema21": 482.28,
+            "sma50": 498.59,
+            "pct21": 5.31,
+            "pct50": 1.87,
             "grade": "zone"
           }
         ]
@@ -289,25 +289,25 @@
         "sector": "Semis",
         "stocks": [
           {
-            "ticker": "AMD",
-            "price": 521.91,
-            "changePct": 3.2,
-            "volume": 28166529.487347,
-            "ema21": 478.37,
-            "sma50": 498.96,
-            "pct21": 9.1,
-            "pct50": 4.6,
-            "grade": "approaching"
+            "ticker": "NVDA",
+            "price": 218.61,
+            "changePct": -2.26,
+            "volume": 82955478.550876,
+            "ema21": 219.98,
+            "sma50": 211.8,
+            "pct21": -0.62,
+            "pct50": 3.21,
+            "grade": "zone"
           },
           {
-            "ticker": "NVDA",
-            "price": 224.17,
-            "changePct": -0.69,
-            "volume": 122965555.350301,
-            "ema21": 219.63,
-            "sma50": 211.23,
-            "pct21": 2.07,
-            "pct50": 6.13,
+            "ticker": "AMD",
+            "price": 507.89,
+            "changePct": -2.53,
+            "volume": 22152382.978103,
+            "ema21": 482.28,
+            "sma50": 498.59,
+            "pct21": 5.31,
+            "pct50": 1.87,
             "grade": "zone"
           }
         ]

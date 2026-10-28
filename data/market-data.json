@@ -1,36 +1,36 @@
 {
-  "generated": "2026-10-27T17:12:53.974Z",
-  "date": "2026-10-27",
+  "generated": "2026-10-28T17:45:55.898Z",
+  "date": "2026-10-28",
   "indices": [
     {
       "name": "S&P 500",
-      "val": "769.65",
-      "chg": 0.5592,
-      "price": 769.65
+      "val": "771.06",
+      "chg": 0.1819,
+      "price": 771.06
     },
     {
       "name": "NASDAQ",
-      "val": "721.14",
-      "chg": 1.2553,
-      "price": 721.14
+      "val": "722.22",
+      "chg": 0.1345,
+      "price": 722.22
     },
     {
       "name": "DOW",
-      "val": "522.97",
-      "chg": 0,
-      "price": 522.97
+      "val": "524.34",
+      "chg": 0.2026,
+      "price": 524.34
     },
     {
       "name": "RUSSELL",
-      "val": "279.87",
-      "chg": 1.0397,
-      "price": 279.87
+      "val": "280.49",
+      "chg": 0.1106,
+      "price": 280.49
     },
     {
       "name": "VIX",
-      "val": "18.18",
-      "chg": -0.71,
-      "price": 18.18
+      "val": "17.76",
+      "chg": -1.9868,
+      "price": 17.76
     },
     {
       "name": "10Y",
@@ -43,149 +43,149 @@
     {
       "name": "Tech",
       "symbol": "XLK",
-      "chg": 1.7175
+      "chg": 0.2797
     },
     {
       "name": "Health",
       "symbol": "XLV",
-      "chg": -0.145
+      "chg": 0.4018
     },
     {
       "name": "Financials",
       "symbol": "XLF",
-      "chg": -0.1428
+      "chg": 0.5369
     },
     {
       "name": "Energy",
       "symbol": "XLE",
-      "chg": -1.9385
+      "chg": 0.7037
     },
     {
       "name": "Cons Disc",
       "symbol": "XLY",
-      "chg": 1.024
+      "chg": -0.3638
     },
     {
       "name": "Industrials",
       "symbol": "XLI",
-      "chg": 0.4073
+      "chg": 0.3871
     },
     {
       "name": "Materials",
       "symbol": "XLB",
-      "chg": 0.6423
+      "chg": -0.3669
     },
     {
       "name": "Real Estate",
       "symbol": "XLRE",
-      "chg": -0.9813
+      "chg": -0.8954
     },
     {
       "name": "Utilities",
       "symbol": "XLU",
-      "chg": 0.235
+      "chg": -0.5601
     },
     {
       "name": "Cons Staples",
       "symbol": "XLP",
-      "chg": -0.9095
+      "chg": -0.241
     },
     {
       "name": "Comm Svcs",
       "symbol": "XLC",
-      "chg": -0.0867
+      "chg": -0.4151
     }
   ],
   "keyLevels": [
     {
       "tag": "support",
       "label": "SPY Support",
-      "val": "765.21"
+      "val": "769.24"
     },
     {
       "tag": "resist",
       "label": "SPY Resist",
-      "val": "771.07"
+      "val": "772.69"
     },
     {
       "tag": "pivot",
       "label": "QQQ Pivot",
-      "val": "718.67"
+      "val": "722.42"
     }
   ],
   "fearGreed": {
-    "score": 73,
+    "score": 75,
     "label": "Greed"
   },
   "earnings": [
     {
-      "ticker": "AAT",
-      "info": "EPS Est: 0.0909",
+      "ticker": "ADAM",
+      "info": "EPS Est: 0.2975",
       "when": "AMC"
     },
     {
-      "ticker": "AB",
-      "info": "EPS Est: 0.8824",
+      "ticker": "ADP",
+      "info": "EPS Est: 2.7938",
       "when": "BMO"
     },
     {
-      "ticker": "ABG",
-      "info": "EPS Est: 6.4817",
+      "ticker": "AEP",
+      "info": "EPS Est: 2.0749",
       "when": "BMO"
     },
     {
-      "ticker": "ACGL",
-      "info": "EPS Est: 2.3301",
+      "ticker": "AER",
+      "info": "EPS Est: 4.1922",
+      "when": "BMO"
+    },
+    {
+      "ticker": "AIN",
+      "info": "EPS Est: 1.4948",
       "when": "AMC"
     },
     {
-      "ticker": "ACR",
-      "info": "EPS Est: 0.1178",
+      "ticker": "ALBY",
+      "info": "EPS Est: N/A",
       "when": ""
-    },
-    {
-      "ticker": "ACU",
-      "info": "EPS Est: 0.6919",
-      "when": "BMO"
     }
   ],
   "econ": [],
   "news": [
     {
-      "time": "12:34 PM",
-      "text": "Two men charged in UK over RAF Fairford incident allegedly linked to Iran - Reuters",
+      "time": "12:02 PM",
+      "text": "Iran sees only unacceptable ideas in latest mediation to end war, official says - Reuters",
       "tag": "Reuters",
-      "url": "https://news.google.com/rss/articles/CBMiuwFBVV95cUxOQTFPZl9fajZtLVJ5V3dXM00xVHAtT2p6VUF5X1loNWtHZ2hSZl9CY1ZtdW01SHgxalNGbXpRVTdkZ09LanNSdVBhZ2YtRzJabk1JdFdEU25pWVMyRU40UmhnZ1UwcXpmMG4yVGJzZ1Y5QWlZYVViWVpvMVJUdGlvU0tUYnRuZUhhRHFzNkpsLURLd0w0dXBocjktUXo0Y1IxOWNMOHdGT29kcFBra2NrT2UySTNNbHNXZGFF?oc=5"
+      "url": "https://news.google.com/rss/articles/CBMivAFBVV95cUxQMTAtQ19McEJXRVg0bmN2S1JaMm9lX2VsbUpzSjZnZi1md09fZnBoREF1U2lKT25ybDRzR0lxcC13XzcxRU1UTFFFUXRzem9TVjdNMHA4cjVPel9Rdk02UHk4M1BDUXFZcGRyR0FqcnlhUDNtTFczdy1Nd0VNNktvM3V0bUEzNC1qdXNLQngwOE9HVGtydEFIa1hqdm5sWjRHVHNNaFVteUZSbnVwa2U0MWxvd2RleGJpaXIxeg?oc=5"
     },
     {
-      "time": "12:20 PM",
-      "text": "Edison, Pakistan gas buyers face QatarEnergy supply halt until year-end - Reuters",
-      "tag": "Reuters",
-      "url": "https://news.google.com/rss/articles/CBMiwgFBVV95cUxNZWRlZmpfTjMzTk8wb2tLV1hzbFprenNTR2JMcDVlWmFUQ3hkemhVVzd3X0loUXlGeHRENDd0Nll3cTh2eUpOSVJNVU53MThUaC1HYjJwSkFpa1BreXRxdm0teFoyZGJpaXowcXgtUmE0OTdSYXdDVzhuV0hCSlZqUjdpMHRNUjJxbDAzNDBfbDRjZjFpZUU2djNfV3RPaENwb1M2TzNUV0xIRUZFTVMtSDVhWmpFQU1ZaG0zZzhEa29Udw?oc=5"
-    },
-    {
-      "time": "12:13 PM",
-      "text": "Cramer says something is missing in Tuesday's market rally and he's not eager to jump in",
+      "time": "11:56 AM",
+      "text": "Jim Cramer sees buying opportunities in these 2 beaten-down stocks",
       "tag": "CNBC",
-      "url": "https://www.cnbc.com/investingclub/2026/10/27/cramer-says-something-is-missing-in-tuesdays-market-rally-and-hes-not-eager-to-jump-in.html"
+      "url": "https://www.cnbc.com/investingclub/2026/10/28/jim-cramer-sees-buying-opportunities-in-these-2-beaten-down-stocks.html"
     },
     {
-      "time": "11:39 AM",
-      "text": "American Airlines hikes annual fees on rewards cards for first time since 2018",
+      "time": "11:49 AM",
+      "text": "Caretaker role could limit Netanyahu but not rule out war with Iran - Reuters",
+      "tag": "Reuters",
+      "url": "https://news.google.com/rss/articles/CBMiuAFBVV95cUxPU1JMOG03aUh5UHZjRGhLalZmOVhWc0F4YjFJY3hnN0pQcUlFdHlJN0xKZF9PWmNOT1JtN1czaGV6d3JqWUNzdEs2cWtQWnc1eU4xclJBT0haR3R2dmx3TEhSRWo2X3VIY1U1UjBpY29mZ0hnUkdqRjlZUGJFMGtsREpUajdFM1dHM09hSzVEM1JreDBubzVuMUQ3aDJDbHJ5QndDaHNFazNkcFFwSlpQTVMzN1hPR3di?oc=5"
+    },
+    {
+      "time": "10:18 AM",
+      "text": "Iran's Revolutionary Court sentences director Panahi to jail term, travel ban - Reuters",
+      "tag": "Reuters",
+      "url": "https://news.google.com/rss/articles/CBMiywFBVV95cUxNVzczN0VQaVNCellIWU1NczBXNzIyQTZIWjZLY1Z2aGFPNDN3amdLeEF5ZGxJU0MwTFBFeERGaEpnaVZnSVhwSzV3VnRyZXhqRG9UamEzUUdfd2E3TjUtZTNleFp0RHZYNDlyMEF0UXJpOHVGUXZ2WHVMZTdwbzEzVU96dVNEWWxGRm9mdHB3WkVNYXNzdGpCQm4zYXFrWDJfZlN2d1Fzak0wLVFKSFRlejZ0WWZKaVNjMmtBRjZHWGtZRjUzd0xyM1dZWQ?oc=5"
+    },
+    {
+      "time": "10:04 AM",
+      "text": "Bearista cups are returning at Starbucks. Can the viral sensation boost holiday sales again?",
       "tag": "CNBC",
-      "url": "https://www.cnbc.com/2026/10/27/american-airlines-citi-aadvantage-card-fee.html"
+      "url": "https://www.cnbc.com/investingclub/2026/10/28/bearista-cups-are-back-at-starbucks-can-they-boost-holiday-sales-again.html"
     },
     {
-      "time": "10:36 AM",
-      "text": "Yemen's Houthis say they hit Saudi Ras Tanura oil refinery with missile - Reuters",
-      "tag": "Reuters",
-      "url": "https://news.google.com/rss/articles/CBMiwgFBVV95cUxPMU9tRHdmbzQ2ZHlsQzBDVmpqUEhlTk9meXgzN1VMOWlUMnlKOU1ibFRMQ1VQNDNjTkloUG9lb054S2JXZ2YwMS1MMXM4b1pwczl2clNyTHM5RGZVdnd6bzJXTVl4bW4yZ0pGTEV2aEV4dlR2cDNkc0lvNjVMN2ZScklvRDE3S1VyS0FoaC02Z3BqTHJPeTJrekxhM0dONmN0VzdXTmE5QjNfM0pIZ1Q2SHMtSkZzbFNqSThaN2RybDFBdw?oc=5"
-    },
-    {
-      "time": "9:41 AM",
-      "text": "High inflation to persist globally into next year, Reuters poll shows - Reuters",
-      "tag": "Reuters",
-      "url": "https://news.google.com/rss/articles/CBMiswFBVV95cUxQSGlkNFRUdUxnaVVWLTVGV2pJeEdyQzVIUTBoak15M0dBVjMzcGZrV0NjMnVISDZud2U2RGdDcXc3NUZpSU5QNGtSS0xpc2F3QkR0Y05OOE00czlTSUV6ZUQ1V1Vrdk9BT2x6Qzk1a1IycThjeEJ0bk5MT3FjN0FxTEpvdFV1aEZ6MkRfTkJpbVU5eEZVdlhOVzdxVkJENXpjazlRVk0yZlROcTByLVluVXp0MA?oc=5"
+      "time": "9:50 AM",
+      "text": "America's largest budget airline reports 71% jump in airfare",
+      "tag": "CNBC",
+      "url": "https://www.cnbc.com/2026/10/28/frontier-airlines-airfare-plane-tickets.html"
     }
   ],
   "brief": "<p>Brief generation failed. Market data is still current.</p>",
@@ -196,57 +196,57 @@
         "stocks": [
           {
             "ticker": "NVDA",
-            "price": 218.26,
-            "changePct": 1.05,
-            "volume": 87085733.189652,
-            "ema21": 223.83,
-            "sma50": 223.01,
-            "pct21": -2.49,
-            "pct50": -2.13,
+            "price": 216.96,
+            "changePct": -0.45,
+            "volume": 125407615.016438,
+            "ema21": 222.79,
+            "sma50": 222.77,
+            "pct21": -2.62,
+            "pct50": -2.61,
             "grade": "extended"
           },
           {
             "ticker": "META",
-            "price": 624.04,
-            "changePct": -1.03,
-            "volume": 29203903.30449,
-            "ema21": 713.15,
-            "sma50": 661.46,
-            "pct21": -12.5,
-            "pct50": -5.66,
-            "grade": "extended"
-          },
-          {
-            "ticker": "AMD",
-            "price": 559.34,
-            "changePct": 5.28,
-            "volume": 17998627.807656,
-            "ema21": 574.41,
-            "sma50": 541.1,
-            "pct21": -2.62,
-            "pct50": 3.37,
+            "price": 612.43,
+            "changePct": -1.25,
+            "volume": 40571016.565094,
+            "ema21": 707.29,
+            "sma50": 662.86,
+            "pct21": -13.41,
+            "pct50": -7.61,
             "grade": "extended"
           },
           {
             "ticker": "MSFT",
-            "price": 532.45,
-            "changePct": -0.03,
-            "volume": 13940102.251871,
-            "ema21": 524.73,
-            "sma50": 507.3,
-            "pct21": 1.47,
-            "pct50": 4.96,
+            "price": 527.22,
+            "changePct": -0.77,
+            "volume": 21266610.945292,
+            "ema21": 524.48,
+            "sma50": 507.88,
+            "pct21": 0.52,
+            "pct50": 3.81,
             "grade": "zone"
           },
           {
             "ticker": "AAPL",
-            "price": 345.44,
-            "changePct": 0.44,
-            "volume": 35614126.795002,
-            "ema21": 337.92,
-            "sma50": 327.7,
-            "pct21": 2.22,
-            "pct50": 5.41,
+            "price": 345.69,
+            "changePct": -0.41,
+            "volume": 46898875.748938,
+            "ema21": 338.82,
+            "sma50": 328.62,
+            "pct21": 2.03,
+            "pct50": 5.2,
+            "grade": "zone"
+          },
+          {
+            "ticker": "AMD",
+            "price": 567.99,
+            "changePct": 1.38,
+            "volume": 28007407.328218,
+            "ema21": 568.43,
+            "sma50": 541.6,
+            "pct21": -0.08,
+            "pct50": 4.87,
             "grade": "zone"
           }
         ]
@@ -290,25 +290,25 @@
         "stocks": [
           {
             "ticker": "NVDA",
-            "price": 218.26,
-            "changePct": 1.05,
-            "volume": 87085733.189652,
-            "ema21": 223.83,
-            "sma50": 223.01,
-            "pct21": -2.49,
-            "pct50": -2.13,
+            "price": 216.96,
+            "changePct": -0.45,
+            "volume": 125407615.016438,
+            "ema21": 222.79,
+            "sma50": 222.77,
+            "pct21": -2.62,
+            "pct50": -2.61,
             "grade": "extended"
           },
           {
             "ticker": "AMD",
-            "price": 559.34,
-            "changePct": 5.28,
-            "volume": 17998627.807656,
-            "ema21": 574.41,
-            "sma50": 541.1,
-            "pct21": -2.62,
-            "pct50": 3.37,
-            "grade": "extended"
+            "price": 567.99,
+            "changePct": 1.38,
+            "volume": 28007407.328218,
+            "ema21": 568.43,
+            "sma50": 541.6,
+            "pct21": -0.08,
+            "pct50": 4.87,
+            "grade": "zone"
           }
         ]
       },

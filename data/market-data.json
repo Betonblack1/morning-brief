@@ -1,36 +1,36 @@
 {
-  "generated": "2026-11-24T21:49:28.920Z",
-  "date": "2026-11-24",
+  "generated": "2026-11-25T20:56:28.706Z",
+  "date": "2026-11-25",
   "indices": [
     {
       "name": "S&P 500",
-      "val": "718.78",
-      "chg": -0.486,
-      "price": 718.78
+      "val": "716.48",
+      "chg": -0.32,
+      "price": 716.48
     },
     {
       "name": "NASDAQ",
-      "val": "638.10",
-      "chg": -1.9861,
-      "price": 638.1
+      "val": "632.45",
+      "chg": -0.8854,
+      "price": 632.45
     },
     {
       "name": "DOW",
-      "val": "499.74",
-      "chg": 0.7947,
-      "price": 499.74
+      "val": "501.69",
+      "chg": 0.3902,
+      "price": 501.69
     },
     {
       "name": "RUSSELL",
-      "val": "267.14",
-      "chg": 0.5268,
-      "price": 267.14
+      "val": "268.82",
+      "chg": 0.6289,
+      "price": 268.82
     },
     {
       "name": "VIX",
-      "val": "23.40",
-      "chg": -0.8475,
-      "price": 23.4
+      "val": "24.38",
+      "chg": 4.188,
+      "price": 24.38
     },
     {
       "name": "10Y",
@@ -43,149 +43,149 @@
     {
       "name": "Tech",
       "symbol": "XLK",
-      "chg": -3.2578
+      "chg": -1.1904
     },
     {
       "name": "Health",
       "symbol": "XLV",
-      "chg": 2.954
+      "chg": -0.3898
     },
     {
       "name": "Financials",
       "symbol": "XLF",
-      "chg": 0.8266
+      "chg": 0.8555
     },
     {
       "name": "Energy",
       "symbol": "XLE",
-      "chg": 0.9688
+      "chg": 0.9926
     },
     {
       "name": "Cons Disc",
       "symbol": "XLY",
-      "chg": 0.6756
+      "chg": -0.0934
     },
     {
       "name": "Industrials",
       "symbol": "XLI",
-      "chg": -0.5293
+      "chg": 0.8292
     },
     {
       "name": "Materials",
       "symbol": "XLB",
-      "chg": 0.5411
+      "chg": 2.1128
     },
     {
       "name": "Real Estate",
       "symbol": "XLRE",
-      "chg": 1.3054
+      "chg": 1.1045
     },
     {
       "name": "Utilities",
       "symbol": "XLU",
-      "chg": 0.1847
+      "chg": 0.7143
     },
     {
       "name": "Cons Staples",
       "symbol": "XLP",
-      "chg": 1.6597
+      "chg": 0.653
     },
     {
       "name": "Comm Svcs",
       "symbol": "XLC",
-      "chg": 0.8205
+      "chg": 0.967
     }
   ],
   "keyLevels": [
     {
       "tag": "support",
       "label": "SPY Support",
-      "val": "712.14"
+      "val": "695.45"
     },
     {
       "tag": "resist",
       "label": "SPY Resist",
-      "val": "720.93"
+      "val": "718.43"
     },
     {
       "tag": "pivot",
       "label": "QQQ Pivot",
-      "val": "639.08"
+      "val": "625.03"
     }
   ],
   "fearGreed": {
-    "score": 50,
+    "score": 46,
     "label": "Neutral"
   },
   "earnings": [
     {
-      "ticker": "ADI",
-      "info": "EPS Est: 3.9221",
+      "ticker": "BZ",
+      "info": "EPS Est: 1.9289",
       "when": "BMO"
     },
     {
-      "ticker": "ADSK",
-      "info": "EPS Est: 3.1296",
-      "when": "AMC"
-    },
-    {
-      "ticker": "AIDG",
+      "ticker": "CZBT",
       "info": "EPS Est: N/A",
       "when": ""
     },
     {
-      "ticker": "ALP",
+      "ticker": "DE",
+      "info": "EPS Est: 4.1688",
+      "when": "BMO"
+    },
+    {
+      "ticker": "DIDIY",
+      "info": "EPS Est: -0.3502",
+      "when": ""
+    },
+    {
+      "ticker": "DSNY",
       "info": "EPS Est: N/A",
       "when": ""
     },
     {
-      "ticker": "AMBA",
-      "info": "EPS Est: 0.3233",
-      "when": "AMC"
-    },
-    {
-      "ticker": "AMBR",
-      "info": "EPS Est: 0.0306",
-      "when": ""
+      "ticker": "DSX",
+      "info": "EPS Est: 0.0808",
+      "when": "BMO"
     }
   ],
   "econ": [],
   "news": [
     {
-      "time": "4:09 PM",
-      "text": "Hostages held in Cartagena, Colombia, supermarket after failed armored car hijacking - Reuters",
-      "tag": "Reuters",
-      "url": "https://news.google.com/rss/articles/CBMixAFBVV95cUxNUklaemoxV1Blc3lnelpxZHVwbmdXYUZBVHg2M1dBUzhwcU1PNVp2STNsbWlQMU5POEpHNmFabWtzNjMyTGRwR3dVRURmbDJITXdKZHJsbGdQVkQwZ1d1dmM3cVc3RGZsUGxGbDVmeDVRQVJMZ0c2b3ZNcTdyQ08ycHlSMlNnT3dYMUJzWXZ1VXh0LWJBdkFpeDF5TjRyMk40Y0FHZDdaSWoxQjFIUGNEYlJQWEZKZl9BQ04tTnl1WXl1cElH?oc=5"
-    },
-    {
-      "time": "3:42 PM",
-      "text": "Houthis hit Riyadh's tallest tower, 11 wounded, Saudi Civil defense says - Reuters",
-      "tag": "Reuters",
-      "url": "https://news.google.com/rss/articles/CBMiygFBVV95cUxNT2lRbHFjYmphSTFEMlhhRmVYd0dzWklmWmxFZFhMVG41LTJWdEZpNW9oYU5JUy1NS1ZORl80Wml6clJ6UnJOenN2TDBjSUpDbHRlVTdWNWpkdXZGejZwdTM4U1J3UWZyYnUzMzhMSGRKZWFwdjZUSFVLdTlRSWlMVVFtQ05kUDlQVGtEY1FXTHRXQmVfSmgzSndIWGxqZ2NRWXM4WjluTTgyallieG9JOXdISmlacFRUUDFiOUplaUZmNC1vUkJLSzZn?oc=5"
-    },
-    {
-      "time": "3:37 PM",
-      "text": "How Meta is using Instagram to get an ad boost from its Muse personal AI agent",
+      "time": "3:28 PM",
+      "text": "Vance says he was assured Jensen Huang was not under DOJ investigation",
       "tag": "CNBC",
-      "url": "https://www.cnbc.com/2026/11/24/meta-instagram-muse-ad-revenue.html"
+      "url": "https://www.cnbc.com/2026/11/25/vance-jensen-huang-nvidia-doj-investigation.html"
     },
     {
-      "time": "2:42 PM",
-      "text": "Iraqi PM cracks down on Kurds' control of oilfields, Kurds reject risky move - Reuters",
+      "time": "3:07 PM",
+      "text": "SpaceX, Musk pledge to donate a share each to active Trump Accounts",
+      "tag": "CNBC",
+      "url": "https://www.cnbc.com/2026/11/25/spacex-musk-trump-account-stock.html"
+    },
+    {
+      "time": "2:55 PM",
+      "text": "We're buying more of a stock down big from its July highs",
+      "tag": "CNBC",
+      "url": "https://www.cnbc.com/investingclub/2026/11/25/were-buying-more-of-a-stock-down-big-from-its-july-highs.html"
+    },
+    {
+      "time": "2:12 PM",
+      "text": "Bullish hopes spring as traders bet against a higher VIX: Options Action Live",
+      "tag": "CNBC",
+      "url": "https://www.cnbc.com/2026/11/25/bullish-hopes-spring-as-traders-bet-against-a-higher-vix-options-action-live.html"
+    },
+    {
+      "time": "1:58 PM",
+      "text": "Iraq's top court says Baghdad can deploy troops to secure borders in Kurdistan region - Reuters",
       "tag": "Reuters",
-      "url": "https://news.google.com/rss/articles/CBMizgFBVV95cUxQT0ttY1ZZa0d3ajhmMUVZYmhrdHNGd0E4aC0wQWswZzc0UkFrcndsZ3pJUkJQMVF3Rlp0cjdGdkc2bG5XY093OWx6QWdtQVlJMVpRN2QzUUZicGRBZEROT2JUZEdQUTRpWHBpYzNXMVVwN1FQbmZpVmZfTm1leHQzclpZSkdsRk9MWHBzZEpaSlFoVjd0QzZQMnl2SDladHhlTzFmYkhmT2xPSlRTc2o2VmY2ZThoQ0dxbl94NXAxaXFWTHBNb1V6bzhXRTFPQQ?oc=5"
+      "url": "https://news.google.com/rss/articles/CBMizAFBVV95cUxPeGlKWlRMLUx5SDRZY3FLU3VLM19RX2JqVko0T3dBakVEVHVldFVtQ21MbGo2WEEzUXU1clEteTVvWWh3bkdkQzZPX3RSemt5eWlBVjJQZy1RdjNjNnlpT19ZZUd0ekFDc3JuVHZKVWJfX2VtTlBzU3ZTTHlBX3dkV1NNVXA4NmJMVlRGX3FidmJsa0VacW5fQ2E1ZHBZTnJrN2pVc1BkUk1aZVliX2lMdHJBcUFaYlh5WmY3a05aSVZYN1hKemFtTGFUMG0?oc=5"
     },
     {
-      "time": "2:25 PM",
-      "text": "Gold is doing something strange. Here's one way to play it",
+      "time": "1:22 PM",
+      "text": "SpaceX wins FCC approval to deploy 1 million orbital data center satellites",
       "tag": "CNBC",
-      "url": "https://www.cnbc.com/2026/11/24/gold-is-doing-something-strange-heres-one-way-to-play-it-.html"
-    },
-    {
-      "time": "2:23 PM",
-      "text": "Who qualifies for Costco’s $30-per-share dividend — plus, Meta puts share plan on hold",
-      "tag": "CNBC",
-      "url": "https://www.cnbc.com/investingclub/2026/11/24/who-qualifies-for-costcos-dividend-plus-meta-pauses-share-plan.html"
+      "url": "https://www.cnbc.com/2026/11/25/spacex-fcc-satellite-approval.html"
     }
   ],
   "brief": "<p>Brief generation failed. Market data is still current.</p>",
@@ -196,57 +196,57 @@
         "stocks": [
           {
             "ticker": "NVDA",
-            "price": 155.38,
-            "changePct": -5.86,
-            "volume": 349791392.934688,
-            "ema21": 184.19,
-            "sma50": 210.3,
-            "pct21": -15.64,
-            "pct50": -26.12,
+            "price": 149.06,
+            "changePct": -4.07,
+            "volume": 322940099.136925,
+            "ema21": 180.73,
+            "sma50": 208.86,
+            "pct21": -17.52,
+            "pct50": -28.63,
             "grade": "extended"
           },
           {
             "ticker": "MSFT",
-            "price": 496.13,
-            "changePct": 0.74,
-            "volume": 22050085.127319,
-            "ema21": 523.84,
-            "sma50": 519.94,
-            "pct21": -5.29,
-            "pct50": -4.58,
+            "price": 491.12,
+            "changePct": -1.01,
+            "volume": 29350637.401278,
+            "ema21": 521.51,
+            "sma50": 520.06,
+            "pct21": -5.83,
+            "pct50": -5.56,
             "grade": "extended"
           },
           {
             "ticker": "META",
-            "price": 589.82,
-            "changePct": -1.3,
-            "volume": 10428709.938953,
-            "ema21": 637.56,
-            "sma50": 679.36,
-            "pct21": -7.49,
-            "pct50": -13.18,
+            "price": 610.58,
+            "changePct": 3.52,
+            "volume": 15358516.626493,
+            "ema21": 633.77,
+            "sma50": 678.4,
+            "pct21": -3.66,
+            "pct50": -10,
             "grade": "extended"
           },
           {
             "ticker": "AMD",
-            "price": 413.27,
-            "changePct": -8.86,
-            "volume": 34028588.719697,
-            "ema21": 523.55,
-            "sma50": 555.22,
-            "pct21": -21.06,
-            "pct50": -25.57,
+            "price": 403.67,
+            "changePct": -2.32,
+            "volume": 71660692.429299,
+            "ema21": 520.35,
+            "sma50": 554.93,
+            "pct21": -22.42,
+            "pct50": -27.26,
             "grade": "extended"
           },
           {
             "ticker": "AAPL",
-            "price": 354.07,
-            "changePct": 1.43,
-            "volume": 34209928.017599,
-            "ema21": 347.75,
-            "sma50": 341.15,
-            "pct21": 1.82,
-            "pct50": 3.79,
+            "price": 356.52,
+            "changePct": 0.69,
+            "volume": 40906860.177934,
+            "ema21": 347.89,
+            "sma50": 341.6,
+            "pct21": 2.48,
+            "pct50": 4.37,
             "grade": "zone"
           }
         ]
@@ -290,24 +290,24 @@
         "stocks": [
           {
             "ticker": "NVDA",
-            "price": 155.38,
-            "changePct": -5.86,
-            "volume": 349791392.934688,
-            "ema21": 184.19,
-            "sma50": 210.3,
-            "pct21": -15.64,
-            "pct50": -26.12,
+            "price": 149.06,
+            "changePct": -4.07,
+            "volume": 322940099.136925,
+            "ema21": 180.73,
+            "sma50": 208.86,
+            "pct21": -17.52,
+            "pct50": -28.63,
             "grade": "extended"
           },
           {
             "ticker": "AMD",
-            "price": 413.27,
-            "changePct": -8.86,
-            "volume": 34028588.719697,
-            "ema21": 523.55,
-            "sma50": 555.22,
-            "pct21": -21.06,
-            "pct50": -25.57,
+            "price": 403.67,
+            "changePct": -2.32,
+            "volume": 71660692.429299,
+            "ema21": 520.35,
+            "sma50": 554.93,
+            "pct21": -22.42,
+            "pct50": -27.26,
             "grade": "extended"
           }
         ]
